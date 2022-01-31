@@ -1,0 +1,3521 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>워크로드 테스트</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="워크로드 테스트" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/flexpod/healthcare/ehr-epic-performance_workload_testing.html" />
+	<meta property="og:description" content="AFF A300 HA 쌍에서는 최대 Epic 인스턴스를 편안하게 실행할 수 있습니다. 매우 큰 Epic 인스턴스가 두 개 이상 있는 경우 NetApp SPM 툴의 결과를 기반으로 AFF A700을 사용해야 할 수 있습니다." />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/flexpod/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="AFF A300 HA 쌍에서는 최대 Epic 인스턴스를 편안하게 실행할 수 있습니다. 매우 큰 Epic 인스턴스가 두 개 이상 있는 경우 NetApp SPM 툴의 결과를 기반으로 AFF A700을 사용해야 할 수 있습니다.">
+  <meta name="keywords" content=" data, generation, aff, a300, genio, aqos, adaptive, quality, test, server, procedure">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ko-kr/flexpod/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/flexpod/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/flexpod/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/flexpod/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/flexpod/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/flexpod/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/flexpod/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/flexpod/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/flexpod/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/flexpod/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/flexpod/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/flexpod/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/flexpod/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/flexpod/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/flexpod/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ko-kr/flexpod/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ko-kr/flexpod/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ko-kr/flexpod/js/na-search.js'></script>
+  
+
+  
+  <script src='/ko-kr/flexpod/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ko-kr/flexpod/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/flexpod/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/flexpod/js/na-utility.js'></script>
+  <script src='/ko-kr/flexpod/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ko-kr/flexpod/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/flexpod/js/toc.js'></script>
+  <script src='/ko-kr/flexpod/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ko-kr/flexpod/js/version-dropdown.js'></script>
+  <script src='/ko-kr/flexpod/js/product-family.js'></script>
+  <script src='/ko-kr/flexpod/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/flexpod/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/flexpod/js/jszip.min.js'></script>
+  <script src='/ko-kr/flexpod/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/flexpod/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/flexpod/healthcare/ehr-epic-performance_workload_testing.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/flexpod/healthcare/ehr-epic-performance_workload_testing.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/flexpod/healthcare/ehr-epic-performance_workload_testing.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/flexpod/healthcare/ehr-epic-performance_workload_testing.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ko-kr/flexpod/pdfs/fullsite-sidebar/FlexPod_솔루션.pdf" >
+          <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_정의.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod 정의
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_익스프레스_기술_사양.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod 익스프레스 기술 사양
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_데이터_센터_기술_사양.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod 데이터 센터 기술 사양
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_데이터_센터.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod 데이터 센터
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/하이브리드_클라우드.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            하이브리드 클라우드
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod용_NetApp_Cloud_Insights.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod용 NetApp Cloud Insights
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_with_FabricPool___Amazon_AWS_S3로_비활성_데이터_계층화.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod with FabricPool - Amazon AWS S3로 비활성 데이터 계층화
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/구성.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/엔터프라이즈_데이터베이스.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            엔터프라이즈 데이터베이스
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/제공합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            제공합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/오라클.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            오라클
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/Microsoft_SQL_Server를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            Microsoft SQL Server를 참조하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/의료.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            의료
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/유전체학을_위한_FlexPod.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            유전체학을 위한 FlexPod
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Datacenter_for_Epic_Directional_사이징_가이드_를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod Datacenter for Epic Directional 사이징 가이드 를 참조하십시오
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/명확히_설명하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            명확히 설명하십시오
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/Epic_EHR용_FlexPod_데이터_센터_구축_가이드_를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            Epic EHR용 FlexPod 데이터 센터 구축 가이드 를 참조하십시오
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/구축_및_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            구축 및 구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_for_Epic_성능_테스트.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod for Epic 성능 테스트
+          </a>
+          
+
+
+
+
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/flexpod/pdfs/pages/healthcare/ehr-epic-performance_workload_testing.pdf" >
+    <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/MEDITECH_방향_사이징_가이드용_FlexPod.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            MEDITECH 방향 사이징 가이드용 FlexPod
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/MEDITECH용_FlexPod_데이터_센터_배포_가이드.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            MEDITECH용 FlexPod 데이터 센터 배포 가이드
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/구축_및_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            구축 및 구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/의료_영상용_FlexPod.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            의료 영상용 FlexPod
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/가상_데스크톱_인프라.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            가상 데스크톱 인프라
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/최신_앱.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            최신 앱
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/Microsoft_애플리케이션.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            Microsoft 애플리케이션
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_익스프레스.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod 익스프레스
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_및_NetApp_AFF_C190_Series_설계_가이드_를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 설계 가이드 를 참조하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_및_NetApp_AFF_C190_Series_구축_가이드_를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 구축 가이드 를 참조하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/구현_절차.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            구현 절차
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_and_AFF_A220_Series_설계_가이드_를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod Express with Cisco UCS C-Series and AFF A220 Series 설계 가이드 를 참조하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_and_AFF_A220_Series_구축_가이드_를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod Express with Cisco UCS C-Series and AFF A220 Series 구축 가이드 를 참조하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/구현_절차.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            구현 절차
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/AFF_Express_with_VMware_vSphere_6_7U1_and_NetApp_FlexPod_A220_with_Direct_Attached_IP_기반_스토리지_설계_가이드_를_참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            AFF Express with VMware vSphere 6.7U1 and NetApp FlexPod A220 with Direct-Attached IP 기반 스토리지 설계 가이드 를 참조하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/직접_연결_IP_기반_스토리지를_사용하는_VMware_vSphere_6_7U1_및_NetApp_AFF_A220을_지원하는_FlexPod_Express.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_및_보안.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod 및 보안
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/FlexPod__랜섬웨어에_대한_솔루션.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            FlexPod, 랜섬웨어에 대한 솔루션
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/Cisco_Intersight_with_NetApp_ONTAP_스토리지_빠른_시작_가이드.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            Cisco Intersight with NetApp ONTAP 스토리지 빠른 시작 가이드
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/검토할_수_있습니다.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            검토할 수 있습니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/flexpod/pdfs/sidebar/Cisco_UCSM__VMware_vSphere_7_0_및_NetApp_ONTAP_9를_사용하는_FlexPod용_엔드_투_엔드_NVMe.pdf" 
+            
+          >
+            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            Cisco UCSM, VMware vSphere 7.0 및 NetApp ONTAP 9를 사용하는 FlexPod용 엔드 투 엔드 NVMe
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/flexpod/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/index.html">
+        FlexPod 솔루션 설명서
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod 정의</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod 익스프레스 기술 사양</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_flexpod_platforms.html">
+        FlexPod 플랫폼
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_flexpod_rules.html">
+        FlexPod 규칙
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_supported_versus_validated_flexpod_configurations.html">
+        지원되는 구성과 검증된 FlexPod 구성 비교
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_storage_software.html">
+        스토리지 소프트웨어
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_minimum_hardware_requirements.html">
+        최소 하드웨어 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_minimum_software_requirements.html">
+        최소 소프트웨어 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_connectivity_requirements.html">
+        연결 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_other_requirements.html">
+        기타 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec__optional_features.html">
+        옵션 기능
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec__cisco_components.html">
+        Cisco 구성 요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec__netapp_components.html">
+        NetApp 구성요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec__power_and_cabling_requirements.html">
+        전원 및 케이블 연결 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec__technical_specifications_and_references.html">
+        기술 사양 및 참조 자료
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec__previous_architectures_and_equipment.html">
+        이전 아키텍처 및 장비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_legacy_equipment.html">
+        미검증 장비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/fp-express-tech-spec_additional_information.html">
+        추가 정보
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod 데이터 센터 기술 사양</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_solution_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_flexpod_platforms.html">
+        FlexPod 플랫폼
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_flexpod_rules.html">
+        FlexPod 규칙
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_supported_versus_validated_flexpod_configurations.html">
+        지원되는 구성과 검증된 FlexPod 구성 비교
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_netapp_ontap.html">
+        NetApp ONTAP를 참조하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_cisco_nexus_switching_modes_of_operation.html">
+        Cisco Nexus 스위칭 운영 모드
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_minimum_hardware_requirements.html">
+        최소 하드웨어 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_minimum_software_requirements.html">
+        최소 소프트웨어 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_connectivity_requirements.html">
+        연결 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_other_requirements.html">
+        기타 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_optional_features.html">
+        선택적 기능
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_cisco_components.html">
+        Cisco 구성 요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_netapp_components.html">
+        NetApp 구성 요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_power_and_cabling_requirements.html">
+        전원 및 케이블 연결 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_technical_specifications_and_references.html">
+        기술 사양 및 참조 자료
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_legacy_equipment.html">
+        레거시 장비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/fp-def/dc-tech-spec_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod 데이터 센터</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi70_vxlan_evpn_design.html">
+        VMware vSphere 7.0, Cisco VXLAN 단일 사이트 패브릭 및 NetApp ONTAP 9.7 설계 가이드를 지원하는 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html">
+        VMware vSphere 7.0 및 NetApp ONTAP 9.7을 사용하는 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_dc_ontap_97_ucs_4_vmw_vs_67_U3_design.html">
+        NetApp ONTAP 9.7, Cisco Intersight 및 VMware vSphere 6.7 U3-Design을 지원하는 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_dc_ontap_97_ucs_4_vmw_vs_67_U3.html">
+        NetApp ONTAP 9.7, Cisco Intersight 및 VMware vSphere 6.7 U3-deploy를 지원하는 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_dc_ontap_97_ucs_4_vmw_vs_67_U3_design.html">
+        FlexPod 데이터 센터 및 Cisco Intersight, NetApp ONTAP 9.7 설계 가이드 를 참조하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa_u2.html">
+        NetApp ONTAP 9.6, Cisco UCS 4세대, VMware vSphere 6.7U2(CVD)가 포함된 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa_design.html">
+        VMware vSphere 6.7 U1, Cisco UCS 4세대 및 NetApp AFF A-Series를 지원하는 FlexPod 데이터 센터 - 설계
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html">
+        VMware vSphere 6.7 U1, Cisco UCS 4세대 및 NetApp AFF A-Series를 지원하는 FlexPod 데이터 센터 - 구축
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-741907.html">
+        FlexPod용 엔드 투 엔드 NVMe 소개
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi67_n9k_aci_metrocluster_design.html">
+        FlexPod 데이터 센터 및 Cisco ACI 멀티 포드, NetApp MetroCluster IP, VMware vSphere 6.7 설계 가이드 를 참조하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi67_n9k_aci_metrocluster.html">
+        FlexPod 데이터 센터 및 Cisco ACI 멀티 포드, NetApp MetroCluster IP, VMware vSphere 6.7 구축 가이드 를 참조하십시오
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 하이브리드 클라우드</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod용 NetApp Cloud Insights</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_netapp_cloud_insights_for_flexpod.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_use_cases.html">
+        사용 사례
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_architecture.html">
+        있습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_design_considerations.html">
+        설계 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_deploy_cloud_insights_for_flexpod.html">
+        FlexPod for Cloud Insights 구축
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_use_cases_01.html">
+        사용 사례
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_videos_and_demos.html">
+        비디오 및 데모
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-insights_additional_information.html">
+        추가 정보
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod with FabricPool - Amazon AWS S3로 비활성 데이터 계층화</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_introduction.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_flexpod_overview_and_architecture.html">
+        FlexPod 개요 및 아키텍처
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html">
+        FabricPool
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool_requirements.html">
+        FabricPool 요구 사항
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_software_revisions.html">
+        FabricPool 소프트웨어 버전
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_install_fabricpool_license.html">
+        FabricPool 라이센스를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_create_aws_s3_bucket.html">
+        AWS S3 버킷을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_add_a_cloud_tier_to_ontap.html">
+        ONTAP에 클라우드 계층을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_attach_a_cloud_tier_to_an_ontap_aggregate.html">
+        클라우드 계층을 ONTAP 애그리게이트에 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_set_volume_tiering_policy.html">
+        볼륨 계층화 정책 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_set_volume_tiering_minimum_cooling_days.html">
+        볼륨 계층화 최소 냉각 일 수 설정
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_performance_considerations.html">
+        성능 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_cost_of_ownership.html">
+        소유 비용
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_icp_ucsm32.html">
+        Cisco UCS Manager, NetApp ONTAP 9.3 AFF 및 VMware vSphere 6.5U1을 사용하는 IBM 클라우드 프라이빗 데이터 센터 [설계] FlexPod
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-740803.pdf">
+        Apprenda 8.2, Cisco ACI 3.1 및 Kubernetes 1.9.4 기반의 서비스형 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_hybridcloud_design.html">
+        Cisco CloudCenter 및 NetApp 프라이빗 스토리지를 사용하는 하이브리드 클라우드용 FlexPod 데이터 센터 [설계}
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_hybridcloud.html">
+        Cisco CloudCenter 및 NetApp 프라이빗 스토리지를 사용하는 하이브리드 클라우드용 FlexPod 데이터 센터 [배포]
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 엔터프라이즈 데이터베이스</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 제공합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ent-db/index.html">
+        FlexPod와 함께 SAP를 소개합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_sap_ucsm40_fcsan.html">
+        SAP HANA FC SAN CVD [구축]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/sap-appservers-flexpod-with-sql.pdf">
+        SAP 비 HANA 및 SQL 백서(WP) [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_sap_ontap96.html">
+        Cisco UCS 3세대 및 NetApp AFF A-Series가 지원되는 SAP 솔루션용 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_sap_ucsm40_fcsan_design.html">
+        Cisco UCS Manager 4.0 및 NetApp ONTAP 9.7과 함께 파이버 채널 SAN을 사용하는 SAP 솔루션을 위한 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/solutions/collateral/data-center-virtualization/unified-computing/sap-datahub-on-flexpod-with-cisco-container-platform.html">
+        FlexPod with Cisco 컨테이너 플랫폼을 통해 SAP 데이터 허브 구축(백서)
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_ACI_sap_netappaffa_design.html">
+        Cisco ACI, Cisco UCS Manager 4.0 및 NetApp AFF A-Series가 포함된 SAP 솔루션용 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_ACI_sap_netappaffa.html">
+        Cisco ACI, Cisco UCS Manager 4.0 및 NetApp AFF A-Series가 포함된 SAP 솔루션용 FlexPod 데이터 센터 [배포]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_sap_netappaffa_design.html">
+        Cisco UCS Manager 4.0 및 AFF ONTAP 9.6(CVD)이 포함된 SAP 솔루션용 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/solutions/collateral/data-center-virtualization/unified-computing/flexpod-oracle-database-sap-app-servers.html">
+        Oracle 데이터베이스, Cisco UCS 및 NetApp AFF를 사용하는 FlexPod 기반 SAP 애플리케이션 서버(백서)
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/unified-computing/whitepaper-c11-741878.pdf">
+        FlexPod 데이터 센터 기반 가상화된 SAP HANA - 설계 고려 사항 및 모범 사례(백서)
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_saphana_aci_UCSM32.html">
+        Cisco UCS Manager 3.2 및 Cisco ACI(Application Centric Infrastructure)를 사용하는 SAP 솔루션용 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_saphana_n9k_aff_ucsm.html">
+        NetApp AFF A-Series 및 Cisco UCS Manager 3.2를 사용하는 IP 기반 스토리지가 있는 SAP용 FlexPod 데이터 센터 솔루션
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_sap_ucsm40_fcsan.html">
+        Cisco UCS Mnager 4.0 및 NetApp ONTAP 9.7과 함께 FiberChannel SAN을 사용하는 SAP용 FlexPod 데이터 센터 솔루션
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/sap-appservers-flexpod-with-sql.pdf">
+        FlexPod에 SAP 애플리케이션 서버를 SQL과 함께 구축합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_ACI_sap_netappaffa.html">
+        Cisco ACI, Cisco UCS Manager 4.0 및 NetApp AFF A-Series가 포함된 SAP용 FlexPod 데이터 센터 솔루션
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/solutions/collateral/data-center-virtualization/unified-computing/sap-datahub-on-flexpod-with-cisco-container-platform.html">
+        FlexPod 기반 Cisco 컨테이너 플랫폼에 SAP 데이터 허브를 구축하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_ACI_sap_netappaffa_design.html">
+        Cisco ACI, Cisco UCS Manager 4.0 및 NetApp AFF A-Series를 지원하는 SAP 솔루션용 FlexPod 데이터 센터 설계 가이드
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_sap_ontap96.html">
+        Cisco UCS 3세대 및 NetApp AFF A-Series가 지원되는 SAP 솔루션용 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_sap_netappaffa_design.html">
+        Cisco UCS Manager 4.0 및 ONTAP 9.6이 있는 NetApp AFF A가 설치된 SAP 솔루션용 FlexPod 데이터 센터
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 오라클</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_oracle_ucs_m5.html">
+        Cisco UCS 상에 Oracle 19c RAC 데이터베이스를 지원하는 FlexPod 데이터 센터 및 NVMe over FibreChannel을 통한 NetApp AFF[배포]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_orc12cr2_affaseries.html">
+        Cisco UCS 및 NetApp AFF A-Series에서 Oracle RAC 데이터베이스가 지원되는 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_orcrac_12c_bm.html">
+        Oracle Linux 기반 Oracle RAC 지원 FlexPod 데이터 센터 [배포]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_orc12cr2_affaseries.html">
+        Cisco UCS 및 NetApp AFF A-Series에서 Oracle RAC 데이터베이스가 지원되는 FlexPod 데이터 센터
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Microsoft SQL Server를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/mssql2019_flexpod.html">
+        Microsoft SQL Server 2019 및 VMware vSphere 6.7용 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/mssql2016_flexpod_vmware_cvd.html">
+        Microsoft SQL Server 2016 및 VMware vSphere 6.5가 설치된 FlexPod Datacenter
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/mssql2017_flexpod_linux.html">
+        VMware 및 Hyper-V에서 실행되는 Linux VM에서 Microsoft SQL Server 2017을 지원하는 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/mssql2019_flexpod.html">
+        Microsoft SQL Server 2019 및 VMware vSphere 6.7용 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/mssql2017_flexpod_linux.html">
+        VMware 및 Hyper-V에서 실행되는 Linux VM에서 Microsoft SQL Server 2017을 지원하는 FlexPod 데이터 센터
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 의료</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 유전체학을 위한 FlexPod</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-introduction.html">
+        소개
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-benefits-of-deploying-genomic-workloads-on-flexpod.html">
+        FlexPod에 게놈 워크로드를 구축할 경우의 이점
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-solution-infrastructure-hardware-and-software-components.html">
+        솔루션 인프라 하드웨어 및 소프트웨어 구성 요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-genomics---gatk-setup-and-execution.html">
+        유전체학 - GATK 설정 및 실행
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-appendix-a.html">
+        JAR 파일을 사용하여 GATK 실행을 위한 출력입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-appendix-b.html">
+        /GATK 스크립트를 사용하여 GATK 실행을 위한 출력
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-appendix-c.html">
+        Cromwell 엔진을 사용하여 GATK 실행을 위한 출력
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-appendix-d-gpu-setup.html">
+        GPU 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/flexpod-genomics-conclusion.html">
+        결론
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod Datacenter for Epic Directional 사이징 가이드 를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-sizing_introduction.html">
+        개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 명확히 설명하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-sizing_netapp_storage_reference_architectures_for_epic.html">
+        Epic을 위한 NetApp 스토리지 참조 아키텍처
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-sizing_cisco_ucs_reference_architecture_for_epic.html">
+        Epic을 위한 Cisco UCS 참조 아키텍처
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-sizing_technical_specifications_for_small,_medium,_and_large_architectures.html">
+        소규모, 중간 규모 및 대규모 아키텍처의 기술 사양
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-sizing_additional_information.html">
+        추가 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-sizing_acknowledgements.html">
+        감사의 말
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Epic EHR용 FlexPod 데이터 센터 구축 가이드 를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_design.html">
+        설계
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구축 및 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_deployment_and_configuration_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_infrastructure_hardware_and_software_components.html">
+        인프라 하드웨어 및 소프트웨어 구성요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_base_infrastructure_configuration.html">
+        기본 인프라 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_cisco_ucs_blade_server_and_switch_configuration.html">
+        Cisco UCS 블레이드 서버 및 스위치 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_cisco_mds_9148s_configuration.html">
+        Cisco MDS 9148S 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_esxi_configuration_best_practices.html">
+        ESXi 구성 Best Practice
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_netapp_configuration.html">
+        NetApp 구성입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_genio_tool.html">
+        Genio 도구
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_where_to_find_additional_information_overview.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-deploy_acknowledgements.html">
+        감사의 말
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod for Epic 성능 테스트</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-performance_introduction.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-performance_executive_summary.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-performance_test_methodology.html">
+        테스트 방법론
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-performance_workload_testing.html">
+        워크로드 테스트
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-performance_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-performance_additional_information.html">
+        추가 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-epic-performance_acknowledgements.html">
+        감사의 말
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MEDITECH 방향 사이징 가이드용 FlexPod</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-sizing_introduction.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-sizing_meditech_workload_overview.html">
+        MEDITECH 워크로드 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-sizing_technical_specifications_for_small,_medium_and_large_architectures.html">
+        소규모, 중간 규모 및 대규모 아키텍처에 대한 기술 사양
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-sizing_additional_information.html">
+        추가 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-sizing_acknowledgments.html">
+        감사의 말
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MEDITECH용 FlexPod 데이터 센터 배포 가이드</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_design.html">
+        설계
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구축 및 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_deployment_and_configuration_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_base_infrastructure_configuration.html">
+        기본 인프라 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_cisco_ucs_blade_server_and_switch_configuration.html">
+        Cisco UCS 블레이드 서버 및 스위치 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_esxi_configuration_best_practices.html">
+        ESXi 구성 Best Practice
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_netapp_configuration.html">
+        NetApp 구성입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_aggregate_configuration.html">
+        애그리게이트 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_storage_virtual_machine_configuration.html">
+        스토리지 가상 머신 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_volume_configuration.html">
+        볼륨 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_lun_configuration.html">
+        LUN 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_initiator_group_configuration.html">
+        이니시에이터 그룹 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_lun_mappings.html">
+        LUN 매핑
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_meditech_modules_and_components.html">
+        MEDITECH 모듈 및 구성 요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_acknowledgments.html">
+        감사의 말
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/ehr-meditech-deploy_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 의료 영상용 FlexPod</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/medical-imaging_introduction.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/medical-imaging_architecture.html">
+        있습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/medical-imaging_solution_infrastructure_hardware_and_software_components.html">
+        솔루션 인프라 하드웨어 및 소프트웨어 구성 요소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/medical-imaging_solution_sizing.html">
+        솔루션 사이징
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/medical-imaging_best_practices.html">
+        모범 사례
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/medical-imaging_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/healthcare/medical-imaging_additional_information.html">
+        추가 정보
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 가상 데스크톱 인프라</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/cisco_ucs_ctx1912esxi7u1_flexpodV2.html">
+        최대 6,000개의 시트를 지원하는 Citrix Virtual Apps Desktops 1912 LTSR 및 VMware vSphere 7이 포함된 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_ontap96_vmware710_67_u2_ucs_40_6700_seats.html">
+        최대 6,700개 시트를 지원하는 NetApp ONTAP 9.6, VMware Horizon View 7.10 및 VMware vSphere 6.7 U2 및 Cisco UCS Manager 4.0을 갖춘 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-741654.pdf">
+        VMware 및 NVIDIA를 통한 3D 그래픽 시각화를 제공하는 FlexPod(백서)
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/cisco_ucs_xd715esxi65u1_flexpod.html">
+        6000명 사용자용 Citrix XenDesktop/XenApp 7.15 및 VMware vSphere 6.5 업데이트 1이 설치된 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_vmware_horizon_n9k_aff_ucsm32.html">
+        FlexPod Datacenter, VMware Horizon View 7.3, VMware vSphere 6.5 업데이트 1 및5000명 사용자용 Cisco UCS Manager 3.2
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_ontap96_vmware710_67_u2_ucs_40_6700_seats.html">
+        최대 6,700개 시트를 지원하는 NetApp ONTAP 9.6, VMware Horizon View 7.10 및 VMware vSphere 6.7 U2 및 Cisco UCS Manager 4.0을 갖춘 FlexPod 데이터 센터
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 최신 앱</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html">
+        딥 러닝 CVD 설계 가이드를 위한 Cisco UCS 480 ML Nvidia T4 vGPU를 사용한 AI/ML용 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/unified-computing/trident-on-container-platform-with-flexpod.pdf">
+        FlexPod을 지원하는 Cisco 컨테이너 플랫폼에 NetApp Trident CSI 플러그인 구축 [배포]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_openshift_platform_4.html">
+        OpenShift Container Platform 4용 FlexPod 데이터 센터(배포)
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html">
+        딥 러닝 설계 가이드를 위한 Cisco UCS C480 ML을 지원하는 AI/ML용 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html">
+        컨테이너 관리를 위한 Docker 데이터 센터를 지원하는 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_openshift4_design.html">
+        OpenShift Container Platform 4용 FlexPod 데이터 센터 설계 가이드 를 참조하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html">
+        딥 러닝 CVD 설계 가이드를 위한 Cisco UCS 480 ML Nvidia T4 vGPU를 사용하는 AI/ML용 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_480ml_aiml_deployment.html">
+        딥 러닝 CVD 구축 가이드를 위한 Cisco UCS 480 ML Nvidia T4 vGPU를 사용하는 AI/ML용 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html">
+        딥 러닝 설계 가이드용 Cisco UCS C480 ML을 지원하는 AI/ML용 FlexPod 데이터 센터
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/desktop-virtualization-solutions-vmware-horizon-view/whitepaper-c11-741606.pdf">
+        VMware 및 NVIDIA를 통한 3D 그래픽 시각화를 제공하는 FlexPod
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/whitepaper-c11-741586.pdf">
+        Citrix 및 NVIDIA를 통한 3D 그래픽 시각화를 위한 FlexPod(백서)
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Microsoft 애플리케이션</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/exchange2013_aci_flexpod_vmware_design.html">
+        Microsoft Exchange 2013, F5 BIG-IP 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/exchange2013_aci_flexpod_vmware.html">
+        Microsoft Exchange 2013, F5 BIG-IP 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [배포]
+      </a></li><li class=" "><a class="na-navbar-padding" href="http://www.cisco.com/c/dam/en/us/td/docs/unified_computing/ucs/UCS_CVDs/sharepoint2013_aci_flexpod_vmware.pdf">
+        Microsoft SharePoint 2013 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [설계]
+      </a></li><li class=" "><a class="na-navbar-padding" href="http://www.cisco.com/c/dam/en/us/td/docs/unified_computing/ucs/UCS_CVDs/sharepoint2013_aci_flexpod_vmware_deploy.pdf">
+        Microsoft SharePoint 2013 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [배포]
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod 익스프레스</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 설계 가이드 를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-design_executive_summary.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-design_program_summary.html">
+        프로그램 요약
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-design_technology_requirements.html">
+        기술 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-design_design_choices.html">
+        디자인 선택
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-design_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-design_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 구축 가이드 를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_program_summary_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_solution_overview.html">
+        솔루션 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_technology_requirements.html">
+        기술 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_flexpod_express_cabling_information.html">
+        FlexPod Express 케이블링 정보
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구현 절차</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_deployment_procedures_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_deploy_cisco_nexus_31108pc-v.html">
+        Cisco Nexus 31108PC-V 구축
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_netapp_storage_deployment_procedure_@part_1@.html">
+        NetApp 스토리지 구축 절차(1부)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_deploy_cisco_ucs_c-series_rack_server.html">
+        Cisco UCS C-Series 랙 서버 구축
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_netapp_aff_storage_deployment_procedure_@part_2@.html">
+        NetApp AFF 스토리지 구축 절차(2부)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_vmware_vsphere_6.7u2_deployment_procedure.html">
+        VMware vSphere 6.7U2 구축 절차
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_vmware_vcenter_server_6.7u2_installation_procedure.html">
+        VMware vCenter Server 6.7U2 설치 절차
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_vmware_vcenter_server_6.7u2_and_vsphere_clustering_configuration.html">
+        VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_netapp_virtual_storage_console_9.6_deployment_procedures.html">
+        NetApp Virtual Storage Console 9.6 구축 절차
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_acknowledgments.html">
+        감사의 말
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-c190-deploy_version_history.html">
+        버전 기록
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod Express with Cisco UCS C-Series and AFF A220 Series 설계 가이드 를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_executive_summary.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_program_summary.html">
+        프로그램 요약
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_solution_overview.html">
+        솔루션 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_technology_requirements.html">
+        기술 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_design_choices.html">
+        디자인 선택
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_solution_verification.html">
+        솔루션 검증
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-design_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod Express with Cisco UCS C-Series and AFF A220 Series 구축 가이드 를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_program_summary.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_solution_overview.html">
+        솔루션 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_technology_requirements.html">
+        기술 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_flexpod_express_cabling_information.html">
+        FlexPod Express 케이블링 정보
+      </a></li><li class="subfolders "><a href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_deployment_procedures_overview.html">
+        <div class="na-navbar-padding"> 구현 절차</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_cisco_nexus_3172p_deployment_procedure.html">
+        Cisco Nexus 3172P 구축 절차
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_netapp_storage_deployment_procedure_@part_1@.html">
+        NetApp 스토리지 구축 절차(1부)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_cisco_ucs_c-series_rack_server_deployment_procedure.html">
+        Cisco UCS C-Series 랙 서버 구축 절차
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_netapp_aff_storage_deployment_procedure_@part_2@.html">
+        NetApp AFF 스토리지 구현 절차(2부)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_vmware_vsphere_6.7_deployment_procedure.html">
+        VMware vSphere 6.7 구축 절차
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_install_vmware_vcenter_server_6.7.html">
+        VMware vCenter Server 6.7을 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_configure_vmware_vcenter_server_6.7_and_vsphere_clustering.html">
+        VMware vCenter Server 6.7 및 vSphere 클러스터링 구성
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-c-series-aff220-deploy_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> AFF Express with VMware vSphere 6.7U1 and NetApp FlexPod A220 with Direct-Attached IP 기반 스토리지 설계 가이드 를 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_overview.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_program_summary.html">
+        프로그램 요약
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_solution_overview.html">
+        솔루션 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_technology_requirements.html">
+        기술 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_design_choices.html">
+        디자인 선택
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_solution_verification.html">
+        솔루션 검증
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-design_where_to_find_additional_information.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-aff220-deploy_program_summary.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-aff220-deploy_solution_overview.html">
+        솔루션 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-aff220-deploy_technology_requirements.html">
+        기술 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-aff220-deploy_flexpod_express_cabling_information.html">
+        FlexPod 익스프레스 케이블 연결 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-aff220-deploy_deployment_procedures.html">
+        구현 절차
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-aff220-deploy_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/express/express-direct-attach-aff220-deploy_additional_information.html">
+        추가 정보
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="https://www.netapp.com/pdf.html?item=/media/21938-nva-1154-DEPLOY.pdf">
+        AFF Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp NVA(FAS/FlexPod)
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod 및 보안</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FlexPod, 랜섬웨어에 대한 솔루션</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_what_is_ransomware.html">
+        랜섬웨어란 무엇입니까?
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_flexpod_overview.html">
+        FlexPod 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_ransomware_protection_measures.html">
+        랜섬웨어 차단 조치
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_protect_and_recover_data_on_flexpod.html">
+        FlexPod에서 데이터 보호 및 복구
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_continue_business_operations_without_paying_ransom.html">
+        대가를 지불하지 않고 비즈니스 운영을 지속하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_conclusion.html">
+        결론
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_acknowledgements.html">
+        감사의 말
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/security/security-ransomware_additional_information.html">
+        추가 정보
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cisco Intersight with NetApp ONTAP 스토리지 빠른 시작 가이드</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/index.html">
+        소개
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/ci-qsg_new.html">
+        새로운 소식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/ci-qsg_requirements.html">
+        요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/ci-qsg_before_you_begin.html">
+        시작하기 전에
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/ci-qsg_claim_targets.html">
+        청구 대상
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/ci-qsg_monitor_netapp_storage_from_cisco_intersight.html">
+        Cisco Intersight에서 NetApp 스토리지 모니터링
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/ci-qsg_use_cases.html">
+        사용 사례
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/ontap-connector-for-intersight/ci-qsg_references.html">
+        참조
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 검토할 수 있습니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cisco UCSM, VMware vSphere 7.0 및 NetApp ONTAP 9를 사용하는 FlexPod용 엔드 투 엔드 NVMe</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/infrastructure/nvme-vsphere-introduction.html">
+        소개
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/infrastructure/nvme-vsphere-testing-approach.html">
+        테스트 접근 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/infrastructure/nvme-vsphere-test-results.html">
+        테스트 결과
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/infrastructure/nvme-vsphere-conclusion.html">
+        결론
+      </a></li></ul></li></ul></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">홈</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">설명서</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/flexpod/">FlexPod</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          워크로드 테스트
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">워크로드 테스트</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-01-31 20:00:32 +0000">01/31/2022</time>
+    
+  
+
+<span>기여자
+</span>
+
+
+</p>
+
+
+<div class="sect1">
+<h2 id="aff-a300-절차">AFF A300 절차</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AFF A300 HA 쌍에서는 최대 Epic 인스턴스를 편안하게 실행할 수 있습니다. 매우 큰 Epic 인스턴스가 두 개 이상 있는 경우 NetApp SPM 툴의 결과를 기반으로 AFF A700을 사용해야 할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="데이터-생성">데이터 생성</h3>
+<div class="paragraph">
+<p>LUN 내의 데이터는 Epic의 Dgen.pl 스크립트를 사용하여 생성되었습니다. 이 스크립트는 Epic 데이터베이스 내에 있는 데이터와 비슷한 데이터를 생성하도록 설계되었습니다.</p>
+</div>
+<div class="paragraph">
+<p>다음 Dgen 명령은 RHEL VM, epic-rhel1 및 epic-rhel2 모두에서 실행되었습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./dgen.pl --directory "/epic" --jobs 2 --quiet --pctfull 20</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>'-pctfull&#8217;은 선택 사항이며 데이터를 채울 LUN의 비율을 정의합니다. 기본값은 95%입니다. 이 크기는 성능에 영향을 주지 않지만 데이터를 LUN에 쓰는 시간에 영향을 줍니다.</p>
+</div>
+<div class="paragraph">
+<p>dgen 프로세스가 완료되면 각 서버에 대해 Genio 테스트를 실행할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="genio를-실행합니다">Genio를 실행합니다</h3>
+<div class="paragraph">
+<p>서버 2개를 테스트했습니다. 대규모 Epic 환경을 나타내는 75,000~110,000 IOPS의 램프를 실행했습니다. 두 테스트는 동시에 실행되었습니다.</p>
+</div>
+<div class="paragraph">
+<p>server epic-rhel1에서 다음 Genio 명령을 실행합니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./RampRun.pl –miniops 75000 --maxiops 110000 --background --disable-warmup --runtime 30 --wijfile /epic/epicjrn/GENIO.WIJ --numruns 10 --system epic-rhel1 --comment Ramp 75-110k</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aff-a300에-대한-genio-결과">AFF A300에 대한 Genio 결과</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>다음 표에는 AFF A300의 Genio 결과가 나와 있습니다</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">읽기 IOP</th>
+<th class="tableblock halign-left valign-top">쓰기 IOPS</th>
+<th class="tableblock halign-left valign-top">총 IOP</th>
+<th class="tableblock halign-left valign-top">가장 긴 쓰기 주기(초)</th>
+<th class="tableblock halign-left valign-top">유효 쓰기 지연 시간(ms)</th>
+<th class="tableblock halign-left valign-top">Randread 평균(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">142505</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">46442</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">188929)를 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">44.68</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.115</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.66</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aff-a700-절차">AFF A700 절차</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>일반적으로 글로벌 레퍼런스가 1,000만 이상인 대규모 Epic 환경의 경우 고객은 AFF A700을 선택할 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="데이터-생성-2">데이터 생성</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LUN 내부의 데이터는 Epic의 Dgen.pl 스크립트를 사용하여 생성되었습니다. 이 스크립트는 Epic 데이터베이스 내에 있는 데이터와 비슷한 데이터를 생성하도록 설계되었습니다.</p>
+</div>
+<div class="paragraph">
+<p>세 개의 RHEL VM 모두에 대해 다음 Dgen 명령을 실행합니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./dgen.pl --directory "/epic" --jobs 2 --quiet --pctfull 20</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>'-pctfull&#8217;은 선택 사항이며 데이터를 채울 LUN의 비율을 정의합니다. 기본값은 95%입니다. 이 크기는 성능에 영향을 주지 않지만 데이터를 LUN에 쓰는 시간에 영향을 줍니다.</p>
+</div>
+<div class="paragraph">
+<p>dgen 프로세스가 완료되면 각 서버에 대해 Genio 테스트를 실행할 준비가 된 것입니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="genio를-실행합니다-2">Genio를 실행합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>서버 3개를 테스트했습니다. 두 대의 서버에서 75,000~100,000 IOP의 램프를 실행했으며 이는 매우 큰 Epic 환경을 나타냅니다. 세 번째 서버는 75,000 IOPS에서 170,000 IOPS로 확장할 수 있는 대규모 서버로 설정되었습니다. 세 가지 테스트가 모두 동시에 실행되었습니다.</p>
+</div>
+<div class="paragraph">
+<p>server epic-rhel1에서 다음 Genio 명령을 실행합니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./RampRun.pl –miniops 75000 --maxiops 100000 --background --disable-warmup --runtime 30 --wijfile /epic/epicjrn/GENIO.WIJ --numruns 10 --system epic-rhel1 --comment Ramp 75-100k</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aff-a700의-genio-결과">AFF A700의 Genio 결과</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>다음 표에는 Genio 결과에 대한 AFF A700 테스트가 나와 있습니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">읽기 IOP</th>
+<th class="tableblock halign-left valign-top">쓰기 IOPS</th>
+<th class="tableblock halign-left valign-top">총 IOP</th>
+<th class="tableblock halign-left valign-top">가장 긴 쓰기 주기(초)</th>
+<th class="tableblock halign-left valign-top">유효 쓰기 지연 시간(ms)</th>
+<th class="tableblock halign-left valign-top">Randread 평균(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">241,180</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">78,654</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">319,837</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43.24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.05</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="aqos의-성능-sla">AQOS의 성능 SLA</h3>
+<div class="paragraph">
+<p>NetApp은 AQOS 정책을 사용하여 워크로드에 대한 바닥 및 최대 성능 값을 설정할 수 있습니다. 바닥 설정은 최소 성능을 보장합니다. Epic과 같은 애플리케이션의 볼륨 그룹에 IOPS/TB를 적용할 수 있습니다. QoS 정책에 할당된 Epic 워크로드는 동일한 클러스터의 다른 워크로드로부터 보호됩니다. 최소 요구사항은 보장된 반면 워크로드는 컨트롤러에서 사용 가능한 리소스를 사용하고 최대 성능을 유지할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>이 테스트에서 서버 1과 서버 2는 AQOS로 보호되었고, 세 번째 서버는 클러스터 내에서 성능 저하를 야기하는 불큰 작업 부하로 작용했습니다. AQOS에서는 서버 1과 2가 지정된 SLA에서 수행할 수 있는 반면, 불룩한 워크로드는 더 긴 쓰기 주기로 인해 성능 저하의 징후를 보였습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="적응형-서비스-품질-기본-설정">적응형 서비스 품질 기본 설정</h3>
+<div class="paragraph">
+<p>ONTAP는 값, 성능 및 극도의 세 가지 기본 AQOS 정책으로 구성됩니다. 각 정책의 값은 QoS 명령으로 확인할 수 있다. 명령 끝에 있는 '-instant&#8217;를 사용하여 AQOS 설정을 모두 봅니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>::&gt; qos adaptive-policy-group show
+Name         Vserver Wklds  Expected IOPS        Peak IOPS
+extreme      fp-g9a  0      6144IOPS/TB 12288IOPS/TB
+performance  fp-g9a  0      2048IOPS/TB 4096IOPS/TB
+value        fp-g9a  0      128IOPS/TB  512IOPS/TB</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>AQOS 정책을 생성하는 구문은 다음과 같습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>::&gt; qos adaptive-policy-group modify -policy-group aqos- epic-prod1 -expected-iops 5000 -peak-iops 10000 -absolute-min-iops 4000 -peak-iops-allocation used-space</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>AQOS 정책에는 몇 가지 중요한 설정이 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* 예상 IOPS. * 이 적응형 설정은 정책에 대한 최소 IOPS/TB 값입니다. 워크로드는 이러한 수준의 IOPS/TB를 보장합니다. 이 테스트에서 가장 중요한 설정입니다. 이 테스트 예에서는 성능 AQOS 정책이 2048IOPS/TB로 설정되었습니다.</p>
+</li>
+<li>
+<p>* 최대 IOPS. * 이 적응형 설정은 정책에 대한 최대 IOPS/TB 값입니다. 이 테스트 예에서는 성능 AQOS 정책이 4096IOPS/TB로 설정되었습니다.</p>
+</li>
+<li>
+<p>* 최대 IOPS 할당. * 옵션은 공간이 할당되거나 사용된 공간입니다. LUN에서 데이터베이스가 확장됨에 따라 이 값이 달라지므로 이 매개 변수를 사용된 공간으로 설정하십시오.</p>
+</li>
+<li>
+<p>* 절대 최소 IOPS. * 이 설정은 정적이며 적응이 아닙니다. 이 매개 변수는 크기에 관계없이 최소 IOPS를 설정합니다. 이 값은 크기가 1TB 미만인 경우에만 사용되며 이 테스트에 아무런 영향을 주지 않습니다.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>일반적으로 운영 환경에서 Epic 워크로드는 약 1000 IOPS/TB의 스토리지 및 용량으로 실행하고, IOPS는 선형적으로 증가합니다. 기본 AQOS 성능 프로필이 Epic 워크로드에 적합한 프로필보다 많습니다.</p>
+</div>
+<div class="paragraph">
+<p>이 테스트의 경우, 5TB의 더 작은 운영 크기 데이터베이스가 반영되지 않았습니다. 목표는 각 테스트를 75,000 IOPS로 실행하는 것이었습니다. EpicProd AQOS 정책에 대한 설정이 아래에 나와 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>예상 IOPS/TB = 총 IOPS/사용된 공간</p>
+</li>
+<li>
+<p>15,000 IOPS/TB = 75,000 IOPS/5TB</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>다음 표에는 EpicProd AQOS 정책에 사용된 설정이 나와 있습니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">설정</th>
+<th class="tableblock halign-left valign-top">값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">볼륨 크기</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5TB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">필수 IOPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75,000개</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PEAK-IOPS 할당</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">사용된 공간</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">절대 최소 IOPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7,500입니다</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예상 IOPS/TB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">최대 IOPS/TB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30,000입니다</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>다음 그림에서는 사용된 공간이 시간이 지나면서 성장함에 따라 바닥 IOPS 및 천장 IOPS가 어떻게 계산되는지 보여 줍니다.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./../media/ehr-epic-performance_image2.png" alt="오류: 그래픽 이미지가 없습니다"></span></p>
+</div>
+<div class="paragraph">
+<p>프로덕션 크기의 데이터베이스의 경우 마지막 예제에 사용된 것과 같은 사용자 지정 AQOS 프로필을 생성하거나 기본 성능 AQOS 정책을 사용할 수 있습니다. 성능 AQOS 정책 설정은 아래 표에 나와 있습니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">설정</th>
+<th class="tableblock halign-left valign-top">값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">볼륨 크기</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75TB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">필수 IOPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75,000개</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PEAK-IOPS 할당</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">사용된 공간</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">절대 최소 IOPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500입니다</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예상 IOPS/TB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000개</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">최대 IOPS/TB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,000개</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>다음 그림에서는 기본 성능 AQOS 정책에 대해 사용된 공간이 시간이 지남에 따라 증가하므로 바닥 및 천장 IOPS가 계산되는 방식을 보여 줍니다.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./../media/ehr-epic-performance_image3.png" alt="오류: 그래픽 이미지가 없습니다"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="매개-변수">매개 변수</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>다음 매개 변수는 어댑티브 정책 그룹의 이름을 지정합니다.</p>
+<div class="literalblock">
+<div class="content">
+<pre>     -policy-group &lt;text&gt; - Name</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>적응형 정책 그룹 이름은 고유해야 하며 밑줄 "_" 및 하이픈 "-"을 포함하여 127자의 영숫자로 제한됩니다. 적응형 정책 그룹 이름은 영숫자로 시작해야 합니다. QoS adaptive-policy-group rename 명령을 사용하여 adaptive policy group 이름을 변경합니다.</p>
+</div>
+</li>
+<li>
+<p>다음 매개 변수는 이 적응형 정책 그룹이 속한 데이터 SVM(명령줄에서 SVM이라고 함)을 지정합니다.</p>
+<div class="literalblock">
+<div class="content">
+<pre>     -vserver &lt;vserver name&gt; - Vserver</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>이 적응형 정책 그룹은 지정된 SVM에 포함된 스토리지 오브젝트에만 적용할 수 있습니다. 시스템에 SVM이 하나만 있는 경우 명령은 기본적으로 해당 SVM을 사용합니다.</p>
+</div>
+</li>
+<li>
+<p>다음 매개 변수는 할당된 스토리지 객체 크기에 따라 할당된 최소 예상 IOPS/TB 또는 IOPS/GB를 지정합니다.</p>
+<div class="literalblock">
+<div class="content">
+<pre>     -expected-iops {&lt;integer&gt;[IOPS[/{GB|TB}]] (default: TB)} - Expected IOPS</pre>
+</div>
+</div>
+</li>
+<li>
+<p>다음 매개 변수는 할당된 스토리지 객체 크기 또는 사용된 스토리지 객체 크기에 따라 할당되는 최대 IOPS/TB 또는 IOPS/GB를 지정합니다.</p>
+<div class="literalblock">
+<div class="content">
+<pre>     -peak-iops {&lt;integer&gt;[IOPS[/{GB|TB}]] (default: TB)} - Peak IOPS</pre>
+</div>
+</div>
+</li>
+<li>
+<p>다음 매개 변수는 예상 IOPS가 이 값보다 작을 때 재정의로 사용되는 절대 최소 IOPS를 지정합니다.</p>
+<div class="literalblock">
+<div class="content">
+<pre>     [-absolute-min-iops &lt;qos_tput&gt;] - Absolute Minimum IOPS</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>기본값은 다음과 같이 계산됩니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>qos adaptive-policy-group modify -policy-group aqos- epic-prod1 -expected-iops 5000 -peak-iops 10000 -absolute-min-iops 4000 -peak-iops-allocation used-space</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>qos adaptive-policy-group modify -policy-group aqos- epic-prod2 -expected-iops 6000 -peak-iops 20000 -absolute-min-iops 5000 -peak-iops-allocation used-space</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>qos adaptive-policy-group modify -policy-group aqos- epic-bully -expected-iops 3000 -peak-iops 2000 -absolute-min-iops 2000 -peak-iops-allocation used-space</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="데이터-생성-3">데이터 생성</h3>
+<div class="paragraph">
+<p>LUN 내의 데이터는 Epic Dgen.pl 스크립트를 사용하여 생성되었습니다. 이 스크립트는 Epic 데이터베이스 내에 있는 데이터와 비슷한 데이터를 생성하도록 설계되었습니다.</p>
+</div>
+<div class="paragraph">
+<p>다음 Dgen 명령은 세 개의 RHEL VM 모두에서 실행되었습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./dgen.pl --directory "/epic" --jobs 2 --quiet --pctfull 20</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="genio를-실행합니다-3">Genio를 실행합니다</h3>
+<div class="paragraph">
+<p>서버 3개를 테스트했습니다. 두 개는 대규모 Epic 환경을 나타내는 75,000 IOPS의 일정한 성능을 보였습니다. 세 번째 서버는 7만5천 IOPS에서 15만 IOPS까지 확장할 수 있는 대규모 서버로 설정되었습니다. 세 가지 테스트가 모두 동시에 실행되었습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="server-epic_rhel1-genio-테스트">server epic_rhel1 Genio 테스트</h3>
+<div class="paragraph">
+<p>다음 명령을 실행하여 각 볼륨에 EpicProd AQOS 설정을 할당했습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>::&gt; vol modify -vserver epic -volume epic_rhel1_* -qos-adaptive-policy-group AqosEpicProd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>다음 Genio 명령은 server epic-rhel1에서 실행되었습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./RampRun.pl –miniops 75000 --maxiops 75000 --background --disable-warmup --runtime 30 --wijfile /epic/GENIO.WIJ --numruns 10 --system epic-rhel1 --comment Ramp constant 75k</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="server-epic_rhel2-genio-테스트">server epic_rhel2 Genio 테스트</h3>
+<div class="paragraph">
+<p>다음 명령을 실행하여 각 볼륨에 EpicProd AQOS 설정을 할당했습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>::&gt; vol modify -vserver epic -volume epic_rhel2_* -qos-adaptive-policy-group AqosEpicProd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>다음 Genio 명령은 server epic-rhel2에서 실행되었습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./RampRun.pl --miniops 75000 --maxiops 75000 --background --disable-warmup --runtime 30 --wijfile /epic/GENIO.WIJ --numruns 10 --system epic-rhel2 --comment Ramp constant 75k</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="server-epic_rhel3-genio-testbully">server epic_rhel3 Genio test(bully)</h3>
+<div class="paragraph">
+<p>다음 명령을 실행하면 각 볼륨에 AQOS 정책이 할당되어 있지 않습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>::&gt; vol modify -vserver epic -volume epic_rhel3_* -qos-adaptive-policy-group non</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>다음 Genio 명령은 server epic-rhel3에서 실행되었습니다.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./RampRun.pl --miniops 75000 --maxiops 150000 --background --disable-warmup --runtime 30 --wijfile /epic/GENIO.WIJ --numruns 10 --system epic-rhel3 --comment Ramp 75-150k</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aqos-테스트-결과">AQOS 테스트 결과</h3>
+<div class="paragraph">
+<p>다음 섹션의 표에는 각 동시 Genio 테스트의 summary.csv 파일 출력이 포함되어 있습니다. 테스트를 통과하려면 가장 긴 쓰기 주기가 45초 미만이어야 합니다. 유효 쓰기 지연 시간이 1밀리초 미만이어야 합니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="server-epic_rhel1-genio-결과">server epic_rhel1 Genio 결과</h3>
+<div class="paragraph">
+<p>다음 표에서는 AQOS server epic_rhel1에 대한 Genio 결과를 보여 줍니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">실행</th>
+<th class="tableblock halign-left valign-top">읽기 IOPS</th>
+<th class="tableblock halign-left valign-top">쓰기 IOPS</th>
+<th class="tableblock halign-left valign-top">총 IOPS</th>
+<th class="tableblock halign-left valign-top">가장 긴 쓰기 주기(초)</th>
+<th class="tableblock halign-left valign-top">유효 쓰기 지연 시간(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55655</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18176</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73832</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32.66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55653</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18114</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73768</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34.66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55623)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18099</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73722</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55646)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18093</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73740</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55643</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18082</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73726)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55634</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18156)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73791</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32.54</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55629)를 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18138)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73767</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34.74</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55646)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18131</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73777</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.81</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55639</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18136</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73775</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55597</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18141</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73739</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35.42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.11</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="server-epic_rhel2-genio-결과">server epic_rhel2 Genio 결과</h3>
+<div class="paragraph">
+<p>다음 표에서는 AQOS server epic_rhel2에 대한 Genio 결과를 보여 줍니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">실행</th>
+<th class="tableblock halign-left valign-top">읽기 IOPS</th>
+<th class="tableblock halign-left valign-top">쓰기 IOPS</th>
+<th class="tableblock halign-left valign-top">총 IOPS</th>
+<th class="tableblock halign-left valign-top">가장 긴 쓰기 주기(초)</th>
+<th class="tableblock halign-left valign-top">유효 쓰기 지연 시간(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55629)를 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18081</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73711</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">33.96</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55635</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18152</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73788</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.59</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55606)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18154)를 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73761)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.44</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55639</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18148</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73787)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.37</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55629)를 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18145</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73774</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55619)를 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73745</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55640</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18156)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73796</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">33.48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55613</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18177</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73790</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">33.32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55605</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18173</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73779)를 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32.11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55606)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18178</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73785</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">33.19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.09</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="server-epic_rhel3-genio-결과불리">server epic_rhel3 Genio 결과(불리)</h3>
+<div class="paragraph">
+<p>다음 표에서는 AQOS server epic_rhel3에 대한 Genio 결과를 보여 줍니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">실행</th>
+<th class="tableblock halign-left valign-top">쓰기 IOPS</th>
+<th class="tableblock halign-left valign-top">총 IOPS</th>
+<th class="tableblock halign-left valign-top">최장 WIJ 시간(초)</th>
+<th class="tableblock halign-left valign-top">최장 쓰기 사이클(초)</th>
+<th class="tableblock halign-left valign-top">유효 쓰기 지연 시간(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19980</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81207</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21.48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40.05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21835</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">88610)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17.57</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">46.32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23657</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">95955</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19.77</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53.03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25493</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">103387</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21.93</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">57.53</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27331</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">110766</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23.17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60.57</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28893)을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">117906</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26.93</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">56.56</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30704</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">125233</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32521</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">132585</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.43</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64.38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34335</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">139881</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">70.38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">361</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">147633</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22.78</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73.66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.13</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aqos-테스트-결과-분석">AQOS 테스트 결과 분석</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>이전 섹션의 결과는 epic_rhel1 및 epic_rhel2 서버의 성능이 epic_rhel3의 대규모 워크로드의 영향을 받지 않는다는 것을 보여줍니다. EPIC_rhel3은 최대 150,000 IOPS로 증가하여 컨트롤러 제한에 도달함에 따라 Genio 테스트에 실패합니다. epic_rhel1 및 epic_rhel2의 쓰기 주기 및 지연 시간은 불우한 서버가 제어권을 벗어나 있는 동안 일정하게 유지됩니다.</p>
+</div>
+<div class="paragraph">
+<p>이 그림은 AQOS 최소 정책이 워크로드를 거짓으로부터 효과적으로 격리하고 최소 수준의 성능을 보장할 수 있는 방법을 보여줍니다.</p>
+</div>
+<div class="paragraph">
+<p>AQOS에는 다음과 같은 다양한 이점이 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>이를 통해 보다 유연하고 단순화된 아키텍처를 구현할 수 있습니다. 중요 워크로드를 더 이상 격리할 필요가 없으며 중요하지 않은 워크로드와 함께 존재할 수 있습니다. 물리적 분리를 사용하는 대신 모든 용량과 성능을 소프트웨어로 관리 및 할당할 수 있습니다.</p>
+</li>
+<li>
+<p>이 기능은 ONTAP 클러스터에서 Epic을 실행하는 데 필요한 디스크 및 컨트롤러의 양을 줄여 줍니다.</p>
+</li>
+<li>
+<p>또한 일관된 성능을 보장하는 성능 정책으로 워크로드를 간편하게 프로비저닝할 수 있습니다.</p>
+</li>
+<li>
+<p>필요한 경우 NetApp 서비스 수준 관리자를 구현하여 다음 작업을 수행할 수도 있습니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>서비스 카탈로그를 만들어 스토리지 프로비저닝을 간소화합니다.</p>
+</li>
+<li>
+<p>예측 가능한 서비스 수준을 제공하여 활용률 목표를 일관되게 충족할 수 있도록 합니다.</p>
+</li>
+<li>
+<p>서비스 수준 목표 정의:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/flexpod/issues/new?body=Page%3A%20[워크로드 테스트](https://docs.netapp.com/ko-kr/flexpod/healthcare/ehr-epic-performance_workload_testing.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/flexpod/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/flexpod/blob/main/healthcare/ehr-epic-performance_workload_testing.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/flexpod/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/flexpod/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
+  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/flexpod/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/flexpod/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/flexpod/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/flexpod/js/www-ntap.js'></script>
+    <script src='/ko-kr/flexpod/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>
