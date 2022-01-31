@@ -1,0 +1,125 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec__previous_architectures_and_equipment.html 
+keywords: architecture, equipment, previous, hardware, verified, small, medium, large, configuration 
+summary: 이 섹션에는 이전에 사용된 FlexPod Express 아키텍처와 하드웨어가 나열되어 있습니다. 
+---
+= 이전 아키텍처 및 장비
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod은 고객이 현재 Cisco 및 NetApp에서 판매하기 위한 기존 장비와 새로운 장비를 모두 사용할 수 있는 유연한 솔루션입니다. Cisco와 NetApp의 특정 장비 모델이 수명 종료를 지정하는 경우도 있습니다.
+
+이러한 장비 모델은 더 이상 사용할 수 없지만, 판매 종료 날짜 이전에 이러한 모델 중 하나를 구매한 고객은 FlexPod 구성에서 해당 장비를 사용할 수 있습니다.
+
+또한 FlexPod 익스프레스 아키텍처는 Cisco와 NetApp의 최신 하드웨어 및 소프트웨어를 FlexPod 익스프레스 솔루션에 소개할 수 있도록 정기적으로 업데이트됩니다. 이 섹션에는 이전에 사용된 FlexPod Express 아키텍처와 하드웨어가 나열되어 있습니다.
+
+
+
+== 이전의 FlexPod Express 아키텍처
+
+이 섹션에서는 이전 FlexPod Express 아키텍처에 대해 설명합니다.
+
+
+
+=== FlexPod Express 소형 및 중형 구성
+
+FlexPod Express 소형 및 중형 구성에는 다음과 같은 구성요소가 포함됩니다.
+
+* 이중 구성의 Cisco Nexus 3048 스위치 2개
+* 최소 2개의 Cisco UCS C-Series 랙 마운트 서버
+* HA 쌍 구성에서 FAS2200 또는 FAS2500 시리즈 컨트롤러 2개
+
+
+다음 그림에서는 FlexPod Express 소형 구성을 보여 줍니다.
+
+image:fp-express-tech-spec_image4.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 그림에서는 FlexPod Express 중형 구성을 보여 줍니다.
+
+image:fp-express-tech-spec_image5.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+=== FlexPod Express 대형 구성
+
+FlexPod Express 대형 구성에는 다음과 같은 구성요소가 포함됩니다.
+
+* 이중 구성의 Cisco Nexus 3500 시리즈 또는 Cisco Nexus 9300 시리즈 스위치 2개
+* 최소 2개의 Cisco UCS C-Series 랙 마운트 서버
+* HA 쌍 구성에서 FAS2552, FAS2554 또는 FAS8020 컨트롤러 2개(컨트롤러당 10GbE 포트 2개 필요)
+* 지원되는 디스크 유형이 포함된 NetApp 디스크 쉘프 1개(FAS8020을 사용하는 경우)
+
+
+다음 그림에서는 FlexPod Express 대규모 구성을 보여 줍니다.
+
+image:fp-express-tech-spec_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+=== 이전의 FlexPod Express 검증 아키텍처
+
+이전 FlexPod Express 검증 아키텍처는 계속 지원됩니다. 아키텍처 및 구축 문서는 다음과 같습니다.
+
+* link:http://www.netapp.com/us/media/nva-0016-flexpod-express.pdf["FlexPod Express with Cisco UCS C-Series 및 NetApp FAS2500 시리즈"]
+* link:http://www.netapp.com/us/media/nva-0020-deploy.pdf["VMware vSphere 6.0을 사용하는 FlexPod Express: 소규모 및 중간 규모 구성"]
+* link:http://www.netapp.com/us/media/nva-0017-flexpod-express.pdf["VMware vSphere 6.0을 사용하는 FlexPod Express: 대규모 구성"]
+* link:http://www.netapp.com/us/media/nva-0021-deploy.pdf["Microsoft Windows Server 2012 R2 Hyper-V를 사용하는 FlexPod Express: 소규모 및 중간 규모 구성"]
+* link:http://www.netapp.com/us/media/tr-4350.pdf["Microsoft Windows Server 2012 R2 Hyper-V를 사용하는 FlexPod Express: 대규모 구성"]
+
+
+
+
+=== 이전 하드웨어
+
+다음 표에는 이전 FlexPod Express 아키텍처에 사용된 하드웨어가 나와 있습니다.
+
+|===
+| 이전 아키텍처에 사용된 하드웨어 | 기술 사양(사용 가능한 경우) 
+
+
+| Cisco UCS C220 M3 | http://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c220-m3-rack-server/data_sheet_c78-700626.html[] 
+
+
+| Cisco UCS C24 M3 | http://www.cisco.com/en/US/prod/collateral/ps10265/ps10493/data_sheet_c78-706103.html[] 
+
+
+| Cisco UCS C22 M3 | http://www.cisco.com/en/US/prod/collateral/ps10265/ps10493/data_sheet_c78-706101.html[] 
+
+
+| Cisco UCS C240 M3 | http://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c240-m3-rack-server/data_sheet_c78-700629.html[] 
+
+
+| Cisco UCS C260 M2 | http://www.cisco.com/en/US/prod/collateral/ps10265/ps10493/c260m2_specsheet.pdf[] 
+
+
+| Cisco UCS C420 M3 | http://www.cisco.com/en/US/products/ps12770/index.html[] 
+
+
+| Cisco UCS C460 M2 | http://www.cisco.com/en/US/prod/collateral/ps10265/ps10493/ps11587/spec_sheet_c17-662220.pdf[] 
+
+
+| Cisco UCS B200 M3 | http://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b200-m3-blade-server/data_sheet_c78-700625.html[] 
+
+
+| Cisco UCS B420 M3 | 해당 없음 
+
+
+| Cisco UCS B22 M3 | http://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/b22m3_specsheet.pdf[] 
+
+
+| Cisco Nexus 3524)를 참조하십시오 | http://www.cisco.com/c/en/us/products/switches/nexus-3524-switch/index.html[] 
+
+
+| FAS2240 |  
+
+
+| FAS2220 | http://www.netapp.com/us/products/storage-systems/fas2200/fas2200-tech-specs.aspx[] 
+
+
+| DS4243 | 해당 없음 
+|===

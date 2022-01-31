@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: healthcare/flexpod-genomics-solution-infrastructure-hardware-and-software-components.html 
+keywords: GATK, setup, validation, cabling, hardware, software 
+summary: 이 섹션에서는 이 솔루션에 사용되는 솔루션 인프라 및 소프트웨어 구성 요소에 대해 설명합니다. 
+---
+= 솔루션 인프라 하드웨어 및 소프트웨어 구성 요소
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:flexpod-genomics-benefits-of-deploying-genomic-workloads-on-flexpod.html["이전:FlexPod에서 게놈 워크로드를 구축할 때의 이점"]
+
+다음 그림은 GATK 설정 및 검증에 사용되는 FlexPod 시스템을 보여 줍니다. 우리는 중고 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html["VMware vSphere 7.0 및 NetApp ONTAP 9.7을 사용하는 FlexPod 데이터 센터 CVD(Cisco Validated Design)"^] 설치 프로세스 중
+
+image:flexpod-genomics-image6.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 다이어그램은 FlexPod 케이블 연결 세부 정보를 보여 줍니다.
+
+image:flexpod-genomics-image7.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 표에는 FlexPod에서 GATK 테스트 활성화 중에 사용되는 하드웨어 구성 요소가 나열되어 있습니다. 여기 가 있습니다 https://mysupport.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴"^] (IMT) 및.
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+| 컴퓨팅 | Cisco UCS 5108 섀시 | 1 또는 2 |  
+
+
+|  | Cisco UCS 블레이드 서버 | 6 B200 M5 | 각각 20개 이상의 코어, 2.7GHz 및 128-384GB RAM이 있습니다 
+
+
+|  | Cisco UCS 가상 인터페이스 카드(VIC) | Cisco UCS 1440 | 를 참조하십시오 
+
+
+|  | Cisco UCS Fabric 인터커넥트 2개 | 6332 | - 
+
+
+| 네트워크 | Cisco Nexus 스위치 | 2x Cisco Nexus 9332 | - 
+
+
+| 스토리지 네트워크 | SMB/CIFS, NFS 또는 iSCSI 프로토콜을 통한 스토리지 액세스를 위한 IP 네트워크 | 위와 동일한 네트워크 스위치 | - 
+
+
+|  | FC를 통한 스토리지 액세스 | Cisco MDS 9148S 2개 | - 
+
+
+| 스토리지 | NetApp AFF A700 All-Flash 스토리지 시스템 | 클러스터 1개 | 2개의 노드로 클러스터 
+
+
+|  | 디스크 쉘프 | DS224C 또는 NS224 디스크 쉘프 1개 | 24개 드라이브로 완전히 채워집니다 
+
+
+|  | SSD를 지원합니다 | 24, 1.2TB 이상의 용량 | - 
+|===
+이 표에는 인프라 소프트웨어가 나와 있습니다.
+
+|===
+| 소프트웨어 | 제품군 | 버전 또는 릴리스 | 세부 정보 
+
+
+| 다양하다 | 리눅스 | RHEL 8.3 | - 
+
+
+|  | Windows | Windows Server 2012 R2(64비트) | - 
+
+
+|  | NetApp ONTAP를 참조하십시오 | ONTAP 9.8 이상 | - 
+
+
+|  | Cisco UCS 6120 패브릭 인터커넥트 | Cisco UCS Manager 4.1 이상 | - 
+
+
+|  | Cisco 이더넷 3000 또는 9000 시리즈 스위치 | 9000 시리즈, 7.0(3) i7(7) 이상(3000 시리즈, 9.2(4) 이상 | - 
+
+
+|  | Cisco FC: Cisco MDS 9132T | 8.4(1a) 이상 | - 
+
+
+|  | 하이퍼바이저 | VMware vSphere ESXi 7.0 | - 
+
+
+| 스토리지 | 하이퍼바이저 관리 시스템 | VMware vCenter Server 7.0(vCSA) 이상 | - 
+
+
+| 네트워크 | NetApp 가상 스토리지 콘솔(VSC) | VSC 9.7 이상 | - 
+
+
+|  | NetApp SnapCenter를 참조하십시오 | SnapCenter 4.3 이상 | - 
+
+
+|  | Cisco UCS Manager를 참조하십시오 | 4.1(3c) 이상 |  
+
+
+| 하이퍼바이저 | ESXi |  |  
+
+
+| 관리 | 하이퍼바이저 관리 시스템 VMware vCenter Server 7.0(vCSA) 이상 |  |  
+
+
+|  | NetApp 가상 스토리지 콘솔(VSC) | VSC 9.7 이상 |  
+
+
+|  | NetApp SnapCenter를 참조하십시오 | SnapCenter 4.3 이상 |  
+
+
+|  | Cisco UCS Manager를 참조하십시오 | 4.1(3c) 이상 |  
+|===
+link:flexpod-genomics-genomics---gatk-setup-and-execution.html["다음: 유전체학 - GATK 설정 및 실행"]

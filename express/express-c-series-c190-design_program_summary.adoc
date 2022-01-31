@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-c190-design_program_summary.html 
+keywords: Converged Infrastructure, Cisco Validated Design, CVD, NVA, Express, Datacenter, UCS C220 M5, AFF C190, Nexus 31108 switch, VMware vSphere 6.7U2. 
+summary: FlexPod 참조 아키텍처는 Cisco Validated Design 또는 NetApp Verified Architecture로 제공됩니다. 특정 CVD 또는 NVA의 고객 요구 사항을 기반으로 한 편차는 이러한 변형으로 인해 지원되지 않는 구성이 구축되지 않는 경우 허용됩니다. 
+---
+= 프로그램 요약
+
+
+
+
+== FlexPod 통합 인프라 포트폴리오
+
+FlexPod 참조 아키텍처는 CVD(Cisco Validated Design) 또는 NVA(NetApp Verified Architecture)로 제공됩니다. 특정 CVD 또는 NVA의 고객 요구 사항을 기반으로 한 편차는 이러한 변형으로 인해 지원되지 않는 구성이 구축되지 않는 경우 허용됩니다.
+
+다음 그림과 같이 FlexPod 포트폴리오에는 FlexPod 익스프레스 및 FlexPod 데이터 센터 솔루션이 포함되어 있습니다.
+
+* * FlexPod 익스프레스 * 는 Cisco 및 NetApp의 기술을 사용하는 엔트리 레벨 솔루션입니다.
+* * FlexPod 데이터 센터 * 는 다양한 워크로드 및 애플리케이션을 위한 최적의 다목적 토대를 제공합니다.
+
+
+image:express-c-series-c190-design_image1.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== NetApp 검증 아키텍처 프로그램
+
+NetApp 검증 아키텍처 프로그램에서는 NetApp 솔루션을 위한 검증된 아키텍처를 고객에게 제공합니다. NVA 솔루션의 특징은 다음과 같습니다.
+
+* 철저한 테스트를 거친 아키텍처
+* 기본적으로 규범적인 아키텍처
+* 구축 위험 최소화
+* 출시 시간 단축 이 가이드는 VMware vSphere를 사용한 FlexPod Express 설계에 대해 자세히 설명합니다.
+
+
+또한, 이 설계에서는 NetApp ONTAP 9.6 소프트웨어, Cisco Nexus 31108 스위치 및 Cisco UCS C220 M5 서버를 하이퍼바이저 노드로 실행하는 완전히 새로운 AFF C190 시스템을 활용합니다.
+
+
+
+== 솔루션 개요
+
+FlexPod Express는 혼합 가상화 워크로드를 실행하도록 설계되었습니다. 원격 사무소, 지점 및 중소 및 중견 기업을 타겟으로 합니다. 또한 특정 목적에 맞는 전용 솔루션을 구현하려는 대규모 기업에도 적합합니다. FlexPod 익스프레스를 위한 이 새로운 솔루션은 NetApp ONTAP 9.6, NetApp AFF C190 시스템 및 VMware vSphere 6.7U2와 같은 새로운 기술을 추가합니다.
+
+다음 그림에서는 FlexPod Express 솔루션에 포함된 하드웨어 구성 요소를 보여 줍니다.
+
+image:express-c-series-c190-design_image2.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 대상
+
+이 문서는 IT 효율성을 제공하고 IT 혁신을 지원하기 위해 구축된 인프라를 활용하려는 사용자를 위해 작성되었습니다. 이 문서의 대상에는 세일즈 엔지니어, 현장 컨설턴트, 프로페셔널 서비스 직원, IT 매니저, 파트너 엔지니어 및 고객.
+
+
+
+== 솔루션 기술
+
+이 솔루션은 NetApp, Cisco 및 VMware의 최신 기술을 활용합니다. 이 제품은 ONTAP 9.6 소프트웨어, 이중 Cisco Nexus 31108 스위치 및 VMware vSphere 6.7U2를 실행하는 Cisco UCS C220 M5 랙 서버를 실행하는 새로운 NetApp AFF C190 시스템을 갖추고 있습니다. 다음 그림에 나와 있는 검증된 이 솔루션은 10기가비트 이더넷(10GbE) 기술을 사용합니다. 또한 FlexPod 익스프레스 아키텍처가 조직의 변화하는 비즈니스 요구에 적응할 수 있도록 한 번에 두 개의 하이퍼바이저 노드를 추가하여 확장하는 방법에 대한 지침도 제공됩니다.
+
+image:express-c-series-c190-design_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+link:express-c-series-c190-design_technology_requirements.html["다음: 기술 요구 사항."]

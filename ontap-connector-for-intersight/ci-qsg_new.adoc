@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: ontap-connector-for-intersight/ci-qsg_new.html 
+keywords: netapp, cisco, ontap, intersight, flexpod, what's new, features, release notes, enhancements 
+summary: Cisco Intersight는 새로운 기능, 향상된 기능 및 버그 수정을 제공하는 새로운 릴리즈를 소개합니다. 
+---
+= 새로운 기능
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 NetApp ONTAP 스토리지와 Cisco Intersight에 사용할 수 있는 새로운 기능에 대해 설명합니다.
+
+
+
+== 2022년 1월
+
+* NetApp Active IQ Unified Manager 9.10 이상에 대한 이벤트 기반 Intersight 알람이 추가되었습니다.
+
+
+
+NOTE: 향후 릴리스와 호환성 및 완벽한 기능을 보장하기 위해 NetApp Active IQ Unified Manager를 버전 9.10으로 업그레이드하는 것이 좋습니다.
+
+* 스토리지 가상 시스템에 대해 활성화된 각 프로토콜(참 또는 거짓)을 명시적으로 설정합니다
+* 매핑된 클러스터 상태 상태 정상 - 억제된 상태로 OK
+* 이름이 클러스터 목록 페이지의 클러스터 상태 열로 바뀌었습니다
+* 클러스터가 다운되었거나 연결할 수 없는 경우 스토리지 배열에 "접속할 수 없음"이 표시됩니다
+* 클러스터 일반 페이지 아래의 스토리지 상태 열로 이름이 변경되었습니다
+* 이제 SVM에는 SVM의 모든 볼륨을 표시하는 "볼륨" 탭이 있습니다
+* 볼륨에 스냅샷 용량 섹션이 있습니다
+* 이제 라이센스가 올바르게 표시됩니다
+
+
+
+
+== 2021년 10월
+
+* Cisco Intersight에서 사용 가능한 NetApp 스토리지 작업 목록이 업데이트되었습니다. 을 참조하십시오 link:ci-qsg_use_cases.html["사용 사례 3 디자이너가 없는 양식을 사용하는 사용자 지정 워크플로"] NetApp 스토리지 작업의 전체 목록을 확인하십시오.
+* 클러스터 목록 페이지 아래에 상태 열이 추가되었습니다.
+* 이제 선택한 클러스터의 일반 페이지에서 확장된 세부 정보를 사용할 수 있습니다.
+* 이제 탐색 창을 통해 NTP 서버 테이블에 액세스할 수 있습니다.
+* 스토리지 가상 머신에 대한 일반 페이지가 포함된 새 센서 탭이 추가되었습니다.
+* 이제 Port General 페이지에서 VLAN 및 Link Aggregation 그룹 요약을 사용할 수 있습니다.
+* Volume Total Capacity 테이블 아래에 추가된 Total Data Capacity 열
+* 평균 볼륨 통계, 평균 LUN 통계, 평균 집계 통계, 평균 스토리지 VM 통계 및 평균 노드 통계 테이블에 추가된 지연 시간, IOPS 및 처리량 열
++
+
+NOTE: 위의 성능 메트릭은 NetApp Active IQ Unified Manager 9.9 이상을 통해 모니터링되는 스토리지 어레이에만 사용할 수 있습니다.
+
+

@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-meditech-deploy_initiator_group_configuration.html 
+keywords: initiator, group, configuration, fc, data, network, protocol, igroups 
+summary: 'FC를 데이터 네트워크 프로토콜로 사용할 경우 각 스토리지 컨트롤러에 두 개의 이니시에이터 그룹(igroup)을 생성합니다. 첫 번째 igroup에는 MEDITECH 호스트 VM(MEDITECH용 igroup)을 호스팅하는 VMware ESXi 서버의 FC 호스트 인터페이스 카드 WWPN이 포함되어 있습니다.' 
+---
+= 이니시에이터 그룹 구성
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FC를 데이터 네트워크 프로토콜로 사용할 경우 각 스토리지 컨트롤러에 두 개의 이니시에이터 그룹(igroup)을 생성합니다. 첫 번째 igroup에는 MEDITECH 호스트 VM(MEDITECH용 igroup)을 호스팅하는 VMware ESXi 서버의 FC 호스트 인터페이스 카드 WWPN이 포함되어 있습니다.
+
+환경 설정에 따라 MEDITECH igroup 운영 체제 유형을 설정해야 합니다. 예를 들면 다음과 같습니다.
+
+* Windows Server 환경에서 베어 메탈 서버 하드웨어에 설치된 애플리케이션의 경우 igroup 운영 체제 유형 'Windows'를 사용합니다.
+* VMware vSphere 하이퍼바이저를 사용하여 가상화된 애플리케이션에 대해 igroup 운영 체제 유형 'VMware'를 사용합니다.
+
+
+
+NOTE: igroup의 운영 체제 유형이 LUN의 운영 체제 유형과 다를 수 있습니다. 예를 들어 가상화된 MEDITECH 호스트의 경우 igroup 운영 체제 유형을 "VMware"로 설정해야 합니다. 가상화된 MEDITECH 호스트에서 사용되는 LUN의 경우 운영 체제 유형을 "Windows 2008 이상"으로 설정해야 합니다. MEDITECH 호스트 운영 체제가 Windows Server 2008 R2 64비트 Enterprise Edition 이기 때문에 이 설정을 사용합니다.
+
+운영 체제 유형에 대한 올바른 값을 확인하려면 에서 "LUN iGroup 생성" 및 "LUN 생성" 섹션을 참조하십시오 https://library.netapp.com/ecm/ecm_download_file/ECMP1366832["Clustered Data ONTAP 8.2 명령: 수동 페이지 참조"^].
+
+link:ehr-meditech-deploy_lun_mappings.html["다음: LUN 매핑"]

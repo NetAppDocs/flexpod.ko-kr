@@ -1,0 +1,190 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/cloud-insights_deploy_cloud_insights_for_flexpod.html 
+keywords: cloud, insights, service, vmware, vm, rhel, red, hat, enterprise, acquisition, unit, flexpod, datacenter 
+summary: Cloud Insights for FlexPod를 구축하려면 다음 작업을 완료해야 합니다. 
+---
+= FlexPod for Cloud Insights 구축
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+솔루션을 배포하려면 다음 작업을 완료해야 합니다.
+
+. Cloud Insights 서비스에 가입합니다
+. 획득 유닛으로 구성할 VMware 가상 머신(VM)을 생성합니다
+. RHEL(Red Hat Enterprise Linux) 호스트를 설치합니다
+. Cloud Insights 포털에서 획득 장치 인스턴스를 생성하고 소프트웨어를 설치합니다
+. 모니터링되는 스토리지 시스템을 FlexPod 데이터 센터에서 Cloud Insights로 추가합니다.
+
+
+
+
+== NetApp Cloud Insights 서비스에 등록
+
+NetApp Cloud Insights 서비스에 등록하려면 다음 단계를 완료하십시오.
+
+. 로 이동합니다 https://cloud.netapp.com/cloud-insights["https://cloud.netapp.com/cloud-insights"^]
+. 화면 중앙에 있는 버튼을 클릭하여 14일 무료 평가판을 시작하거나 오른쪽 위에 있는 링크를 클릭하여 기존 NetApp Cloud Central 계정에 로그인하거나 로그인할 수 있습니다.
+
+
+
+
+== VMware 가상 시스템을 생성하여 수집 단위로 구성합니다
+
+획득 장치로 구성할 VMware VM을 생성하려면 다음 단계를 수행하십시오.
+
+. 웹 브라우저를 시작하고 VMware vSphere에 로그인하여 VM을 호스팅할 클러스터를 선택합니다.
+. 해당 클러스터를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 Create a Virtual Machine을 선택합니다.
++
+image:cloud-insights_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+. 새 가상 머신 마법사에서 다음 을 클릭합니다.
+. VM 이름을 지정하고 설치할 데이터 센터를 선택한 후 다음을 클릭합니다.
+. 다음 페이지에서 VM을 설치할 클러스터, 노드 또는 리소스 그룹을 선택하고 다음 을 클릭합니다.
+. VM을 호스팅하는 공유 데이터 저장소를 선택하고 Next를 클릭합니다.
+. VM의 호환성 모드가 'ESXi 6.7 이상'으로 설정되어 있는지 확인하고 Next를 클릭합니다.
+. 게스트 OS 제품군 Linux, 게스트 OS 버전: Red Hat Enterprise Linux 7(64비트) 을 선택합니다.
++
+image:cloud-insights_image4.png["오류: 그래픽 이미지가 없습니다"]
+
+. 다음 페이지에서는 VM의 하드웨어 리소스를 사용자 지정할 수 있습니다. Cloud Insights 획득 장치는 다음 리소스가 필요합니다. 리소스를 선택한 후 다음을 클릭합니다.
++
+.. CPU 2개
+.. 8GB RAM
+.. 100GB의 하드 디스크 공간
+.. 포트 443에서 SSL 연결을 통해 FlexPod 데이터 센터 및 Cloud Insights 서버의 리소스에 연결할 수 있는 네트워크.
+.. 부팅하기 위해 선택한 Linux 배포(Red Hat Enterprise Linux)의 ISO 이미지.
++
+image:cloud-insights_image5.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. VM을 생성하려면 Ready to Complete 페이지에서 설정을 검토하고 Finish를 클릭합니다.
+
+
+
+
+== Red Hat Enterprise Linux를 설치합니다
+
+Red Hat Enterprise Linux를 설치하려면 다음 단계를 수행하십시오.
+
+. VM의 전원을 켜고 창을 클릭하여 가상 콘솔을 시작한 다음 Red Hat Enterprise Linux 7.6 설치 옵션을 선택합니다.
++
+image:cloud-insights_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+. 원하는 언어를 선택하고 계속 을 클릭합니다.
++
+다음 페이지는 설치 요약입니다. 이러한 옵션의 대부분에 대해 기본 설정을 사용할 수 있어야 합니다.
+
+. 다음 옵션을 수행하여 스토리지 레이아웃을 사용자 지정해야 합니다.
++
+.. 서버의 파티션을 사용자 지정하려면 설치 대상을 클릭합니다.
+.. VMware 가상 디스크 100GiB가 검은색 확인 표시로 선택되었는지 확인하고 I'I'I'I'I'I'DIT Configure Partitioning 라디오 버튼을 선택합니다.
++
+image:cloud-insights_image7.png["오류: 그래픽 이미지가 없습니다"]
+
+.. 완료 를 클릭합니다.
++
+파티션 테이블을 사용자 정의할 수 있는 새 메뉴가 표시됩니다. 각각 25GB를 '/opt/netapp' 및 '/var/log/netapp'에 지정합니다. 나머지 스토리지를 시스템에 자동으로 할당할 수 있습니다.
+
++
+image:cloud-insights_image8.png["오류: 그래픽 이미지가 없습니다"]
+
+.. 설치 요약으로 돌아가려면 완료를 클릭합니다.
+
+
+. 네트워크 및 호스트 이름을 클릭합니다.
++
+.. 서버의 호스트 이름을 입력합니다.
+.. 슬라이더 단추를 클릭하여 네트워크 어댑터를 켭니다. 네트워크에 DHCP(Dynamic Host Configuration Protocol)가 구성되어 있으면 IP 주소를 받게 됩니다. 그렇지 않은 경우 구성을 클릭하고 주소를 수동으로 할당합니다.
++
+image:cloud-insights_image9.png["오류: 그래픽 이미지가 없습니다"]
+
+.. . 완료 를 클릭하여 설치 요약으로 돌아갑니다.
+
+
+. 설치 요약 페이지에서 설치 시작을 클릭합니다.
+. 설치 진행률 페이지에서 루트 암호를 설정하거나 로컬 사용자 계정을 만들 수 있습니다. 설치가 완료되면 재부팅 을 클릭하여 서버를 다시 시작합니다.
++
+image:cloud-insights_image10.png["오류: 그래픽 이미지가 없습니다"]
+
+. 시스템이 재부팅된 후 서버에 로그인하여 Red Hat 서브스크립션 관리자에 등록하십시오.
++
+image:cloud-insights_image11.png["오류: 그래픽 이미지가 없습니다"]
+
+. Red Hat Enterprise Linux에 사용 가능한 서브스크립션을 첨부하십시오.
++
+image:cloud-insights_image12.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+== Cloud Insights 포털에서 획득 장치 인스턴스를 생성하고 소프트웨어를 설치합니다
+
+Cloud Insights 포털에서 획득 장치 인스턴스를 만들고 소프트웨어를 설치하려면 다음 단계를 수행하십시오.
+
+. Cloud Insights의 홈 페이지에서 왼쪽 메인 메뉴의 관리자 항목 위로 마우스를 가져가 메뉴에서 데이터 수집기 를 선택합니다.
++
+image:cloud-insights_image13.png["오류: 그래픽 이미지가 없습니다"]
+
+. Data Collector 페이지의 상단 중앙에서 획득 장치 링크를 클릭합니다.
++
+image:cloud-insights_image14.png["오류: 그래픽 이미지가 없습니다"]
+
+. 새 획득 장치를 생성하려면 오른쪽에 있는 버튼을 클릭합니다.
++
+image:cloud-insights_image15.png["오류: 그래픽 이미지가 없습니다"]
+
+. 획득 장치를 호스팅하는 데 사용할 운영 체제를 선택하고 웹 페이지에서 설치 스크립트를 복사하는 단계를 따릅니다.
++
+이 예에서는 Linux 서버로서, 호스트의 CLI에 붙여넣을 코드 조각과 토큰을 제공합니다. 웹 페이지는 획득 장치가 연결될 때까지 대기합니다.
+
++
+image:cloud-insights_image16.png["오류: 그래픽 이미지가 없습니다"]
+
+. 프로비저닝된 Red Hat Enterprise Linux 시스템의 CLI에 스니펫을 붙여 넣고 Enter 를 클릭합니다.
++
+image:cloud-insights_image17.png["오류: 그래픽 이미지가 없습니다"]
+
++
+설치 프로그램이 압축된 패키지를 다운로드하고 설치를 시작합니다. 설치가 완료되면 획득 장치가 NetApp Cloud Insights에 등록되었다는 메시지가 표시됩니다.
+
++
+image:cloud-insights_image18.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+== 모니터링되는 스토리지 시스템을 FlexPod 데이터 센터에서 Cloud Insights로 추가합니다
+
+FlexPod 구축 환경에서 ONTAP 스토리지 시스템을 추가하려면 다음 단계를 수행하십시오.
+
+. Cloud Insights 포털의 획득 장치 페이지로 돌아가서 새로 등록된 장치를 찾습니다. 장치 요약을 표시하려면 단위를 클릭합니다.
++
+image:cloud-insights_image19.png["오류: 그래픽 이미지가 없습니다"]
+
+. 스토리지 시스템을 추가하는 마법사를 시작하려면 요약 페이지에서 데이터 수집기 생성을 위한 버튼을 클릭합니다. 첫 번째 페이지에는 데이터를 수집할 수 있는 모든 시스템이 표시됩니다. 검색 표시줄을 사용하여 ONTAP를 검색합니다.
++
+image:cloud-insights_image20.png["오류: 그래픽 이미지가 없습니다"]
+
+. ONTAP 데이터 관리 소프트웨어를 선택합니다.
++
+배포 이름을 지정하고 사용할 획득 장치를 선택할 수 있는 페이지가 표시됩니다. ONTAP 시스템에 대한 연결 정보 및 자격 증명을 제공하고 연결을 테스트하여 확인할 수 있습니다.
+
++
+image:cloud-insights_image21.png["오류: 그래픽 이미지가 없습니다"]
+
+. 설정 완료 를 클릭합니다.
++
+포털은 데이터 수집기 페이지로 돌아가고 데이터 수집기는 첫 번째 폴링을 시작하여 FlexPod 데이터 센터에 있는 ONTAP 스토리지 시스템에서 데이터를 수집합니다.
+
++
+image:cloud-insights_image22.png["오류: 그래픽 이미지가 없습니다"]
+
+

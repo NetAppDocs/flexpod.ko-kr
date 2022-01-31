@@ -1,0 +1,349 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_cisco_ucs_c-series_rack_server_deployment_procedure.html 
+keywords: deployment, cisco, ucs, rack, server, iscsi, vnic 
+summary: 다음 섹션에서는 FlexPod Express 구성에 사용할 Cisco UCS C-Series 독립 실행형 랙 서버를 구성하기 위한 절차를 세부적으로 설명합니다. 
+---
+= Cisco UCS C-Series 랙 서버 구축 절차
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+다음 섹션에서는 FlexPod Express 구성에 사용할 Cisco UCS C-Series 독립 실행형 랙 서버를 구성하기 위한 절차를 세부적으로 설명합니다.
+
+
+
+== Cisco 통합 관리 서버에 대한 초기 Cisco UCS C-Series 독립 실행형 서버 설정을 수행합니다
+
+Cisco UCS C-Series 독립 실행형 서버에 대한 CIMC 인터페이스의 초기 설정을 위해 다음 단계를 완료합니다.
+
+다음 표에는 각 Cisco UCS C-Series 독립 실행형 서버에 대한 CIMC를 구성하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| CIMC IP 주소 | CIMC_IP>\< CIMC_IP>> 
+
+
+| CIMC 서브넷 마스크 | CIMC_Netmask>\<CIMC_NETMASK>> 
+
+
+| CIMC 기본 게이트웨이 | CIMC_GATELOGATE>\<<CIMC_Gateway> 
+|===
+
+NOTE: 이 검증에 사용된 CIMC 버전은 CIMC 3.1.3(g)입니다.
+
+
+
+=== 모든 서버
+
+. 서버와 함께 제공된 Cisco 키보드, 비디오 및 마우스(KVM) 동글을 서버 앞의 KVM 포트에 연결합니다. VGA 모니터와 USB 키보드의 플러그를 적절한 KVM 동글 포트에 꽂습니다.
+. 서버의 전원을 켜고 CIMC 구성을 시작할지 묻는 메시지가 표시되면 F8 키를 누릅니다.
++
+image:express-c-series-aff220-deploy_image8.png["오류: 그래픽 이미지가 없습니다"]
+
+. CIMC 구성 유틸리티에서 다음 옵션을 설정합니다.
++
+** 네트워크 인터페이스 카드(NIC) 모드:
++
+*** 전용 [X]
+
+
+** IP(기본):
++
+*** IPv4: [X]
+*** DHCP 활성화: [ ]
+*** CIMC IP:\<<CIMC_IP>>
+*** 접두사/서브넷:\< CIMC_Netmask>>
+*** 게이트웨이:\<<CIMC_Gateway>>
+
+
+** VLAN(고급): VLAN 태깅을 사용하지 않도록 설정하려면 선택되지 않은 상태로 둡니다.
++
+*** NIC 이중화
+*** 없음: [X]
++
+image:express-c-series-aff220-deploy_image9.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+. 추가 설정을 보려면 F1 키를 누릅니다.
++
+** 공통 속성:
++
+*** 호스트 이름:\< ESXi_host_name>>
+*** 동적 DNS: [ ]
+*** 공장 출하시 기본값: 선택하지 않은 상태로 둡니다.
+
+
+** 기본 사용자(기본):
++
+*** 기본 암호:\<<admin_password>>
+*** 암호 \<<admin_password>>를 다시 입력하십시오
+*** 포트 속성: 기본값을 사용합니다.
+*** 포트 프로파일: 선택하지 않은 상태로 둡니다.
++
+image:express-c-series-aff220-deploy_image10.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+. F10 키를 눌러 CIMC 인터페이스 구성을 저장합니다.
+. 구성을 저장한 후 Esc 키를 눌러 종료합니다.
+
+
+
+
+== Cisco UCS C-Series 서버 iSCSI 부팅을 구성합니다
+
+이 FlexPod Express 구성에서 VIC1387은 iSCSI 부팅에 사용됩니다.
+
+다음 표에는 iSCSI 부트를 구성하는 데 필요한 정보가 나와 있습니다.
+
+
+NOTE: 기울임꼴로 표시된 글꼴은 각 ESXi 호스트에 대해 고유한 변수를 나타냅니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| ESXi 호스트 이니시에이터에서 이름을 입력합니다 | \<<var_UCS_initiator_name_a>> 
+
+
+| ESXi 호스트 iSCSI - A IP | \<<var_esxi_host_iscsiA_ip>> 
+
+
+| ESXi 호스트 iSCSI - 네트워크 마스크입니다 | \<<var_esxi_host_iscsiA_mask>> 
+
+
+| ESXi 호스트 iSCSI 기본 게이트웨이입니다 | \<<var_esxi_host_iscsiA_gateway>> 
+
+
+| ESXi 호스트 이니시에이터 B 이름입니다 | \<<var_UCS_initiator_name_B>> 
+
+
+| ESXi 호스트 iSCSI-B IP | \<<var_esxi_host_iscsiB_ip>> 
+
+
+| ESXi 호스트 iSCSI-B 네트워크 마스크 | \<<var_esxi_host_iscsiB_mask>> 
+
+
+| ESXi 호스트 iSCSI-B 게이트웨이 | \<<var_esxi_host_iscsiB_gateway>> 
+
+
+| IP 주소 iscsi_liff 01a |  
+
+
+| IP 주소 iscsi_lif02a |  
+
+
+| IP 주소 iscsi_liff 01b |  
+
+
+| IP 주소 iscsi_liff 02b |  
+
+
+| infra_SVM IQN을 선택합니다 |  
+|===
+
+
+=== 부팅 순서 구성
+
+부팅 순서 구성을 설정하려면 다음 단계를 수행하십시오.
+
+. CIMC 인터페이스 브라우저 창에서 Server 탭을 클릭하고 BIOS를 선택합니다.
+. Configure Boot Order(부팅 순서 구성) 를 클릭한 다음 OK(확인) 를 클릭합니다.
++
+image:express-c-series-aff220-deploy_image11.png["오류: 그래픽 이미지가 없습니다"]
+
+. Add Boot Device(부팅 장치 추가) 에서 장치를 클릭하고 Advanced(고급) 탭으로 이동하여 다음 장치를 구성합니다.
++
+** 가상 미디어를 추가합니다
++
+*** 이름: kvm-cd-dvd
+*** 하위 유형: KVM 매핑된 DVD
+*** 상태: 활성화됨
+*** 순서: 1
+
+
+** iSCSI 부트를 추가합니다.
++
+*** 이름: iscsi-a
+*** 상태: 활성화됨
+*** 주문: 2
+*** 슬롯: mLOM
+*** 포트: 0
+
+
+** Add iSCSI Boot 를 클릭합니다.
++
+*** 이름: iSCSI-B
+*** 상태: 활성화됨
+*** 순서: 3
+*** 슬롯: mLOM
+*** 포트: 1
+
+
+
+
+. 장치 추가를 클릭합니다.
+. 변경 내용 저장 을 클릭한 다음 닫기 를 클릭합니다.
++
+image:express-c-series-aff220-deploy_image12.png["오류: 그래픽 이미지가 없습니다"]
+
+. 새 부팅 순서로 부팅하려면 서버를 재부팅합니다.
+
+
+
+
+=== RAID 컨트롤러 비활성화(있는 경우)
+
+C 시리즈 서버에 RAID 컨트롤러가 포함되어 있는 경우 다음 단계를 수행하십시오. SAN 구성으로 부팅할 때 RAID 컨트롤러가 필요하지 않습니다. 선택적으로 서버에서 RAID 컨트롤러를 물리적으로 제거할 수도 있습니다.
+
+. CIMC의 왼쪽 탐색 창에서 BIOS를 클릭합니다.
+. Configure BIOS 를 선택합니다.
+. PCIe 슬롯: HBA 옵션 ROM으로 아래로 스크롤합니다.
+. 이 값이 아직 비활성화되지 않은 경우 비활성화로 설정합니다.
++
+image:express-c-series-aff220-deploy_image13.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+== iSCSI 부트에 대해 Cisco VIC1387을 구성합니다
+
+다음 구성 단계는 iSCSI 부트에 대한 Cisco VIC 1387에 대한 것입니다.
+
+
+
+=== iSCSI vNIC를 생성합니다
+
+. 추가 를 클릭하여 vNIC를 생성합니다.
+. vNIC 추가 섹션에서 다음 설정을 입력합니다.
++
+** 이름: iscsi-vNIC-A
+** MTU: 9000
+** 기본 VLAN:\<<var_iscsi_vlan_a>>'입니다
+** VLAN 모드: 트렁크
+** PXE 부팅 활성화: 확인
++
+image:express-c-series-aff220-deploy_image14.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. vNIC 추가 를 클릭한 다음 확인 을 클릭합니다.
+. 이 과정을 반복하여 두 번째 vNIC를 추가합니다.
++
+.. vNIC의 이름을 iSCSI-vNIC-B로 지정합니다.
+.. VLAN으로 '\<<var_iscsi_vlan_b>>'를 입력합니다.
+.. 업링크 포트를 "1"로 설정합니다.
+
+
+. 왼쪽에서 vNIC의 iSCSI-vNIC-A를 선택합니다.
++
+image:express-c-series-aff220-deploy_image15.png["오류: 그래픽 이미지가 없습니다"]
+
+. iSCSI 부트 속성에서 이니시에이터 세부 정보를 입력합니다.
++
+** 이름:\<<var_ucsa_initiator_name_a>>
+** IP 주소:\<<var_esxi_hostA_iscsiA_ip>>
+** 서브넷 마스크:\<<var_esxi_hostA_iscsiA_mask>>
+** 게이트웨이:\<<var_esxi_hostA_iscsiA_gateway>>
++
+image:express-c-series-aff220-deploy_image16.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 기본 타겟 세부 정보를 입력합니다.
++
+** 이름: 인프라 SVM의 IQN 번호입니다
+** IP 주소: iSCSI_liff 01a IP 주소
+** 부팅 LUN: 0
+
+
+. 2차 타겟 세부 정보를 입력합니다.
++
+** 이름: 인프라 SVM의 IQN 번호입니다
+** IP address: iSCSI_liff 02a의 IP 주소입니다
+** 부팅 LUN: 0
++
+"vserver iscsi show" 명령을 실행하여 스토리지 IQN 번호를 확인할 수 있습니다.
+
++
+
+NOTE: 각 vNIC의 IQN 이름을 기록해야 합니다. 나중에 필요한 단계일 수 있습니다.
+
++
+image:express-c-series-aff220-deploy_image17.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. Configure iSCSI 를 클릭합니다.
+. vNIC의 iSCSI-vNIC-B를 선택하고 Host Ethernet Interfaces 섹션 상단에 있는 iSCSI Boot 버튼을 클릭합니다.
+. 이 과정을 반복하여 iSCSI-vNIC-B를 구성합니다.
+. 이니시에이터 세부 정보를 입력합니다.
++
+** 이름:\<<var_ucsa_initiator_name_b>>'
+** IP 주소: "\<<var_esxi_hostB_iscsib_ip>>"
+** 서브넷 마스크: "\<<var_esxi_hostB_iscsib_mask>>"
+** 게이트웨이:\<<var_esxi_hostB_iscsib_gateway>'
+
+
+. 기본 타겟 세부 정보를 입력합니다.
++
+** 이름: 인프라 SVM의 IQN 번호입니다
+** IP 주소: iSCSI_liff 01b 의 IP 주소입니다
+** 부팅 LUN: 0
+
+
+. 2차 타겟 세부 정보를 입력합니다.
++
+** 이름: 인프라 SVM의 IQN 번호입니다
+** IP 주소: iSCSI_liff 02b의 IP 주소입니다
+** 부팅 LUN: 0
++
+"vserver iscsi show" 명령을 사용하여 스토리지 IQN 번호를 가져올 수 있습니다.
+
++
+
+NOTE: 각 vNIC의 IQN 이름을 기록해야 합니다. 나중에 필요한 단계일 수 있습니다.
+
+
+
+. Configure iSCSI 를 클릭합니다.
+. 이 프로세스를 반복하여 Cisco UCS 서버 B에 대한 iSCSI 부팅을 구성합니다
+
+
+
+
+=== ESXi용 vNIC를 구성합니다
+
+. CIMC 인터페이스 브라우저 창에서 인벤토리 를 클릭한 다음 오른쪽 창에서 Cisco VIC 어댑터 를 클릭합니다.
+. 어댑터 카드 아래에서 Cisco UCS VIC 1387을 선택한 다음 아래에서 vNIC를 선택합니다.
++
+image:express-c-series-aff220-deploy_image18.png["오류: 그래픽 이미지가 없습니다"]
+
+. eth0 을 선택하고 속성 을 클릭합니다.
+. MTU를 9000으로 설정합니다. 변경 내용 저장 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image19.png["오류: 그래픽 이미지가 없습니다"]
+
+. eth1에 대해 3단계와 4단계를 반복하여 업링크 포트가 eth1에 대해 "1"로 설정되어 있는지 확인합니다.
++
+image:express-c-series-aff220-deploy_image20.png["오류: 그래픽 이미지가 없습니다"]
+
++
+
+NOTE: 이 절차는 각 초기 Cisco UCS 서버 노드 및 환경에 추가된 각 추가 Cisco UCS 서버 노드에 대해 반복해야 합니다.
+
+
+
+link:express-c-series-aff220-deploy_netapp_aff_storage_deployment_procedure_@part_2@.html["다음: NetApp AFF 스토리지 구현 절차(2부)"]

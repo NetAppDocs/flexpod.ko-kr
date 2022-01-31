@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: express/express-direct-attach-design_design_choices.html 
+keywords: FAS2750, FAS2720, AFF A220, Nexus 3000, UCS B-Series, Virtual Interface Card 1440, VIC 1480, UCS 5108, blade server, VAAI 
+summary: 이 페이지에 나열된 기술은 이 설계를 설계하는 과정에서 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다. 
+---
+= 디자인 선택
+
+
+이 설계를 설계하는 과정에서 다음과 같은 기술이 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다.
+
+
+
+== NetApp AFF A220 또는 FAS27xx 시리즈(ONTAP 9.5 포함
+
+이 솔루션은 ONTAP 9.5를 사용하는 NetApp FAS 2750 또는 FAS 2720 및 AFF A220 시스템 중 최신 NetApp 제품을 사용합니다.
+
+
+
+=== FAS2750/FAS2720 시스템
+
+NetApp FAS2700 시리즈는 더 많은 IT 요구사항을 지원하도록 설계되었으며, NetApp FAS2700 하이브리드 스토리지 어레이는 동급의 다른 시스템보다 더 많은 가치를 제공합니다. NetApp ONTAP 스토리지 소프트웨어를 실행하는 FAS2700은 고성능을 제공하고 클라우드와 최고의 통합을 제공하며 광범위한 워크로드를 지원하고 성능과 용량을 원활하게 확장함으로써 성장과 복잡성을 단순하게 관리합니다.
+
+FAS2700 하드웨어 시스템에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/products/storage-systems/hybrid-flash-array/fas2700.aspx["FAS2700 하이브리드 스토리지 시스템 제품 페이지"^].
+
+
+
+=== AFF A220 시스템
+
+중소기업 환경을 위한 새로워진 AFF A220 플랫폼은 이전 세대보다 30% 더 높은 성능을 제공하여 NetApp이 계속해서 이 부문을 선도할 수 있도록 해줍니다.
+
+NetApp AFF 시스템은 업계 최고의 성능, 탁월한 유연성, 동급 최고의 데이터 관리 및 클라우드 통합으로 기업의 스토리지 요구 사항을 충족시킵니다. 업계 최초의 엔드 투 엔드 NVMe 기술 및 NetApp ONTAP 데이터 관리 소프트웨어와 결합된 AFF 시스템은 비즈니스 크리티컬 데이터를 가속화하고, 관리하고, 보호합니다. AFF 시스템을 사용하면 플래시로 쉽고 안전하게 전환하여 디지털 혁신을 실현할 수 있습니다.
+
+image:express-direct-attach-design_image4.png["오류: 그래픽 이미지가 없습니다"]
+
+AFF A220 하드웨어 시스템에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/ds-3582.pdf["NetApp AFF 데이터시트 를 참조하십시오"^].
+
+
+
+== ONTAP 9.5
+
+새로운 NetApp ONTAP 9.5 소프트웨어는 데이터 센터에서 클라우드로 데이터를 원활하게 관리하는 것을 목표로 여러 가지 중요한 개선 기능을 제공합니다.
+
+ONTAP 9.5를 사용하면 하이브리드 클라우드를 사내에서 클라우드까지 포괄하여 Data Fabric의 기반으로 사용할 수 있습니다.
+
+ONTAP 9.5에는 FlexPod Express 솔루션에 적합한 여러 기능이 있습니다. 가장 중요한 점은 스토리지 효율성을 위해 NetApp이 노력하고 있다는 것입니다. 이러한 노력은 소규모 구축에 있어서 가장 중요한 기능 중 하나일 수 있습니다. 중복제거, 압축, 컴팩션, 씬 프로비저닝과 같은 NetApp 스토리지 효율성 기능의 특징은 ONTAP 9.5에서 NetApp Memory Accelerated Data, NVMe 지원을 새롭게 추가하면서 확인할 수 있습니다. NetApp WAFL 시스템은 항상 4KB 블록을 쓰기 때문에 컴팩션은 블록이 4KB의 할당된 공간을 사용하지 않을 때 여러 블록을 4KB 블록으로 결합합니다.
+
+이러한 기능은 FlexPod 익스프레스 솔루션을 보완하는 몇 가지 핵심 기능일 뿐입니다. ONTAP 9.5의 추가 기능에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/ds-3231.pdf["ONTAP 9 데이터 관리 소프트웨어 데이터시트입니다"^].
+
+ONTAP 9.5에 대한 자세한 내용은 NetApp을 참조하십시오 http://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 문서 센터"^]ONTAP 9.5를 포함하도록 업데이트되었습니다.
+
+
+
+== Cisco Nexus 3000 시리즈
+
+다음 그림에 표시된 Cisco Nexus 31108PC-V는 1/10/40/100Gbps 스위칭을 제공하는 강력하고 비용 효율적인 스위치입니다. 48개의 1/1Gbps 포트 및 40/100Gbps 업링크를 제공하여 유연성을 지원합니다.
+
+다양한 Cisco Nexus 시리즈 모델이 동일한 기본 운영 체제인 NX-OS를 실행하므로 FlexPod Express 및 FlexPod Datacenter 솔루션에서 여러 Cisco Nexus 모델이 지원됩니다.
+
+image:express-direct-attach-design_image5.jpeg["오류: 그래픽 이미지가 없습니다"]
+
+Cisco Nexus 31108은 VLAN(가상 LAN), IEEE 802.1Q 트렁킹 및 LACP(Link Aggregation Control Protocol)를 포함하는 포괄적인 계층 2 기능 세트를 제공합니다. 시스템에 라이센스를 추가하여 추가적인 Layer-3 기능을 사용할 수 있습니다.
+
+Cisco Nexus 3000 시리즈에 대한 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/products/switches/nexus-31108pc-v-switch/index.html["Cisco Nexus 31108PC-V 스위치 제품 정보"^].
+
+
+
+== Cisco UCS B-Series 를 참조하십시오
+
+Cisco UCS 5108 블레이드 서버 섀시는 블레이드 기반 시스템의 사용 및 구축을 혁신합니다. 통합 https://www.cisco.com/c/en/us/products/switches/data-center-switches/index.html["통합 패브릭"^] 또한 패브릭 익스텐더 기술을 갖춘 Cisco Unified Computing System을 사용하면 다음과 같은 이점을 얻을 수 있습니다.
+
+* 더 적은 수의 물리적 구성 요소를 포함합니다
+* 독립적인 관리가 필요하지 않습니다
+* 기존 블레이드 서버 섀시보다 에너지 효율성이 향상됩니다
+
+
+이러한 단순성으로 전용 섀시 관리 및 블레이드 스위치가 필요 없으며 케이블 연결이 줄어들며 복잡성을 가중시키지 않으면서 20개의 섀시로 확장할 수 있습니다. Cisco UCS 5108 블레이드 서버 섀시는 Cisco Unified Computing System의 일부로서 데이터 센터의 단순성과 IT 응답 속도를 제공하는 데 중요한 구성 요소입니다.
+
+다음 그림에 표시된 Cisco UCS B-Series B200M5 서버는 FlexPod Express에 맞게 선택된 이유는 다양한 구성 옵션을 활용하여 FlexPod Express 구축의 특정 요구사항을 충족할 수 있기 때문입니다.
+
+image:express-direct-attach-design_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+엔터프라이즈급 Cisco UCS B200 M5 블레이드 서버는 절반 너비 블레이드 폼 팩터에서 Cisco UCS 포트폴리오의 기능을 확장합니다. Cisco UCS B200 M5 블레이드 서버는 최대 3072GB RAM(128GB DIMM 사용), SSD(Solid State Drive) 또는 HDD 2개, 최대 80Gbps 처리량 연결을 갖춘 최신 인텔 제온 프로세서 확장형 제품군 CPU의 강력한 성능을 활용합니다.
+
+Cisco UCS B200 M5 블레이드 서버에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/b200m5-specsheet.pdf["Cisco UCS B200 M5 블레이드 서버 사양서"^].
+
+
+
+== Cisco UCS 가상 인터페이스 카드 1440/1480
+
+Cisco UCS VIC 1440은 듀얼 포트 40Gbps 또는 듀얼 4x10Gbps 이더넷/FCoE 지원 모듈식 LAN on Motherboard(mLOM)로, M5 세대의 Cisco UCS B-Series 블레이드 서버용으로 특별히 설계되었습니다. 옵션 포트 확장기와 함께 사용할 경우 2개의 40Gbps 이더넷 포트에 대해 Cisco UCS VIC 1440 기능이 활성화됩니다. Cisco UCS VIC 1440은 NIC 또는 HBA로 동적으로 구성할 수 있는 호스트 PCIe 표준 준수 인터페이스에 제공할 수 있는 정책 기반의 상태 비저장, 민첩한 서버 인프라를 지원합니다.
+
+다음 그림에 표시된 Cisco UCS VIC 1480은 메자닌 카드라는 점을 제외하면 VIC 1440과 비슷합니다.
+
+image:express-direct-attach-design_image7.jpeg["오류: 그래픽 이미지가 없습니다"]
+
+Cisco VIC 1440/1480에 대한 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/unified-computing-system-adapters/datasheet-c78-741130.html["Cisco UCS 가상 인터페이스 카드 1400 시리즈 데이터 시트"^].
+
+
+
+== VMware vSphere 6.7U1
+
+VMware vSphere 6.7U1은 FlexPod Express에 사용되는 하나의 하이퍼바이저 옵션입니다. VMware vSphere를 사용하면 구입한 컴퓨팅 용량을 최대한 활용하는 동시에 전력 및 냉각 설치 공간을 줄일 수 있습니다. 또한 VMware vSphere를 사용하면 vSphere 호스트 클러스터(VMware Distributed Resource Scheduler 또는 VMware DRS)에서 하드웨어 장애 보호(VMware High Availability 또는 VMware HA)와 컴퓨팅 리소스 로드 밸런싱을 수행할 수 있습니다.
+
+VMware vSphere 6.7U1에는 최신 VMware 혁신 기술이 적용되어 있습니다. 이 설계에 사용되는 VCSA(VMware vCenter Server Appliance)는 VMware vSphere Update Manager 통합과 같은 새로운 기능을 추가합니다. 또한 VCSA는 처음으로 기본 vCenter 고가용성을 제공합니다. 호스트에 클러스터링 기능을 추가하고 VMware HA 및 VMware DRS와 같은 기능을 사용하려면 VMware vCenter Server가 필요합니다.
+
+VMware vSphere 6.7U1에는 몇 가지 향상된 핵심 기능이 있습니다. VMware HA는 처음부터 조정된 재시작 기능을 도입하므로 HA 이벤트가 발생할 경우 가상 시스템이 올바른 순서로 다시 시작됩니다. 또한 vSphere 내에서 컴퓨팅 리소스를 보다 세부적으로 제어할 수 있도록 DRS 알고리즘이 개선되었습니다.
+
+vSphere Web Client는 VMware vSphere 환경에 적합한 관리 툴입니다. vSphere Web Client에서는 홈 화면의 재구성 등 몇 가지 사용자 개선 사항이 개선되었습니다. 예를 들어, 이제 로그인 시 인벤토리 트리가 기본 보기가 됩니다.
+
+VMware vSphere에 대한 자세한 내용은 를 참조하십시오 http://www.vmware.com/products/vsphere.html["vSphere: 하이브리드 클라우드를 위한 효율적이고 안전한 플랫폼입니다"^].
+
+VMware vSphere 6.7U1의 새로운 기능에 대한 자세한 내용은 을 참조하십시오 https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/products/vsphere/vmware-whats-new-in-vsphere-whitepaper.pdf["VMware vSphere 6.7의 새로운 기능"^]
+
+VMware HCL이 지원되는 ONTAP 9.5의 경우 를 참조하십시오 https://www.vmware.com/resources/compatibility/search.php["VMware 호환성 가이드 를 참조하십시오"^].
+
+
+
+=== VMware vSphere 및 NetApp 통합
+
+VMware vSphere와 NetApp의 주요 통합 지점은 2개입니다. 첫 번째는 NetApp 가상 스토리지 콘솔(VSC)입니다. Virtual Storage Console은 VMware vCenter용 플러그인입니다. 가상화 관리자는 이 플러그인을 사용하여 친숙한 vCenter 관리 인터페이스에서 스토리지를 관리할 수 있습니다. 몇 번의 클릭만으로 VMware 데이터 저장소를 여러 호스트에 구축할 수 있습니다. 이와 같이 긴밀하게 결합된 통합은 관리 시간이 중요한 지사 및 소규모 조직의 핵심 요소입니다.
+
+두 번째 통합은 VMware VAAI용 NetApp NFS 플러그인입니다. VAAI는 블록 프로토콜에서 기본적으로 지원되지만, 모든 스토리지 어레이에는 NFS용 VAAI 통합을 제공하기 위한 VAAI 플러그인이 필요합니다. 일부 NFS VAAI 통합에는 공간 예약 및 복사본 오프로드가 포함됩니다. VAAI 플러그인은 VSC를 사용하여 설치할 수 있습니다.
+
+NetApp VSC for VMware vSphere에 대한 자세한 내용은 를 참조하십시오 http://www.netapp.com/us/products/management-software/vsc/index.aspx["NetApp 가상 인프라 관리 제품 페이지 를 참조하십시오"^].
+
+link:express-direct-attach-design_solution_verification.html["다음: 솔루션 검증."]

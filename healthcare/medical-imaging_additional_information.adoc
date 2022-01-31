@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: healthcare/medical-imaging_additional_information.html 
+keywords: additional, information, flexpod, medical, imaging 
+summary: 이 문서에 설명된 정보에 대해 자세히 알아보려면 다음 문서 및 웹 사이트를 검토하십시오. 
+---
+= 추가 정보
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 및 웹 사이트를 참조하십시오.
+
+* 딥 러닝 설계 가이드용 Cisco UCS 480mL가 포함된 AI/ML용 FlexPod 데이터 센터
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html"^]
+
+* VMware vSphere 6.7 U1, Cisco UCS 4세대 및 NetApp AFF A-Series를 지원하는 FlexPod 데이터 센터 인프라
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html"^]
+
+* FlexPod 데이터 센터 SnapCenter를 사용한 Oracle 데이터베이스 백업 솔루션 개요
++
+https://www.netapp.com/us/media/sb-3999.pdf["https://www.netapp.com/us/media/sb-3999.pdf"^]
+
+* Cisco UCS 및 NetApp AFF A-Series에서 Oracle RAC 데이터베이스가 지원되는 FlexPod 데이터 센터
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_orc12cr2_affaseries.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_orc12cr2_affaseries.html"^]
+
+* Oracle Linux 기반 Oracle RAC 지원 FlexPod 데이터 센터
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_orcrac_12c_bm.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_orcrac_12c_bm.html"^]
+
+* Microsoft SQL Server용 FlexPod
++
+https://flexpod.com/solutions/use-cases/microsoft-sql-server/["https://flexpod.com/solutions/use-cases/microsoft-sql-server/"^]
+
+* Cisco와 NetApp의 FlexPod
++
+https://flexpod.com/["https://flexpod.com/"^]
+
+* https://fieldportal.netapp.com/content/734702["MongoDB용 NetApp 솔루션"^] 솔루션 개요(NetApp 로그인 필요)
++
+https://fieldportal.netapp.com/content/734702["https://fieldportal.netapp.com/content/734702"^]
+
+* TR-4700: Oracle 데이터베이스용 SnapCenter 플러그인
++
+https://www.netapp.com/us/media/tr-4700.pdf["https://www.netapp.com/us/media/tr-4700.pdf"^]
+
+* NetApp 제품 설명서
++
+https://www.netapp.com/us/documentation/index.aspx["https://www.netapp.com/us/documentation/index.aspx"^]
+
+* 가상 데스크톱 인프라(VDI) 솔루션을 위한 FlexPod
++
+https://flexpod.com/solutions/use-cases/virtual-desktop-infrastructure/["https://flexpod.com/solutions/use-cases/virtual-desktop-infrastructure/"^]
+
+

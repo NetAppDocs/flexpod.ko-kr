@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_netapp_components.html 
+keywords: storage, controllers, cluster, interconnect, switches, drives, disk, shelves, licensing, options 
+summary: NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데이터 스토리지 모두를 위한 FlexPod 아키텍처의 스토리지 기반을 제공합니다. NetApp의 구성 요소에는 스토리지 컨트롤러, 클러스터 인터커넥트 스위치, 드라이브 및 디스크 쉘프, 라이센스 옵션이 있습니다. 
+---
+= NetApp 구성 요소
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데이터 스토리지 모두를 위한 FlexPod 아키텍처의 스토리지 기반을 제공합니다. NetApp의 구성 요소에는 스토리지 컨트롤러, 클러스터 인터커넥트 스위치, 드라이브 및 디스크 쉘프, 라이센스 옵션이 있습니다.
+
+
+
+== NetApp 스토리지 컨트롤러 옵션
+
+FlexPod 아키텍처에는 중복 NetApp FAS, AFF 또는 AFF ASA 컨트롤러가 필요합니다. 컨트롤러는 ONTAP 소프트웨어를 실행합니다. 스토리지 컨트롤러를 주문할 경우 컨트롤러에 기본 소프트웨어 버전이 사전 로드될 수 있습니다. ONTAP의 경우 전체 클러스터를 주문합니다. 완벽한 클러스터에는 스토리지 컨트롤러 쌍과 클러스터 인터커넥트(스위치 또는 스위치 없음)가 포함됩니다.
+
+선택한 스토리지 플랫폼에 따라 다양한 옵션과 구성을 사용할 수 있습니다. 이러한 추가 구성 요소에 대한 자세한 내용은 영업 담당자에게 문의하십시오.
+
+아래 표에 나열된 컨트롤러 제품군은 Cisco Nexus 스위치에 대한 연결이 원활하므로 FlexPod 데이터 센터 솔루션에 사용하기에 적합합니다. 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] 각 컨트롤러 모델에 대한 자세한 호환성 정보
+
+|===
+| 스토리지 컨트롤러 제품군 | 기술 사양 
+
+
+| AFF A 시리즈 | https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62247["AFF A 시리즈 문서"] 
+
+
+| AFF ASA A 시리즈 | https://www.netapp.com/data-storage/san-storage-area-network/documentation/["AFF ASA A 시리즈 문서"] 
+
+
+| FAS 시리즈 | https://mysupport.netapp.com/documentation/productsatoz/index.html#F["FAS 시리즈 문서"] 
+|===
+
+
+== 클러스터 인터커넥트 스위치 옵션
+
+다음 표에는 FlexPod 아키텍처에 사용할 수 있는 Nexus 클러스터 인터커넥트 스위치가 나와 있습니다. 또한 FlexPod는 구축 중인 ONTAP 버전과 호환되는 비 Cisco 스위치를 포함하여 ONTAP에서 지원하는 모든 클러스터 스위치를 지원합니다. 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] 특정 스위치 모델에 대한 추가 호환성 세부 정보를 확인하십시오.
+
+|===
+
+
+| 클러스터 인터커넥트 스위치 | 기술 사양 
+
+
+| Cisco Nexus 3132Q-V | https://mysupport.netapp.com/documentation/docweb/index.html?productID=62377&language=en-US["NetApp 설명서: Cisco Nexus 3132Q-V 스위치"] 
+
+
+| Cisco Nexus 9336C-FX2 | https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336/9336-overview.html["NetApp 설명서: Cisco Nexus 9336C-FX2 스위치"] 
+|===
+
+
+== NetApp 디스크 쉘프 및 드라이브 옵션
+
+모든 스토리지 컨트롤러에 NetApp 디스크 쉘프가 하나 이상 필요합니다.
+
+선택한 NetApp 쉘프 유형에 따라 해당 쉘프 내에서 사용 가능한 드라이브 유형이 결정됩니다.
+
+
+NOTE: 모든 디스크 쉘프와 디스크 부품 번호는 세일즈 담당자에게 문의하십시오.
+
+지원되는 드라이브에 대한 자세한 내용을 보려면 다음 표에서 NetApp Hardware Universe 링크를 클릭한 다음 지원되는 드라이브 를 선택합니다.
+
+|===
+| 디스크 쉘프 | 기술 사양 
+
+
+| DS224C .4+| http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["NetApp Hardware Universe의 디스크 쉘프 및 스토리지 미디어 지원 드라이브"] 
+
+
+| DS212C 
+
+
+| DS460C 
+
+
+| NS224 
+|===
+
+
+== NetApp 소프트웨어 라이센스 옵션
+
+다음 표에는 FlexPod 데이터 센터 아키텍처에 사용할 수 있는 NetApp 소프트웨어 라이센스 옵션이 나와 있습니다. NetApp 소프트웨어는 FAS 및 AFF 컨트롤러 레벨에서 라이센스가 부여됩니다.
+
+|===
+| NetApp 소프트웨어 라이센스 | 부품 번호 | 기술 사양 
+
+
+| SW, 전체 BNDL(컨트롤러), -C | SW-8XXX-COMP-BNDL-C .2+| http://mysupport.netapp.com/documentation/productsatoz/index.html["제품 라이브러리 A – Z"] 
+
+
+| SW, ONTAP Essentials(컨트롤러), -C | SW-8XXX-ONTAP9-C 
+|===
+
+
+== NetApp은 라이센스 옵션을 지원합니다
+
+SupportEdge Premium 아키텍처에는 NetApp FlexPod 라이센스가 필요하지만, 라이센스에 대한 부품 번호는 FlexPod 설계에서 선택하는 옵션에 따라 달라집니다. 예를 들어, 소프트웨어 라이센스 부품 번호는 선택한 FAS 컨트롤러에 따라 다릅니다. 개별 지원 라이센스에 대한 정확한 부품 번호에 대한 자세한 내용은 영업 담당자에게 문의하십시오. 아래 표에는 SupportEdge 라이센스의 예가 나와 있습니다.
+
+|===
+| NetApp은 라이센스를 제공합니다 | 부품 번호 | 기술 사양 
+
+
+| SupportEdge Premium 4시간 현장 - 개월:36 | CS-O2-4시간 | https://www.netapp.com/us/media/supportedge-premium-product-description.pdf["NetApp SupportEdge Premium를 참조하십시오"] 
+|===

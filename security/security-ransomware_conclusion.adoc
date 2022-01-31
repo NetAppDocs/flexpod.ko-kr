@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: security/security-ransomware_conclusion.html 
+keywords: ransomware, attack, data, backup, recovery, business, planning 
+summary: 저자는 공격 발생 시 대가를 지불하지 않는 것이 좋습니다. 공격자가 자신의 비즈니스 모델에 대한 믿음을 강화하기 때문입니다. 데이터 백업 및 복원 작업은 랜섬웨어 복구의 중요한 부분입니다. 따라서 비즈니스 계획의 필수 요소로 포함되어야 합니다. 
+---
+= 결론
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+랜섬웨어는 조직 범죄의 산물이며 공격자는 윤리적으로 행동하지 않습니다. 이들은 돈을 받은 후에도 암호 해독 키를 제공하지 않을 수 있습니다. 피해자는 데이터를 잃을 뿐만 아니라 상당한 금액의 돈까지 잃게 되고 운영 데이터의 손실로 인한 결과에 직면하게 됩니다.
+
+에 따르면 https://www.forbes.com/sites/leemathews/2018/03/09/why-you-should-never-pay-a-ransomware-ransom/["Forbes 기사를 참조하십시오"^]랜섬웨어 피해자 중 오직 19%만 대가를 지불한 후 데이터를 돌려받습니다. 따라서 공격자는 공격 시 대가를 지불하지 않는 것이 좋습니다. 대가를 지불하면 비즈니스 모델에 대한 믿음을 강화할 수 있기 때문입니다.
+
+데이터 백업 및 복원 작업은 랜섬웨어 복구의 중요한 부분입니다. 따라서 비즈니스 계획의 필수 요소로 포함되어야 합니다. 이러한 작업의 구현 예산을 책정하여 공격 발생 시 복구 기능에 영향을 주지 않도록 해야 합니다.
+
+중요한 것은 이 과정에서 올바른 기술 파트너를 선택하는 것입니다. FlexPod은 기본적으로 All-Flash FAS 시스템에서 추가 비용 없이 필요한 기능을 대부분 제공합니다.

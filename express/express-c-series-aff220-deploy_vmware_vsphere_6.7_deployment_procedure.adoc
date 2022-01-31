@@ -1,0 +1,469 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_vmware_vsphere_6.7_deployment_procedure.html 
+keywords: vmware, vsphere, hosts, esxi, iscsi, cimc, cisco 
+summary: 이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7을 설치하는 절차를 자세히 설명합니다. 
+---
+= VMware vSphere 6.7 구축 절차
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7을 설치하는 절차를 자세히 설명합니다. 다음 구현 절차는 이전 섹션에서 설명한 환경 변수를 포함하도록 커스터마이징되었습니다.
+
+이러한 환경에 VMware ESXi를 설치하는 방법은 여러 가지가 있습니다. 이 절차에서는 Cisco UCS C-Series 서버용 CIMC 인터페이스의 가상 KVM 콘솔과 가상 미디어 기능을 사용하여 원격 설치 미디어를 각 개별 서버에 매핑합니다.
+
+
+NOTE: 이 절차는 Cisco UCS 서버 A 및 Cisco UCS 서버 B에 대해 완료되어야 합니다
+
+클러스터에 추가된 노드에 대해 이 절차를 완료해야 합니다.
+
+
+
+== Cisco UCS C-Series 독립 실행형 서버에 대한 CIMC 인터페이스에 로그인합니다
+
+다음 단계에서는 Cisco UCS C-Series 독립 실행형 서버의 CIMC 인터페이스에 로그인하는 방법을 자세히 설명합니다. CIMC 인터페이스에 로그인하여 가상 KVM을 실행해야 관리자가 원격 미디어를 통해 운영 체제 설치를 시작할 수 있습니다.
+
+
+
+=== 모든 호스트
+
+. 웹 브라우저로 이동하고 Cisco UCS C-Series의 CIMC 인터페이스에 대한 IP 주소를 입력합니다. 이 단계에서는 CIMC GUI 애플리케이션이 시작됩니다.
+. 관리자의 사용자 이름과 자격 증명을 사용하여 CIMC UI에 로그인합니다.
+. 주 메뉴에서 서버 탭을 선택합니다.
+. Launch KVM Console을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image21.png["오류: 그래픽 이미지가 없습니다"]
+
+. 가상 KVM 콘솔에서 Virtual Media 탭을 선택합니다.
+. CD/DVD 매핑 을 선택합니다.
++
+
+NOTE: 먼저 가상 디바이스 활성화 를 클릭해야 할 수도 있습니다. 메시지가 표시되면 이 세션 수락 을 선택합니다.
+
+. VMware ESXi 6.7 설치 관리자 ISO 이미지 파일을 찾아 이동하고 Open을 클릭합니다. 장치 매핑 을 클릭합니다.
+. Power 메뉴를 선택하고 Power Cycle System (Cold Boot) 을 선택합니다. 예 를 클릭합니다.
+
+
+
+
+== VMware ESXi를 설치합니다
+
+다음 단계에서는 각 호스트에 VMware ESXi를 설치하는 방법을 설명합니다.
+
+
+
+=== ESXi 6.7 Cisco 사용자 지정 이미지를 다운로드합니다
+
+. 로 이동합니다 https://my.vmware.com/web/vmware/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_7["VMware vSphere 다운로드 페이지"^] 사용자 정의 ISO의 경우.
+. Cisco Custom Image for ESXi 6.7 GA Install CD(ESXi 6.7 GA 설치 CD용 Cisco 사용자 지정 이미지) 옆의 Go to Downloads(다운로드로 이동) 를 클릭합니다.
+. ESXi 6.7 GA 설치 CD(ISO)용 Cisco Custom Image를 다운로드합니다.
+
+
+
+
+=== 모든 호스트
+
+. 시스템이 부팅되면 VMware ESXi 설치 미디어의 존재 여부가 자동으로 감지됩니다.
+. 나타나는 메뉴에서 VMware ESXi 설치 프로그램을 선택합니다.
++
+설치 프로그램이 로드됩니다. 이 작업은 몇 분 정도 걸립니다.
+
+. 설치 프로그램 로드가 완료된 후 Enter 키를 눌러 설치를 계속합니다.
+. 최종 사용자 사용권 계약을 읽은 후 동의하고 F11 키를 눌러 설치를 계속합니다.
+. 이전에 ESXi용 설치 디스크로 설정된 NetApp LUN을 선택하고 Enter 키를 눌러 설치를 계속합니다.
++
+image:express-c-series-aff220-deploy_image22.png["오류: 그래픽 이미지가 없습니다"]
+
+. 적절한 자판 배열을 선택하고 Enter 키를 누릅니다.
+. 루트 암호를 입력 및 확인하고 Enter 키를 누릅니다.
+. 볼륨에서 기존 파티션이 제거된다는 경고 메시지가 표시됩니다. F11 키를 눌러 설치를 계속합니다. ESXi 설치 후 서버가 재부팅됩니다.
+
+
+
+
+== VMware ESXi 호스트 관리 네트워킹을 설정합니다
+
+다음 단계에서는 각 VMware ESXi 호스트의 관리 네트워크를 추가하는 방법을 설명합니다.
+
+
+
+=== 모든 호스트
+
+. 서버 재부팅이 완료된 후 F2 키를 눌러 시스템 커스터마이징 옵션을 시작합니다.
+. root라는 로그인 이름과 이전에 설치 과정에서 입력한 루트 암호를 사용하여 로그인합니다.
+. Configure Management Network 옵션을 선택합니다.
+. Network Adapters 를 선택하고 Enter 키를 누릅니다.
+. vSwitch0에 대해 원하는 포트를 선택합니다. Enter 키를 누릅니다.
++
+
+NOTE: CIMC의 eth0 및 eth1에 해당하는 포트를 선택합니다.
+
++
+image:express-c-series-aff220-deploy_image23.png["오류: 그래픽 이미지가 없습니다"]
+
+. VLAN (optional)을 선택하고 Enter 키를 누릅니다.
+. VLAN ID '\<<mgmt_vlan_id>>'를 입력합니다. Enter 키를 누릅니다.
+. Configure Management Network 메뉴에서 IPv4 Configuration을 선택하여 관리 인터페이스의 IP 주소를 구성합니다. Enter 키를 누릅니다.
+. 화살표 키를 사용하여 Set Static IPv4 address(정적 IPv4 주소 설정) 를 강조 표시하고 스페이스바를 사용하여 이 옵션을 선택합니다.
+. VMware ESXi 호스트 "\< ESXi_host_mgmt_ip>>"를 관리하기 위한 IP 주소를 입력합니다.
+. VMware ESXi 호스트 "\< ESXi_host_mgmt_netmask>>의 서브넷 마스크를 입력합니다
+. VMware ESXi 호스트 '\< ESXi_host_mgmt_gateway>'의 기본 게이트웨이를 입력합니다.
+. Enter 키를 눌러 IP 구성의 변경 사항을 적용합니다.
+. IPv6 구성 메뉴로 들어갑니다.
+. 스페이스바를 사용하여 IPv6 사용(재시작 필요) 옵션을 선택 취소하여 IPv6을 사용하지 않도록 설정합니다. Enter 키를 누릅니다.
+. DNS 설정을 구성하는 메뉴로 들어갑니다.
+. IP 주소는 수동으로 할당되므로 DNS 정보도 수동으로 입력해야 합니다.
+. Primary DNS 서버의 IP 주소를 입력합니다<<nameserver_ip>>".
+. (선택 사항) 보조 DNS 서버의 IP 주소를 입력합니다.
+. VMware ESXi 호스트 이름:'에 대한 FQDN을 입력합니다<<esxi_host_fqdn>>".
+. Enter 키를 눌러 DNS 구성의 변경 사항을 적용합니다.
+. Esc 키를 눌러 Configure Management Network 하위 메뉴를 종료합니다.
+. Y 를 눌러 변경 사항을 확인하고 서버를 재부팅합니다.
+. Esc 키를 눌러 VMware 콘솔에서 로그아웃합니다.
+
+
+
+
+== ESXi 호스트를 구성합니다
+
+각 ESXi 호스트를 구성하려면 다음 표의 정보가 필요합니다.
+
+|===
+| 세부 정보 | 값 
+
+
+| ESXi 호스트 이름입니다 |  
+
+
+| ESXi 호스트 관리 IP입니다 |  
+
+
+| ESXi 호스트 관리 마스크입니다 |  
+
+
+| ESXi 호스트 관리 게이트웨이 |  
+
+
+| ESXi 호스트 NFS IP입니다 |  
+
+
+| ESXi 호스트 NFS 마스크입니다 |  
+
+
+| ESXi 호스트 NFS 게이트웨이 |  
+
+
+| ESXi 호스트 vMotion IP입니다 |  
+
+
+| ESXi 호스트 vMotion 마스크 |  
+
+
+| ESXi 호스트 vMotion 게이트웨이 |  
+
+
+| ESXi 호스트 iSCSI - A IP |  
+
+
+| ESXi 호스트 iSCSI - 마스크 |  
+
+
+| ESXi 호스트 iSCSI - 게이트웨이 |  
+
+
+| ESXi 호스트 iSCSI-B IP |  
+
+
+| ESXi 호스트 iSCSI-B 마스크 |  
+
+
+| ESXi 호스트 iSCSI-B 게이트웨이 |  
+|===
+
+
+=== ESXi 호스트에 로그인합니다
+
+. 웹 브라우저에서 호스트의 관리 IP 주소를 엽니다.
+. 설치 프로세스 중에 지정한 암호 및 루트 계정을 사용하여 ESXi 호스트에 로그인합니다.
+. VMware 사용자 환경 개선 프로그램에 대한 설명을 읽어 보십시오. 적절한 응답을 선택한 후 OK(확인) 를 클릭합니다.
+
+
+
+
+=== iSCSI 부트를 구성합니다
+
+. 왼쪽에서 네트워킹 을 선택합니다.
+. 오른쪽에서 Virtual Switches 탭을 선택합니다.
++
+image:express-c-series-aff220-deploy_image24.png["오류: 그래픽 이미지가 없습니다"]
+
+. iSciBootvSwitch 를 클릭합니다.
+. 설정 편집 을 선택합니다.
+. MTU를 9000으로 변경하고 저장 을 클릭합니다.
+. 가상 스위치 탭으로 돌아가려면 왼쪽 탐색 창에서 네트워킹 을 클릭합니다.
+. 표준 가상 스위치 추가를 클릭합니다.
+. vSwitch 이름에 iSciBootvSwitch-B라는 이름을 입력합니다.
++
+** MTU를 9000으로 설정합니다.
+** 업링크 1 옵션에서 vmnic3을 선택합니다.
+** 추가 를 클릭합니다.
++
+
+NOTE: 이 구성에서는 Vmnic2 및 vmnic3이 iSCSI 부팅에 사용됩니다. ESXi 호스트에 추가 NIC가 있는 경우 vmnic 번호가 다를 수 있습니다. iSCSI 부트에 사용되는 NIC를 확인하려면 CIMC의 iSCSI vNIC의 MAC 주소를 ESXi의 vmnics와 일치시킵니다.
+
+
+
+. 가운데 창에서 VMkernel NIC 탭을 선택합니다.
+. Add VMkernel NIC 를 선택합니다.
++
+** iScosibootPG-B의 포트 그룹 이름을 새로 지정합니다.
+** 가상 스위치에 대해 iSciBootvSwitch-B를 선택합니다.
+** VLAN ID에 '\<<iscsib_vlan_id>>'를 입력합니다.
+** MTU를 9000으로 변경합니다.
+** IPv4 설정 을 확장합니다.
+** 정적 설정을 선택합니다.
+** Address 에 "\<<var_hosta_iscsib_ip>>"를 입력합니다.
+** 서브넷 마스크에 '\<<var_hosta_iscsib_mask>>'를 입력합니다.
+** 생성 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image25.png["오류: 그래픽 이미지가 없습니다"]
+
++
+
+NOTE: iSciBootPG-A에서 MTU를 9000으로 설정합니다
+
+
+
+
+
+
+
+=== iSCSI 다중 경로를 구성합니다
+
+ESXi 호스트에 iSCSI 다중 경로를 설정하려면 다음 단계를 수행하십시오.
+
+. 왼쪽 탐색 창에서 스토리지 를 선택합니다. 어댑터를 클릭합니다.
+. iSCSI 소프트웨어 어댑터를 선택하고 iSCSI 구성 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image26.png["오류: 그래픽 이미지가 없습니다"]
+
+. 동적 대상에서 동적 대상 추가를 클릭합니다.
++
+image:express-c-series-aff220-deploy_image27.png["오류: 그래픽 이미지가 없습니다"]
+
+. IP 주소 'iscsi_lif01a'를 입력합니다.
++
+** IP 주소 iscsi_liff 01b, iscsi_liff 02a, iscsi_liff 02b와 함께 이 과정을 반복합니다.
+** 구성 저장 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image28.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+
+NOTE: NetApp 클러스터에서 'network interface show' 명령을 실행하거나 OnCommand System Manager에서 네트워크 인터페이스 탭을 확인하여 iSCSI LIF IP 주소를 찾을 수 있습니다.
+
+
+
+=== ESXi 호스트를 구성합니다
+
+. 왼쪽 탐색 창에서 네트워킹 을 선택합니다.
+. vSwitch0을 선택합니다.
++
+image:express-c-series-aff220-deploy_image29.png["오류: 그래픽 이미지가 없습니다"]
+
+. 설정 편집 을 선택합니다.
+. MTU를 9000으로 변경합니다.
+. NIC 티밍을 확장하고 vmnic0 및 vmnic1이 모두 활성으로 설정되어 있는지 확인합니다.
+
+
+
+
+=== 포트 그룹 및 VMkernel NIC를 구성합니다
+
+. 왼쪽 탐색 창에서 네트워킹 을 선택합니다.
+. 포트 그룹 탭을 마우스 오른쪽 단추로 클릭합니다.
++
+image:express-c-series-aff220-deploy_image30.png["오류: 그래픽 이미지가 없습니다"]
+
+. VM Network를 마우스 오른쪽 버튼으로 클릭하고 Edit를 선택합니다. VLAN ID를 '\<<var_vm_traffic_vlan>>'로 변경합니다.
+. 포트 그룹 추가 를 클릭합니다.
++
+** 포트 그룹의 이름을 MGMT-Network로 지정합니다.
+** VLAN ID에 '\<<mgmt_vlan>>'를 입력합니다.
+** vSwitch0이 선택되어 있는지 확인합니다.
+** 추가 를 클릭합니다.
+
+
+. VMkernel NIC 탭을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image31.png["오류: 그래픽 이미지가 없습니다"]
+
+. Add VMkernel NIC 를 선택합니다.
++
+** 새 포트 그룹을 선택합니다.
+** 포트 그룹의 이름을 NFS-Network로 지정합니다.
+** VLAN ID에 '\<<nfs_vlan_id>>'를 입력합니다.
+** MTU를 9000으로 변경합니다.
+** IPv4 설정 을 확장합니다.
+** 정적 설정을 선택합니다.
+** Address 에 "\<<var_hosta_nfs_ip>>"를 입력합니다.
+** 서브넷 마스크에 '\<<var_hosta_nfs_mask>>'를 입력합니다.
+** 생성 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image32.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 이 프로세스를 반복하여 vMotion VMkernel 포트를 생성합니다.
+. Add VMkernel NIC 를 선택합니다.
++
+.. 새 포트 그룹을 선택합니다.
+.. 포트 그룹의 이름을 vMotion으로 지정합니다.
+.. VLAN ID에 '\< vMotion_vlan_id>>'를 입력합니다.
+.. MTU를 9000으로 변경합니다.
+.. IPv4 설정 을 확장합니다.
+.. 정적 설정을 선택합니다.
+.. Address 에 "\<<var_hosta_vmotion_ip>>"를 입력합니다.
+.. 서브넷 마스크에 '\<<var_hosta_vmotion_mask>>'를 입력합니다.
+.. IPv4 설정 후 vMotion 확인란이 선택되어 있는지 확인합니다.
++
+image:express-c-series-aff220-deploy_image33.png["오류: 그래픽 이미지가 없습니다"]
+
++
+
+NOTE: 라이센싱에서 허용하는 경우 VMware vSphere 분산 스위치를 사용하는 등 여러 가지 방법으로 ESXi 네트워킹을 구성할 수 있습니다. 비즈니스 요구 사항을 충족하는 데 필요한 경우 FlexPod Express에서 대체 네트워크 구성이 지원됩니다.
+
+
+
+
+
+
+
+==== 첫 번째 데이터 저장소를 마운트합니다
+
+마운트할 첫 번째 데이터 저장소는 가상 머신용 infra_datastore_1 데이터 저장소와 가상 머신 스왑 파일용 infra_swap 데이터 저장소입니다.
+
+. 왼쪽 탐색 창에서 스토리지 를 클릭한 다음 새 데이터 저장소 를 클릭합니다.
++
+image:express-c-series-aff220-deploy_image34.png["오류: 그래픽 이미지가 없습니다"]
+
+. Mount NFS Datastore를 선택합니다.
++
+image:express-c-series-aff220-deploy_image35.png["오류: 그래픽 이미지가 없습니다"]
+
+. 그런 다음 NFS 마운트 세부 정보 제공 페이지에 다음 정보를 입력합니다.
++
+** 이름: 'infra_datastore_1'
+** NFS 서버:\<<var_NodeA_nfs_lif>'
+** 공유:/infra_datastore_1
+** NFS 3이 선택되어 있는지 확인합니다.
+
+
+. 마침 을 클릭합니다. 최근 작업 창에서 작업이 완료된 것을 볼 수 있습니다.
+. 다음 프로세스를 반복하여 infra_swap 데이터 저장소를 마운트합니다.
++
+** 이름: infra_swap
+** NFS 서버:\<<var_NodeA_nfs_lif>'
+** 공유: '/infra_swap'
+** NFS 3이 선택되어 있는지 확인합니다.
+
+
+
+
+
+
+=== NTP를 구성합니다
+
+ESXi 호스트에 대해 NTP를 구성하려면 다음 단계를 수행하십시오.
+
+. 왼쪽 탐색 창에서 관리 를 클릭합니다. 오른쪽 창에서 시스템 을 선택한 다음 시간 및 날짜 를 클릭합니다.
++
+image:express-c-series-aff220-deploy_image36.png["오류: 그래픽 이미지가 없습니다"]
+
+. Use Network Time Protocol (Enable NTP Client) 을 선택합니다.
+. Start and Stop with Host 를 NTP 서비스 시작 정책으로 선택합니다.
+. NTP 서버로 '\<<var_ntp>>'를 입력합니다. 여러 NTP 서버를 설정할 수 있습니다.
+. 저장 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image37.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 가상 머신 스왑 파일 위치를 이동합니다
+
+다음 단계에서는 가상 머신 스왑 파일 위치를 이동하는 방법을 자세히 설명합니다.
+
+. 왼쪽 탐색 창에서 관리 를 클릭합니다. 오른쪽 창에서 시스템을 선택한 다음 바꾸기를 클릭합니다.
++
+image:express-c-series-aff220-deploy_image38.png["오류: 그래픽 이미지가 없습니다"]
+
+. 설정 편집 을 클릭합니다. Datastore 옵션에서 infra_swap을 선택합니다.
++
+image:express-c-series-aff220-deploy_image39.png["오류: 그래픽 이미지가 없습니다"]
+
+. 저장 을 클릭합니다.
+
+
+
+
+=== VMware VAAI용 NetApp NFS 플러그인 1.0.20을 설치합니다
+
+VMware VAAI용 NetApp NFS 플러그인 1.0.20을 설치하려면 다음 단계를 완료하십시오.
+
+. 다음 명령을 입력하여 VAAI가 활성화되었는지 확인합니다.
++
+....
+esxcfg-advcfg -g /DataMover/HardwareAcceleratedMove
+esxcfg-advcfg -g /DataMover/HardwareAcceleratedInit
+....
++
+VAAI가 활성화된 경우 다음 명령을 실행하면 다음 출력이 생성됩니다.
+
++
+....
+~ #  esxcfg-advcfg -g /DataMover/HardwareAcceleratedMove
+Value of HardwareAcceleratedMove is 1
+~ # esxcfg-advcfg -g /DataMover/HardwareAcceleratedInit
+Value of HardwareAcceleratedInit is 1
+....
+. VAAI가 설정되어 있지 않으면 다음 명령을 입력하여 VAAI를 사용하도록 설정합니다.
++
+....
+esxcfg-advcfg -s 1 /DataMover/HardwareAcceleratedInit
+esxcfg-advcfg -s 1 /DataMover/HardwareAcceleratedMove
+....
++
+이러한 명령은 다음과 같은 출력을 생성합니다.
+
++
+....
+~ # esxcfg-advcfg -s 1 /Data Mover/HardwareAcceleratedInit
+Value of HardwareAcceleratedInit is 1
+~ #  esxcfg-advcfg -s 1 /DataMover/HardwareAcceleratedMove
+Value of HardwareAcceleratedMove is 1
+....
+. NetApp NFS Plug-in for VMware VAAI 다운로드:
++
+.. 로 이동합니다 https://mysupport.netapp.com/NOW/download/software/nfs_plugin_vaai_esxi6/1.1.2/["소프트웨어 다운로드 페이지"^].
+.. 아래로 스크롤하여 VMware VAAI용 NetApp NFS 플러그인 을 클릭합니다.
+.. ESXi 플랫폼을 선택합니다.
+.. 최신 플러그인의 오프라인 번들(.zip) 또는 온라인 번들(.vib)을 다운로드합니다.
+
+
+. ESX CLI를 사용하여 ESXi 호스트에 플러그인을 설치합니다.
+. ESXi 호스트를 재부팅합니다.
++
+image:express-c-series-aff220-deploy_image40.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+link:express-c-series-aff220-deploy_install_vmware_vcenter_server_6.7.html["다음: VMware vCenter Server 6.7을 설치합니다"]

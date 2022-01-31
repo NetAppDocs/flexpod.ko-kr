@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_install_vmware_vcenter_server_6.7.html 
+keywords: install, vmware, vcenter, server, appliance 
+summary: 이 섹션에서는 FlexPod Express 구성에 VMware vCenter Server 6.7을 설치하는 절차를 자세히 설명합니다. 
+---
+= VMware vCenter Server 6.7을 설치합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 FlexPod Express 구성에 VMware vCenter Server 6.7을 설치하는 절차를 자세히 설명합니다.
+
+
+NOTE: FlexPod Express는 VCSA(VMware vCenter Server Appliance)를 사용합니다.
+
+
+
+== VMware vCenter Server 어플라이언스를 다운로드합니다
+
+. VCSA를 다운로드합니다. ESXi 호스트를 관리할 때 vCenter Server 가져오기 아이콘을 클릭하여 다운로드 링크를 액세스합니다.
++
+image:express-c-series-aff220-deploy_image41.png["오류: 그래픽 이미지가 없습니다"]
+
+. VMware 사이트에서 VCSA를 다운로드합니다.
++
+
+NOTE: Microsoft Windows vCenter Server 설치 가능한 가 지원되지만 VMware는 새로운 구축에 VCSA를 권장합니다.
+
+. ISO 이미지를 마운트합니다.
+. vcsa-UI-installer> Win32 디렉터리로 이동합니다. installer.exe를 두 번 클릭합니다.
+. 설치 를 클릭합니다.
+. 소개 페이지에서 다음 을 클릭합니다.
+. 최종 사용자 라이센스 계약에 동의합니다.
+. 배포 유형으로 임베디드 플랫폼 서비스 컨트롤러 를 선택합니다.
++
+image:express-c-series-aff220-deploy_image42.png["오류: 그래픽 이미지가 없습니다"]
+
++
+
+NOTE: 필요한 경우 외부 플랫폼 서비스 컨트롤러 배포도 FlexPod Express 솔루션의 일부로 지원됩니다.
+
+. Appliance Deployment Target에서 구축한 ESXi 호스트의 IP 주소와 루트 사용자 이름 및 루트 암호를 입력합니다.
++
+image:express-c-series-aff220-deploy_image43.png["오류: 그래픽 이미지가 없습니다"]
+
+. VCSA에 사용할 VM 이름과 루트 암호를 VCSA로 입력하여 어플라이언스 VM을 설정합니다.
++
+image:express-c-series-aff220-deploy_image44.png["오류: 그래픽 이미지가 없습니다"]
+
+. 환경에 가장 적합한 구축 크기를 선택합니다. 다음 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image45.png["오류: 그래픽 이미지가 없습니다"]
+
+. infra_datastore_1 데이터 저장소를 선택합니다. 다음 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image46.png["오류: 그래픽 이미지가 없습니다"]
+
+. 네트워크 설정 구성 페이지에 다음 정보를 입력하고 다음 을 클릭합니다.
++
+.. Network 에서 MGMT-Network 를 선택합니다.
+.. VCSA에 사용할 FQDN 또는 IP를 입력합니다.
+.. 사용할 IP 주소를 입력합니다.
+.. 사용할 서브넷 마스크를 입력합니다.
+.. 기본 게이트웨이를 입력합니다.
+.. DNS 서버를 입력합니다.
+
+
+. 1단계 완료 준비 페이지에서 입력한 설정이 올바른지 확인합니다. 마침 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image47.png["오류: 그래픽 이미지가 없습니다"]
+
++
+VCSA가 지금 설치됩니다. 이 과정은 몇 분 정도 소요됩니다.
+
+. 1단계가 완료되면 완료되었다는 메시지가 나타납니다. 계속 을 클릭하여 2단계 구성을 시작합니다.
+. 2단계 소개 페이지에서 다음 을 클릭합니다.
++
+image:express-c-series-aff220-deploy_image48.png["오류: 그래픽 이미지가 없습니다"]
+
+. NTP 서버 주소에 대해 '\<<var_ntp_id>>'를 입력합니다. 여러 NTP IP 주소를 입력할 수 있습니다.
++
+vCenter Server HA(고가용성)를 사용하려는 경우 SSH 액세스가 설정되어 있는지 확인합니다.
+
+. SSO 도메인 이름, 암호 및 사이트 이름을 구성합니다. 다음 을 클릭합니다.
++
+특히 vSphere.local 도메인 이름을 벗어난 경우 이러한 값을 참조로 기록합니다.
+
+. 원하는 경우 VMware 고객 경험 프로그램에 참여하십시오. 다음 을 클릭합니다.
+. 설정 요약을 봅니다. 마침 을 클릭하거나 뒤로 단추를 사용하여 설정을 편집합니다.
+. 설치가 시작된 후 설치를 일시 중지하거나 중지할 수 없다는 메시지가 나타납니다. 계속하려면 확인을 클릭하십시오.
++
+어플라이언스 설정이 계속됩니다. 이 작업은 몇 분 정도 걸립니다.
+
++
+설정이 성공했음을 나타내는 메시지가 나타납니다.
+
++
+vCenter Server에 액세스하기 위해 설치 관리자가 제공하는 링크를 클릭할 수 있습니다.
+
+
+
+link:express-c-series-aff220-deploy_configure_vmware_vcenter_server_6.7_and_vsphere_clustering.html["다음: VMware vCenter Server 6.7 및 vSphere 클러스터링을 구성합니다."]

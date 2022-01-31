@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: express/express-direct-attach-aff220-deploy_solution_overview.html 
+keywords: solution, overview, flexpod, express, converged, infrastructure, program, verified, architecture, case, summary 
+summary: 이 FlexPod Express 솔루션은 FlexPod 통합 인프라 프로그램의 일부입니다. 
+---
+= 솔루션 개요
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 FlexPod Express 솔루션은 FlexPod 통합 인프라 프로그램의 일부입니다.
+
+
+
+== FlexPod 통합 인프라 프로그램
+
+FlexPod 참조 아키텍처는 CVD(Cisco Validated Design) 또는 NVA(NetApp Verified Architecture)로 제공됩니다. 지정된 CVD 또는 NVA의 고객 요구 사항에 따른 편차는 이러한 변형으로 지원되지 않는 구성이 생성되지는 않을 경우 허용됩니다.
+
+아래 그림과 같이 FlexPod 프로그램에는 FlexPod 익스프레스, FlexPod 데이터 센터, FlexPod 선택의 세 가지 솔루션이 포함되어 있습니다.
+
+* * FlexPod 익스프레스 * 는 Cisco 및 NetApp의 기술을 갖춘 엔트리 레벨 솔루션을 고객에게 제공합니다.
+* * FlexPod 데이터 센터 * 는 다양한 워크로드 및 애플리케이션을 위한 최적의 다목적 토대를 제공합니다.
+* * FlexPod Select * 는 FlexPod 데이터 센터의 최고 기능을 통합하고 인프라를 특정 애플리케이션에 맞게 조정합니다.
+
+
+다음 그림은 솔루션의 기술 구성요소를 보여 줍니다.
+
+image:express-direct-attach-aff220-deploy_image2.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== NetApp 검증 아키텍처 프로그램
+
+NVA 프로그램은 NetApp 솔루션을 위한 검증된 아키텍처를 고객에게 제공합니다. NVA는 NetApp 솔루션 아키텍처의 다음과 같은 특징을 제공합니다.
+
+* 철저한 테스트를 거친 아키텍처
+* 기본적으로 규범적인 아키텍처
+* 구축 위험 최소화
+* 출시 시기를 단축합니다
+
+
+이 가이드는 직접 연결 NetApp 스토리지를 사용하는 FlexPod Express의 설계에 대해 자세히 설명합니다. 다음 섹션에서는 이 솔루션 설계에 사용되는 구성 요소를 나열합니다.
+
+
+
+=== 하드웨어 구성 요소
+
+* NetApp AFF A220을 참조하십시오
+* Cisco UCS Mini를 참조하십시오
+* Cisco UCS B200 M5
+* Cisco UCS VIC 1440/1480.
+* Cisco Nexus 3000 시리즈 스위치
+
+
+
+
+=== 소프트웨어 구성 요소
+
+* NetApp ONTAP 9. 5
+* VMware vSphere 6.7U1
+* Cisco UCS Manager 4.0(1b)
+* Cisco NXOS 펌웨어 7.0(3) I6(1)
+
+
+
+
+== 솔루션 기술
+
+이 솔루션은 NetApp, Cisco 및 VMware의 최신 기술을 활용합니다. ONTAP 9.5, 이중 Cisco Nexus 31108PCV 스위치를 실행하는 새로운 NetApp AFF A220과 VMware vSphere 6.7U1을 실행하는 Cisco UCS B200 M5 서버를 특징으로 합니다. 이 검증된 솔루션은 10GbE 기술을 통한 Direct Connect IP 스토리지를 사용합니다.
+
+다음 그림에서는 VMware vSphere 6.7U1 IP 기반 직접 연결 아키텍처를 지원하는 FlexPod Express를 보여 줍니다.
+
+image:express-direct-attach-aff220-deploy_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 사용 사례 요약
+
+FlexPod 익스프레스 솔루션은 다음과 같은 여러 사용 사례에 적용할 수 있습니다.
+
+* ROBO
+* 중소기업
+* 비용 효율적인 전용 솔루션이 필요한 환경
+
+
+FlexPod Express는 가상화된 혼합 워크로드에 가장 적합합니다.

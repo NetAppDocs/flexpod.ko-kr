@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-meditech-deploy_netapp_configuration.html 
+keywords: configuration, storage, meditech, software, environments, controllers, hardware, takeover, licenses 
+summary: MEDITECH 소프트웨어 환경용 NetApp 스토리지는 고가용성 쌍 구성에서 스토리지 컨트롤러를 사용합니다. FC 프로토콜을 통해 두 컨트롤러에서 MEDITECH 데이터베이스 서버로 스토리지를 제공해야 합니다. 이 구성은 정상 작동 중에 두 컨트롤러의 스토리지를 모두 사용하여 애플리케이션 로드를 균등하게 분산합니다. 
+---
+= NetApp 구성입니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+MEDITECH 소프트웨어 환경용 NetApp 스토리지는 고가용성 쌍 구성에서 스토리지 컨트롤러를 사용합니다. FC 프로토콜을 통해 두 컨트롤러에서 MEDITECH 데이터베이스 서버로 스토리지를 제공해야 합니다. 이 구성은 정상 작동 중에 두 컨트롤러의 스토리지를 모두 사용하여 애플리케이션 로드를 균등하게 분산합니다.
+
+
+
+== ONTAP 구성
+
+이 섹션에서는 관련 ONTAP 명령을 사용하는 구축 및 프로비저닝 절차의 예를 설명합니다. 에서는 고가용성 컨트롤러 쌍을 사용하는 NetApp이 권장하는 스토리지 레이아웃을 구현하기 위해 스토리지가 프로비저닝되는 방식을 중점적으로 보여 줍니다. ONTAP의 주요 장점 중 하나는 기존 고가용성 쌍을 방해하지 않으면서 스케일아웃하는 것입니다.
+
+
+
+=== ONTAP 라이센스
+
+스토리지 컨트롤러를 설정한 후 라이센스를 적용하여 NetApp에서 권장하는 ONTAP 기능을 사용하도록 설정합니다. MEDITECH 워크로드에 대한 라이센스는 FC, CIFS 및 NetApp Snapshot, SnapRestore, FlexClone, SnapMirror 기술을 사용합니다.
+
+라이센스를 구성하려면 NetApp ONTAP 시스템 관리자를 열고 구성 - 라이센스로 이동한 다음 적절한 라이센스를 추가합니다.
+
+또는 다음 명령을 실행하여 CLI를 사용하여 라이센스를 추가합니다.
+
+....
+license add -license-code <code>
+....
+
+
+=== AutoSupport 구성
+
+NetApp AutoSupport 툴은 HTTPS를 통해 요약 지원 정보를 NetApp에 보냅니다. AutoSupport를 구성하려면 다음 ONTAP 명령을 실행합니다.
+
+....
+autosupport modify -node * -state enable
+autosupport modify -node * -mail-hosts <mailhost.customer.com>
+autosupport modify -node prod1-01 -from prod1-01@customer.com
+autosupport modify -node prod1-02 -from prod1-02@customer.com
+autosupport modify -node * -to storageadmins@customer.com
+autosupport modify -node * -support enable
+autosupport modify -node * -transport https
+autosupport modify -node * -hostnamesubj true
+....
+
+
+=== 하드웨어 지원 테이크오버 구성
+
+각 노드에서 하드웨어 지원 테이크오버를 활성화하여 컨트롤러 장애가 발생할 가능성이 낮은 상황에서 테이크오버 시작에 걸리는 시간을 최소화합니다. 하드웨어 지원 테이크오버를 구성하려면 다음 단계를 완료합니다.
+
+. 다음 ONTAP 명령을 xxx로 실행합니다.
++
+파트너 주소 옵션을 'prod1-01'에 대한 관리 포트의 IP 주소로 설정합니다.
+
++
+....
+MEDITECH::> storage failover modify -node prod1-01 -hwassist-partner-ip <prod1-02-mgmt-ip>
+....
+. 다음 ONTAP 명령을 xxx에 실행합니다.
++
+파트너 주소 옵션을 'cluster1-02'에 대한 관리 포트의 IP 주소로 설정합니다.
+
++
+....
+MEDITECH::> storage failover modify -node prod1-02 -hwassist-partner-ip <prod1-01-mgmt-ip>
+....
+. 다음 ONTAP 명령을 실행하여 "prod1-01"과 "prod1-02" HA 컨트롤러 쌍 모두에서 하드웨어 지원 테이크오버를 활성화합니다.
++
+....
+MEDITECH::> storage failover modify -node prod1-01 -hwassist true
+MEDITECH::> storage failover modify -node prod1-02 -hwassist true
+....
+
+
+link:ehr-meditech-deploy_aggregate_configuration.html["다음: 집계 구성."]

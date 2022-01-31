@@ -1,0 +1,21 @@
+---
+section: ontap-connector-for-intersight
+title: Cisco Intersight with NetApp ONTAP 스토리지 빠른 시작 가이드
+entries:
+- title: 소개
+  url: "/ontap-connector-for-intersight/index.html"
+  type: solutions
+- title: 새로운 소식
+  url: "/ontap-connector-for-intersight/ci-qsg_new.html"
+- title: 요구 사항
+  url: "/ontap-connector-for-intersight/ci-qsg_requirements.html"
+- title: 시작하기 전에
+  url: "/ontap-connector-for-intersight/ci-qsg_before_you_begin.html"
+- title: 청구 대상
+  url: "/ontap-connector-for-intersight/ci-qsg_claim_targets.html"
+- title: Cisco Intersight에서 NetApp 스토리지 모니터링
+  url: "/ontap-connector-for-intersight/ci-qsg_monitor_netapp_storage_from_cisco_intersight.html"
+- title: 사용 사례
+  url: "/ontap-connector-for-intersight/ci-qsg_use_cases.html"
+- title: 참조
+  url: "/ontap-connector-for-intersight/ci-qsg_references.html"

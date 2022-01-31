@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_netapp_aff_storage_deployment_procedure_@part_2@.html 
+keywords: san, map, boot, storage, setup, aff, deployment, procedure, igroups 
+summary: igroup을 생성하려면 iSCSI 이니시에이터 IQN이 필요하며 다음 단계를 완료해야 합니다. 
+---
+= NetApp AFF 스토리지 구현 절차(2부)
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+
+
+== ONTAP SAN 부팅 스토리지 설정
+
+
+
+=== iSCSI igroup을 생성합니다
+
+Igroup을 생성하려면 다음 단계를 완료하십시오.
+
+이 단계를 위해서는 서버 구성에서 iSCSI 이니시에이터 IQN이 필요합니다.
+
+. 클러스터 관리 노드의 SSH 연결에서 다음 명령을 실행합니다. 이 단계에서 생성한 3개의 igroup을 보려면 igroup show 명령을 실행합니다.
++
+....
+igroup create –vserver Infra-SVM –igroup VM-Host-Infra-A –protocol iscsi –ostype vmware –initiator <<var_vm_host_infra_a_iSCSI-A_vNIC_IQN>>, <<var_vm_host_infra_a_iSCSI-B_vNIC_IQN>>
+igroup create –vserver Infra-SVM –igroup VM-Host-Infra-B –protocol iscsi –ostype vmware –initiator <<var_vm_host_infra_b_iSCSI-A_vNIC_IQN>>, <<var_vm_host_infra_b_iSCSI-B_vNIC_IQN>>
+....
++
+
+NOTE: Cisco UCS C-Series 서버를 추가할 때는 이 단계를 완료해야 합니다.
+
+
+
+
+
+== 부팅 LUN을 igroup에 매핑합니다
+
+부트 LUN을 igroup에 매핑하려면 클러스터 관리 SSH 연결에서 다음 명령을 실행합니다.
+
+....
+lun map –vserver Infra-SVM –volume esxi_boot –lun VM-Host-Infra- A –igroup VM-Host-Infra- A –lun-id 0
+lun map –vserver Infra-SVM –volume esxi_boot –lun VM-Host-Infra- B –igroup VM-Host-Infra- B –lun-id 0
+....
+
+NOTE: Cisco UCS C-Series 서버를 추가할 때는 이 단계를 완료해야 합니다.
+
+link:express-c-series-aff220-deploy_vmware_vsphere_6.7_deployment_procedure.html["다음: VMware vSphere 6.7 구축 절차."]

@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec_storage_software.html 
+keywords: storage, software, flexpod, express, ontap, e, series, santricity 
+summary: 이 섹션에 나열된 스토리지 운영 체제는 FlexPod Express 플랫폼에서 지원됩니다. 
+---
+= 스토리지 소프트웨어
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod Express는 NetApp ONTAP 또는 SANtricity 운영 체제를 실행하는 스토리지 시스템을 지원합니다.
+
+
+
+== NetApp ONTAP를 참조하십시오
+
+NetApp ONTAP 소프트웨어는 AFF 및 FAS 스토리지 시스템에서 실행되는 운영 체제입니다. ONTAP은 무중단 운영, 무중단 업그레이드 및 민첩한 데이터 인프라를 지원하는 확장성이 뛰어난 스토리지 아키텍처를 제공합니다.
+
+ONTAP에 대한 자세한 내용은 를 참조하십시오 http://www.netapp.com/us/products/platform-os/ontap/index.aspx["ONTAP 제품 페이지"^].
+
+
+
+== E-Series SANtricity 소프트웨어
+
+E-Series SANtricity 소프트웨어는 E-Series 스토리지 시스템에서 실행되는 운영 체제입니다. SANtricity는 다양한 애플리케이션 요구를 충족하는 매우 유연한 시스템을 제공하며 기본 제공되는 고가용성 및 다양한 데이터 보호 기능을 제공합니다.
+
+자세한 내용은 를 참조하십시오 http://www.netapp.com/us/products/platform-os/santricity/index.aspx["SANtricity 제품 페이지"^].

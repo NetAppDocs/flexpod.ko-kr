@@ -1,0 +1,12 @@
+---
+section: ms-apps
+title: Microsoft 애플리케이션
+entries:
+- title: Microsoft Exchange 2013, F5 BIG-IP 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [설계]
+  url: http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/exchange2013_aci_flexpod_vmware_design.html
+- title: Microsoft Exchange 2013, F5 BIG-IP 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [배포]
+  url: http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/exchange2013_aci_flexpod_vmware.html
+- title: Microsoft SharePoint 2013 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [설계]
+  url: http://www.cisco.com/c/dam/en/us/td/docs/unified_computing/ucs/UCS_CVDs/sharepoint2013_aci_flexpod_vmware.pdf
+- title: Microsoft SharePoint 2013 및 Cisco ACI를 지원하는 FlexPod 데이터 센터 [배포]
+  url: http://www.cisco.com/c/dam/en/us/td/docs/unified_computing/ucs/UCS_CVDs/sharepoint2013_aci_flexpod_vmware_deploy.pdf

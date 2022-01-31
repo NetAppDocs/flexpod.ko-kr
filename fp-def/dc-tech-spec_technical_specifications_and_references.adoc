@@ -1,0 +1,454 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_technical_specifications_and_references.html 
+keywords: cisco, ucs, b, series, vic, switches, nexus, fas, aff, series 
+summary: 기술 사양은 섀시, FEX, 서버, 스위치, 스위치 등 FlexPod 솔루션의 하드웨어 구성 요소에 대한 세부 정보를 제공합니다. 및 스토리지 컨트롤러. 
+---
+= 기술 사양 및 참조 자료
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+기술 사양은 섀시, FEX, 서버, 스위치, 스위치 등 FlexPod 솔루션의 하드웨어 구성 요소에 대한 세부 정보를 제공합니다. 및 스토리지 컨트롤러.
+
+
+
+== Cisco UCS B-Series 블레이드 서버 섀시
+
+아래 표와 같은 Cisco UCS B-Series 블레이드 서버 섀시의 기술 사양에는 다음 구성요소가 포함됩니다.
+
+* 랙 유닛 수
+* 최대 블레이드 수
+* 통합 패브릭 기능
+* 서버당 미드플레인 I/O 대역폭
+* FEX의 I/O 베이 수입니다
+
+
+|===
+| 구성 요소 | Cisco UCS 5100 시리즈 블레이드 서버 섀시 
+
+
+| 랙 유닛 | 6 
+
+
+| 최대 전체 폭 블레이드 | 4 
+
+
+| 최대 반폭 블레이드 | 8 
+
+
+| 통합 패브릭 지원 | 예 
+
+
+| 미드플레인 I/O | 서버당 최대 80Gbps의 I/O 대역폭 
+
+
+| FEX용 I/O 베이 | Cisco UCS 2104XP, 2204/8XP, 2408XP 및 2304 FEX용 베이 2개 
+|===
+자세한 내용은 를 참조하십시오 http://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-5100-series-blade-server-chassis/data_sheet_c78-526830.html["Cisco UCS 5100 시리즈 블레이드 서버 섀시 데이터시트"^].
+
+
+
+== Cisco UCS B-Series 블레이드 서버
+
+아래 표와 같은 Cisco UCS B-Series 블레이드 서버의 기술 사양은 다음과 같습니다.
+
+* 프로세서 소켓 수입니다
+* 프로세서 지원
+* 메모리 용량
+* 크기 및 속도
+* SAN 부팅 지원
+* 메자닌 어댑터 슬롯 수
+* I/O 최대 처리량
+* 폼 팩터
+* 섀시당 최대 서버 수입니다
+
+
+|===
+| 구성 요소 | Cisco UCS 데이터시트 를 참조하십시오 
+
+
+| Cisco UCS B200 M6 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/datasheet-c78-2368888.html["Cisco UCS B200 M6 블레이드 서버"] 
+|===
+
+
+== Cisco UCS C-Series 랙 서버
+
+Cisco UCS C-Series 랙 서버의 기술 사양에는 프로세서 지원, 최대 메모리 용량, PCIe 슬롯 수, 폼 팩터 크기 등이 포함됩니다. 호환되는 UCS 서버 모델에 대한 자세한 내용은 를 참조하십시오 https://ucshcltool.cloudapps.cisco.com/public/["Cisco 하드웨어 호환성"^] 목록. 다음 표에서는 C-Series 랙 서버 데이터 시트 및 Cisco UCS C-Series 섀시 옵션을 각각 보여 줍니다.
+
+|===
+| 구성 요소 | Cisco UCS 데이터시트 를 참조하십시오 
+
+
+| Cisco UCS C220 M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c220m6-sff-specsheet.pdf["Cisco UCS C220 M6 랙 서버"] 
+
+
+| Cisco UCS C225 M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c225-m6-sff-specsheet.pdf["Cisco UCS C225 M6 랙 서버"] 
+
+
+| Cisco UCS C240 M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c240m6-sff-specsheet.pdf["Cisco UCS C240 M6 랙 서버"] 
+
+
+| Cisco UCS C245 M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c245m6-sff-specsheet.pdf["Cisco UCS C245 M6 랙 서버"] 
+|===
+
+
+== Cisco UCS X-Series 섀시
+
+아래 표와 같은 Cisco UCS X-Series 섀시의 기술 사양에는 다음 구성요소가 포함됩니다.
+
+* 랙 유닛 수
+* 최대 노드 수입니다
+* 통합 패브릭 기능
+* IFM의 I/O 베이 수입니다
+
+
+|===
+| 구성 요소 | Cisco UCS 9508 X-Series 컴퓨팅 노드 섀시 
+
+
+| 랙 유닛 | 7 
+
+
+| 최대 노드 수입니다 | 8 
+
+
+| 통합 패브릭 지원 | 예 
+
+
+| IFM용 I/O 베이 | Cisco UCS 9108 IFM(Intelligent Fabric Module)용 베이 2개 
+|===
+자세한 내용은 를 참조하십시오 link:https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/datasheet-c78-2472574.html["Cisco UCS X9508 X 시리즈 섀시 데이터시트"^].
+
+
+
+== Cisco UCS X-Series 컴퓨팅 노드
+
+다음 표에 나와 있는 것처럼 Cisco UCS X-Series 컴퓨팅 노드의 기술 사양에는 다음 구성요소가 포함됩니다.
+
+* 프로세서 소켓 수입니다
+* 프로세서 지원
+* 메모리 용량
+* 크기 및 속도
+* SAN 부팅 지원
+* 메자닌 어댑터 슬롯 수
+* I/O 최대 처리량
+* 폼 팩터
+* 섀시당 최대 컴퓨팅 노드 수
+
+
+|===
+
+
+| 구성 요소 | Cisco UCS 데이터시트 를 참조하십시오 
+
+
+| Cisco UCS X210c M6 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/datasheet-c78-2465523.html?ccid=cc002456&oid=dstcsm026318["Cisco UCS X210c M6 컴퓨팅 노드"] 
+|===
+
+
+== FlexPod AI, ML 및 DL용 GPU 권장 사항
+
+아래 표에 나열된 Cisco UCS C-Series 랙 서버는 AI, ML 및 DL 워크로드를 호스팅하는 FlexPod 아키텍처에서 사용할 수 있습니다. Cisco UCS C480 ML M5 서버는 AI, ML 및 DL 워크로드를 위해 특별 제작되었고 NVIDIA의 SXM2 기반 GPU를 사용하는 한편, 다른 서버는 PCIe 기반 GPU를 사용합니다.
+
+아래 표에는 이러한 서버와 함께 사용할 수 있는 권장 GPU도 나와 있습니다.
+
+|===
+| 서버 | GPU를 만나보십시오 
+
+
+| Cisco UCS C220 M6 | NVIDIA T4 
+
+
+| Cisco UCS C225 M6 | NVIDIA T4 
+
+
+| Cisco UCS C240 M6 | NVIDIA Tesla A10, A100 
+
+
+| Cisco UCS C245 M6 | NVIDIA Tesla A10, A100 
+|===
+
+
+== Cisco UCS B-Series 블레이드 서버용 Cisco UCS VIC 어댑터
+
+Cisco UCS B-Series 블레이드 서버용 Cisco UCS VIC(Virtual Interface Card) 어댑터의 기술 사양에는 다음 구성요소가 포함됩니다.
+
+* 업링크 포트 수
+* 포트당 성능(IOPS)
+* 전원
+* 블레이드 포트 수입니다
+* 하드웨어 오프로드
+* 단일 루트 입출력 가상화(SR-IOV) 지원
+
+
+현재 검증된 모든 FlexPod 아키텍처는 Cisco UCS VIC를 사용합니다. 다른 어댑터는 NetApp에 나열된 경우 지원됩니다 http://mysupport.netapp.com/matrix["IMT"^] 및 는 FlexPod 배포와 호환되지만 해당 참조 아키텍처에 요약된 모든 기능을 제공하지 못할 수도 있습니다. 다음 표에서는 Cisco UCS VIC 어댑터 데이터시트를 보여 줍니다.
+
+|===
+| 구성 요소 | Cisco UCS 데이터시트 를 참조하십시오 
+
+
+| Cisco UCS 가상 인터페이스 어댑터 | https://www.cisco.com/c/en/us/products/interfaces-modules/unified-computing-system-adapters/index.html["Cisco UCS VIC 데이터시트"] 
+|===
+
+
+== Cisco UCS 패브릭 인터커넥트
+
+Cisco UCS 패브릭 인터커넥트를 위한 기술 사양에는 폼 팩터 크기, 총 포트 수 및 확장 슬롯 수, 처리량 용량이 포함됩니다. 다음 표에서는 Cisco UCS 패브릭 인터커넥트 데이터시트를 보여 줍니다.
+
+|===
+| 구성 요소 | Cisco UCS 데이터시트 를 참조하십시오 
+
+
+| Cisco UCS 6248UP .2+| https://www.cisco.com/c/en/us/products/servers-unified-computing/ucs-6200-series-fabric-interconnects/index.html["Cisco UCS 6200 시리즈 패브릭 인터커넥트"] 
+
+
+| Cisco UCS 6296UP 
+
+
+| Cisco UCS 6324 | http://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-6300-series-fabric-interconnects/datasheet-c78-732207.html["Cisco UCS 6324 패브릭 인터커넥트"] 
+
+
+| Cisco UCS 6300 | http://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-6300-series-fabric-interconnects/datasheet-c78-736682.html["Cisco UCS 6300 Series Fabric Interconnect"] 
+
+
+| Cisco UCS 6454 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/datasheet-c78-741116.html["Cisco UCS 6400 시리즈 패브릭 인터커넥트"] 
+|===
+
+
+== Cisco Nexus 5000 시리즈 스위치
+
+폼 팩터 크기, 총 포트 수, 계층 3 모듈 및 부속 카드 지원을 포함한 Cisco Nexus 5000 시리즈 스위치의 기술 사양은 각 모델 제품군의 데이터시트에 포함되어 있습니다. 이러한 데이터시트는 다음 표에서 확인할 수 있습니다.
+
+|===
+| 구성 요소 | Cisco Nexus 데이터시트 를 참조하십시오 
+
+
+| Cisco Nexus 5548UP | http://www.cisco.com/en/US/products/ps11681/index.html["Cisco Nexus 5548UP 스위치"] 
+
+
+| Cisco Nexus 5596UP(2U) | http://www.cisco.com/en/US/products/ps11577/index.html["Cisco Nexus 5596UP 스위치"] 
+
+
+| Cisco Nexus 56128P | http://www.cisco.com/c/en/us/products/switches/nexus-56128p-switch/index.html["Cisco Nexus 56128P 스위치"] 
+
+
+| Cisco Nexus 5672UP | http://www.cisco.com/c/en/us/products/switches/nexus-5672up-switch/index.html["Cisco Nexus 5672UP 스위치"] 
+|===
+
+
+== Cisco Nexus 7000 시리즈 스위치
+
+폼 팩터 크기와 최대 포트 수를 포함한 Cisco Nexus 7000 시리즈 스위치의 기술 사양은 각 모델 제품군의 데이터시트에 포함되어 있습니다. 이러한 데이터시트는 다음 표에서 확인할 수 있습니다.
+
+|===
+| 구성 요소 | Cisco Nexus 데이터시트 를 참조하십시오 
+
+
+| Cisco Nexus 7004 .4+| http://www.cisco.com/en/US/prod/collateral/switches/ps9441/ps9402/ps9512/Data_Sheet_C78-437762.html["Cisco Nexus 7000 시리즈 스위치"] 
+
+
+| Cisco Nexus 7009 
+
+
+| Cisco Nexus 7010 
+
+
+| Cisco Nexus 7018 
+
+
+| Cisco Nexus 7702 .4+| http://www.cisco.com/en/US/prod/collateral/switches/ps9441/ps9402/data_sheet_c78-728187.html["Cisco Nexus 7700 시리즈 스위치"] 
+
+
+| Cisco Nexus 7706 
+
+
+| Cisco Nexus 7710 
+
+
+| Cisco Nexus 7718 
+|===
+
+
+== Cisco Nexus 9000 시리즈 스위치
+
+Cisco Nexus 9000 시리즈 스위치의 기술 사양은 각 모델의 데이터시트에 포함되어 있습니다. 사양에는 폼 팩터 크기, 수퍼바이저, 패브릭 모듈 및 라인 카드 슬롯 수, 최대 포트 수가 포함됩니다. 이러한 데이터시트는 다음 표에서 확인할 수 있습니다.
+
+|===
+| 구성 요소 | Cisco Nexus 데이터시트 를 참조하십시오 
+
+
+| Cisco Nexus 9000 시리즈 | http://www.cisco.com/c/en/us/products/switches/nexus-9000-series-switches/index.html["Cisco Nexus 9000 시리즈 스위치"] 
+
+
+| Cisco Nexus 9500 시리즈 | http://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-729404.html["Cisco Nexus 9500 시리즈 스위치"] 
+
+
+| Cisco Nexus 9300 시리즈 | http://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-729405.html["Cisco Nexus 9300 시리즈 스위치"] 
+
+
+| Cisco Nexus 9336PQ ACI 스파인 스위치 | http://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-731792.html["Cisco Nexus 9336PQ ACI 스파인 스위치"] 
+
+
+| Cisco Nexus 9200 시리즈 | https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-735989.html["Cisco Nexus 9200 플랫폼 스위치"] 
+|===
+
+
+== Cisco 애플리케이션 정책 인프라 컨트롤러
+
+Cisco ACI를 구축할 경우 섹션에 있는 항목 외에 추가로 Cisco ACI를 배포합니다 link:dc-tech-spec_technical_specifications_and_references.html#cisco-nexus-9000-series-switches["Cisco Nexus 9000 시리즈 스위치"]세 개의 Cisco APIs를 구성해야 합니다. 다음 표에는 Cisco APIC 데이터시트가 나와 있습니다.
+
+|===
+| 구성 요소 | Cisco Application Policy Infrastructure 데이터시트입니다 
+
+
+| Cisco 애플리케이션 정책 인프라 컨트롤러 | https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/application-policy-infrastructure-controller-apic/datasheet-c78-739715.html["Cisco APIC 데이터시트 를 참조하십시오"] 
+|===
+
+
+== Cisco Nexus 패브릭 익스텐더 세부 정보
+
+Cisco Nexus FEX의 기술 사양에는 속도, 고정 포트 및 링크 수, 폼 팩터 크기 등이 포함됩니다.
+
+다음 표에는 Cisco Nexus 2000 Series FEX 데이터시트가 나와 있습니다.
+
+|===
+| 구성 요소 | Cisco Nexus 패브릭 익스텐더 데이터시트 
+
+
+| Cisco Nexus 2000 시리즈 패브릭 익스텐더 | https://www.cisco.com/c/en/us/products/collateral/switches/nexus-2000-series-fabric-extenders/data_sheet_c78-507093.html["Nexus 2000 시리즈 FEX 데이터시트"] 
+|===
+
+
+== SFP 모듈
+
+SFP 모듈에 대한 자세한 내용은 다음 리소스를 참조하십시오.
+
+* Cisco 10Gb SFP에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/products/interfaces-modules/10-gigabit-modules/index.html["Cisco 10기가비트 모듈"^].
+* Cisco 25GB SFP에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/products/interfaces-modules/25-gigabit-modules/index.html["Cisco 25 기가비트 모듈"^].
+* Cisco QSFP 모듈에 대한 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.html["Cisco 40GBASE QSFP 모듈 데이터시트"^].
+* Cisco 100GB SFP에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/products/interfaces-modules/100-gigabit-modules/index.html["Cisco 100 기가비트 모듈"^].
+* Cisco FC SFP 모듈에 대한 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9000-series-multilayer-switches/product_data_sheet09186a00801bc698.html?dtid=osscdc000283["Cisco MDS 9000 Family Pluggable 트랜시버 데이터시트입니다"^].
+* 지원되는 모든 Cisco SFP 및 트랜시버 모듈에 대한 자세한 내용은 을 참조하십시오 http://www.cisco.com/en/US/docs/interfaces_modules/transceiver_modules/installation/note/78_15160.html["Cisco SFP 및 SFP+ 트랜시버 모듈 설치 참고 사항"^] 및.
+
+
+
+
+== NetApp 스토리지 컨트롤러
+
+NetApp 스토리지 컨트롤러의 기술 사양에는 다음 구성요소가 포함됩니다.
+
+* 섀시 구성
+* 랙 유닛 수
+* 메모리 용량
+* NetApp FlashCache 캐싱
+* 애그리게이트 크기
+* 볼륨 크기
+* LUN 수입니다
+* 지원되는 네트워크 스토리지
+* 최대 NetApp FlexVol 볼륨 수입니다
+* 지원되는 최대 SAN 호스트 수입니다
+* 최대 스냅샷 복사본 수
+
+
+
+
+=== FAS 시리즈
+
+사용 가능한 모든 FAS 스토리지 컨트롤러 모델은 FlexPod 데이터 센터에서 사용할 수 있습니다. 모든 FAS 시리즈 스토리지 컨트롤러에 대한 자세한 사양은 에서 확인할 수 있습니다 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]. 특정 FAS 모델에 대한 자세한 내용은 다음 표에 나와 있는 플랫폼별 설명서를 참조하십시오.
+
+|===
+| 구성 요소 | FAS 시리즈 컨트롤러 플랫폼 설명서 
+
+
+| FAS9000 시리즈 | https://www.netapp.com/us/media/ds-3810.pdf["FAS9000 시리즈 데이터시트"] 
+
+
+| FAS8700 시리즈 | https://www.netapp.com/us/media/ds-4020.pdf["FAS8700 시리즈 데이터시트"] 
+
+
+| FAS8300 시리즈 | https://www.netapp.com/us/media/ds-4020.pdf["FAS8300 시리즈 데이터시트"] 
+
+
+| 500f 시리즈 | https://docs.netapp.com/us-en/ontap-systems/fas500f/index.html["FAS500f 시리즈 데이터시트 를 참조하십시오"] 
+
+
+| FAS2700 시리즈 | https://www.netapp.com/us/media/ds-3929.pdf["FAS2700 시리즈 데이터시트"] 
+|===
+
+
+=== AFF A 시리즈
+
+NetApp AFF A-Series 스토리지 컨트롤러의 모든 현재 모델은 FlexPod에서 사용할 수 있습니다. 추가 정보는 에서 확인할 수 있습니다 https://www.netapp.com/us/media/ds-3582.pdf["AFF 기술 사양"^] 의 데이터시트와 를 참조하십시오. 특정 AFF 모델에 대한 자세한 내용은 다음 표에 나와 있는 플랫폼별 설명서를 참조하십시오.
+
+|===
+| 구성 요소 | AFF A-Series 컨트롤러 플랫폼 설명서 
+
+
+| NetApp AFF A800 | https://docs.netapp.com/us-en/ontap-systems/a800/index.html["AFF A800 플랫폼 문서"] 
+
+
+| NetApp AFF A700 | https://docs.netapp.com/us-en/ontap-systems/fas9000/index.html["AFF A700 플랫폼 문서"] 
+
+
+| NetApp AFF A700s를 참조하십시오 | https://docs.netapp.com/us-en/ontap-systems/a700s/index.html["AFF A700s 플랫폼 문서"] 
+
+
+| NetApp AFF A400 | https://docs.netapp.com/us-en/ontap-systems/a400/index.html["AFF A400 플랫폼 문서"] 
+
+
+| NetApp AFF A250 | https://docs.netapp.com/us-en/ontap-systems/a250/index.html["AFF A250 플랫폼 문서"] 
+|===
+
+
+=== AFF ASA A 시리즈
+
+NetApp AFF ASA A-Series 스토리지 컨트롤러의 모든 현재 모델은 FlexPod에서 사용할 수 있습니다. 자세한 내용은 All SAN 어레이 설명서 리소스, ONTAP AFF All SAN 어레이 시스템 기술 보고서 및 NetApp Hardware Universe에서 확인할 수 있습니다. 특정 AFF 모델에 대한 자세한 내용은 다음 표에 나와 있는 플랫폼별 설명서를 참조하십시오.
+
+|===
+| 구성 요소 | AFF A-Series 컨트롤러 플랫폼 설명서 
+
+
+| NetApp AFF ASA A800 | http://docs.netapp.com/allsan/index.jsp["AFF ASA A800 플랫폼 문서"] 
+
+
+| NetApp AFF ASA A700 | http://docs.netapp.com/allsan/index.jsp["AFF ASA A700 플랫폼 문서"] 
+
+
+| NetApp AFF ASA A400 | http://docs.netapp.com/allsan/index.jsp["AFF ASA A400 플랫폼 문서"] 
+
+
+| NetApp AFF ASA A250 | http://docs.netapp.com/allsan/index.jsp["AFF ASA A250 플랫폼 문서"] 
+
+
+| NetApp AFF ASA A220을 참조하십시오 | http://docs.netapp.com/allsan/index.jsp["AFF ASA A220 플랫폼 문서"] 
+|===
+
+
+=== 제공합니다
+
+NetApp 디스크 쉘프의 기술 사양에는 폼 팩터 크기, 엔클로저당 드라이브 수, 쉘프 I/O 모듈 등이 포함되어 있으며, 이 설명서는 다음 표를 참조하십시오. 자세한 내용은 를 참조하십시오 http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["NetApp 디스크 쉘프 및 스토리지 미디어 기술 사양"^] 및.
+
+|===
+| 구성 요소 | NetApp FAS/AFF 디스크 쉘프 문서 
+
+
+| NetApp DS212C 디스크 쉘프 | http://docs.netapp.com/platstor/topic/com.netapp.nav.sas3/home.html["DS212C 디스크 쉘프 문서"] 
+
+
+| NetApp DS224C 디스크 쉘프 | http://docs.netapp.com/platstor/topic/com.netapp.nav.sas3/home.html["DS224C 디스크 쉘프 문서"] 
+
+
+| NetApp DS460C 디스크 쉘프 | http://docs.netapp.com/platstor/topic/com.netapp.nav.sas3/home.html["DS460C 디스크 쉘프 문서"] 
+
+
+| NetApp NS224 NVMe-SSD 디스크 쉘프 | https://docs.netapp.com/platstor/index.jsp?topic=%2Fcom.netapp.doc.hw-ds-nvme-shelfid%2FGUID-2C057CF4-8897-4270-BF57-CA90333FBCF4.html&lang=en["NS224 디스크 쉘프 문서"] 
+|===
+
+
+=== NetApp 드라이브
+
+NetApp 드라이브의 기술 사양에는 폼 팩터 크기, 디스크 용량, 디스크 RPM, 지원 컨트롤러 및 ONTAP 버전 요구사항이 포함됩니다. 이러한 사양은 의 드라이브 섹션에서 찾을 수 있습니다 http://hwu.netapp.com/Drives/Index?queryId=1581392["NetApp Hardware Universe를 참조하십시오"^].

@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec_minimum_hardware_requirements.html 
+keywords: minimum, hardware, requirements, fas, cimc, configuration, rack, servers, ucs 
+summary: 이 섹션에서는 다양한 버전의 FlexPod Express에 대한 최소 하드웨어 요구 사항을 설명합니다. 
+---
+= 최소 하드웨어 요구 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 다양한 버전의 FlexPod Express에 대한 최소 하드웨어 요구 사항을 설명합니다.
+
+
+
+== FAS 익스프레스 및 NetApp FlexPod
+
+기본 스토리지에 NetApp FAS 컨트롤러를 사용하는 FlexPod 익스프레스 솔루션의 하드웨어 요구사항에는 이 섹션에 설명되어 있는 구성이 포함됩니다.
+
+
+
+=== CIMC 기반 구성(독립 실행형 랙 서버)
+
+CIMC(Cisco Integrated Management Controller) 구성에는 다음과 같은 하드웨어 구성요소가 포함됩니다.
+
+* 중복 구성의 10Gbps 표준 이더넷 스위치 2개(Cisco Nexus 3000 및 9000 모델 지원, Cisco Nexus 0808 권장)
+* Cisco UCS C-Series 독립 실행형 랙 서버
+* 2노드 클러스터로 구축된 고가용성(HA) 쌍 구성에서 AFF C190, AFF A250, FAS2600 또는 FAS 2700 시리즈 컨트롤러 2개
+
+
+
+
+=== Cisco UCS로 관리하는 이기종 구성
+
+Cisco UCS 관리 확인에는 다음 하드웨어 구성요소가 포함됩니다.
+
+* 중복 구성의 10Gbps 표준 이더넷 스위치 2개(Cisco Nexus 3524 권장)
+* Cisco UCS 5108 AC(Alternating Current) 블레이드 서버 섀시 1개
+* 2개의 Cisco UCS 6324 패브릭 인터커넥트
+* Cisco UCS B-Series 서버(최소 4개의 Cisco UCS B200 M5 블레이드 서버)
+* HA 쌍 구성에서 AFF C190, AFF A250, FAS2750 또는 FAS2720 컨트롤러 2개(컨트롤러당 2개의 UTA2 포트 필요)
+
+
+
+
+== E-Series를 지원하는 FlexPod Express
+
+E-Series 스타터 구성이 포함된 FlexPod Express의 하드웨어 요구사항은 다음과 같습니다.
+
+* 2개의 Cisco UCS 6324 패브릭 인터커넥트
+* Cisco UCS Mini 섀시 5108 AC2 또는 DC2 1개(Cisco UCS 6324 패브릭 상호 연결은 AC2 및 DC2 섀시에서만 지원됨)
+* Cisco UCS B-Series 서버(최소 2개의 Cisco UCS B200 M4 블레이드 서버)
+* 최소 12개 디스크 드라이브가 장착된 E-Series E2824 스토리지 시스템의 HA 쌍 구성 1개
+* 이중화 구성의 10Gbps 표준 이더넷 스위치 2개(데이터 센터의 기존 스위치 사용 가능)
+
+
+이러한 하드웨어 구성 요소는 솔루션의 초기 구성을 구축하는 데 필요합니다. 필요에 따라 블레이드 서버와 디스크 드라이브를 추가할 수 있습니다. E-Series E2824 스토리지 시스템을 더 높은 플랫폼으로 교체할 수 있으며 All-Flash 시스템으로 실행할 수도 있습니다.

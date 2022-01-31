@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-c190-deploy_acknowledgments.html 
+keywords: author, acknowledgements, express, c, series, c190, deployment, flexpod 
+summary: 저자는 John George가 이 설계에 대한 지원과 기여에 대해 인정하기를 원합니다. 
+---
+= 감사의 말
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+[role="lead"]
+저자는 John George가 이 설계에 대한 지원과 기여에 대해 인정하기를 원합니다.

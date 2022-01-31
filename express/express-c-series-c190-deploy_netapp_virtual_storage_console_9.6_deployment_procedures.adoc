@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-c190-deploy_netapp_virtual_storage_console_9.6_deployment_procedures.html 
+keywords: virtual, storage, console, deployment, procedures, install, nfs, vaai 
+summary: '이 섹션에서는 NetApp VSC(가상 스토리지 콘솔)의 구축 절차를 설명합니다.' 
+---
+= NetApp Virtual Storage Console 9.6 구축 절차
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 NetApp VSC(가상 스토리지 콘솔)의 구축 절차를 설명합니다.
+
+
+
+== Virtual Storage Console 9.6을 설치합니다
+
+OVF(Open Virtualization Format) 배포를 사용하여 VSC 9.6 소프트웨어를 설치하려면 다음 단계를 수행하십시오.
+
+. vSphere Web Client > Host Cluster > Deploy OVF Template 으로 이동합니다.
+. NetApp Support 사이트에서 다운로드한 VSC OVF 파일로 이동합니다.
++
+image:express-c-series-c190-deploy_image49.png["오류: 그래픽 이미지가 없습니다"]
+
+. VM 이름을 입력하고 배포할 데이터 센터 또는 폴더를 선택합니다. 다음 을 클릭합니다.
++
+image:express-c-series-c190-deploy_image50.png["오류: 그래픽 이미지가 없습니다"]
+
+. FlexPod-Cluster ESXi 클러스터를 선택하고 Next를 클릭합니다.
+. 세부 정보를 검토하고 Next를 클릭합니다.
++
+image:express-c-series-c190-deploy_image51.png["오류: 그래픽 이미지가 없습니다"]
+
+. Accept(수락) 를 클릭하여 라이센스를 수락하고 Next(다음) 를 클릭합니다.
+. Thin Provision 가상 디스크 형식과 NFS 데이터 저장소 중 하나를 선택합니다. 다음 을 클릭합니다.
++
+image:express-c-series-c190-deploy_image52.png["오류: 그래픽 이미지가 없습니다"]
+
+. 네트워크 선택에서 대상 네트워크를 선택하고 다음을 클릭합니다.
++
+image:express-c-series-c190-deploy_image53.png["오류: 그래픽 이미지가 없습니다"]
+
+. 템플릿 사용자 지정에서 VSC 관리자 암호, vCenter 이름 또는 IP 주소, 기타 구성 정보를 입력하고 다음을 클릭합니다.
++
+image:express-c-series-c190-deploy_image54.png["오류: 그래픽 이미지가 없습니다"]
+
+. 입력한 구성 세부 정보를 검토하고 Finish를 클릭하여 NetApp-VSC VM 구축을 완료합니다.
+. NetApp-VSC VM의 전원을 켜고 VM 콘솔을 엽니다.
+. NetApp-VSC VM 부팅 프로세스 중에 VMware 툴을 설치하라는 메시지가 표시됩니다. vCenter에서 NetApp-VSC VM > 게스트 OS > VMware 툴 설치 를 선택합니다.
++
+image:express-c-series-c190-deploy_image55.png["오류: 그래픽 이미지가 없습니다"]
+
+. OVF 템플릿 사용자 지정 중에 네트워킹 구성 및 vCenter 등록 정보가 제공되었습니다. 따라서 NetApp VSC VM을 실행한 후 VSC, VASA(vSphere API for Storage Awareness), VMware SRA(Storage Replication Adapter)가 vCenter에 등록됩니다.
+. vCenter Client에서 로그아웃하고 다시 로그인합니다. 홈 메뉴에서 NetApp VSC가 설치되었는지 확인합니다.
++
+image:express-c-series-c190-deploy_image56.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+== NetApp NFS VAAI 플러그인을 다운로드하고 설치합니다
+
+NetApp NFS VAAI 플러그인을 다운로드하고 설치하려면 다음 단계를 완료하십시오.
+
+. NetApp NFS Plug-in 1.1.2 for VMware를 다운로드합니다. NFS 플러그인 다운로드 페이지에서 VIB' 파일을 로컬 컴퓨터 또는 관리 호스트에 저장합니다.
+. NetApp NFS Plug-in for VMware VAAI 다운로드:
++
+.. 로 이동합니다 https://mysupport.netapp.com/NOW/download/software/nfs_plugin_vaai_esxi6/1.1.2/["소프트웨어 다운로드 페이지"^].
+.. 아래로 스크롤하여 VMware VAAI용 NetApp NFS 플러그인 을 클릭합니다.
+.. vSphere 웹 클라이언트의 홈 화면에서 가상 스토리지 콘솔을 선택합니다.
+.. Virtual Storage Console > Settings > NFS VAAI Tools 에서 Select File 을 선택하고 다운로드한 플러그인이 저장된 위치로 이동하여 NFS 플러그인을 업로드합니다.
++
+image:express-c-series-c190-deploy_image57.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 업로드 를 클릭하여 플러그인을 vCenter로 전송합니다.
+. 호스트를 선택한 다음 NetApp VSC > Install NFS Plug-in for VMware VAAI 를 선택합니다.
++
+image:express-c-series-c190-deploy_image58.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+== ESXi 호스트에 대한 최적의 스토리지 설정을 사용합니다
+
+VSC를 사용하면 NetApp 스토리지 컨트롤러에 연결된 모든 ESXi 호스트의 스토리지 관련 설정을 자동으로 구성할 수 있습니다. 이러한 설정을 사용하려면 다음 단계를 완료하십시오.
+
+. 홈 화면에서 vCenter > 호스트 및 클러스터 를 선택합니다. 각 ESXi 호스트에 대해 NetApp VSC > Set Recommended Values를 마우스 오른쪽 버튼으로 클릭하고 선택합니다.
++
+image:express-c-series-c190-deploy_image59.png["오류: 그래픽 이미지가 없습니다"]
+
+. 선택한 vSphere 호스트에 적용할 설정을 선택합니다. 확인 을 클릭하여 설정을 적용합니다.
++
+image:express-c-series-c190-deploy_image60.png["오류: 그래픽 이미지가 없습니다"]
+
++
+image:express-c-series-c190-deploy_image61.png["오류: 그래픽 이미지가 없습니다"]
+
+. 이러한 설정을 적용한 후 ESXi 호스트를 재부팅합니다.
+

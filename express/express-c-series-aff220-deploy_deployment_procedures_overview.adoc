@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_deployment_procedures_overview.html 
+keywords: vmware, vcenter, server, appliance, download 
+summary: 이 문서에서는 완전히 이중화된 고가용성 FlexPod Express 시스템을 구성하고 여러 Cisco UCS 호스트를 프로비저닝하는 방법에 대해 자세히 설명합니다. 
+---
+= 구현 절차
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 문서에서는 완전히 이중화된 고가용성 FlexPod Express 시스템을 구성하는 방법에 대해 자세히 설명합니다. 이러한 이중화를 반영하기 위해 각 단계에서 구성 요소를 구성 요소 A 또는 구성 요소 B라고 합니다 예를 들어 컨트롤러 A와 컨트롤러 B는 이 문서에 프로비저닝된 NetApp 스토리지 컨트롤러 2개를 식별합니다. 스위치 A와 스위치 B는 Cisco Nexus 스위치 쌍을 나타냅니다.
+
+또한 서버 A, 서버 B 등으로 순차적으로 구분되는 여러 Cisco UCS 호스트를 프로비저닝하는 단계도 설명합니다.
+
+사용자 환경과 관련된 정보를 단계별로 포함해야 함을 나타내기 위해 명령 구조의 일부로 '\<<text>>'이 표시됩니다. 'VLAN create' 명령은 다음 예를 참조하십시오.
+
+....
+Controller01>vlan create vif0 <<mgmt_vlan_id>>
+....
+이 문서를 사용하여 FlexPod Express 환경을 완전히 구성할 수 있습니다. 이 프로세스에서 다양한 단계를 수행하려면 고객별 명명 규칙, IP 주소 및 VLAN(Virtual Local Area Network) 스키마를 삽입해야 합니다. 아래 표에는 이 가이드에 설명된 대로 구축에 필요한 VLAN이 설명되어 있습니다. 이 표는 특정 사이트 변수를 기반으로 완료할 수 있으며 문서 구성 단계를 구현하는 데 사용할 수 있습니다.
+
+
+NOTE: 별도의 대역내 및 대역외 관리 VLAN을 사용하는 경우 이러한 VLAN 간에 레이어 3 경로를 만들어야 합니다. 이 검증에서는 공통 관리 VLAN이 사용되었습니다.
+
+|===
+| 이름 | VLAN의 용도 | 이 문서의 유효성을 검사하는 데 사용되는 ID입니다 
+
+
+| 관리 VLAN | 관리 인터페이스용 VLAN | 3437 
+
+
+| 네이티브 VLAN | 태그가 지정되지 않은 프레임이 할당되는 VLAN입니다 | 2 
+
+
+| NFS VLAN | NFS 트래픽용 VLAN | 3438 
+
+
+| VMware vMotion VLAN | 하나의 물리적 호스트에서 다른 물리적 호스트로 가상 시스템을 이동할 수 있도록 지정된 VLAN입니다 | 3441 
+
+
+| 가상 머신 트래픽 VLAN | 가상 머신 애플리케이션 트래픽용 VLAN | 3442 
+
+
+| iSCSI-A-VLAN | 패브릭 A의 iSCSI 트래픽용 VLAN | 3439 
+
+
+| iSCSI-B-VLAN | 패브릭 B의 iSCSI 트래픽용 VLAN | 3440 
+|===
+FlexPod Express를 구성하는 동안 VLAN 번호가 필요합니다. VLAN은 "\<<var_xxxx_vlan>>"라고 하며, 여기서 "xxxx"는 VLAN의 목적(예: iSCSI-A)입니다.
+
+아래 표에는 생성된 VMware 가상 머신이 나와 있습니다.
+
+|===
+| 가상 머신 설명입니다 | 호스트 이름입니다 
+
+
+| VMware vCenter Server를 참조하십시오 |  
+|===

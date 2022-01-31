@@ -1,0 +1,112 @@
+---
+sidebar: sidebar 
+permalink: infrastructure/nvme-vsphere-testing-approach.html 
+keywords: test, environment, hardware, software, plan 
+summary: 이 섹션에서는 FC-NVMe on FlexPod 검증 테스트에 대한 간략한 개요를 제공합니다. 여기에는 VMware vSphere 7을 사용하는 FlexPod용 FC-NVMe와 관련하여 워크로드 테스트를 수행하기 위해 채택된 테스트 환경/구성 및 테스트 계획이 모두 포함됩니다. 
+---
+= 테스트 접근 방식
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:nvme-vsphere-introduction.html["이전: 소개."]
+
+이 섹션에서는 FC-NVMe on FlexPod 검증 테스트에 대한 간략한 개요를 제공합니다. 여기에는 VMware vSphere 7을 사용하는 FlexPod용 FC-NVMe와 관련하여 워크로드 테스트를 수행하기 위해 채택된 테스트 환경/구성 및 테스트 계획이 모두 포함됩니다.
+
+
+
+== 테스트 환경
+
+Cisco Nexus 9000 시리즈 스위치는 2가지 운영 모드를 지원합니다.
+
+* NX-OS 독립 실행형 모드, Cisco NX-OS 소프트웨어 사용
+* Cisco ACI(Application Centric Infrastructure) 플랫폼을 사용하는 ACI 패브릭 모드
+
+
+독립 실행형 모드에서 스위치는 일반적인 Cisco Nexus 스위치와 마찬가지로 높은 포트 밀도, 짧은 지연 시간, 40GbE 및 100GbE 연결을 지원합니다.
+
+NX-OS가 포함된 FlexPod는 컴퓨팅, 네트워크 및 스토리지 계층에서 완전히 이중화되도록 설계되었습니다. 디바이스 또는 트래픽 경로 관점에서 단일 장애 지점이 없습니다. 아래 그림은 FC-NVMe의 이 검증에 사용된 최신 FlexPod 설계의 다양한 요소를 보여줍니다.
+
+image:nvme-vsphere-image2.png["오류: 그래픽 이미지가 없습니다"]
+
+FC SAN 관점에서 볼 때 이 설계는 최신 4세대 Cisco UCS 6454 패브릭 상호 연결 및 서버에 포트 확장기가 있는 Cisco UCS VICS 1400 플랫폼을 사용합니다. Cisco UCS 섀시의 Cisco UCS B200 M6 블레이드 서버는 Cisco UCS 2408 Fabric Extender IOM에 연결된 포트 확장기가 있는 Cisco UCS VIC 1440을 사용하며, 각 FCoE(Fibre Channel over Ethernet) vHBA(Virtual Host Bus Adapter)의 속도는 40Gbps입니다. Cisco UCS가 관리하는 Cisco UCS C220 M5 랙 서버는 Cisco UCS VIC 1457을 사용하며, 각 Fabric Interconnect에 2개의 25Gbps 인터페이스가 제공됩니다. 각 C220 M5 FCoE vHBA의 속도는 50Gbps입니다.
+
+Fabric 상호 연결은 32Gbps SAN 포트 채널을 통해 최신 세대 Cisco MDS 9148T 또는 9132T FC 스위치에 연결됩니다. Cisco MDS 스위치와 NetApp AFF A800 스토리지 클러스터 간의 연결도 32Gbps FC입니다. 이 구성은 스토리지 클러스터와 Cisco UCS 사이의 파이버 채널 프로토콜(FCP)과 FC-NVMe 스토리지를 위해 32Gbps FC를 지원합니다. 이 검증을 위해 각 스토리지 컨트롤러에 대한 FC 연결 4개가 사용됩니다. 각 스토리지 컨트롤러에서 FC 포트 4개가 FCP 및 FC-NVMe 프로토콜 모두에 사용됩니다.
+
+Cisco Nexus 스위치와 최신 세대 NetApp AFF A800 스토리지 클러스터 간의 연결은 스토리지 컨트롤러의 포트 채널 및 스위치의 vPC에서도 100Gbps입니다. NetApp AFF A800 스토리지 컨트롤러는 고속 PCIe(Peripheral Connect Interface Express) 버스에 NVMe 디스크를 장착하고 있습니다.
+
+이 검증에 사용된 FlexPod 구현은 를 기반으로 합니다 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_m6_esxi7u2.html["UCS 관리 모드, VMware vSphere 7.0U2 및 NetApp ONTAP 9.9의 Cisco UCS 4.2(1)가 설치된 FlexPod 데이터 센터"^].
+
+
+
+== 검증된 하드웨어 및 소프트웨어
+
+다음 표에는 솔루션 검증 프로세스 중에 사용되는 하드웨어 및 소프트웨어 버전이 나와 있습니다. Cisco와 NetApp은 상호 운용성 매트릭스를 보유하고 있으며, 이러한 매트릭스는 FlexPod의 특정 구현 지원을 결정하는 데 참조되어야 합니다. 자세한 내용은 다음 리소스를 참조하십시오.
+
+* https://mysupport.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴"^]
+* https://ucshcltool.cloudapps.cisco.com/public/["Cisco UCS 하드웨어 및 소프트웨어 상호 운용성 툴"]
+
+
+|===
+| 레이어 | 장치 | 이미지 | 설명 
+
+
+| 없습니다  a| 
+* Cisco UCS 6454 패브릭 인터커넥트 2개
+* 2개의 Cisco UCS 2408 I/O 모듈이 있는 1개의 Cisco UCS 5108 블레이드 섀시
+* Cisco UCS B200 M6 블레이드 4개, 각각 Cisco UCS VIC 1440 어댑터 및 포트 확장기 카드 1개 포함
+
+| 릴리스 4.2(1f) | Cisco UCS Manager, Cisco UCS VIC 1440 및 포트 확장기를 포함합니다 
+
+
+| CPU | 2.0GHz의 Intel Xeon Gold 6330 CPU 2개, 42MB Layer 3 캐시 및 CPU당 28코어 | – | – 
+
+
+| 메모리 | 1024GB(3200MHz로 작동하는 16x 64GB DIMM) | – | – 
+
+
+| 네트워크 | NX-OS 독립 실행형 모드의 Cisco Nexus 9336C-FX2 스위치 2개 | 릴리스 9.3(8) | – 
+
+
+| 스토리지 네트워크 | Cisco MDS 9132T 32Gbps 32포트 FC 스위치 2개 | 릴리즈 8.4(2c) | FC-NVMe SAN 분석 지원 
+
+
+| 스토리지 | 24x 1.8TB NVMe SSD가 장착된 NetApp AFF A800 스토리지 컨트롤러 2개 | NetApp ONTAP 9.9.1P1 | – 
+
+
+| 소프트웨어 | Cisco UCS Manager를 참조하십시오 | 릴리스 4.2(1f) | – 
+
+
+|  | VMware vSphere를 참조하십시오 | 7.0U2 | – 
+
+
+|  | VMware ESXi | 7.0.2 | – 
+
+
+|  | VMware ESXi 네이티브 파이버 채널 NIC 드라이버(NFNIC) | 5.0.12 | VMware에서 FC-NVMe 지원 
+
+
+|  | VMware ESXi 네이티브 이더넷 NIC 드라이버(NENIC) | 1.0.35.0 | – 
+
+
+| 테스트 툴 | FiO | 3.19 | – 
+|===
+
+
+== 테스트 계획
+
+우리는 가상 워크로드를 사용하여 FlexPod에서 NVMe를 검증하기 위한 성능 테스트 계획을 개발했습니다. 이 워크로드를 통해 8KB 랜덤 읽기 및 쓰기와 64KB 읽기 및 쓰기를 실행할 수 있었습니다. VMware ESXi 호스트를 사용하여 AFF A800 스토리지에 대해 테스트 사례를 실행했습니다.
+
+우리는 성능 측정에 사용할 수 있는 오픈 소스 합성 I/O 도구인 FIO를 사용하여 가상 워크로드를 생성했습니다.
+
+성능 테스트를 완료하기 위해 스토리지와 서버 모두에서 몇 가지 구성 단계를 수행했습니다. 다음은 구현을 위한 세부 단계입니다.
+
+. 스토리지 측면에 4개의 스토리지 가상 시스템(SVM, 이전의 vserver), SVM당 8개의 볼륨 및 볼륨당 1개의 네임스페이스를 생성했습니다. 1TB 볼륨 및 960GB 네임스페이스가 생성되었습니다. NetApp은 SVM당 4개의 LIF와 SVM당 1개의 하위 시스템을 생성했습니다. SVM LIF는 클러스터에 있는 8개의 사용 가능한 FC 포트에 균등하게 분산되었습니다.
+. 서버 측에서 각 ESXi 호스트에 총 4개의 VM에 대해 단일 가상 머신(VM)을 생성했습니다. 가상 워크로드를 실행하기 위해 서버에 FIO를 설치했습니다.
+. 스토리지 및 VM을 구성한 후에는 ESXi 호스트에서 스토리지 네임스페이스에 연결할 수 있었습니다. 덕분에 네임스페이스를 기반으로 데이터 저장소를 생성한 다음 이러한 데이터 저장소를 기반으로 VMDK(가상 머신 디스크)를 생성할 수 있었습니다.
+
+
+link:nvme-vsphere-test-results.html["다음: 테스트 결과."]

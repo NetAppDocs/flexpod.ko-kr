@@ -1,0 +1,23 @@
+---
+section: security
+title: FlexPod 및 보안
+entries:
+- title: FlexPod, 랜섬웨어에 대한 솔루션
+  type: solutions
+  entries:
+  - title: 랜섬웨어란 무엇입니까?
+    url: "/security/security-ransomware_what_is_ransomware.html"
+  - title: FlexPod 개요
+    url: "/security/security-ransomware_flexpod_overview.html"
+  - title: 랜섬웨어 차단 조치
+    url: "/security/security-ransomware_ransomware_protection_measures.html"
+  - title: FlexPod에서 데이터 보호 및 복구
+    url: "/security/security-ransomware_protect_and_recover_data_on_flexpod.html"
+  - title: 대가를 지불하지 않고 비즈니스 운영을 지속하십시오
+    url: "/security/security-ransomware_continue_business_operations_without_paying_ransom.html"
+  - title: 결론
+    url: "/security/security-ransomware_conclusion.html"
+  - title: 감사의 말
+    url: "/security/security-ransomware_acknowledgements.html"
+  - title: 추가 정보
+    url: "/security/security-ransomware_additional_information.html"

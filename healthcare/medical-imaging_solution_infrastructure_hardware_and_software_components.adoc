@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: healthcare/medical-imaging_solution_infrastructure_hardware_and_software_components.html 
+keywords: harware, software, components, solution, infrastructure, medical, imaging, flexpod 
+summary: 다음 표에는 의료 영상 시스템용 FlexPod 인프라의 하드웨어 및 소프트웨어 구성 요소가 각각 나열되어 있습니다. 
+---
+= 솔루션 인프라 하드웨어 및 소프트웨어 구성 요소
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+다음 표에는 의료 영상 시스템용 FlexPod 인프라의 하드웨어 및 소프트웨어 구성 요소가 각각 나열되어 있습니다.
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+.4+| 컴퓨팅 | Cisco UCS 5108 섀시 | 1 또는 2 | 연간 연구 수를 지원하는 데 필요한 블레이드 수에 따라 달라집니다 
+
+
+| Cisco UCS 블레이드 서버 | B200 M5 | 2개 이상의 코어, 2.7GHz 및 128-384GB RAM이 있는 연간 검사 수를 기준으로 한 블레이드의 수 
+
+
+| Cisco UCS 가상 인터페이스 카드(VIC) | Cisco UCS 1440 | 를 참조하십시오 
+
+
+| 2 x Cisco UCS 패브릭 인터커넥트 | 6454 이상 | – 
+
+
+| 네트워크 | Cisco Nexus 스위치 | Cisco Nexus 3000 시리즈 또는 9000 시리즈 2개 | – 
+
+
+.2+| 스토리지 네트워크 | SMB/CIFS, NFS 또는 iSCSI 프로토콜을 통한 스토리지 액세스를 위한 IP 네트워크 | 위와 동일한 네트워크 스위치 | – 
+
+
+| FC를 통한 스토리지 액세스 | Cisco MDS 9132T 2개 | – 
+
+
+.3+| 스토리지 | NetApp AFF A400 All-Flash 스토리지 시스템 | 1개 이상의 HA 쌍 | 2개 이상의 노드로 클러스터 
+
+
+| 디스크 쉘프 | DS224C 또는 NS224 디스크 쉘프 1개 이상 | 24개 드라이브로 완전히 채워집니다 
+
+
+| SSD를 지원합니다 | >24, 1.2TB 이상의 용량 | – 
+|===
+|===
+| 소프트웨어 | 제품군 | 버전 또는 릴리스 | 세부 정보 
+
+
+.7+| 기업용 의료 영상 시스템 |  |  |  
+
+
+| MS SQL 또는 Oracle Database Server | 의료 영상 시스템 공급업체가 제안한 대로 |  
+
+
+| MongoDB Server와 같은 SQL DB는 없습니다 | 의료 영상 시스템 공급업체가 제안한 대로 |  
+
+
+| 애플리케이션 서버 | 의료 영상 시스템 공급업체가 제안한 대로 |  
+
+
+| 통합 서버(MS BizTalk, MuleSoft, Rhapsody, Tibco) | 의료 영상 시스템 공급업체가 제안한 대로 |  
+
+
+| VM | Linux(64비트) |  
+
+
+| VM | Windows Server(64비트) |  
+
+
+| 스토리지 | ONTAP | ONTAP 9.7 이상 |  
+
+
+.3+| 네트워크 | Cisco UCS 6120 패브릭 인터커넥트 | Cisco UCS Manager 4.1 이상 |  
+
+
+| Cisco 이더넷 스위치 | 9.2(3) i7(2) 이상 |  
+
+
+| Cisco FC: Cisco MDS 9132T | 8.4(2) 이상 |  
+
+
+| 하이퍼바이저 | 하이퍼바이저 | VMware vSphere ESXi 6.7 U2 이상 |  
+
+
+.3+| 관리 | 하이퍼바이저 관리 시스템 | VMware vCenter Server 6.7 U1(vCSA) 이상 |  
+
+
+| NetApp 가상 스토리지 콘솔(VSC) | VSC 9.7 이상 |  
+
+
+| SnapCenter | SnapCenter 4.3 이상 |  
+|===

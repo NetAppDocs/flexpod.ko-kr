@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_power_and_cabling_requirements.html 
+keywords: power, cabling, requirements, minimum, techincal, datacenter, specifications 
+summary: FlexPod 설계에는 전원 및 케이블 연결에 대한 최소 요구 사항이 있습니다. 
+---
+= 전원 및 케이블 연결 요구 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod 설계에는 전원 및 케이블 연결에 대한 최소 요구 사항이 있습니다.
+
+
+
+== 전원 요구 사항
+
+FlexPod 데이터 센터의 전원 요구 사항은 FlexPod 데이터 센터 구성이 설치된 위치에 따라 다릅니다.
+
+필요한 최대 전력과 기타 자세한 전력 정보에 대한 자세한 내용은 섹션에 나와 있는 각 하드웨어 구성 요소의 기술 사양을 참조하십시오 link:dc-tech-spec_technical_specifications_and_references.html["기술 사양 및 참조: 하드웨어 구성 요소"].
+
+Cisco UCS 전원 데이터에 대한 자세한 내용은 를 참조하십시오 http://www.cisco.com/assets/cdc_content_elements/flash/dataCenter/cisco_ucs_power_calculator/["Cisco UCS 전력 계산기"^].
+
+NetApp 스토리지 컨트롤러 전원 데이터에 대한 자세한 내용은 를 참조하십시오 http://hwu.netapp.com/Controller/Index?platformTypeId=6780858["NetApp Hardware Universe를 참조하십시오"^]. 플랫폼 에서 구성에 사용할 스토리지 플랫폼(FAS/V-Series 또는 AFF)을 선택합니다. ONTAP 버전 및 스토리지 컨트롤러를 선택하고 결과 표시 버튼을 클릭합니다.
+
+
+
+== 최소 케이블 요구 사항
+
+필요한 케이블 및 어댑터의 수와 유형은 FlexPod 데이터 센터 구축에 따라 다릅니다. 케이블 유형, 트랜시버 유형 및 번호는 요구 사항에 따라 설계 프로세스 중에 결정됩니다. 아래 표에는 필요한 최소 케이블 수가 나열되어 있습니다.
+
+|===
+| 하드웨어 | 모델 번호 | 케이블이 필요합니다 
+
+
+| Cisco UCS 섀시 | Cisco UCS 5108 | Cisco UCS 2104XP, 2204XP 또는 2208XP 모듈당 2개 이상의 쌍축 케이블 
+
+
+.6+| Cisco UCS Fabric 상호 연결 | Cisco UCS 6248UP  a| 
+* 관리 포트용 Cat5e 케이블 2개
+* L1, L2 상호 연결을 위한 Cat5e 케이블 2개, 패브릭 상호 연결 한 쌍당
+* Fabric 상호 연결당 2축 케이블 4개 이상
+* 패브릭 인터커넥트당 FC 케이블 4개 이상
+
+
+
+
+| Cisco UCS 6296UP 
+
+
+| Cisco UCS 6332-16UP 
+
+
+| Cisco UCS 6454 
+
+
+| Cisco UCS 6332  a| 
+* 관리 포트용 Cat5e 케이블 2개
+* L1, L2 상호 연결을 위한 Cat5e 케이블 2개, 패브릭 상호 연결 한 쌍당
+* Fabric 상호 연결당 2축 케이블 4개 이상
+
+
+
+
+| Cisco UCS 6324  a| 
+* 10/100/1000Mbps 관리 포트 2개
+* Fabric 상호 연결당 2개 이상의 Twinax 케이블
+
+
+
+
+.2+| Cisco Nexus 5000 및 7000 시리즈 스위치 | Cisco Nexus 5000 시리즈  a| 
+* 스위치당 10GbE Fibre 또는 Twinax 케이블 2개 이상
+* 스위치당 FC 케이블 2개 이상(FC/FCoE 연결이 필요한 경우)
+
+
+
+
+| Cisco Nexus 7000 시리즈 
+
+
+| Cisco Nexus 9000 시리즈 스위치 | Cisco Nexus 9000 시리즈 | 스위치당 10GbE 케이블 2개 이상 
+
+
+.2+| NetApp FAS 컨트롤러 | AFF A 시리즈  a| 
+* 스토리지 컨트롤러당 하나의 SAS 또는 SATA 케이블
+* 레거시 FC를 사용하는 경우 컨트롤러당 최소 2개의 FC 케이블을 사용해야 합니다
+* 컨트롤러당 최소 2개의 10GbE 케이블
+* 컨트롤러당 관리용 GbE 케이블 1개 이상
+* ONTAP의 경우 클러스터 인터커넥트 스위치 쌍당 짧은 Twinax 케이블 8개가 필요합니다
+
+
+
+
+| FAS 시리즈 
+
+
+.4+| 제공합니다 | DS212C .3+| 디스크 쉘프당 SAS, SATA 또는 FC 케이블 2개 
+
+
+| DS224C 
+
+
+| DS460C 
+
+
+| NS224 | 디스크 쉘프당 100Gbps 구리 케이블 2개 
+|===

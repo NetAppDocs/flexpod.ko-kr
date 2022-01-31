@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-meditech-deploy_deployment_and_configuration_overview.html 
+keywords: ontap, cisco, blade, ucs, rack, mount, server, cabling, diagram 
+summary: 이 섹션에서는 ONTAP 또는 Cisco UCS 블레이드 및 랙 마운트 서버를 사용하는 환경에서 FlexPod를 구축하기 위한 스토리지 지침에 대해 설명합니다. 
+---
+= 개요
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 문서에 제공된 FlexPod 구축에 대한 NetApp 스토리지 지침은 다음과 같습니다.
+
+* ONTAP를 사용하는 환경
+* Cisco UCS 블레이드 및 랙 마운트 서버를 사용하는 환경
+
+
+이 문서는 다음 사항을 다루지 않습니다.
+
+* FlexPod 데이터 센터 환경의 세부 구축
++
+자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["FC Cisco Validated Design이 구축된 FlexPod 데이터 센터"^] (CVD)
+
+* MEDITECH 소프트웨어 환경, 참조 아키텍처 및 통합 모범 사례 지침을 간략하게 설명합니다.
++
+자세한 내용은 을 참조하십시오 https://fieldportal.netapp.com/content/310932["TR-4300i: MEDITECH 환경용 NetApp FAS 및 All-Flash 스토리지 시스템 모범 사례 가이드"^] (NetApp 로그인 필요).
+
+* 정량적 성능 요구 사항 및 사이징 지침
++
+자세한 내용은 을 참조하십시오 https://fieldportal.netapp.com/content/198446["TR-4190: MEDITECH 환경을 위한 NetApp 사이징 지침"^].
+
+* NetApp SnapMirror 기술을 사용하여 백업 및 재해 복구 요구사항을 충족합니다.
+* 일반 NetApp 스토리지 구축 지침:
+
+
+이 섹션에서는 인프라 구축 모범 사례를 사용한 구성 예를 제공하고 다양한 인프라 하드웨어 및 소프트웨어 구성 요소와 사용할 수 있는 버전을 나열합니다.
+
+
+
+== 케이블 연결 다이어그램
+
+다음 그림에서는 MEDITECH 구축을 위한 32Gb FC/40GbE 토폴로지 다이어그램을 보여 줍니다.
+
+image:ehr-meditech-deploy_image5.png["오류: 그래픽 이미지가 없습니다"]
+
+항상 를 사용하십시오 http://mysupport.netapp.com/matrix/["상호 운용성 매트릭스 툴(IMT)"^] 모든 소프트웨어 및 펌웨어 버전이 지원되는지 확인합니다. 섹션의 표 link:ehr-meditech-deploy_meditech_modules_and_components.html["MEDITECH 모듈 및 구성 요소"] 에는 솔루션 테스트에 사용된 인프라 하드웨어 및 소프트웨어 구성요소가 나와 있습니다.
+
+link:ehr-meditech-deploy_base_infrastructure_configuration.html["다음: 기본 인프라 구성"]

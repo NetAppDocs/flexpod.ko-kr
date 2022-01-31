@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-meditech-deploy_volume_configuration.html 
+keywords: volume, provisioning, snapshot, copy, volume, default, aggregate, reallocate, schedule 
+summary: MEDITECH 호스트 전용 MEDITECH 볼륨은 일반 또는 씬 프로비저닝될 수 있으며 Snapshot 복제본을 사용하여 액세스할 수 있습니다. 또한 볼륨 레벨 재할당을 사용하여 디스크의 데이터 레이아웃을 최적화하여 쓰기 지연 시간과 순차적 읽기 액세스를 향상시킬 수 있습니다. 
+---
+= 볼륨 구성
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+
+
+== 볼륨 프로비저닝
+
+MEDITECH 호스트용 MEDITECH 볼륨은 일반 또는 씬 프로비저닝될 수 있습니다.
+
+
+
+== 기본 볼륨 레벨 스냅샷 복사본
+
+스냅샷 복사본은 백업 워크플로우의 일부로 생성됩니다. 각 스냅샷 복사본을 사용하여 MEDITECH LUN에 저장된 데이터에 다른 시간에 액세스할 수 있습니다. MEDITECH 승인 백업 솔루션은 이러한 Snapshot 복제본을 기반으로 씬 프로비저닝된 FlexClone 볼륨을 생성하여 MEDITECH LUN의 시점 복제본을 제공합니다. MEDITECH 환경은 승인된 백업 소프트웨어 솔루션과 통합됩니다. 따라서 MEDITECH 운영 데이터베이스 LUN을 구성하는 각 NetApp FlexVol 볼륨에서 기본 스냅샷 복사본 스케줄을 사용하지 않도록 설정하는 것이 좋습니다.
+
+* 중요: * FlexClone 볼륨은 상위 데이터 볼륨 공간을 공유하기 때문에 백업 서버가 생성하는 MEDITECH 데이터 LUN 및 FlexClone 볼륨에 충분한 공간을 확보하는 것이 중요합니다. FlexClone 볼륨은 데이터 볼륨보다 더 많은 공간을 차지하지 않습니다. 그러나 MEDITECH LUN에서 짧은 시간 내에 대규모 삭제가 발생하면 클론 볼륨이 증가할 수 있습니다.
+
+
+
+== 애그리게이트당 볼륨 수입니다
+
+Flash Pool 또는 NetApp Flash Cache 캐싱을 사용하는 NetApp FAS 시스템의 경우 MEDITECH 프로그램, 사전 및 데이터 파일 저장용 Aggregate당 3개 이상의 볼륨을 프로비저닝하는 것이 좋습니다.
+
+AFF 시스템의 경우 MEDITECH 프로그램, 사전 및 데이터 파일을 저장하기 위해 애그리게이트당 4개 이상의 볼륨을 전용으로 할당하는 것이 좋습니다.
+
+
+
+== 볼륨 레벨 재할당 스케줄
+
+특히 MEDITECH, 6.x 및 C/S 5.x 플랫폼과 같은 쓰기 집약적인 워크로드에서 스토리지의 데이터 레이아웃이 시간이 지남에 따라 최적화되지 않습니다. 시간이 지나면서 순차적 읽기 지연 시간이 증가하여 백업을 완료하는 데 더 오랜 시간이 걸릴 수 있습니다. 잘못된 데이터 레이아웃 또는 조각화는 쓰기 지연 시간에 영향을 줄 수도 있습니다. 볼륨 레벨 재할당을 사용하여 디스크의 데이터 레이아웃을 최적화하여 쓰기 지연 시간과 순차적 읽기 액세스를 향상시킬 수 있습니다. 향상된 스토리지 레이아웃을 통해 할당된 8시간 내에 백업을 완료할 수 있습니다.
+
+|===
+| 모범 사례 
+
+
+ a| 
+NetApp은 최소한 매주 볼륨 재할당 일정을 구현하여 할당된 유지보수 다운타임 동안 또는 운영 사이트에서 사용량이 적은 시간 동안 재할당 작업을 실행할 것을 권장합니다.
+
+
+NOTE: NetApp은 재할당 작업을 컨트롤러당 한 번에 하나의 볼륨에 대해 실행할 것을 적극 권장합니다.
+
+|===
+프로덕션 데이터베이스 스토리지에 적합한 볼륨 재할당 일정을 결정하는 방법에 대한 자세한 내용은 의 3.12절을 참조하십시오 https://fieldportal.netapp.com/content/192896["NetApp TR-3929: 재할당 모범 사례 가이드"^]. 또한 이 섹션에서는 사용 중인 사이트에 대한 주간 재할당 일정을 만드는 방법에 대해서도 설명합니다.
+
+link:ehr-meditech-deploy_lun_configuration.html["다음: LUN 구성."]

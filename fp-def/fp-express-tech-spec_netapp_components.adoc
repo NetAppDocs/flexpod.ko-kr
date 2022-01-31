@@ -1,0 +1,246 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec__netapp_components.html 
+keywords: storage, controller, options, fas, e, series, disk, shelves, licensing, software 
+summary: NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데이터 스토리지를 위한 FlexPod Express 아키텍처의 스토리지 기반을 제공합니다. 이 섹션에는 FlexPod 익스프레스 아키텍처의 다양한 NetApp 옵션이 나와 있습니다. 
+---
+= NetApp 구성 요소
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데이터 스토리지를 위한 FlexPod Express 아키텍처의 스토리지 기반을 제공합니다. 이 섹션에는 FlexPod 익스프레스 아키텍처의 다양한 NetApp 옵션이 나와 있습니다.
+
+
+
+== NetApp 스토리지 컨트롤러 옵션
+
+
+
+== NetApp FAS를 참조하십시오
+
+AFF Express 아키텍처에는 중복 AFF C190, FlexPod A220 또는 FAS2750 시리즈 컨트롤러가 필요합니다. 컨트롤러는 ONTAP 소프트웨어를 실행합니다. 스토리지 컨트롤러를 주문할 때는 컨트롤러에 기본 소프트웨어 버전이 사전 로드될 수 있습니다. ONTAP의 경우, 클러스터 인터커넥트 스위치 한 쌍이나 스위치가 없는 클러스터 구성으로 클러스터를 구축할 수 있습니다.
+
+다음 표에 나열된 부품 번호는 빈 컨트롤러에 대한 것입니다. 선택한 스토리지 플랫폼을 기반으로 다양한 옵션과 구성을 사용할 수 있습니다. 이러한 추가 구성 요소에 대한 자세한 내용은 영업 담당자에게 문의하십시오.
+
+|===
+| 스토리지 컨트롤러 | FAS 부품 번호 | 기술 사양 
+
+
+| FAS2750 | 선택한 개별 옵션을 기준으로 합니다 | https://www.netapp.com/us/products/storage-systems/hybrid-flash-array/fas2700.aspx[] 
+
+
+| FAS2720 | 선택한 개별 옵션을 기준으로 합니다 | https://www.netapp.com/us/products/storage-systems/hybrid-flash-array/fas2700.aspx[] 
+
+
+| AFF C190 | 선택한 개별 옵션을 기준으로 합니다 | https://www.netapp.com/us/products/entry-level-aff.aspx[] 
+
+
+| AFF A220 | 선택한 개별 옵션을 기준으로 합니다 | https://www.netapp.com/us/documentation/all-flash-fas.aspx[] 
+
+
+| FAS2620 | 선택한 개별 옵션을 기준으로 합니다 | http://www.netapp.com/us/products/storage-systems/fas2600/fas2600-tech-specs.aspx[] 
+
+
+| FAS2650 | 선택한 개별 옵션을 기준으로 합니다 | http://www.netapp.com/us/products/storage-systems/fas2600/fas2600-tech-specs.aspx[] 
+|===
+
+
+=== E-Series 스토리지
+
+FlexPod Express 아키텍처에는 NetApp E2800 시리즈 컨트롤러의 HA 쌍이 필요합니다. 컨트롤러는 SANtricity OS를 실행합니다.
+
+다음 표에 나열된 부품 번호는 빈 컨트롤러에 대한 것입니다. 선택한 스토리지 플랫폼을 기반으로 다양한 옵션과 구성을 사용할 수 있습니다. 이러한 추가 구성 요소에 대한 자세한 내용은 영업 담당자에게 문의하십시오.
+
+|===
+| 스토리지 컨트롤러 | 부품 번호 | 기술 사양 
+
+
+| E2800 | 선택한 개별 옵션을 기준으로 합니다 | http://www.netapp.com/us/products/storage-systems/e2800/e2800-tech-specs.aspx[] 
+|===
+
+
+== NetApp 이더넷 확장 모듈
+
+
+
+=== NetApp FAS를 참조하십시오
+
+다음 표에는 NetApp FAS10GbE 어댑터 옵션이 나와 있습니다.
+
+|===
+| 구성 요소 | 부품 번호 | 기술 사양 
+
+
+| NetApp X1117A | X1117A-R6 | https://library.netapp.com/ecm/ecm_download_file/ECMM1280307[] 
+|===
+[NOTE]
+====
+FAS2500 및 2600 시리즈 스토리지 시스템에는 온보드 10GbE 포트가 있습니다.
+
+NetApp X1117A 어댑터는 FAS8020 스토리지 시스템용으로,
+
+====
+
+
+=== E-Series 스토리지
+
+다음 표에는 E-Series 10GbE 어댑터 옵션이 나와 있습니다.
+
+|===
+| 구성 요소 | 부품 번호 
+
+
+| 10GbE iSCSI/16Gb FC 4포트 | X-56025-00-0E-C 
+
+
+| 10GbE iSCSI/16Gb FC 2포트 | X-56024-00-0E-C 
+|===
+[NOTE]
+====
+E2824 시리즈 스토리지 시스템에는 온보드 10GbE 포트가 있습니다.
+
+10GbE iSCSI/16Gb FC 4-포트 HIC(호스트 인터페이스 카드)를 사용하여 추가 포트 밀도를 사용할 수 있습니다.
+
+====
+온보드 포트와 HIC는 SANtricity OS에서 활성화된 기능에 따라 iSCSI 어댑터 또는 FC 어댑터로 작동할 수 있습니다.
+
+지원되는 어댑터 옵션에 대한 자세한 내용은 의 어댑터 섹션을 참조하십시오 https://hwu.netapp.com/Adapter/Index["NetApp Hardware Universe를 참조하십시오"^].
+
+
+
+== 기능과 이점을 제공합니다
+
+
+
+== NetApp FAS를 참조하십시오
+
+스토리지 컨트롤러를 사용하려면 NetApp 디스크 쉘프가 하나 이상 필요합니다. 선택한 NetApp 쉘프 유형에 따라 해당 쉘프 내에서 사용 가능한 드라이브 유형이 결정됩니다.
+
+FAS2700 및 FAS2600 컨트롤러 시리즈는 동일한 섀시 내에 있는 디스크와 이중 스토리지 컨트롤러를 포함하는 구성으로 제공됩니다. 이 구성은 SATA 또는 SAS 드라이브에서 제공됩니다. 따라서 성능 또는 용량 요구사항에 따라 더 많은 스핀들이 필요한 경우가 아니라면 추가 외부 디스크 쉘프가 필요하지 않습니다.
+
+[NOTE]
+====
+모든 디스크 쉘프 부품 번호는 AC PSU 2개가 장착된 빈 쉘프에 사용됩니다. 추가 부품 번호는 영업 담당자에게 문의하십시오.
+
+디스크 드라이브 부품 번호는 구입하려는 디스크의 크기 및 폼 팩터에 따라 다릅니다. 추가 부품 번호는 영업 담당자에게 문의하십시오.
+
+====
+다음 표에는 NetApp Hardware Universe에서 제공되는 각 쉘프 유형의 지원되는 드라이브와 NetApp 디스크 쉘프 옵션이 나와 있습니다. Hardware Universe 링크를 따라 사용 중인 ONTAP 버전을 선택한 다음 쉘프 유형을 선택합니다. 쉘프 이미지에서 지원 드라이브를 클릭하여 특정 버전의 ONTAP 및 디스크 쉘프에서 지원되는 드라이브를 확인합니다.
+
+|===
+| 디스크 쉘프 | 부품 번호 | 기술 사양 
+
+
+| DS212C | DS212C-0-12 | link:http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DS224C | DS224C-0-24 | link:http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DS460C | DS460C-0-60 | link:http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DS2246 | X559A-R6 | link:http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DS4246 | X24M-R6 | link:http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DS4486 | DS4486-144TB-R5-C | link:http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+|===
+
+
+=== E-Series 스토리지
+
+섀시에 드라이브를 설치하지 않은 스토리지 컨트롤러에는 NetApp 디스크 쉘프가 하나 이상 필요합니다. 선택한 NetApp 쉘프 유형에 따라 해당 쉘프 내에서 사용 가능한 드라이브 유형이 결정됩니다.
+
+E2800 시리즈 컨트롤러는 이중 스토리지 컨트롤러와 지원 디스크 쉘프 내에 있는 디스크를 포함하는 구성으로 제공됩니다. 이 구성은 SSD 또는 SAS 드라이브와 함께 제공됩니다.
+
+
+NOTE: 디스크 드라이브 부품 번호는 구입하려는 디스크의 크기 및 폼 팩터에 따라 다릅니다. 추가 부품 번호는 영업 담당자에게 문의하십시오.
+
+다음 표에는 NetApp Hardware Universe에서 제공되는 각 쉘프 유형과 지원되는 드라이브가 나와 있습니다. Hardware Universe 링크를 따라 사용 중인 ONTAP 버전을 선택한 다음 쉘프 유형을 선택합니다. 쉘프 이미지에서 지원 드라이브를 클릭하여 특정 버전의 ONTAP 및 디스크 쉘프에서 지원되는 드라이브를 확인합니다.
+
+|===
+| 디스크 쉘프 | 부품 번호 | 기술 사양 
+
+
+| DE460C | E-X5730A-DM-0E-C | link:http://www.netapp.com/us/products/storage-systems/e2800/e2800-tech-specs.aspx["디스크 쉘프 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DE224C | E-X5721A-DM-0E-C | link:http://www.netapp.com/us/products/storage-systems/e2800/e2800-tech-specs.aspx["디스크 쉘프 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DE212C | E-X5723A-DM-0E-C | link:https://hwu.netapp.com/Shelves/Index?osTypeId=2357027["디스크 쉘프 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+|===
+
+
+== NetApp 소프트웨어 라이센스 옵션
+
+
+
+=== NetApp FAS를 참조하십시오
+
+다음 표에는 NetApp FAS 소프트웨어 라이센스 옵션이 나와 있습니다.
+
+|===
+| NetApp 소프트웨어 라이센스 | 부품 번호 | 기술 사양 
+
+
+| 기본 클러스터 라이센스 2+| 라이센스 정보에 대한 자세한 내용은 NetApp 세일즈 팀에 문의하십시오. 
+|===
+
+
+=== E-Series 스토리지
+
+다음 표에는 E-Series 소프트웨어 라이센스 옵션이 나와 있습니다.
+
+|===
+| NetApp 소프트웨어 라이센스 | 부품 번호 | 기술 사양 
+
+
+| 표준 피처 2.2+| 라이센스 정보에 대한 자세한 내용은 NetApp 세일즈 팀에 문의하십시오. 
+
+
+| 프리미엄 기능 
+|===
+
+
+== NetApp 지원 라이센스 옵션
+
+SupportEdge Premium 라이센스는 필수이며, 이러한 라이센스의 부품 번호는 FlexPod Express 설계에서 선택한 옵션에 따라 달라집니다.
+
+
+
+=== NetApp FAS를 참조하십시오
+
+다음 표에는 NetApp FAS에 대한 NetApp 지원 라이센스 옵션이 나와 있습니다.
+
+|===
+| NetApp Support 라이센스 | 부품 번호 | 기술 사양 
+
+
+| SupportEdge Premium4 운영 시간, 월:36 | CS-O2-4시간 | link:www.netapp.com/us/support/supportedge.html["http://www.netapp.com/us/support/supportedge.html"] 
+|===
+
+
+=== E-Series 스토리지
+
+다음 표에는 E-Series 스토리지에 대한 NetApp 지원 라이센스 옵션이 나와 있습니다.
+
+|===
+| NetApp Support 라이센스 | 부품 번호 | 기술 사양 
+
+
+| 하드웨어 지원 프리미엄 4시간 현장 지원, 월:36 | SVC-O2-4HR-E .3+| link:www.netapp.com/us/support/supportedge.html["http://www.netapp.com/us/support/supportedge.html"] 
+
+
+| 소프트웨어 지원 | SW-SSP-O2-4HR-E 
+
+
+| 초기 설치 | SVC - INST-O2-4HR-E 
+|===

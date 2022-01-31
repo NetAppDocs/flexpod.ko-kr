@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_connectivity_requirements.html 
+keywords: connectivity, requirements, cisco, ucs, fabric, interconnect, uplink, direct, san 
+summary: 다음은 FlexPod 구성에 대한 연결 요구 사항입니다. 
+---
+= 연결 요구 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod 구성에는 다음과 같은 연결 요구 사항이 있습니다.
+
+* 모든 구성 요소를 사용하려면 별도의 100Mbps 이더넷/1Gb 이더넷 대역외 관리 네트워크가 필요합니다.
+* 환경 전체에 점보 프레임 지원을 설정하는 것이 좋지만 필수는 아닙니다.
+* Cisco UCS Fabric Interconnect 어플라이언스 포트는 iSCSI 및 NAS 연결에만 권장됩니다.
+* 핵심 FlexPod 구성 요소 사이에 추가 장비를 배치할 수 없습니다.
+
+
+업링크 연결:
+
+* 가상 포트 채널(vPC)을 지원하려면 NetApp 스토리지 컨트롤러의 포트를 Cisco Nexus 5000, 7000 또는 9000 시리즈 스위치에 연결해야 합니다.
+* VPC는 Cisco Nexus 5000, 7000 또는 9000 시리즈 스위치에서 NetApp 스토리지 컨트롤러로 필요합니다.
+* VPC는 Cisco Nexus 5000, 7000 또는 9000 시리즈 스위치에서 패브릭 상호 연결까지 필요합니다.
+* vPC에 대해 최소 2개의 연결이 필요합니다. 애플리케이션 로드 및 성능 요구사항에 따라 vPC 내의 연결 수를 늘릴 수 있습니다.
+
+
+직접 연결:
+
+* 패브릭 인터커넥트에 직접 연결된 NetApp 스토리지 컨트롤러 포트를 그룹화하여 포트 채널을 설정할 수 있습니다. VPC는 이 구성에서 지원되지 않습니다.
+* FCoE 포트 채널은 엔드 투 엔드 FCoE 설계에 권장됩니다.
+
+
+SAN 부팅:
+
+* FlexPod 솔루션은 iSCSI, FC 또는 FCoE 프로토콜을 사용하여 SAN 부팅 아키텍처를 기반으로 설계되었습니다. SAN에서의 부팅 기술을 사용하면 데이터 센터 인프라에 가장 유연한 구성이 가능하며 각 인프라 구성 요소 내에서 다양한 기능을 사용할 수 있습니다. SAN에서 부팅하는 것이 가장 효율적인 구성이지만 로컬 서버 스토리지에서 부팅하는 것은 유효하고 지원되는 구성입니다.
+* FC를 통한 SAN 부팅 - NVMe는 지원되지 않습니다.
+

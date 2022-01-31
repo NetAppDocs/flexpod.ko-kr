@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-c190-design_technology_requirements.html 
+keywords: software, hardware, hypervisor, network, AFF C190, Cisco UCS C220 M5, Cisco VIC 1457, VMware vSphere ESXi, VAAI 
+summary: FlexPod Express를 사용하려면 선택한 하이퍼바이저와 네트워크 속도에 따라 하드웨어 및 소프트웨어 구성요소를 조합해야 합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 배치합니다. 
+---
+= 기술 요구 사항
+
+
+FlexPod Express를 사용하려면 선택한 하이퍼바이저와 네트워크 속도에 따라 하드웨어 및 소프트웨어 구성요소를 조합해야 합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 배치합니다.
+
+
+
+== 하드웨어 요구 사항
+
+선택한 하이퍼바이저에 관계없이 모든 FlexPod Express 구성은 동일한 하드웨어를 사용합니다. 따라서 비즈니스 요구사항이 변경되더라도 동일한 FlexPod Express 하드웨어에서 다른 하이퍼바이저를 사용할 수 있습니다.
+
+다음 표에는 이 FlexPod Express 구성과 이 솔루션 구축에 필요한 하드웨어 구성요소가 나와 있습니다. 솔루션 구현에 사용되는 하드웨어 구성요소는 고객 요구사항에 따라 다를 수 있습니다.
+
+[cols="50,50"]
+|===
+| 하드웨어 | 수량 
+
+
+| AFF C190 2노드 클러스터 | 1 
+
+
+| Cisco UCS C220 M5 서버 | 2 
+
+
+| Cisco Nexus 31108 스위치 | 2 
+
+
+| Cisco UCS C220 M5 랙 서버용 Cisco UCS VIC(Virtual Interface Card) 1457 | 2 
+|===
+
+
+== 소프트웨어 요구 사항
+
+다음 표에는 FlexPod 익스프레스 솔루션의 아키텍처를 구현하는 데 필요한 소프트웨어 구성 요소가 나열되어 있습니다.
+
+[cols="33,33,33"]
+|===
+| 소프트웨어 | 버전 | 세부 정보 
+
+
+| CIMC(Cisco Integrated Management Controller) | 4.0.4 | C220 M5 랙 서버용 
+
+
+| Cisco NX-OS입니다 | 7.0(3) i7(6) | Cisco Nexus 31108 스위치의 경우 
+
+
+| NetApp ONTAP를 참조하십시오 | 9.6 | NetApp AFF C190 컨트롤러의 경우 
+|===
+다음 표에는 FlexPod Express의 모든 VMware vSphere 구축에 필요한 소프트웨어가 나와 있습니다.
+
+[cols="50,50"]
+|===
+| 소프트웨어 | 버전 
+
+
+| VMware vCenter Server 어플라이언스 | 6.7U2 
+
+
+| VMware vSphere ESXi | 6.7U2 
+
+
+| ESXi용 NetApp VAAI 플러그인 | 1.1.2 
+
+
+| NetApp 가상 스토리지 콘솔 | 9.6 
+|===
+link:express-c-series-c190-design_design_choices.html["다음: 디자인 선택."]

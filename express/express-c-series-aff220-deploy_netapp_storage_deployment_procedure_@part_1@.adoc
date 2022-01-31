@@ -1,0 +1,994 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_netapp_storage_deployment_procedure_@part_1@.html 
+keywords: lif, vlans, snmp, nfsv3, lun, iscsi, configure, node, deployment, procedure 
+summary: 다음 단계에 따라 NetApp AFF 스토리지 구축 절차를 완료할 수 있습니다. 
+---
+= NetApp 스토리지 구축 절차(1부)
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 NetApp AFF 스토리지 구축 절차를 설명합니다.
+
+
+
+== NetApp 스토리지 컨트롤러 AFF2xx 시리즈 설치
+
+
+
+=== NetApp Hardware Universe를 참조하십시오
+
+NetApp HWU(Hardware Universe) 애플리케이션은 특정 ONTAP 버전에 대해 지원되는 하드웨어 및 소프트웨어 구성요소를 제공합니다. 현재 ONTAP 소프트웨어가 지원하는 모든 NetApp 스토리지 어플라이언스에 대한 구성 정보를 제공합니다. 구성요소 호환성 표도 제공합니다.
+
+사용하려는 하드웨어 및 소프트웨어 구성 요소가 설치하려는 ONTAP 버전에서 지원되는지 확인합니다.
+
+. 에 액세스합니다 http://hwu.netapp.com/Home/Index["HWU"^] 응용 프로그램 - 시스템 구성 가이드를 봅니다. 컨트롤러 탭을 클릭하여 원하는 사양의 ONTAP 소프트웨어 버전과 NetApp 스토리지 어플라이언스 간의 호환성을 확인하십시오.
+. 또는 스토리지 어플라이언스별로 구성 요소를 비교하려면 스토리지 시스템 비교 를 클릭합니다.
+
+
+|===
+| 컨트롤러 AFF2XX 시리즈 사전 요구 사항 
+
+
+| 스토리지 시스템의 물리적 위치를 계획하려면 NetApp Hardware Universe를 참조하십시오. 전기 요구 사항, 지원되는 전원 코드, 온보드 포트 및 케이블 섹션을 참조하십시오. 
+|===
+
+
+=== 스토리지 컨트롤러
+
+의 컨트롤러에 대한 물리적 설치 절차를 따릅니다 https://mysupport.netapp.com/documentation/docweb/index.html?productID=62557&language=en-US["AFF A220 문서"^].
+
+
+
+== NetApp ONTAP 9.4
+
+
+
+=== 구성 워크시트
+
+설치 스크립트를 실행하기 전에 제품 설명서에서 구성 워크시트를 작성하십시오. 구성 워크시트는 에서 사용할 수 있습니다 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492611["ONTAP 9.4 소프트웨어 설정 설명서"^].
+
+
+NOTE: 이 시스템은 스위치가 없는 2노드 클러스터 구성에서 설정됩니다.
+
+다음 표에는 ONTAP 9.4 설치 및 구성 정보가 나와 있습니다.
+
+|===
+| 클러스터 세부 정보 | 클러스터 세부 정보 값입니다 
+
+
+| 클러스터 노드 A IP 주소입니다 | \<<var_NodeA_mgmt_ip>> 를 입력합니다 
+
+
+| 클러스터 노드 A 넷마스크 | \<<var_NodeA_mgmt_mask>> 를 입력합니다 
+
+
+| 클러스터 노드 A 게이트웨이 | \<<var_NodeA_mgmt_gateway>> 를 참조하십시오 
+
+
+| 클러스터 노드 A 이름 | \<<var_NodeA>> 를 참조하십시오 
+
+
+| 클러스터 노드 B IP 주소입니다 | \<<var_NodeB_mgmt_ip>> 를 입력합니다 
+
+
+| 클러스터 노드 B 넷마스크 | \<<var_NodeB_mgmt_mask>> 를 입력합니다 
+
+
+| 클러스터 노드 B 게이트웨이 | \<<var_NodeB_mgmt_gateway>> 를 참조하십시오 
+
+
+| 클러스터 노드 B 이름 | \<<var_NodeB>> 를 참조하십시오 
+
+
+| ONTAP 9.4 URL | \<<var_url_boot_software>> 
+
+
+| 클러스터의 이름입니다 | \<<var_clustername>> 를 클릭합니다 
+
+
+| 클러스터 관리 IP 주소입니다 | \<<var_clustermgmt_ip>> 를 입력합니다 
+
+
+| 클러스터 B 게이트웨이 | \<<var_clustermgmt_gateway>> 를 클릭합니다 
+
+
+| 클러스터 B 넷마스크 | \<<var_clustermgmt_mask>> 를 입력합니다 
+
+
+| 도메인 이름 | \<<var_domain_name>> 
+
+
+| DNS 서버 IP(둘 이상 입력할 수 있음) | \<<var_dns_server_ip>> 를 참조하십시오 
+
+
+| NTP 서버 IP(둘 이상 입력할 수 있음) | \<<var_ntp_server_ip>> 를 참조하십시오 
+|===
+
+
+=== 노드 A를 구성합니다
+
+노드 A를 구성하려면 다음 단계를 완료하십시오.
+
+. 스토리지 시스템 콘솔 포트에 연결합니다. Loader-A 메시지가 표시됩니다. 하지만 스토리지 시스템이 재부팅 루프 상태인 경우 다음 메시지가 표시될 때 Ctrl-C를 눌러 자동 부팅 루프를 종료합니다.
++
+....
+Starting AUTOBOOT press Ctrl-C to abort…
+....
+. 시스템이 부팅되도록 합니다.
++
+....
+autoboot
+....
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
++
+ONTAP 9.4가 부팅 중인 소프트웨어 버전이 아닌 경우 다음 단계를 계속하여 새 소프트웨어를 설치합니다. ONTAP 9.4가 부팅 중인 버전인 경우 옵션 8 및 y를 선택하여 노드를 재부팅합니다. 그런 다음 14단계를 계속합니다.
+
+. 새 소프트웨어를 설치하려면 옵션 '7'을 선택합니다.
+. 업그레이드를 수행하려면 y를 입력하십시오.
+. 다운로드에 사용할 네트워크 포트로 e0M 을 선택합니다.
+. 지금 재부팅하려면 y를 입력하십시오.
+. 각 위치에 e0M의 IP 주소, 넷마스크 및 기본 게이트웨이를 입력합니다.
++
+....
+<<var_nodeA_mgmt_ip>> <<var_nodeA_mgmt_mask>> <<var_nodeA_mgmt_gateway>>
+....
+. 소프트웨어를 찾을 수 있는 URL을 입력합니다.
++
+
+NOTE: 이 웹 서버는 Ping할 수 있어야 합니다.
+
++
+....
+<<var_url_boot_software>>
+....
+. 사용자 이름에 대해 Enter 키를 눌러 사용자 이름이 없음을 나타냅니다.
+. 새로 설치한 소프트웨어를 이후 재부팅에 사용할 기본값으로 설정하려면 'y'를 입력합니다.
+. 노드를 재부팅하려면 y를 입력합니다.
++
+새 소프트웨어를 설치할 때 시스템이 BIOS 및 어댑터 카드에 대한 펌웨어 업그레이드를 수행할 수 있으며, 이로 인해 LOADER-A 프롬프트에서 재부팅되고 중지될 수 있습니다. 이러한 작업이 발생하면 시스템이 이 절차를 벗어날 수 있습니다.
+
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
+. Clean Configuration 및 Initialize All Disks 옵션을 4로 선택합니다.
+. 디스크를 제로화하려면 y를 입력하고 구성을 재설정한 다음 새 파일 시스템을 설치합니다.
+. 디스크에 있는 모든 데이터를 지우려면 'y'를 입력합니다.
++
+연결된 디스크의 수와 유형에 따라 루트 애그리게이트의 초기화 및 생성을 완료하는 데 90분 이상이 걸릴 수 있습니다. 초기화가 완료되면 스토리지 시스템이 재부팅됩니다. SSD를 초기화하는 데 걸리는 시간은 상당히 줄어듭니다. 노드 A용 디스크가 제로화하는 동안 노드 B 구성을 계속할 수 있습니다.
+
+. 노드 A를 초기화하는 동안 노드 B를 구성합니다
+
+
+
+
+=== 노드 B를 구성합니다
+
+노드 B를 구성하려면 다음 단계를 완료하십시오.
+
+. 스토리지 시스템 콘솔 포트에 연결합니다. Loader-A 메시지가 표시됩니다. 하지만 스토리지 시스템이 재부팅 루프 상태인 경우 다음 메시지가 표시될 때 Ctrl-C를 눌러 자동 부팅 루프를 종료합니다.
++
+....
+Starting AUTOBOOT press Ctrl-C to abort…
+....
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
++
+....
+autoboot
+....
+. 메시지가 나타나면 Ctrl-C를 누릅니다.
++
+ONTAP 9.4가 부팅 중인 소프트웨어 버전이 아닌 경우 다음 단계를 계속하여 새 소프트웨어를 설치합니다. ONTAP 9.4가 부팅 중인 버전인 경우 옵션 8 및 y를 선택하여 노드를 재부팅합니다. 그런 다음 14단계를 계속합니다.
+
+. 새 소프트웨어를 설치하려면 옵션 7을 선택합니다.
+. 업그레이드를 수행하려면 y를 입력하십시오.
+. 다운로드에 사용할 네트워크 포트로 e0M 을 선택합니다.
+. 지금 재부팅하려면 y를 입력하십시오.
+. 각 위치에 e0M의 IP 주소, 넷마스크 및 기본 게이트웨이를 입력합니다.
++
+....
+<<var_nodeB_mgmt_ip>> <<var_nodeB_mgmt_ip>><<var_nodeB_mgmt_gateway>>
+....
+. 소프트웨어를 찾을 수 있는 URL을 입력합니다.
++
+
+NOTE: 이 웹 서버는 Ping할 수 있어야 합니다.
+
++
+....
+<<var_url_boot_software>>
+....
+. 사용자 이름에 대해 Enter 키를 눌러 사용자 이름이 없음을 나타냅니다.
+. 새로 설치한 소프트웨어를 이후 재부팅에 사용할 기본값으로 설정하려면 'y'를 입력합니다.
+. 노드를 재부팅하려면 y를 입력합니다.
++
+새 소프트웨어를 설치할 때 시스템이 BIOS 및 어댑터 카드에 대한 펌웨어 업그레이드를 수행할 수 있으며, 이로 인해 LOADER-A 프롬프트에서 재부팅되고 중지될 수 있습니다. 이러한 작업이 발생하면 시스템이 이 절차를 벗어날 수 있습니다.
+
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
+. Clean Configuration(구성 정리) 및 Initialize All Disks(모든 디스크 초기화) 에 대해 옵션 4 를 선택합니다.
+. 디스크를 제로화하려면 y를 입력하고 구성을 재설정한 다음 새 파일 시스템을 설치합니다.
+. 디스크에 있는 모든 데이터를 지우려면 'y'를 입력합니다.
++
+연결된 디스크의 수와 유형에 따라 루트 애그리게이트의 초기화 및 생성을 완료하는 데 90분 이상이 걸릴 수 있습니다. 초기화가 완료되면 스토리지 시스템이 재부팅됩니다. SSD를 초기화하는 데 걸리는 시간은 상당히 줄어듭니다.
+
+
+
+
+
+== 노드 A 구성 및 클러스터 구성 계속
+
+스토리지 컨트롤러 A(노드 A) 콘솔 포트에 연결된 콘솔 포트 프로그램에서 노드 설정 스크립트를 실행합니다. 이 스크립트는 ONTAP 9.4가 노드에서 처음 부팅될 때 나타납니다.
+
+
+NOTE: ONTAP 9.4에서 노드 및 클러스터 설정 절차가 약간 변경되었습니다. 이제 클러스터 설정 마법사를 사용하여 클러스터의 첫 번째 노드를 구성하고 System Manager를 사용하여 클러스터를 구성할 수 있습니다.
+
+. 프롬프트에 따라 노드 A를 설정합니다
++
+....
+Welcome to the cluster setup wizard.
+You can enter the following commands at any time:
+  "help" or "?" - if you want to have a question clarified,
+  "back" - if you want to change previously answered questions, and
+  "exit" or "quit" - if you want to quit the cluster setup wizard.
+     Any changes you made before quitting will be saved.
+You can return to cluster setup at any time by typing "cluster setup".
+To accept a default or omit a question, do not enter a value.
+This system will send event messages and periodic reports to NetApp Technical
+Support. To disable this feature, enter
+autosupport modify -support disable
+within 24 hours.
+Enabling AutoSupport can significantly speed problem determination and
+resolution should a problem occur on your system.
+For further information on AutoSupport, see:
+http://support.netapp.com/autosupport/
+Type yes to confirm and continue {yes}: yes
+Enter the node management interface port [e0M]:
+Enter the node management interface IP address: <<var_nodeA_mgmt_ip>>
+Enter the node management interface netmask: <<var_nodeA_mgmt_mask>>
+Enter the node management interface default gateway: <<var_nodeA_mgmt_gateway>>
+A node management interface on port e0M with IP address <<var_nodeA_mgmt_ip>> has been created.
+Use your web browser to complete cluster setup by accessing
+https://<<var_nodeA_mgmt_ip>>
+Otherwise, press Enter to complete cluster setup using the command line
+interface:
+....
+. 노드의 관리 인터페이스의 IP 주소로 이동합니다.
++
+CLI를 사용하여 클러스터를 설정할 수도 있습니다. 이 문서에서는 NetApp System Manager의 안내에 따라 설정을 사용하는 클러스터 설정에 대해 설명합니다.
+
+. Guided Setup(안내식 설정) 을 클릭하여 클러스터를 구성합니다.
+. 클러스터 이름은 \<<var_clustername>>'을, 구성 중인 각 노드에 대해서는 \<<var_NodeA>>'와 \<<var_NodeB>>를 입력합니다. 스토리지 시스템에 사용할 암호를 입력합니다. 클러스터 유형으로 Switchless Cluster를 선택합니다. 클러스터 기본 라이센스를 입력합니다.
++
+image:express-c-series-aff220-deploy_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+. 클러스터, NFS 및 iSCSI에 대한 기능 라이센스도 입력할 수 있습니다.
+. 클러스터를 생성 중임을 나타내는 상태 메시지가 표시됩니다. 이 상태 메시지는 여러 상태를 순환합니다. 이 과정은 몇 분 정도 소요됩니다.
+. 네트워크를 구성합니다.
++
+.. IP 주소 범위 옵션을 선택 취소합니다.
+.. Cluster Management IP Address 필드(\<<var_clustermgmt_ip>>)에 넷마스크 필드(\<<var_clustermgmt_mask>>)에 \<<var_clustermgmt_gateway>>)를 입력합니다. 다음을 사용하십시오. 포트 필드의 선택기로 노드 A의 e0M을 선택합니다
+.. 노드 A의 노드 관리 IP가 이미 채워져 있습니다. 노드 B에 대해 '\<<var_NodeA_mgmt_ip>>'를 입력합니다
+.. DNS Domain Name 필드에 '\<<var_domain_name>>'을 입력합니다. DNS 서버 IP 주소 필드에 '\<<var_dns_server_ip>>'를 입력합니다.
++
+여러 DNS 서버 IP 주소를 입력할 수 있습니다.
+
+.. Primary NTP Server 필드에 '\<<var_ntp_server_ip>>'를 입력합니다.
++
+대체 NTP 서버를 입력할 수도 있습니다.
+
+
+
+. 지원 정보를 구성합니다.
++
+.. 환경에 AutoSupport에 액세스하기 위한 프록시가 필요한 경우 프록시 URL에 URL을 입력합니다.
+.. 이벤트 알림에 대한 SMTP 메일 호스트 및 이메일 주소를 입력합니다.
++
+계속하려면 이벤트 알림 방법을 설정해야 합니다. 방법 중 하나를 선택할 수 있습니다.
+
++
+image:express-c-series-aff220-deploy_image7.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 클러스터 구성이 완료되었으면 클러스터 관리 를 클릭하여 스토리지를 구성합니다.
+
+
+
+
+== 스토리지 클러스터 구성의 연속
+
+스토리지 노드 및 기본 클러스터를 구성한 후에는 스토리지 클러스터 구성을 계속할 수 있습니다.
+
+
+
+=== 모든 스페어 디스크를 제로합니다
+
+클러스터의 모든 스페어 디스크를 제로하려면 다음 명령을 실행합니다.
+
+....
+disk zerospares
+....
+
+
+=== 온보드 UTA2 포트 속성을 설정합니다
+
+. ucadmin show 명령을 실행하여 현재 모드와 포트의 현재 유형을 확인합니다.
++
+....
+AFF A220::> ucadmin show
+                       Current  Current    Pending  Pending    Admin
+Node          Adapter  Mode     Type       Mode     Type       Status
+------------  -------  -------  ---------  -------  ---------  -----------
+AFF A220_A     0c       fc       target     -        -          online
+AFF A220_A     0d       fc       target     -        -          online
+AFF A220_A     0e       fc       target     -        -          online
+AFF A220_A     0f       fc       target     -        -          online
+AFF A220_B     0c       fc       target     -        -          online
+AFF A220_B     0d       fc       target     -        -          online
+AFF A220_B     0e       fc       target     -        -          online
+AFF A220_B     0f       fc       target     -        -          online
+8 entries were displayed.
+....
+. 사용 중인 포트의 현재 모드가 CNA인지, 현재 유형이 'target'으로 설정되어 있는지 확인합니다. 그렇지 않은 경우 다음 명령을 사용하여 포트 속성을 변경합니다.
++
+....
+ucadmin modify -node <home node of the port> -adapter <port name> -mode cna -type target
+....
++
+이전 명령을 실행하려면 포트가 오프라인 상태여야 합니다. 포트를 오프라인으로 전환하려면 다음 명령을 실행합니다.
+
++
+....
+`network fcp adapter modify -node <home node of the port> -adapter <port name> -state down`
+....
++
+
+NOTE: 포트 속성을 변경한 경우 변경 사항을 적용하려면 각 노드를 재부팅해야 합니다.
+
+
+
+
+
+=== 관리 논리 인터페이스(LIF) 이름 바꾸기
+
+관리 LIF의 이름을 변경하려면 다음 단계를 수행하십시오.
+
+. 현재 관리 LIF 이름을 표시합니다.
++
+....
+network interface show –vserver <<clustername>>
+....
+. 클러스터 관리 LIF의 이름을 바꿉니다.
++
+....
+network interface rename –vserver <<clustername>> –lif cluster_setup_cluster_mgmt_lif_1 –newname cluster_mgmt
+....
+. 노드 B 관리 LIF의 이름을 바꿉니다.
++
+....
+network interface rename -vserver <<clustername>> -lif cluster_setup_node_mgmt_lif_AFF A220_B_1 -newname AFF A220-02_mgmt1
+....
+
+
+
+
+=== 클러스터 관리에서 자동 되돌리기 설정
+
+클러스터 관리 인터페이스에서 자동 되돌리기 매개 변수를 설정합니다.
+
+....
+network interface modify –vserver <<clustername>> -lif cluster_mgmt –auto-revert true
+....
+
+
+=== 서비스 프로세서 네트워크 인터페이스를 설정합니다
+
+각 노드의 서비스 프로세서에 정적 IPv4 주소를 할당하려면 다음 명령을 실행합니다.
+
+....
+system service-processor network modify –node <<var_nodeA>> -address-family IPv4 –enable true –dhcp none –ip-address <<var_nodeA_sp_ip>> -netmask <<var_nodeA_sp_mask>> -gateway <<var_nodeA_sp_gateway>>
+system service-processor network modify –node <<var_nodeB>> -address-family IPv4 –enable true –dhcp none –ip-address <<var_nodeB_sp_ip>> -netmask <<var_nodeB_sp_mask>> -gateway <<var_nodeB_sp_gateway>>
+....
+
+NOTE: 서비스 프로세서 IP 주소는 노드 관리 IP 주소와 동일한 서브넷에 있어야 합니다.
+
+
+
+=== ONTAP에서 스토리지 페일오버 설정
+
+스토리지 페일오버가 설정되었는지 확인하려면 페일오버 쌍에서 다음 명령을 실행합니다.
+
+. 스토리지 페일오버 상태를 확인합니다.
++
+....
+storage failover show
+....
++
+'\<<var_NodeA>>'와 '\<<var_NodeB>>'는 모두 테이크오버를 수행할 수 있어야 합니다. 노드가 테이크오버 수행 가능한 경우 3단계로 이동하십시오.
+
+. 두 노드 중 하나에서 페일오버가 사용되도록 설정합니다.
++
+....
+storage failover modify -node <<var_nodeA>> -enabled true
+....
++
+한 노드에서 페일오버가 사용되도록 설정하면 두 노드 모두에서 설정됩니다.
+
+. 2노드 클러스터의 HA 상태를 확인합니다.
++
+2개 이상의 노드가 있는 클러스터에는 이 단계를 적용할 수 없습니다.
+
++
+....
+cluster ha show
+....
+. 고가용성이 구성된 경우 6단계로 이동합니다. 고가용성이 구성된 경우 명령을 실행하면 다음 메시지가 표시됩니다.
++
+....
+High Availability Configured: true
+....
+. 2노드 클러스터에만 HA 모드를 사용하도록 설정합니다.
++
+
+NOTE: 2개 이상의 노드가 있는 클러스터에서는 페일오버에 문제가 발생하므로 이 명령을 실행하지 마십시오.
+
++
+....
+cluster ha modify -configured true
+Do you want to continue? {y|n}: y
+....
+. 하드웨어 지원이 올바르게 구성되어 있는지 확인하고 필요한 경우 파트너 IP 주소를 수정합니다.
++
+....
+storage failover hwassist show
+....
++
+"Keep Alive Status: Error: whwassist keep alive alert from partner(활성 상태 유지: 오류: 파트너의 hwassist keep alive 경고를 수신하지 못했습니다)" 메시지는 하드웨어 지원이 구성되지 않았음을 나타냅니다. 다음 명령을 실행하여 하드웨어 지원을 구성합니다.
+
++
+....
+storage failover modify –hwassist-partner-ip <<var_nodeB_mgmt_ip>> -node <<var_nodeA>>
+storage failover modify –hwassist-partner-ip <<var_nodeA_mgmt_ip>> -node <<var_nodeB>>
+....
+
+
+
+
+=== ONTAP에서 점보 프레임 MTU 브로드캐스트 도메인을 생성합니다
+
+MTU가 9000인 데이터 브로드캐스트 도메인을 생성하려면 다음 명령을 실행합니다.
+
+....
+broadcast-domain create -broadcast-domain Infra_NFS -mtu 9000
+broadcast-domain create -broadcast-domain Infra_iSCSI-A -mtu 9000
+broadcast-domain create -broadcast-domain Infra_iSCSI-B -mtu 9000
+....
+
+
+=== 기본 브로드캐스트 도메인에서 데이터 포트를 제거합니다
+
+10GbE 데이터 포트는 iSCSI/NFS 트래픽에 사용되며 이러한 포트는 기본 도메인에서 제거해야 합니다. 포트 e0e 및 e0f는 사용되지 않으며 기본 도메인에서도 제거해야 합니다.
+
+브로드캐스트 도메인에서 포트를 제거하려면 다음 명령을 실행합니다.
+
+....
+broadcast-domain remove-ports -broadcast-domain Default -ports <<var_nodeA>>:e0c, <<var_nodeA>>:e0d, <<var_nodeA>>:e0e, <<var_nodeA>>:e0f, <<var_nodeB>>:e0c, <<var_nodeB>>:e0d, <<var_nodeA>>:e0e, <<var_nodeA>>:e0f
+....
+
+
+=== UTA2 포트에서 흐름 제어를 사용하지 않도록 설정합니다
+
+외부 장치에 연결된 모든 UTA2 포트에서 흐름 제어를 사용하지 않도록 설정하는 것이 NetApp의 모범 사례입니다. 흐름 제어를 사용하지 않도록 설정하려면 다음 명령을 실행합니다.
+
+....
+net port modify -node <<var_nodeA>> -port e0c -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeA>> -port e0d -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeA>> -port e0e -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeA>> -port e0f -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0c -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0d -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0e -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0f -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier.
+Do you want to continue? {y|n}: y
+....
+
+
+=== ONTAP에서 IFGRP LACP를 구성합니다
+
+이 인터페이스 그룹 유형에 2개 이상의 이더넷 인터페이스와 LACP를 지원하는 스위치가 필요합니다. 스위치가 올바르게 구성되었는지 확인합니다.
+
+클러스터 프롬프트에서 다음 단계를 완료합니다.
+
+....
+ifgrp create -node <<var_nodeA>> -ifgrp a0a -distr-func port -mode multimode_lacp
+network port ifgrp add-port -node <<var_nodeA>> -ifgrp a0a -port e0c
+network port ifgrp add-port -node <<var_nodeA>> -ifgrp a0a -port e0d
+ifgrp create -node << var_nodeB>> -ifgrp a0a -distr-func port -mode multimode_lacp
+network port ifgrp add-port -node <<var_nodeB>> -ifgrp a0a -port e0c
+network port ifgrp add-port -node <<var_nodeB>> -ifgrp a0a -port e0d
+....
+
+
+=== NetApp ONTAP에서 점보 프레임을 구성합니다
+
+ONTAP 네트워크 포트에서 점보 프레임(일반적으로 9,000바이트 MTU 사용)을 사용하도록 구성하려면 클러스터 쉘에서 다음 명령을 실행합니다.
+
+....
+AFF A220::> network port modify -node node_A -port a0a -mtu 9000
+Warning: This command will cause a several second interruption of service on
+         this network port.
+Do you want to continue? {y|n}: y
+AFF A220::> network port modify -node node_B -port a0a -mtu 9000
+Warning: This command will cause a several second interruption of service on
+         this network port.
+Do you want to continue? {y|n}: y
+....
+
+
+=== ONTAP에서 VLAN을 생성합니다
+
+ONTAP에서 VLAN을 생성하려면 다음 단계를 수행하십시오.
+
+. NFS VLAN 포트를 생성하여 데이터 브로드캐스트 도메인에 추가합니다.
++
+....
+network port vlan create –node <<var_nodeA>> -vlan-name a0a-<<var_nfs_vlan_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name a0a-<<var_nfs_vlan_id>>
+broadcast-domain add-ports -broadcast-domain Infra_NFS -ports <<var_nodeA>>:a0a-<<var_nfs_vlan_id>>, <<var_nodeB>>:a0a-<<var_nfs_vlan_id>>
+....
+. iSCSI VLAN 포트를 생성하여 데이터 브로드캐스트 도메인에 추가합니다.
++
+....
+network port vlan create –node <<var_nodeA>> -vlan-name a0a-<<var_iscsi_vlan_A_id>>
+network port vlan create –node <<var_nodeA>> -vlan-name a0a-<<var_iscsi_vlan_B_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name a0a-<<var_iscsi_vlan_A_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name a0a-<<var_iscsi_vlan_B_id>>
+broadcast-domain add-ports -broadcast-domain Infra_iSCSI-A -ports <<var_nodeA>>:a0a-<<var_iscsi_vlan_A_id>>, <<var_nodeB>>:a0a-<<var_iscsi_vlan_A_id>>
+broadcast-domain add-ports -broadcast-domain Infra_iSCSI-B -ports <<var_nodeA>>:a0a-<<var_iscsi_vlan_B_id>>, <<var_nodeB>>:a0a-<<var_iscsi_vlan_B_id>>
+....
+. MGMT-VLAN 포트를 생성합니다.
++
+....
+network port vlan create –node <<var_nodeA>> -vlan-name a0a-<<mgmt_vlan_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name a0a-<<mgmt_vlan_id>>
+....
+
+
+
+
+=== ONTAP에서 애그리게이트를 생성합니다
+
+ONTAP 설정 프로세스 중에 루트 볼륨이 포함된 애그리게이트가 생성됩니다. 추가 애그리게이트를 생성하려면 애그리게이트 이름, 애그리게이트를 생성할 노드, 애그리게이트에 포함된 디스크 수를 결정합니다.
+
+Aggregate를 생성하려면 다음 명령을 실행합니다.
+
+....
+aggr create -aggregate aggr1_nodeA -node <<var_nodeA>> -diskcount <<var_num_disks>>
+aggr create -aggregate aggr1_nodeB -node <<var_nodeB>> -diskcount <<var_num_disks>>
+....
+구성에 최소 하나의 디스크(가장 큰 디스크 선택)를 스페어로 보관합니다. 모범 사례는 각 디스크 유형 및 크기에 대해 하나 이상의 스페어를 두는 것입니다.
+
+5개의 디스크로 시작합니다. 스토리지를 추가해야 할 때 디스크를 애그리게이트에 추가할 수 있습니다.
+
+디스크 비우기가 완료될 때까지 애그리게이트를 생성할 수 없습니다. 집계 생성 상태를 표시하려면 'aggr show' 명령을 실행합니다. aggr1 _ NodeA가 온라인이 될 때까지 진행하지 마십시오.
+
+
+
+=== ONTAP에서 시간대를 구성합니다
+
+시간 동기화를 구성하고 클러스터에서 표준 시간대를 설정하려면 다음 명령을 실행합니다.
+
+....
+timezone <<var_timezone>>
+....
+
+NOTE: 예를 들어 미국 동부의 시간대는 미국/뉴욕입니다. 표준 시간대 이름을 입력하기 시작하면 Tab 키를 눌러 사용 가능한 옵션을 확인합니다.
+
+
+
+=== ONTAP에서 SNMP를 구성합니다
+
+SNMP를 구성하려면 다음 단계를 수행하십시오.
+
+. 위치 및 연락처와 같은 SNMP 기본 정보를 구성합니다. 이 정보는 SNMP에서 'SysLocation', 'SysContact' 변수로 표시됩니다.
++
+....
+snmp contact <<var_snmp_contact>>
+snmp location “<<var_snmp_location>>”
+snmp init 1
+options snmp.enable on
+....
+. 원격 호스트에 보낼 SNMP 트랩을 구성합니다.
++
+....
+snmp traphost add <<var_snmp_server_fqdn>>
+....
+
+
+
+
+=== ONTAP에서 SNMPv1을 구성합니다
+
+SNMPv1을 구성하려면 커뮤니티라는 공유 암호 일반 텍스트 암호를 설정합니다.
+
+....
+snmp community add ro <<var_snmp_community>>
+....
+
+NOTE: NMP community delete all 명령을 주의하여 사용한다. 다른 모니터링 제품에 커뮤니티 문자열을 사용하는 경우 이 명령은 해당 문자열을 제거합니다.
+
+
+
+=== ONTAP에서 SNMPv3을 구성합니다
+
+SNMPv3을 사용하려면 인증을 위해 사용자를 정의하고 구성해야 합니다. SNMPv3을 구성하려면 다음 단계를 수행하십시오.
+
+. Security snmpusers 명령을 실행하여 엔진 ID를 조회한다.
+. 'snmpv3user'라는 사용자를 생성합니다.
++
+....
+security login create -username snmpv3user -authmethod usm -application snmp
+....
+. 신뢰할 수 있는 엔터티의 엔진 ID를 입력하고 인증 프로토콜로 md5 를 선택한다.
+. 메시지가 나타나면 인증 프로토콜에 사용할 최소 길이 8자로 된 암호를 입력합니다.
+. 개인 정보 보호 프로토콜로 'des'를 선택합니다.
+. 메시지가 나타나면 개인 정보 보호 프로토콜에 사용할 최소 길이 8자로 된 암호를 입력합니다.
+
+
+
+
+=== ONTAP에서 AutoSupport HTTPS를 구성합니다
+
+NetApp AutoSupport 툴은 HTTPS를 통해 지원 요약 정보를 NetApp에 보냅니다. AutoSupport를 구성하려면 다음 명령을 실행합니다.
+
+....
+system node autosupport modify -node * -state enable –mail-hosts <<var_mailhost>> -transport https -support enable -noteto <<var_storage_admin_email>>
+....
+
+
+=== 스토리지 가상 머신을 생성합니다
+
+인프라 스토리지 가상 시스템(SVM)을 생성하려면 다음 단계를 완료하십시오.
+
+. 'vserver create' 명령을 실행합니다.
++
+....
+vserver create –vserver Infra-SVM –rootvolume rootvol –aggregate aggr1_nodeA –rootvolume-security-style unix
+....
+. NetApp VSC를 위한 인프라-SVM 애그리게이트 목록에 데이터 애그리게이트를 추가합니다.
++
+....
+vserver modify -vserver Infra-SVM -aggr-list aggr1_nodeA,aggr1_nodeB
+....
+. NFS와 iSCSI를 남겨두고 SVM에서 사용하지 않는 스토리지 프로토콜을 제거합니다.
++
+....
+vserver remove-protocols –vserver Infra-SVM -protocols cifs,ndmp,fcp
+....
+. 인프라 SVM에서 NFS 프로토콜을 사용하고 실행합니다.
++
+....
+`nfs create -vserver Infra-SVM -udp disabled`
+....
+. NetApp NFS VAAI 플러그인에 대한 'VM vStorage' 매개 변수를 설정합니다. 그런 다음 NFS가 구성되었는지 확인합니다.
++
+....
+`vserver nfs modify –vserver Infra-SVM –vstorage enabled`
+`vserver nfs show `
+....
++
+
+NOTE: 스토리지 가상 시스템이 이전에 서버라고 불리기 때문에 명령줄에서는 'vserver'가 명령을 앞에 표시합니다.
+
+
+
+
+
+=== ONTAP에서 NFSv3을 구성합니다
+
+다음 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| ESXi 호스트 NFS IP 주소입니다 | \<<var_esxi_hostA_nfs_ip>> 를 참조하십시오 
+
+
+| ESXi 호스트 B NFS IP 주소입니다 | \<<var_esxi_hostB_nfs_ip>> 를 참조하십시오 
+|===
+SVM에서 NFS를 구성하려면 다음 명령을 실행합니다.
+
+. 기본 엑스포트 정책에서 각 ESXi 호스트에 대한 규칙을 생성합니다.
+. 생성 중인 각 ESXi 호스트에 대해 규칙을 할당합니다. 각 호스트에는 고유한 규칙 인덱스가 있습니다. 첫 번째 ESXi 호스트에는 규칙 인덱스 1이 있고 두 번째 ESXi 호스트에는 규칙 인덱스 2가 있습니다.
++
+....
+vserver export-policy rule create –vserver Infra-SVM -policyname default –ruleindex 1 –protocol nfs -clientmatch <<var_esxi_hostA_nfs_ip>> -rorule sys –rwrule sys -superuser sys –allow-suid false
+vserver export-policy rule create –vserver Infra-SVM -policyname default –ruleindex 2 –protocol nfs -clientmatch <<var_esxi_hostB_nfs_ip>> -rorule sys –rwrule sys -superuser sys –allow-suid false
+vserver export-policy rule show
+....
+. 인프라 SVM 루트 볼륨에 엑스포트 정책을 할당합니다.
++
+....
+volume modify –vserver Infra-SVM –volume rootvol –policy default
+....
++
+
+NOTE: vSphere를 설정한 후 NetApp VSC는 엑스포트 정책을 자동으로 처리합니다. 설치하지 않은 경우 Cisco UCS C-Series 서버를 추가할 때 엑스포트 정책 규칙을 생성해야 합니다.
+
+
+
+
+
+=== ONTAP에서 iSCSI 서비스를 생성합니다
+
+iSCSI 서비스를 생성하려면 다음 단계를 완료하십시오.
+
+. SVM에서 iSCSI 서비스를 생성합니다. 또한 이 명령은 iSCSI 서비스를 시작하고 SVM에 대한 iSCSI IQN을 설정합니다. iSCSI가 구성되었는지 확인합니다.
++
+....
+iscsi create -vserver Infra-SVM
+iscsi show
+....
+
+
+
+
+=== ONTAP에서 SVM 루트 볼륨의 로드 공유 미러를 생성합니다
+
+. 각 노드에서 인프라 SVM 루트 볼륨의 로드 공유 미러가 될 볼륨을 생성합니다.
++
+....
+volume create –vserver Infra_Vserver –volume rootvol_m01 –aggregate aggr1_nodeA –size 1GB –type DP
+volume create –vserver Infra_Vserver –volume rootvol_m02 –aggregate aggr1_nodeB –size 1GB –type DP
+....
+. 15분마다 루트 볼륨 미러 관계를 업데이트하는 작업 스케줄을 생성합니다.
++
+....
+job schedule interval create -name 15min -minutes 15
+....
+. 미러링 관계를 생성합니다.
++
+....
+snapmirror create -source-path Infra-SVM:rootvol -destination-path Infra-SVM:rootvol_m01 -type LS -schedule 15min
+snapmirror create -source-path Infra-SVM:rootvol -destination-path Infra-SVM:rootvol_m02 -type LS -schedule 15min
+....
+. 미러링 관계를 초기화하고 미러링 관계가 만들어졌는지 확인합니다.
++
+....
+snapmirror initialize-ls-set -source-path Infra-SVM:rootvol
+snapmirror show
+....
+
+
+
+
+=== ONTAP에서 HTTPS 액세스를 구성합니다
+
+스토리지 컨트롤러에 대한 보안 액세스를 구성하려면 다음 단계를 수행하십시오.
+
+. 인증서 명령에 액세스할 수 있도록 권한 수준을 높입니다.
++
+....
+set -privilege diag
+Do you want to continue? {y|n}: y
+....
+. 일반적으로 자체 서명된 인증서가 이미 있습니다. 다음 명령을 실행하여 인증서를 확인합니다.
++
+....
+security certificate show
+....
+. 표시된 각 SVM에서 인증서 공통 이름은 SVM의 DNS FQDN과 일치해야 합니다. 네 개의 기본 인증서를 삭제하고 자체 서명된 인증서 또는 인증 기관의 인증서로 대체해야 합니다.
++
+인증서를 만들기 전에 만료된 인증서를 삭제하는 것이 좋습니다. 만료된 인증서를 삭제하려면 보안 인증서 삭제 명령을 실행합니다. 다음 명령에서 Tab completion을 사용하여 각 기본 인증서를 선택하고 삭제합니다.
+
++
+....
+security certificate delete [TAB] …
+Example: security certificate delete -vserver Infra-SVM -common-name Infra-SVM -ca Infra-SVM -type server -serial 552429A6
+....
+. 자체 서명된 인증서를 생성하고 설치하려면 다음 명령을 일회성 명령으로 실행합니다. 인프라 SVM 및 클러스터 SVM에 대한 서버 인증서를 생성합니다. 다시 한 번 탭 완료 기능을 사용하면 이러한 명령을 쉽게 완료할 수 있습니다.
++
+....
+security certificate create [TAB] …
+Example: security certificate create -common-name infra-svm. netapp.com -type  server -size 2048 -country US -state "North Carolina" -locality "RTP" -organization "NetApp" -unit "FlexPod" -email-addr "abc@netapp.com" -expire-days 365 -protocol SSL -hash-function SHA256 -vserver Infra-SVM
+....
+. 다음 단계에서 필요한 매개 변수 값을 얻으려면 'security certificate show' 명령을 실행합니다.
+. '–server-enabled true' 및 '–client-enabled false' 매개 변수를 사용하여 방금 만든 각 인증서를 활성화합니다. 다시 탭 완료를 사용합니다.
++
+....
+security ssl modify [TAB] …
+Example: security ssl modify -vserver Infra-SVM -server-enabled true -client-enabled false -ca infra-svm.netapp.com -serial 55243646 -common-name infra-svm.netapp.com
+....
+. SSL 및 HTTPS 액세스를 구성 및 활성화하고 HTTP 액세스를 비활성화합니다.
++
+....
+system services web modify -external true -sslv3-enabled true
+Warning: Modifying the cluster configuration will cause pending web service requests to be
+         interrupted as the web servers are restarted.
+Do you want to continue {y|n}: y
+system services firewall policy delete -policy mgmt -service http –vserver <<var_clustername>>
+....
++
+
+NOTE: 명령 실행 중 일부에서 항목이 존재하지 않는다는 오류 메시지가 반환되는 것은 정상입니다.
+
+. 관리 권한 수준으로 되돌아가며 SVM을 웹에서 사용할 수 있도록 설정을 생성합니다.
++
+....
+set –privilege admin
+vserver services web modify –name spi|ontapi|compat –vserver * -enabled true
+....
+
+
+
+
+=== ONTAP에서 NetApp FlexVol 볼륨을 생성합니다
+
+NetApp FlexVol 볼륨을 생성하려면 볼륨 이름, 크기 및 이 볼륨이 있는 애그리게이트를 입력합니다. 2개의 VMware 데이터 저장소 볼륨과 서버 부팅 볼륨을 생성합니다.
+
+....
+volume create -vserver Infra-SVM -volume infra_datastore_1 -aggregate aggr1_nodeA -size 500GB -state online -policy default -junction-path /infra_datastore_1 -space-guarantee none -percent-snapshot-space 0
+volume create -vserver Infra-SVM -volume infra_swap -aggregate aggr1_nodeA -size 100GB -state online -policy default -junction-path /infra_swap -space-guarantee none -percent-snapshot-space 0 -snapshot-policy none
+volume create -vserver Infra-SVM -volume esxi_boot -aggregate aggr1_nodeA -size 100GB -state online -policy default -space-guarantee none -percent-snapshot-space 0
+....
+
+
+=== ONTAP에서 중복 제거를 설정합니다
+
+적절한 볼륨에서 중복 제거를 설정하려면 다음 명령을 실행합니다.
+
+....
+volume efficiency on –vserver Infra-SVM -volume infra_datastore_1
+volume efficiency on –vserver Infra-SVM -volume esxi_boot
+....
+
+
+=== ONTAP에서 LUN을 생성합니다
+
+2개의 부팅 LUN을 생성하려면 다음 명령을 실행합니다.
+
+....
+lun create -vserver Infra-SVM -volume esxi_boot -lun VM-Host-Infra-A -size 15GB -ostype vmware -space-reserve disabled
+lun create -vserver Infra-SVM -volume esxi_boot -lun VM-Host-Infra-B -size 15GB -ostype vmware -space-reserve disabled
+....
+
+NOTE: Cisco UCS C-Series 서버를 더 추가할 때는 부팅 LUN을 더 생성해야 합니다.
+
+
+
+=== ONTAP에서 iSCSI LIF를 생성합니다
+
+다음 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| 스토리지 노드 A iSCSI LIF01A | \<<var_NodeA_iscsi_lif01a_ip>> 를 참조하십시오 
+
+
+| 스토리지 노드 A iSCSI LIF01A 네트워크 마스크입니다 | \<<var_NodeA_iscsi_lif01a_mask>> 
+
+
+| 스토리지 노드 A iSCSI LIF01B | \<<var_NodeA_iscsi_liff 01b_ip>> 를 참조하십시오 
+
+
+| 스토리지 노드 A iSCSI LIF01B 네트워크 마스크입니다 | \<<var_NodeA_iscsi_liff 01b_mask>> 
+
+
+| 스토리지 노드 B iSCSI LIF01A | \<<var_NodeB_iscsi_liff 01a_ip>> 
+
+
+| 스토리지 노드 B iSCSI LIF01A 네트워크 마스크입니다 | \<<var_NodeB_iscsi_liff 01a_mask>> 
+
+
+| 스토리지 노드 B iSCSI LIF01B | \<<var_NodeB_iscsi_liff 01b_ip>> 
+
+
+| 스토리지 노드 B iSCSI LIF01B 네트워크 마스크입니다 | \<<var_NodeB_iscsi_liff 01b_mask>> 
+|===
+. 각 노드에 2개의 iSCSI LIF를 4개 생성합니다.
++
+....
+network interface create -vserver Infra-SVM -lif iscsi_lif01a -role data -data-protocol iscsi -home-node <<var_nodeA>> -home-port a0a-<<var_iscsi_vlan_A_id>> -address <<var_nodeA_iscsi_lif01a_ip>> -netmask <<var_nodeA_iscsi_lif01a_mask>> –status-admin up –failover-policy disabled –firewall-policy data –auto-revert false
+network interface create -vserver Infra-SVM -lif iscsi_lif01b -role data -data-protocol iscsi -home-node <<var_nodeA>> -home-port a0a-<<var_iscsi_vlan_B_id>> -address <<var_nodeA_iscsi_lif01b_ip>> -netmask <<var_nodeA_iscsi_lif01b_mask>> –status-admin up –failover-policy disabled –firewall-policy data –auto-revert false
+network interface create -vserver Infra-SVM -lif iscsi_lif02a -role data -data-protocol iscsi -home-node <<var_nodeB>> -home-port a0a-<<var_iscsi_vlan_A_id>> -address <<var_nodeB_iscsi_lif01a_ip>> -netmask <<var_nodeB_iscsi_lif01a_mask>> –status-admin up –failover-policy disabled –firewall-policy data –auto-revert false
+network interface create -vserver Infra-SVM -lif iscsi_lif02b -role data -data-protocol iscsi -home-node <<var_nodeB>> -home-port a0a-<<var_iscsi_vlan_B_id>> -address <<var_nodeB_iscsi_lif01b_ip>> -netmask <<var_nodeB_iscsi_lif01b_mask>> –status-admin up –failover-policy disabled –firewall-policy data –auto-revert false
+network interface show
+....
+
+
+
+
+=== ONTAP에서 NFS LIF를 생성합니다
+
+다음 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| 스토리지 노드 A NFS LIF 01 IP입니다 | \<<var_NodeA_nfs_lif_01_ip>> 
+
+
+| 스토리지 노드 A NFS LIF 01 네트워크 마스크 | \<<var_NodeA_nfs_lif_01_mask>> 
+
+
+| 스토리지 노드 B NFS LIF 02 IP | \<<var_NodeB_nfs_lif_02_ip>> 
+
+
+| 스토리지 노드 B NFS LIF 02 네트워크 마스크 | \<<var_NodeB_nfs_lif_02_mask>> 
+|===
+. NFS LIF를 생성합니다.
++
+....
+network interface create -vserver Infra-SVM -lif nfs_lif01 -role data -data-protocol nfs -home-node <<var_nodeA>> -home-port a0a-<<var_nfs_vlan_id>> –address <<var_nodeA_nfs_lif_01_ip>> -netmask << var_nodeA_nfs_lif_01_mask>> -status-admin up –failover-policy broadcast-domain-wide –firewall-policy data –auto-revert true
+network interface create -vserver Infra-SVM -lif nfs_lif02 -role data -data-protocol nfs -home-node <<var_nodeA>> -home-port a0a-<<var_nfs_vlan_id>> –address <<var_nodeB_nfs_lif_02_ip>> -netmask << var_nodeB_nfs_lif_02_mask>> -status-admin up –failover-policy broadcast-domain-wide –firewall-policy data –auto-revert true
+network interface show
+....
+
+
+
+
+=== 인프라 SVM 관리자를 추가합니다
+
+다음 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| Vsmgmt IP | \<<var_svm_mgmt_ip>> 를 입력합니다 
+
+
+| Vsmgmt 네트워크 마스크 | \<<var_svm_mgmt_mask>> 
+
+
+| Vsmgmt 기본 게이트웨이 | \<<var_svm_mgmt_gateway>> 
+|===
+관리 네트워크에 인프라 SVM 관리자 및 SVM 관리 논리 인터페이스를 추가하려면 다음 단계를 완료하십시오.
+
+. 다음 명령을 실행합니다.
++
+....
+network interface create –vserver Infra-SVM –lif vsmgmt –role data –data-protocol none –home-node <<var_nodeB>> -home-port  e0M –address <<var_svm_mgmt_ip>> -netmask <<var_svm_mgmt_mask>> -status-admin up –failover-policy broadcast-domain-wide –firewall-policy mgmt –auto-revert true
+....
++
+
+NOTE: 여기서 SVM 관리 IP는 스토리지 클러스터 관리 IP와 동일한 서브넷에 있어야 합니다.
+
+. 기본 경로를 생성하여 SVM 관리 인터페이스가 외부 환경에 도달할 수 있도록 합니다.
++
+....
+network route create –vserver Infra-SVM -destination 0.0.0.0/0 –gateway <<var_svm_mgmt_gateway>>
+network route show
+....
+. SVM vsadmin 사용자의 암호를 설정하고 사용자 잠금을 해제합니다.
++
+....
+security login password –username vsadmin –vserver Infra-SVM
+Enter a new password: <<var_password>>
+Enter it again: <<var_password>>
+security login unlock –username vsadmin –vserver Infra-SVM
+....
+
+
+link:express-c-series-aff220-deploy_cisco_ucs_c-series_rack_server_deployment_procedure.html["다음: Cisco UCS C-Series 랙 서버 구현 절차"]

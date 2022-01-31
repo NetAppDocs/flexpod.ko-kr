@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/cloud-fabricpool_flexpod_overview_and_architecture.html 
+keywords: flexpod, cloud, fabricpool, networking, cisco, mds, storage, ucs, vmware, vsphere 
+summary: FlexPod는 가상화된 솔루션과 가상화되지 않은 솔루션 모두를 위한 통합된 기반을 형성하는 정의된 하드웨어 및 소프트웨어 세트입니다. 
+---
+= FlexPod 개요 및 아키텍처
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+
+
+== FlexPod 개요
+
+FlexPod는 가상화된 솔루션과 가상화되지 않은 솔루션 모두를 위한 통합된 기반을 형성하는 정의된 하드웨어 및 소프트웨어 세트입니다. FlexPod에는 NetApp AFF 스토리지, Cisco Nexus 네트워킹, Cisco MDS 스토리지 네트워킹, Cisco UCS(Cisco Unified Computing System) 및 VMware vSphere 소프트웨어가 단일 패키지에 포함되어 있습니다. 이 설계는 네트워킹, 컴퓨팅 및 스토리지가 하나의 데이터 센터 랙에 장착되거나 고객의 데이터 센터 설계에 따라 배포될 수 있을 만큼 유연합니다. 포트 밀도를 통해 네트워킹 구성 요소가 여러 구성을 수용할 수 있습니다.
+
+FlexPod 아키텍처의 한 가지 이점은 고객의 요구사항에 맞게 환경을 사용자 지정하거나 유연하게 변경할 수 있다는 것입니다. FlexPod 유닛은 요구사항 및 요구사항의 변화에 따라 쉽게 확장할 수 있습니다. 단위는 스케일업(FlexPod 유닛에 리소스 추가) 및 스케일아웃(FlexPod 유닛 추가) 모두 확장 가능합니다. FlexPod 참조 아키텍처는 파이버 채널 및 IP 기반 스토리지 솔루션의 복원력, 비용 이점 및 간편한 구축을 강조합니다. 단일 인터페이스에서 여러 프로토콜을 지원할 수 있는 스토리지 시스템은 고객이 직접 선택할 수 있는 선택권을 제공하며 실질적인 1선 아키텍처 역할을 하므로 투자를 보호합니다. 다음 그림은 FlexPod의 많은 하드웨어 구성 요소를 보여줍니다.
+
+image:cloud-fabricpool_image2.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== FlexPod 아키텍처
+
+다음 그림에서는 VMware vSphere 및 FlexPod 솔루션의 구성 요소와 Cisco UCS 6454 패브릭 상호 연결에 필요한 네트워크 연결을 보여 줍니다. 이 설계에는 다음과 같은 구성 요소가 있습니다.
+
+* Cisco UCS 5108 블레이드 섀시와 Cisco UCS 패브릭 인터커넥트 간에 포트 채널형 40Gb 이더넷 연결
+* Cisco UCS 패브릭 인터커넥트와 Cisco Nexus 9000 사이의 40Gb 이더넷 연결
+* Cisco Nesxus 9000과 NetApp AFF A300 스토리지 어레이 간 40Gb 이더넷 연결
+
+
+이러한 인프라 옵션은 Cisco UCS 패브릭 인터커넥트와 NetApp AFF A300 간에 Cisco MDS 스위치가 도입되면서 확장되었습니다. 이 구성은 공유 스토리지에 대한 16Gb FC 블록 레벨 액세스 기능을 갖춘 FC 부팅 호스트를 제공합니다. 레퍼런스 아키텍처는 아키텍처에 추가 스토리지가 추가될 때 호스트에서 Cisco UCS 패브릭 인터커넥트로 재연결할 필요가 없기 때문에 한 번만 연결 전략을 보강합니다.
+
+image:cloud-fabricpool_image3.png["오류: 그래픽 이미지가 없습니다"]

@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: express/express-direct-attach-aff220-deploy_program_summary.html 
+keywords: flexpod, express, vmware, vsphere, aff, direct, attached, ip, based, storage 
+summary: 'FlexPod Express는 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 기술을 기반으로 사전 설계되며 모범 사례 아키텍처입니다. FlexPod 데이터 센터와 FlexPod Express는 가상화와 베어 메탈 OS와 엔터프라이즈 워크로드를 위한 최적의 플랫폼입니다.' 
+---
+= NVA-1131-deploy: VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express(직접 연결 IP 기반 스토리지 포함
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+NetApp, 스리랑카 Sree Lakshmi
+
+업계 동향에 따르면 많은 데이터 센터가 공유 인프라 및 클라우드 컴퓨팅으로 전환하고 있습니다. 또한 기업에서는 데이터 센터에 친숙한 기술을 활용하여 원격 사무소 및 지사를 위한 간편하고 효율적인 솔루션을 찾고 있습니다.
+
+FlexPod Express는 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 기술을 기반으로 사전 설계되며 모범 사례 아키텍처입니다. FlexPod 익스프레스 시스템의 구성요소는 FlexPod 데이터 센터와 비슷하기 때문에 더 작은 규모로 전체 IT 인프라 환경에서 관리 시너지 효과를 실현할 수 있습니다. FlexPod 데이터 센터와 FlexPod Express는 가상화와 베어 메탈 OS와 엔터프라이즈 워크로드를 위한 최적의 플랫폼입니다.
+
+FlexPod 데이터 센터 및 FlexPod 익스프레스 는 기본 구성을 제공하며 다양한 사용 사례와 요구 사항을 수용할 수 있도록 크기를 조정할 수 있는 다기능성을 제공합니다. 기존 FlexPod 데이터 센터 고객은 익숙한 툴을 사용하여 FlexPod 익스프레스 시스템을 관리할 수 있습니다. 새로운 FlexPod Express 고객은 환경 확장에 따라 FlexPod 데이터 센터 관리에 쉽게 적응할 수 있습니다.
+
+FlexPod Express는 원격 사무소 및 지사(ROBO)와 중소 기업 및 중견 기업을 위한 최적의 인프라 기반입니다. 전용 워크로드에 대한 인프라를 제공하려는 고객에게 최적의 솔루션입니다.
+
+FlexPod Express는 거의 모든 워크로드에 적합한 관리하기 쉬운 인프라를 제공합니다.

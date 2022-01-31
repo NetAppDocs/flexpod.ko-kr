@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/cloud-fabricpool_set_volume_tiering_policy.html 
+keywords: volume, tiering, policy, ontap, cli, oncommand, system, manager, cloud, fabricpool 
+summary:  
+---
+= 볼륨 계층화 정책 설정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+기본적으로 볼륨은 없음 볼륨 계층화 정책을 사용합니다. 볼륨 생성 후에는 OnCommand 시스템 관리자 또는 ONTAP CLI를 사용하여 볼륨 계층화 정책을 변경할 수 있습니다.
+
+FlexPod와 함께 사용할 경우 FabricPool는 자동, 스냅샷 전용 및 없음이라는 세 가지 볼륨 계층화 정책을 제공합니다.
+
+* * 자동 *
++
+** 볼륨의 모든 콜드 블록이 클라우드 계층으로 이동됩니다. Aggregate가 50% 이상 활용된다고 가정하면 비활성 블록이 콜드 상태가 되는 데 약 31일이 걸립니다. 자동 냉각 기간은 계층화-최소-냉각-일 설정을 사용하여 2일에서 63일 사이에서 조정할 수 있습니다.
+** 계층화 정책이 Auto로 설정된 볼륨의 콜드 블록이 무작위로 읽혀지면 핫 블록이 되어 성능 계층에 기록됩니다.
+** 계층화 정책이 Auto로 설정된 볼륨의 콜드 블록이 순차적으로 읽으면 콜드 블록이 클라우드 계층에 그대로 유지됩니다. 성능 계층에 기록되지 않습니다.
+
+
+* * 스냅샷 전용 *
++
+** 활성 파일 시스템과 공유되지 않는 볼륨의 콜드 스냅샷 블록이 클라우드 계층으로 이동합니다. Aggregate가 50% 이상 활용된다고 가정하면 비활성 스냅샷 블록이 콜드 상태가 되는 데 약 2일이 걸립니다. 스냅샷 전용 냉각 기간은 계층화-최소-냉각-일" 설정을 사용하여 2-63일로 조정할 수 있습니다.
+** 계층화 정책이 Snapshot 전용으로 설정된 볼륨의 콜드 블록을 읽는 경우 핫 블록으로 만들어지고 성능 계층에 기록됩니다.
+
+
+* * 없음(기본값) *
++
+** 사용 안 함 으로 설정된 볼륨은 계층화 정책에 따라 콜드 데이터를 클라우드 계층으로 계층화하지 않습니다.
+** 계층화 정책을 없음으로 설정하면 새 계층화가 방지됩니다.
+** 이전에 클라우드 계층으로 이동한 볼륨 데이터는 핫 상태가 되고 성능 계층으로 자동으로 다시 이동될 때까지 클라우드 계층에 그대로 유지됩니다.
+
+
+
+
+
+
+== OnCommand 시스템 관리자
+
+OnCommand 시스템 관리자를 사용하여 볼륨의 계층화 정책을 변경하려면 다음 단계를 수행하십시오.
+
+. OnCommand 시스템 관리자를 시작합니다.
+. 볼륨을 선택합니다.
+. 기타 작업 을 클릭하고 계층화 정책 변경 을 선택합니다.
+. 볼륨에 적용할 계층화 정책을 선택합니다.
+. 저장 을 클릭합니다.
++
+image:cloud-fabricpool_image16.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+== ONTAP CLI를 참조하십시오
+
+ONTAP CLI를 사용하여 볼륨의 계층화 정책을 변경하려면 다음 명령을 실행합니다.
+
+....
+volume modify -vserver <svm_name> -volume <volume_name>
+-tiering-policy <auto|snapshot-only|all|none>
+....
+link:cloud-fabricpool_set_volume_tiering_minimum_cooling_days.html["다음: 볼륨 계층화 최소 냉각 기간을 설정합니다."]

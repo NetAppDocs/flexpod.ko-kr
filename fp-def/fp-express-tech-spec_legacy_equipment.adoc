@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec_legacy_equipment.html 
+keywords: legacy, equipment, legacy, storage, controller, fas, disk, shelf 
+summary: 이 섹션에는 NetApp의 기존 디스크 쉘프, FAS 컨트롤러 및 스토리지 컨트롤러 옵션이 나와 있습니다. 
+---
+= 레거시 장비
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+다음 표에는 NetApp 레거시 스토리지 컨트롤러 옵션이 나와 있습니다.
+
+|===
+| 스토리지 컨트롤러 | FAS 부품 번호 | 기술 사양 
+
+
+| FAS2520 | 선택한 개별 옵션을 기준으로 합니다 | http://www.netapp.com/us/products/storage-systems/fas2500/fas2500-tech-specs.aspx[] 
+
+
+| FAS2552 | 선택한 개별 옵션을 기준으로 합니다 | http://www.netapp.com/us/products/storage-systems/fas2500/fas2500-tech-specs.aspx[] 
+
+
+| FAS2554 | 선택한 개별 옵션을 기준으로 합니다 | http://www.netapp.com/us/products/storage-systems/fas2500/fas2500-tech-specs.aspx[] 
+
+
+| FAS8020 | 선택한 개별 옵션을 기준으로 합니다 | http://www.netapp.com/us/products/storage-systems/fas8000/fas8000-tech-specs.aspx[] 
+|===
+다음 표에는 NetApp FAS의 기존 디스크 쉘프 옵션이 나와 있습니다.
+
+|===
+| 디스크 쉘프 | 부품 번호 | 기술 사양 
+
+
+| DE1600 | E-X5682A-DM-0E-R6-C | link:http://www.netapp.com/us/products/storage-systems/e2800/e2800-tech-specs.aspx["디스크 쉘프 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DE5600 | E-X4041A-12-R6 | link:http://www.netapp.com/us/products/storage-systems/e2800/e2800-tech-specs.aspx["디스크 쉘프 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+
+
+| DE6600 | X-48564-00-R6 | link:http://www.netapp.com/us/products/storage-systems/e2800/e2800-tech-specs.aspx["디스크 쉘프 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브"] 
+|===
+
+
+== 기존 NetApp FAS 컨트롤러
+
+다음 표에는 레거시 NetApp FAS 컨트롤러 옵션이 나와 있습니다.
+
+|===
+| 현재 부품 | FAS2554 | FAS2552 | FAS2520 
+
+
+| 구성 | 4U 섀시 내 컨트롤러 2개 | 2U 섀시 내 컨트롤러 2개 | 2U 섀시 내 컨트롤러 2개 
+
+
+| 최대 기본 용량 | 576TB | 509TB | 336TB 
+
+
+| 내부 드라이브 | 24 | 24 | 12 
+
+
+| 최대 드라이브 수(내부 및 외부) | 144 | 144 | 84 
+
+
+| 최대 볼륨 크기입니다 3+| 60TB 
+
+
+| 최대 애그리게이트 크기입니다 3+| 120TB 
+
+
+| 최대 LUN 수입니다 3+| 컨트롤러당 2,048개 
+
+
+| 스토리지 네트워킹이 지원됩니다 2+| iSCSI, FC, FCoE, NFS 및 CIFS를 지원합니다 | iSCSI, NFS 및 CIFS를 지원합니다 
+
+
+| 최대 NetApp FlexVol 볼륨 수입니다 3+| 컨트롤러당 1,000개 
+
+
+| 최대 NetApp 스냅샷 복사본 수 3+| 컨트롤러당 255,000개 
+|===
+
+NOTE: NetApp FAS 모델에 대한 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/Controller/Index?platformTypeId=2032["FAS 모델 섹션"^] Hardware Universe에서

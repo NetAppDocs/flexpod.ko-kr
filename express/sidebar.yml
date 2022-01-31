@@ -1,0 +1,151 @@
+---
+section: express
+title: FlexPod 익스프레스
+entries:
+- title: FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 설계 가이드 를
+    참조하십시오
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/express/express-c-series-c190-design_executive_summary.html"
+  - title: 프로그램 요약
+    url: "/express/express-c-series-c190-design_program_summary.html"
+  - title: 기술 요구 사항
+    url: "/express/express-c-series-c190-design_technology_requirements.html"
+  - title: 디자인 선택
+    url: "/express/express-c-series-c190-design_design_choices.html"
+  - title: 결론
+    url: "/express/express-c-series-c190-design_conclusion.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/express/express-c-series-c190-design_where_to_find_additional_information.html"
+- title: FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 구축 가이드 를
+    참조하십시오
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/express/express-c-series-c190-deploy_program_summary_overview.html"
+  - title: 솔루션 개요
+    url: "/express/express-c-series-c190-deploy_solution_overview.html"
+  - title: 기술 요구 사항
+    url: "/express/express-c-series-c190-deploy_technology_requirements.html"
+  - title: FlexPod Express 케이블링 정보
+    url: "/express/express-c-series-c190-deploy_flexpod_express_cabling_information.html"
+  - title: 구현 절차
+    entries:
+    - title: 개요
+      url: "/express/express-c-series-c190-deploy_deployment_procedures_overview.html"
+    - title: Cisco Nexus 31108PC-V 구축
+      url: "/express/express-c-series-c190-deploy_deploy_cisco_nexus_31108pc-v.html"
+    - title: NetApp 스토리지 구축 절차(1부)
+      url: "/express/express-c-series-c190-deploy_netapp_storage_deployment_procedure_@part_1@.html"
+    - title: Cisco UCS C-Series 랙 서버 구축
+      url: "/express/express-c-series-c190-deploy_deploy_cisco_ucs_c-series_rack_server.html"
+    - title: NetApp AFF 스토리지 구축 절차(2부)
+      url: "/express/express-c-series-c190-deploy_netapp_aff_storage_deployment_procedure_@part_2@.html"
+    - title: VMware vSphere 6.7U2 구축 절차
+      url: "/express/express-c-series-c190-deploy_vmware_vsphere_6.7u2_deployment_procedure.html"
+    - title: VMware vCenter Server 6.7U2 설치 절차
+      url: "/express/express-c-series-c190-deploy_vmware_vcenter_server_6.7u2_installation_procedure.html"
+    - title: VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성
+      url: "/express/express-c-series-c190-deploy_vmware_vcenter_server_6.7u2_and_vsphere_clustering_configuration.html"
+    - title: NetApp Virtual Storage Console 9.6 구축 절차
+      url: "/express/express-c-series-c190-deploy_netapp_virtual_storage_console_9.6_deployment_procedures.html"
+  - title: 결론
+    url: "/express/express-c-series-c190-deploy_conclusion.html"
+  - title: 감사의 말
+    url: "/express/express-c-series-c190-deploy_acknowledgments.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/express/express-c-series-c190-deploy_where_to_find_additional_information.html"
+  - title: 버전 기록
+    url: "/express/express-c-series-c190-deploy_version_history.html"
+- title: FlexPod Express with Cisco UCS C-Series and AFF A220 Series 설계 가이드 를 참조하십시오
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/express/express-c-series-aff220-design_executive_summary.html"
+  - title: 프로그램 요약
+    url: "/express/express-c-series-aff220-design_program_summary.html"
+  - title: 솔루션 개요
+    url: "/express/express-c-series-aff220-design_solution_overview.html"
+  - title: 기술 요구 사항
+    url: "/express/express-c-series-aff220-design_technology_requirements.html"
+  - title: 디자인 선택
+    url: "/express/express-c-series-aff220-design_design_choices.html"
+  - title: 솔루션 검증
+    url: "/express/express-c-series-aff220-design_solution_verification.html"
+  - title: 결론
+    url: "/express/express-c-series-aff220-design_conclusion.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/express/express-c-series-aff220-design_where_to_find_additional_information.html"
+- title: FlexPod Express with Cisco UCS C-Series and AFF A220 Series 구축 가이드 를 참조하십시오
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/express/express-c-series-aff220-deploy_program_summary.html"
+  - title: 솔루션 개요
+    url: "/express/express-c-series-aff220-deploy_solution_overview.html"
+  - title: 기술 요구 사항
+    url: "/express/express-c-series-aff220-deploy_technology_requirements.html"
+  - title: FlexPod Express 케이블링 정보
+    url: "/express/express-c-series-aff220-deploy_flexpod_express_cabling_information.html"
+  - title: 구현 절차
+    url: "/express/express-c-series-aff220-deploy_deployment_procedures_overview.html"
+    entries:
+    - title: Cisco Nexus 3172P 구축 절차
+      url: "/express/express-c-series-aff220-deploy_cisco_nexus_3172p_deployment_procedure.html"
+    - title: NetApp 스토리지 구축 절차(1부)
+      url: "/express/express-c-series-aff220-deploy_netapp_storage_deployment_procedure_@part_1@.html"
+    - title: Cisco UCS C-Series 랙 서버 구축 절차
+      url: "/express/express-c-series-aff220-deploy_cisco_ucs_c-series_rack_server_deployment_procedure.html"
+    - title: NetApp AFF 스토리지 구현 절차(2부)
+      url: "/express/express-c-series-aff220-deploy_netapp_aff_storage_deployment_procedure_@part_2@.html"
+    - title: VMware vSphere 6.7 구축 절차
+      url: "/express/express-c-series-aff220-deploy_vmware_vsphere_6.7_deployment_procedure.html"
+    - title: VMware vCenter Server 6.7을 설치합니다
+      url: "/express/express-c-series-aff220-deploy_install_vmware_vcenter_server_6.7.html"
+    - title: VMware vCenter Server 6.7 및 vSphere 클러스터링 구성
+      url: "/express/express-c-series-aff220-deploy_configure_vmware_vcenter_server_6.7_and_vsphere_clustering.html"
+  - title: 결론
+    url: "/express/express-c-series-aff220-deploy_conclusion.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/express/express-c-series-aff220-deploy_where_to_find_additional_information.html"
+- title: AFF Express with VMware vSphere 6.7U1 and NetApp FlexPod A220 with Direct-Attached
+    IP 기반 스토리지 설계 가이드 를 참조하십시오
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/express/express-direct-attach-design_overview.html"
+  - title: 프로그램 요약
+    url: "/express/express-direct-attach-design_program_summary.html"
+  - title: 솔루션 개요
+    url: "/express/express-direct-attach-design_solution_overview.html"
+  - title: 기술 요구 사항
+    url: "/express/express-direct-attach-design_technology_requirements.html"
+  - title: 디자인 선택
+    url: "/express/express-direct-attach-design_design_choices.html"
+  - title: 솔루션 검증
+    url: "/express/express-direct-attach-design_solution_verification.html"
+  - title: 결론
+    url: "/express/express-direct-attach-design_conclusion.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/express/express-direct-attach-design_where_to_find_additional_information.html"
+- title: 직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod
+    Express
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/express/express-direct-attach-aff220-deploy_program_summary.html"
+  - title: 솔루션 개요
+    url: "/express/express-direct-attach-aff220-deploy_solution_overview.html"
+  - title: 기술 요구 사항
+    url: "/express/express-direct-attach-aff220-deploy_technology_requirements.html"
+  - title: FlexPod 익스프레스 케이블 연결 정보
+    url: "/express/express-direct-attach-aff220-deploy_flexpod_express_cabling_information.html"
+  - title: 구현 절차
+    url: "/express/express-direct-attach-aff220-deploy_deployment_procedures.html"
+  - title: 결론
+    url: "/express/express-direct-attach-aff220-deploy_conclusion.html"
+  - title: 추가 정보
+    url: "/express/express-direct-attach-aff220-deploy_additional_information.html"
+- title: AFF Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp NVA(FAS/FlexPod)
+  url: https://www.netapp.com/pdf.html?item=/media/21938-nva-1154-DEPLOY.pdf

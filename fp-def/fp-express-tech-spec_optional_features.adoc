@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec__optional_features.html 
+keywords: optional, features, iscsi, boot, option, flexpod, express configuration, cisco, mini, aff, fas 
+summary: 이 섹션에서는 FlexPod Express의 선택적 기능에 대해 설명합니다. 
+---
+= 옵션 기능
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 FlexPod Express의 선택적 기능에 대해 설명합니다.
+
+
+
+== iSCSI 부트 옵션
+
+FlexPod 익스프레스 아키텍처는 iSCSI 부트를 사용합니다. iSCSI 부팅 옵션에 대한 최소 요구 사항은 다음과 같습니다.
+
+* NetApp 스토리지 컨트롤러에서 활성화된 iSCSI 라이센스/기능
+* NetApp 스토리지 컨트롤러 HA 쌍의 각 노드에 있는 2포트 10Gbps 이더넷 어댑터
+* iSCSI 부팅이 가능한 Cisco UCS 서버의 어댑터
+
+
+
+
+== 구성 옵션
+
+이 섹션에서는 FlexPod Express 아키텍처에 필요하고 유효성이 검사된 구성에 대한 자세한 정보를 제공합니다.
+
+
+
+=== FlexPod Express with Cisco UCS C-Series 및 AFF C190 시리즈
+
+다음 그림에서는 Cisco UCS C-Series 및 AFF C190 시리즈 솔루션을 사용하는 FlexPod Express를 보여 줍니다. 이 솔루션은 두 10GbE 업링크를 모두 지원합니다.
+
+image:fp-express-tech-spec_image2.png["오류: 그래픽 이미지가 없습니다"]
+
+이 구성에 대한 자세한 내용은 FlexPod Express with VMware vSphere 6.7 및 NetApp AFF NVA C190 Deployment Guide(진행 중)를 참조하십시오.
+
+
+
+=== FlexPod Express(Cisco UCS Mini 및 AFF A220 및 FAS 2750/2720)
+
+다음 그림에서는 Cisco UCS 관리 구성의 FlexPod Express를 보여 줍니다.
+
+image:fp-express-tech-spec_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+이 구성에 대한 자세한 내용은 을 참조하십시오 https://www.netapp.com/us/media/nva-1131-deploy.pdf["직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express"^].

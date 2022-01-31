@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_flexpod_platforms.html 
+keywords: flexpod, platforms, datacenter, technical, specifications, express, infrastructure 
+summary:  
+---
+= FlexPod 플랫폼
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod 플랫폼에는 2가지 플랫폼이 있습니다.
+
+* * FlexPod 데이터 센터. * 이 플랫폼은 워크로드 엔터프라이즈 애플리케이션, 가상화, 가상 데스크톱 인프라(VDI), 퍼블릭, 프라이빗, 하이브리드 클라우드 워크로드에 적합한 대규모 확장형 가상 데이터 센터 인프라입니다.
+* * FlexPod 익스프레스. * 이 플랫폼은 원격 사무소 및 에지 사용 사례를 대상으로 하는 소형 통합 인프라입니다. FlexPod Express에는 에 나와 있는 고유 사양이 있습니다 https://www.netapp.com/us/media/tr-4293.pdf["FlexPod 익스프레스 기술 사양"^]
+
+
+이 문서에서는 FlexPod 데이터 센터 플랫폼의 기술 사양을 제공합니다.

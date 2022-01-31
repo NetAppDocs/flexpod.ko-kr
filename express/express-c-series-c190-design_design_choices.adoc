@@ -1,0 +1,180 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-c190-design_design_choices.html 
+keywords: AFF C190, CIFS, NFS, iSCSI, FCP, SnapMirror, SnapVault, SnapRestore, SnapManager, SnapCenter, FabricPool 
+summary: 이 섹션에 나열된 기술은 아키텍처 설계 단계에서 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다. 
+---
+= 디자인 선택
+
+
+이 섹션에 나열된 기술은 아키텍처 설계 단계에서 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다.
+
+
+
+== ONTAP 9.6이 설치된 NetApp AFF C190 시리즈
+
+이 솔루션은 NetApp AFF C190 시스템 및 ONTAP 9.6 소프트웨어의 최신 NetApp 제품 중 2개를 활용합니다.
+
+
+
+=== AFF C190 시스템
+
+대상 그룹은 경제적인 가격으로 All-Flash 기술로 IT 인프라를 현대화하려는 고객입니다. AFF C190 시스템은 새로운 ONTAP 9.6 및 플래시 번들 라이센스와 함께 제공됩니다. 즉, 다음 기능이 탑재되어 있습니다.
+
+* CIFS, NFS, iSCSI 및 FCP
+* NetApp SnapMirror 데이터 복제 소프트웨어, NetApp SnapVault 백업 소프트웨어, NetApp SnapRestore 데이터 복구 소프트웨어, NetApp SnapManager 스토리지 관리 소프트웨어 제품군 및 NetApp SnapCenter 소프트웨어
+* FlexVol 기술
+* 중복제거, 압축, 컴팩션
+* 씬 프로비저닝
+* 스토리지 QoS
+* NetApp RAID DP 기술
+* NetApp Snapshot 기술
+* FabricPool
+
+
+다음 그림은 호스트 접속에 대한 두 가지 옵션을 보여 줍니다.
+
+다음 그림에서는 SFP+ 모듈을 삽입할 수 있는 UTA 2 포트를 보여 줍니다.
+
+image:express-c-series-c190-design_image4.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 그림은 기존 RJ-45 이더넷 케이블을 통한 연결을 위한 10GBASE-T 포트를 보여줍니다.
+
+image:express-c-series-c190-design_image5.png["오류: 그래픽 이미지가 없습니다"]
+
+
+NOTE: 10GBASE-T 포트 옵션의 경우 10GBASE-T 기반 업링크 스위치가 있어야 합니다.
+
+AFF C190 시스템은 960GB SSD에서만 제공됩니다. 다음 네 가지 확장 단계를 선택할 수 있습니다.
+
+* 8x 960GB
+* 12x 960GB
+* 18x 960GB
+* 24x 960GB
+
+
+AFF C190 하드웨어 시스템에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/products/entry-level-aff.aspx["NetApp AFF C190 All-Flash 어레이 페이지"^].
+
+
+
+=== ONTAP 9.6 소프트웨어
+
+NetApp AFF C190 시스템은 새로운 ONTAP 9.6 데이터 관리 소프트웨어를 사용합니다. ONTAP 9.6은 업계 최고의 엔터프라이즈 데이터 관리 소프트웨어입니다. 새로운 버전에는 새로운 수준의 단순성과 유연성, 강력한 데이터 관리 기능, 스토리지 효율성, 업계 최고 수준의 클라우드 통합이 결합되어 있습니다.
+
+ONTAP 9.6에는 FlexPod 익스프레스 솔루션에 적합한 여러 가지 기능이 있습니다. 가장 중요한 것은 NetApp이 스토리지 효율성을 위해 노력하고 있다는 점입니다. 이는 소규모 구축에 있어서 가장 중요한 기능 중 하나입니다. 중복제거, 압축, 컴팩션, 씬 프로비저닝 같은 NetApp 스토리지 효율성 기능의 특징은 ONTAP 9.6에서 확인할 수 있습니다. NetApp WAFL 시스템은 항상 4KB 블록을 씁니다. 블록이 4KB의 할당된 공간을 사용하지 않을 때 다중 블록을 4KB 블록으로 결합합니다. 다음 그림에서는 이 프로세스를 보여 줍니다.
+
+image:express-c-series-c190-design_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+ONTAP 9.6은 이제 NVMe 볼륨의 선택적 512바이트 블록 크기를 지원합니다. 이 기능은 기본적으로 512바이트 블록을 사용하는 VMware VMFS(Virtual Machine File System)에서 원활하게 작동합니다. 기본 4K 크기를 그대로 사용하거나 512바이트 블록 크기를 선택적으로 설정할 수 있습니다.
+
+ONTAP 9.6의 기타 향상된 기능은 다음과 같습니다.
+
+* * NetApp Aggregate Encryption(NAE). * NAE는 애그리게이트 레벨에서 키를 할당하며, 따라서 애그리게이트의 모든 볼륨을 암호화합니다. 이 기능을 사용하면 볼륨을 애그리게이트 레벨에서 암호화 및 중복제거할 수 있습니다.
+* NetApp ONTAP FlexGroup 볼륨 개선 *. ONTAP 9.6에서는 FlexGroup 볼륨의 이름을 쉽게 변경할 수 있습니다. 데이터를 로 마이그레이션하기 위해 새 볼륨을 생성할 필요가 없습니다. ONTAP 시스템 관리자 또는 CLI를 사용하여 볼륨 크기를 줄일 수도 있습니다.
+* * FabricPool 개선. * ONTAP 9.6은 오브젝트 저장소를 클라우드 계층으로 추가로 지원합니다. 또한 Google Cloud 및 Alibaba Cloud Object Storage Service(OSS)에 대한 지원도 목록에 추가되었습니다. FabricPool은 AWS S3, Azure Blob, IBM Cloud 오브젝트 스토리지 및 NetApp StorageGRID 오브젝트 기반 스토리지 소프트웨어를 비롯한 여러 오브젝트 저장소를 지원합니다.
+* SnapMirror 향상 기능 * ONTAP 9.6에서는 소스 어레이를 떠나기 전에 새 볼륨 복제 관계가 기본적으로 암호화되고 SnapMirror 대상에서 암호가 해독됩니다.
+
+
+
+
+== Cisco Nexus 3000 시리즈
+
+Cisco Nexus 31108PC-V는 48개의 SFP+ 포트와 6개의 QSFP28 포트를 갖춘 10Gbps SFP+ 기반 ToR(Top-of-Rack) 스위치입니다. 각 SFP+ 포트는 100Mbps, 10Gbps 속도에서 작동할 수 있으며, 각 QSFP28 포트는 네이티브 100Gbps 또는 40Gbps 모드 또는 4x 10Gbps 모드로 작동할 수 있어 유연한 마이그레이션 옵션을 제공합니다. 이 스위치는 짧은 지연 시간과 낮은 전력 소비에 최적화된 진정한 PHY 없는 스위치입니다.
+
+Cisco Nexus 31108PC-V 사양에는 다음 구성 요소가 포함됩니다.
+
+* 31108PC-V에서 최대 1.2Tbps의 스위칭 용량 및 포워딩 속도 2.16Tbps
+* 48개의 SFP 포트는 1 및 10기가비트 이더넷(10GbE)을 지원하며, 6개의 QSFP28 포트는 각각 4개의 10GbE 또는 40GbE 또는 100GbE를 지원합니다
+
+
+다음 그림은 Cisco Nexus 31108PC-V 스위치입니다.
+
+image:express-c-series-c190-design_image7.png["오류: 그래픽 이미지가 없습니다"]
+
+Cisco Nexus 31108PC-V 스위치에 대한 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/data_sheet_c78-729483.html["Cisco Nexus 3172PQ, 3172TQ, 3172TQ-32T, 3172PQ-XL 및 3172TQ-XL 스위치 데이터 시트"^].
+
+
+
+== Cisco UCS C-Series 를 참조하십시오
+
+FlexPod 익스프레스 구축에서는 다양한 구성 옵션으로 Cisco UCS C-Series 랙 서버를 FlexPod 익스프레스 설치시 특정 요구사항에 맞게 구성할 수 있기 때문에 Cisco UCS C-Series 랙 서버를 선택했습니다.
+
+Cisco UCS C-Series 랙 서버는 업계 표준 폼 팩터에서 유니파이드 컴퓨팅을 제공하여 TCO를 절감하고 민첩성을 향상합니다.
+
+Cisco UCS C-Series 랙 서버는 다음과 같은 이점을 제공합니다.
+
+* Cisco UCS의 폼 팩터 중립적인 엔트리 레벨
+* 애플리케이션을 간편하고 신속하게 구축
+* 통합 컴퓨팅 혁신 및 이점을 랙 서버로 확장
+* 친숙한 랙 패키지의 고유한 이점을 통해 고객의 선택 옵션 증가
+
+
+image:express-c-series-c190-design_image8.png["오류: 그래픽 이미지가 없습니다"]
+
+위 그림에 표시된 Cisco UCS C220 M5 랙 서버는 업계에서 가장 다양한 범용 엔터프라이즈 인프라 및 애플리케이션 서버 중 하나입니다. 이 서버는 가상화, 협업 및 베어 메탈 애플리케이션을 비롯하여 광범위한 워크로드에 업계 최고의 성능과 효율성을 제공하는 고밀도 2소켓 랙 서버입니다. Cisco UCS C-Series 랙 서버는 독립형 서버로 또는 Cisco UCS의 일부로 구축할 수 있으므로 Cisco의 표준 기반 통합 컴퓨팅 혁신 기술을 활용하여 고객의 TCO를 절감하고 비즈니스 민첩성을 높일 수 있습니다.
+
+C220 M5 서버에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/datasheet-c78-739281.html["Cisco UCS C220 M5 랙 서버 데이터 시트"^].
+
+
+
+=== C220 M5 랙 서버용 Cisco UCS VIC 1457 연결
+
+다음 그림에 표시된 Cisco UCS VIC 1457 어댑터는 M5 세대의 Cisco UCS C-Series 서버용으로 설계된 4중 포트 소형 폼 팩터 플러그 가능(SFP28) 모듈식 마더보드 LAN(mLOM) 카드입니다. 이 카드는 10/25Gbps 이더넷 또는 FCoE를 지원합니다. 이 카드는 PCIe 표준 호환 인터페이스를 호스트에 제공할 수 있으며, NIC 또는 HBA로 동적으로 구성할 수 있습니다.
+
+image:express-c-series-c190-design_image9.png["오류: 그래픽 이미지가 없습니다"]
+
+Cisco UCS VIC 1457 어댑터에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/unified-computing-system-adapters/datasheet-c78-741130.html["Cisco UCS 가상 인터페이스 카드 1400 시리즈 데이터 시트"^].
+
+
+
+== VMware vSphere 6.7U2
+
+VMware vSphere 6.7U2는 FlexPod Express에서 사용할 수 있는 하이퍼바이저 옵션 중 하나입니다. VMware vSphere를 사용하면 구입한 컴퓨팅 용량을 최대한 활용하는 동시에 전력 및 냉각 설치 공간을 줄일 수 있습니다. 또한 VMware vSphere를 사용하면 vSphere 호스트 클러스터(유지 관리 모드의 VMware Distributed Resource Scheduler 또는 VMware DRS-MM)에서 하드웨어 장애 보호(VMware High Availability 또는 VMware HA)와 컴퓨팅 리소스 로드 밸런싱을 수행할 수 있습니다.
+
+커널만 다시 시작하므로 VMware vSphere 6.7U2를 사용하면 하드웨어를 다시 시작하지 않고도 vSphere ESXi를 로드하여 빠르게 부팅할 수 있습니다. vSphere 6.7U2 vSphere 클라이언트(HTML5 기반 클라이언트)에는 코드 캡처 및 API 탐색을 지원하는 개발자 센터와 같은 몇 가지 새로운 개선 사항이 있습니다. 코드 캡처를 사용하면 vSphere Client에 작업을 기록하여 간단하고 사용 가능한 코드 출력을 제공할 수 있습니다. vSphere 6.7U2에는 DRS와 같은 새로운 기능이 유지 보수 모드(DRS-mm)에 포함되어 있습니다.
+
+VMware vSphere 6.7U2는 다음과 같은 기능을 제공합니다.
+
+* VMware는 외부 VMware PSC(Platform Services Controller) 구축 모델을 더 이상 사용하지 않습니다.
+
+
+
+NOTE: 다음 주요 vSphere 릴리즈부터는 외부 PSC를 사용할 수 없습니다.
+
+* vCenter Server 어플라이언스 백업 및 복구를 위한 새로운 프로토콜 지원 지원되는 프로토콜 선택 사항으로 NFS 및 SMB 소개, 최대 총 7개(HTTP, HTTPS, FTP, FTPS, SCP, NFS 및 SMB) - 파일 기반 백업 또는 복구 작업을 위해 vCenter Server를 구성할 때 필요합니다.
+* 콘텐츠 라이브러리 사용 시 새로운 기능. 이제 vCenter Server가 향상된 연결 모드로 구성되어 있으면 컨텐츠 라이브러리 간에 네이티브 VM 템플릿 동기화를 사용할 수 있습니다.
+* 로 업데이트합니다 https://blogs.vmware.com/vsphere/2019/04/vcenter-server-6-7-update-2-whats-new.html["클라이언트 플러그인 페이지"^].
+* VMware vSphere Update Manager는 vSphere Client에도 향상된 기능을 추가합니다. 한 화면에서 연결 확인 규정 준수를 수행하고 조치를 수정할 수 있습니다.
+
+
+VMware vSphere 6.7 U2에 대한 자세한 내용은 를 참조하십시오 https://blogs.vmware.com/vsphere/2019/04/vcenter-server-6-7-update-2-whats-new.html["VMware vSphere 블로그 페이지를 참조하십시오"^].
+
+VMware vCenter Server 6.7 U2 업데이트에 대한 자세한 내용은 를 참조하십시오 https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-vcenter-server-67u2-release-notes.html["릴리즈 노트"^].
+
+
+NOTE: 이 솔루션은 vSphere 6.7U2에서 검증되었지만 에서 다른 구성 요소에 대해 검증된 모든 vSphere 버전을 지원합니다 https://mysupport.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴(IMT)"^]. NetApp은 수정 및 향상된 기능을 위해 다음 버전의 vSphere를 구축할 것을 권장합니다.
+
+
+
+== 부트 아키텍처
+
+FlexPod 익스프레스 부트 아키텍처에서 지원되는 옵션은 다음과 같습니다.
+
+* iSCSI SAN LUN 을 선택합니다
+* Cisco FlexFlash SD 카드
+* 로컬 디스크
+
+
+FlexPod 데이터 센터는 iSCSI LUN에서 부팅되므로 FlexPod 익스프레스를 위한 iSCSI 부트를 사용하여 솔루션 관리성이 향상됩니다.
+
+
+
+=== ESXi 호스트 가상 네트워크 인터페이스 카드 레이아웃
+
+Cisco UCS VIC 1457에는 4개의 물리적 포트가 있습니다. 이 솔루션 검증에는 ESXi 호스트를 사용할 때 이러한 4개의 물리적 포트가 포함되어 있습니다. NIC 수가 더 작거나 큰 경우 VMNIC 번호가 다를 수 있습니다.
+
+iSCSI 부트 구현에서 iSCSI 부트는 iSCSI 부트를 위해 별도의 vNIC(Virtual Network Interface Card)가 필요합니다. 이러한 vNIC는 적절한 패브릭의 iSCSI VLAN을 기본 VLAN으로 사용하며 다음 그림과 같이 iSCSI 부트 vSwitch에 연결됩니다.
+
+image:express-c-series-c190-design_image10.png["오류: 그래픽 이미지가 없습니다"]
+
+link:express-c-series-c190-design_conclusion.html["다음: 결론."]

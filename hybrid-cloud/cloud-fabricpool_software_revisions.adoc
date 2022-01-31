@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/cloud-fabricpool_software_revisions.html 
+keywords: software, revision, hardware, versions, basic, requirements, cloud, fabricpool 
+summary: 다음 표에는 검증된 하드웨어 및 소프트웨어 버전이 나와 있으며, 이 페이지에는 기본 요구 사항이 충족된 후 수행해야 할 단계가 자세히 나와 있습니다. 
+---
+= 소프트웨어 개정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+다음 표에서는 검증된 하드웨어 및 소프트웨어 버전을 보여 줍니다.
+
+|===
+| 레이어 | 장치 | 이미지 | 설명 
+
+
+| 스토리지 | NetApp AFF A300 | ONTAP 9.6P2 |  
+
+
+| 컴퓨팅 | Cisco UCS VIC 1340이 장착된 Cisco UCS B200 M5 블레이드 서버 | 릴리스 4.0(4b) |  
+
+
+.2+| 네트워크 | Cisco Nexus 6332-16UP 패브릭 인터커넥트 | 릴리스 4.0(4b) |  
+
+
+| NX-OS 독립 실행형 모드의 Cisco Nexus 93180YC-EX 스위치 | 릴리스 7.0(3) i7(6) |  
+
+
+| 스토리지 네트워크 | Cisco MDS 9148S | 릴리즈 8.3(2) |  
+
+
+.2+| 하이퍼바이저 .2+|  | VMware vSphere ESXi 6.7U2 | ESXi 6.7.0,13006603 
+
+
+| VMware vCenter Server를 참조하십시오 | vCenter Server 6.7.0.30000 빌드 13639309 
+
+
+| 클라우드 공급자 |  | Amazon AWS S3 | 기본 옵션이 있는 표준 S3 버킷 
+|===
+FabricPool의 기본 요구 사항은 에 나와 있습니다 link:cloud-fabricpool_fabricpool_requirements.html["FabricPool 요구 사항"]. 모든 기본 요구 사항이 충족되면 다음 단계를 수행하여 FabricPool를 구성합니다.
+
+. FabricPool 라이센스를 설치합니다.
+. AWS S3 오브젝트 저장소 버킷을 생성합니다.
+. ONTAP에 클라우드 계층을 추가합니다.
+. 클라우드 계층을 Aggregate에 연결합니다.
+. 볼륨 계층화 정책을 설정합니다.
+
+
+link:cloud-fabricpool_install_fabricpool_license.html["다음: FabricPool 라이센스를 설치합니다."]

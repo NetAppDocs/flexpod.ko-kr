@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: ontap-connector-for-intersight/index.html 
+keywords: netapp, cisco, ontap, intersight, flexpod, infrastructure, solution, storage, compute, VMware, virtualization, monitor, orchestrate, automate 
+summary: NetApp과 Cisco는 협력 관계를 맺고 FlexPod 에코시스템을 위한 단일 창 방식으로 제공하는 Cisco Intersight를 제공하고 있습니다. 
+---
+= Cisco Intersight with NetApp ONTAP 스토리지: 빠른 시작 가이드
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+Rachel Lithman, Jyh-Shing Chen, NetApp
+
+파트너 후원:image:cisco logo.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 소개
+
+NetApp과 Cisco는 협력 관계를 맺고 FlexPod 에코시스템을 위한 단일 창 방식으로 제공하는 Cisco Intersight를 제공하고 있습니다. 이처럼 간소한 통합으로 FlexPod 인프라 및 FlexPod 솔루션의 모든 구성요소를 위한 통합 관리 플랫폼이 생성됩니다. Cisco Intersight를 사용하면 NetApp 스토리지, Cisco 컴퓨팅 및 VMware 인벤토리를 모니터링할 수 있습니다. 또한 워크플로우를 조율하거나 자동화하여 스토리지 및 가상화 작업을 동시에 수행할 수 있습니다.
+
+자세한 내용은 을 참조하십시오 https://www.netapp.com/pdf.html?item=/media/25001-tr-4883.pdf["TR 4883: ONTAP 9.8을 지원하는 FlexPod 데이터 센터, Cisco Intersight용 ONTAP 스토리지 커넥터, Cisco Intersight 관리 모드"^].

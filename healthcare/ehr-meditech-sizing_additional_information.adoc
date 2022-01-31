@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-meditech-sizing_additional_information.html 
+keywords: additional, information, guides, meditech, sizing 
+summary: 이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오. 
+---
+= 추가 정보
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오.
+
+* FC Cisco Validated Design이 구축된 FlexPod 데이터 센터
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html"^]
+
+* MEDITECH 환경을 위한 NetApp 배포 지침:
++
+https://fieldportal.netapp.com/content/248456["https://fieldportal.netapp.com/content/248456"^] (NetApp 로그인 필요)
+
+* MEDITECH 환경을 위한 NetApp 사이징 지침
++
+http://www.netapp.com/us/media/tr-4190.pdf["www.netapp.com/us/media/tr-4190.pdf"^]
+
+* Epic EHR용 FlexPod 데이터 센터 구축
++
+http://www.netapp.com/us/media/tr-4693.pdf["www.netapp.com/us/media/tr-4693.pdf"^]
+
+* FlexPod 설계 구역
++
+https://www.cisco.com/c/en/us/solutions/design-zone/data-center-design-guides/flexpod-design-guides.html["https://www.cisco.com/c/en/us/solutions/design-zone/data-center-design-guides/flexpod-design-guides.html"^]
+
+* NetApp AFF, vSphere 6.5U1 및 Cisco UCS Manager를 사용하는 FC 스토리지(MDS 스위치)가 포함된 FlexPod DC
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html"^]
+
+* Cisco 의료
++
+https://www.cisco.com/c/en/us/solutions/industries/healthcare.html?dtid=osscdc000283["https://www.cisco.com/c/en/us/solutions/industries/healthcare.html?dtid=osscdc000283"^]
+
+

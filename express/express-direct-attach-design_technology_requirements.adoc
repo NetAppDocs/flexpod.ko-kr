@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: express/express-direct-attach-design_technology_requirements.html 
+keywords: requirements, hardware, software, A220, HA, VIC, B200 m5, fabric interconnect, VMware, vCenter, Server, Appliance, ESXi, hypervisor 
+summary: FlexPod 익스프레스 시스템에는 하드웨어 및 소프트웨어 구성 요소의 조합이 필요합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 설명합니다. 
+---
+= 기술 요구 사항
+
+
+FlexPod 익스프레스 시스템에는 하드웨어 및 소프트웨어 구성 요소의 조합이 필요합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 설명합니다.
+
+
+
+== 하드웨어 요구 사항
+
+선택한 하이퍼바이저에 관계없이 모든 FlexPod Express 구성은 동일한 하드웨어를 사용합니다. 따라서 비즈니스 요구사항이 변경되더라도 두 하이퍼바이저 중 하나를 동일한 FlexPod Express 하드웨어에서 실행할 수 있습니다.
+
+다음 표에는 모든 FlexPod Express 구성에 필요한 하드웨어 구성요소가 나와 있습니다.
+
+[cols="50,50"]
+|===
+| 하드웨어 | 수량 
+
+
+| AFF A220 HA 쌍입니다 | 1 
+
+
+| Cisco UCS B200 M5 서버 | 2 
+
+
+| Cisco Nexus 31108PCV 스위치 | 2 
+
+
+| B200 M5 서버용 Cisco UCS VIC(Virtual Interface Card) 1440 | 2 
+
+
+| 2개의 통합 UCS-Fi-M-6324 패브릭 인터커넥트를 지원하는 Cisco UCS Mini | 1 
+|===
+
+
+== 소프트웨어 요구 사항
+
+다음 표에는 FlexPod 익스프레스 솔루션의 아키텍처를 구현하는 데 필요한 소프트웨어 구성 요소가 나열되어 있습니다.
+
+[cols="33,33,33"]
+|===
+| 소프트웨어 | 버전 | 세부 정보 
+
+
+| Cisco UCS Manager를 참조하십시오 | 4.0(1b) | Cisco UCS 패브릭 인터커넥트 FI-6324UP의 경우 
+
+
+| Cisco Blade 소프트웨어 | 4.0(1b) | Cisco UCS B200 M5 서버용 
+
+
+| Cisco nenic 드라이버 | 1.0.25.0 | Cisco VIC 1440 인터페이스 카드용 
+
+
+| Cisco NX-OS입니다 | 7.0(3) I6(1) | Cisco Nexus 31108PCV 스위치의 경우 
+
+
+| NetApp ONTAP를 참조하십시오 | 9.5 | AFF A220 컨트롤러 
+|===
+다음 표에는 FlexPod Express의 모든 VMware vSphere 구축에 필요한 소프트웨어가 나와 있습니다.
+
+[cols="50,50"]
+|===
+| 소프트웨어 | 버전 
+
+
+| VMware vCenter Server 어플라이언스 | 6.7U1 
+
+
+| VMware vSphere ESXi 하이퍼바이저 | 6.7U1 
+|===
+link:express-direct-attach-design_design_choices.html["다음: 디자인 선택."]

@@ -1,0 +1,183 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_optional_features.html 
+keywords: metrocluster, fc, nvme, fc, san, boot, cisco, mds, fcoe, iscsi 
+summary: NetApp은 FlexPod 데이터 센터 아키텍처를 한층 더 향상하기 위해 몇 가지 선택적 구성요소를 지원합니다. 선택적 구성 요소는 다음 하위 섹션에 설명되어 있습니다. 
+---
+= 선택적 기능
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+NetApp은 FlexPod 데이터 센터 아키텍처를 한층 더 향상하기 위해 몇 가지 선택적 구성요소를 지원합니다. 선택적 구성 요소는 다음 하위 섹션에 설명되어 있습니다.
+
+
+
+== MetroCluster
+
+FlexPod는 2노드 또는 4노드 클러스터 구성에서 지속적인 가용성을 제공하기 위해 두 가지 유형의 NetApp MetroCluster 소프트웨어를 지원합니다. MetroCluster은 중요한 워크로드를 위해 동기식 복제를 제공합니다. Cisco 스위칭과 연결된 이중 사이트 구성이 필요합니다. 사이트 간 최대 지원 거리는 MetroCluster FC의 경우 300km(186마일)이며 MetroCluster IP의 경우 700km(약 35마일)까지 증가합니다. 다음 그림에서는 각각 NetApp MetroCluster 아키텍처를 지원하는 FlexPod 데이터 센터와 NetApp MetroCluster IP 아키텍처를 지원하는 FlexPod 데이터 센터를 보여 줍니다.
+
+다음 그림은 NetApp MetroCluster 아키텍처를 지원하는 FlexPod 데이터 센터를 보여 줍니다.
+
+image:dc-tech-spec_image1.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 그림은 NetApp MetroCluster IP 아키텍처를 지원하는 FlexPod 데이터 센터를 보여 줍니다.
+
+image:dc-tech-spec_image2.png["오류: 그래픽 이미지가 없습니다"]
+
+ONTAP 9.8부터 ONTAP 중재자를 세 번째 사이트에 배포하여 MetroCluster IP 솔루션을 모니터링하고 사이트 재해가 발생할 때 예상치 못한 자동 전환을 지원할 수 있습니다.
+
+계층 2 사이트 간 연결이 확장된 FlexPod MetroCluster IP 솔루션 배포의 경우 다음 그림과 같이 네트워크 대역폭 및 스위치가 요구 사항을 충족하는 경우 ISL을 공유하고 MetroCluster 스위치를 호환되는 FlexPod IP 스위치로 사용하여 비용을 절감할 수 있습니다. ISL 공유 및 규정 준수 스위치가 있는 FlexPod MetroCluster IP 솔루션을 보여 줍니다.
+
+image:dc-tech-spec_image10.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 두 그림에서는 VXLAN 멀티 사이트 패브릭 구축을 지원하는 FlexPod MetroCluster IP 솔루션을 위한 VXLAN 멀티 사이트 패브릭 및 MetroCluster IP 스토리지 패브릭을 보여 줍니다.
+
+* FlexPod MetroCluster IP 솔루션용 VXLAN 멀티 사이트 패브릭
+
+
+image:dc-tech-spec_image11.png["오류: 그래픽 이미지가 없습니다"]
+
+* FlexPod MetroCluster IP 솔루션용 MetroCluster IP 스토리지 패브릭
+
+
+image:dc-tech-spec_image12.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 엔드 투 엔드 FC-NVMe
+
+엔드 투 엔드 FC-NVMe는 고객의 기존 SAN 인프라를 실시간 애플리케이션으로 원활하게 확장하는 동시에 IOPS 및 처리량을 높이고 지연 시간을 단축합니다.
+
+기존 32G FC SAN 전송을 사용하여 NVMe 및 SCSI 워크로드를 동시에 전송할 수 있습니다.
+
+다음 그림에서는 Cisco MDS를 사용하는 FC용 FlexPod 데이터 센터를 보여 줍니다.
+
+FlexPod 구성 및 성능 이점에 대한 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-741907.html["FlexPod용 엔드 투 엔드 NVMe 백서 소개"^]
+
+ONTAP 구현에 대한 자세한 내용은 을 참조하십시오 https://www.netapp.com/us/media/tr-4684.pdf["TR-4684: NVMe로 최신 SAN 구현 및 구성"^].
+
+image:dc-tech-spec_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== Cisco MDS를 통해 FC SAN 부팅
+
+전용 SAN 네트워크를 사용하여 확장성을 증대하기 위해 FlexPod는 Cisco MDS 스위치를 통한 FC와 Cisco Nexus 93108TC-FX와 같은 FC 지원을 갖춘 Nexus 스위치를 지원합니다. Cisco MDS를 통한 FC SAN 부팅 옵션에는 다음과 같은 라이센스 및 하드웨어 요구 사항이 있습니다.
+
+* NetApp 스토리지 컨트롤러당 최소 2개의 FC 포트, 각 SAN 패브릭당 1개의 포트
+* 각 NetApp 스토리지 컨트롤러에 대한 FC 라이센스
+* NetApp에서 지원되는 Cisco MDS 스위치 및 펌웨어 버전입니다 http://mysupport.netapp.com/matrix["IMT"^]
+
+
+MDS 기반 설계에 대한 자세한 지침은 CVD를 참조하십시오 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html["VMware vSphere 6.7U1 파이버 채널 및 iSCSI를 지원하는 FlexPod 데이터 센터 구축 가이드"^].
+
+다음 그림은 MDS 연결을 지원하는 FC용 FlexPod 데이터 센터와 Cisco Nexus 93180YC-FX를 사용하는 FC용 FlexPod 데이터 센터의 예를 보여 줍니다.
+
+image:dc-tech-spec_image4.jpg["오류: 그래픽 이미지가 없습니다"]
+
+image:dc-tech-spec_image5.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== Cisco Nexus로 FC SAN 부팅
+
+기존 FC SAN 부팅 옵션에는 다음과 같은 라이센스 및 하드웨어 요구 사항이 있습니다.
+
+* Cisco Nexus 5000 시리즈 스위치에서 FC 조닝을 수행하는 경우 Cisco Nexus 5000 시리즈 스위치(FC_features_PKG)에 대한 스토리지 프로토콜 서비스 패키지 라이센스가 필요합니다.
+* Cisco Nexus 5000 시리즈 스위치에서 FC 조닝을 수행하는 경우 패브릭 인터커넥트와 Cisco Nexus 5000 시리즈 스위치 사이에 SAN 링크가 필요합니다. 추가 이중화를 위해 링크 간에 SAN 포트 채널을 사용하는 것이 좋습니다.
+* Cisco Nexus 5010, 5020 및 5548P 스위치에는 Cisco UCS Fabric Interconnect와 NetApp 스토리지 컨트롤러에 연결하기 위한 별도의 FC 또는 범용 포트(UP) 모듈이 필요합니다.
+* Cisco Nexus 93180YC-FX에는 FC를 지원하는 기능을 위한 FC 기능 라이센스가 필요합니다.
+* 각 NetApp 스토리지 컨트롤러에는 연결을 위해 최소 2개의 8/16/32Gb FC 포트가 필요합니다.
+* NetApp 스토리지 컨트롤러에 FC 라이센스가 필요합니다.
++
+
+NOTE: Cisco Nexus 7000 또는 9000 스위치 제품군을 사용할 경우 패브릭 인터커넥트에서 FC 조닝을 수행하지 않는 한 기존 FC를 사용할 수 없습니다. 이 경우 스위치에 대한 SAN 업링크는 지원되지 않습니다.
+
+
+
+다음 그림에서는 FC 연결 구성을 보여 줍니다.
+
+image:dc-tech-spec_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== FCoE SAN 부팅 옵션
+
+FCoE SAN 부팅 옵션에는 다음과 같은 라이센스 및 하드웨어 요구 사항이 있습니다.
+
+* 스위치에서 FC 조닝을 수행하는 경우 Cisco Nexus 5000 또는 7000 시리즈 스위치(FC_features_PKG")에 대한 스토리지 프로토콜 서비스 패키지 라이센스가 필요합니다.
+* 스위치에서 FC 조닝을 수행하는 경우 패브릭 인터커넥트와 Cisco Nexus 5000 또는 7000 시리즈 스위치 간에 FCoE 업링크가 필요합니다. 추가 이중화를 위해 링크 간에 FCoE 포트 채널도 권장됩니다.
+* 온보드 UTA2(Unified Target Adapter 2) 포트가 없는 경우, 각 NetApp 스토리지 컨트롤러에는 FCoE 연결을 위한 이중 포트 UTA(Unified Target Adapter) 애드온 카드가 1개 이상 필요합니다.
+* 이 옵션에는 NetApp 스토리지 컨트롤러에 FC 라이센스가 필요합니다.
+* 스위치에서 Cisco Nexus 7000 Series 스위치 및 FC 조닝을 수행하는 경우 FCoE를 지원할 수 있는 라인 카드가 필요합니다.
++
+
+NOTE: Cisco Nexus 9000 시리즈 스위치를 사용할 경우 패브릭 인터커넥트에서 FC 조닝을 수행하고 스토리지를 어플라이언스 포트를 통한 패브릭 인터커넥트에 연결하지 않는 한 FCoE를 사용할 수 없습니다. 이 경우 스위치에 대한 FCoE 업링크는 지원되지 않습니다.
+
+
+
+다음 그림에서는 FCoE 부팅 시나리오를 보여 줍니다.
+
+image:dc-tech-spec_image7.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== iSCSI 부트 옵션
+
+iSCSI 부팅 옵션에는 다음과 같은 라이센스 및 하드웨어 요구 사항이 있습니다.
+
+* NetApp 스토리지 컨트롤러에 iSCSI 라이센스가 필요합니다.
+* iSCSI를 부팅할 수 있는 Cisco UCS Server의 어댑터가 필요합니다.
+* NetApp 스토리지 컨트롤러에서 2포트 10Gbps 이더넷 어댑터가 필요합니다.
+
+
+다음 그림은 iSCSI를 사용하여 부팅되는 이더넷 전용 구성을 보여 줍니다.
+
+image:dc-tech-spec_image8.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== Cisco UCS를 NetApp 스토리지와 직접 연결
+
+NetApp AFF 및 FAS 컨트롤러는 업스트림 SAN 스위치 없이 Cisco UCS 패브릭 인터커넥트에 직접 연결할 수 있습니다.
+
+NetApp 스토리지에 직접 연결하는 데 네 가지 Cisco UCS 포트 유형을 사용할 수 있습니다.
+
+* * 스토리지 FC 포트. * 이 포트를 NetApp 스토리지의 FC 포트에 직접 연결합니다.
+* * 스토리지 FCoE 포트. * 이 포트를 NetApp 스토리지의 FCoE 포트에 직접 연결합니다.
+* 어플라이언스 포트. * 이 포트를 NetApp 스토리지의 10GbE 포트에 직접 연결합니다.
+* * 유니파이드 스토리지 포트. * 이 포트를 NetApp UTA에 직접 연결
+
+
+라이센스 및 하드웨어 요구 사항은 다음과 같습니다.
+
+* NetApp 스토리지 컨트롤러에 프로토콜 라이센스가 필요합니다.
+* 서버에 Cisco UCS 어댑터(이니시에이터)가 필요합니다. 지원되는 Cisco UCS 어댑터 목록은 NetApp을 참조하십시오 http://mysupport.netapp.com/matrix["IMT"^].
+* NetApp 스토리지 컨트롤러의 타겟 어댑터가 필요합니다.
+
+
+다음 그림은 FC 직접 연결 구성을 보여 줍니다.
+
+image:dc-tech-spec_image9.png["오류: 그래픽 이미지가 없습니다"]
+
+* 참고: *
+
+* Cisco UCS는 FC 스위칭 모드에서 구성됩니다.
+* 타겟의 FCoE 포트와 패브릭 상호 연결은 FCoE 스토리지 포트로 구성됩니다.
+* 타겟에서 패브릭 인터커넥트까지의 FC 포트는 FC 스토리지 포트로 구성됩니다.
+
+
+다음 그림은 iSCSI/Unified IP 직접 연결 구성을 보여 줍니다.
+
+image:dc-tech-spec_image10.png["오류: 그래픽 이미지가 없습니다"]
+
+* 참고: *
+
+* Cisco UCS는 이더넷 스위칭 모드에서 구성됩니다.
+* 타겟의 iSCSI 포트와 패브릭 상호 연결은 iSCSI 데이터용 이더넷 스토리지 포트로 구성됩니다.
+* 타겟에서 패브릭 인터커넥트까지의 이더넷 포트는 CIFS/NFS 데이터용 이더넷 스토리지 포트로 구성됩니다.
+

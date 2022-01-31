@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_minimum_hardware_requirements.html 
+keywords: minimum, hardware, requirements, switches, fabric, interconnects, servers, storage, controllers 
+summary: FlexPod 데이터 센터 구성에는 스위치, 패브릭 인터커넥트, 서버, NetApp 스토리지 컨트롤러를 비롯한 최소 하드웨어 요구사항이 있습니다. 
+---
+= 최소 하드웨어 요구 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod 데이터 센터 구성에는 스위치, 패브릭 인터커넥트, 서버, NetApp 스토리지 컨트롤러를 비롯한 최소 하드웨어 요구사항이 있습니다.
+
+Cisco UCS 서버를 사용해야 합니다. 검증된 설계에는 C-Series 서버와 B-Series 서버가 모두 사용되었습니다. Cisco Nexus Fabric Extender(FEX)는 C-Series 서버에서 선택 사항입니다.
+
+FlexPod 구성에는 다음과 같은 최소 하드웨어 요구 사항이 있습니다.
+
+* 이중 구성의 Cisco Nexus 스위치 2개 이 구성은 Cisco Nexus 5000, 7000 또는 9000 시리즈의 이중 스위치 2개로 구성될 수 있습니다. 두 스위치는 동일한 모델이어야 하며 동일한 작동 모드로 구성해야 합니다.
++
+ACI 아키텍처를 구축할 경우 다음과 같은 추가 요구 사항을 준수해야 합니다.
+
++
+** Cisco Nexus 9000 시리즈 스위치를 스파인 토폴로지에 구축합니다.
+** 세 개의 Cisco APIC(Application Policy Infrastructure Controller)를 사용합니다.
+
+
+* 이중 구성의 Cisco UCS 6200, 6300 또는 6400 Series Fabric Interconnect 2개.
+* Cisco UCS 서버:
++
+** 이 솔루션이 B 시리즈 서버를 사용하는 경우 Cisco UCS 5108 B 시리즈 블레이드 서버 섀시 1개와 Cisco UCS B 시리즈 블레이드 서버 2개, 2104, 2204/8, 2408 또는 2304 I/O 모듈(IOM) 2개.
+** 솔루션이 C-Series 서버를 사용하는 경우 Cisco UCS C-Series 랙 서버 2대가 사용됩니다.
++
+Cisco UCS C-Series 랙 서버를 더 많이 구축할 경우 2232PP FEX 모듈 쌍을 선택할 수 있습니다. 하지만 2232PP 는 하드웨어 요구 사항이 아닙니다.
+
+
+
+* 고가용성(HA) 쌍 구성에서 2개의 NetApp 스토리지 컨트롤러:
++
+이 구성은 지원되는 모든 NetApp FAS, AFF 또는 ASA 시리즈 스토리지 컨트롤러로 구성될 수 있습니다. 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] 지원되는 FAS, AFF 및 ASA 컨트롤러 모델의 최신 목록을 제공하는 애플리케이션입니다.
+
++
+** HA 구성을 사용하려면 데이터 액세스를 위해 컨트롤러당 2개의 이중 인터페이스가 필요합니다. 인터페이스는 FCoE, FC 또는 10/25/100Gb 이더넷(GbE)일 수 있습니다.
+** 솔루션이 NetApp ONTAP를 사용하는 경우 NetApp에서 승인한 클러스터 인터커넥트 토폴로지가 필요합니다. 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/Switch/Index["스위치"^] 탭을 Hardware Universe 클릭합니다.
+** 솔루션이 ONTAP를 사용하는 경우 데이터 액세스를 위해 컨트롤러당 최소 2개의 추가 10/25/100GbE 포트가 필요합니다.
+** 2개의 노드가 있는 ONTAP 클러스터의 경우 스위치가 없는 2노드 클러스터를 구성할 수 있습니다.
+** 2개 이상의 노드가 있는 ONTAP 클러스터의 경우 클러스터 인터커넥트 스위치 쌍이 필요합니다.
+
+
+* 지원되는 디스크 유형이 포함된 NetApp 디스크 쉘프 1개 의 쉘프 탭을 참조하십시오 link:https://hwu.netapp.com/Shelves/Index?osTypeId=2032["NetApp Hardware Universe를 참조하십시오"^] 지원되는 디스크 쉘프 모델의 최신 목록
+

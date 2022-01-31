@@ -1,0 +1,67 @@
+---
+section: hybrid-cloud
+title: 하이브리드 클라우드
+entries:
+- title: FlexPod용 NetApp Cloud Insights
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/hybrid-cloud/cloud-insights_netapp_cloud_insights_for_flexpod.html"
+  - title: 사용 사례
+    url: "/hybrid-cloud/cloud-insights_use_cases.html"
+  - title: 있습니다
+    url: "/hybrid-cloud/cloud-insights_architecture.html"
+  - title: 설계 고려 사항
+    url: "/hybrid-cloud/cloud-insights_design_considerations.html"
+  - title: FlexPod for Cloud Insights 구축
+    url: "/hybrid-cloud/cloud-insights_deploy_cloud_insights_for_flexpod.html"
+  - title: 사용 사례
+    url: "/hybrid-cloud/cloud-insights_use_cases_01.html"
+  - title: 비디오 및 데모
+    url: "/hybrid-cloud/cloud-insights_videos_and_demos.html"
+  - title: 추가 정보
+    url: "/hybrid-cloud/cloud-insights_additional_information.html"
+- title: FlexPod with FabricPool - Amazon AWS S3로 비활성 데이터 계층화
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/hybrid-cloud/cloud-fabricpool_introduction.html"
+  - title: FlexPod 개요 및 아키텍처
+    url: "/hybrid-cloud/cloud-fabricpool_flexpod_overview_and_architecture.html"
+  - title: FabricPool
+    url: "/hybrid-cloud/cloud-fabricpool_fabricpool.html"
+  - title: FabricPool 요구 사항
+    url: "/hybrid-cloud/cloud-fabricpool_fabricpool_requirements.html"
+  - title: 구성
+    entries:
+    - title: FabricPool 소프트웨어 버전
+      url: "/hybrid-cloud/cloud-fabricpool_software_revisions.html"
+    - title: FabricPool 라이센스를 설치합니다
+      url: "/hybrid-cloud/cloud-fabricpool_install_fabricpool_license.html"
+    - title: AWS S3 버킷을 생성합니다
+      url: "/hybrid-cloud/cloud-fabricpool_create_aws_s3_bucket.html"
+    - title: ONTAP에 클라우드 계층을 추가합니다
+      url: "/hybrid-cloud/cloud-fabricpool_add_a_cloud_tier_to_ontap.html"
+    - title: 클라우드 계층을 ONTAP 애그리게이트에 연결합니다
+      url: "/hybrid-cloud/cloud-fabricpool_attach_a_cloud_tier_to_an_ontap_aggregate.html"
+    - title: 볼륨 계층화 정책 설정
+      url: "/hybrid-cloud/cloud-fabricpool_set_volume_tiering_policy.html"
+    - title: 볼륨 계층화 최소 냉각 일 수 설정
+      url: "/hybrid-cloud/cloud-fabricpool_set_volume_tiering_minimum_cooling_days.html"
+  - title: 성능 고려 사항
+    url: "/hybrid-cloud/cloud-fabricpool_performance_considerations.html"
+  - title: 소유 비용
+    url: "/hybrid-cloud/cloud-fabricpool_cost_of_ownership.html"
+  - title: 결론
+    url: "/hybrid-cloud/cloud-fabricpool_conclusion.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/hybrid-cloud/cloud-fabricpool_where_to_find_additional_information.html"
+- title: Cisco UCS Manager, NetApp ONTAP 9.3 AFF 및 VMware vSphere 6.5U1을 사용하는 IBM
+    클라우드 프라이빗 데이터 센터 [설계] FlexPod
+  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_icp_ucsm32.html
+- title: Apprenda 8.2, Cisco ACI 3.1 및 Kubernetes 1.9.4 기반의 서비스형 FlexPod 데이터 센터 [설계]
+  url: https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-740803.pdf
+- title: Cisco CloudCenter 및 NetApp 프라이빗 스토리지를 사용하는 하이브리드 클라우드용 FlexPod 데이터 센터 [설계}
+  url: http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_hybridcloud_design.html
+- title: Cisco CloudCenter 및 NetApp 프라이빗 스토리지를 사용하는 하이브리드 클라우드용 FlexPod 데이터 센터 [배포]
+  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_hybridcloud.html

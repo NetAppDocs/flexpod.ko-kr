@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: security/security-ransomware_protect_and_recover_data_on_flexpod.html 
+keywords: testbed, ransomeware, attack, vm, snapshot, copy, wannacry, detection, remediation, cifs 
+summary: 이 섹션에서는 공격 발생 시 최종 사용자의 데이터를 복구하는 방법과 FlexPod 시스템을 사용하여 공격을 방지하는 방법을 설명합니다. 
+---
+= FlexPod에서 데이터 보호 및 복구
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 공격 발생 시 최종 사용자의 데이터를 복구하는 방법과 FlexPod 시스템을 사용하여 공격을 방지하는 방법을 설명합니다.
+
+
+
+== 테스트 베드 개요
+
+FlexPod 감지, 개선 및 예방을 보여주기 위해 이 문서가 작성된 시점에 제공되는 최신 플랫폼 CVD에 지정된 지침에 따라 테스트베드가 구축되었습니다. https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html["VMware vSphere 6.7 U1, Cisco UCS 4세대 및 NetApp AFF A-Series CVD를 지원하는 FlexPod 데이터 센터"^].
+
+NetApp ONTAP 소프트웨어의 CIFS 공유를 제공하는 Windows 2016 VM이 VMware vSphere 인프라에 구축했습니다. 그런 다음 CIFS 공유에서 NetApp FPolicy를 구성하여 특정 확장 유형의 파일이 실행되지 않도록 했습니다. 또한 NetApp SnapCenter 소프트웨어는 애플리케이션 정합성을 보장하는 스냅샷 복사본을 제공하기 위해 인프라에서 VM의 스냅샷 복사본을 관리하기 위해 구축되었습니다.
+
+
+
+== 공격 전의 VM 및 파일 상태
+
+이 섹션에서는 VM에 대한 공격 전의 파일 상태와 매핑된 CIFS 공유를 보여 줍니다.
+
+VM의 Documents 폴더에는 WannaCry 맬웨어에 의해 아직 암호화되지 않은 PDF 파일 세트가 있습니다.
+
+image:security-ransomware_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 스크린샷은 VM에 매핑된 CIFS 공유를 보여 줍니다.
+
+image:security-ransomware_image4.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 스크린샷은 WannaCry 맬웨어가 아직 암호화하지 않은 CIFS 공유 'FPolicy_share'의 파일을 보여 줍니다.
+
+image:security-ransomware_image5.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 공격 전에 데이터 중복 제거 및 스냅샷 정보
+
+공격 전의 스냅샷 복사본의 스토리지 효율성 세부 정보와 크기는 검색 단계 중에 참조로 표시되고 사용됩니다.
+
+VM을 호스팅하는 볼륨에서 중복 제거를 통해 스토리지를 19%나 절감할 수 있었습니다.
+
+image:security-ransomware_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+CIFS 공유 'FPolicy_share'의 중복제거 기능으로 스토리지를 45% 절약할 수 있었습니다.
+
+image:security-ransomware_image7.png["오류: 그래픽 이미지가 없습니다"]
+
+VM을 호스팅하는 볼륨에서 456KB의 스냅샷 복사본 크기가 관찰되었습니다.
+
+image:security-ransomware_image8.png["오류: 그래픽 이미지가 없습니다"]
+
+CIFS 공유 'FPolicy_share'에 대해 160KB의 스냅샷 복사본 크기가 관찰되었습니다.
+
+image:security-ransomware_image9.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== VM 및 CIFS 공유에서 WannaCry 감염
+
+이 섹션에서는 WannaCry 맬웨어가 FlexPod 환경에 도입된 방식과 관찰된 시스템에 대한 후속 변경 사항을 보여 줍니다.
+
+다음 단계에서는 WannaCry 맬웨어 바이너리가 VM에 도입된 방법을 보여 줍니다.
+
+. 보안 맬웨어가 추출되었습니다.
++
+image:security-ransomware_image10.png["오류: 그래픽 이미지가 없습니다"]
+
+. 바이너리가 실행되었습니다.
++
+image:security-ransomware_image11.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 사례 1: WannaCry는 VM 및 매핑된 CIFS 공유 내의 파일 시스템을 암호화합니다
+
+로컬 파일 시스템과 매핑된 CIFS 공유는 WannaCry 멀웨어에 의해 암호화되었습니다.
+
+맬웨어가 WNCRY 확장명으로 파일을 암호화하기 시작합니다.
+
+image:security-ransomware_image12.png["오류: 그래픽 이미지가 없습니다"]
+
+맬웨어는 로컬 VM 및 매핑된 공유의 모든 파일을 암호화합니다.
+
+image:security-ransomware_image13.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+==== 탐지
+
+맬웨어가 파일을 암호화하기 시작한 순간부터 스냅샷 복사본의 크기가 기하급수적으로 증가하고 스토리지 효율성 백분율이 기하급수적으로 감소하게 되었습니다.
+
+공격 중에 CIFS 공유를 호스팅하는 볼륨에서 스냅샷 크기가 820.98MB로 대폭 증가되는 것을 발견했습니다.
+
+image:security-ransomware_image14.png["오류: 그래픽 이미지가 없습니다"]
+
+VM을 호스팅하는 볼륨에서 스냅샷 복사본 크기가 404.3MB로 증가되는 것을 발견했습니다.
+
+image:security-ransomware_image15.png["오류: 그래픽 이미지가 없습니다"]
+
+CIFS 공유를 호스팅하는 볼륨의 스토리지 효율성이 34%로 감소했습니다.
+
+image:security-ransomware_image16.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+==== 해결
+
+공격 전에 생성된 클린 스냅샷 복사본을 사용하여 VM 및 매핑된 CIFS 공유를 복구합니다.
+
+* VM 복원 *
+
+VM을 복원하려면 다음 단계를 완료하십시오.
+
+. SnapCenter에서 생성한 스냅샷 복사본을 사용하여 VM을 복원합니다.
++
+image:security-ransomware_image17.png["오류: 그래픽 이미지가 없습니다"]
+
+. 복구할 VMware 정합성 보장 스냅샷 복사본을 선택합니다.
++
+image:security-ransomware_image18.png["오류: 그래픽 이미지가 없습니다"]
+
+. 전체 VM이 복원되고 다시 시작됩니다.
++
+image:security-ransomware_image19.png["오류: 그래픽 이미지가 없습니다"]
+
+. 마침 을 클릭하여 복원 프로세스를 시작합니다.
++
+image:security-ransomware_image20.png["오류: 그래픽 이미지가 없습니다"]
+
+. VM 및 해당 파일이 복원됩니다.
++
+image:security-ransomware_image21.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+* CIFS 공유 복원 *
+
+CIFS 공유를 복구하려면 다음 단계를 수행하십시오.
+
+. 공격 전에 생성된 볼륨의 스냅샷 복사본을 사용하여 공유를 복구합니다.
++
+image:security-ransomware_image22.png["오류: 그래픽 이미지가 없습니다"]
+
+. 확인 을 클릭하여 복원 작업을 시작합니다.
++
+image:security-ransomware_image23.png["오류: 그래픽 이미지가 없습니다"]
+
+. 복구 후 CIFS 공유를 봅니다.
++
+image:security-ransomware_image24.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 사례 2: WannaCry는 VM 내의 파일 시스템을 암호화하고 FPolicy를 통해 보호되는 매핑된 CIFS 공유를 암호화합니다
+
+
+
+==== 예방
+
+* FPolicy 구성 * 을 참조하십시오
+
+CIFS 공유에서 FPolicy를 구성하려면 ONTAP 클러스터에서 다음 명령을 실행하십시오.
+
+....
+vserver fpolicy policy event create -vserver infra_svm -event-name Ransomware_event -protocol cifs -file-operations create,rename,write,open
+vserver fpolicy policy create -vserver infra_svm -policy-name Ransomware_policy -events Ransomware_event -engine native
+vserver fpolicy policy scope create -vserver infra_svm -policy-name Ransomware_policy -shares-to-include fpolicy_share -file-extensions-to-include WNCRY,Locky,ad4c
+vserver fpolicy enable -vserver infra_svm -policy-name Ransomware_policy -sequence-number 1
+....
+이 정책을 사용하면 WNCRY, Locky 및 ad4c 확장명을 가진 파일은 파일 생성, 이름 바꾸기, 쓰기 또는 열기 작업을 수행할 수 없습니다.
+
+공격하기 전에 파일의 상태를 확인합니다. 암호화되지 않은 상태로 깨끗한 시스템에 있습니다.
+
+image:security-ransomware_image25.png["오류: 그래픽 이미지가 없습니다"]
+
+VM의 파일은 암호화됩니다. WannaCry 맬웨어는 CIFS 공유의 파일을 암호화하려고 하지만 FPolicy는 파일이 영향을 받지 않도록 합니다.
+
+image:security-ransomware_image26.png["오류: 그래픽 이미지가 없습니다"]

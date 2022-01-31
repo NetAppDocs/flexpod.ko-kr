@@ -1,0 +1,78 @@
+---
+section: fp-def
+title: FlexPod 정의
+entries:
+- title: FlexPod 익스프레스 기술 사양
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/fp-def/fp-express-tech-spec_overview.html"
+  - title: FlexPod 플랫폼
+    url: "/fp-def/fp-express-tech-spec_flexpod_platforms.html"
+  - title: FlexPod 규칙
+    url: "/fp-def/fp-express-tech-spec_flexpod_rules.html"
+  - title: 지원되는 구성과 검증된 FlexPod 구성 비교
+    url: "/fp-def/fp-express-tech-spec_supported_versus_validated_flexpod_configurations.html"
+  - title: 스토리지 소프트웨어
+    url: "/fp-def/fp-express-tech-spec_storage_software.html"
+  - title: 최소 하드웨어 요구 사항
+    url: "/fp-def/fp-express-tech-spec_minimum_hardware_requirements.html"
+  - title: 최소 소프트웨어 요구 사항
+    url: "/fp-def/fp-express-tech-spec_minimum_software_requirements.html"
+  - title: 연결 요구 사항
+    url: "/fp-def/fp-express-tech-spec_connectivity_requirements.html"
+  - title: 기타 요구 사항
+    url: "/fp-def/fp-express-tech-spec_other_requirements.html"
+  - title: 옵션 기능
+    url: "/fp-def/fp-express-tech-spec__optional_features.html"
+  - title: Cisco 구성 요소
+    url: "/fp-def/fp-express-tech-spec__cisco_components.html"
+  - title: NetApp 구성요소
+    url: "/fp-def/fp-express-tech-spec__netapp_components.html"
+  - title: 전원 및 케이블 연결 요구 사항
+    url: "/fp-def/fp-express-tech-spec__power_and_cabling_requirements.html"
+  - title: 기술 사양 및 참조 자료
+    url: "/fp-def/fp-express-tech-spec__technical_specifications_and_references.html"
+  - title: 이전 아키텍처 및 장비
+    url: "/fp-def/fp-express-tech-spec__previous_architectures_and_equipment.html"
+  - title: 미검증 장비
+    url: "/fp-def/fp-express-tech-spec_legacy_equipment.html"
+  - title: 추가 정보
+    url: "/fp-def/fp-express-tech-spec_additional_information.html"
+- title: FlexPod 데이터 센터 기술 사양
+  type: solutions
+  entries:
+  - title: 개요
+    url: "/fp-def/dc-tech-spec_solution_overview.html"
+  - title: FlexPod 플랫폼
+    url: "/fp-def/dc-tech-spec_flexpod_platforms.html"
+  - title: FlexPod 규칙
+    url: "/fp-def/dc-tech-spec_flexpod_rules.html"
+  - title: 지원되는 구성과 검증된 FlexPod 구성 비교
+    url: "/fp-def/dc-tech-spec_supported_versus_validated_flexpod_configurations.html"
+  - title: NetApp ONTAP를 참조하십시오
+    url: "/fp-def/dc-tech-spec_netapp_ontap.html"
+  - title: Cisco Nexus 스위칭 운영 모드
+    url: "/fp-def/dc-tech-spec_cisco_nexus_switching_modes_of_operation.html"
+  - title: 최소 하드웨어 요구 사항
+    url: "/fp-def/dc-tech-spec_minimum_hardware_requirements.html"
+  - title: 최소 소프트웨어 요구 사항
+    url: "/fp-def/dc-tech-spec_minimum_software_requirements.html"
+  - title: 연결 요구 사항
+    url: "/fp-def/dc-tech-spec_connectivity_requirements.html"
+  - title: 기타 요구 사항
+    url: "/fp-def/dc-tech-spec_other_requirements.html"
+  - title: 선택적 기능
+    url: "/fp-def/dc-tech-spec_optional_features.html"
+  - title: Cisco 구성 요소
+    url: "/fp-def/dc-tech-spec_cisco_components.html"
+  - title: NetApp 구성 요소
+    url: "/fp-def/dc-tech-spec_netapp_components.html"
+  - title: 전원 및 케이블 연결 요구 사항
+    url: "/fp-def/dc-tech-spec_power_and_cabling_requirements.html"
+  - title: 기술 사양 및 참조 자료
+    url: "/fp-def/dc-tech-spec_technical_specifications_and_references.html"
+  - title: 레거시 장비
+    url: "/fp-def/dc-tech-spec_legacy_equipment.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/fp-def/dc-tech-spec_where_to_find_additional_information.html"

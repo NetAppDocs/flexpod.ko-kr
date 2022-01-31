@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/cloud-fabricpool_attach_a_cloud_tier_to_an_ontap_aggregate.html 
+keywords: attach, cloud, tier, ontap, aggregate, fabricpool, flexpod, ontap, cli, oncommand, system, manager 
+summary: ONTAP에서 오브젝트 저장소를 추가하고 식별한 후 FabricPool를 생성하려면 오브젝트 저장소를 Aggregate에 연결해야 합니다. 이 작업은 OnCommand 시스템 관리자 또는 ONTAP CLI를 사용하여 완료할 수 있습니다. 
+---
+= 클라우드 계층을 ONTAP 애그리게이트에 연결합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+ONTAP에서 오브젝트 저장소를 추가하고 식별한 후 FabricPool를 생성하려면 오브젝트 저장소를 Aggregate에 연결해야 합니다. 이 작업은 OnCommand 시스템 관리자 또는 ONTAP CLI를 사용하여 완료할 수 있습니다.
+
+둘 이상의 오브젝트 저장소 유형을 클러스터에 연결할 수 있지만 각 애그리게이트에는 하나의 오브젝트 저장소 유형만 연결할 수 있습니다. 예를 들어, 한 Aggregate는 Google Cloud를 사용할 수 있고 다른 Aggregate는 Amazon S3를 사용할 수 있지만 하나의 Aggregate는 두 곳에 연결할 수 없습니다.
+
+
+NOTE: 클라우드 계층을 애그리게이트에 연결하는 것은 영구적인 작업입니다. 클라우드 계층은 연결된 애그리게이트로부터 연결 해제할 수 없습니다.
+
+
+
+== OnCommand 시스템 관리자
+
+OnCommand System Manager를 사용하여 클라우드 계층을 Aggregate에 연결하려면 다음 단계를 수행하십시오.
+
+. OnCommand 시스템 관리자를 시작합니다.
+. 애플리케이션 및 계층 을 클릭합니다.
++
+image:cloud-fabricpool_image14.png["오류: 그래픽 이미지가 없습니다"]
+
+. Storage Tiers를 클릭합니다.
+. Aggregate를 클릭합니다.
+. 작업 을 클릭하고 클라우드 계층 연결 을 선택합니다.
++
+image:cloud-fabricpool_image15.png["오류: 그래픽 이미지가 없습니다"]
+
+. 클라우드 계층을 선택합니다.
+. Aggregate의 볼륨에 대한 계층화 정책을 확인하고 업데이트합니다(선택 사항). 기본적으로 볼륨 계층화 정책은 Snapshot 전용 으로 설정됩니다.
+. 저장 을 클릭합니다.
+
+
+
+
+== ONTAP CLI를 참조하십시오
+
+ONTAP CLI를 사용하여 클라우드 계층을 애그리게이트에 연결하려면 다음 명령을 실행합니다.
+
+....
+storage aggregate object-store attach
+-aggregate <name>
+-object-store-name <name>
+....
+예:
+
+....
+storage aggregate object-store attach -aggregate aggr1 -object-store-name - aws_infra_fp_bk_1
+....
+link:cloud-fabricpool_set_volume_tiering_policy.html["다음: 볼륨 계층화 정책을 설정합니다."]

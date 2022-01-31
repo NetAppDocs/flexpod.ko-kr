@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: express/express-direct-attach-aff220-deploy_flexpod_express_cabling_information.html 
+keywords: cabling, express, information, cisco, nexus, switch, aff, storage, controller, ucs, fabric 
+summary: 참조 검증 케이블 연결은 다음 표에 설명되어 있습니다. 
+---
+= FlexPod 익스프레스 케이블 연결 정보
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+참조 검증 케이블 연결은 다음 표에 설명되어 있습니다.
+
+다음 표에는 Cisco Nexus 스위치 31108PCV A의 케이블 연결 정보가 나열되어 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.6+| Cisco Nexus 스위치 31108PCV A | eth1/1 | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0M 
+
+
+| eth1/2 | Cisco UCS-미니 FI-A | mgmt0 
+
+
+| eth1/3 | Cisco UCS-미니 FI-A | eth1/1 
+
+
+| eth 1/4입니다 | Cisco UCS-미니 FI-B를 지원합니다 | eth1/1 
+
+
+| eth 1/13 | Cisco NX 31108PCV B | eth 1/13 
+
+
+| eth 1/14 | Cisco NX 31108PCV B | eth 1/14 
+|===
+다음 표에는 Cisco Nexus 스위치 31108PCV B의 케이블 연결 정보가 나와 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.6+| Cisco Nexus 스위치 31108PCV B | eth1/1 | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0M 
+
+
+| eth1/2 | Cisco UCS-미니 FI-B를 지원합니다 | mgmt0 
+
+
+| eth1/3 | Cisco UCS-미니 FI-A | eth1/2 
+
+
+| eth 1/4입니다 | Cisco UCS-미니 FI-B를 지원합니다 | eth1/2 
+
+
+| eth 1/13 | Cisco NX 31108PCV A | eth 1/13 
+
+
+| eth 1/14 | Cisco NX 31108PCV A | eth 1/14 
+|===
+다음 표에서는 NetApp AFF A220 스토리지 컨트롤러 A의 케이블 연결 정보를 보여 줍니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.5+| NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0a | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0a 
+
+
+| e0b | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0b 
+
+
+| e0e | Cisco UCS-미니 FI-A | eth1/3 
+
+
+| e0f | Cisco UCS-미니 FI-B를 지원합니다 | eth1/3 
+
+
+| e0M | Cisco NX 31108PCV A | eth1/1 
+|===
+다음 표에서는 NetApp AFF A220 스토리지 컨트롤러 B의 케이블 연결 정보를 보여 줍니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.5+| NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0a | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0a 
+
+
+| e0b | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0b 
+
+
+| e0e | Cisco UCS-미니 FI-A | eth1/4 
+
+
+| e0f | Cisco UCS-미니 FI-B를 지원합니다 | eth1/4 
+
+
+| e0M | Cisco NX 31108PCV B | eth1/1 
+|===
+다음 표에는 Cisco UCS Fabric Interconnect A의 케이블 연결 정보가 나와 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.5+| Cisco UCS 6120 패브릭 인터커넥트 A | eth1/1 | Cisco NX 31108PCV A | eth1/3 
+
+
+| eth1/2 | Cisco NX 31108PCV B | eth1/3 
+
+
+| eth1/3 | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0e 
+
+
+| eth1/4 | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0e 
+
+
+| mgmt0 | Cisco NX 31108PCV A | eth1/2 
+|===
+다음 표에는 Cisco UCS Fabric Interconnect B의 케이블 연결 정보가 나와 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.5+| Cisco UCS 6120 패브릭 인터커넥트 B | eth1/1 | Cisco NX 31108PCV A | eth1/4 
+
+
+| eth1/2 | Cisco NX 31108PCV B | eth1/4 
+
+
+| eth1/3 | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0f 
+
+
+| eth1/4 | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0f 
+
+
+| mgmt0 | Cisco NX 31108PCV B | eth1/2 
+|===

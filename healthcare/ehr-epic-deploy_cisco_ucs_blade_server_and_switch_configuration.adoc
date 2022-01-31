@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-epic-deploy_cisco_ucs_blade_server_and_switch_configuration.html 
+keywords: cisco, ucs, blade, server, switch, configuration 
+summary: FlexPod for Epic 소프트웨어는 모든 레벨에서 내결함성을 제공하도록 설계되었습니다. 시스템에 단일 장애 지점이 없습니다. 본 문서는 Epic 소프트웨어를 위한 FlexPod 환경의 기본 구성에 대한 상위 수준의 지침을 제공하기 위해 작성되었습니다. 
+---
+= Cisco UCS 블레이드 서버 및 스위치 구성
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod for Epic 소프트웨어는 모든 레벨에서 내결함성을 제공하도록 설계되었습니다. 시스템에 단일 장애 지점이 없습니다. 최적의 성능을 위해 핫 스페어 블레이드 서버를 사용하는 것이 좋습니다.
+
+본 문서는 Epic 소프트웨어를 위한 FlexPod 환경의 기본 구성에 대한 상위 수준의 지침을 제공하기 위해 작성되었습니다. 이 섹션에서는 FlexPod 구성의 Cisco UCS 컴퓨팅 플랫폼 요소를 준비하기 위한 몇 가지 예에 대해 개략적인 단계를 설명합니다. 이 지침을 수행하기 전에 FC 스토리지가 있는 FlexPod 데이터 센터의 지침에 따라 FlexPod 구성을 랙 장착, 전원 공급 및 케이블로 연결해야 합니다.
+
+
+
+== Cisco Nexus 스위치 구성
+
+이 솔루션을 위해 내결함성을 갖춘 Cisco Nexus 9300 시리즈 이더넷 스위치 쌍이 구축되었습니다. 이러한 스위치는 섹션에 설명된 대로 케이블로 연결되어야 합니다 link:ehr-epic-deploy_deployment_and_configuration_overview.html#cabling-diagram[""케이블 연결 다이어그램""] Cisco Nexus 구성을 사용하면 이더넷 트래픽 흐름이 Epic 애플리케이션에 최적화되도록 할 수 있습니다.
+
+. 초기 설정 및 라이센스가 완료된 후 다음 명령을 실행하여 두 스위치에서 글로벌 구성 매개 변수를 설정합니다.
++
+....
+spanning-tree port type network default
+spanning-tree port type edge bpduguard default
+spanning-tree port type edge bpdufilter default
+port-channel load-balance src-dst l4port
+ntp server <global-ntp-server-ip> use-vrf management
+ntp master 3
+ip route 0.0.0.0/0 <ib-mgmt-vlan-gateway>
+copy run start
+....
+. 글로벌 구성 모드를 사용하여 각 스위치에서 솔루션에 대한 VLAN을 생성합니다.
++
+....
+vlan <ib-mgmt-vlan-id>
+name IB-MGMT-VLAN
+vlan <native-vlan-id>
+name Native-VLAN
+vlan <vmotion-vlan-id>
+name vMotion-VLAN
+vlan <vm-traffic-vlan-id>
+name VM-Traffic-VLAN
+vlan <infra-nfs-vlan-id>
+name Infra-NFS-VLAN
+exit
+copy run start
+....
+. 에 따라 문제 해결을 위해 NTP 배포 인터페이스, 포트 채널, 포트 채널 매개 변수 및 포트 설명을 생성합니다 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["FC Cisco Validated Design이 구축된 FlexPod 데이터 센터"^].
+
+
+link:ehr-epic-deploy_esxi_configuration_best_practices.html["다음은 ESXi 구성 Best Practice입니다"]

@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-epic-sizing_additional_information.html 
+keywords: additional, information, flexpod, epic, sizing 
+summary: 이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오. 
+---
+= 추가 정보
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오.
+
+* FC Cisco Validated Design이 구축된 FlexPod 데이터 센터 FlexPod 데이터 센터 환경의 세부 구축
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html"^]
+
+* TR-3928: NetApp Epic 모범 사례 Epic 소프트웨어 환경, 참조 아키텍처 및 통합 모범 사례 지침을 간략하게 설명합니다.
++
+https://fieldportal.netapp.com/?oparams=68646["https://fieldportal.netapp.com/?oparams=68646"^]
+
+* TR-3930i: Epic을 위한 NetApp 사이징 지침(이 문서를 보려면 Field Portal에 액세스해야 함)
++
+https://fieldportal.netapp.com/?oparams=68786["https://fieldportal.netapp.com/?oparams=68786"^]
+
+* EPIC_ON_Cisco_UCS_tech_Brief Cisco UCS 기반 Epic의 Cisco 모범 사례
++
+https://www.cisco.com/c/dam/en_us/solutions/industries/healthcare/Epic_on_UCS_tech_brief_FNL.pdf["https://www.cisco.com/c/dam/en_us/solutions/industries/healthcare/Epic_on_UCS_tech_brief_FNL.pdf"^]
+
+* 넷엡 https://netapp-my.sharepoint.com/:w:/p/dorianh/ETSsgHnsIipGkSvMd-EZFpEBIvAmw_rAZvw1RGDtWiMr8w["FlexPod"^] 설계 영역
++
+https://www.cisco.com/c/en/us/solutions/design-zone/data-center-design-guides/flexpod-design-guides.html["https://www.cisco.com/c/en/us/solutions/design-zone/data-center-design-guides/flexpod-design-guides.html"^]
+
+* NetApp AFF, vSphere 6.5U1 및 Cisco UCS Manager를 사용하는 파이버 채널 스토리지(MDS 스위치)가 포함된 FlexPod DC
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html"^]
+
+* TR-4693: Epic EHR용 FlexPod 데이터 센터 구축 가이드
++
+https://www.netapp.com/us/media/tr-4693.pdf["https://www.netapp.com/us/media/tr-4693.pdf"^]
+
+* NetApp 제품 설명서
++
+https://www.netapp.com/us/documentation/index.aspx["https://www.netapp.com/us/documentation/index.aspx"^]
+
+

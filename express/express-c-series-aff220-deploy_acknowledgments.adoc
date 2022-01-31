@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_acknowledgments.html 
+keywords: acknowledgements, authors, support, contribution 
+summary: 저자는 이 설계에 대한 지원과 기여에 대해 특정 개인을 인정하고자 합니다. 
+---
+= 감사의 말
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+저자는 이 설계에 대한 지원 및 기여에 대해 다음과 같은 사람들에게 감사의 메시지를 알립니다.
+
+* 폴 오노프레티 오노트레시스
+* Arvind Ramakrishnan
+

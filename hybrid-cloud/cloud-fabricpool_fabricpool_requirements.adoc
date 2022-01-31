@@ -1,0 +1,135 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/cloud-fabricpool_fabricpool_requirements.html 
+keywords: cloud, fabricpool, flexpod, requirements, platforms, intercluster, lif, connectivity, volume, licensing, object, store, profiler 
+summary: FabricPool를 사용하려면 ONTAP 9.2 이상 및 이 섹션에 나열된 플랫폼 중 한 플랫폼에서 SSD 애그리게이트를 사용해야 합니다. 
+---
+= FabricPool 요구 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FabricPool를 사용하려면 ONTAP 9.2 이상 및 이 섹션에 나열된 플랫폼 중 한 플랫폼에서 SSD 애그리게이트를 사용해야 합니다. 추가 FabricPool 요구사항은 연결된 클라우드 계층에 따라 다릅니다. AFF은 NetApp FabricPool C190과 같이 비교적 작은 용량의 고정된 엔트리 레벨 AFF 플랫폼의 경우 비활성 데이터를 클라우드 계층으로 이동하는 데 매우 효율적입니다.
+
+
+
+== 플랫폼
+
+FabricPool는 다음 플랫폼에서 지원됩니다.
+
+* NetApp AFF를 참조하십시오
++
+** A800
+** A700S, A700
+** A320, A300
+** A220, A200
+** C190
+** AFF8080, AFF8060 및 AFF8040
+
+
+* NetApp FAS를 참조하십시오
++
+** FAS9000
+** FAS8200
+** FAS8080, FAS8060, FAS8040을 지원합니다
+** FAS2750, FAS2720
+** FAS2650, FAS2620
+
+
+
+
+
+NOTE: FAS 플랫폼의 SSD 애그리게이트만 FabricPool를 사용할 수 있습니다.
+
+* 계층에서 실현해 보십시오
++
+** Alibaba Cloud Object Storage Service(Standard, Infrequent Access)
+** Amazon S3(Standard, Standard-IA, One Zone-IA, 지능형 계층화)
+** Amazon Commercial Cloud Services(C2S)
+** Google 클라우드 스토리지(다중 지역, 지역, 니어라인, Coldline)
+** IBM Cloud Object Storage(Standard, Vault, Cold Vault, Flex)
+** Microsoft Azure Blob 스토리지(핫 및 쿨)
+
+
+
+
+
+
+== 인터클러스터 LIF
+
+FabricPool를 사용하는 클러스터 고가용성(HA) 쌍에는 클라우드 계층과 통신하기 위해 두 개의 인터클러스터 논리 인터페이스(LIF)가 필요합니다. 또한 추가 HA 쌍에 대한 인터클러스터 LIF를 생성하여 클라우드 계층을 해당 노드의 Aggregate에 원활하게 연결하는 것이 좋습니다.
+
+ONTAP에서 AWS S3 오브젝트 저장소에 연결하는 데 사용하는 LIF는 10Gbps 포트에 있어야 합니다.
+
+다른 라우팅을 사용하는 노드에서 여러 개의 Intercluser LIF를 사용하는 경우 다른 IPspace에 LIF를 배치하는 것이 좋습니다. 구성 중에 FabricPool는 여러 IPspace에서 선택할 수 있지만 인터클러스터 IPspace 내에서 특정 LIF를 선택할 수 없습니다.
+
+
+NOTE: 인터클러스터 LIF를 비활성화하거나 삭제하면 클라우드 계층과의 통신이 중단됩니다.
+
+
+
+== 연결성
+
+FabricPool 읽기 지연 시간은 클라우드 계층에 연결하는 기능입니다. 다음 그림에 나와 있는 10Gbps 포트를 사용하는 인터클러스터 LIF는 적절한 성능을 제공합니다. 특정 네트워크 환경의 지연 시간 및 처리량을 확인하여 FabricPool 성능에 미치는 영향을 확인하는 것이 좋습니다.
+
+
+NOTE: 저성능 환경에서 FabricPool를 사용하는 경우 클라이언트 애플리케이션에 대한 최소 성능 요구 사항을 계속해서 충족하고 그에 따라 복구 시간 목표를 조정해야 합니다.
+
+image:cloud-fabricpool_image6.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+=== 오브젝트 저장소 프로파일러
+
+오브젝트 저장소 프로파일러는 아래에 표시되어 있으며 ONTAP CLI를 통해 사용할 수 있습니다. 이 프로파일러는 FabricPool 애그리게이트에 연결되기 전에 오브젝트 저장소의 지연 시간 및 처리량 성능을 테스트합니다.
+
+
+NOTE: 클라우드 계층을 오브젝트 저장소 프로파일러와 함께 사용하려면 먼저 ONTAP에 추가해야 합니다.
+
+다음 명령을 사용하여 ONTAP의 고급 권한 모드에서 오브젝트 저장소 프로파일러를 시작합니다.
+
+....
+storage aggregate object-store profiler start -object-store-name <name> -node <name>
+....
+결과를 보려면 다음 명령을 실행합니다.
+
+....
+storage aggregate object-store profiler show
+....
+클라우드 계층은 성능 계층(일반적으로 초당 GB)과 유사한 성능을 제공하지 않습니다. FabricPool 애그리게이트는 SATA급 성능을 손쉽게 제공할 수 있지만, SATA급 성능이 필요하지 않은 계층화 솔루션의 지연 시간이 10초 만에 가장 높고 처리량이 적은 것도 용인할 수 있습니다.
+
+image:cloud-fabricpool_image7.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 볼륨
+
+스토리지 씬 프로비저닝은 FlexPod 가상 인프라 관리자의 표준 관행입니다. NetApp VSC(Virtual Storage Console)는 NetApp 모범 사례에 따라 공간 보장(씬 프로비저닝) 및 최적화된 스토리지 효율성 설정 없이 VMware 데이터 저장소용 스토리지 볼륨을 프로비저닝합니다. VSC를 사용하여 VMware 데이터 저장소를 생성하는 경우 데이터 저장소 볼륨에 공간 보장을 할당하지 않기 때문에 추가 작업이 필요하지 않습니다.
+
+
+NOTE: FabricPool에서는 없음(예: 볼륨) 이외의 공간 보장을 사용하여 볼륨이 포함된 애그리게이트에 클라우드 계층을 연결할 수 없습니다.
+
+....
+volume modify -space-guarantee none
+....
+'pace-보증 없음' 매개 변수를 설정하면 볼륨에 대한 씬 프로비저닝이 제공됩니다. 이 보증 유형의 볼륨에서 사용하는 공간은 초기 볼륨 크기에 의해 결정되는 대신 추가되는 데이터로 인해 증가합니다. 이 방식은 FabricPool에서 매우 중요합니다. 볼륨에서 핫 상태가 되고 성능 계층으로 다시 복귀되는 클라우드 계층 데이터를 지원해야 하기 때문입니다.
+
+
+
+== 라이센싱
+
+FabricPool에서는 타사 오브젝트 스토리지 공급자(예: Amazon S3)를 AFF 및 FAS 하이브리드 플래시 시스템의 클라우드 계층으로 연결할 때 용량 기반 라이센스가 필요합니다.
+
+FabricPool 라이센스는 영구 또는 기간 기반(1년 또는 3년) 형식으로 제공됩니다.
+
+클라우드 계층에 저장되는 데이터 양(사용된 용량)이 라이센스가 부여된 용량에 도달하면 클라우드 계층에 대한 계층화가 중지됩니다. 모든 계층화 정책을 사용하여 SnapMirror 복사본을 볼륨으로 포함하는 추가 데이터는 라이센스 용량이 증가할 때까지 계층화할 수 없습니다. 계층화가 중지되더라도 클라우드 계층에서 데이터에 계속 액세스할 수 있습니다. 사용 허가된 용량이 증가할 때까지 추가 콜드 데이터는 SSD에 남아 있습니다.
+
+추가 지원 비용이 적용될 수 있지만, 무료 10TB 용량, 기간 기반 FabricPool 라이센스는 새 ONTAP 9.5 이상 클러스터를 구입할 때 제공됩니다. FabricPool 라이센스(기존 라이센스에 대한 추가 용량 포함)는 1TB 단위로 구입할 수 있습니다.
+
+FabricPool 라이센스는 FabricPool 애그리게이트가 포함되지 않은 클러스터에서만 삭제할 수 있습니다.
+
+
+NOTE: FabricPool 라이센스는 클러스터 전반에 적용됩니다. 라이센스를 구매할 때 UUID를 사용할 수 있어야 합니다('cluster identify show'). 추가 라이센스 정보는 를 참조하십시오 https://kb.netapp.com/support/s/article/ka21A0000008qb3QAA/ONTAP-FabricPool-FP-Licensing-Overview["NetApp 기술 자료"^].

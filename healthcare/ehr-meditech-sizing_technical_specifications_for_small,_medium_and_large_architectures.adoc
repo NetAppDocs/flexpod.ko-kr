@@ -1,0 +1,205 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-meditech-sizing_technical_specifications_for_small,_medium_and_large_architectures.html 
+keywords: technical, specifications, small, medium, large, architectures, bill, material 
+summary: 이 섹션에서는 다양한 크기의 스토리지 아키텍처에 대한 샘플 BOM에 대해 설명합니다. 
+---
+= 소형, 중형 및 대형 아키텍처의 기술 사양
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 섹션에서는 다양한 크기의 스토리지 아키텍처에 대한 샘플 BOM에 대해 설명합니다.
+
+
+
+== 소형, 중형 및 대형 아키텍처용 BOM.
+
+FlexPod 설계는 다양한 구성 요소와 소프트웨어 버전을 포괄하는 유연한 인프라입니다. 사용 https://fieldportal.netapp.com/content/443847["TR-4036: FlexPod 기술 사양"^] 유효한 FlexPod 구성을 조립하는 방법에 대한 설명서로, 아래 표의 구성은 FlexPod의 최소 요구사항이며 단지 샘플일 뿐입니다. 다양한 환경 및 사용 사례에 따라 각 제품군별로 구성을 확장할 수 있습니다.
+
+이 사이징 연습의 경우 Category 3 MEDITECH 환경에 해당하고, Medium에서 Category 5까지, Large에서 Category 6까지
+
+|===
+|  | 작은 크기 | 중간 | 대형 
+
+
+| 플랫폼 | 하나의 NetApp AFF A220 All-Flash 스토리지 시스템 HA 쌍입니다 | 하나의 NetApp AFF A220 HA 쌍입니다 | NetApp AFF A300 All-Flash 스토리지 시스템 HA 쌍 1개 
+
+
+| 디스크 쉘프 | 9TB x 3.8TB | 13TB x 3.8TB | 19TB x 3.8TB 
+
+
+| MEDITECH 데이터베이스 크기입니다 | 3TB-12TB | 17TB | > 30TB 
+
+
+| MEDITECH IOPS | 22,000 IOPS 미만 | 25,000 IOPS 초과 | 32,000 IOPS 초과 
+
+
+| 총 IOPS | 22000 | 27000 | 35000 
+
+
+| 원시 | 34.2TB | 49.4TB | 68.4TB 
+
+
+| 사용 가능한 용량 | 18.53TiB | 27.96TiB | 33.82TiB 
+
+
+| 실제 용량(2:1 스토리지 효율성) | 55.6TiB | 83.89TiB | 101.47TiB 
+|===
+
+NOTE: 일부 고객 환경에서는 여러 MEDITECH 운영 워크로드가 동시에 실행되거나 더 높은 IOPS 요구 사항이 있을 수 있습니다. 이 경우, NetApp 세일즈 팀과 협력하여 필요한 IOPS 및 용량에 따라 스토리지 시스템을 조정합니다. 따라서 워크로드를 처리하는 데 적합한 플랫폼을 결정할 수 있어야 합니다. 예를 들어, NetApp AFF A700 All-Flash 스토리지 시스템 HA 쌍에서 여러 MEDITECH 환경을 성공적으로 실행하는 고객이 있습니다.
+
+다음 표에는 MEDITECH 구성에 필요한 표준 소프트웨어가 나와 있습니다.
+
+|===
+| 소프트웨어 | 제품군 | 버전 또는 릴리스 | 세부 정보 
+
+
+| 스토리지 | ONTAP | ONTAP 9.4 일반 가용성(GA) |  
+
+
+.3+| 네트워크 | Cisco UCS 패브릭 인터커넥트 | Cisco UCSM 4.x | 현재 권장 릴리스 
+
+
+| Cisco Nexus 이더넷 스위치 | 7.0(3) i7(6) | 현재 권장 릴리스 
+
+
+| Cisco FC: Cisco MDS 9132T | 8.3(2) | 현재 권장 릴리스 
+
+
+| 하이퍼바이저 | 하이퍼바이저 | VMware vSphere ESXi 6.7을 참조하십시오 |  
+
+
+|  | 가상 머신(VM) | Windows 2016 |  
+
+
+.4+| 관리 | 하이퍼바이저 관리 시스템 | VMware vCenter Server 6.7 U1(VCSA) |  
+
+
+| NetApp 가상 스토리지 콘솔(VSC) | VSC 7.0P1 |  
+
+
+| NetApp SnapCenter를 참조하십시오 | SnapCenter 4.0 |  
+
+
+| Cisco UCS Manager를 참조하십시오 | 4.x |  
+|===
+다음 표에서는 소규모(범주 3) 구성 예, 즉 인프라 구성 요소를 보여 줍니다.
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+.5+| 컴퓨팅 | Cisco UCS 5108 섀시 | 1 | 최대 8개의 반폭 또는 4개의 전폭 블레이드를 지원합니다. 서버 요구 사항이 증가함에 따라 섀시를 추가합니다. 
+
+
+| Cisco 섀시 I/O 모듈 | 2 x 2208 | 8GB x 10GB 업링크 포트 
+
+
+| Cisco UCS 블레이드 서버 | B200 M5 4개 | 각각 2개의 14코어, 2.6GHz 이상의 클럭 속도 및 384GB BIOS 3.2(3#) 
+
+
+| Cisco UCS 가상 인터페이스 카드 | UCS 1440 4개 | VMware ESXi FNIC FC 드라이버:1.6.0.47 VMware ESXi eNIC 이더넷 드라이버:1.0.27.0(상호 운용성 매트릭스 참조: https://ucshcltool.cloudapps.cisco.com/public/)[] 
+
+
+| Cisco UCS Fabric Interconnect(Fi) 2개 | UCS 6454 FI 2개 | 10/25/100Gb 이더넷 및 32Gb FC를 지원하는 4세대 패브릭 인터커넥트 
+
+
+| 네트워크 | Cisco 이더넷 스위치 | Nexus 9336c-FX2 2개 | 1GB, 10GB, 25GB, 40GB, 100GB입니다 
+
+
+.2+| 스토리지 네트워크 | BLOB 스토리지용 IP 네트워크 Nexus 9k |  | FI 및 UCS 섀시 
+
+
+| FC: Cisco MDS 9132T |  | Cisco 9132T 스위치 2개 
+
+
+.3+| 스토리지 | NetApp AFF A300 All-Flash 스토리지 시스템 | 1개의 HA 쌍 | 모든 MEDITECH 워크로드(파일 서버, 이미지 서버, SQL Server, VMware 등)를 위한 2노드 클러스터 
+
+
+| DS224C 디스크 쉘프 | DS224C 디스크 쉘프 1개 |  
+
+
+| 솔리드 스테이트 드라이브(SSD) | 9 x 3.8TB |  
+|===
+다음 표에서는 중간 규모(범주 5)의 구성 예, 즉 인프라 구성 요소를 보여 줍니다
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+.5+| 컴퓨팅 | Cisco UCS 5108 섀시 | 1 | 최대 8개의 반폭 또는 4개의 전폭 블레이드를 지원합니다. 서버 요구 사항이 증가함에 따라 섀시를 추가합니다. 
+
+
+| Cisco 섀시 I/O 모듈 | 2 x 2208 | 8GB x 10GB 업링크 포트 
+
+
+| Cisco UCS 블레이드 서버 | B200 M5 6개 | 각각 16코어 2개, 2.5GHz/이상의 클럭 속도, 384GB 이상의 메모리 BIOS 3.2(3#) 
+
+
+| Cisco UCS 가상 인터페이스 카드(VIC) | UCS 1440 VICS 6개 | VMware ESXi FNIC FC 드라이버:1.6.0.47 VMware ESXi eNIC 이더넷 드라이버:1.0.27.0(상호 운용성 매트릭스 참조:) 
+
+
+| Cisco UCS Fabric Interconnect(Fi) 2개 | UCS 6454 FI 2개 | 10GB/25GB/100Gb 이더넷 및 32Gb FC를 지원하는 4세대 패브릭 인터커넥트 
+
+
+| 네트워크 | Cisco 이더넷 스위치 | Nexus 9336c-FX2 2개 | 1GB, 10GB, 25GB, 40GB, 100GB입니다 
+
+
+.2+| 스토리지 네트워크 | BLOB 스토리지용 IP 네트워크 Nexus 9k |  |  
+
+
+| FC: Cisco MDS 9132T |  | Cisco 9132T 스위치 2개 
+
+
+.3+| 스토리지 | NetApp AFF A220 All-Flash 스토리지 시스템 | 2개의 HA 쌍 | 모든 MEDITECH 워크로드(파일 서버, 이미지 서버, SQL Server, VMware 등)를 위한 2노드 클러스터 
+
+
+| DS224C 디스크 쉘프 | DS224C 디스크 쉘프 1개 |  
+
+
+| SSD를 지원합니다 | 3.8TB 13개 |  
+|===
+다음 표에서는 대규모(범주 6) 구성 예, 즉 인프라 구성 요소를 보여 줍니다.
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+.5+| 컴퓨팅 | Cisco UCS 5108 섀시 | 1 |  
+
+
+| Cisco 섀시 I/O 모듈 | 2 x 2208 | 10GB 업링크 포트 8개 
+
+
+| Cisco UCS 블레이드 서버 | 8x B200 M5 | 각각 24코어 2개, 2.7GHz 및 768GB BIOS 3.2(3#) 
+
+
+| Cisco UCS 가상 인터페이스 카드(VIC) | UCS 1440 VICS 8개 | VMware ESXi FNIC FC 드라이버: 1.6.0.47 VMware ESXi eNIC 이더넷 드라이버: 1.0.27.0 (상호 운용성 매트릭스 검토: https://ucshcltool.cloudapps.cisco.com/public/)[] 
+
+
+| 2 x Cisco UCS 패브릭 인터커넥트(FI) | UCS 6454 FI 2개 | 10GB/25GB/100Gb 이더넷 및 32Gb FC를 지원하는 4세대 패브릭 인터커넥트 
+
+
+| 네트워크 | Cisco 이더넷 스위치 | Nexus 9336c-FX2 2개 | Cisco Nexus 9332PQ1 2개, 10GB, 25GB, 40GB, 100GB 
+
+
+.2+| 스토리지 네트워크 | BLOB 스토리지용 IP 네트워크 N9k |  |  
+
+
+| FC: Cisco MDS 9132T |  | Cisco 9132T 스위치 2개 
+
+
+.3+| 스토리지 | AFF A300 | 1개의 HA 쌍 | 모든 MEDITECH 워크로드(파일 서버, 이미지 서버, SQL Server, VMware 등)를 위한 2노드 클러스터 
+
+
+| DS224C 디스크 쉘프 | DS224C 디스크 쉘프 1개 |  
+
+
+| SSD를 지원합니다 | 19 x 3.8TB |  
+|===
+
+NOTE: 이러한 구성은 사이징 지침을 위한 출발점을 제공합니다. 일부 고객 환경에서는 여러 MEDITECH 운영 및 비 MEDITECH 워크로드가 동시에 실행되거나 더 높은 IOP 요구사항이 있을 수 있습니다. NetApp 세일즈 팀과 협력하여 필요한 IOPS, 워크로드 및 용량을 기준으로 스토리지 시스템의 규모를 조정하면서 워크로드를 지원하는 데 적합한 플랫폼을 결정해야 합니다.

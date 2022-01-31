@@ -1,0 +1,3334 @@
+---
+sidebar: sidebar 
+permalink: express/express-direct-attach-aff220-deploy_deployment_procedures.html 
+keywords: deployment, procedures, configure, flexpod, express, ip, based, storage, vmware, vsphere, setup, cisco, ucs, vcenter 
+summary: 이 문서에서는 완전히 이중화된 고가용성 FlexPod Express 시스템을 구성하는 방법에 대해 자세히 설명합니다. 
+---
+= 구현 절차
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 문서에서는 완전히 이중화된 고가용성 FlexPod Express 시스템을 구성하는 방법에 대해 자세히 설명합니다. 이러한 이중화를 반영하기 위해 각 단계에서 구성 요소를 구성 요소 A 또는 구성 요소 B라고 합니다 예를 들어 컨트롤러 A와 컨트롤러 B는 이 문서에 프로비저닝된 NetApp 스토리지 컨트롤러 2개를 식별합니다. 스위치 A와 스위치 B는 Cisco Nexus 스위치 쌍을 나타냅니다. 패브릭 인터커넥트 A와 패브릭 인터커넥트 B는 통합 Nexus 패브릭 인터커넥트 2개입니다.
+
+또한 서버 A, 서버 B 등으로 순차적으로 구분되는 여러 Cisco UCS 호스트를 프로비저닝하는 단계도 설명합니다.
+
+사용자 환경과 관련된 정보를 단계별로 포함해야 함을 나타내기 위해 명령 구조의 일부로 '\<<text>>'이 표시됩니다. 'VLAN create' 명령은 다음 예를 참조하십시오.
+
+....
+Controller01>vlan create vif0 <<mgmt_vlan_id>>
+....
+이 문서를 사용하여 FlexPod Express 환경을 완전히 구성할 수 있습니다. 이 프로세스에서 다양한 단계를 수행하려면 고객별 명명 규칙, IP 주소 및 VLAN(Virtual Local Area Network) 스키마를 삽입해야 합니다. 아래 표에는 이 가이드에 설명된 대로 구축에 필요한 VLAN이 설명되어 있습니다. 이 표는 특정 사이트 변수를 기반으로 완료할 수 있으며 문서 구성 단계를 구현하는 데 사용할 수 있습니다.
+
+
+NOTE: 별도의 대역내 및 대역외 관리 VLAN을 사용하는 경우 이 VLAN 사이에 계층 3 라우트를 생성해야 합니다. 이 검증에서는 공통 관리 VLAN이 사용되었습니다.
+
+|===
+| VLAN 이름입니다 | VLAN의 용도 | 이 문서의 유효성을 검사하는 데 사용되는 ID입니다 
+
+
+| 관리 VLAN | 관리 인터페이스용 VLAN | 18 
+
+
+| 네이티브 VLAN | 태그가 지정되지 않은 프레임이 할당되는 VLAN입니다 | 2 
+
+
+| NFS VLAN | NFS 트래픽용 VLAN | 104 
+
+
+| VMware vMotion VLAN | 가상 머신(VM)을 하나의 물리적 호스트에서 다른 물리적 호스트로 이동하도록 지정된 VLAN | 103 
+
+
+| VM 트래픽 VLAN | VM 애플리케이션 트래픽용 VLAN | 102 
+
+
+| iSCSI-A-VLAN | 패브릭 A의 iSCSI 트래픽용 VLAN | 124를 참조하십시오 
+
+
+| iSCSI-B-VLAN | 패브릭 B의 iSCSI 트래픽용 VLAN | 125 
+|===
+FlexPod Express를 구성하는 동안 VLAN 번호가 필요합니다. VLAN은 "\<<var_xxxx_vlan>>"라고 하며, 여기서 "xxxx"는 VLAN의 목적(예: iSCSI-A)입니다.
+
+다음 표에는 생성된 VMware VM이 나와 있습니다.
+
+|===
+| VM 설명 | 호스트 이름 
+
+
+| VMware vCenter Server를 참조하십시오 | Seahawks-vcsa.cie.netapp.com 
+|===
+
+
+== Cisco Nexus 31108PCV 전개 절차
+
+이 섹션에서는 FlexPod 익스프레스 환경에서 사용되는 Cisco Nexus 31308PCV 스위치 구성에 대해 자세히 설명합니다.
+
+
+
+=== Cisco Nexus 31108PCV 스위치의 초기 설정
+
+이 절차에서는 기본 FlexPod Express 환경에서 사용할 Cisco Nexus 스위치를 구성하는 방법에 대해 설명합니다.
+
+
+NOTE: 이 절차에서는 NX-OS 소프트웨어 릴리즈 7.0(3) I6(1)을 실행하는 Cisco Nexus 31108PCV를 사용하고 있다고 가정합니다.
+
+. 초기 부팅이 완료되고 스위치의 콘솔 포트에 연결되면 Cisco NX-OS 설정이 자동으로 시작됩니다. 이 초기 구성에서는 스위치 이름, mgmt0 인터페이스 구성, SSH(Secure Shell) 설정과 같은 기본 설정을 지정합니다.
+. FlexPod 익스프레스 관리 네트워크는 여러 가지 방법으로 구성할 수 있습니다. 31108PCV 스위치의 mgmt0 인터페이스를 기존 관리 네트워크에 연결하거나, 31108PCV 스위치의 mgmt0 인터페이스를 연속 구성으로 연결할 수 있습니다. 하지만 이 링크는 SSH 트래픽과 같은 외부 관리 액세스에 사용할 수 없습니다.
++
+이 구축 가이드에서는 FlexPod Express Cisco Nexus 31108PCV 스위치가 기존 관리 네트워크에 연결되어 있습니다.
+
+. Cisco Nexus 31108PCV 스위치를 구성하려면, 스위치의 전원을 켜고 화면에 표시되는 메시지에 따라 두 스위치를 초기 설정하고 스위치 관련 정보에 해당하는 값을 대체합니다.
++
+....
+This setup utility will guide you through the basic configuration of the system. Setup configures only enough connectivity for management of the system.
+....
++
+....
+*Note: setup is mainly used for configuring the system initially, when no configuration is present. So setup always assumes system defaults and not the current system configuration values.
+Press Enter at anytime to skip a dialog. Use ctrl-c at anytime to skip the remaining dialogs.
+Would you like to enter the basic configuration dialog (yes/no): y
+Do you want to enforce secure password standard (yes/no) [y]: y
+Create another login account (yes/no) [n]: n
+Configure read-only SNMP community string (yes/no) [n]: n
+Configure read-write SNMP community string (yes/no) [n]: n
+Enter the switch name : 31108PCV-A
+Continue with Out-of-band (mgmt0) management configuration? (yes/no) [y]: y
+Mgmt0 IPv4 address : <<var_switch_mgmt_ip>>
+Mgmt0 IPv4 netmask : <<var_switch_mgmt_netmask>>
+Configure the default gateway? (yes/no) [y]: y
+IPv4 address of the default gateway : <<var_switch_mgmt_gateway>>
+Configure advanced IP options? (yes/no) [n]: n
+Enable the telnet service? (yes/no) [n]: n
+Enable the ssh service? (yes/no) [y]: y
+Type of ssh key you would like to generate (dsa/rsa) [rsa]: rsa
+Number of rsa key bits <1024-2048> [1024]: <enter>
+Configure the ntp server? (yes/no) [n]: y
+NTP server IPv4 address : <<var_ntp_ip>>
+Configure default interface layer (L3/L2) [L2]: <enter>
+Configure default switchport interface state (shut/noshut) [noshut]: <enter>
+Configure CoPP system profile (strict/moderate/lenient/dense) [strict]: <enter>
+....
+. 구성 요약이 표시되고 구성을 편집할지 묻는 메시지가 표시됩니다. 구성이 올바르면 n을 입력합니다.
++
+....
+Would you like to edit the configuration? (yes/no) [n]: no
+....
+. 그런 다음 이 구성을 사용하고 저장할지 묻는 메시지가 표시됩니다. 그렇다면 y를 입력합니다.
++
+....
+Use this configuration and save it? (yes/no) [y]: Enter
+....
+. Cisco Nexus 스위치 B에 대해 1단계부터 5단계까지 반복합니다
+
+
+
+
+=== 고급 기능을 활성화합니다
+
+추가 구성 옵션을 제공하려면 Cisco NX-OS에서 특정 고급 기능을 사용하도록 설정해야 합니다.
+
+. Cisco Nexus 스위치 A와 스위치 B에서 적절한 기능을 활성화하려면 '(config t)' 명령을 사용하여 구성 모드를 시작하고 다음 명령을 실행합니다.
++
+....
+feature interface-vlan
+feature lacp
+feature vpc
+....
++
+
+NOTE: 기본 포트 채널 로드 밸런싱 해쉬는 소스 및 타깃 IP 주소를 사용하여 포트 채널의 인터페이스에 대한 로드 밸런싱 알고리즘을 결정합니다. 소스 및 타깃 IP 주소보다 많은 입력을 해쉬 알고리즘에 제공하면 포트 채널 멤버 전체에 걸쳐 더 효율적으로 분산될 수 있습니다. 동일한 이유로 소스 및 타깃 TCP 포트를 해쉬 알고리즘에 추가하는 것이 좋습니다.
+
+. 구성 모드 '(config t)에서 다음 명령을 실행하여 Cisco Nexus 스위치 A 및 스위치 B의 글로벌 포트 채널 로드 밸런싱 구성을 설정하십시오.
++
+....
+port-channel load-balance src-dst ip-l4port
+....
+
+
+
+
+=== 글로벌 스패닝 트리 구성을 수행합니다
+
+Cisco Nexus 플랫폼은 브리지 보장이라는 새로운 보호 기능을 사용합니다. 브리지 보장은 스패닝 트리 알고리즘을 더 이상 실행하지 않는 장치에서 데이터 트래픽을 계속 전달하는 단방향 링크 또는 기타 소프트웨어 장애를 방지합니다. 플랫폼에 따라 네트워크 또는 가장자리를 포함한 여러 상태 중 하나에 포트를 배치할 수 있습니다.
+
+기본적으로 모든 포트가 네트워크 포트로 간주되도록 브리지 보장을 설정하는 것이 좋습니다. 이 설정은 네트워크 관리자가 각 포트의 구성을 검토하도록 합니다. 또한 확인되지 않은 에지 포트 또는 브리지 보장 기능이 활성화되지 않은 인접 장치와 같은 가장 일반적인 구성 오류도 표시됩니다. 또한 스패닝 트리에서 너무 적은 포트가 아니라 많은 포트를 차단하는 편이 더 안전합니다. 그러면 기본 포트 상태를 통해 네트워크의 전반적인 안정성을 향상할 수 있습니다.
+
+특히 브리지 보장을 지원하지 않는 서버, 스토리지 및 업링크 스위치를 추가할 때는 스패닝 트리 상태에 세심한 주의를 기울여야 합니다. 이러한 경우 포트를 활성화하려면 포트 유형을 변경해야 할 수 있습니다.
+
+브리지 프로토콜 데이터 단위(BPDU) 보호대는 기본적으로 다른 보호 계층으로 에지 포트에서 활성화됩니다. 네트워크의 루프를 방지하기 위해 이 기능은 다른 스위치의 BPDU가 이 인터페이스에 표시되는 경우 포트를 종료합니다.
+
+구성 모드('config t')에서 다음 명령을 실행하여 Cisco Nexus 스위치 A 및 스위치 B에서 기본 포트 유형과 BPDU 가드를 포함한 기본 스패닝 트리 옵션을 구성하십시오.
+
+....
+spanning-tree port type network default
+spanning-tree port type edge bpduguard default
+....
+
+
+=== VLAN을 정의합니다
+
+VLAN이 서로 다른 개별 포트를 구성하기 전에 스위치에서 레이어 2 VLAN을 정의해야 합니다. 향후 문제 해결이 용이하도록 VLAN 이름을 지정하는 것도 좋은 방법입니다.
+
+구성 모드('config t')에서 다음 명령을 실행하여 Cisco Nexus 스위치 A 및 스위치 B의 계층 2 VLAN을 정의하고 설명하십시오.
+
+....
+vlan <<nfs_vlan_id>>
+  name NFS-VLAN
+vlan <<iSCSI_A_vlan_id>>
+  name iSCSI-A-VLAN
+vlan <<iSCSI_B_vlan_id>>
+  name iSCSI-B-VLAN
+vlan <<vmotion_vlan_id>>
+  name vMotion-VLAN
+vlan <<vmtraffic_vlan_id>>
+  name VM-Traffic-VLAN
+vlan <<mgmt_vlan_id>>
+  name MGMT-VLAN
+vlan <<native_vlan_id>>
+  name NATIVE-VLAN
+exit
+....
+
+
+=== 액세스 및 관리 포트 설명을 구성합니다
+
+레이어 2 VLAN에 이름을 할당하는 경우와 마찬가지로, 모든 인터페이스에 대한 설정 설명은 프로비저닝과 문제 해결에 도움이 될 수 있습니다.
+
+각 스위치의 구성 모드('config t')에서 FlexPod Express 대규모 구성에 대한 다음 포트 설명을 입력합니다.
+
+
+
+==== Cisco Nexus 스위치 A
+
+....
+int eth1/1
+  description AFF A220-A e0M
+int eth1/2
+  description Cisco UCS FI-A mgmt0
+int eth1/3
+  description Cisco UCS FI-A eth1/1
+int eth1/4
+  description Cisco UCS FI-B eth1/1
+int eth1/13
+  description vPC peer-link 31108PVC-B 1/13
+int eth1/14
+  description vPC peer-link 31108PVC-B 1/14
+....
+
+
+==== Cisco Nexus 스위치 B
+
+....
+int eth1/1
+  description AFF A220-B e0M
+int eth1/2
+  description Cisco UCS FI-B mgmt0
+int eth1/3
+  description Cisco UCS FI-A eth1/2
+int eth1/4
+  description Cisco UCS FI-B eth1/2
+int eth1/13
+  description vPC peer-link 31108PVC-B 1/13
+int eth1/14
+  description vPC peer-link 31108PVC-B 1/14
+....
+
+
+=== 서버 및 스토리지 관리 인터페이스를 구성합니다
+
+서버와 스토리지 모두의 관리 인터페이스는 일반적으로 단일 VLAN만 사용합니다. 따라서 관리 인터페이스 포트를 액세스 포트로 구성합니다. 각 스위치에 대한 관리 VLAN을 정의하고 스패닝 트리 포트 유형을 에지로 변경합니다.
+
+구성 모드('config t')에서 다음 명령을 실행하여 서버와 스토리지 모두의 관리 인터페이스에 대한 포트 설정을 구성하십시오.
+
+
+
+==== Cisco Nexus 스위치 A
+
+....
+int eth1/1-2
+  switchport mode access
+  switchport access vlan <<mgmt_vlan>>
+  spanning-tree port type edge
+  speed 1000
+exit
+....
+
+
+==== Cisco Nexus 스위치 B
+
+....
+int eth1/1-2
+  switchport mode access
+  switchport access vlan <<mgmt_vlan>>
+  spanning-tree port type edge
+  speed 1000
+exit
+....
+
+
+=== NTP 배포 인터페이스를 추가합니다
+
+
+
+==== Cisco Nexus 스위치 A
+
+글로벌 구성 모드에서 다음 명령을 실행합니다.
+
+....
+interface Vlan<ib-mgmt-vlan-id>
+ip address <switch-a-ntp-ip>/<ib-mgmt-vlan-netmask-length>
+no shutdown
+exitntp peer <switch-b-ntp-ip> use-vrf default
+....
+
+
+==== Cisco Nexus 스위치 B
+
+글로벌 구성 모드에서 다음 명령을 실행합니다.
+
+....
+interface Vlan<ib-mgmt-vlan-id>
+ip address <switch- b-ntp-ip>/<ib-mgmt-vlan-netmask-length>
+no shutdown
+exitntp peer <switch-a-ntp-ip> use-vrf default
+....
+
+
+=== 가상 포트 채널 글로벌 구성을 수행합니다
+
+가상 포트 채널(vPC)을 사용하면 물리적으로 두 개의 서로 다른 Cisco Nexus 스위치에 연결된 링크가 세 번째 장치에 단일 포트 채널로 표시될 수 있습니다. 세 번째 장치는 스위치, 서버 또는 다른 네트워킹 장치일 수 있습니다. vPC는 계층 2 다중 경로를 제공할 수 있으므로 대역폭을 높이고, 노드 간에 여러 개의 병렬 경로를 활성화하고, 대체 경로가 있는 로드 밸런싱 트래픽을 통해 이중화를 생성할 수 있습니다.
+
+vPC는 다음과 같은 이점을 제공합니다.
+
+* 단일 장치에서 두 업스트림 장치에 걸쳐 포트 채널을 사용하도록 설정
+* 스패닝 트리 프로토콜 차단 포트 제거
+* 루프 없는 토폴로지 제공
+* 사용 가능한 모든 업링크 대역폭 사용
+* 링크 또는 디바이스에 장애가 발생할 경우 빠른 컨버전스를 제공합니다
+* 링크 레벨의 복원력 제공
+* 고가용성 제공 지원
+
+
+vPC 기능이 제대로 작동하려면 두 Cisco Nexus 스위치 간의 몇 가지 초기 설정이 필요합니다. 연속 인접 mgmt0 구성을 사용하는 경우에는 인터페이스에 정의된 주소를 사용하고 ping "\<<switch_a/B_mgmt0_ip_addr>>VRF" 관리 명령을 사용하여 통신 가능 여부를 확인해야 합니다.
+
+구성 모드('config t')에서 다음 명령을 실행하여 두 스위치에 대한 vPC 글로벌 구성을 설정하십시오.
+
+
+
+==== Cisco Nexus 스위치 A
+
+....
+vpc domain 1
+ role priority 10
+peer-keepalive destination <<switch_B_mgmt0_ip_addr>> source <<switch_A_mgmt0_ip_addr>> vrf management
+  peer-gateway
+  auto-recovery
+  ip arp synchronize
+  int eth1/13-14
+  channel-group 10 mode active
+int Po10description vPC peer-link
+switchport
+switchport mode trunkswitchport trunk native vlan <<native_vlan_id>>
+switchport trunk allowed vlan <<nfs_vlan_id>>,<<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>, <<iSCSI_A_vlan_id>>, <<iSCSI_B_vlan_id>> spanning-tree port type network
+vpc peer-link
+no shut
+exit
+int Po13
+description vPC ucs-FI-A
+switchport mode trunk
+switchport trunk native vlan <<native_vlan_id>>
+switchport trunk allowed vlan <<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>> spanning-tree port type network
+mtu 9216
+vpc 13
+no shut
+exit
+int eth1/3
+  channel-group 13 mode active
+int Po14
+description vPC ucs-FI-B
+switchport mode trunk
+switchport trunk native vlan <<native_vlan_id>>
+switchport trunk allowed vlan <<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>> spanning-tree port type network
+mtu 9216
+vpc 14
+no shut
+exit
+int eth1/4
+  channel-group 14 mode active
+copy run start
+....
+
+
+==== Cisco Nexus 스위치 B
+
+....
+vpc domain 1
+peer-switch
+role priority 20
+peer-keepalive destination <<switch_A_mgmt0_ip_addr>> source <<switch_B_mgmt0_ip_addr>> vrf management
+  peer-gateway
+  auto-recovery
+  ip arp synchronize
+  int eth1/13-14
+  channel-group 10 mode active
+int Po10
+description vPC peer-link
+switchport
+switchport mode trunk
+switchport trunk native vlan <<native_vlan_id>>
+switchport trunk allowed vlan <<nfs_vlan_id>>,<<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>>, <<iSCSI_A_vlan_id>>, <<iSCSI_B_vlan_id>> spanning-tree port type network
+vpc peer-link
+no shut
+exit
+int Po13
+description vPC ucs-FI-A
+switchport mode trunk
+switchport trunk native vlan <<native_vlan_id>>
+switchport trunk allowed vlan <<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>> spanning-tree port type network
+mtu 9216
+vpc 13
+no shut
+exit
+int eth1/3
+  channel-group 13 mode active
+int Po14
+description vPC ucs-FI-B
+switchport mode trunk
+switchport trunk native vlan <<native_vlan_id>>
+switchport trunk allowed vlan <<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>> spanning-tree port type network
+mtu 9216
+vpc 14
+no shut
+exit
+int eth1/4
+  channel-group 14 mode active
+copy run start
+....
+
+NOTE: 이 솔루션 검증에서 MTU(Maximum Transmission Unit) 9000이 사용되었습니다. 그러나 애플리케이션 요구 사항에 따라 MTU의 적절한 값을 구성할 수 있습니다. FlexPod 솔루션에서 동일한 MTU 값을 설정하는 것이 중요합니다. 구성 요소 간의 MTU 구성이 잘못되면 패킷이 삭제됩니다.
+
+
+
+=== 기존 네트워크 인프라로 업링크
+
+사용 가능한 네트워크 인프라에 따라 여러 가지 방법과 기능을 사용하여 FlexPod 환경을 업링크할 수 있습니다. 기존 Cisco Nexus 환경이 존재하는 경우, NetApp은 vPC를 사용하여 FlexPod 환경에 포함된 Cisco Nexus 31108PVC 스위치를 인프라로 업링크하는 것을 권장합니다. 업링크는 10GbE 인프라스트럭처 솔루션의 경우 10GbE 업링크, 필요한 경우 1GbE 인프라스트럭처 솔루션의 경우 1GbE가 될 수 있습니다. 앞서 설명한 절차를 사용하여 기존 환경에 대한 업링크 vPC를 생성할 수 있습니다. 구성이 완료된 후 각 스위치에 대한 구성을 저장하려면 copy run start를 실행해야 합니다.
+
+
+
+== NetApp 스토리지 구축 절차(1부)
+
+이 섹션에서는 NetApp AFF 스토리지 구축 절차를 설명합니다.
+
+
+
+=== NetApp 스토리지 컨트롤러 AFF2xx 시리즈 설치
+
+
+
+==== NetApp Hardware Universe를 참조하십시오
+
+를 클릭합니다 https://hwu.netapp.com/Home/Index["NetApp Hardware Universe를 참조하십시오"^] (HWU) 애플리케이션은 특정 ONTAP 버전에 대해 지원되는 하드웨어 및 소프트웨어 구성요소를 제공합니다. 현재 ONTAP 소프트웨어가 지원하는 모든 NetApp 스토리지 어플라이언스에 대한 구성 정보를 제공합니다. 구성요소 호환성 표도 제공합니다.
+
+사용하려는 하드웨어 및 소프트웨어 구성 요소가 설치하려는 ONTAP 버전에서 지원되는지 확인합니다.
+
+. 에 액세스합니다 http://hwu.netapp.com/Home/Index["HWU"^] 응용 프로그램 - 시스템 구성 가이드를 봅니다. 스토리지 시스템 비교 탭을 선택하여 ONTAP 소프트웨어의 다른 버전과 원하는 사양이 있는 NetApp 스토리지 어플라이언스 간의 호환성을 확인하십시오.
+. 또는 스토리지 어플라이언스별로 구성 요소를 비교하려면 스토리지 시스템 비교 를 클릭합니다.
+
+
+|===
+| 컨트롤러 AFF2XX 시리즈 사전 요구 사항 
+
+
+| 스토리지 시스템의 물리적 위치를 계획하려면 다음 섹션을 참조하십시오. 전기 요구 사항 지원되는 전원 코드 온보드 포트 및 케이블 
+|===
+
+
+==== 스토리지 컨트롤러
+
+의 컨트롤러에 대한 물리적 설치 절차를 따릅니다 https://library-clnt.dmz.netapp.com/documentation/docweb/index.html?productID=62331&language=en-US["AFF A220 문서"^].
+
+
+
+=== NetApp ONTAP 9.5
+
+
+
+==== 구성 워크시트
+
+설치 스크립트를 실행하기 전에 제품 설명서에서 구성 워크시트를 작성하십시오. 구성 워크시트는 에서 사용할 수 있습니다 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html["ONTAP 9.5 소프트웨어 설치 안내서"^] (에서 사용 가능)를 클릭합니다. 아래 표에는 ONTAP 9.5 설치 및 구성 정보가 나와 있습니다.
+
+
+NOTE: 이 시스템은 스위치가 없는 2노드 클러스터 구성에서 설정됩니다.
+
+|===
+| 클러스터 세부 정보 | 클러스터 세부 정보 값입니다 
+
+
+| 클러스터 노드 A IP 주소입니다 | \<<var_NodeA_mgmt_ip>> 를 입력합니다 
+
+
+| 클러스터 노드 A 넷마스크 | \<<var_NodeA_mgmt_mask>> 를 입력합니다 
+
+
+| 클러스터 노드 A 게이트웨이 | \<<var_NodeA_mgmt_gateway>> 를 참조하십시오 
+
+
+| 클러스터 노드 A 이름 | \<<var_NodeA>> 를 참조하십시오 
+
+
+| 클러스터 노드 B IP 주소입니다 | \<<var_NodeB_mgmt_ip>> 를 입력합니다 
+
+
+| 클러스터 노드 B 넷마스크 | \<<var_NodeB_mgmt_mask>> 를 입력합니다 
+
+
+| 클러스터 노드 B 게이트웨이 | \<<var_NodeB_mgmt_gateway>> 를 참조하십시오 
+
+
+| 클러스터 노드 B 이름 | \<<var_NodeB>> 를 참조하십시오 
+
+
+| ONTAP 9.5 URL | \<<var_url_boot_software>> 
+
+
+| 클러스터의 이름입니다 | \<<var_clustername>> 를 클릭합니다 
+
+
+| 클러스터 관리 IP 주소입니다 | \<<var_clustermgmt_ip>> 를 입력합니다 
+
+
+| 클러스터 B 게이트웨이 | \<<var_clustermgmt_gateway>> 를 클릭합니다 
+
+
+| 클러스터 B 넷마스크 | \<<var_clustermgmt_mask>> 를 입력합니다 
+
+
+| 도메인 이름 | \<<var_domain_name>> 
+
+
+| DNS 서버 IP(둘 이상 입력할 수 있음) | \<<var_dns_server_ip>> 를 참조하십시오 
+
+
+| NTP 서버 A IP입니다 | 스위치-A-NTP-IP>> 
+
+
+| NTP 서버 B IP입니다 | switch-b-ntp-ip>> 
+|===
+
+
+==== 노드 A를 구성합니다
+
+노드 A를 구성하려면 다음 단계를 완료하십시오.
+
+. 스토리지 시스템 콘솔 포트에 연결합니다. Loader-A 메시지가 표시됩니다. 하지만 스토리지 시스템이 재부팅 루프 상태인 경우 다음 메시지가 표시될 때 Ctrl-C를 눌러 자동 부팅 루프를 종료합니다.
++
+....
+Starting AUTOBOOT press Ctrl-C to abort...
+....
+. 시스템이 부팅되도록 합니다.
++
+....
+autoboot
+....
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
++
+ONTAP 9인 경우 5는 부팅 중인 소프트웨어 버전이 아닙니다. 새 소프트웨어를 설치하려면 다음 단계를 계속 수행하십시오. ONTAP 9인 경우 5는 부팅 중인 버전이며 옵션 8과 y를 선택하여 노드를 재부팅합니다. 그런 다음 14단계를 계속합니다.
+
+. 새 소프트웨어를 설치하려면 옵션 '7'을 선택합니다.
+. 업그레이드를 수행하려면 y를 입력하십시오.
+. 다운로드에 사용할 네트워크 포트로 e0M 을 선택합니다.
+. 지금 재부팅하려면 y를 입력하십시오.
+. 각 위치에 e0M의 IP 주소, 넷마스크 및 기본 게이트웨이를 입력합니다.
++
+....
+<<var_nodeA_mgmt_ip>> <<var_nodeA_mgmt_mask>> <<var_nodeA_mgmt_gateway>>
+....
+. 소프트웨어를 찾을 수 있는 URL을 입력합니다.
++
+
+NOTE: 이 웹 서버는 Ping할 수 있어야 합니다.
+
+. 사용자 이름에 대해 Enter 키를 눌러 사용자 이름이 없음을 나타냅니다.
+. 새로 설치한 소프트웨어를 이후 재부팅에 사용할 기본값으로 설정하려면 'y'를 입력합니다.
+. 노드를 재부팅하려면 y를 입력합니다.
++
+새 소프트웨어를 설치할 때 시스템이 BIOS 및 어댑터 카드에 대한 펌웨어 업그레이드를 수행할 수 있으며, 이로 인해 LOADER-A 프롬프트에서 재부팅되고 중지될 수 있습니다. 이러한 작업이 발생하면 시스템이 이 절차를 벗어날 수 있습니다.
+
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
+. Clean Configuration 및 Initialize All Disks 옵션을 4로 선택합니다.
+. 디스크를 제로화하려면 y를 입력하고 구성을 재설정한 다음 새 파일 시스템을 설치합니다.
+. 디스크에 있는 모든 데이터를 지우려면 'y'를 입력합니다.
++
+연결된 디스크의 수와 유형에 따라 루트 애그리게이트의 초기화 및 생성을 완료하는 데 90분 이상이 걸릴 수 있습니다. 초기화가 완료되면 스토리지 시스템이 재부팅됩니다. SSD를 초기화하는 데 걸리는 시간은 상당히 줄어듭니다. 노드 A용 디스크가 제로화하는 동안 노드 B 구성을 계속할 수 있습니다.
+
+. 노드 A를 초기화하는 동안 노드 B를 구성합니다
+
+
+
+
+==== 노드 B를 구성합니다
+
+노드 B를 구성하려면 다음 단계를 완료하십시오.
+
+. 스토리지 시스템 콘솔 포트에 연결합니다. Loader-A 메시지가 표시됩니다. 하지만 스토리지 시스템이 재부팅 루프 상태인 경우 다음 메시지가 표시될 때 Ctrl-C를 눌러 자동 부팅 루프를 종료합니다.
++
+....
+Starting AUTOBOOT press Ctrl-C to abort...
+....
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
++
+....
+autoboot
+....
+. 메시지가 나타나면 Ctrl-C를 누릅니다.
++
+ONTAP 9인 경우 5는 부팅 중인 소프트웨어 버전이 아닙니다. 새 소프트웨어를 설치하려면 다음 단계를 계속 수행하십시오. ONTAP 9.4가 부팅 중인 버전인 경우 옵션 8 및 y를 선택하여 노드를 재부팅합니다. 그런 다음 14단계를 계속합니다.
+
+. 새 소프트웨어를 설치하려면 옵션 7을 선택합니다.
+. 업그레이드를 수행하려면 y를 입력하십시오.
+. 다운로드에 사용할 네트워크 포트로 e0M 을 선택합니다.
+. 지금 재부팅하려면 y를 입력하십시오.
+. 각 위치에 e0M의 IP 주소, 넷마스크 및 기본 게이트웨이를 입력합니다.
++
+....
+<<var_nodeB_mgmt_ip>> <<var_nodeB_mgmt_ip>><<var_nodeB_mgmt_gateway>>
+....
+. 소프트웨어를 찾을 수 있는 URL을 입력합니다.
++
+
+NOTE: 이 웹 서버는 Ping할 수 있어야 합니다.
+
++
+....
+<<var_url_boot_software>>
+....
+. 사용자 이름에 대해 Enter 키를 눌러 사용자 이름이 없음을 나타냅니다
+. 새로 설치한 소프트웨어를 이후 재부팅에 사용할 기본값으로 설정하려면 'y'를 입력합니다.
+. 노드를 재부팅하려면 y를 입력합니다.
++
+새 소프트웨어를 설치할 때 시스템이 BIOS 및 어댑터 카드에 대한 펌웨어 업그레이드를 수행할 수 있으며, 이로 인해 LOADER-A 프롬프트에서 재부팅되고 중지될 수 있습니다. 이러한 작업이 발생하면 시스템이 이 절차를 벗어날 수 있습니다.
+
+. Ctrl-C를 눌러 부팅 메뉴로 들어갑니다.
+. Clean Configuration(구성 정리) 및 Initialize All Disks(모든 디스크 초기화) 에 대해 옵션 4 를 선택합니다.
+. 디스크를 제로화하려면 y를 입력하고 구성을 재설정한 다음 새 파일 시스템을 설치합니다.
+. 디스크에 있는 모든 데이터를 지우려면 'y'를 입력합니다.
++
+연결된 디스크의 수와 유형에 따라 루트 애그리게이트의 초기화 및 생성을 완료하는 데 90분 이상이 걸릴 수 있습니다. 초기화가 완료되면 스토리지 시스템이 재부팅됩니다. SSD를 초기화하는 데 걸리는 시간은 상당히 줄어듭니다.
+
+
+
+
+
+=== 연속 노드 구성 및 클러스터 구성
+
+스토리지 컨트롤러 A(노드 A) 콘솔 포트에 연결된 콘솔 포트 프로그램에서 노드 설정 스크립트를 실행합니다. 이 스크립트는 ONTAP 9.5가 노드에서 처음 부팅될 때 나타납니다.
+
+ONTAP 9.5에서 노드 및 클러스터 설정 절차가 약간 변경되었습니다. 이제 클러스터 설정 마법사를 사용하여 클러스터의 첫 번째 노드를 구성하고 System Manager를 사용하여 클러스터를 구성할 수 있습니다.
+
+. 프롬프트에 따라 노드 A를 설정합니다
++
+....
+Welcome to the cluster setup wizard.
+You can enter the following commands at any time:
+  "help" or "?" - if you want to have a question clarified,
+  "back" - if you want to change previously answered questions, and
+  "exit" or "quit" - if you want to quit the cluster setup wizard.
+     Any changes you made before quitting will be saved.
+You can return to cluster setup at any time by typing "cluster setup".
+To accept a default or omit a question, do not enter a value.
+This system will send event messages and periodic reports to NetApp Technical Support. To disable this feature, enter
+autosupport modify -support disable
+within 24 hours.
+Enabling AutoSupport can significantly speed problem determination and resolution should a problem occur on your system.
+For further information on AutoSupport, see: http://support.netapp.com/autosupport/
+Type yes to confirm and continue {yes}: yes
+Enter the node management interface port [e0M]:
+Enter the node management interface IP address: <<var_nodeA_mgmt_ip>>
+Enter the node management interface netmask: <<var_nodeA_mgmt_mask>>
+Enter the node management interface default gateway: <<var_nodeA_mgmt_gateway>>
+A node management interface on port e0M with IP address <<var_nodeA_mgmt_ip>> has been created.
+Use your web browser to complete cluster setup by accessing
+https://<<var_nodeA_mgmt_ip>>
+Otherwise, press Enter to complete cluster setup using the command line interface:
+....
+. 노드의 관리 인터페이스의 IP 주소로 이동합니다.
++
+
+NOTE: CLI를 사용하여 클러스터를 설정할 수도 있습니다. 이 문서에서는 NetApp System Manager의 안내에 따라 설정을 사용하는 클러스터 설정에 대해 설명합니다.
+
+. Guided Setup(안내식 설정) 을 클릭하여 클러스터를 구성합니다.
+. 클러스터 이름은 \<<var_clustername>>'을, 구성 중인 각 노드에 대해서는 \<<var_NodeA>>'와 \<<var_NodeB>>를 입력합니다. 스토리지 시스템에 사용할 암호를 입력합니다. 클러스터 유형으로 Switchless Cluster를 선택합니다. 클러스터 기본 라이센스를 입력합니다.
+. 클러스터, NFS 및 iSCSI에 대한 기능 라이센스도 입력할 수 있습니다.
+. 클러스터를 생성 중임을 나타내는 상태 메시지가 표시됩니다. 이 상태 메시지는 여러 상태를 순환합니다. 이 과정은 몇 분 정도 소요됩니다.
+. 네트워크를 구성합니다.
++
+.. IP 주소 범위 옵션을 선택 취소합니다.
+.. Cluster Management IP Address 필드(\<<var_clustermgmt_ip>>)에 넷마스크 필드(\<<var_clustermgmt_mask>>)에 \<<var_clustermgmt_gateway>>)를 입력합니다. 포트 필드의... 선택기를 사용하여 노드 A의 e0M을 선택합니다
+.. 노드 A의 노드 관리 IP가 이미 채워져 있습니다. 노드 B에 대해 '\<<var_NodeA_mgmt_ip>>'를 입력합니다
+.. DNS Domain Name 필드에 '\<<var_domain_name>>'을 입력합니다. DNS 서버 IP 주소 필드에 '\<<var_dns_server_ip>>'를 입력합니다.
++
+여러 DNS 서버 IP 주소를 입력할 수 있습니다.
+
+.. Primary NTP Server 필드에 '\<<switch-a-ntp-ip>>'를 입력합니다.
++
+대체 NTP 서버를 "\<<switch-b-ntp-ip>>"로 입력할 수도 있습니다.
+
+
+
+. 지원 정보를 구성합니다.
++
+.. 환경에 AutoSupport에 액세스하기 위한 프록시가 필요한 경우 프록시 URL에 URL을 입력합니다.
+.. 이벤트 알림에 대한 SMTP 메일 호스트 및 이메일 주소를 입력합니다.
++
+계속하려면 이벤트 알림 방법을 설정해야 합니다. 방법 중 하나를 선택할 수 있습니다.
+
+
+
+. 클러스터 구성이 완료되었으면 클러스터 관리 를 클릭하여 스토리지를 구성합니다.
+
+
+
+
+=== 스토리지 클러스터 구성의 연속
+
+스토리지 노드 및 기본 클러스터를 구성한 후에는 스토리지 클러스터 구성을 계속할 수 있습니다.
+
+
+
+==== 모든 스페어 디스크를 제로합니다
+
+클러스터의 모든 스페어 디스크를 제로하려면 다음 명령을 실행합니다.
+
+....
+disk zerospares
+....
+
+
+==== 온보드 UTA2 포트 속성을 설정합니다
+
+. ucadmin show 명령을 실행하여 현재 모드와 포트의 현재 유형을 확인합니다.
++
+....
+AFFA220-Clus::> ucadmin show
+                       Current  Current    Pending  Pending    Admin
+Node          Adapter  Mode     Type       Mode     Type       Status
+------------  -------  -------  ---------  -------  ---------  -----------
+AFFA220-Clus-01
+              0c       cna      target     -        -          offline
+AFFA220-Clus-01
+              0d       cna      target     -        -          offline
+AFFA220-Clus-01
+              0e       cna      target     -        -          offline
+AFFA220-Clus-01
+              0f       cna      target     -        -          offline
+AFFA220-Clus-02
+              0c       cna      target     -        -          offline
+AFFA220-Clus-02
+              0d       cna      target     -        -          offline
+AFFA220-Clus-02
+              0e       cna      target     -        -          offline
+AFFA220-Clus-02
+              0f       cna      target     -        -          offline
+8 entries were displayed.
+....
+. 사용 중인 포트의 현재 모드가 CNA인지, 현재 유형이 'target'으로 설정되어 있는지 확인합니다. 그렇지 않은 경우 다음 명령을 실행하여 포트 속성을 변경합니다.
++
+....
+ucadmin modify -node <home node of the port> -adapter <port name> -mode cna -type target
+....
++
+이전 명령을 실행하려면 포트가 오프라인 상태여야 합니다. 포트를 오프라인으로 전환하려면 다음 명령을 실행합니다.
+
++
+....
+network fcp adapter modify -node <home node of the port> -adapter <port name> -state down
+....
++
+
+NOTE: 포트 속성을 변경한 경우 변경 사항을 적용하려면 각 노드를 재부팅해야 합니다.
+
+
+
+
+
+==== Cisco Discovery Protocol을 활성화합니다
+
+NetApp 스토리지 컨트롤러에서 CDP(Cisco Discovery Protocol)를 활성화하려면 다음 명령을 실행합니다.
+
+....
+node run -node * options cdpd.enable on
+....
+
+
+==== 모든 이더넷 포트에서 링크 계층 검색 프로토콜을 활성화합니다
+
+다음 명령을 실행하여 스토리지와 네트워크 스위치 간에 LLDP(Link-layer Discovery Protocol) 인접 정보 교환을 활성화합니다. 이 명령을 실행하면 클러스터에 있는 모든 노드의 모든 포트에 LLDP가 설정됩니다.
+
+....
+node run * options lldp.enable on
+....
+
+
+==== 관리 논리 인터페이스의 이름을 바꿉니다
+
+관리 논리 인터페이스(LIF)의 이름을 변경하려면 다음 단계를 수행하십시오.
+
+. 현재 관리 LIF 이름을 표시합니다.
++
+....
+network interface show –vserver <<clustername>>
+....
+. 클러스터 관리 LIF의 이름을 바꿉니다.
++
+....
+network interface rename –vserver <<clustername>> –lif cluster_setup_cluster_mgmt_lif_1 –newname cluster_mgmt
+....
+. 노드 B 관리 LIF의 이름을 바꿉니다.
++
+....
+network interface rename -vserver <<clustername>> -lif cluster_setup_node_mgmt_lif_AFF A220_A_1 - newname AFF A220-01_mgmt1
+....
+
+
+
+
+==== 클러스터 관리에서 자동 되돌리기 설정
+
+클러스터 관리 인터페이스에서 자동 되돌리기 매개 변수를 설정합니다.
+
+....
+network interface modify –vserver <<clustername>> -lif cluster_mgmt –auto-revert true
+....
+
+
+==== 서비스 프로세서 네트워크 인터페이스를 설정합니다
+
+각 노드의 서비스 프로세서에 정적 IPv4 주소를 할당하려면 다음 명령을 실행합니다.
+
+....
+system service-processor network modify –node <<var_nodeA>> -address-family IPv4 –enable true – dhcp none –ip-address <<var_nodeA_sp_ip>> -netmask <<var_nodeA_sp_mask>> -gateway <<var_nodeA_sp_gateway>>
+system service-processor network modify –node <<var_nodeB>> -address-family IPv4 –enable true – dhcp none –ip-address <<var_nodeB_sp_ip>> -netmask <<var_nodeB_sp_mask>> -gateway <<var_nodeB_sp_gateway>>
+....
+
+NOTE: 서비스 프로세서 IP 주소는 노드 관리 IP 주소와 동일한 서브넷에 있어야 합니다.
+
+
+
+==== ONTAP에서 스토리지 페일오버 설정
+
+스토리지 페일오버가 설정되었는지 확인하려면 페일오버 쌍에서 다음 명령을 실행합니다.
+
+. 스토리지 페일오버 상태를 확인합니다.
++
+....
+storage failover show
+....
++
+'\<<var_NodeA>>'와 '\<<var_NodeB>>'는 모두 테이크오버를 수행할 수 있어야 합니다. 노드가 테이크오버 수행 가능한 경우 3단계로 이동하십시오.
+
+. 두 노드 중 하나에서 페일오버가 사용되도록 설정합니다.
++
+....
+storage failover modify -node <<var_nodeA>> -enabled true
+....
+. 2노드 클러스터의 HA 상태를 확인합니다.
++
+
+NOTE: 2개 이상의 노드가 있는 클러스터에는 이 단계를 적용할 수 없습니다.
+
++
+....
+cluster ha show
+....
+. 고가용성이 구성된 경우 6단계로 이동합니다. 고가용성이 구성된 경우 명령을 실행하면 다음 메시지가 표시됩니다.
++
+....
+High Availability Configured: true
+....
+. 2노드 클러스터에만 HA 모드를 사용하도록 설정합니다.
++
+2개 이상의 노드가 있는 클러스터에서는 페일오버에 문제가 발생하므로 이 명령을 실행하지 마십시오.
+
++
+....
+cluster ha modify -configured true
+Do you want to continue? {y|n}: y
+....
+. 하드웨어 지원이 올바르게 구성되어 있는지 확인하고 필요한 경우 파트너 IP 주소를 수정합니다.
++
+....
+storage failover hwassist show
+....
++
+"Keep Alive Status: Error: whwassist keep alive alert from partner(활성 상태 유지: 오류: 파트너의 hwassist keep alive 경고를 수신하지 못했습니다)" 메시지는 하드웨어 지원이 구성되지 않았음을 나타냅니다. 다음 명령을 실행하여 하드웨어 지원을 구성합니다.
+
++
+....
+storage failover modify –hwassist-partner-ip <<var_nodeB_mgmt_ip>> -node <<var_nodeA>>
+storage failover modify –hwassist-partner-ip <<var_nodeA_mgmt_ip>> -node <<var_nodeB>>
+....
+
+
+
+
+==== ONTAP에서 점보 프레임 MTU 브로드캐스트 도메인을 생성합니다
+
+MTU가 9000인 데이터 브로드캐스트 도메인을 생성하려면 다음 명령을 실행합니다.
+
+....
+broadcast-domain create -broadcast-domain Infra_NFS -mtu 9000
+broadcast-domain create -broadcast-domain Infra_iSCSI-A -mtu 9000
+broadcast-domain create -broadcast-domain Infra_iSCSI-B -mtu 9000
+....
+
+
+==== 기본 브로드캐스트 도메인에서 데이터 포트를 제거합니다
+
+10GbE 데이터 포트는 iSCSI/NFS 트래픽에 사용되며 이러한 포트는 기본 도메인에서 제거해야 합니다. 포트 e0e 및 e0f는 사용되지 않으며 기본 도메인에서도 제거해야 합니다.
+
+브로드캐스트 도메인에서 포트를 제거하려면 다음 명령을 실행합니다.
+
+....
+broadcast-domain remove-ports -broadcast-domain Default -ports <<var_nodeA>>:e0c, <<var_nodeA>>:e0d, <<var_nodeA>>:e0e, <<var_nodeA>>:e0f, <<var_nodeB>>:e0c, <<var_nodeB>>:e0d, <<var_nodeA>>:e0e, <<var_nodeA>>:e0f
+....
+
+
+==== UTA2 포트에서 흐름 제어를 사용하지 않도록 설정합니다
+
+외부 장치에 연결된 모든 UTA2 포트에서 흐름 제어를 사용하지 않도록 설정하는 것이 NetApp의 모범 사례입니다. 흐름 제어를 사용하지 않도록 설정하려면 다음 명령을 실행합니다.
+
+....
+net port modify -node <<var_nodeA>> -port e0c -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeA>> -port e0d -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeA>> -port e0e -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeA>> -port e0f -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0c -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0d -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0e -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+net port modify -node <<var_nodeB>> -port e0f -flowcontrol-admin none
+Warning: Changing the network port settings will cause a several second interruption in carrier. Do you want to continue? {y|n}: y
+....
+
+NOTE: ONTAP에 대한 Cisco UCS Mini 직접 연결은 LACP를 지원하지 않습니다.
+
+
+
+==== NetApp ONTAP에서 점보 프레임을 구성합니다
+
+ONTAP 네트워크 포트에서 점보 프레임(일반적으로 9,000바이트 MTU 사용)을 사용하도록 구성하려면 클러스터 쉘에서 다음 명령을 실행합니다.
+
+....
+AFF A220::> network port modify -node node_A -port e0e -mtu 9000
+Warning: This command will cause a several second interruption of service on this network port.
+Do you want to continue? {y|n}: y
+AFF A220::> network port modify -node node_B -port e0e -mtu 9000
+Warning: This command will cause a several second interruption of service on this network port.
+Do you want to continue? {y|n}: y
+AFF A220::> network port modify -node node_A -port e0f -mtu 9000
+Warning: This command will cause a several second interruption of service on this network port.
+Do you want to continue? {y|n}: y
+AFF A220::> network port modify -node node_B -port e0f -mtu 9000
+Warning: This command will cause a several second interruption of service on this network port.
+Do you want to continue? {y|n}: y
+....
+
+
+==== ONTAP에서 VLAN을 생성합니다
+
+ONTAP에서 VLAN을 생성하려면 다음 단계를 수행하십시오.
+
+. NFS VLAN 포트를 생성하여 데이터 브로드캐스트 도메인에 추가합니다.
++
+....
+network port vlan create –node <<var_nodeA>> -vlan-name e0e-<<var_nfs_vlan_id>>
+network port vlan create –node <<var_nodeA>> -vlan-name e0f-<<var_nfs_vlan_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name e0e-<<var_nfs_vlan_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name e0f-<<var_nfs_vlan_id>>
+broadcast-domain add-ports -broadcast-domain Infra_NFS -ports <<var_nodeA>>: e0e- <<var_nfs_vlan_id>>, <<var_nodeB>>: e0e-<<var_nfs_vlan_id>> , <<var_nodeA>>:e0f- <<var_nfs_vlan_id>>, <<var_nodeB>>:e0f-<<var_nfs_vlan_id>>
+....
+. iSCSI VLAN 포트를 생성하여 데이터 브로드캐스트 도메인에 추가합니다.
++
+....
+network port vlan create –node <<var_nodeA>> -vlan-name e0e-<<var_iscsi_vlan_A_id>>
+network port vlan create –node <<var_nodeA>> -vlan-name e0f-<<var_iscsi_vlan_B_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name e0e-<<var_iscsi_vlan_A_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name e0f-<<var_iscsi_vlan_B_id>>
+broadcast-domain add-ports -broadcast-domain Infra_iSCSI-A -ports <<var_nodeA>>: e0e- <<var_iscsi_vlan_A_id>>,<<var_nodeB>>: e0e-<<var_iscsi_vlan_A_id>>
+broadcast-domain add-ports -broadcast-domain Infra_iSCSI-B -ports <<var_nodeA>>: e0f- <<var_iscsi_vlan_B_id>>,<<var_nodeB>>: e0f-<<var_iscsi_vlan_B_id>>
+....
+. MGMT-VLAN 포트를 생성합니다.
++
+....
+network port vlan create –node <<var_nodeA>> -vlan-name e0m-<<mgmt_vlan_id>>
+network port vlan create –node <<var_nodeB>> -vlan-name e0m-<<mgmt_vlan_id>>
+....
+
+
+
+
+==== ONTAP에서 애그리게이트를 생성합니다
+
+ONTAP 설정 프로세스 중에 루트 볼륨이 포함된 애그리게이트가 생성됩니다. 추가 애그리게이트를 생성하려면 애그리게이트 이름, 애그리게이트를 생성할 노드, 애그리게이트에 포함된 디스크 수를 결정합니다.
+
+Aggregate를 생성하려면 다음 명령을 실행합니다.
+
+....
+aggr create -aggregate aggr1_nodeA -node <<var_nodeA>> -diskcount <<var_num_disks>>
+aggr create -aggregate aggr1_nodeB -node <<var_nodeB>> -diskcount <<var_num_disks>>
+....
+구성에 최소 하나의 디스크(가장 큰 디스크 선택)를 스페어로 보관합니다. 모범 사례는 각 디스크 유형 및 크기에 대해 하나 이상의 스페어를 두는 것입니다.
+
+5개의 디스크로 시작합니다. 스토리지를 추가해야 할 때 디스크를 애그리게이트에 추가할 수 있습니다.
+
+디스크 비우기가 완료될 때까지 애그리게이트를 생성할 수 없습니다. 집계 생성 상태를 표시하려면 'aggr show' 명령을 실행합니다. aggr1_NodeA가 온라인이 될 때까지 진행하지 마십시오.
+
+
+
+==== ONTAP에서 시간대를 구성합니다
+
+시간 동기화를 구성하고 클러스터에서 표준 시간대를 설정하려면 다음 명령을 실행합니다.
+
+....
+timezone <<var_timezone>>
+....
+
+NOTE: 예를 들어, 미국 동부의 시간대는 '아메리카/뉴욕'입니다. 표준 시간대 이름을 입력하기 시작하면 Tab 키를 눌러 사용 가능한 옵션을 확인합니다.
+
+
+
+==== ONTAP에서 SNMP를 구성합니다
+
+SNMP를 구성하려면 다음 단계를 수행하십시오.
+
+. 위치 및 연락처와 같은 SNMP 기본 정보를 구성합니다. 이 정보는 SNMP에서 'SysLocation', 'SysContact' 변수로 표시됩니다.
++
+....
+snmp contact <<var_snmp_contact>>
+snmp location “<<var_snmp_location>>”
+snmp init 1
+options snmp.enable on
+....
+. 원격 호스트에 보낼 SNMP 트랩을 구성합니다.
++
+....
+snmp traphost add <<var_snmp_server_fqdn>>
+....
+
+
+
+
+==== ONTAP에서 SNMPv1을 구성합니다
+
+SNMPv1을 구성하려면 커뮤니티라는 공유 암호 일반 텍스트 암호를 설정합니다.
+
+....
+snmp community add ro <<var_snmp_community>>
+....
+
+NOTE: NMP community delete all 명령을 주의하여 사용한다. 다른 모니터링 제품에 커뮤니티 문자열을 사용하는 경우 이 명령은 해당 문자열을 제거합니다.
+
+
+
+==== ONTAP에서 SNMPv3을 구성합니다
+
+SNMPv3을 사용하려면 인증을 위해 사용자를 정의하고 구성해야 합니다. SNMPv3을 구성하려면 다음 단계를 수행하십시오.
+
+. Security snmpusers 명령을 실행하여 엔진 ID를 조회한다.
+. 'snmpv3user'라는 사용자를 생성합니다.
++
+....
+security login create -username snmpv3user -authmethod usm -application snmp
+....
+. 신뢰할 수 있는 엔터티의 엔진 ID를 입력하고 인증 프로토콜로 md5 를 선택한다.
+. 메시지가 나타나면 인증 프로토콜에 사용할 최소 길이 8자로 된 암호를 입력합니다.
+. 개인 정보 보호 프로토콜로 'des'를 선택합니다.
+. 메시지가 나타나면 개인 정보 보호 프로토콜에 사용할 최소 길이 8자로 된 암호를 입력합니다.
+
+
+
+
+==== ONTAP에서 AutoSupport HTTPS를 구성합니다
+
+NetApp AutoSupport 툴은 HTTPS를 통해 지원 요약 정보를 NetApp에 보냅니다. AutoSupport를 구성하려면 다음 명령을 실행합니다.
+
+....
+system node autosupport modify -node * -state enable –mail-hosts <<var_mailhost>> -transport https -support enable -noteto <<var_storage_admin_email>>
+....
+
+
+==== 스토리지 가상 머신을 생성합니다
+
+인프라 스토리지 가상 시스템(SVM)을 생성하려면 다음 단계를 완료하십시오.
+
+. 'vserver create' 명령을 실행합니다.
++
+....
+vserver create –vserver Infra-SVM –rootvolume rootvol –aggregate aggr1_nodeA –rootvolume- security-style unix
+....
+. NetApp VSC를 위한 인프라-SVM 애그리게이트 목록에 데이터 애그리게이트를 추가합니다.
++
+....
+vserver modify -vserver Infra-SVM -aggr-list aggr1_nodeA,aggr1_nodeB
+....
+. NFS와 iSCSI를 남겨두고 SVM에서 사용하지 않는 스토리지 프로토콜을 제거합니다.
++
+....
+vserver remove-protocols –vserver Infra-SVM -protocols cifs,ndmp,fcp
+....
+. 인프라 SVM에서 NFS 프로토콜을 사용하고 실행합니다.
++
+....
+nfs create -vserver Infra-SVM -udp disabled
+....
+. NetApp NFS VAAI 플러그인에 대한 'VM vStorage' 매개 변수를 설정합니다. 그런 다음 NFS가 구성되었는지 확인합니다.
++
+....
+vserver nfs modify –vserver Infra-SVM –vstorage enabled
+vserver nfs show
+....
++
+
+NOTE: SVM은 이전에 서버라고 불렸던 것이기 때문에 명령행에서 'vserver'가 명령을 앞에 표시합니다
+
+
+
+
+
+==== ONTAP에서 NFSv3을 구성합니다
+
+아래 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| ESXi 호스트 NFS IP 주소입니다 | \<<var_esxi_hostA_nfs_ip>> 를 참조하십시오 
+
+
+| ESXi 호스트 B NFS IP 주소입니다 | \<<var_esxi_hostB_nfs_ip>> 를 참조하십시오 
+|===
+SVM에서 NFS를 구성하려면 다음 명령을 실행합니다.
+
+. 기본 엑스포트 정책에서 각 ESXi 호스트에 대한 규칙을 생성합니다.
+. 생성 중인 각 ESXi 호스트에 대해 규칙을 할당합니다. 각 호스트에는 고유한 규칙 인덱스가 있습니다. 첫 번째 ESXi 호스트에는 규칙 인덱스 1이 있고 두 번째 ESXi 호스트에는 규칙 인덱스 2가 있습니다.
++
+....
+vserver export-policy rule create –vserver Infra-SVM -policyname default –ruleindex 1 –protocol nfs -clientmatch <<var_esxi_hostA_nfs_ip>> -rorule sys –rwrule sys -superuser sys –allow-suid falsevserver export-policy rule create –vserver Infra-SVM -policyname default –ruleindex 2 –protocol nfs -clientmatch <<var_esxi_hostB_nfs_ip>> -rorule sys –rwrule sys -superuser sys –allow-suid false
+vserver export-policy rule show
+....
+. 인프라 SVM 루트 볼륨에 엑스포트 정책을 할당합니다.
++
+....
+volume modify –vserver Infra-SVM –volume rootvol –policy default
+....
++
+
+NOTE: vSphere를 설정한 후 NetApp VSC는 엑스포트 정책을 자동으로 처리합니다. 설치하지 않은 경우 Cisco UCS B-Series 서버를 추가할 때 엑스포트 정책 규칙을 생성해야 합니다.
+
+
+
+
+
+==== ONTAP에서 iSCSI 서비스를 생성합니다
+
+iSCSI 서비스를 생성하려면 다음 단계를 완료하십시오.
+
+. SVM에서 iSCSI 서비스를 생성합니다. 또한 이 명령은 iSCSI 서비스를 시작하고 SVM에 대한 IQN(iSCSI Qualified Name)을 설정합니다. iSCSI가 구성되었는지 확인합니다.
++
+....
+iscsi create -vserver Infra-SVM
+iscsi show
+....
+
+
+
+
+==== ONTAP에서 SVM 루트 볼륨의 로드 공유 미러를 생성합니다
+
+ONTAP에서 SVM 루트 볼륨의 로드 공유 미러를 생성하려면 다음 단계를 수행하십시오.
+
+. 각 노드에서 인프라 SVM 루트 볼륨의 로드 공유 미러가 될 볼륨을 생성합니다.
++
+....
+volume create –vserver Infra_Vserver –volume rootvol_m01 –aggregate aggr1_nodeA –size 1GB –type DPvolume create –vserver Infra_Vserver –volume rootvol_m02 –aggregate aggr1_nodeB –size 1GB –type DP
+....
+. 15분마다 루트 볼륨 미러 관계를 업데이트하는 작업 스케줄을 생성합니다.
++
+....
+job schedule interval create -name 15min -minutes 15
+....
+. 미러링 관계를 생성합니다.
++
+....
+snapmirror create -source-path Infra-SVM:rootvol -destination-path Infra-SVM:rootvol_m01 -type LS -schedule 15min
+snapmirror create -source-path Infra-SVM:rootvol -destination-path Infra-SVM:rootvol_m02 -type LS -schedule 15min
+....
+. 미러링 관계를 초기화하고 미러링 관계가 만들어졌는지 확인합니다.
++
+....
+snapmirror initialize-ls-set -source-path Infra-SVM:rootvol snapmirror show
+....
+
+
+
+
+==== ONTAP에서 HTTPS 액세스를 구성합니다
+
+스토리지 컨트롤러에 대한 보안 액세스를 구성하려면 다음 단계를 수행하십시오.
+
+. 인증서 명령에 액세스할 수 있도록 권한 수준을 높입니다.
++
+....
+set -privilege diag
+Do you want to continue? {y|n}: y
+....
+. 일반적으로 자체 서명된 인증서가 이미 있습니다. 다음 명령을 실행하여 인증서를 확인합니다.
++
+....
+security certificate show
+....
+. 표시된 각 SVM에서 인증서 공통 이름은 SVM의 DNS FQDN(정규화된 도메인 이름)과 일치해야 합니다. 네 개의 기본 인증서를 삭제하고 자체 서명된 인증서 또는 인증 기관의 인증서로 대체해야 합니다.
++
+인증서를 만들기 전에 만료된 인증서를 삭제하는 것이 좋습니다. 만료된 인증서를 삭제하려면 보안 인증서 삭제 명령을 실행합니다. 다음 명령에서 Tab completion을 사용하여 각 기본 인증서를 선택하고 삭제합니다.
+
++
+....
+security certificate delete [TAB] ...
+Example: security certificate delete -vserver Infra-SVM -common-name Infra-SVM -ca Infra-SVM - type server -serial 552429A6
+....
+. 자체 서명된 인증서를 생성하고 설치하려면 다음 명령을 일회성 명령으로 실행합니다. 인프라 SVM 및 클러스터 SVM에 대한 서버 인증서를 생성합니다. 다시 한 번 탭 완료 기능을 사용하면 이러한 명령을 쉽게 완료할 수 있습니다.
++
+....
+security certificate create [TAB] ...
+Example: security certificate create -common-name infra-svm.netapp.com -type server -size 2048 - country US -state "North Carolina" -locality "RTP" -organization "NetApp" -unit "FlexPod" -email- addr "abc@netapp.com" -expire-days 365 -protocol SSL -hash-function SHA256 -vserver Infra-SVM
+....
+. 다음 단계에서 필요한 매개 변수 값을 얻으려면 'security certificate show' 명령을 실행합니다.
+. '–server-enabled true' 및 '–client-enabled false' 매개 변수를 사용하여 방금 만든 각 인증서를 활성화합니다. 다시 탭 완료를 사용합니다.
++
+....
+security ssl modify [TAB] ...
+Example: security ssl modify -vserver Infra-SVM -server-enabled true -client-enabled false -ca infra-svm.netapp.com -serial 55243646 -common-name infra-svm.netapp.com
+....
+. SSL 및 HTTPS 액세스를 구성 및 활성화하고 HTTP 액세스를 비활성화합니다.
++
+....
+system services web modify -external true -sslv3-enabled true
+Warning: Modifying the cluster configuration will cause pending web service requests to be interrupted as the web servers are restarted.
+Do you want to continue {y|n}: y
+System services firewall policy delete -policy mgmt -service http -vserver <<var_clustername>>
+....
++
+
+NOTE: 명령 실행 중 일부에서 항목이 존재하지 않는다는 오류 메시지가 반환되는 것은 정상입니다.
+
+. 관리 권한 수준으로 되돌아가며 SVM을 웹에서 사용할 수 있도록 설정을 생성합니다.
++
+....
+set –privilege admin
+vserver services web modify –name spi|ontapi|compat –vserver * -enabled true
+....
+
+
+
+
+==== ONTAP에서 NetApp FlexVol 볼륨을 생성합니다
+
+NetApp FlexVol ® 볼륨을 생성하려면 볼륨 이름, 크기 및 해당 볼륨을 입력합니다. 2개의 VMware 데이터 저장소 볼륨과 서버 부팅 볼륨을 생성합니다.
+
+....
+volume create -vserver Infra-SVM -volume infra_datastore_1 -aggregate aggr1_nodeA -size 500GB - state online -policy default -junction-path /infra_datastore_1 -space-guarantee none -percent- snapshot-space 0
+volume create -vserver Infra-SVM -volume infra_datastore_2 -aggregate aggr1_nodeB -size 500GB - state online -policy default -junction-path /infra_datastore_2 -space-guarantee none -percent- snapshot-space 0
+....
+....
+volume create -vserver Infra-SVM -volume infra_swap -aggregate aggr1_nodeA -size 100GB -state online -policy default -juntion-path /infra_swap -space-guarantee none -percent-snapshot-space 0 -snapshot-policy none
+volume create -vserver Infra-SVM -volume esxi_boot -aggregate aggr1_nodeA -size 100GB -state online -policy default -space-guarantee none -percent-snapshot-space 0
+....
+
+
+==== ONTAP에서 중복 제거를 설정합니다
+
+하루에 한 번 적절한 볼륨에서 중복 제거를 설정하려면 다음 명령을 실행합니다.
+
+....
+volume efficiency modify –vserver Infra-SVM –volume esxi_boot –schedule sun-sat@0
+volume efficiency modify –vserver Infra-SVM –volume infra_datastore_1 –schedule sun-sat@0
+volume efficiency modify –vserver Infra-SVM –volume infra_datastore_2 –schedule sun-sat@0
+....
+
+
+==== ONTAP에서 LUN을 생성합니다
+
+두 개의 부팅 논리 유닛 번호(LUN)를 생성하려면 다음 명령을 실행합니다.
+
+....
+lun create -vserver Infra-SVM -volume esxi_boot -lun VM-Host-Infra-A -size 15GB -ostype vmware - space-reserve disabled
+lun create -vserver Infra-SVM -volume esxi_boot -lun VM-Host-Infra-B -size 15GB -ostype vmware - space-reserve disabled
+....
+
+NOTE: Cisco UCS C-Series 서버를 더 추가할 때는 부팅 LUN을 더 생성해야 합니다.
+
+
+
+==== ONTAP에서 iSCSI LIF를 생성합니다
+
+아래 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| 스토리지 노드 A iSCSI LIF01A | \<<var_NodeA_iscsi_lif01a_ip>> 를 참조하십시오 
+
+
+| 스토리지 노드 A iSCSI LIF01A 네트워크 마스크입니다 | \<<var_NodeA_iscsi_lif01a_mask>> 
+
+
+| 스토리지 노드 A iSCSI LIF01B | \<<var_NodeA_iscsi_liff 01b_ip>> 를 참조하십시오 
+
+
+| 스토리지 노드 A iSCSI LIF01B 네트워크 마스크입니다 | \<<var_NodeA_iscsi_liff 01b_mask>> 
+
+
+| 스토리지 노드 B iSCSI LIF01A | \<<var_NodeB_iscsi_liff 01a_ip>> 
+
+
+| 스토리지 노드 B iSCSI LIF01A 네트워크 마스크입니다 | \<<var_NodeB_iscsi_liff 01a_mask>> 
+
+
+| 스토리지 노드 B iSCSI LIF01B | \<<var_NodeB_iscsi_liff 01b_ip>> 
+
+
+| 스토리지 노드 B iSCSI LIF01B 네트워크 마스크입니다 | \<<var_NodeB_iscsi_liff 01b_mask>> 
+|===
+. 각 노드에 2개의 iSCSI LIF를 4개 생성합니다.
++
+....
+network interface create -vserver Infra-SVM -lif iscsi_lif01a -role data -data-protocol iscsi - home-node <<var_nodeA>> -home-port e0e-<<var_iscsi_vlan_A_id>> -address <<var_nodeA_iscsi_lif01a_ip>> -netmask <<var_nodeA_iscsi_lif01a_mask>> –status-admin up – failover-policy disabled –firewall-policy data –auto-revert false
+network interface create -vserver Infra-SVM -lif iscsi_lif01b -role data -data-protocol iscsi - home-node <<var_nodeA>> -home-port e0f-<<var_iscsi_vlan_B_id>> -address <<var_nodeA_iscsi_lif01b_ip>> -netmask <<var_nodeA_iscsi_lif01b_mask>> –status-admin up – failover-policy disabled –firewall-policy data –auto-revert false
+network interface create -vserver Infra-SVM -lif iscsi_lif02a -role data -data-protocol iscsi - home-node <<var_nodeB>> -home-port e0e-<<var_iscsi_vlan_A_id>> -address <<var_nodeB_iscsi_lif01a_ip>> -netmask <<var_nodeB_iscsi_lif01a_mask>> –status-admin up – failover-policy disabled –firewall-policy data –auto-revert false
+network interface create -vserver Infra-SVM -lif iscsi_lif02b -role data -data-protocol iscsi - home-node <<var_nodeB>> -home-port e0f-<<var_iscsi_vlan_B_id>> -address <<var_nodeB_iscsi_lif01b_ip>> -netmask <<var_nodeB_iscsi_lif01b_mask>> –status-admin up – failover-policy disabled –firewall-policy data –auto-revert false
+network interface show
+....
+
+
+
+
+==== ONTAP에서 NFS LIF를 생성합니다
+
+다음 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| 스토리지 노드 A NFS LIF 01 A IP | \<<var_NodeA_nfs_lif_01_a_ip>> 
+
+
+| 스토리지 노드 A NFS LIF 01 네트워크 마스크입니다 | \<<var_NodeA_nfs_lif_01_a_mask>> 
+
+
+| 스토리지 노드 A NFS LIF 01 b IP입니다 | \<<var_NodeA_nfs_lif_01_b_ip>> 
+
+
+| 스토리지 노드 A NFS LIF 01 b 네트워크 마스크 | \<<var_NodeA_nfs_lif_01_b_mask>> 
+
+
+| 스토리지 노드 B NFS LIF 02 A IP | \<<var_NodeB_nfs_lif_02_a_ip>> 
+
+
+| 스토리지 노드 B NFS LIF 02 A 네트워크 마스크 | \<<var_NodeB_nfs_lif_02_a_mask>> 
+
+
+| 스토리지 노드 B NFS LIF 02 b IP | \<<var_NodeB_nfs_lif_02_b_ip>> 
+
+
+| 스토리지 노드 B NFS LIF 02 b 네트워크 마스크 | \<<var_NodeB_nfs_lif_02_b_mask>> 
+|===
+. NFS LIF를 생성합니다.
++
+....
+network interface create -vserver Infra-SVM -lif nfs_lif01_a -role data -data-protocol nfs -home- node <<var_nodeA>> -home-port e0e-<<var_nfs_vlan_id>> –address <<var_nodeA_nfs_lif_01_a_ip>> - netmask << var_nodeA_nfs_lif_01_a_mask>> -status-admin up –failover-policy broadcast-domain-wide – firewall-policy data –auto-revert true
+network interface create -vserver Infra-SVM -lif nfs_lif01_b -role data -data-protocol nfs -home- node <<var_nodeA>> -home-port e0f-<<var_nfs_vlan_id>> –address <<var_nodeA_nfs_lif_01_b_ip>> - netmask << var_nodeA_nfs_lif_01_b_mask>> -status-admin up –failover-policy broadcast-domain-wide – firewall-policy data –auto-revert true
+network interface create -vserver Infra-SVM -lif nfs_lif02_a -role data -data-protocol nfs -home- node <<var_nodeB>> -home-port e0e-<<var_nfs_vlan_id>> –address <<var_nodeB_nfs_lif_02_a_ip>> - netmask << var_nodeB_nfs_lif_02_a_mask>> -status-admin up –failover-policy broadcast-domain-wide – firewall-policy data –auto-revert true
+network interface create -vserver Infra-SVM -lif nfs_lif02_b -role data -data-protocol nfs -home- node <<var_nodeB>> -home-port e0f-<<var_nfs_vlan_id>> –address <<var_nodeB_nfs_lif_02_b_ip>> - netmask << var_nodeB_nfs_lif_02_b_mask>> -status-admin up –failover-policy broadcast-domain-wide – firewall-policy data –auto-revert true
+network interface show
+....
+
+
+
+
+==== 인프라 SVM 관리자를 추가합니다
+
+다음 표에는 이 구성을 완료하는 데 필요한 정보가 나와 있습니다.
+
+|===
+| 세부 정보 | 상세 값 
+
+
+| Vsmgmt IP | \<<var_svm_mgmt_ip>> 를 입력합니다 
+
+
+| Vsmgmt 네트워크 마스크 | \<<var_svm_mgmt_mask>> 
+
+
+| Vsmgmt 기본 게이트웨이 | \<<var_svm_mgmt_gateway>> 
+|===
+인프라 SVM 관리자 및 SVM 관리 LIF를 관리 네트워크에 추가하려면 다음 단계를 완료하십시오.
+
+. 다음 명령을 실행합니다.
++
+....
+network interface create –vserver Infra-SVM –lif vsmgmt –role data –data-protocol none –home-node <<var_nodeB>> -home-port e0M –address <<var_svm_mgmt_ip>> -netmask <<var_svm_mgmt_mask>> - status-admin up –failover-policy broadcast-domain-wide –firewall-policy mgmt –auto-revert true
+....
++
+
+NOTE: 여기서 SVM 관리 IP는 스토리지 클러스터 관리 IP와 동일한 서브넷에 있어야 합니다.
+
+. 기본 경로를 생성하여 SVM 관리 인터페이스가 외부 환경에 도달할 수 있도록 합니다.
++
+....
+network route create –vserver Infra-SVM -destination 0.0.0.0/0 –gateway <<var_svm_mgmt_gateway>> network route show
+....
+. SVM 'vsadmin' 사용자의 비밀번호를 설정하고 사용자 잠금을 해제합니다.
++
+....
+security login password –username vsadmin –vserver Infra-SVM
+Enter a new password: <<var_password>>
+Enter it again: <<var_password>>
+security login unlock –username vsadmin –vserver
+....
+
+
+
+
+== Cisco UCS 서버 구성
+
+
+
+=== FlexPod Cisco UCS 기반
+
+FlexPod 환경을 위한 Cisco UCS 6324 패브릭 인터커넥트를 초기 설정합니다.
+
+이 섹션에서는 Cisco UCS Manger를 사용하여 FlexPod ROBO 환경에서 Cisco UCS를 사용하도록 구성하는 절차를 자세히 설명합니다.
+
+
+
+=== Cisco UCS 패브릭 인터커넥트 6324 A
+
+Cisco UCS는 액세스 계층 네트워킹 및 서버를 사용합니다. 이 고성능 차세대 서버 시스템은 데이터 센터에 높은 수준의 워크로드 민첩성 및 확장성을 제공합니다.
+
+Cisco UCS Manager 4.0(1b)은 패브릭 인터커넥트를 Cisco UCS 섀시에 통합하고 더 작은 구축 환경을 위한 통합 솔루션을 제공하는 6324 패브릭 인터커넥트를 지원합니다. Cisco UCS Mini는 시스템 관리를 단순화하고 저렴한 배포 비용을 절감해 줍니다.
+
+하드웨어 및 소프트웨어 구성 요소는 단일 통합 네트워크 어댑터를 통해 여러 유형의 데이터 센터 트래픽을 실행하는 Cisco의 통합 패브릭을 지원합니다.
+
+
+
+=== 초기 시스템 설치
+
+Cisco UCS 도메인에서 패브릭 인터커넥트에 처음 액세스할 때 설정 마법사가 시스템을 구성하는 데 필요한 다음 정보를 묻습니다.
+
+* 설치 방법(GUI 또는 CLI)
+* 설정 모드(전체 시스템 백업 또는 초기 설정에서 복원)
+* 시스템 구성 유형(독립 실행형 또는 클러스터 구성)
+* 시스템 이름입니다
+* 관리자 암호입니다
+* 관리 포트 IPv4 주소 및 서브넷 마스크, 또는 IPv6 주소 및 접두어
+* 기본 게이트웨이 IPv4 또는 IPv6 주소입니다
+* DNS 서버 IPv4 또는 IPv6 주소입니다
+* 기본 도메인 이름입니다
+
+
+다음 표에는 Fabric Interconnect A에서 Cisco UCS 초기 구성을 완료하는 데 필요한 정보가 나와 있습니다
+
+|===
+| 세부 정보 | 상세/값 
+
+
+| 시스템 이름  | \<<var_UCS_clustername>> 
+
+
+| 관리자 암호 | \<<var_password>> 를 참조하십시오 
+
+
+| 관리 IP 주소: 패브릭 인터커넥트 A | \<<var_ucsa_mgmt_ip>> 를 입력합니다 
+
+
+| 관리 넷마스크: Fabric Interconnect A | \<<var_ucsa_mgmt_mask>> 
+
+
+| 기본 게이트웨이: Fabric Interconnect A | \<<var_ucsa_mgmt_gateway>> 
+
+
+| 클러스터 IP 주소입니다 | \<<var_UCS_cluster_ip>> 를 참조하십시오 
+
+
+| DNS 서버 IP 주소입니다 | \<<var_nameserver_ip>> 를 참조하십시오 
+
+
+| 도메인 이름 | \<<var_domain_name>> 
+|===
+FlexPod 환경에서 사용할 Cisco UCS를 구성하려면 다음 단계를 완료하십시오.
+
+. 첫 번째 Cisco UCS 6324 Fabric Interconnect A의 콘솔 포트에 연결합니다
++
+....
+Enter the configuration method. (console/gui) ? console
+
+  Enter the setup mode; setup newly or restore from backup. (setup/restore) ? setup
+
+  You have chosen to setup a new Fabric interconnect. Continue? (y/n): y
+
+  Enforce strong password? (y/n) [y]: Enter
+
+  Enter the password for "admin":<<var_password>>
+  Confirm the password for "admin":<<var_password>>
+
+  Is this Fabric interconnect part of a cluster(select 'no' for standalone)? (yes/no) [n]: yes
+
+  Enter the switch fabric (A/B) []: A
+
+  Enter the system name: <<var_ucs_clustername>>
+
+  Physical Switch Mgmt0 IP address : <<var_ucsa_mgmt_ip>>
+
+  Physical Switch Mgmt0 IPv4 netmask : <<var_ucsa_mgmt_mask>>
+
+  IPv4 address of the default gateway : <<var_ucsa_mgmt_gateway>>
+
+  Cluster IPv4 address : <<var_ucs_cluster_ip>>
+
+  Configure the DNS Server IP address? (yes/no) [n]: y
+
+       DNS IP address : <<var_nameserver_ip>>
+
+  Configure the default domain name? (yes/no) [n]: y
+Default domain name: <<var_domain_name>>
+
+  Join centralized management environment (UCS Central)? (yes/no) [n]: no
+
+ NOTE: Cluster IP will be configured only after both Fabric Interconnects are initialized. UCSM will be functional only after peer FI is configured in clustering mode.
+
+  Apply and save the configuration (select 'no' if you want to re-enter)? (yes/no): yes
+  Applying configuration. Please wait.
+
+  Configuration file - Ok
+....
+. 콘솔에 표시된 설정을 검토합니다. 맞으면 yes로 답하여 설정을 적용하고 저장합니다.
+. 로그인 프롬프트가 구성을 저장했는지 확인할 때까지 기다립니다.
+
+
+다음 표에는 Fabric Interconnect B에서 Cisco UCS 초기 구성을 완료하는 데 필요한 정보가 나와 있습니다
+
+|===
+| 세부 정보 | 상세/값 
+
+
+| 시스템 이름  | \<<var_UCS_clustername>> 
+
+
+| 관리자 암호 | \<<var_password>> 를 참조하십시오 
+
+
+| 관리 IP 주소 - FI B | \<<var_ucsb_mgmt_ip>> 를 입력합니다 
+
+
+| 관리 넷마스크 - FI B | \<<var_ucsb_mgmt_mask>> 
+
+
+| 기본 게이트웨이 - FI B | \<<var_ucsb_mgmt_gateway>> 
+
+
+| 클러스터 IP 주소입니다 | \<<var_UCS_cluster_ip>> 를 참조하십시오 
+
+
+| DNS 서버 IP 주소입니다 | \<<var_nameserver_ip>> 를 참조하십시오 
+
+
+| 도메인 이름 | \<<var_domain_name>> 
+|===
+. 두 번째 Cisco UCS 6324 Fabric Interconnect B의 콘솔 포트에 연결합니다
++
+....
+ Enter the configuration method. (console/gui) ? console
+
+  Installer has detected the presence of a peer Fabric interconnect. This Fabric interconnect will be added to the cluster. Continue (y/n) ? y
+
+  Enter the admin password of the peer Fabric interconnect:<<var_password>>
+    Connecting to peer Fabric interconnect... done
+    Retrieving config from peer Fabric interconnect... done
+    Peer Fabric interconnect Mgmt0 IPv4 Address: <<var_ucsb_mgmt_ip>>
+    Peer Fabric interconnect Mgmt0 IPv4 Netmask: <<var_ucsb_mgmt_mask>>
+    Cluster IPv4 address: <<var_ucs_cluster_address>>
+
+    Peer FI is IPv4 Cluster enabled. Please Provide Local Fabric Interconnect Mgmt0 IPv4 Address
+
+  Physical Switch Mgmt0 IP address : <<var_ucsb_mgmt_ip>>
+
+
+  Apply and save the configuration (select 'no' if you want to re-enter)? (yes/no): yes
+  Applying configuration. Please wait.
+
+  Configuration file - Ok
+....
+. 로그인 프롬프트가 구성을 저장했는지 확인할 때까지 기다립니다.
+
+
+
+
+=== Cisco UCS Manager에 로그인합니다
+
+Cisco UCS(Unified Computing System) 환경에 로그인하려면 다음 단계를 수행하십시오.
+
+. 웹 브라우저를 열고 Cisco UCS Fabric Interconnect 클러스터 주소로 이동합니다.
++
+Cisco UCS Manager가 나타날 수 있도록 두 번째 패브릭 인터커넥트를 구성한 후 5분 이상 기다려야 할 수 있습니다.
+
+. Cisco UCS Manager 실행 링크를 클릭하여 Cisco UCS Manager를 시작합니다.
+. 필요한 보안 인증서를 수락합니다.
+. 메시지가 표시되면 사용자 이름으로 admin 을 입력하고 관리자 암호를 입력합니다.
+. Cisco UCS Manager에 로그인하려면 로그인을 클릭합니다.
+
+
+
+
+=== Cisco UCS Manager 소프트웨어 버전 4.0(1b)
+
+이 문서에서는 Cisco UCS Manager 소프트웨어 버전 4.0(1b)을 사용한다고 가정합니다. Cisco UCS Manager 소프트웨어 및 Cisco UCS 6324 Fabric Interconnect 소프트웨어를 업그레이드하려면 을 참조하십시오  https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-manager/products-installation-and-configuration-guides-list.html["Cisco UCS Manager 설치 및 업그레이드 가이드:"^]
+
+
+
+=== Cisco UCS Call Home을 구성합니다
+
+Cisco UCS Manager에서 Call Home을 구성하는 것이 좋습니다. Call Home을 구성하면 지원 케이스의 해결 속도가 빨라집니다. Call Home을 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에서 관리 를 클릭합니다.
+. 모두 > 통신 관리 > Call Home을 선택합니다.
+. 상태를 켜짐 으로 변경합니다.
+. Management(관리) 기본 설정에 따라 모든 필드를 입력하고 Save Changes(변경 사항 저장) 및 OK(확인) 를 클릭하여 Call Home 구성을 완료합니다.
+
+
+
+
+=== 키보드, 비디오, 마우스 액세스를 위한 IP 주소 블록을 추가합니다
+
+Cisco UCS 환경에서 대역내 서버 키보드, 비디오, 마우스(KVM) 액세스를 위한 IP 주소 블록을 만들려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 LAN을 클릭합니다.
+. Pools > root > IP Pools 를 확장합니다.
+. IP Pool ext-mgmt 를 마우스 오른쪽 단추로 클릭하고 IPv4 주소 블록 만들기 를 선택합니다.
+. 블록의 시작 IP 주소, 필요한 IP 주소 수, 서브넷 마스크 및 게이트웨이 정보를 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image7.png["오류: 그래픽 이미지가 없습니다"]
+
+. 확인 을 클릭하여 블럭을 작성합니다.
+. 확인 메시지에서 확인 을 클릭합니다.
+
+
+
+
+=== Cisco UCS를 NTP에 동기화합니다
+
+Cisco UCS 환경을 Nexus 스위치의 NTP 서버와 동기화하려면 다음 단계를 완료하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에서 관리 를 클릭합니다.
+. 모두 > 시간대 관리 를 확장합니다.
+. 시간대 를 선택합니다.
+. 속성 창의 표준 시간대 메뉴에서 적절한 시간대를 선택합니다.
+. 변경 내용 저장 을 클릭하고 확인 을 클릭합니다.
+. NTP 서버 추가를 클릭합니다.
+. '<switch-a-ntp-ip> 또는 <Nexus-a-mgmt-ip>'를 입력하고 확인을 클릭합니다. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image8.png["오류: 그래픽 이미지가 없습니다"]
+
+. NTP 서버 추가를 클릭합니다.
+. '<switch-b-ntp-ip>' 또는 <Nexus-B-mgmt-ip>'를 입력하고 확인을 클릭합니다. 확인 창에서 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image9.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 섀시 검색 정책을 편집합니다
+
+검색 정책을 설정하면 Cisco UCS B-Series 섀시와 추가 패브릭 익스텐더를 간편하게 추가하여 Cisco UCS C-Series에 연결할 수 있습니다. 섀시 검색 정책을 수정하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 왼쪽에서 장비 를 클릭하고 두 번째 목록에서 장비 를 선택합니다.
+. 오른쪽 창에서 Policies 탭을 선택합니다.
+. 글로벌 정책에서 섀시/FEX 검색 정책을 섀시 또는 패브릭 익스텐더(FEX)와 패브릭 인터커넥트 간에 케이블로 연결된 최소 업링크 포트 수와 일치하도록 설정합니다.
+. 링크 그룹화 기본 설정을 포트 채널로 설정합니다. 설정 중인 환경에 많은 양의 멀티캐스트 트래픽이 포함된 경우 멀티캐스트 하드웨어 해시 설정을 사용으로 설정합니다.
+. 변경 내용 저장 을 클릭합니다.
+. 확인 을 클릭합니다.
+
+
+
+
+=== 서버, 업링크 및 스토리지 포트를 설정합니다
+
+서버 및 업링크 포트를 활성화하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 탐색 창에서 장비 탭을 선택합니다.
+. 장비 > 패브릭 인터커넥트 > 패브릭 인터커넥트 A > 고정 모듈 을 확장합니다.
+. 이더넷 포트 를 확장합니다.
+. Cisco Nexus 31108 스위치에 연결된 포트 1과 2를 선택하고 마우스 오른쪽 단추를 클릭한 다음 업링크 포트로 구성 을 선택합니다.
+. 업링크 포트를 확인하려면 예를 클릭하고 확인을 클릭하십시오.
+. NetApp 스토리지 컨트롤러에 연결된 포트 3 및 4를 선택하고 마우스 오른쪽 버튼을 클릭한 다음 Configure as Appliance Port를 선택합니다.
+. 예 를 클릭하여 어플라이언스 포트를 확인합니다.
+. Configure as Appliance Port 창에서 OK를 클릭합니다. 
+. 확인을 클릭하여 확인합니다.
+. 왼쪽 창에서 Fabric Interconnect A 아래에서 고정 모듈을 선택합니다 
+. 이더넷 포트 탭의 IF 역할 열에서 포트가 올바르게 구성되었는지 확인합니다. 확장 포트에서 포트 C-Series 서버가 구성된 경우 해당 포트를 클릭하여 포트 연결을 확인합니다.
++
+image:express-direct-attach-aff220-deploy_image10.png["오류: 그래픽 이미지가 없습니다"]
+
+. 장비 > 패브릭 인터커넥트 > 패브릭 인터커넥트 B > 고정 모듈 을 확장합니다.
+. 이더넷 포트 를 확장합니다.
+. Cisco Nexus 31108 스위치에 연결된 이더넷 포트 1과 2를 선택하고 마우스 오른쪽 버튼을 클릭한 다음 업링크 포트로 구성 을 선택합니다.
+. 업링크 포트를 확인하려면 예를 클릭하고 확인을 클릭하십시오.
+. NetApp 스토리지 컨트롤러에 연결된 포트 3 및 4를 선택하고 마우스 오른쪽 버튼을 클릭한 다음 Configure as Appliance Port를 선택합니다.
+. 예 를 클릭하여 어플라이언스 포트를 확인합니다.
+. Configure as Appliance Port 창에서 OK를 클릭합니다.
+. 확인을 클릭하여 확인합니다.
+. 왼쪽 창에서 Fabric Interconnect B 아래에서 고정 모듈을 선택합니다 
+. 이더넷 포트 탭의 IF 역할 열에서 포트가 올바르게 구성되었는지 확인합니다. 확장 포트에서 포트 C-Series 서버가 구성된 경우 이를 클릭하여 포트 연결을 확인합니다.
++
+image:express-direct-attach-aff220-deploy_image11.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== Cisco Nexus 31108 스위치에 업링크 포트 채널을 생성합니다
+
+Cisco UCS 환경에서 필요한 포트 채널을 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 탐색 창에서 LAN 탭을 선택합니다.
++
+
+NOTE: 이 절차에서는 패브릭 A에서 Cisco Nexus 31108 스위치 두 개, 그리고 패브릭 B에서 Cisco Nexus 31108 스위치 두 개로 포트 채널 두 개가 생성됩니다. 표준 스위치를 사용하는 경우 이 절차를 적절히 수정합니다. 패브릭 인터커넥트에 1기가비트 이더넷(1GbE) 스위치 및 GLC-T SFP를 사용하는 경우 패브릭 상호 연결의 이더넷 포트 1/1 및 1/2의 인터페이스 속도를 1Gbps로 설정해야 합니다.
+
+. LAN > LAN 클라우드 에서 패브릭 A 트리를 확장합니다.
+. 포트 채널 을 마우스 오른쪽 단추로 클릭합니다.
+. 포트 채널 생성 을 선택합니다.
+. 포트 채널의 고유 ID로 13을 입력합니다.
+. 포트 채널 이름으로 vPC-13-Nexus를 입력합니다.
+. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image12.png["오류: 그래픽 이미지가 없습니다"]
+
+. 포트 채널에 추가할 다음 포트를 선택합니다.
++
+.. 슬롯 ID 1 및 포트 1
+.. 슬롯 ID 1 및 포트 2
+
+
+. 포트 채널에 포트를 추가하려면 >> 를 클릭합니다.
+. 마침 을 클릭하여 포트 채널을 생성합니다. 확인 을 클릭합니다.
+. 포트 채널 에서 새로 생성된 포트 채널을 선택합니다.
++
+포트 채널은 전체 상태가 UP 이어야 합니다.
+
+. 탐색 창의 LAN > LAN Cloud 아래에서 패브릭 B 트리를 확장합니다.
+. 포트 채널 을 마우스 오른쪽 단추로 클릭합니다.
+. 포트 채널 생성 을 선택합니다.
+. 포트 채널의 고유 ID로 14를 입력합니다.
+. 포트 채널 이름으로 vPC-14-Nexus를 입력합니다. 다음 을 클릭합니다.
+. 포트 채널에 추가할 다음 포트를 선택합니다.
++
+.. 슬롯 ID 1 및 포트 1
+.. 슬롯 ID 1 및 포트 2
+
+
+. 포트 채널에 포트를 추가하려면 >> 를 클릭합니다.
+. 마침 을 클릭하여 포트 채널을 생성합니다. 확인 을 클릭합니다.
+. 포트 채널 에서 새로 생성된 포트 채널을 선택합니다.
+. 포트 채널은 전체 상태가 UP 이어야 합니다.
+
+
+
+
+=== 조직 만들기(선택 사항)
+
+조직은 리소스를 구성하고 IT 조직 내의 다양한 그룹에 대한 액세스를 제한하여 컴퓨팅 리소스에 대한 멀티 테넌시를 활성화하는 데 사용됩니다.
+
+
+NOTE: 이 문서에서는 조직의 사용을 전제로 하지 않지만 이 절차에서는 조직을 만드는 방법에 대한 지침을 제공합니다.
+
+Cisco UCS 환경에서 조직을 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 창 맨 위에 있는 도구 모음의 새로 만들기 메뉴에서 조직 만들기 를 선택합니다.
+. 조직의 이름을 입력합니다.
+. 선택 사항: 조직에 대한 설명을 입력합니다. 확인 을 클릭합니다.
+. 확인 메시지에서 확인 을 클릭합니다.
+
+
+
+
+=== 스토리지 어플라이언스 포트 및 스토리지 VLAN을 구성합니다
+
+스토리지 어플라이언스 포트 및 스토리지 VLAN을 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager에서 LAN 탭을 선택합니다.
+. 어플라이언스 클라우드 확장
+. Appliances Cloud 아래에서 VLAN을 마우스 오른쪽 버튼으로 클릭합니다.
+. VLAN 생성을 선택합니다.
+. 인프라스트럭처 NFS VLAN의 이름으로 NFS-VLAN을 입력합니다.
+. 공통/전체 를 선택한 상태로 둡니다.
+. VLAN ID에 '\<<var_nfs_vlan_id>>'를 입력합니다.
+. 공유 유형을 없음으로 둡니다.
++
+image:express-direct-attach-aff220-deploy_image13.jpeg["오류: 그래픽 이미지가 없습니다"]
+
+. 확인을 클릭한 다음 확인을 다시 클릭하여 VLAN을 만듭니다.
+. Appliances Cloud 아래에서 VLAN을 마우스 오른쪽 버튼으로 클릭합니다.
+. VLAN 생성을 선택합니다.
+. 인프라 iSCSI 패브릭 A VLAN의 이름으로 iSCSI-A-VLAN을 입력합니다.
+. 공통/전체 를 선택한 상태로 둡니다.
+. VLAN ID에 '\<<var_iscsi-a_vlan_id>>'를 입력합니다.
+. 확인을 클릭한 다음 확인을 다시 클릭하여 VLAN을 만듭니다.
+. Appliances Cloud 아래에서 VLAN을 마우스 오른쪽 버튼으로 클릭합니다.
+. VLAN 생성을 선택합니다.
+. 인프라 iSCSI 패브릭 B VLAN의 이름으로 iSCSI-B-VLAN을 입력합니다.
+. 공통/전체 를 선택한 상태로 둡니다.
+. VLAN ID에 '\<<var_iscsi-b_vlan_id>>'를 입력합니다.
+. 확인을 클릭한 다음 확인을 다시 클릭하여 VLAN을 만듭니다.
+. Appliances Cloud 아래에서 VLAN을 마우스 오른쪽 버튼으로 클릭합니다.
+. VLAN 생성을 선택합니다.
+. Native VLAN의 이름으로 Native-VLAN을 입력한다.
+. 공통/전체 를 선택한 상태로 둡니다.
+. VLAN ID에 '\<<var_native_vlan_id>>'를 입력합니다.
+. 확인을 클릭한 다음 확인을 다시 클릭하여 VLAN을 만듭니다.
++
+image:express-direct-attach-aff220-deploy_image14.png["오류: 그래픽 이미지가 없습니다"]
+
+. 탐색 창의 LAN > 정책 에서 어플라이언스 를 확장하고 네트워크 제어 정책 을 마우스 오른쪽 단추로 클릭합니다.
+. 네트워크 제어 정책 생성 을 선택합니다.
+. 정책 이름을 "Enable_CDP_LLPD"로 지정하고 CDP 옆에 있는 Enabled를 선택합니다.
+. LLDP의 전송 및 수신 기능을 활성화합니다.
++
+image:express-direct-attach-aff220-deploy_image15.png["오류: 그래픽 이미지가 없습니다"]
+
+. 확인 을 클릭한 다음 확인 을 다시 클릭하여 정책을 만듭니다.
+. 탐색 창의 LAN > 어플라이언스 클라우드 에서 Fabric A 트리를 확장합니다.
+. Interfaces를 확장합니다.
+. 어플라이언스 인터페이스 1/3을 선택합니다.
+. User Label 필드에 '<storage_controller_01_name>:e0e'와 같은 스토리지 컨트롤러 포트를 나타내는 정보를 입력합니다. 변경 내용 저장 및 확인 을 클릭합니다.
+. Enable_CDP Network Control Policy를 선택하고 Save Changes and OK를 선택합니다.
+. VLAN에서 iSCSI-A-VLAN, NFS VLAN 및 기본 VLAN을 선택합니다. Native-VLAN을 Native VLAN으로 설정한다. 기본 VLAN 선택을 취소합니다.
+. 변경 내용 저장 및 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image16.png["오류: 그래픽 이미지가 없습니다"]
+
+. Fabric A 아래에서 Appliance Interface 1/4를 선택합니다
+. User Label 필드에 '<storage_controller_02_name>:e0e'와 같은 스토리지 컨트롤러 포트를 나타내는 정보를 입력합니다. 변경 내용 저장 및 확인 을 클릭합니다.
+. Enable_CDP Network Control Policy를 선택하고 Save Changes and OK를 선택합니다.
+. VLAN에서 iSCSI-A-VLAN, NFS VLAN 및 기본 VLAN을 선택합니다.
+. Native-VLAN을 Native VLAN으로 설정한다. 
+. 기본 VLAN 선택을 취소합니다.
+. 변경 내용 저장 및 확인 을 클릭합니다.
+. 탐색 창의 LAN > 어플라이언스 클라우드 에서 Fabric B 트리를 확장합니다.
+. Interfaces를 확장합니다.
+. 어플라이언스 인터페이스 1/3을 선택합니다.
+. User Label 필드에 '<storage_controller_01_name>:e0f'와 같은 스토리지 컨트롤러 포트를 나타내는 정보를 입력합니다. 변경 내용 저장 및 확인 을 클릭합니다.
+. Enable_CDP Network Control Policy를 선택하고 Save Changes and OK를 선택합니다.
+. VLAN에서 iSCSI-B-VLAN, NFS VLAN 및 기본 VLAN을 선택합니다. Native-VLAN을 Native VLAN으로 설정한다. 기본 VLAN을 선택 취소합니다.
++
+image:express-direct-attach-aff220-deploy_image17.png["오류: 그래픽 이미지가 없습니다"]
+
+. 변경 내용 저장 및 확인 을 클릭합니다.
+. Fabric B 아래에서 Appliance Interface 1/4를 선택합니다
+. User Label 필드에 '<storage_controller_02_name>:e0f'와 같은 스토리지 컨트롤러 포트를 나타내는 정보를 입력합니다. 변경 내용 저장 및 확인 을 클릭합니다.
+. Enable_CDP Network Control Policy를 선택하고 Save Changes and OK를 선택합니다.
+. VLAN에서 iSCSI-B-VLAN, NFS VLAN 및 기본 VLAN을 선택합니다. Native-VLAN을 Native VLAN으로 설정한다. 기본 VLAN을 선택 취소합니다.
+. 변경 내용 저장 및 확인 을 클릭합니다.
+
+
+
+
+=== Cisco UCS 패브릭에서 점보 프레임을 설정합니다
+
+Cisco UCS 패브릭에서 점보 프레임을 구성하고 서비스 품질을 설정하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 탐색 창에서 LAN 탭을 클릭합니다.
+. LAN > LAN Cloud > QoS System Class 를 선택합니다.
+. 오른쪽 창에서 일반 탭을 클릭합니다.
+. Best Effort 행의 MTU 열 아래에 있는 상자에 9216을 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image18.png["오류: 그래픽 이미지가 없습니다"]
+
+. 변경 내용 저장 을 클릭합니다.
+. 확인 을 클릭합니다.
+
+
+
+
+=== Cisco UCS 섀시를 확인합니다
+
+모든 Cisco UCS 섀시를 확인하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager에서 장비 탭을 선택한 다음 오른쪽의 장비 탭을 확장합니다.
+. 장비 > 섀시를 확장합니다.
+. 섀시 1에 대한 작업에서 섀시 승인 을 선택합니다.
+. 확인을 클릭한 다음 확인을 클릭하여 섀시 확인을 완료합니다.
+. 닫기 를 클릭하여 속성 창을 닫습니다.
+
+
+
+
+=== Cisco UCS 4.0(1b) 펌웨어 이미지를 로드합니다
+
+Cisco UCS Manager 소프트웨어 및 Cisco UCS Fabric Interconnect 소프트웨어를 버전 4.0(1b)으로 업그레이드하려면 을 참조하십시오 https://www.cisco.com/en/US/products/ps10281/prod_installation_guides_list.html["Cisco UCS Manager 설치 및 업그레이드 가이드"^].
+
+
+
+=== 호스트 펌웨어 패키지를 생성합니다
+
+관리자는 펌웨어 관리 정책을 사용하여 지정된 서버 구성에 해당하는 패키지를 선택할 수 있습니다. 이러한 정책에는 종종 어댑터, BIOS, 보드 컨트롤러, FC 어댑터, HBA(호스트 버스 어댑터) 옵션 ROM 및 스토리지 컨트롤러 속성에 대한 패키지가 포함됩니다.
+
+Cisco UCS 환경에서 지정된 서버 구성에 대한 펌웨어 관리 정책을 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. 호스트 펌웨어 패키지를 확장합니다.
+. 기본값을 선택합니다.
+. 작업 창에서 패키지 버전 수정을 선택합니다.
+. 두 블레이드 패키지 모두에 대해 버전 4.0(1b)을 선택합니다.
++
+image:express-direct-attach-aff220-deploy_image19.png["오류: 그래픽 이미지가 없습니다"]
+
+. OK(확인) 를 클릭한 다음 OK(확인) 를 다시 클릭하여 호스트 펌웨어 패키지를 수정합니다.
+
+
+
+
+=== MAC 주소 풀을 생성합니다
+
+Cisco UCS 환경에 필요한 MAC 주소 풀을 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 LAN을 클릭합니다.
+. Pools > root 를 선택합니다.
++
+이 절차에서는 각 스위칭 패브릭에 대해 하나씩 두 개의 MAC 주소 풀이 생성됩니다.
+
+. 루트 조직 아래에서 MAC Pools 를 마우스 오른쪽 단추로 클릭합니다.
+. MAC 주소 풀을 생성하려면 MAC 풀 생성 을 선택합니다.
+. MAC-Pool-A를 MAC 풀의 이름으로 입력합니다.
+. 선택 사항: MAC 풀에 대한 설명을 입력합니다.
+. 할당 순서 옵션으로 Sequential(순차)을 선택합니다. 다음 을 클릭합니다.
+. 추가 를 클릭합니다.
+. 시작 MAC 주소를 지정합니다.
++
+
+NOTE: FlexPod 솔루션의 경우 모든 MAC 주소를 패브릭 A 주소로 식별하기 위해 시작 MAC 주소의 마지막 옥텟에 0A를 배치하는 것이 좋습니다. 이 예에서는 첫 번째 MAC 주소로 00:25:B5:32:0A:00을 제공하는 Cisco UCS 도메인 번호 정보도 포함하는 예를 전달했습니다.
+
+. 사용 가능한 블레이드 또는 서버 리소스를 지원하기에 충분한 MAC 주소 풀의 크기를 지정합니다. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image20.png["오류: 그래픽 이미지가 없습니다"]
+
+. 마침 을 클릭합니다.
+. 확인 메시지에서 확인 을 클릭합니다.
+. 루트 조직 아래에서 MAC Pools 를 마우스 오른쪽 단추로 클릭합니다.
+. MAC 주소 풀을 생성하려면 MAC 풀 생성 을 선택합니다.
+. MAC-Pool-B를 MAC 풀의 이름으로 입력합니다.
+. 선택 사항: MAC 풀에 대한 설명을 입력합니다.
+. 할당 순서 옵션으로 Sequential(순차)을 선택합니다. 다음 을 클릭합니다.
+. 추가 를 클릭합니다.
+. 시작 MAC 주소를 지정합니다.
++
+
+NOTE: FlexPod 솔루션의 경우, 이 풀의 모든 MAC 주소를 패브릭 B 주소로 식별하기 위해 시작 MAC 주소의 마지막 옥텟에 0B를 배치하는 것이 좋습니다. 다시 한 번, 첫 번째 MAC 주소로 00:25:B5:32:0B:00을 제공하는 Cisco UCS 도메인 번호 정보를 포함하는 예를 들어보겠습니다.
+
+. 사용 가능한 블레이드 또는 서버 리소스를 지원하기에 충분한 MAC 주소 풀의 크기를 지정합니다. 확인 을 클릭합니다.
+. 마침 을 클릭합니다.
+. 확인 메시지에서 확인 을 클릭합니다.
+
+
+
+
+=== iSCSI IQN 풀을 생성합니다
+
+Cisco UCS 환경에 필요한 IQN 풀을 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에서 SAN을 클릭합니다.
+. Pools > root 를 선택합니다.
+. IQN Pools 를 마우스 오른쪽 버튼으로 클릭합니다.
+. IQN 접미사 풀 생성 을 선택하여 IQN 풀을 생성합니다.
+. IQN 풀의 이름에 IQN-Pool을 입력합니다.
+. 선택 사항: IQN 풀에 대한 설명을 입력합니다.
+. 접두사로 iqn.1992-08.com.cisco` 를 입력합니다.
+. 할당 순서에서 순차적 을 선택합니다. 다음 을 클릭합니다.
+. 추가 를 클릭합니다.
+. 접미사로 UCS-host를 입력합니다.
++
+
+NOTE: 여러 Cisco UCS 도메인을 사용 중인 경우 보다 구체적인 IQN 접미사를 사용해야 할 수 있습니다.
+
+. 보낸 사람 필드에 1을 입력합니다.
+. 사용 가능한 서버 리소스를 지원하기에 충분한 IQN 블록 크기를 지정합니다. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image21.png["오류: 그래픽 이미지가 없습니다"]
+
+. 마침 을 클릭합니다.
+
+
+
+
+=== iSCSI 이니시에이터 IP 주소 풀을 생성합니다
+
+Cisco UCS 환경에 필요한 IP 풀 iSCSI 부트를 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 LAN을 클릭합니다.
+. Pools > root 를 선택합니다.
+. IP Pools 를 마우스 오른쪽 버튼으로 클릭합니다.
+. Create IP Pool 을 선택합니다.
+. IP 풀 이름으로 iSCSI-IP-Pool-A를 입력합니다.
+. 선택 사항: IP 풀에 대한 설명을 입력합니다.
+. 할당 순서에 대해 Sequential(순차) 을 선택합니다. 다음 을 클릭합니다.
+. 추가 를 클릭하여 IP 주소 블록을 추가합니다.
+. From(보낸 사람) 필드에 iSCSI IP 주소로 할당할 범위의 시작 부분을 입력합니다.
+. 서버 수용 가능한 주소 크기로 설정합니다. 확인 을 클릭합니다.
+. 다음 을 클릭합니다.
+. 마침 을 클릭합니다.
+. IP Pools 를 마우스 오른쪽 버튼으로 클릭합니다.
+. Create IP Pool 을 선택합니다.
+. IP 풀 이름으로 iSCSI-IP-Pool-B를 입력합니다.
+. 선택 사항: IP 풀에 대한 설명을 입력합니다.
+. 할당 순서에 대해 Sequential(순차) 을 선택합니다. 다음 을 클릭합니다.
+. 추가 를 클릭하여 IP 주소 블록을 추가합니다.
+. From(보낸 사람) 필드에 iSCSI IP 주소로 할당할 범위의 시작 부분을 입력합니다.
+. 서버 수용 가능한 주소 크기로 설정합니다. 확인 을 클릭합니다.
+. 다음 을 클릭합니다.
+. 마침 을 클릭합니다.
+
+
+
+
+=== UUID 접미사 풀을 생성합니다
+
+Cisco UCS 환경에 필요한 UUID(Universally Unique Identifier) 접미사 풀을 구성하려면 다음 단계를 완료하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. Pools > root 를 선택합니다.
+. UUID 접미사 풀 을 마우스 오른쪽 버튼으로 클릭합니다.
+. UUID 접미사 풀 생성 을 선택합니다.
+. UUID 접미사 풀의 이름으로 UUID-Pool을 입력합니다.
+. 선택 사항: UUID 접미사 풀에 대한 설명을 입력합니다.
+. 원본에 구속되는 옵션에서 접두어를 유지합니다.
+. 할당 순서에 대해 Sequential(순차) 을 선택합니다.
+. 다음 을 클릭합니다.
+. 추가 를 클릭하여 UUID 블록을 추가합니다.
+. 보낸 사람 필드를 기본 설정으로 유지합니다.
+. 사용 가능한 블레이드 또는 서버 리소스를 지원하기에 충분한 UUID 블록의 크기를 지정합니다. 확인 을 클릭합니다.
+. 마침 을 클릭합니다.
+. 확인 을 클릭합니다.
+
+
+
+
+=== 서버 풀을 생성합니다
+
+Cisco UCS 환경에 필요한 서버 풀을 구성하려면 다음 단계를 수행하십시오.
+
+
+NOTE: 사용자 환경에 필요한 세분화 수준을 달성하려면 고유한 서버 풀을 생성하는 것이 좋습니다.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. Pools > root 를 선택합니다.
+. 서버 풀 을 마우스 오른쪽 단추로 클릭합니다.
+. Create Server Pool 을 선택합니다.
+. 서버 풀의 이름으로 Infra-Pool을 입력합니다.
+. 선택 사항: 서버 풀에 대한 설명을 입력합니다. 다음 을 클릭합니다.
+. VMware 관리 클러스터에 사용할 서버를 두 개 이상 선택하고 >> 를 클릭하여 Infra-Pool의 서버 풀에 추가합니다.
+. 마침 을 클릭합니다.
+. 확인 을 클릭합니다.
+
+
+
+
+=== Cisco Discovery Protocol 및 Link Layer Discovery Protocol에 대한 네트워크 제어 정책을 생성합니다
+
+CDP(Cisco Discovery Protocol) 및 LLDP(Link Layer Discovery Protocol)에 대한 네트워크 제어 정책을 만들려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 LAN을 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. 네트워크 제어 정책 을 마우스 오른쪽 단추로 클릭합니다.
+. 네트워크 제어 정책 생성 을 선택합니다.
+. Enable-CDP-LLDP 정책 이름을 입력합니다.
+. CDP의 경우 사용 옵션을 선택합니다.
+. LLDP의 경우 아래로 스크롤하여 전송 및 수신 모두에 대해 사용 을 선택합니다.
+. 확인 을 클릭하여 네트워크 제어 정책을 생성합니다. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image22.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 전원 제어 정책을 생성합니다
+
+Cisco UCS 환경에 대한 전원 제어 정책을 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에서 서버 탭을 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. 전원 제어 정책 을 마우스 오른쪽 단추로 클릭합니다.
+. 전원 제어 정책 생성 을 선택합니다.
+. 전원 제어 정책 이름으로 No-Power-Cap을 입력합니다.
+. 전력 제한 설정을 캡 없음 으로 변경합니다.
+. 확인 을 클릭하여 전원 제어 정책을 만듭니다. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image23.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 서버 풀 검증 정책 생성(선택 사항)
+
+Cisco UCS 환경에 대해 선택적인 서버 풀 검증 정책을 생성하려면 다음 단계를 완료하십시오.
+
+
+NOTE: 이 예에서는 Intel E2660 v4 Xeon Broadwell 프로세서를 사용하는 Cisco UCS B-Series 서버에 대한 정책을 생성합니다.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. 서버 풀 정책 자격 을 선택합니다.
+. Create Server Pool Policy Qualification 또는 Add를 선택합니다.
+. 정책 이름을 인텔 으로 지정합니다.
+. Create CPU/Cores Qualifications(CPU/코어 자격 생성) 를 선택합니다.
+. 프로세서/아키텍처로 제온을 선택합니다.
+. 프로세스 ID(PID)로 '<UCS-CPU-PID>'를 입력합니다.
+. 확인 을 클릭하여 CPU/코어 조건을 만듭니다.
+. 확인 을 클릭하여 정책을 생성한 다음 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image24.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 서버 BIOS 정책을 만듭니다
+
+Cisco UCS 환경에 대한 서버 BIOS 정책을 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. BIOS 정책을 마우스 오른쪽 단추로 클릭합니다.
+. BIOS 정책 생성 을 선택합니다.
+. BIOS 정책 이름으로 VM-Host를 입력합니다.
+. 자동 부팅 설정을 사용 안 함으로 변경합니다.
+. 정합성 보장 장치 이름을 사용으로 변경합니다.
++
+image:express-direct-attach-aff220-deploy_image25.png["오류: 그래픽 이미지가 없습니다"]
+
+. 프로세서 탭을 선택하고 다음 매개 변수를 설정합니다.
++
+** 프로세서 C 상태: 비활성화됨
+** 처리기 C1E: 비활성화
+** 프로세서 C3 보고서: 사용 안 함
+** 프로세서 C7 보고서: 사용 안 함
++
+image:express-direct-attach-aff220-deploy_image26.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 나머지 프로세서 옵션까지 아래로 스크롤하여 다음 매개변수를 설정합니다.
++
+** 에너지 성능: 성능
+** Frequency Floor Override: enabled(주파수 플로어 재설정
+** DRAM 클럭 제한: 성능
++
+image:express-direct-attach-aff220-deploy_image27.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. RAS 메모리 를 클릭하고 다음 매개변수를 설정합니다.
++
+** LV DDR 모드: 성능 모드
++
+image:express-direct-attach-aff220-deploy_image28.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 마침 을 클릭하여 BIOS 정책을 만듭니다.
+. 확인 을 클릭합니다.
+
+
+
+
+=== 기본 유지 관리 정책을 업데이트합니다
+
+기본 유지 관리 정책을 업데이트하려면 다음 단계를 완료하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. Maintenance Policies > default 를 선택합니다.
+. 재부팅 정책을 사용자 승인 으로 변경합니다.
+. 다음 부팅 시 를 선택하여 유지 관리 창을 서버 관리자에게 위임합니다.
++
+image:express-direct-attach-aff220-deploy_image29.png["오류: 그래픽 이미지가 없습니다"]
+
+. 변경 내용 저장 을 클릭합니다.
+. 확인 을 클릭하여 변경 사항을 적용합니다.
+
+
+
+
+=== vNIC 템플릿을 생성합니다
+
+Cisco UCS 환경에 대한 vNIC(Virtual Network Interface Card) 템플릿을 여러 개 생성하려면 이 섹션에 설명된 절차를 완료하십시오.
+
+
+NOTE: 총 4개의 vNIC 템플릿이 생성됩니다.
+
+
+
+==== 인프라 vNIC를 생성합니다
+
+인프라 vNIC를 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 LAN을 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. vNIC 템플릿을 마우스 오른쪽 버튼으로 클릭합니다.
+. vNIC 템플릿 생성 을 선택합니다.
+. vNIC 템플릿 이름으로 Site-XX-vNIC_A를 입력합니다.
+. 템플릿 유형으로 Update-template(업데이트-템플릿) 을 선택합니다.
+. Fabric ID로 Fabric A를 선택합니다
+. Enable Failover 옵션이 선택되지 않았는지 확인합니다.
+. 중복 유형으로 기본 템플릿을 선택합니다.
+. 피어 중복 템플릿은 "<설정되지 않음>"으로 설정된 상태로 둡니다.
+. 대상에서 어댑터 옵션만 선택되어 있는지 확인합니다.
+. Native-VLAN을 native VLAN으로 설정한다.
+. CDN 소스로 vNIC 이름 을 선택합니다.
+. MTU의 경우 9000을 입력합니다.
+. 허용된 VLAN에서 'Native-VLAN, Site-XX-IB-MGMT, Site-XX-NFS, Site-XX-VM-Traffic'을 선택합니다. 및 Site-XX-vMotion을 참조하십시오. Ctrl 키를 사용하여 이 항목을 여러 개 선택합니다.
+. 선택 을 클릭합니다. 이제 이러한 VLAN이 선택한 VLAN 아래에 나타납니다.
+. MAC Pool 목록에서 MAC_Pool_A를 선택합니다.
+. 네트워크 제어 정책 목록에서 Pool-A를 선택합니다
+. 네트워크 제어 정책 목록에서 Enable-CDP-LLDP 를 선택합니다.
+. 확인 을 클릭하여 vNIC 템플릿을 생성합니다.
+. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image30.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+보조 중복 템플릿 Infra-B를 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 LAN을 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. vNIC 템플릿을 마우스 오른쪽 버튼으로 클릭합니다.
+. vNIC 템플릿 생성 을 선택합니다.
+. vNIC 템플릿 이름으로 Site-XX-vNIC_B를 입력합니다.
+. 템플릿 유형으로 Update-template(업데이트-템플릿) 을 선택합니다.
+. Fabric ID로 Fabric B를 선택합니다
+. Enable Failover 옵션을 선택합니다.
++
+
+NOTE: 페일오버를 선택하는 것은 하드웨어 레벨에서 이를 처리하고 가상 스위치에서 NIC 장애가 감지되지 않을 가능성을 방지함으로써 링크 페일오버 시간을 개선하는 중요한 단계입니다.
+
+. 중복 유형으로 기본 템플릿을 선택합니다.
+. 피어 이중화 템플릿은 "vNIC_Template_A"로 설정된 상태로 둡니다.
+. 대상에서 어댑터 옵션만 선택되어 있는지 확인합니다.
+. Native-VLAN을 native VLAN으로 설정한다.
+. CDN 소스로 vNIC 이름 을 선택합니다.
+. MTU의 경우 '9000'을 입력합니다.
+. 허용된 VLAN에서 'Native-VLAN, Site-XX-IB-MGMT, Site-XX-NFS, Site-XX-VM-Traffic'을 선택합니다. 및 Site-XX-vMotion을 참조하십시오. Ctrl 키를 사용하여 이 항목을 여러 개 선택합니다.
+. 선택 을 클릭합니다. 이제 이러한 VLAN이 선택한 VLAN 아래에 나타납니다.
+. MAC Pool 목록에서 MAC_Pool_B를 선택합니다.
+. 네트워크 제어 정책 목록에서 Pool-B를 선택합니다
+. 네트워크 제어 정책 목록에서 Enable-CDP-LLDP 를 선택합니다. 
+. 확인 을 클릭하여 vNIC 템플릿을 생성합니다.
+. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image31.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+==== iSCSI vNIC를 생성합니다
+
+iSCSI vNIC를 생성하려면 다음 단계를 수행하십시오.
+
+. 왼쪽에서 LAN 을 선택합니다.
+. 정책 > 루트를 선택합니다.
+. vNIC 템플릿을 마우스 오른쪽 버튼으로 클릭합니다.
+. vNIC 템플릿 생성 을 선택합니다. 
+. vNIC 템플릿 이름으로 Site-01-iscsi_a를 입력합니다.
+. 패브릭 A 를 선택합니다 Enable Failover 옵션을 선택하지 마십시오. 
+. 중복성 유형을 중복되지 않음 으로 설정합니다.
+. 대상에서 어댑터 옵션만 선택되어 있는지 확인합니다.
+. 템플릿 유형으로 템플릿 업데이트를 선택합니다.
+. VLAN에서 Site-01-iSCSI_A_VLAN만 선택합니다.
+. Site-01-iscsi_a_vlan을 기본 VLAN으로 선택합니다.
+. CDN 소스에 대해 vNIC 이름을 설정된 상태로 둡니다. 
+. MTU에서 9000을 입력합니다. 
+. MAC Pool 목록에서 MAC-Pool-A를 선택합니다
+. 네트워크 제어 정책 목록에서 Enable-CDP-LLDP 를 선택합니다.
+. 확인 을 클릭하여 vNIC 템플릿 생성을 완료합니다.
+. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image32.png["오류: 그래픽 이미지가 없습니다"]
+
+. 왼쪽에서 LAN 을 선택합니다.
+. 정책 > 루트를 선택합니다.
+. vNIC 템플릿을 마우스 오른쪽 버튼으로 클릭합니다.
+. vNIC 템플릿 생성 을 선택합니다.
+. vNIC 템플릿 이름으로 Site-01-ISCSI_B를 입력합니다.
+. Fabric B를 선택합니다 Enable Failover 옵션을 선택하지 마십시오.
+. 중복성 유형을 중복되지 않음 으로 설정합니다.
+. 대상에서 어댑터 옵션만 선택되어 있는지 확인합니다.
+. 템플릿 유형으로 템플릿 업데이트를 선택합니다.
+. VLAN에서 'ite-01-iscsi_B_vlan'만 선택합니다.
+. 네이티브 VLAN으로 Site-01-ISCSI_B_VLAN을 선택한다.
+. CDN 소스에 대해 vNIC 이름을 설정된 상태로 둡니다.
+. MTU에서 9000을 입력합니다.
+. MAC Pool 목록에서 MAC-Pool-B를 선택합니다. 
+. Network Control Policy 목록에서 Enable-CDP-LLDP를 선택합니다.
+. 확인 을 클릭하여 vNIC 템플릿 생성을 완료합니다.
+. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image33.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== iSCSI 부트에 대한 LAN 연결 정책을 생성합니다
+
+이 절차는 두 개의 iSCSI LIF가 클러스터 노드 1('iSCSI_liff 01a' 및 'iscsi_liff 01b')에 있고 두 개의 iSCSI LIF가 클러스터 노드 2('iscsi_liff 02a' 및 'iscsi_liff')에 있는 Cisco UCS 환경에 적용됩니다. 또한, LIF가 패브릭 A(Cisco UCS 6324 A)에 연결되고 B LIF가 패브릭 B(Cisco UCS 6324 B)에 연결된 것으로 가정합니다.
+
+필요한 인프라 LAN 연결 정책을 구성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 LAN을 클릭합니다.
+. LAN > 정책 > 루트를 선택합니다.
+. LAN 연결 정책을 마우스 오른쪽 단추로 클릭합니다.
+. LAN 연결 정책 생성 을 선택합니다.
+. 정책 이름으로 사이트 XX-Fabric-A를 입력합니다.
+. vNIC를 추가하려면 상단 추가 옵션을 클릭합니다.
+. vNIC 생성 대화 상자에서 vNIC 이름으로 'ite-01-vNIC-A'를 입력합니다.
+. vNIC 템플릿 사용 옵션을 선택합니다.
+. vNIC 템플릿 목록에서 'vNIC_Template_A'를 선택합니다.
+. 어댑터 정책 드롭다운 목록에서 VMware 를 선택합니다.
+. 확인 을 클릭하여 이 vNIC를 정책에 추가합니다.
++
+image:express-direct-attach-aff220-deploy_image34.png["오류: 그래픽 이미지가 없습니다"]
+
+. vNIC를 추가하려면 상단 추가 옵션을 클릭합니다.
+. vNIC 생성 대화 상자에서 vNIC 이름으로 'ite-01-vNIC-B'를 입력합니다.
+. vNIC 템플릿 사용 옵션을 선택합니다.
+. vNIC 템플릿 목록에서 'vNIC_Template_B'를 선택합니다.
+. 어댑터 정책 드롭다운 목록에서 VMware 를 선택합니다.
+. 확인 을 클릭하여 이 vNIC를 정책에 추가합니다.
+. vNIC를 추가하려면 상단 추가 옵션을 클릭합니다.
+. vNIC 생성 대화 상자에서 vNIC 이름으로 Site-01-iscsi-A를 입력합니다.
+. vNIC 템플릿 사용 옵션을 선택합니다.
+. vNIC 템플릿 목록에서 '사이트-01-iSCSI-A'를 선택합니다.
+. 어댑터 정책 드롭다운 목록에서 VMware 를 선택합니다.
+. 확인 을 클릭하여 이 vNIC를 정책에 추가합니다.
+. vNIC를 추가하려면 상단 추가 옵션을 클릭합니다.
+. vNIC 생성 대화 상자에서 vNIC 이름으로 Site-01-iscsi-B를 입력합니다.
+. vNIC 템플릿 사용 옵션을 선택합니다.
+. vNIC 템플릿 목록에서 '사이트-01-iSCSI-B'를 선택합니다.
+. 어댑터 정책 드롭다운 목록에서 VMware 를 선택합니다.
+. 확인 을 클릭하여 이 vNIC를 정책에 추가합니다.
+. iSCSI vNIC 추가 옵션을 확장합니다.
+. iSCSI vNIC 공간 추가 에서 아래쪽 추가 옵션을 클릭하여 iSCSI vNIC를 추가합니다.
+. iSCSI vNIC 생성 대화 상자에서 vNIC 이름으로 Site-01-iscsi-A를 입력합니다.
+. 오버레이 vNIC를 'ite-01-iscsi-a'로 선택합니다.
+. iSCSI 어댑터 정책 옵션을 Not Set로 둡니다.
+. VLAN을 Site-01-ISCSI-Site-A(NATIVE)로 선택합니다.
+. MAC 주소 할당으로 없음(기본값: 사용)을 선택합니다.
+. 확인 을 클릭하여 iSCSI vNIC를 정책에 추가합니다.
++
+image:express-direct-attach-aff220-deploy_image35.png["오류: 그래픽 이미지가 없습니다"]
+
+. iSCSI vNIC 공간 추가 에서 아래쪽 추가 옵션을 클릭하여 iSCSI vNIC를 추가합니다.
+. iSCSI vNIC 생성 대화 상자에서 vNIC 이름으로 Site-01-iscsi-B를 입력합니다.
+. 오버레이 vNIC를 Site-01-iSCSI-B로 선택합니다
+. iSCSI 어댑터 정책 옵션을 Not Set로 둡니다.
+. VLAN을 Site-01-iSCSI-Site-B(NATIVE)로 선택합니다.
+. MAC 주소 할당으로 없음(기본값: 사용)을 선택합니다.
+. 확인 을 클릭하여 iSCSI vNIC를 정책에 추가합니다.
+. 변경 내용 저장 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image36.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+==== VMware ESXi 6.7U1 설치 부팅에 대한 vMedia 정책을 생성합니다
+
+NetApp Data ONTAP 설정 단계에서는 NetApp Data ONTAP 및 VMware 소프트웨어를 호스팅하는 데 사용되는 HTTP 웹 서버가 필요합니다. 여기서 생성된 vMedia 정책은 VMware ESXi 6을 매핑합니다. 7U1 ISO를 클릭하여 ESXi 설치를 부팅합니다. 이 정책을 만들려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에서 서버 를 선택합니다.
+. 정책 > 루트를 선택합니다.
+. vMedia 정책 을 선택합니다.
+. 추가 를 클릭하여 새 vMedia 정책을 생성합니다.
+. 정책 이름을 ESXi-6.7U1-HTTP 로 지정합니다.
+. 설명 필드에 ESXi 6.7U1의 마운트 ISO를 입력합니다.
+. 마운트 실패 시 재시도를 위해 예를 선택하십시오.
+. 추가 를 클릭합니다.
+. 마운트 ESXi-6.7U1-HTTP의 이름을 지정합니다.
+. CDD Device Type을 선택한다.
+. HTTP 프로토콜을 선택합니다.
+. 웹 서버의 IP 주소를 입력합니다.
++
+
+NOTE: DNS 서버 IP가 이전에 KVM IP에 입력되지 않았으므로 호스트 이름 대신 웹 서버의 IP를 입력해야 합니다.
+
+. 원격 파일 이름으로 VMware-VMvisor-Installer-6.7.0.update01-10302608.x86_64.iso를 입력합니다.
++
+이 VMware ESXi 6.7U1 ISO는 에서 다운로드할 수 있습니다 https://my.vmware.com/group/vmware/details?downloadGroup=ESXI650A&productId=614["VMware 다운로드"^].
+
+. 원격 경로 필드에 ISO 파일의 웹 서버 경로를 입력합니다.
+. OK를 클릭하여 vMedia Mount를 생성합니다.
+. 확인 을 클릭한 다음 확인 을 다시 클릭하여 vMedia 정책 생성을 완료합니다.
++
+Cisco UCS 환경에 추가된 새 서버의 경우 vMedia 서비스 프로필 템플릿을 사용하여 ESXi 호스트를 설치할 수 있습니다. SAN 마운트 디스크가 비어 있기 때문에 첫 번째 부팅 시 호스트가 ESXi 설치 프로그램으로 부팅됩니다. ESXi가 설치된 후에는 부팅 디스크에 액세스할 수 있는 한 vMedia가 참조되지 않습니다.
+
++
+image:express-direct-attach-aff220-deploy_image37.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== iSCSI 부트 정책을 생성합니다
+
+이 섹션의 절차는 두 개의 iSCSI 논리 인터페이스(LIF)가 클러스터 노드 1('iSCSI_liff 01a' 및 'iSCSI_liff')에 있고 두 개의 iSCSI LIF가 클러스터 노드 2('iscsi_liff 02a' 및 'iscsi_liff')에 있는 Cisco UCS 환경에 적용됩니다. 또한, LIF가 패브릭 A(Cisco UCS Fabric Interconnect A)에 연결되고 B LIF는 패브릭 B(Cisco UCS Fabric Interconnect B)에 연결되어 있다고 가정합니다.
+
+
+NOTE: 이 절차에서 하나의 부팅 정책이 구성됩니다. 이 정책은 기본 대상을 "iscsi_liff 01a"로 구성합니다.
+
+Cisco UCS 환경에 대한 부팅 정책을 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. 정책 > 루트를 선택합니다.
+. Boot Policies 를 마우스 오른쪽 버튼으로 클릭합니다.
+. Create Boot Policy를 선택합니다.
+. 부팅 정책의 이름으로 '사이트-01-Fabric-A'를 입력합니다.
+. 선택 사항: 부팅 정책에 대한 설명을 입력합니다.
+. Boot Order Change(부팅 순서 변경) 옵션의 Reboot(재부팅) 옵션을 선택하지 않은 상태로 유지합니다.
+. 부팅 모드가 레거시입니다.
+. 로컬 장치 드롭다운 메뉴를 확장하고 원격 CD/DVD 추가 를 선택합니다.
+. iSCSI vNIC 드롭다운 메뉴를 확장하고 iSCSI 부팅 추가 를 선택합니다.
+. Add iSCSI Boot 대화 상자에서 'ite-01-iscsi-a'를 입력합니다. 확인 을 클릭합니다.
+. Add iSCSI Boot 를 선택합니다.
+. Add iSCSI Boot 대화 상자에서 'ite-01-iscsi-B'를 입력합니다. 확인 을 클릭합니다.
+. 확인 을 클릭하여 정책을 생성합니다.
++
+image:express-direct-attach-aff220-deploy_image38.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+=== 서비스 프로필 템플릿을 생성합니다
+
+이 절차에서는 Fabric A 부팅을 위해 인프라스트럭처 ESXi 호스트에 대한 서비스 프로필 템플릿 하나가 생성됩니다.
+
+서비스 프로필 템플릿을 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager의 경우 왼쪽에 있는 서버 를 클릭합니다.
+. 서비스 프로필 템플릿 > 루트 를 선택합니다.
+. root 를 마우스 오른쪽 단추로 클릭합니다.
+. 서비스 프로필 템플릿 생성 을 선택하여 서비스 프로필 템플릿 생성 마법사를 엽니다.
+. 서비스 프로필 템플릿의 이름으로 VM-Host-Infra-iSCSI-A를 입력합니다. 이 서비스 프로필 템플릿은 패브릭 A의 스토리지 노드 1에서 부팅하도록 구성됩니다
+. 템플릿 업데이트 옵션을 선택합니다.
+. UUID에서 UUID 풀로 UUID_Pool을 선택합니다. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image39.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+==== 스토리지 프로비저닝을 구성합니다
+
+스토리지 프로비저닝을 구성하려면 다음 단계를 수행하십시오.
+
+. 물리적 디스크가 없는 서버가 있는 경우 로컬 디스크 구성 정책 을 클릭하고 SAN 부팅 로컬 스토리지 정책 을 선택합니다. 그렇지 않으면 기본 로컬 스토리지 정책을 선택합니다.
+. 다음 을 클릭합니다.
+
+
+
+
+==== 네트워킹 옵션을 구성합니다
+
+네트워킹 옵션을 구성하려면 다음 단계를 수행하십시오.
+
+. 동적 vNIC 연결 정책의 기본 설정을 유지합니다.
+. 연결 정책 사용 옵션을 선택하여 LAN 연결을 구성합니다.
+. LAN 연결 정책 드롭다운 메뉴에서 iSCSI - 부팅 을 선택합니다.
+. 이니시에이터 이름 할당에서 IQN_Pool을 선택합니다. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image40.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+==== SAN 연결을 구성합니다
+
+SAN 연결을 구성하려면 다음 단계를 수행하십시오.
+
+. vHBA의 경우 SAN 연결을 어떻게 구성하시겠습니까? 에서 아니요 를 선택합니다. 옵션을 선택합니다.
+. 다음 을 클릭합니다.
+
+
+
+
+==== 조닝을 구성합니다
+
+조닝을 구성하려면 다음을 클릭합니다.
+
+
+
+==== vNIC/HBA 배치를 구성합니다
+
+vNIC/HBA 배치를 구성하려면 다음 단계를 수행하십시오.
+
+. Select Placement(배치 선택) 드롭다운 목록에서 배치 정책을 Let System Perform Placement(배치 수행) 로 둡니다.
+. 다음 을 클릭합니다.
+
+
+
+
+==== vMedia 정책을 구성합니다
+
+vMedia 정책을 구성하려면 다음 단계를 수행하십시오.
+
+. vMedia 정책을 선택하지 마십시오.
+. 다음 을 클릭합니다.
+
+
+
+
+==== 서버 부팅 순서를 구성합니다
+
+서버 부팅 순서를 구성하려면 다음 단계를 수행하십시오.
+
+. Boot Policy에서 Boot-Fabric-A를 선택합니다.
++
+image:express-direct-attach-aff220-deploy_image41.png["오류: 그래픽 이미지가 없습니다"]
+
+. 보or 순서에서 '사이트-01-iSCSI-A'를 선택합니다.
+. Set iSCSI Boot Parameters(iSCSI 부팅 매개변수 설정) 를 클릭합니다.
+. iSCSI 부트 매개 변수 설정 대화 상자에서 환경에 적합한 인증 프로파일을 별도로 만들지 않은 경우 인증 프로파일 옵션을 설정하지 않음 으로 둡니다.
+. 이전 단계에서 정의한 단일 서비스 프로필 이니시에이터 이름을 사용하려면 이니시에이터 이름 할당 대화 상자를 Not Set로 두십시오.
+. "iscsi_ip_Pool_a"를 초기자 IP 주소 정책으로 설정합니다.
+. iSCSI 정적 타겟 인터페이스 옵션을 선택합니다.
+. 추가 를 클릭합니다.
+. iSCSI 타겟 이름을 입력합니다. Infra-SVM의 iSCSI 대상 이름을 얻으려면 스토리지 클러스터 관리 인터페이스에 로그인하고 "iscsi show" 명령을 실행합니다.
++
+image:express-direct-attach-aff220-deploy_image42.png["오류: 그래픽 이미지가 없습니다"]
+
+. IPv4 Address 필드에 iSCSI_lif_02a IP 주소를 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image43.png["오류: 그래픽 이미지가 없습니다"]
+
+. 확인 을 클릭하여 iSCSI 정적 대상을 추가합니다.
+. 추가 를 클릭합니다.
+. iSCSI 타겟 이름을 입력합니다.
+. IPv4 Address 필드에 iSCSI_lif_01A IP 주소를 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image44.png["오류: 그래픽 이미지가 없습니다"]
+
+. 확인 을 클릭하여 iSCSI 정적 대상을 추가합니다.
++
+image:express-direct-attach-aff220-deploy_image45.png["오류: 그래픽 이미지가 없습니다"]
+
++
+
+NOTE: 타겟 IP는 스토리지 노드 02 IP를 먼저, 스토리지 노드 01 IP와 함께 배치되었습니다. 부팅 LUN이 노드 01에 있다고 가정합니다. 이 절차의 순서가 사용되는 경우 호스트는 노드 01의 경로를 사용하여 부팅됩니다.
+
+. 부팅 순서에서 iSCSI-B-vNIC를 선택합니다.
+. Set iSCSI Boot Parameters(iSCSI 부팅 매개변수 설정) 를 클릭합니다.
+. iSCSI 부트 매개 변수 설정 대화 상자에서 환경에 적합한 인증 프로파일을 별도로 만들지 않은 경우 인증 프로파일 옵션을 설정되지 않음 으로 둡니다.
+. 이전 단계에서 정의한 단일 서비스 프로필 이니시에이터 이름을 사용하려면 이니시에이터 이름 할당 대화 상자를 Not Set로 두십시오.
+. ISCSI_IP_Pool_B를 초기자 IP 주소 정책으로 설정합니다.
+. iSCSI 정적 타겟 인터페이스 옵션을 선택합니다.
+. 추가 를 클릭합니다.
+. iSCSI 타겟 이름을 입력합니다. Infra-SVM의 iSCSI 대상 이름을 얻으려면 스토리지 클러스터 관리 인터페이스에 로그인하고 "iscsi show" 명령을 실행합니다.
++
+image:express-direct-attach-aff220-deploy_image42.png["오류: 그래픽 이미지가 없습니다"]
+
+. IPv4 Address 필드에 iSCSI_lif_02B의 IP 주소를 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image46.png["오류: 그래픽 이미지가 없습니다"]
+
+. 확인 을 클릭하여 iSCSI 정적 대상을 추가합니다.
+. 추가 를 클릭합니다.
+. iSCSI 타겟 이름을 입력합니다.
+. IPv4 Address 필드에 iSCSI_lif_01B IP 주소를 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image47.png["오류: 그래픽 이미지가 없습니다"]
+
+. 확인 을 클릭하여 iSCSI 정적 대상을 추가합니다.
++
+image:express-direct-attach-aff220-deploy_image48.png["오류: 그래픽 이미지가 없습니다"]
+
+. 다음 을 클릭합니다.
+
+
+
+
+==== 유지 관리 정책을 구성합니다
+
+유지보수 정책을 구성하려면 다음 단계를 완료하십시오.
+
+. 유지보수 정책을 기본값으로 변경합니다.
++
+image:express-direct-attach-aff220-deploy_image49.png["오류: 그래픽 이미지가 없습니다"]
+
+. 다음 을 클릭합니다.
+
+
+
+
+==== 서버 할당을 구성합니다
+
+서버 할당을 구성하려면 다음 단계를 완료하십시오.
+
+. 풀 할당 목록에서 Infra-Pool을 선택합니다.
+. 프로파일이 서버에 연결될 때 적용될 전원 상태로 down(끄기)을 선택합니다.
+. 페이지 하단의 펌웨어 관리 를 확장하고 기본 정책을 선택합니다.
++
+image:express-direct-attach-aff220-deploy_image50.png["오류: 그래픽 이미지가 없습니다"]
+
+. 다음 을 클릭합니다.
+
+
+
+
+==== 운영 정책을 구성합니다
+
+운영 정책을 구성하려면 다음 단계를 완료하십시오.
+
+. BIOS 정책 드롭다운 목록에서 VM-호스트 를 선택합니다.
+. 전원 제어 정책 구성 을 확장하고 전원 제어 정책 드롭다운 목록에서 전원이 들어오지 않음(No Power-Cap) 을 선택합니다.
++
+image:express-direct-attach-aff220-deploy_image51.png["오류: 그래픽 이미지가 없습니다"]
+
+. 마침 을 클릭하여 서비스 프로필 템플릿을 생성합니다.
+. 확인 메시지에서 확인 을 클릭합니다.
+
+
+
+
+=== vMedia 지원 서비스 프로필 템플릿을 생성합니다
+
+vMedia가 활성화된 서비스 프로필 템플릿을 생성하려면 다음 단계를 수행하십시오.
+
+. UCS Manager에 연결하고 왼쪽에서 서버 를 클릭합니다.
+. 서비스 프로필 템플릿 > 루트 > 서비스 템플릿 VM-호스트-인프라스트럭처-iSCSI-A를 선택합니다
+. VM-Host-Infra-iSCSI-A를 마우스 오른쪽 버튼으로 클릭하고 Create a Clone을 선택합니다.
+. 클론 이름을 VM-Host-Infra-iSCSI-A-VM으로 지정합니다.
+. 새로 생성된 VM-Host-Infra-iSCSI-A-VM을 선택하고 오른쪽에서 vMedia Policy 탭을 선택합니다.
+. vMedia 정책 수정을 클릭합니다.
+. ESXi-6을 선택합니다. 7U1-HTTP vMedia 정책 을 클릭하고 확인 을 클릭합니다.
+. 확인을 클릭하여 확인합니다.
+
+
+
+
+=== 서비스 프로필을 생성합니다
+
+서비스 프로필 템플릿에서 서비스 프로필을 생성하려면 다음 단계를 수행하십시오.
+
+. Cisco UCS Manager에 연결하고 왼쪽에서 서버 를 클릭합니다.
+. Servers > Service Profile Templates > root > Service Template <name> 을 확장합니다.
+. 동작에서 템플릿으로부터 서비스 프로필 만들기를 클릭하고 다음 단계를 경쟁합니다.
++
+.. 이름 접두사로 'ite-01-infra-0'을 입력합니다.
+.. 생성할 인스턴스 수로 2를 입력합니다.
+.. ORG로 root를 선택합니다.
+.. 확인 을 클릭하여 서비스 프로필을 만듭니다.
++
+image:express-direct-attach-aff220-deploy_image52.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 확인 메시지에서 확인 을 클릭합니다.
+. 서비스프로필 ite-01-Infra-01과 Site-01-Infra-02가 만들어졌는지 확인한다.
++
+
+NOTE: 서비스 프로필은 할당된 서버 풀의 서버와 자동으로 연결됩니다.
+
+
+
+
+
+== 스토리지 구성 2부: 부팅 LUN 및 이니시에이터 그룹
+
+
+
+=== ONTAP 부팅 저장소 설정
+
+
+
+==== 이니시에이터 그룹을 생성합니다
+
+이니시에이터 그룹(igroup)을 생성하려면 다음 단계를 완료합니다.
+
+. 클러스터 관리 노드의 SSH 연결에서 다음 명령을 실행합니다.
++
+....
+igroup create –vserver Infra-SVM –igroup VM-Host-Infra-01 –protocol iscsi –ostype vmware –initiator <vm-host-infra-01-iqn>
+igroup create –vserver Infra-SVM –igroup VM-Host-Infra-02 –protocol iscsi –ostype vmware –initiator <vm-host-infra-02-iqn>
+igroup create –vserver Infra-SVM –igroup MGMT-Hosts –protocol iscsi –ostype vmware –initiator <vm-host-infra-01-iqn>, <vm-host-infra-02-iqn>
+....
++
+
+NOTE: IQN 정보에 대해서는 표 1 및 표 2에 나열된 값을 사용합니다.
+
+. 방금 작성한 3개 igroup을 보려면 'igroup show' 명령을 실행합니다.
+
+
+
+
+==== 부팅 LUN을 igroup에 매핑합니다
+
+부팅 LUN을 igroup에 매핑하려면 다음 단계를 완료하십시오.
+
+. 스토리지 클러스터 관리 SSH 연결에서 다음 명령을 실행합니다. 
++
+....
+lun map –vserver Infra-SVM –volume esxi_boot –lun VM-Host-Infra- A –igroup VM-Host-Infra-01 –lun-id 0lun map –vserver Infra-SVM –volume esxi_boot –lun VM-Host-Infra- B –igroup VM-Host-Infra-02 –lun-id 0
+....
+
+
+
+
+== VMware vSphere 6.7U1 구축 절차
+
+이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7U1을 설치하는 절차를 자세히 설명합니다. 절차가 완료된 후 부팅된 ESXi 호스트 2개가 프로비저닝됩니다.
+
+VMware 환경에 ESXi를 설치하는 방법은 여러 가지가 있습니다. 이 절차에서는 Cisco UCS Manager에 내장된 KVM 콘솔과 가상 미디어 기능을 사용하여 원격 설치 미디어를 개별 서버에 매핑하고 부팅 LUN에 연결하는 방법에 초점을 맞춥니다.
+
+
+
+=== ESXi 6.7U1용 Cisco 사용자 지정 이미지를 다운로드합니다
+
+VMware ESXi 사용자 지정 이미지를 다운로드하지 않은 경우 다음 단계를 수행하여 다운로드를 완료합니다.
+
+. https://my.vmware.com/group/vmware/details?downloadGroup=OEM-ESXI67U1-CISCO&productId=742[VMware vSphere 하이퍼바이저(ESXi) 6.7U1.^ 링크를 클릭합니다.
+. 에 사용자 ID와 암호가 필요합니다 https://www.vmware.com/["VMware.com"^] 를 눌러 이 소프트웨어를 다운로드합니다.
+. ISO 파일을 다운로드합니다.
+
+
+
+
+==== Cisco UCS Manager를 참조하십시오
+
+Cisco UCS IP KVM을 사용하면 관리자가 원격 미디어를 통해 OS 설치를 시작할 수 있습니다. IP KVM을 실행하려면 Cisco UCS 환경에 로그인해야 합니다.
+
+Cisco UCS 환경에 로그인하려면 다음 단계를 수행하십시오.
+
+. 웹 브라우저를 열고 Cisco UCS 클러스터 주소의 IP 주소를 입력합니다. 이 단계에서는 Cisco UCS Manager 애플리케이션을 시작합니다.
+. HTML에서 UCS Manager 실행 링크를 클릭하여 HTML 5 UCS Manager GUI를 시작합니다.
+. 보안 인증서를 수락하라는 메시지가 나타나면 필요에 따라 수락하십시오.
+. 메시지가 나타나면 사용자 이름으로 admin을 입력하고 관리자 암호를 입력합니다.
+. Cisco UCS Manager에 로그인하려면 로그인을 클릭합니다.
+. 기본 메뉴에서 왼쪽에 있는 서버 를 클릭합니다.
+. Servers > Service Profiles > root > VM-Host-Infra-01'을 선택합니다.
+. VM-Host-Infra-01을 마우스 오른쪽 버튼으로 클릭하고 KVM Console을 선택합니다.
+. 표시되는 메시지에 따라 Java 기반 KVM 콘솔을 실행합니다.
+. Servers > Service Profiles > root > VM-Host-Infra-02'를 선택합니다.
+. VM-Host-Infra-02를 마우스 오른쪽 버튼으로 클릭합니다. KVM 콘솔을 선택합니다.
+. 표시되는 메시지에 따라 Java 기반 KVM 콘솔을 실행합니다.
+
+
+
+
+==== VMware ESXi 설치를 설정합니다
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+OS 설치를 위해 서버를 준비하려면 각 ESXi 호스트에서 다음 단계를 수행하십시오.
+
+. KVM 창에서 가상 미디어를 클릭합니다.
+. 가상 장치 활성화 를 클릭합니다.
+. 암호화되지 않은 KVM 세션을 수락하라는 메시지가 표시되면 필요에 따라 수락하십시오.
+. 가상 미디어 를 클릭하고 CD/DVD 매핑 을 선택합니다.
+. ESXi 설치 관리자 ISO 이미지 파일을 찾아 이동하고 Open을 클릭합니다.
+. 장치 매핑 을 클릭합니다. 
+. KVM 탭을 클릭하여 서버 부팅을 모니터링합니다.
+
+
+* ESXi * 설치
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+호스트의 iSCSI 부팅 가능 LUN에 VMware ESXi를 설치하려면 각 호스트에서 다음 단계를 수행하십시오.
+
+. Boot Server를 선택하고 OK를 클릭하여 서버를 부팅합니다. 그런 다음 확인을 다시 클릭합니다.
+. 재부팅 시 ESXi 설치 미디어의 존재 여부가 자동으로 감지됩니다. 표시되는 부팅 메뉴에서 ESXi 설치 프로그램을 선택합니다.
+. 설치 프로그램 로드가 완료된 후 Enter 키를 눌러 설치를 계속합니다.
+. 최종 사용자 사용권 계약(EULA)을 읽고 동의합니다. F11 키를 눌러 동의하고 계속합니다.
+. 이전에 ESXi용 설치 디스크로 설정된 LUN을 선택하고 Enter 키를 눌러 설치를 계속합니다.
+. 적절한 자판 배열을 선택하고 Enter 키를 누릅니다.
+. 루트 암호를 입력 및 확인하고 Enter 키를 누릅니다.
+. 설치 프로그램에서 선택한 디스크가 다시 분할된다는 경고를 표시합니다. F11 키를 눌러 설치를 계속합니다.
+. 설치가 완료되면 Virtual Media 탭을 선택하고 ESXi 설치 미디어 옆에 있는 P 표시를 지웁니다. 예 를 클릭합니다.
++
+
+NOTE: 설치 프로그램이 아닌 ESXi로 서버를 재부팅하도록 ESXi 설치 이미지를 매핑 해제해야 합니다.
+
+. 설치가 완료되면 Enter 키를 눌러 서버를 재부팅합니다.
+. Cisco UCS Manager에서 현재 서비스 프로필을 비 vMedia 서비스 프로필 템플릿에 바인딩하여 HTTP를 통해 ESXi 설치 ISO가 마운트되지 않도록 합니다.
+
+
+
+
+==== ESXi 호스트에 대한 관리 네트워킹을 설정합니다
+
+호스트를 관리하려면 각 VMware 호스트에 대한 관리 네트워크를 추가해야 합니다. VMware 호스트에 대한 관리 네트워크를 추가하려면 각 ESXi 호스트에서 다음 단계를 수행합니다.
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+관리 네트워크에 액세스할 수 있도록 각 ESXi 호스트를 구성하려면 다음 단계를 수행하십시오.
+
+. 서버 재부팅이 완료된 후 F2 키를 눌러 시스템을 사용자 정의합니다.
+. root로 로그인하여 해당 비밀번호를 입력한 후 Enter를 눌러 로그인합니다.
+. 문제 해결 옵션을 선택하고 Enter 키를 누릅니다.
+. ESXi 셸 활성화 를 선택하고 Enter 키를 누릅니다.
+. SSH 활성화 를 선택하고 Enter 키를 누릅니다.
+. Esc 키를 눌러 문제 해결 옵션 메뉴를 종료합니다.
+. Configure Management Network 옵션을 선택하고 Enter 키를 누릅니다.
+. Network Adapters 를 선택하고 Enter 키를 누릅니다.
+. 하드웨어 레이블 필드의 숫자가 장치 이름 필드의 번호와 일치하는지 확인합니다.
+. Enter 키를 누릅니다.
++
+image:express-direct-attach-aff220-deploy_image53.png["오류: 그래픽 이미지가 없습니다"]
+
+. VLAN (Optional) 옵션을 선택하고 Enter 키를 누릅니다.
+. '<IB-mgmt-vlan-id>'를 입력하고 Enter 키를 누릅니다.
+. IPv4 구성 을 선택하고 Enter 키를 누릅니다.
+. 스페이스바를 사용하여 정적 IPv4 주소 설정 및 네트워크 구성 옵션을 선택합니다.
+. 첫 번째 ESXi 호스트를 관리하기 위한 IP 주소를 입력합니다.
+. 첫 번째 ESXi 호스트의 서브넷 마스크를 입력합니다.
+. 첫 번째 ESXi 호스트의 기본 게이트웨이를 입력합니다.
+. Enter 키를 눌러 IP 구성의 변경 사항을 적용합니다.
+. DNS 구성 옵션을 선택하고 Enter 키를 누릅니다.
++
+
+NOTE: IP 주소는 수동으로 할당되므로 DNS 정보도 수동으로 입력해야 합니다.
+
+. 기본 DNS 서버의 IP 주소를 입력합니다.
+. 선택 사항: 보조 DNS 서버의 IP 주소를 입력합니다.
+. 첫 번째 ESXi 호스트의 FQDN을 입력합니다.
+. Enter 키를 눌러 DNS 구성의 변경 사항을 적용합니다.
+. Esc를 눌러 Configure Management Network 메뉴를 종료합니다.
+. 관리 네트워크 테스트 를 선택하여 관리 네트워크가 올바르게 설정되어 있는지 확인하고 Enter 키를 누릅니다.
+. Enter 키를 눌러 테스트를 실행하고 테스트가 완료되면 Enter 키를 다시 누릅니다. 오류가 발생하면 환경을 검토합니다.
+. Configure Management Network를 다시 선택하고 Enter 키를 누릅니다.
+. IPv6 구성 옵션을 선택하고 Enter 키를 누릅니다.
+. 스페이스바를 사용하여 Disable IPv6 (restart required) 를 선택하고 Enter 키를 누릅니다.
+. Esc 키를 눌러 Configure Management Network 하위 메뉴를 종료합니다.
+. Y 를 눌러 변경 사항을 확인하고 ESXi 호스트를 재부팅합니다.
+
+
+
+
+==== VMware ESXi 호스트 VMkernel 포트 vmk0 MAC 주소 재설정(선택 사항)
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+기본적으로 관리 VMkernel 포트 vmk0의 MAC 주소는 관리 VMkernel 포트가 배치된 이더넷 포트의 MAC 주소와 동일합니다. ESXi 호스트의 부팅 LUN이 다른 MAC 주소를 가진 다른 서버에 다시 매핑되면 ESXi 시스템 구성이 재설정되지 않는 한 vmk0이 할당된 MAC 주소를 유지하므로 MAC 주소 충돌이 발생합니다. vmk0의 MAC 주소를 임의의 VMware 할당 MAC 주소로 재설정하려면 다음 단계를 수행하십시오.
+
+. ESXi 콘솔 메뉴 기본 화면에서 Ctrl-Alt-F1을 눌러 VMware 콘솔 명령줄 인터페이스에 액세스합니다. UCSM KVM에서 Ctrl-Alt-F1이 정적 매크로 목록에 나타납니다.
+. 루트로 로그인합니다.
+. 인터페이스 vmk0의 세부 목록을 보려면 esxcfg-vmknic –l을 입력하십시오. vmk0은 Management Network 포트 그룹에 속해야 합니다. vmk0의 IP 주소와 넷마스크를 기록해 둡니다.
+. vmk0을 제거하려면 다음 명령을 입력합니다.
++
+....
+esxcfg-vmknic –d “Management Network”
+....
+. 임의의 MAC 주소를 사용하여 vmk0을 다시 추가하려면 다음 명령을 입력합니다.
++
+....
+esxcfg-vmknic –a –i <vmk0-ip> -n <vmk0-netmask> “Management Network””.
+....
+. 임의의 MAC 주소를 사용하여 vmk0이 다시 추가되었는지 확인합니다
++
+....
+esxcfg-vmknic –l
+....
+. 명령줄 인터페이스에서 로그아웃하려면 "exit"를 입력합니다.
+. Ctrl-Alt-F2를 눌러 ESXi 콘솔 메뉴 인터페이스로 돌아갑니다.
+
+
+
+
+==== VMware 호스트 클라이언트를 사용하여 VMware ESXi 호스트에 로그인합니다
+
+ESXi 호스트 VM-Host-Infra-01
+
+VMware 호스트 클라이언트를 사용하여 VM-Host-Infra-01 ESXi 호스트에 로그인하려면 다음 단계를 수행하십시오.
+
+. 관리 워크스테이션에서 웹 브라우저를 열고 VM-Host-Infra-01 관리 IP 주소로 이동합니다.
+. VMware 호스트 클라이언트 열기 를 클릭합니다.
+. 사용자 이름으로 root를 입력합니다.
+. 루트 암호를 입력합니다.
+. Login을 클릭하여 연결합니다.
+. 이 과정을 반복하여 별도의 브라우저 탭이나 창에서 VM-Host-Infra-02에 로그인합니다.
+
+
+
+
+==== VIC(Cisco Virtual Interface Card)용 VMware 드라이버 설치
+
+다음 VMware VIC 드라이버에 대한 오프라인 번들을 다운로드하여 관리 워크스테이션에 압축을 풉니다.
+
+* nenic 드라이버 버전 1.0.25.0
+
+
+
+
+==== ESXi는 VM-Host-Infra-01 및 VM-Host-Infra-02를 호스팅합니다
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02에 VMware VIC 드라이버를 설치하려면 다음 단계를 수행하십시오.
+
+. 각 호스트 클라이언트에서 스토리지를 선택합니다.
+. datastore1을 마우스 오른쪽 단추로 클릭하고 찾아보기 를 선택합니다.
+. 데이터 저장소 브라우저에서 업로드 를 클릭합니다.
+. 다운로드한 VIC 드라이버의 저장된 위치로 이동하고 VMW-ESX-6.7.0-nenic-1.0.25.0-offline_bundle-11271332.zip을 선택합니다.
+. 데이터 저장소 브라우저에서 업로드 를 클릭합니다.
+. 열기 를 클릭하여 파일을 datastore1에 업로드합니다.
+. 파일이 두 ESXi 호스트에 모두 업로드되었는지 확인합니다.
+. 각 호스트를 유지 관리 모드로 전환합니다(아직 없는 경우).
+. 셸 연결 또는 putty 터미널에서 ssh를 통해 각 ESXi 호스트에 연결합니다.
+. 루트 암호를 사용하여 루트로 로그인합니다.
+. 각 호스트에서 다음 명령을 실행합니다.
++
+....
+esxcli software vib update -d /vmfs/volumes/datastore1/VMW-ESX-6.7.0-nenic-1.0.25.0-offline_bundle-11271332.zip
+reboot
+....
+. 재부팅이 완료되면 각 호스트의 호스트 클라이언트에 로그인하고 유지 관리 모드를 종료합니다.
+
+
+
+
+==== VMkernel 포트 및 가상 스위치를 설정합니다
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+ESXi 호스트에서 VMkernel 포트 및 가상 스위치를 설정하려면 다음 단계를 수행하십시오.
+
+. 호스트 클라이언트 의 왼쪽에서 네트워킹 을 선택합니다.
+. 가운데 창에서 가상 스위치 탭을 선택합니다.
+. vSwitch0을 선택합니다.
+. 설정 편집 을 선택합니다.
+. MTU를 9000으로 변경합니다.
+. NIC 팀 구성을 확장합니다.
+. 페일오버 순서 섹션에서 vmnic1을 선택하고 활성 상태로 표시를 클릭합니다.
+. vmnic1의 상태가 활성인지 확인합니다.
+. 저장 을 클릭합니다.
+. 왼쪽에서 네트워킹 을 선택합니다.
+. 가운데 창에서 가상 스위치 탭을 선택합니다.
+. iSciBootvSwitch 를 선택합니다.
+. 설정 편집 을 선택합니다.
+. MTU를 9000으로 변경합니다
+. 저장 을 클릭합니다.
+. VMkernel NIC 탭을 선택합니다.
+. vmk1 iSciBootPG 를 선택합니다.
+. 설정 편집 을 선택합니다.
+. MTU를 9000으로 변경합니다.
+. IPv4 설정을 확장하고 IP 주소를 UCS iSCSI-IP-Pool-A 외부의 주소로 변경합니다
++
+
+NOTE: Cisco UCS iSCSI IP 풀 주소를 재할당해야 하는 경우 IP 주소 충돌을 방지하려면 iSCSI VMkernel 포트에 대해 동일한 서브넷에 있는 다른 IP 주소를 사용하는 것이 좋습니다.
+
+. 저장 을 클릭합니다.
+. 가상 스위치 탭을 선택합니다.
+. Add standard virtual 스위치를 선택합니다.
+. vSwitch Name에 대한 iSciSciBootvSwitch-B의 이름을 입력합니다.
+. MTU를 9000으로 설정합니다.
+. 업링크 1 드롭다운 메뉴에서 vmnic3 을 선택합니다.
+. 추가 를 클릭합니다.
+. 가운데 창에서 VMkernel NIC 탭을 선택합니다.
+. Add VMkernel NIC 를 선택합니다
+. iSciBootPG-B의 새 포트 그룹 이름을 지정합니다
+. 가상 스위치용 iSciSciBootvSwitch-B를 선택합니다.
+. MTU를 9000으로 설정합니다. VLAN ID를 입력하지 마십시오.
+. IPv4 설정에 대해 정적 을 선택하고 옵션을 확장하여 구성 내에서 주소 및 서브넷 마스크를 제공합니다.
++
+
+NOTE: IP 주소 충돌을 피하기 위해 Cisco UCS iSCSI IP 풀 주소를 재할당해야 하는 경우 iSCSI VMkernel 포트에 대해 동일한 서브넷에 있는 다른 IP 주소를 사용하는 것이 좋습니다.
+
+. 생성 을 클릭합니다.
+. 왼쪽에서 네트워킹 을 선택한 다음 포트 그룹 탭을 선택합니다.
+. 가운데 창에서 VM Network를 마우스 오른쪽 버튼으로 클릭하고 Remove를 선택합니다.
+. 제거를 클릭하여 포트 그룹 제거를 완료합니다.
+. 가운데 창에서 포트 그룹 추가를 선택합니다.
+. 포트 그룹 관리 네트워크의 이름을 지정하고 VLAN ID 필드에 '<IB-mgmt-vlan-id>'를 입력한 다음 가상 스위치 vSwitch0이 선택되어 있는지 확인합니다.
+. 추가 를 클릭하여 IB-MGMT Network에 대한 편집을 마칩니다.
+. 맨 위에서 VMkernel NIC 탭을 선택합니다.
+. Add VMkernel NIC를 클릭합니다.
+. 새 포트 그룹의 경우 VMotion을 입력합니다.
+. 가상 스위치의 경우 vSwitch0 선택됨 을 선택합니다.
+. VLAN ID에 '<vMotion-vlan-id>'를 입력합니다.
+. MTU를 9000으로 변경합니다.
+. 정적 IPv4 설정을 선택하고 IPv4 설정을 확장합니다.
+. ESXi 호스트 vMotion IP 주소와 넷마스크를 입력합니다.
+. vMotion 스택 TCP/IP 스택을 선택합니다.
+. Services 아래에서 vMotion을 선택합니다.
+. 생성 을 클릭합니다.
+. Add VMkernel NIC를 클릭합니다.
+. 새 포트 그룹에 NFS_Share를 입력합니다.
+. 가상 스위치의 경우 vSwitch0 선택됨 을 선택합니다.
+. VLAN ID에 '<infra-nfs-vlan-id>'를 입력합니다
+. MTU를 9000으로 변경합니다.
+. 정적 IPv4 설정을 선택하고 IPv4 설정을 확장합니다.
+. ESXi 호스트 인프라스트럭처 NFS IP 주소와 넷마스크를 입력합니다.
+. 서비스를 선택하지 마십시오.
+. 생성 을 클릭합니다.
+. 가상 스위치 탭을 선택한 다음 vSwitch0을 선택합니다. vSwitch0 VMkernel NIC의 속성은 다음 예와 유사해야 합니다.
++
+image:express-direct-attach-aff220-deploy_image54.png["오류: 그래픽 이미지가 없습니다"]
+
+. VMkernel NIC 탭을 선택하여 구성된 가상 어댑터를 확인합니다. 나열된 어댑터는 다음 예와 비슷해야 합니다.
++
+image:express-direct-attach-aff220-deploy_image55.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+==== iSCSI 다중 경로를 설정합니다
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+ESXi 호스트에서 iSCSI 다중 경로를 설정하려면 VM-Host-Infra-01 및 VM-Host-Infra-02를 수행하고 다음 단계를 수행하십시오.
+
+. 각 호스트 클라이언트에서 왼쪽의 Storage 를 선택합니다.
+. 가운데 창에서 어댑터를 클릭합니다.
+. iSCSI 소프트웨어 어댑터를 선택하고 iSCSI 구성 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image56.png["오류: 그래픽 이미지가 없습니다"]
+
+. 동적 대상 아래에서 동적 대상 추가를 클릭합니다.
+. ISCSI_liff 01a IP Address를 입력한다.
+. iSCSI_liff 01b, iSCSI_liff 02a, iSCSI_liff 02b 등의 IP 주소를 다시 입력합니다.
+. 구성 저장 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image57.png["오류: 그래픽 이미지가 없습니다"]
+
++
+모든 "iscsi_lif" IP 주소를 얻으려면 NetApp 스토리지 클러스터 관리 인터페이스에 로그인하고 "network interface show" 명령을 실행하십시오.
+
++
+
+NOTE: 호스트가 스토리지 어댑터를 자동으로 다시 검사하며 대상은 정적 대상에 추가됩니다.
+
+
+
+
+
+==== 필수 데이터 저장소를 마운트합니다
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+필요한 데이터 저장소를 마운트하려면 각 ESXi 호스트에서 다음 단계를 수행합니다.
+
+. 호스트 클라이언트 에서 왼쪽에 있는 스토리지 를 선택합니다.
+. 가운데 창에서 데이터 저장소 를 선택합니다.
+. 가운데 창에서 새 데이터 저장소 를 선택하여 새 데이터 저장소를 추가합니다.
+. 새 데이터 저장소 대화 상자에서 NFS 데이터 저장소 마운트 를 선택하고 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image58.png["오류: 그래픽 이미지가 없습니다"]
+
+. NFS 마운트 세부 정보 제공 페이지에서 다음 단계를 완료합니다.
++
+.. 데이터 저장소 이름에 'infra_datastore_1'을 입력합니다.
+.. NFS 서버에 대한 NFS_liff 01_a LIF의 IP 주소를 입력합니다.
+.. NFS 공유에 대해 '/infra_datastore_1'을 입력합니다.
+.. NFS 버전은 NFS 3으로 설정된 상태로 둡니다.
+.. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image59.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 마침 을 클릭합니다. 이제 데이터 저장소가 데이터 저장소 목록에 표시됩니다.
+. 가운데 창에서 새 데이터 저장소 를 선택하여 새 데이터 저장소를 추가합니다.
+. New Datastore 대화 상자에서 Mount NFS Datastore를 선택하고 Next를 클릭합니다.
+. NFS 마운트 세부 정보 제공 페이지에서 다음 단계를 완료합니다.
++
+.. 데이터 저장소 이름에 infra_datastore_2 를 입력합니다.
+.. NFS 서버에 대한 NFS_liff 02_a LIF의 IP 주소를 입력합니다.
+.. NFS 공유에 대해 '/infra_datastore_2'를 입력합니다.
+.. NFS 버전은 NFS 3으로 설정된 상태로 둡니다.
+.. 다음 을 클릭합니다.
+
+
+. 마침 을 클릭합니다. 이제 데이터 저장소가 데이터 저장소 목록에 표시됩니다.
++
+image:express-direct-attach-aff220-deploy_image60.jpeg["오류: 그래픽 이미지가 없습니다"]
+
+. 두 ESXi 호스트에 두 데이터 저장소를 모두 마운트합니다.
+
+
+
+
+==== ESXi 호스트에서 NTP를 구성합니다
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+ESXi 호스트에서 NTP를 구성하려면 각 호스트에서 다음 단계를 수행합니다.
+
+. Host Client의 왼쪽에 있는 Manage를 선택합니다.
+. 가운데 창에서 시간 및 날짜 탭을 선택합니다.
+. 설정 편집 을 클릭합니다.
+. Use Network Time Protocol (enable NTP client)(네트워크 시간 프로토콜 사용(NTP 클라이언트 활성화)) 이 선택되어 있는지 확인합니다.
+. 드롭다운 메뉴를 사용하여 Start and Stop with Host 를 선택합니다.
+. NTP 서버 상자에 두 개의 Nexus 스위치 NTP 주소를 쉼표로 구분하여 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image61.png["오류: 그래픽 이미지가 없습니다"]
+
+. 저장 을 클릭하여 구성 변경 사항을 저장합니다.
+. Actions > NTP Service > Start 를 선택합니다.
+. 이제 NTP 서비스가 실행되고 있으며 시계가 대략 올바른 시간으로 설정되어 있는지 확인합니다
++
+
+NOTE: NTP 서버 시간은 호스트 시간과 약간 다를 수 있습니다.
+
+
+
+
+
+==== ESXi 호스트 스왑을 구성합니다
+
+ESXi 호스트 VM-Host-Infra-01 및 VM-Host-Infra-02
+
+ESXi 호스트에서 호스트 스왑을 구성하려면 각 호스트에서 다음 단계를 수행합니다.
+
+. 왼쪽 탐색 창에서 관리 를 클릭합니다. 오른쪽 창에서 System을 선택하고 Swap을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image62.png["오류: 그래픽 이미지가 없습니다"]
+
+. 설정 편집 을 클릭합니다. Datastore 옵션에서 infra_swap을 선택합니다.
++
+image:express-direct-attach-aff220-deploy_image63.png["오류: 그래픽 이미지가 없습니다"]
+
+. 저장 을 클릭합니다.
+
+
+
+
+==== VMware VAAI용 NetApp NFS 플러그인 1.1.2를 설치합니다
+
+NetApp NFS 플러그인 1을 설치합니다. 1.2 VMware VAAI의 경우 다음 단계를 완료합니다.
+
+. NetApp NFS Plug-in for VMware VAAI 다운로드:
++
+.. 로 이동합니다 https://mysupport.netapp.com/NOW/download/software/nfs_plugin_vaai_esxi6/1.1.2/["NetApp 소프트웨어 다운로드 페이지"^].
+.. 아래로 스크롤하여 VMware VAAI용 NetApp NFS 플러그인 을 클릭합니다.
+.. ESXi 플랫폼을 선택합니다.
+.. 최신 플러그인의 오프라인 번들(.zip) 또는 온라인 번들(.vib)을 다운로드합니다.
+
+
+. VMware VAAI용 NetApp NFS 플러그인은 ONTAP 9.5에서 IMT 자격 평가를 보류 중이며, 상호 운용성 세부 정보가 곧 NetApp IMT에 게시될 예정입니다.
+. ESX CLI를 사용하여 ESXi 호스트에 플러그인을 설치합니다.
+. ESXi 호스트를 재부팅합니다.
+
+
+
+
+== VMware vCenter Server 6.7을 설치합니다
+
+이 섹션에서는 FlexPod Express 구성에 VMware vCenter Server 6.7을 설치하는 절차를 자세히 설명합니다.
+
+
+NOTE: FlexPod Express는 VCSA(VMware vCenter Server Appliance)를 사용합니다.
+
+
+
+=== VMware vCenter Server 어플라이언스를 설치합니다
+
+VCSA를 설치하려면 다음 단계를 완료하십시오.
+
+. VCSA를 다운로드합니다. ESXi 호스트를 관리할 때 vCenter Server 가져오기 아이콘을 클릭하여 다운로드 링크를 액세스합니다.
++
+image:express-direct-attach-aff220-deploy_image64.png["오류: 그래픽 이미지가 없습니다"]
+
+. VMware 사이트에서 VCSA를 다운로드합니다.
++
+
+NOTE: Microsoft Windows vCenter Server 설치 가능한 가 지원되지만 VMware는 새로운 구축에 VCSA를 권장합니다.
+
+. ISO 이미지를 마운트합니다.
+. vcsa-UI-installer>'Win32' 디렉토리로 이동합니다. installer.exe를 두 번 클릭합니다.
+. 설치 를 클릭합니다.
+. 소개 페이지에서 다음 을 클릭합니다.
+. EULA에 동의합니다.
+. 배포 유형으로 임베디드 플랫폼 서비스 컨트롤러 를 선택합니다.
++
+image:express-direct-attach-aff220-deploy_image65.png["오류: 그래픽 이미지가 없습니다"]
+
++
+필요한 경우 외부 플랫폼 서비스 컨트롤러 배포도 FlexPod Express 솔루션의 일부로 지원됩니다.
+
+. 어플라이언스 배포 대상 페이지에서 배포한 ESXi 호스트의 IP 주소, 루트 사용자 이름 및 루트 암호를 입력합니다. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image66.png["오류: 그래픽 이미지가 없습니다"]
+
+. VCSA를 VM 이름으로 입력하고 VCSA에 사용할 루트 암호를 입력하여 어플라이언스 VM을 설정합니다. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image67.png["오류: 그래픽 이미지가 없습니다"]
+
+. 환경에 가장 적합한 구축 크기를 선택합니다. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image68.png["오류: 그래픽 이미지가 없습니다"]
+
+. 'infra_datastore_1' 데이터 저장소를 선택합니다. 다음 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image69.png["오류: 그래픽 이미지가 없습니다"]
+
+. 네트워크 설정 구성 페이지에서 다음 정보를 입력하고 다음 을 클릭합니다.
++
+.. MGMT-Network를 네트워크로 선택합니다.
+.. VCSA에 사용할 FQDN 또는 IP를 입력합니다.
+.. 사용할 IP 주소를 입력합니다.
+.. 사용할 서브넷 마스크를 입력합니다.
+.. 기본 게이트웨이를 입력합니다.
+.. DNS 서버를 입력합니다.
++
+image:express-direct-attach-aff220-deploy_image70.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. 1단계 완료 준비 페이지에서 입력한 설정이 올바른지 확인합니다. 마침 을 클릭합니다.
++
+VCSA가 지금 설치됩니다. 이 과정은 몇 분 정도 소요됩니다.
+
+. 1단계가 완료되면 완료되었다는 메시지가 나타납니다. 계속 을 클릭하여 2단계 구성을 시작합니다.
++
+image:express-direct-attach-aff220-deploy_image71.png["오류: 그래픽 이미지가 없습니다"]
+
+. 2단계 소개 페이지에서 다음 을 클릭합니다.
+. NTP 서버 주소에 대해 '\<<var_ntp_id>>'를 입력합니다. 여러 NTP IP 주소를 입력할 수 있습니다.
++
+vCenter Server 고가용성을 사용하려는 경우 SSH 액세스가 설정되어 있는지 확인합니다.
+
+. SSO 도메인 이름, 암호 및 사이트 이름을 구성합니다. 다음 을 클릭합니다.
++
+특히 "vsphere.local" 도메인 이름을 벗어나는 경우 이러한 값을 참조로 기록합니다.
+
+. 원하는 경우 VMware 고객 경험 프로그램에 참여하십시오. 다음 을 클릭합니다.
+. 설정 요약을 봅니다. 마침 을 클릭하거나 뒤로 단추를 사용하여 설정을 편집합니다.
+. 설치가 시작된 후 설치를 일시 중지하거나 중지할 수 없다는 메시지가 나타납니다. 계속하려면 확인을 클릭하십시오.
++
+어플라이언스 설정이 계속됩니다. 이 작업은 몇 분 정도 걸립니다.
+
++
+설정이 성공했음을 나타내는 메시지가 나타납니다.
+
++
+
+NOTE: vCenter Server에 액세스하기 위해 설치 관리자가 제공하는 링크를 클릭할 수 있습니다.
+
+
+
+
+
+==== VMware vCenter Server 6.7 및 vSphere 클러스터링 구성
+
+VMware vCenter Server 6.7 및 vSphere 클러스터링을 구성하려면 다음 단계를 수행하십시오.
+
+. https://\<<FQDN 또는 vCenter의 IP >>/vSphere-client/로 이동합니다.
+. vSphere Client 시작 을 클릭합니다.
+. 사용자 이름 administrator@vsphere.loca l 과 VCSA 설정 프로세스 중에 입력한 SSO 암호를 사용하여 로그인합니다.
+. vCenter 이름을 마우스 오른쪽 버튼으로 클릭하고 New Datacenter를 선택합니다.
+. 데이터 센터의 이름을 입력하고 확인 을 클릭합니다.
+
+
+* vSphere 클러스터를 생성합니다. *
+
+vSphere 클러스터를 생성하려면 다음 단계를 수행하십시오.
+
+. 새로 생성된 데이터 센터를 마우스 오른쪽 버튼으로 클릭하고 New Cluster를 선택합니다.
+. 클러스터의 이름을 입력합니다.
+. DRS 및 vSphere HA 옵션을 선택하고 설정합니다.
+. 확인 을 클릭합니다.
++
+image:express-direct-attach-aff220-deploy_image72.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+* 클러스터에 ESXi 호스트 추가 *
+
+클러스터에 ESXi 호스트를 추가하려면 다음 단계를 수행하십시오.
+
+. 클러스터의 Actions 메뉴에서 Add Host를 선택합니다.
++
+image:express-direct-attach-aff220-deploy_image73.png["오류: 그래픽 이미지가 없습니다"]
+
+. 클러스터에 ESXi 호스트를 추가하려면 다음 단계를 수행하십시오.
++
+.. 호스트의 IP 또는 FQDN을 입력합니다. 다음 을 클릭합니다.
+.. 루트 사용자 이름과 암호를 입력합니다. 다음 을 클릭합니다.
+.. 예를 클릭하여 호스트의 인증서를 VMware 인증서 서버에서 서명한 인증서로 바꿉니다.
+.. 호스트 요약 페이지에서 다음 을 클릭합니다.
+.. 녹색 + 아이콘을 클릭하여 vSphere 호스트에 라이센스를 추가합니다.
++
+
+NOTE: 이 단계는 원할 경우 나중에 완료할 수 있습니다.
+
+.. 다음 을 클릭하여 잠금 모드를 해제합니다.
+.. VM 위치 페이지에서 다음 을 클릭합니다.
+.. 완료 준비 페이지를 검토합니다. 뒤로 단추를 사용하여 변경하거나 마침 을 선택합니다.
+
+
+. Cisco UCS 호스트 B에 대해 1단계와 2단계를 반복합니다
++
+FlexPod Express 구성에 추가된 모든 호스트에 대해 이 프로세스를 완료해야 합니다.
+
+
+
+
+
+==== ESXi 호스트에서 코어 덤프를 구성합니다
+
+iSCSI 부팅 호스트에 대한 ESXi Dump Collector 설정
+
+VMware iSCSI 소프트웨어 이니시에이터를 사용하여 iSCSI로 부팅된 ESXi 호스트는 vCenter의 일부인 ESXi 덤프 수집기로 코어 덤프를 수행하도록 구성해야 합니다. 덤프 수집기는 vCenter 어플라이언스에서 기본적으로 사용되지 않습니다. 이 절차는 vCenter 구축 섹션의 마지막에 실행해야 합니다. ESXi 덤프 수집기를 설정하려면 다음 단계를 수행하십시오.
+
+. vSphere Web Client에 mailto:administrator@vsphere.loca l[administrator@vsphere.loca l^]으로 로그인하고 Home을 선택합니다.
+. 가운데 창에서 시스템 구성 을 클릭합니다.
+. 왼쪽 창에서 서비스를 선택합니다.
+. 서비스 에서 VMware vSphere ESXi Dump Collector 를 클릭합니다.
+. 중앙 창에서 녹색 시작 아이콘을 클릭하여 서비스를 시작합니다.
+. 작업 메뉴에서 시작 유형 편집을 클릭합니다.
+. 자동을 선택합니다.
+. 확인 을 클릭합니다.
+. SSH를 루트로 사용하여 각 ESXi 호스트에 연결합니다.
+. 다음 명령을 실행합니다.
++
+....
+esxcli system coredump network set –v vmk0 –j <vcenter-ip>
+esxcli system coredump network set –e true
+esxcli system coredump network check
+....
++
+최종 명령어를 실행하면 Verified the configured netdump server is running 메시지가 나타난다.
+
++
+
+NOTE: FlexPod Express에 추가된 모든 호스트에 대해 이 프로세스를 완료해야 합니다.
+
+

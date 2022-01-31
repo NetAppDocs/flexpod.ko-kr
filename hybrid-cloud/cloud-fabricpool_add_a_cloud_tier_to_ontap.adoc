@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/cloud-fabricpool_add_a_cloud_tier_to_ontap.html 
+keywords: add, cloud, tier, ontap, aggregate, storage, fabricpool, flexpod, ontap, cli, oncommand, manager 
+summary: 오브젝트 저장소를 Aggregate에 첨부하려면 먼저 ONTAP에 추가하여 식별해야 합니다. 이 작업은 OnCommand 시스템 관리자 또는 ONTAP CLI를 사용하여 완료할 수 있습니다. 
+---
+= ONTAP에 클라우드 계층을 추가합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+오브젝트 저장소를 Aggregate에 첨부하려면 먼저 ONTAP에 추가하여 식별해야 합니다. 이 작업은 OnCommand 시스템 관리자 또는 ONTAP CLI를 사용하여 완료할 수 있습니다.
+
+FabricPool은 Amazon S3, IBM 오브젝트 클라우드 스토리지, Microsoft Azure Blob Storage 오브젝트 저장소를 클라우드 계층으로 지원합니다.
+
+다음 정보가 필요합니다.
+
+* 서버 이름(FQDN)(예: '3.amazonaws.com')
+* 액세스 키 ID입니다
+* 비밀 키
+* 컨테이너 이름(버킷 이름)
+
+
+
+
+== OnCommand 시스템 관리자
+
+OnCommand System Manager를 사용하여 클라우드 계층을 추가하려면 다음 단계를 수행하십시오.
+
+. OnCommand 시스템 관리자를 시작합니다.
+. 스토리지를 클릭합니다.
+. Aggregate & Disks를 클릭합니다.
+. Cloud Tiers 를 클릭합니다.
+. 오브젝트 저장소 공급자를 선택합니다.
+. 개체 저장소 공급자에 필요한 텍스트 필드를 입력합니다.
++
+컨테이너 이름 필드에 오브젝트 저장소의 버킷 또는 컨테이너 이름을 입력합니다.
+
+. Save and Attach Aggregate 를 클릭합니다.
+
+
+image:cloud-fabricpool_image13.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== ONTAP CLI를 참조하십시오
+
+ONTAP CLI를 사용하여 클라우드 계층을 추가하려면 다음 명령을 입력합니다.
+
+....
+object-store config create
+-object-store-name <name>
+-provider-type <AWS>
+-port <443/8082> (AWS)
+-server <name>
+-container-name <bucket-name>
+-access-key <string>
+-secret-password <string>
+-ssl-enabled true
+-ipspace default
+....
+link:cloud-fabricpool_attach_a_cloud_tier_to_an_ontap_aggregate.html["다음: ONTAP 애그리게이트에 클라우드 계층을 연결합니다."]

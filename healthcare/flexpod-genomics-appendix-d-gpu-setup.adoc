@@ -1,0 +1,201 @@
+---
+sidebar: sidebar 
+permalink: healthcare/flexpod-genomics-appendix-d-gpu-setup.html 
+keywords: gpu, setup, cvd, nvidia, tesla 
+summary: 발행 당시에는 GATK 툴이 사내 GPU 기반 실행을 기본적으로 지원하지 않았습니다. 독자가 GATK용 PCIe 메자닌 카드를 사용하여 후면 장착 NVIDIA Tesla P6 GPU에서 FlexPod를 사용하는 것이 얼마나 간단한지 이해할 수 있도록 다음 설정 및 지침이 제공됩니다. 
+---
+= GPU 설정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:flexpod-genomics-appendix-c.html["이전: Cromwell 엔진을 사용하여 GATK 실행을 위한 출력."]
+
+발행 당시에는 GATK 툴이 사내 GPU 기반 실행을 기본적으로 지원하지 않았습니다. 독자가 GATK용 PCIe 메자닌 카드를 사용하여 후면 장착 NVIDIA Tesla P6 GPU에서 FlexPod를 사용하는 것이 얼마나 간단한지 이해할 수 있도록 다음 설정 및 지침이 제공됩니다.
+
+다음 CVD(Cisco-Validated Design)를 참조 아키텍처와 모범 사례 가이드로 사용하여 FlexPod 환경을 설정하여 GPU를 사용하는 애플리케이션을 실행할 수 있습니다.
+
+* https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_480ml_aiml_deployment.pdf["딥 러닝용 Cisco UCS 480mL가 포함된 AI/ML용 FlexPod 데이터 센터"^]
+
+
+다음은 이 설정 과정에서 기억해야 할 요점입니다.
+
+. 우리는 UCS B200 M5 서버의 메자닌 슬롯에 PCIe NVIDIA Tesla P6 GPU를 사용했습니다.
++
+image:flexpod-genomics-image18.png["오류: 그래픽 이미지가 없습니다"]
+
++
+image:flexpod-genomics-image19.png["오류: 그래픽 이미지가 없습니다"]
+
+. 이 설정을 위해 NVIDIA 파트너 포털에 등록되어 컴퓨팅 모드에서 GPU를 사용할 수 있는 평가 라이센스(소유 권한이라고도 함)를 받았습니다.
+. NVIDIA 파트너 웹 사이트에서 필요한 NVIDIA vGPU 소프트웨어를 다운로드했습니다.
+. NVIDIA 파트너 웹 사이트에서 자격 '*.bin' 파일을 다운로드했습니다.
+. NVIDIA vGPU 라이센스 서버를 설치하고 NVIDIA 파트너 사이트에서 다운로드한 ' *.bin' 파일을 사용하여 라이센스 서버에 사용 권한을 추가했습니다.
+. NVIDIA 파트너 포털에서 배포할 올바른 NVIDIA vGPU 소프트웨어 버전을 선택하십시오. 이 설정에서는 드라이버 버전 460.73.02를 사용했습니다.
+. 이 명령은 를 설치합니다 https://docs.omniverse.nvidia.com/prod_deployment/prod_deployment/installing-vgpu-manager.html["NVIDIA vGPU Manager"^] ESXi에서
++
+....
+[root@localhost:~] esxcli software vib install -v /vmfs/volumes/infra_datastore_nfs/nvidia/vib/NVIDIA_bootbank_NVIDIA-VMware_ESXi_7.0_Host_Driver_460.73.02-1OEM.700.0.0.15525992.vib
+Installation Result
+Message: Operation finished successfully.
+Reboot Required: false
+VIBs Installed: NVIDIA_bootbank_NVIDIA-VMware_ESXi_7.0_Host_Driver_460.73.02-1OEM.700.0.0.15525992
+VIBs Removed:
+VIBs Skipped:
+....
+. ESXi 서버를 재부팅한 후 다음 명령을 실행하여 설치를 검증하고 GPU 상태를 확인하십시오.
++
+....
+[root@localhost:~] nvidia-smi
+Wed Aug 18 21:37:19 2021
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.73.02    Driver Version: 460.73.02    CUDA Version: N/A      |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla P6            On   | 00000000:D8:00.0 Off |                    0 |
+| N/A   35C    P8     9W /  90W |  15208MiB / 15359MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A   2812553    C+G   RHEL01                          15168MiB |
++-----------------------------------------------------------------------------+
+[root@localhost:~]
+....
+. vCenter를 사용하면 https://blogs.vmware.com/apps/2018/09/using-gpus-with-virtual-machines-on-vsphere-part-2-vmdirectpath-i-o.html["구성"^] 그래픽 장치 설정을 “Shared Direct”로 지정합니다.
++
+image:flexpod-genomics-image20.png["오류: 그래픽 이미지가 없습니다"]
+
++
+image:flexpod-genomics-image21.png["오류: 그래픽 이미지가 없습니다"]
+
+. RedHat VM의 보안 부팅이 비활성화되어 있는지 확인합니다.
+. VM 부트 옵션 펌웨어가 EFI( https://docs.vmware.com/en/VMware-vSphere-Bitfusion/3.0/Install-Guide/GUID-2005A8C6-4FDC-46DF-BB6B-989F6E91F3E2.html["참조"^])를 클릭합니다.
++
+image:flexpod-genomics-image22.png["오류: 그래픽 이미지가 없습니다"]
+
+. 다음 매개 변수가 VM 옵션 고급 편집 구성에 추가되었는지 확인합니다. "pciPassthru.64bitMMIOSizeGB" 매개 변수의 값은 GPU 메모리와 VM에 할당된 GPU 수에 따라 달라집니다. 예를 들면 다음과 같습니다.
++
+.. VM에 4개의 32GB V100 GPU가 할당된 경우 이 값은 128이어야 합니다.
+.. VM에 16GB P6 GPU 4개가 할당된 경우 이 값은 64여야 합니다.
++
+image:flexpod-genomics-image23.png["오류: 그래픽 이미지가 없습니다"]
+
++
+image:flexpod-genomics-image24.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+. vGPU를 vCenter의 가상 머신에 새 PCI 장치로 추가할 때는 NVIDIA GRID vGPU를 PCI Device 유형으로 선택해야 합니다.
+. 사용 중인 GPU, GPU 메모리 및 사용 목적(예: 그래픽 대 컴퓨팅)에 맞는 GPU 프로필을 선택합니다.
++
+image:flexpod-genomics-image25.png["오류: 그래픽 이미지가 없습니다"]
+
+. RedHat Linux VM에서 NVIDIA 드라이버는 다음 명령을 실행하여 설치할 수 있습니다.
++
+....
+[root@genomics1 genomics]#sh NVIDIA-Linux-x86_64-460.73.01-grid.run
+....
+. 다음 명령을 실행하여 올바른 vGPU 프로필이 보고되고 있는지 확인합니다.
++
+....
+[root@genomics1 genomics]# nvidia-smi –query-gpu=gpu_name –format=csv,noheader –id=0 | sed -e ‘s/ /-/g’
+GRID-P6-16C
+[root@genomics1 genomics]#
+....
+. 재부팅 후 올바른 NVIDIA vGPU가 드라이버 버전과 함께 보고되었는지 확인합니다.
++
+....
+[root@genomics1 genomics]# nvidia-smi
+Wed Aug 18 20:30:56 2021
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GRID P6-16C         On   | 00000000:02:02.0 Off |                  N/A |
+| N/A   N/A    P8    N/A /  N/A |   2205MiB / 16384MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      8604      G   /usr/libexec/Xorg                  13MiB |
++-----------------------------------------------------------------------------+
+[root@genomics1 genomics]#
+....
+. 라이센스 서버 IP가 vGPU 그리드 구성 파일의 VM에 구성되어 있는지 확인합니다.
++
+.. 템플릿을 복사합니다.
++
+....
+[root@genomics1 genomics]# cp /etc/nvidia/gridd.conf.template /etc/nvidia/gridd.conf
+....
+.. 파일 '/etc/nvidia/rrid.conf'를 편집하고 라이센스 서버 IP 주소를 추가한 다음 기능 유형을 1로 설정합니다.
++
+....
+ ServerAddress=192.168.169.10
+....
++
+....
+ FeatureType=1
+....
+
+
+. VM을 다시 시작한 후 라이센스 서버의 허가된 클라이언트 아래에 아래와 같은 항목이 표시됩니다.
++
+image:flexpod-genomics-image26.png["오류: 그래픽 이미지가 없습니다"]
+
+. GATK 및 Cromwell 소프트웨어 다운로드에 대한 자세한 내용은 솔루션 설정 섹션을 참조하십시오.
+. GATK가 구내에서 GPU를 사용할 수 있으면 워크플로 설명 언어 ' *. wdl은 아래와 같이 런타임 특성을 가지고 있다.
++
+....
+task ValidateBAM {
+  input {
+    # Command parameters
+    File input_bam
+    String output_basename
+    String? validation_mode
+    String gatk_path
+    # Runtime parameters
+    String docker
+    Int machine_mem_gb = 4
+    Int addtional_disk_space_gb = 50
+  }
+  Int disk_size = ceil(size(input_bam, "GB")) + addtional_disk_space_gb
+  String output_name = "${output_basename}_${validation_mode}.txt"
+  command {
+    ${gatk_path} \
+      ValidateSamFile \
+      --INPUT ${input_bam} \
+      --OUTPUT ${output_name} \
+      --MODE ${default="SUMMARY" validation_mode}
+  }
+  runtime {
+    gpuCount: 1
+    gpuType: "nvidia-tesla-p6"
+    docker: docker
+    memory: machine_mem_gb + " GB"
+    disks: "local-disk " + disk_size + " HDD"
+  }
+  output {
+    File validation_report = "${output_name}"
+  }
+}
+....
+
+
+link:flexpod-genomics-conclusion.html["다음: 결론."]

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: express/express-direct-attach-design_solution_overview.html 
+keywords: virtualization, FAS27xx, AFF220, express, VMware vSphere, 
+summary: FlexPod Express는 혼합 가상화 워크로드를 실행하도록 설계되었습니다. 원격 사무소, 지점 및 중소 및 중견 기업을 타겟으로 합니다. 또한 전용 솔루션을 특정 목적에 구축하고자 하는 대규모 기업에도 적합합니다. 새로운 FlexPod Express 솔루션의 주요 동인은 ONTAP 9.5, FAS27xx 및 AFF220, VMware vSphere 6.7U1 같은 새로운 기술을 FlexPod Express에 추가하는 것입니다. 
+---
+= 솔루션 개요
+
+
+FlexPod Express는 혼합 가상화 워크로드를 실행하도록 설계되었습니다. 원격 사무소, 지점 및 중소 및 중견 기업을 타겟으로 합니다. 또한 전용 솔루션을 특정 목적에 구축하고자 하는 대규모 기업에도 적합합니다. 새로운 FlexPod Express 솔루션의 주요 동인은 ONTAP 9.5, FAS27xx/AFF220, VMware vSphere 6.7U1 등의 새로운 기술을 FlexPod Express에 추가하는 것입니다.
+
+다음 그림에서는 FlexPod Express 솔루션에 포함된 하드웨어 구성 요소를 보여 줍니다.
+
+image:express-direct-attach-design_image2.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 대상
+
+이 문서는 IT 효율성을 제공하고 IT 혁신을 지원하기 위해 구축된 인프라를 활용하려는 사용자를 위해 작성되었습니다. 이 문서의 대상에는 세일즈 엔지니어, 현장 컨설턴트, 프로페셔널 서비스 직원, IT 매니저, 파트너 엔지니어 및 고객.
+
+
+
+== 솔루션 기술
+
+이 솔루션은 NetApp, Cisco 및 VMware의 최신 기술을 사용합니다. ONTAP 9.5, 이중 Cisco Nexus 31108PCV 스위치를 실행하는 NetApp AFF A220과 VMware vSphere 6.7U1을 실행하는 Cisco UCS B200 M5 서버를 갖추고 있습니다. 이 검증된 솔루션은 10GbE 기술을 통한 Direct Connect IP 스토리지를 사용합니다.
+
+다음 그림에서는 VMware vSphere 6.7U1 IP 기반 직접 연결 아키텍처를 지원하는 FlexPod Express를 보여 줍니다.
+
+image:express-direct-attach-design_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 사용 사례 요약
+
+FlexPod 익스프레스 솔루션은 다음과 같은 여러 사용 사례에 적용할 수 있습니다.
+
+* ROBO
+* 중소기업
+* 비용 효율적인 전용 솔루션이 필요한 환경 FlexPod Express는 가상화된 혼합 워크로드에 가장 적합합니다.
+
+
+link:express-direct-attach-design_technology_requirements.html["다음: 기술 요구 사항."]

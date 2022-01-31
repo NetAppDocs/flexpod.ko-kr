@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-epic-sizing_technical_specifications_for_small,_medium,_and_large_architectures.html 
+keywords: technical, specifications, architecture, components, software, epic 
+summary: FlexPod 설계는 다양한 구성 요소와 소프트웨어 버전을 포함하는 유연한 인프라를 지원합니다. 
+---
+= 소형, 중형 및 대형 아키텍처의 기술 사양
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod 설계는 다양한 구성 요소와 소프트웨어 버전을 포함하는 유연한 인프라를 지원합니다. 사용 https://fieldportal.netapp.com/content/443847["TR-4036: FlexPod 기술 사양"^] 유효한 FlexPod 구성을 구축 또는 조립하기 위한 가이드. 자세한 구성은 FlexPod의 최소 요구사항일 뿐이며 표본일 뿐입니다. 또한 포함된 제품군에서도 다양한 환경과 사용 사례에 맞게 확장할 수 있습니다.
+
+다음 표에는 Epic 운영 데이터베이스 워크로드의 용량 구성이 나와 있습니다. 나열된 총 용량은 모든 Epic 구성 요소의 필요성을 수용합니다.
+
+|===
+|  | 작은 크기 | 중간 | 대형 
+
+
+| 플랫폼 | AFF A300 HA 쌍 1개 | AFF A300 HA 쌍 1개 | AFF A300 HA 쌍 1개 
+
+
+| 디스크 쉘프 | 3.8TB 24개 | 48 x 3.8TB | 96 x 3.8TB 
+
+
+| EPIC 데이터베이스 크기 | 3~20TB | 20TB~40TB | >40TB 
+
+
+| 총 IOPS | 22,000 | 50,000개 | 125,000개 
+
+
+| 원시 | 92.16TB | 184.32TB | 368.64TB 
+
+
+| 사용 가능한 용량 | 65.02TiB | 134.36TiB | 269.51TiB 
+
+
+| 실제 용량(2:1 스토리지 효율성) | 130.04TiB | 268.71TiB | 539.03TiB 
+|===
+EPIC 운영 워크로드는 단일 AFF A300 HA 쌍을 통해 쉽게 충족할 수 있습니다. AFF A300 HA 쌍에서 최대 200k IOPS를 푸시할 수 있어 대규모 Epic 구축과의 여유 공간을 활용하여 더 많은 공유 워크로드를 처리할 수 있습니다.
+
+일부 고객 환경에서는 Epic 운영 워크로드가 여러 개 동시에 실행되거나 IOP 요구사항이 더 높을 수 있습니다. 이 경우, NetApp 세일즈 팀과 협력하여 필요한 IOP 및 용량에 따라 스토리지 시스템을 사이징하고 워크로드를 지원하는 데 적합한 플랫폼에 도달할 수 있습니다. AFF A700 HA 쌍에서 여러 Epic 환경을 실행하는 고객이 있습니다.
+
+다음 표에는 소형, 중형 및 대형 구성에 필요한 표준 소프트웨어가 나열되어 있습니다.
+
+|===
+| 소프트웨어 | 제품군 | 버전 또는 릴리스 
+
+
+| 스토리지 | Data ONTAP | ONTAP 9.3 GA 
+
+
+.3+| 네트워크 | Cisco UCS-FI 를 참조하십시오 | Cisco UCS Manager 3.2(2f) 
+
+
+| Cisco 이더넷 스위치 | 7.0(3) i7(2) 
+
+
+| Cisco FC: Cisco MDS 9132T | 8.2(2) 
+
+
+.2+| 하이퍼바이저 | 하이퍼바이저 | VMware vSphere ESXi 6.5 U1 
+
+
+| VM | RHEL 7.4 
+
+
+.4+| 관리 | 하이퍼바이저 관리 시스템 | VMware vCenter Server 6.5 U1(VCSA) 
+
+
+| NetApp 가상 스토리지 콘솔 | VSC 7.0P1 
+
+
+| SnapCenter | SnapCenter 4.0 
+
+
+| Cisco UCS Manager를 참조하십시오 | 3.2(2f) 이상 
+|===
+다음 표에는 소형 구성 인프라 구성 요소가 나열되어 있습니다.
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+.4+| 컴퓨팅 | Cisco UCS 5108 섀시 | 2개 | 사용자를 지원하는 데 필요한 블레이드 수를 기준으로 합니다 
+
+
+| Cisco UCS 블레이드 서버 | B200 M5 4개 | 각각 2개의 18코어, 2.7GHz 및 384GB BIOS 3.2(2f) 
+
+
+| Cisco UCS 빅토리아 | UCS 1340 4개 | VMware ESXi FNIC FC 드라이버:1.6.0.34 VMware ESXi eNIC 이더넷 드라이버:1.0.6.0(매트릭스 참조) 
+
+
+| Cisco UCS FI 2개 | 6332-16UP 및 Cisco UCS Manager 3.2(2f) |  
+
+
+| 네트워크 | Cisco 이더넷 스위치 |  | Cisco Nexus 93180YC-FX 2개 
+
+
+.2+| 스토리지 네트워크 | BLOB 스토리지용 IP 네트워크 N9k |  | FI 및 UCS 섀시 
+
+
+| FC: Cisco MDS 9132T |  | Cisco 9132T 스위치 2개 
+
+
+.3+| 스토리지 | NetApp AFF A300 | 1개의 HA 쌍 | 2-노드 클러스터 1개 
+
+
+| DS224C 디스크 쉘프 | DS224C 디스크 쉘프 1개(24개 드라이브로 모두 채워진 경우) | 완전히 채워진 디스크 쉘프 1개 
+
+
+| SSD를 지원합니다 | 3.8TB 24개 |  
+|===
+3.8TB SSD 드라이브의 단일 디스크 쉘프는 대부분의 소규모 Epic 고객 배포용으로 충분합니다. 하지만 공유 워크로드의 경우 더 많은 디스크 용량이 필요할 수 있습니다. 따라서 용량에 맞게 크기를 조정해야 합니다.
+
+다음 표에는 중형 구성 인프라 구성 요소가 나열되어 있습니다.
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+.4+| 컴퓨팅 | Cisco UCS 5108 섀시 | 네 | 사용자를 지원하는 데 필요한 블레이드 수를 기준으로 합니다 
+
+
+| Cisco UCS 블레이드 서버 | B200 M5 4개 | 각각 캐시 DB BIOS 3.2(2f)용 18코어 2개, 2.7GHz/3.0GHz 및 384GB 4 소켓 포함 
+
+
+| Cisco UCS 빅토리아 | UCS 1340 4개 | VMware ESXi FNIC FC 드라이버:1.6.0.34 VMware ESXi eNIC 이더넷 드라이버:1.0.6.0(매트릭스 참조) 
+
+
+| Cisco UCS FI 2개 | 6332-16UP 및 Cisco UCS Manager 3.2(2f) |  
+
+
+| 네트워크 | Cisco 이더넷 스위치 |  | Cisco Nexus 93180YC-FX 2개 
+
+
+.2+| 스토리지 네트워크 | IP 네트워크: BLOB 스토리지용 Cisco N9k |  | FI 및 Cisco UCS 섀시 
+
+
+| FC: Cisco MDS 9132T |  | Cisco 9132T 스위치 2개 
+
+
+.3+| 스토리지 | NetApp AFF A300 | 2개의 HA 쌍 | 모든 Epic 워크로드(운영, 보고서, Clarity, VMware, Citrix, CIFS 등) 
+
+
+| DS224C 디스크 쉘프 | DS224C 디스크 쉘프 2개 | 2개의 완전히 채워진 디스크 쉘프 
+
+
+| SSD를 지원합니다 | 48 x 3.8TB |  
+|===
+3.8TB SSD 드라이브 4개의 디스크 쉘프는 거의 모든 Medium Epic 고객 배포용으로 충분합니다. 하지만 필요한 용량에 대한 요구 사항과 크기를 적절히 평가합니다.
+
+다음 표에는 대규모 구성 인프라스트럭처 구성 요소가 정리되어 있습니다.
+
+|===
+| 레이어 | 제품군 | 수량 및 모델 | 세부 정보 
+
+
+.4+| 컴퓨팅 | Cisco UCS 5108 섀시 | 8 |  
+
+
+| Cisco UCS 블레이드 서버 | B200 M5 4개 | 각각 2개의 24코어, 2.7GHz 및 576GB BIOS 3.2(2f) 
+
+
+| Cisco UCS 빅토리아 | UCS 1340 4개 | VMware ESXi FNIC FC 드라이버:1.6.0.34 VMware ESXi eNIC 이더넷 드라이버:1.0.6.0(매트릭스 참조) 
+
+
+| Cisco UCS FI 2개 | 6332-16UP 및 Cisco UCS Manager 3.2(2f) |  
+
+
+| 네트워크 | Cisco 이더넷 스위치 |  | Cisco Nexus 93180YC-FX 2개 
+
+
+.2+| 스토리지 네트워크 | IP 네트워크: BLOB 스토리지용 Cisco N9k |  |  
+
+
+| FC: Cisco MDS 9706 |  | Cisco 9706 스위치 2개 
+
+
+.3+| 스토리지 | NetApp AFF A300 | 3개의 HA 쌍 | Epic 워크로드용 2-노드 클러스터 3개(Prod, Report, Clarity, VMware, Citrix, CIFS 등) 
+
+
+| DS224C 디스크 쉘프 | DS224C 디스크 쉘프 4개 | 완전히 채워진 디스크 쉘프 4개 
+
+
+| SSD를 지원합니다 | 96 x 3.8TB |  
+|===
+일부 고객 환경에서는 Epic 운영 워크로드가 여러 개 동시에 실행 중이거나 IOPS 요구사항이 더 높을 수 있습니다. 이 경우, NetApp 세일즈 팀과 협력하여 필요한 IOPS 및 용량에 따라 스토리지 시스템을 사이징하고 워크로드를 지원하는 데 적합한 플랫폼을 결정합니다. AFF A700 HA 쌍에서 여러 Epic 환경을 실행하는 고객이 있습니다.

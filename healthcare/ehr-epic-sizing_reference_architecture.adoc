@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-epic-sizing_reference_architecture.html 
+keywords:  
+summary:  
+---
+= 명확히 설명하십시오
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+

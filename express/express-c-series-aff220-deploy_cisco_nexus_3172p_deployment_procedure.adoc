@@ -1,0 +1,398 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_cisco_nexus_3172p_deployment_procedure.html 
+keywords: cisco, nexus, deployment, vlans, switches, server, configuration 
+summary: 다음 섹션에서는 FlexPod 익스프레스 환경에 사용되는 Cisco Nexus 3172P 스위치 구성에 대해 자세히 설명합니다. 
+---
+= Cisco Nexus 3172P 구축 절차
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+다음 섹션에서는 FlexPod 익스프레스 환경에 사용되는 Cisco Nexus 3172P 스위치 구성에 대해 자세히 설명합니다.
+
+
+
+== Cisco Nexus 3172P 스위치의 초기 설정
+
+다음 절차에서는 기본 FlexPod Express 환경에서 사용할 Cisco Nexus 스위치를 구성하는 방법에 대해 설명합니다.
+
+
+NOTE: 이 절차에서는 NX-OS 소프트웨어 릴리즈 7.0(3) i7(5)을 실행하는 Cisco Nexus 3172P를 사용하고 있다고 가정합니다.
+
+. 초기 부팅이 완료되고 스위치의 콘솔 포트에 연결되면 Cisco NX-OS 설정이 자동으로 시작됩니다. 이 초기 구성에서는 스위치 이름, mgmt0 인터페이스 구성, SSH(Secure Shell) 설정과 같은 기본 설정을 지정합니다.
+. FlexPod 익스프레스 관리 네트워크는 여러 가지 방법으로 구성할 수 있습니다. 3172P 스위치의 mgmt0 인터페이스를 기존 관리 네트워크에 연결할 수도 있고, 3172P 스위치의 mgmt0 인터페이스를 연속 연결 구성으로 연결할 수도 있습니다. 하지만 이 링크는 SSH 트래픽과 같은 외부 관리 액세스에 사용할 수 없습니다.
++
+이 구축 가이드에서는 FlexPod 익스프레스 Cisco Nexus 3172P 스위치를 기존 관리 네트워크에 연결합니다.
+
+. Cisco Nexus 3172P 스위치를 구성하려면 스위치의 전원을 켠 후 여기 에 나온 것처럼 화면 메시지에 따라 두 스위치를 초기 설정하고 스위치 관련 정보에 적절한 값을 대체하십시오.
++
+....
+This setup utility will guide you through the basic configuration of
+the system. Setup configures only enough connectivity for management
+of the system.
+*Note: setup is mainly used for configuring the system initially,
+when no configuration is present. So setup always assumes system
+defaults and not the current system configuration values.
+Press Enter at anytime to skip a dialog. Use ctrl-c at anytime
+to skip the remaining dialogs.
+Would you like to enter the basic configuration dialog (yes/no): y
+Do you want to enforce secure password standard (yes/no) [y]: y
+  Create another login account (yes/no) [n]: n
+  Configure read-only SNMP community string (yes/no) [n]: n
+  Configure read-write SNMP community string (yes/no) [n]: n
+  Enter the switch name : 3172P-B
+  Continue with Out-of-band (mgmt0) management configuration? (yes/no) [y]: y
+    Mgmt0 IPv4 address : <<var_switch_mgmt_ip>>
+    Mgmt0 IPv4 netmask : <<var_switch_mgmt_netmask>>
+  Configure the default gateway? (yes/no) [y]: y
+    IPv4 address of the default gateway : <<var_switch_mgmt_gateway>>
+  Configure advanced IP options? (yes/no) [n]: n
+  Enable the telnet service? (yes/no) [n]: n
+  Enable the ssh service? (yes/no) [y]: y
+    Type of ssh key you would like to generate (dsa/rsa) [rsa]: rsa
+    Number of rsa key bits <1024-2048> [1024]:  <enter>
+  Configure the ntp server? (yes/no) [n]: y
+    NTP server IPv4 address : <<var_ntp_ip>>
+  Configure default interface layer (L3/L2) [L2]: <enter>
+  Configure default switchport interface state (shut/noshut) [noshut]:  <enter>
+  Configure CoPP system profile (strict/moderate/lenient/dense) [strict]:  <enter>
+....
+. 그러면 구성 요약이 표시됩니다. 구성을 편집할지 묻는 메시지가 나타납니다. 구성이 올바르면 n을 입력합니다.
++
+....
+Would you like to edit the configuration? (yes/no) [n]: n
+....
+. 그런 다음 이 구성을 사용하고 저장할지 묻는 메시지가 표시됩니다. 그렇다면 y를 입력합니다.
++
+....
+Use this configuration and save it? (yes/no) [y]: Enter
+....
+. Cisco Nexus 스위치 B에 대해 이 절차를 반복합니다
+
+
+
+
+== 고급 기능을 활성화합니다
+
+추가 구성 옵션을 제공하려면 Cisco NX-OS에서 특정 고급 기능을 사용하도록 설정해야 합니다.
+
+
+NOTE: interface-vlan 기능은 본 문서 전반에 걸쳐 설명한 back-to-back mgmt0 옵션을 사용하는 경우에만 필요합니다. 이 기능을 사용하면 IP 주소를 인터페이스 VLAN(스위치 가상 인터페이스)에 할당하여 SSH를 통해 스위치에 대한 대역 내 관리 통신을 사용할 수 있습니다.
+
+. Cisco Nexus 스위치 A와 스위치 B에서 적절한 기능을 활성화하려면 '(config t)' 명령을 사용하여 구성 모드를 시작하고 다음 명령을 실행하십시오.
++
+....
+feature interface-vlan
+feature lacp
+feature vpc
+....
++
+기본 포트 채널 로드 밸런싱 해쉬는 소스 및 타깃 IP 주소를 사용하여 포트 채널의 인터페이스에 대한 로드 밸런싱 알고리즘을 결정합니다. 소스 및 타깃 IP 주소보다 많은 입력을 해쉬 알고리즘에 제공하면 포트 채널 멤버 전체에 걸쳐 더 효율적으로 분산될 수 있습니다. 동일한 이유로 소스 및 타깃 TCP 포트를 해쉬 알고리즘에 추가하는 것이 좋습니다.
+
+. 구성 모드('config t')에서 다음 명령을 입력하여 Cisco Nexus 스위치 A 및 스위치 B의 글로벌 포트 채널 로드 밸런싱 구성을 설정하십시오.
++
+....
+port-channel load-balance src-dst ip-l4port
+....
+
+
+
+
+== 글로벌 스패닝 트리 구성을 수행합니다
+
+Cisco Nexus 플랫폼은 브리지 보장이라는 새로운 보호 기능을 사용합니다. 브리지 보장은 스패닝 트리 알고리즘을 더 이상 실행하지 않는 장치에서 데이터 트래픽을 계속 전달하는 단방향 링크 또는 기타 소프트웨어 장애를 방지합니다. 플랫폼에 따라 네트워크 또는 가장자리를 포함한 여러 상태 중 하나에 포트를 배치할 수 있습니다.
+
+기본적으로 모든 포트가 네트워크 포트로 간주되도록 브리지 보장을 설정하는 것이 좋습니다. 이 설정은 네트워크 관리자가 각 포트의 구성을 검토하도록 합니다. 또한 확인되지 않은 에지 포트 또는 브리지 보장 기능이 활성화되지 않은 인접 장치와 같은 가장 일반적인 구성 오류도 표시됩니다. 또한 스패닝 트리에서 너무 적은 포트가 아니라 많은 포트를 차단하는 편이 더 안전합니다. 그러면 기본 포트 상태를 통해 네트워크의 전반적인 안정성을 향상할 수 있습니다.
+
+특히 브리지 보장을 지원하지 않는 서버, 스토리지 및 업링크 스위치를 추가할 때는 스패닝 트리 상태에 세심한 주의를 기울여야 합니다. 이러한 경우 포트를 활성화하려면 포트 유형을 변경해야 할 수 있습니다.
+
+브리지 프로토콜 데이터 단위(BPDU) 보호대는 기본적으로 다른 보호 계층으로 에지 포트에서 활성화됩니다. 네트워크의 루프를 방지하기 위해 이 기능은 다른 스위치의 BPDU가 이 인터페이스에 표시되는 경우 포트를 종료합니다.
+
+구성 모드('config t')에서 다음 명령을 실행하여 Cisco Nexus 스위치 A 및 스위치 B에서 기본 포트 유형과 BPDU 가드를 포함한 기본 스패닝 트리 옵션을 구성하십시오.
+
+....
+spanning-tree port type network default
+spanning-tree port type edge bpduguard default
+....
+
+
+== VLAN을 정의합니다
+
+VLAN이 서로 다른 개별 포트를 구성하기 전에 스위치에서 계층 2 VLAN을 정의해야 합니다. 향후 문제 해결이 용이하도록 VLAN 이름을 지정하는 것도 좋은 방법입니다.
+
+구성 모드('config t')에서 다음 명령을 실행하여 Cisco Nexus 스위치 A 및 스위치 B의 계층 2 VLAN을 정의하고 설명하십시오.
+
+....
+vlan <<nfs_vlan_id>>
+  name NFS-VLAN
+vlan <<iSCSI_A_vlan_id>>
+  name iSCSI-A-VLAN
+vlan <<iSCSI_B_vlan_id>>
+  name iSCSI-B-VLAN
+vlan <<vmotion_vlan_id>>
+  name vMotion-VLAN
+vlan <<vmtraffic_vlan_id>>
+  name VM-Traffic-VLAN
+vlan <<mgmt_vlan_id>>
+  name MGMT-VLAN
+vlan <<native_vlan_id>>
+  name NATIVE-VLAN
+exit
+....
+
+
+== 액세스 및 관리 포트 설명을 구성합니다
+
+계층 2 VLAN에 이름을 할당하는 경우와 마찬가지로, 모든 인터페이스에 대한 설정 설명은 프로비저닝과 문제 해결에 도움이 될 수 있습니다.
+
+각 스위치의 구성 모드('config t')에서 FlexPod Express 대규모 구성에 대한 다음 포트 설명을 입력합니다.
+
+
+
+=== Cisco Nexus 스위치 A
+
+....
+int eth1/1
+  description AFF A220-A e0c
+int eth1/2
+  description AFF A220-B e0c
+int eth1/3
+  description UCS-Server-A: MLOM port 0
+int eth1/4
+  description UCS-Server-B: MLOM port 0
+int eth1/25
+  description vPC peer-link 3172P-B 1/25
+int eth1/26
+  description vPC peer-link 3172P-B 1/26
+int eth1/33
+  description AFF A220-A e0M
+int eth1/34
+  description UCS Server A: CIMC
+....
+
+
+=== Cisco Nexus 스위치 B
+
+....
+int eth1/1
+  description AFF A220-A e0d
+int eth1/2
+  description AFF A220-B e0d
+int eth1/3
+  description UCS-Server-A: MLOM port 1
+int eth1/4
+  description UCS-Server-B: MLOM port 1
+int eth1/25
+  description vPC peer-link 3172P-A 1/25
+int eth1/26
+  description vPC peer-link 3172P-A 1/26
+int eth1/33
+  description AFF A220-B e0M
+int eth1/34
+  description UCS Server B: CIMC
+....
+
+
+== 서버 및 스토리지 관리 인터페이스를 구성합니다
+
+서버와 스토리지 모두의 관리 인터페이스는 일반적으로 단일 VLAN만 사용합니다. 따라서 관리 인터페이스 포트를 액세스 포트로 구성합니다. 각 스위치에 대한 관리 VLAN을 정의하고 스패닝 트리 포트 유형을 에지로 변경합니다.
+
+구성 모드('config t')에서 다음 명령을 입력하여 서버와 스토리지 모두의 관리 인터페이스에 대한 포트 설정을 구성하십시오.
+
+
+
+=== Cisco Nexus 스위치 A
+
+....
+int eth1/33-34
+  switchport mode access
+  switchport access vlan <<mgmt_vlan>>
+  spanning-tree port type edge
+  speed 1000
+exit
+....
+
+
+=== Cisco Nexus 스위치 B
+
+....
+int eth1/33-34
+  switchport mode access
+  switchport access vlan <<mgmt_vlan>>
+  spanning-tree port type edge
+  speed 1000
+exit
+....
+
+
+== 가상 포트 채널 글로벌 구성을 수행합니다
+
+가상 포트 채널(vPC)을 사용하면 물리적으로 두 개의 서로 다른 Cisco Nexus 스위치에 연결된 링크가 세 번째 장치에 단일 포트 채널로 표시될 수 있습니다. 세 번째 장치는 스위치, 서버 또는 다른 네트워킹 장치일 수 있습니다. vPC는 계층 2 다중 경로를 제공할 수 있으므로 대역폭을 높이고, 노드 간에 여러 개의 병렬 경로를 활성화하고, 대체 경로가 있는 로드 밸런싱 트래픽을 통해 이중화를 생성할 수 있습니다.
+
+vPC는 다음과 같은 이점을 제공합니다.
+
+* 단일 장치에서 두 업스트림 장치에 걸쳐 포트 채널을 사용하도록 설정
+* 스패닝 트리 프로토콜 차단 포트 제거
+* 루프 없는 토폴로지 제공
+* 사용 가능한 모든 업링크 대역폭 사용
+* 링크 또는 디바이스에 장애가 발생할 경우 빠른 컨버전스를 제공합니다
+* 링크 레벨의 복원력 제공
+* 고가용성 제공 지원
+
+
+vPC 기능이 제대로 작동하려면 두 Cisco Nexus 스위치 간의 몇 가지 초기 설정이 필요합니다. 연속 인접 mgmt0 구성을 사용하는 경우에는 인터페이스에 정의된 주소를 사용하고 ping을 사용하여 통신 가능 여부를 확인해야 합니다<<switch_A/B_mgmt0_ip_addr>>VRF 관리 명령어
+
+구성 모드('config t')에서 다음 명령을 실행하여 두 스위치에 대한 vPC 글로벌 구성을 설정하십시오.
+
+
+
+=== Cisco Nexus 스위치 A
+
+....
+vpc domain 1
+ role priority 10
+  peer-keepalive destination <<switch_B_mgmt0_ip_addr>> source <<switch_A_mgmt0_ip_addr>> vrf management
+  peer-gateway
+  auto-recovery
+  ip arp synchronize
+int eth1/25-26
+  channel-group 10 mode active
+int Po10
+  description vPC peer-link
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan <<native_vlan_id>>
+  switchport trunk allowed vlan <<nfs_vlan_id>>,<<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>, <<iSCSI_A_vlan_id>>, <<iSCSI_B_vlan_id>>
+  spanning-tree port type network
+  vpc peer-link
+  no shut
+exit
+copy run start
+....
+
+
+=== Cisco Nexus 스위치 B
+
+....
+vpc domain 1
+  peer-switch
+  role priority 20
+  peer-keepalive destination <<switch_A_mgmt0_ip_addr>> source <<switch_B_mgmt0_ip_addr>> vrf management
+  peer-gateway
+  auto-recovery
+  ip arp synchronize
+int eth1/25- 26
+  channel-group 10 mode active
+int Po10
+  description vPC peer-link
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan <<native_vlan_id>>
+  switchport trunk allowed vlan <<nfs_vlan_id>>,<<vmotion_vlan_id>>, <<vmtraffic_vlan_id>>, <<mgmt_vlan>>, <<iSCSI_A_vlan_id>>, <<iSCSI_B_vlan_id>>
+  spanning-tree port type network
+  vpc peer-link
+no shut
+exit
+copy run start
+....
+
+
+== 스토리지 포트 채널을 구성합니다
+
+NetApp 스토리지 컨트롤러는 LACP(Link Aggregation Control Protocol)를 사용하여 네트워크에 대해 active-active 연결을 허용합니다. LACP 사용이 선호되는 이유는 LACP가 스위치 간에 협상과 로깅을 모두 추가하기 때문입니다. 네트워크가 vPC에 맞게 설정되므로 이 접근 방식을 통해 스토리지에서 별도의 물리적 스위치로의 active-active 연결을 설정할 수 있습니다. 각 컨트롤러에는 각 스위치에 대한 링크가 2개 있습니다. 그러나 4개의 링크 모두 동일한 vPC 및 인터페이스 그룹(IFGRP)에 속합니다.
+
+구성 모드('config t')에서 각 스위치에 대해 다음 명령을 실행하여 개별 인터페이스를 구성하고 NetApp AFF 컨트롤러에 연결된 포트에 대한 결과 포트 채널 구성을 설정하십시오.
+
+. 스위치 A와 스위치 B에서 다음 명령을 실행하여 스토리지 컨트롤러 A의 포트 채널을 구성합니다.
++
+....
+int eth1/1
+  channel-group 11 mode active
+int Po11
+  description vPC to Controller-A
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan <<native_vlan_id>>
+  switchport trunk allowed vlan <<nfs_vlan_id>>,<<mgmt_vlan_id>>,<<iSCSI_A_vlan_id>>, <<iSCSI_B_vlan_id>>
+  spanning-tree port type edge trunk
+  mtu 9216
+  vpc 11
+  no shut
+....
+. 스위치 A와 스위치 B에서 다음 명령을 실행하여 스토리지 컨트롤러 B의 포트 채널을 구성합니다
++
+....
+int eth1/2
+  channel-group 12 mode active
+int Po12
+  description vPC to Controller-B
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan <<native_vlan_id>>
+  switchport trunk allowed vlan <<nfs_vlan_id>>,<<mgmt_vlan_id>>, <<iSCSI_A_vlan_id>>, <<iSCSI_B_vlan_id>>
+  spanning-tree port type edge trunk
+  mtu 9216
+  vpc 12
+  no shut
+exit
+copy run start
+....
++
+
+NOTE: 이 솔루션 검증에서 MTU 9000이 사용되었습니다. 그러나 애플리케이션 요구 사항에 따라 MTU의 적절한 값을 구성할 수 있습니다. FlexPod 솔루션에서 동일한 MTU 값을 설정하는 것이 중요합니다. 구성 요소 간의 MTU 구성이 잘못되면 패킷이 손실되고 이러한 패킷이 생성됩니다.
+
+
+
+
+
+== 서버 연결을 구성합니다
+
+Cisco UCS 서버에는 데이터 트래픽과 iSCSI를 사용한 ESXi 운영 체제 부팅에 사용되는 2포트 가상 인터페이스 카드 VIC1387이 있습니다. 이러한 인터페이스는 서로 간에 페일오버되도록 구성되어 단일 링크를 넘어 추가적인 이중화를 제공합니다. 이러한 링크를 여러 스위치에 걸쳐 분산하면 완전한 스위치 장애가 발생해도 서버가 가동 상태를 유지할 수 있습니다.
+
+구성 모드('config t')에서 다음 명령을 실행하여 각 서버에 연결된 인터페이스에 대한 포트 설정을 구성합니다.
+
+
+
+=== Cisco Nexus 스위치 A: Cisco UCS 서버 A 및 Cisco UCS 서버 B 구성
+
+....
+int eth1/3-4
+  switchport mode trunk
+  switchport trunk native vlan <<native_vlan_id>>
+  switchport trunk allowed vlan <<iSCSI_A_vlan_id>>,<<nfs_vlan_id>>,<<vmotion_vlan_id>>,<<vmtraffic_vlan_id>>,<<mgmt_vlan_id>>
+  spanning-tree port type edge trunk
+  mtu9216
+  no shut
+exit
+copy run start
+....
+
+
+=== Cisco Nexus 스위치 B: Cisco UCS 서버 A 및 Cisco UCS 서버 B 구성
+
+....
+int eth1/3-4
+  switchport mode trunk
+  switchport trunk native vlan <<native_vlan_id>>
+  switchport trunk allowed vlan <<iSCSI_B_vlan_id>>,<<nfs_vlan_id>>,<<vmotion_vlan_id>>,<<vmtraffic_vlan_id>>,<<mgmt_vlan_id>>
+  spanning-tree port type edge trunk
+  mtu 9216
+  no shut
+exit
+copy run start
+....
+이 솔루션 검증에서 MTU 9000이 사용되었습니다. 그러나 애플리케이션 요구 사항에 따라 MTU의 적절한 값을 구성할 수 있습니다. FlexPod 솔루션에서 동일한 MTU 값을 설정하는 것이 중요합니다. 구성 요소 간의 MTU 구성이 잘못되면 패킷이 손실되고 이러한 패킷은 다시 전송되어야 합니다. 이 문제는 솔루션의 전반적인 성능에 영향을 줍니다.
+
+Cisco UCS 서버를 추가하여 솔루션을 확장하거나, 스위치 A 및 B에서 새로 추가한 서버가 연결된 스위치 포트를 사용하여 이전 명령을 실행합니다
+
+
+
+== 기존 네트워크 인프라로 업링크
+
+사용 가능한 네트워크 인프라에 따라 여러 가지 방법과 기능을 사용하여 FlexPod 환경을 업링크할 수 있습니다. 기존 Cisco Nexus 환경이 존재하는 경우, NetApp은 vPC를 사용하여 FlexPod 환경에 포함된 Cisco Nexus 3172P 스위치를 인프라로 업링크하는 것을 권장합니다. 업링크는 10GbE 인프라스트럭처 솔루션의 경우 10GbE 업링크 또는 필요한 경우 1GbE 인프라스트럭처 솔루션의 경우 1GbE일 수 있습니다. 앞서 설명한 절차를 사용하여 기존 환경에 대한 업링크 vPC를 생성할 수 있습니다. 구성이 완료된 후 각 스위치에 대한 구성을 저장하려면 copy run start를 실행해야 합니다.
+
+link:express-c-series-aff220-deploy_netapp_storage_deployment_procedure_@part_1@.html["다음: NetApp 스토리지 구현 절차(1부)"]

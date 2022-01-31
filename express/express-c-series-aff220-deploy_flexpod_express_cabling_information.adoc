@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-aff220-deploy_flexpod_express_cabling_information.html 
+keywords: cabling, information, validation, cisco, nexus, switches 
+summary: 이 섹션에서는 Cisco Nexus 스위치 3172P A 및 B와 NetApp AFF A220 스토리지 컨트롤러 A 및 B에 대한 검증 케이블링 및 케이블링 정보에 대한 참조를 자세히 다룹니다 
+---
+= FlexPod Express 케이블링 정보
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+다음 그림은 참조 검증 케이블 연결을 보여 줍니다.
+
+image:express-c-series-aff220-deploy_image5.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 표에서는 Cisco Nexus 스위치 3172P A 의 케이블 연결 정보를 보여 줍니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+| Cisco Nexus 스위치 3172P A | eth1/1 | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0c 
+
+
+|  | eth1/2 | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0c 
+
+
+|  | eth1/3 | Cisco UCS C220 C-Series 독립 실행형 서버 A | CVR-QSFP-SFP 10G 어댑터가 있는 MLOM1 
+
+
+|  | eth1/4 | Cisco UCS C220 C-Series 독립 실행형 서버 B | CVR-QSFP-SFP 10G 어댑터가 있는 MLOM1 
+
+
+|  | eth1/25 | Cisco Nexus 스위치 3172P B | eth1/25 
+
+
+|  | Eth1/26 | Cisco Nexus 스위치 3172P B | Eth1/26 
+
+
+|  | Eth1/33 | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0M 
+
+
+|  | eth1/34 | Cisco UCS C220 C-Series 독립 실행형 서버 A | CIMC를 참조하십시오 
+|===
+다음 표에서는 Cisco Nexus 스위치 3172P B 의 케이블 연결 정보를 보여 줍니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+| Cisco Nexus 스위치 3172P B | eth1/1 | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0d 
+
+
+|  | eth1/2 | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0d 
+
+
+|  | eth1/3 | Cisco UCS C220 C-Series 독립 실행형 서버 A | CVR-QSFP-SFP 10G 어댑터가 포함된 MLOM2 
+
+
+|  | eth1/4 | Cisco UCS C220 C-Series 독립 실행형 서버 B | CVR-QSFP-SFP 10G 어댑터가 포함된 MLOM2 
+
+
+|  | eth1/25 | Cisco Nexus 스위치 3172P A | eth1/25 
+
+
+|  | Eth1/26 | Cisco Nexus 스위치 3172P A | Eth1/26 
+
+
+|  | Eth1/33 | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0M 
+
+
+|  | eth1/34 | Cisco UCS C220 C-Series 독립 실행형 서버 B | CIMC를 참조하십시오 
+|===
+다음 표에서는 NetApp AFF A220 스토리지 컨트롤러 A의 케이블 연결 정보를 보여 줍니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+| NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0a | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0a 
+
+
+|  | e0b | NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0b 
+
+
+|  | e0c | Cisco Nexus 스위치 3172P A | eth1/1 
+
+
+|  | e0d | Cisco Nexus 스위치 3172P B | eth1/1 
+
+
+|  | e0M | Cisco Nexus 스위치 3172P A | Eth1/33 
+|===
+다음 표에서는 NetApp AFF A220 스토리지 컨트롤러 B의 케이블 연결 정보를 보여 줍니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+| NetApp AFF A220 스토리지 컨트롤러 B입니다 | e0a | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0a 
+
+
+|  | e0b | NetApp AFF A220 스토리지 컨트롤러 A입니다 | e0b 
+
+
+|  | e0c | Cisco Nexus 스위치 3172P A | eth1/2 
+
+
+|  | e0d | Cisco Nexus 스위치 3172P B | eth1/2 
+
+
+|  | e0M | Cisco Nexus 스위치 3172P B | Eth1/33 
+|===

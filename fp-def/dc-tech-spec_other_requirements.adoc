@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_other_requirements.html 
+keywords: flexpod, datacenter, technical, specifications, requirements, interoperability 
+summary: FlexPod 아키텍처에는 다음과 같은 추가 상호 운용성 및 지원 관련 요구사항이 있습니다 
+---
+= 기타 요구 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+FlexPod 아키텍처에는 다음과 같은 추가 상호 운용성 및 지원 관련 요구사항이 있습니다.
+
+* 모든 하드웨어 및 소프트웨어 구성요소는 NetApp에서 지원 및 나열되어야 합니다 http://mysupport.netapp.com/matrix["IMT"^],및 Cisco UCS 하드웨어 및 소프트웨어 상호 운용성 매트릭스 툴에 액세스할 수 있습니다.
+* 다음을 포함하여 모든 장비에 대해 유효한 지원 계약이 필요합니다.
++
+** Cisco 장비에 대한 Smart Net Total Care(SmartNet) 지원
+** NetApp 장비에 대한 SupportEdge Advisor 또는 SupportEdge Premium 지원
+
+
+
+
+자세한 내용은 NetApp을 참조하십시오 http://mysupport.netapp.com/matrix["IMT"^].

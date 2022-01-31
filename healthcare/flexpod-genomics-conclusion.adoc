@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: healthcare/flexpod-genomics-conclusion.html 
+keywords: conclusion 
+summary: 전 세계의 많은 의료 기관이 FlexPod를 공통 플랫폼으로 표준화했습니다. FlexPod를 사용하면 의료 기능을 안심하고 구현할 수 있습니다. 
+---
+= 결론
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:flexpod-genomics-appendix-d-gpu-setup.html["이전: GPU 설정"]
+
+전 세계의 많은 의료 기관이 FlexPod를 공통 플랫폼으로 표준화했습니다. FlexPod를 사용하면 의료 기능을 안심하고 구현할 수 있습니다. ONTAP with NetApp FlexPod는 업계 최고 수준의 프로토콜 집합을 즉시 구현할 수 있는 표준 기능을 제공합니다. 유전체학을 특정 환자의 유전체학을 실행하라는 요청의 근원과 관계없이 FlexPod 플랫폼에서 상호 운용성, 접근성, 가용성 및 확장성이 기본으로 제공됩니다. FlexPod 플랫폼에서 표준화하면 혁신 문화가 전염됩니다.
+
+
+
+== 추가 정보를 찾을 수 있는 위치
+
+이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 및 웹 사이트를 참조하십시오.
+
+* 딥 러닝용 Cisco UCS 480mL가 포함된 AI/ML용 FlexPod 데이터 센터
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_480ml_aiml_deployment.pdf["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_480ml_aiml_deployment.pdf"^]
+
+* VMware vSphere 7.0 및 NetApp ONTAP 9.7을 사용하는 FlexPod 데이터 센터
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html"^]
+
+* ONTAP 9 문서 센터
++
+http://docs.netapp.com["http://docs.netapp.com"^]
+
+* 롤링을 영광으로 생각합니다
++
+https://www.netapp.com/blog/achieving-epic-honor-roll/["https://www.netapp.com/blog/achieving-epic-honor-roll/"^]
+
+* 민첩하고 효율적인 FlexPod으로 데이터 센터 현대화 실현
++
+https://www.flexpod.com/idc-white-paper/["https://www.flexpod.com/idc-white-paper/"^]
+
+* 의료 부문의 AI
++
+https://www.netapp.com/us/media/na-369.pdf["https://www.netapp.com/us/media/na-369.pdf"^]
+
+* 의료 분야의 혁신을 지원하는 FlexPod
++
+https://flexpod.com/solutions/verticals/healthcare/["https://flexpod.com/solutions/verticals/healthcare/"^]
+
+* Cisco와 NetApp의 FlexPod
++
+https://flexpod.com/["https://flexpod.com/"^]
+
+* 의료 분야 AI 및 분석(NetApp)
++
+https://www.netapp.com/us/artificial-intelligence/healthcare-ai-analytics/index.aspx["https://www.netapp.com/us/artificial-intelligence/healthcare-ai-analytics/index.aspx"^]
+
+* 의료 스마트 인프라 선택이 가능한 AI는 성공을 높여줍니다
++
+https://www.netapp.com/pdf.html?item=/media/7410-wp-7314.pdf["https://www.netapp.com/pdf.html?item=/media/7410-wp-7314.pdf"^]
+
+* ONTAP 9.8이 지원되는 FlexPod 데이터 센터, Cisco Intersight용 ONTAP 스토리지 커넥터 및 Cisco Intersight 관리 모드
++
+https://www.netapp.com/pdf.html?item=/media/25001-tr-4883.pdf["https://www.netapp.com/pdf.html?item=/media/25001-tr-4883.pdf"^]
+
+* FlexPod Datacenter 및 Red Hat Enterprise Linux OpenStack 플랫폼
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_openstack_osp6.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_openstack_osp6.html"^]
+
+
+
+
+
+== 버전 기록
+
+|===
+| 버전 | 날짜 | 문서 버전 기록 
+
+
+| 버전 1.0 | 2021년 11월 | 최초 릴리스. 
+|===

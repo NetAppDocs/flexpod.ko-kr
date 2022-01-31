@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: healthcare/ehr-epic-deploy_deployment_and_configuration_overview.html 
+keywords: storage, flexpod, deployment, ontap, cisco, ucs 
+summary: 이 문서에 제공된 NetApp 스토리지 FlexPod 구축 지침은 ONTAP를 사용하는 환경과 Cisco UCS 블레이드 및 랙 마운트 서버를 사용하는 환경에만 적용됩니다. 또한 이 페이지에서는 Epic 구축을 위한 16Gb FC/40GbE 토폴로지 다이어그램을 자세히 설명합니다. 
+---
+= 개요
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 문서에 제공된 NetApp 스토리지 FlexPod 구축 지침은 다음과 같습니다.
+
+* ONTAP를 사용하는 환경
+* Cisco UCS 블레이드 및 랙 마운트 서버를 사용하는 환경
+
+
+이 문서는 다음 사항을 다루지 않습니다.
+
+* FlexPod 데이터 센터 환경의 세부 구축 을 참조하십시오 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["FC Cisco Validated Design이 구축된 FlexPod 데이터 센터"^].
+* Epic 소프트웨어 환경, 참조 아키텍처 및 통합 모범 사례 지침을 간략하게 설명합니다. NetApp을 참조하십시오 https://fieldportal.netapp.com/?oparams=68646["TR-3928: NetApp Epic 모범 사례"^].
+* 정량적 성능 요구 사항 및 사이징 지침 NetApp을 참조하십시오 https://fieldportal.netapp.com/?oparams=68786["TR-3930: Epic을 위한 NetApp 사이징 지침"^].
+* NetApp SnapMirror 기술을 사용하여 백업 및 재해 복구 요구사항을 충족합니다.
+* SnapCenter를 비롯한 Epic 데이터베이스 백업 및 복구
+* 일반 NetApp 스토리지 구축 지침:
+* Clarity 보고 환경에 대한 배포 지침 NetApp을 참조하십시오 https://fieldportal.netapp.com/content/533809?assetComponentId=534649["TR-4590: ONTAP를 사용하는 Microsoft SQL Server에 대한 모범 사례 가이드"^].
+
+
+이 섹션에서는 인프라 구축 모범 사례를 사용한 연구소 환경 설정에 대해 설명합니다. Genio 툴은 Epic EHR 애플리케이션 워크로드를 시뮬레이션하는 데 사용됩니다. 이 섹션에는 다양한 인프라 하드웨어 및 소프트웨어 구성 요소와 사용된 버전이 나와 있습니다.
+
+
+
+== 케이블 연결 다이어그램
+
+다음 그림에서는 Epic 구축을 위한 16Gb FC/40GbE 토폴로지 다이어그램을 보여 줍니다.
+
+image:ehr-epic-deploy_image9.png["오류: 그래픽 이미지가 없습니다"]
+
+link:ehr-epic-deploy_infrastructure_hardware_and_software_components.html["다음: 인프라 하드웨어 및 소프트웨어 구성 요소."]

@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: ontap-connector-for-intersight/ci-qsg_monitor_netapp_storage_from_cisco_intersight.html 
+keywords: netapp, storage, cisco intersight, monitor, orchestrate, orchestration, storage inventory, storage widgets 
+summary: 대상이 확보되면 Advantage 계층 라이센스가 있는 경우 NetApp 스토리지 위젯, 스토리지 인벤토리 및 가상화 탭을 사용할 수 있습니다. 프리미어 계층 라이센스가 있는 경우 오케스트레이션 탭을 사용할 수 있습니다. 
+---
+= Cisco Intersight에서 NetApp 스토리지 모니터링
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+[role="lead"]
+대상이 확보되면 Advantage 계층 라이센스가 있는 경우 NetApp 스토리지 위젯, 스토리지 인벤토리 및 가상화 탭을 사용할 수 있습니다. 프리미어 계층 라이센스가 있는 경우 오케스트레이션 탭을 사용할 수 있습니다.
+
+
+
+== 스토리지 인벤토리 개요
+
+다음 스크린샷은 * Operate > Storage * 화면을 표시합니다.
+
+image:ci-qsg_image9.png["스크린샷은 Operate & GT; Storage 화면을 표시합니다"]
+
+다음 스크린샷은 스토리지 클러스터 개요를 보여 줍니다.
+
+
+NOTE: 다음 성능 메트릭 요약 정보는 NetApp Active IQ Unified Manager 9.9 이상을 통해 스토리지 어레이를 모니터링하는 경우에만 표시됩니다.
+
+image:ci-qsg_image10.png["스크린샷은 스토리지 클러스터 개요를 보여 줍니다"]
+
+
+
+== 스토리지 위젯
+
+스토리지 위젯을 보려면 * 모니터링 > 대시보드 > NetApp 스토리지 위젯 보기 * 로 이동합니다.
+
+* 다음 스크린샷은 Storage Version Summary 위젯을 보여 줍니다.
+
+
+image:ci-qsg_image11.jpg["스크린샷은 스토리지 버전 요약 위젯을 보여 줍니다"]
+
+* 이 스크린샷은 용량 활용률별 상위 5개 스토리지 어레이를 보여 줍니다.
+
+
+image:ci-qsg_image12.png["스크린샷은 용량 활용률별 상위 5개 스토리지 어레이 위젯을 보여 줍니다"]
+
+* 이 스크린샷은 용량 활용률별 상위 5개 스토리지 볼륨을 보여 줍니다.
+
+
+image:ci-qsg_image13.png["스크린샷은 용량 활용률별 상위 5개 스토리지 볼륨을 보여 줍니다"]

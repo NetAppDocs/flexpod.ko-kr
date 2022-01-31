@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: infrastructure/nvme-vsphere-test-results.html 
+keywords: test, results, iops, latency 
+summary:  
+---
+= 테스트 결과
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:nvme-vsphere-testing-approach.html["이전: 테스트 접근 방식."]
+
+테스트는 IOPS 및 지연 시간 측면에서 FC-NVMe 성능을 측정하기 위해 FIO 워크로드를 실행하는 것으로 구성되었습니다.
+
+다음 그래프는 8KB 블록 크기를 사용하여 100% 랜덤 읽기 워크로드를 실행할 때의 결과를 보여줍니다.
+
+image:nvme-vsphere-image3.png["오류: 그래픽 이미지가 없습니다"]
+
+이 테스트에서는 서버 측 지연 시간이 0.35ms 미만으로 유지하면서 시스템이 120만 IOPS 이상을 달성하는 것을 발견했습니다.
+
+다음 그래프는 8KB 블록 크기를 사용하여 100% 랜덤 쓰기 워크로드를 실행할 때 얻은 결과를 보여 줍니다.
+
+image:nvme-vsphere-image4.png["오류: 그래픽 이미지가 없습니다"]
+
+이 테스트에서는 약 300,000 IOPS를 달성했지만 1ms 미만의 서버 측 지연 시간만 유지된다는 사실을 발견했습니다.
+
+8KB 블록 크기, 80% 랜덤 읽기 및 20% 쓰기의 경우 다음과 같은 결과를 확인했습니다.
+
+image:nvme-vsphere-image5.png["오류: 그래픽 이미지가 없습니다"]
+
+테스트에서는 시스템이 1백만 IOPS 이상을 달성하는 동시에 1ms 미만의 서버 측 지연 시간을 유지한다는 사실을 발견했습니다.
+
+64KB 블록 크기 및 100% 순차적 읽기의 경우 다음 결과가 관찰되었습니다.
+
+image:nvme-vsphere-image6.png["오류: 그래픽 이미지가 없습니다"]
+
+이번 테스트에서 시스템은 지연 시간이 1ms 미만인 동시에 약 250,000 IOPS를 실현했다는 사실을 확인했습니다.
+
+64KB 블록 크기 및 100% 순차적 쓰기의 경우 다음 결과가 관찰되었습니다.
+
+image:nvme-vsphere-image7.png["오류: 그래픽 이미지가 없습니다"]
+
+이 테스트에서는 약 120k IOPS를 달성하면서 1ms 미만의 서버 측 지연 시간을 유지하던 시스템이 나타났습니다.
+
+link:nvme-vsphere-conclusion.html["다음: 결론."]

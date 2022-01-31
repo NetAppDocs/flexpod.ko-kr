@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: express/express-c-series-c190-deploy_flexpod_express_cabling_information.html 
+keywords: flexpod, express, cabling, information, storage, controller, switch, cisco, nexus 
+summary: 이 참조 검증은 다음 그림 및 표와 같이 케이블로 연결됩니다. 
+---
+= FlexPod Express 케이블링 정보
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+이 참조 검증은 다음 그림 및 표와 같이 케이블로 연결됩니다.
+
+이 그림은 참조 검증 케이블 연결을 보여 줍니다.
+
+image:express-c-series-c190-deploy_image3.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 표에는 Cisco Nexus 스위치 31108PC-V-A의 케이블 연결 정보가 나와 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.10+| Cisco Nexus 스위치 31108PC-V A | eth1/1 | NetApp AFF C190 스토리지 컨트롤러 A | e0c 
+
+
+| eth1/2 | NetApp AFF C190 스토리지 컨트롤러 B | e0c 
+
+
+| eth1/3 | Cisco UCS C220 C-Series 독립 실행형 서버 A | MLOM0 
+
+
+| eth1/4 | Cisco UCS C220 C-Series 독립 실행형 서버 B | MLOM0 
+
+
+| eth1/5 | Cisco UCS C220 C-Series 독립 실행형 서버 A | MLOM1 
+
+
+| eth1/6 | Cisco UCS C220 C-Series 독립 실행형 서버 B | MLOM1 
+
+
+| eth1/25 | Cisco Nexus 스위치 31108PC-V B | eth1/25 
+
+
+| Eth1/26 | Cisco Nexus 스위치 31108PC-V B | Eth1/26 
+
+
+| Eth1/33 | NetApp AFF C190 스토리지 컨트롤러 A | e0M 
+
+
+| eth1/34 | Cisco UCS C220 C-Series 독립 실행형 서버 A | CIMC(FEX135/1/25) 
+|===
+이 표에는 Cisco Nexus 스위치 31108PC-V-B의 케이블 연결 정보가 나와 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.10+| Cisco Nexus 스위치 31108PC-V B | eth1/1 | NetApp AFF C190 스토리지 컨트롤러 A | e0d 
+
+
+| eth1/2 | NetApp AFF C190 스토리지 컨트롤러 B | e0d 
+
+
+| eth1/3 | Cisco UCS C220 C-Series 독립 실행형 서버 A | MLOM2 
+
+
+| eth1/4 | Cisco UCS C220 C-Series 독립 실행형 서버 B | MLOM2 
+
+
+| eth1/5 | Cisco UCS C220 C-Series 독립 실행형 서버 A | MLOM3 
+
+
+| eth1/6 | Cisco UCS C220 C-Series 독립 실행형 서버 B | MLOM3 
+
+
+| eth1/25 | Cisco Nexus 스위치 31108 A | eth1/25 
+
+
+| Eth1/26 | Cisco Nexus 스위치 31108 A | Eth1/26 
+
+
+| Eth1/33 | NetApp AFF C190 스토리지 컨트롤러 B | e0M 
+
+
+| eth1/34 | Cisco UCS C220 C-Series 독립 실행형 서버 B | CIMC(FEX135/1/26) 
+|===
+이 표에는 NetApp AFF C190 스토리지 컨트롤러 A의 케이블 연결 정보가 나와 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.5+| NetApp AFF C190 스토리지 컨트롤러 A | e0a | NetApp AFF C190 스토리지 컨트롤러 B | e0a 
+
+
+| e0b | NetApp AFF C190 스토리지 컨트롤러 B | e0b 
+
+
+| e0c | Cisco Nexus 스위치 31108PC-V A | eth1/1 
+
+
+| e0d | Cisco Nexus 스위치 31108PC-V B | eth1/1 
+
+
+| e0M | Cisco Nexus 스위치 31108PC-V A | Eth1/33 
+|===
+이 표에는 NetApp AFF C190 스토리지 컨트롤러 B의 케이블 연결 정보가 나와 있습니다
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+.5+| NetApp AFF C190 스토리지 컨트롤러 B | e0a | NetApp AFF C190 스토리지 컨트롤러 A | e0a 
+
+
+| e0b | NetApp AFF C190 스토리지 컨트롤러 A | e0b 
+
+
+| e0c | Cisco Nexus 스위치 31108PC-V A | eth1/2 
+
+
+| e0d | Cisco Nexus 스위치 31108PC-V B | eth1/2 
+
+
+| e0M | Cisco Nexus 스위치 31108PC-V B | Eth1/33 
+|===
