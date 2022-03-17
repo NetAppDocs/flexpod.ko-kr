@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: security/flexpod-fips-introduction.html 
+keywords: tr4892, 4892introduction, hitech, fips, hit, ephi, 
+summary: '이 문서는 FIPS 140-2 보안 규정을 준수해야 하는 하나 이상의 의료 IT 애플리케이션 또는 솔루션을 호스팅하기 위한 Cisco Unified Computing System(Cisco UCS), Cisco Nexus, Cisco MDS 및 NetApp ONTAP 기반 FlexPod 인프라의 기술 개요입니다.' 
+---
+= TR-4892: FIPS 140-2 Security-compliant FlexPod solution for healthcare
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+Cisco의 NetApp John McAbel, JayaKishore Esanakula
+
+경제 및 임상 보건법(HITECH)을 위한 의료 정보 기술(Health Information Technology for Economic and Clinical Health Act, HITECH)에는 전자 보호 건강 정보(ePHI)에 대한 FIPS(Federal Information Processing Standard) 140-2의 검증된 암호화가 필요합니다. Hit(Health Information Technology) 애플리케이션 및 소프트웨어는 FIPS 140-2를 준수하여 프로모션 상호 운용성 프로그램(이전의 의미 있는 사용 인센티브 프로그램) 인증을 취득해야 합니다. 자격을 갖춘 제공자 및 병원은 Medicare 및 Medicaid 인센티브를 받을 때 FIPS 140-2(Level 1) 준수 히트(Hit)를 사용하고 중앙 의료보험 및 메디케이드(Center for Medicare and Medicaid, CMS)에서 보상금 부과를 방지해야 합니다. FIPS 140-2 인증 암호화 알고리즘은 에 따라 필요한 기술 보호 수단으로서 제공됩니다 https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html["보안 규칙"^] HIPAA(Health Information Portability and Accountability Act).
+
+FIPS 140-2는 미국 중요한 정보를 보호하는 하드웨어, 소프트웨어 및 펌웨어의 암호화 모듈에 대한 보안 요구 사항을 설정하는 정부 표준입니다. 표준 준수는 미국 정부가 사용하도록 규정하고 있습니다 금융 서비스 및 의료와 같은 규제 대상 산업에서도 자주 사용됩니다. 이 기술 보고서를 통해 독자는 FIPS 140-2 보안 표준을 높은 수준에서 이해할 수 있습니다. 또한 의료 기관이 직면한 다양한 위협을 청중이 이해하는 데 도움이 됩니다. 마지막으로, 기술 보고서를 통해 FlexPod 통합 인프라에 FIPS 140-2 규격 FlexPod 시스템을 구축하여 의료 자산을 보호하는 방법을 파악할 수 있습니다.
+
+
+
+=== 범위
+
+이 문서는 FIPS 140-2 보안 규정을 준수해야 하는 하나 이상의 의료 IT 애플리케이션 또는 솔루션을 호스팅하기 위한 Cisco Unified Computing System(Cisco UCS), Cisco Nexus, Cisco MDS 및 NetApp ONTAP 기반 FlexPod 인프라의 기술 개요입니다.
+
+
+
+=== 대상
+
+이 문서는 의료 산업의 기술 리더 및 Cisco와 NetApp 파트너 솔루션 엔지니어 및 프로페셔널 서비스 직원을 위한 것입니다. NetApp은 사용자가 컴퓨팅 및 스토리지 사이징 개념을 잘 이해하고 있을 뿐만 아니라 의료 위협, 의료 보안, 의료 IT 시스템, Cisco UCS 및 NetApp 스토리지 시스템에 대한 기술적 지식을 갖추고 있다고 가정합니다.
+
+link:flexpod-fips-cybersecurity-threats-in-healthcare.html["다음은 의료 분야의 사이버 보안 위협입니다."]

@@ -1,0 +1,179 @@
+---
+sidebar: sidebar 
+permalink: security/flexpod-fips-flexpod-netapp-ontap-storage-and-fips-140-2.html 
+keywords: storage, data plane, control plane, encryption, NAE CLI, nve, key management, external key management 
+summary: NetApp은 다양한 하드웨어, 소프트웨어 및 서비스를 제공하며, 여기에는 표준에 따라 검증된 암호화 모듈의 다양한 구성요소가 포함될 수 있습니다. 따라서 NetApp은 제어 플레인 및 데이터 플레인을 위해 FIPS 140-2 규정 준수를 위한 다양한 접근 방식을 사용합니다. 
+---
+= FlexPod NetApp ONTAP 스토리지 및 FIPS 140-2
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:flexpod-fips-flexpod-cisco-networking-and-fips-140-2.html["이전: FlexPod Cisco 네트워킹 및 FIPS 140-2."]
+
+NetApp은 다양한 하드웨어, 소프트웨어 및 서비스를 제공하며, 여기에는 표준에 따라 검증된 암호화 모듈의 다양한 구성요소가 포함될 수 있습니다. 따라서 NetApp은 제어 플레인 및 데이터 플레인을 위해 FIPS 140-2 규정 준수를 위한 다양한 접근 방식을 사용합니다.
+
+* NetApp에는 전송 중인 데이터 및 유휴 데이터의 암호화에 대한 레벨 1 검증을 획득한 암호화 모듈이 포함되어 있습니다.
+* NetApp은 FIPS 140-2 검증을 거친 하드웨어 및 소프트웨어 모듈을 모두 인수합니다. 예를 들어, NetApp Storage Encryption 솔루션은 FIPS 레벨 2 인증 드라이브를 활용합니다.
+* NetApp 제품은 제품 또는 기능이 검증 범위 내에 있지 않더라도 표준을 준수하는 방법으로 검증된 모듈을 사용할 수 있습니다. 예를 들어, NetApp Volume Encryption(NVE)은 FIPS 140-2 규정을 준수합니다. 이 솔루션은 개별적으로 검증되지 않았지만 레벨 1의 검증된 NetApp 암호화 모듈을 활용합니다. 사용 중인 ONTAP 버전에 대한 규정 준수 사항을 자세히 알아보려면 FlexPod SME에게 문의하십시오.
+
+
+* NetApp 암호화 모듈은 FIPS 140-2 레벨 1의 검증을 거쳤습니다 *
+
+* NetApp CSM(Cryptographic Security Module)은 FIPS 140-2 레벨 1의 검증을 거쳤습니다.
+
+
+* NetApp 자체 암호화 드라이브는 FIPS 140-2 레벨 2의 검증을 거쳤습니다 *
+
+NetApp은 FIPS 140-2 검증을 거친 SED(자체 암호화 드라이브)를 OEM(Original Equipment Manufacturer)에서 구입합니다. 이러한 드라이브를 찾는 고객은 주문 시 드라이브를 지정해야 합니다. 드라이브는 레벨 2에서 검증됩니다. 다음 NetApp 제품은 검증된 SED를 활용할 수 있습니다.
+
+* AFF A-Series 및 FAS 스토리지 시스템
+* E-Series 및 EF-Series 스토리지 시스템을 구축합니다
+
+
+* NetApp 애그리게이트 암호화 및 NetApp 볼륨 암호화 *
+
+NVE 및 NetApp Aggregate Encryption(NAE) 기술을 사용하면 볼륨 및 애그리게이트 레벨에서 데이터를 암호화할 수 있으므로 솔루션이 물리적 드라이브에 제한되지 않습니다.
+
+NVE는 ONTAP 9.1부터 사용 가능한 소프트웨어 기반의 유휴 데이터 암호화 솔루션이며 ONTAP 9.2 이후 FIPS 140-2 를 준수합니다. NVE를 사용하면 ONTAP가 각 볼륨의 데이터를 세부적으로 암호화할 수 있습니다. ONTAP 9.6과 함께 제공되는 NAE는 NVE의 성장이 앞서며, ONTAP가 각 볼륨의 데이터를 암호화할 수 있으며 볼륨이 애그리게이트 전체에서 키를 공유할 수 있습니다. NVE와 NAE는 모두 AES 256비트 암호화를 사용합니다. SED가 없는 디스크에도 데이터를 저장할 수 있습니다. NVE와 NAE를 사용하면 암호화가 사용되는 경우에도 스토리지 효율성 기능을 사용할 수 있습니다. 애플리케이션 계층만 암호화하면 스토리지 효율성의 모든 이점을 누릴 수 없습니다. NVE와 NAE를 사용하면 데이터가 NetApp WAFL를 통해 네트워크에서 RAID 계층으로 전송되기 때문에 스토리지 효율성이 유지되고 데이터의 암호화 여부가 결정됩니다. 스토리지 효율성을 높이기 위해 NAE에서 애그리게이트 중복제거를 사용할 수 있습니다. NVE 볼륨과 NAE 볼륨이 동일한 NAE 애그리게이트에 공존할 수 있습니다. NAE 애그리게이트는 암호화되지 않은 볼륨을 지원하지 않습니다.
+
+프로세스는 다음과 같이 진행됩니다. 데이터가 암호화되면 FIPS 140-2 레벨 1의 유효성이 검증된 암호화 모듈로 전송됩니다. 암호화 모듈은 데이터를 암호화하고 RAID 계층으로 다시 전송합니다. 그런 다음 암호화된 데이터가 디스크로 전송됩니다. 따라서 NVE와 NAE를 결합하여 데이터를 디스크로 이미 암호화할 수 있습니다. 읽기는 반대 경로를 따릅니다. 즉, 데이터가 암호화된 상태로 남아 RAID로 전송되고 암호화 모듈에 의해 해독되며 다음 그림과 같이 스택의 나머지 부분까지 전송됩니다.
+
+image:flexpod-fips-image3.png["오류: 그래픽 이미지가 없습니다"]
+
+
+NOTE: NVE는 FIPS 140-2 레벨 1의 검증된 소프트웨어 암호화 모듈을 사용합니다.
+
+NVE에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/ds-3899.pdf["NVE 데이터시트"^].
+
+NVE는 클라우드의 데이터를 보호합니다. Cloud Volumes ONTAP 및 Azure NetApp Files는 FIPS 140-2 규격 데이터 암호화를 유휴 상태에서 제공할 수 있습니다.
+
+ONTAP 9.7부터 NVE 라이센스와 온보드 또는 외부 키 관리가 있을 때 새로 생성된 애그리게이트 및 볼륨이 기본적으로 암호화됩니다. ONTAP 9.6부터 애그리게이트 레벨 암호화를 사용하여 암호화할 볼륨의 포함된 애그리게이트에 키를 할당할 수 있습니다. Aggregate에서 생성한 볼륨은 기본적으로 암호화됩니다. 볼륨을 암호화할 때 기본값을 재정의할 수 있습니다.
+
+
+
+== ONTAP NAE CLI 명령
+
+다음 CLI 명령을 실행하기 전에 클러스터에 필요한 NVE 라이센스가 있는지 확인하십시오.
+
+Aggregate를 생성하여 암호화하려면 다음 명령을 실행합니다(ONTAP 9.6 이상의 클러스터 CLI에서 실행 시).
+
+....
+fp-health::> storage aggregate create -aggregate aggregatename -encrypt-with-aggr-key true
+....
+NAE가 아닌 애그리게이트를 NAE A aggregate로 변환하려면 다음 명령을 실행합니다(ONTAP 9.6 및 이후 클러스터 CLI에서 실행되는 경우).
+
+....
+fp-health::> storage aggregate modify -aggregate aggregatename  -node svmname -encrypt-with-aggr-key true
+....
+NAE 애그리게이트를 NAE가 아닌 aggregate로 변환하려면 다음 명령을 실행하십시오(ONTAP 9.6 이상의 클러스터 CLI에서 실행되는 경우).
+
+....
+fp-health::> storage aggregate modify -aggregate aggregatename -node svmname -encrypt-with-aggr-key false
+....
+
+
+== ONTAP NVE CLI 명령
+
+ONTAP 9.6부터 애그리게이트 레벨 암호화를 사용하여 암호화할 볼륨의 포함된 애그리게이트에 키를 할당할 수 있습니다. Aggregate에서 생성한 볼륨은 기본적으로 암호화됩니다.
+
+NAE가 활성화된 애그리게이트에서 볼륨을 생성하려면 다음 명령을 실행합니다(ONTAP 9.6 및 이후 클러스터 CLI에서 실행되는 경우).
+
+....
+fp-health::> volume create -vserver svmname -volume volumename -aggregate aggregatename -encrypt true
+....
+볼륨 이동 없이 기존 볼륨 "제자리에" 암호화를 활성화하려면 다음 명령을 실행합니다(ONTAP 9.6 이상 클러스터 CLI에서 실행 시).
+
+....
+fp-health::> volume encryption conversion start -vserver svmname -volume volumename
+....
+볼륨에 암호화가 설정되어 있는지 확인하려면 다음 CLI 명령을 실행합니다.
+
+....
+fp-health::> volume show -is-encrypted true
+....
+
+
+== NSE를 선택합니다
+
+NSE는 SED를 사용하여 하드웨어 가속 메커니즘을 통해 데이터 암호화를 수행합니다.
+
+NSE는 AES 256비트 투명 디스크 암호화를 통해 유휴 데이터를 보호하여 규정 준수 및 스페어 반환을 지원하도록 FIPS 140-2 레벨 2 자체 암호화 드라이브를 구성합니다. 드라이브는 암호화 키 생성을 포함하여 다음 그림에 설명된 대로 내부적으로 모든 데이터 암호화 작업을 수행합니다. 데이터에 대한 무단 액세스를 방지하기 위해 스토리지 시스템은 드라이브를 처음 사용할 때 설정된 인증 키를 사용하여 드라이브에서 자체적으로 인증해야 합니다.
+
+image:flexpod-fips-image4.png["오류: 그래픽 이미지가 없습니다"]
+
+
+NOTE: NSE는 FIPS 140-2 레벨 2의 검증된 각 드라이브에서 하드웨어 암호화를 사용합니다.
+
+NSE에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/ds-3213-en.pdf["NSE 데이터시트"^].
+
+
+
+== 키 관리
+
+FIPS 140-2 표준은 다음 그림과 같이 경계에서 정의한 암호화 모듈에 적용됩니다.
+
+image:flexpod-fips-image5.png["오류: 그래픽 이미지가 없습니다"]
+
+키 관리자는 ONTAP에서 사용하는 모든 암호화 키를 추적합니다. NSE SED는 키 관리자를 사용하여 NSE SED의 인증 키를 설정합니다. 키 관리자를 사용할 때 NVE와 NAE의 결합된 솔루션은 소프트웨어 암호화 모듈, 암호화 키 및 키 관리자로 구성됩니다. NVE는 각 볼륨에 대해 키 관리자가 저장하는 고유한 XTS-AES 256 데이터 암호화 키를 사용합니다. 데이터 볼륨에 사용되는 키는 해당 클러스터의 데이터 볼륨에 고유하며 암호화된 볼륨이 생성될 때 생성됩니다. 마찬가지로 NAE 볼륨은 집합당 고유한 XTS-AES 256 데이터 암호화 키를 사용하며 키 관리자도 이 암호화 키를 저장합니다. NAE 키는 암호화된 Aggregate가 생성될 때 생성됩니다. ONTAP는 키를 미리 생성하거나 다시 사용하거나 일반 텍스트로 표시하지 않습니다. 키는 키 관리자에 의해 저장 및 보호됩니다.
+
+
+
+== 외부 키 관리자 지원
+
+ONTAP 9.3부터 외부 키 관리자는 NVE 솔루션과 NSE 솔루션 모두에서 지원됩니다. FIPS 140-2 표준은 특정 공급업체의 구현에 사용되는 암호화 모듈에 적용됩니다. 대부분의 경우 FlexPod 및 ONTAP 고객은 에 따라 다음 검증 중 하나를 사용합니다 http://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스"^]) 주요 관리자:
+
+* Gemalto 또는 SafeNet AT
+* 보메트릭(목요일)
+* IBM SKLM
+* Utimaco(이전의 Microfocus, HPE)
+
+
+NSE 및 NVMe SED 인증 키는 업계 표준 OASIS KMIP(Key Management Interoperability Protocol)를 사용하여 외부 키 관리자에 백업됩니다. 스토리지 시스템, 드라이브 및 키 관리자만이 키에 액세스할 수 있으며, 보안 도메인 외부로 드라이브를 이동하면 드라이브 잠금을 해제할 수 없으므로 데이터 유출을 방지할 수 있습니다. 외부 키 관리자는 NVE 볼륨 암호화 키와 NAE 애그리게이트 암호화 키도 저장합니다. 컨트롤러와 디스크가 더 이상 외부 키 관리자에 액세스할 수 없는 경우, NVE 및 NAE 볼륨은 액세스할 수 없으며 해독할 수 없습니다.
+
+다음 명령 예에서는 외부 키 관리자가 SVM(Store Virtual Machine)의 vmname1"에 사용하는 서버 목록에 두 개의 키 관리 서버를 추가합니다.
+
+....
+fp-health::> security key-manager external add-servers -vserver svmname1 -key-servers 10.0.0.20:15690, 10.0.0.21:15691
+....
+ONTAP는 멀티테넌시 시나리오에서 FlexPod 데이터 센터를 사용 중인 경우 SVM 레벨에서 보안상의 이유로 테넌시를 제공하여 사용자를 지원합니다.
+
+외부 키 관리자 목록을 확인하려면 다음 CLI 명령을 실행합니다.
+
+....
+fp-health::> security key-manager external show
+....
+
+
+== 이중 암호화를 위한 암호화 결합(계층화된 방어)
+
+데이터에 대한 액세스를 격리하고 데이터를 항상 보호해야 하는 경우 NSE SED를 네트워크 또는 패브릭 수준 암호화와 결합할 수 있습니다. NSE SED는 관리자가 상위 수준 암호화를 구성하거나 잘못 구성하는 경우 백스톱처럼 작동합니다. 두 개의 개별 암호화 계층의 경우 NSE SED를 NVE 및 NAE와 결합할 수 있습니다.
+
+
+
+== NetApp ONTAP 클러스터 전체에서 데이터 제어 플레인 FIPS 모드를 지원합니다
+
+NetApp ONTAP 데이터 관리 소프트웨어에는 고객을 위해 추가 보안 수준을 인스턴스화하는 FIPS 모드 구성이 있습니다. 이 FIPS 모드는 컨트롤 평면에만 적용됩니다. FIPS 모드가 활성화되면 FIPS 140-2의 주요 요소에 따라 전송 계층 보안 v1(TLSv1) 및 SSLv3이 비활성화되고 TLS v1.1 및 TLS v1.2만 활성화됩니다.
+
+
+NOTE: FIPS 모드의 ONTAP 클러스터 전체 제어 창은 FIPS 140-2 레벨 1을 준수합니다. 클러스터 전체 FIPS 모드는 NCSM에서 제공하는 소프트웨어 기반 암호화 모듈을 사용합니다.
+
+클러스터 전체 컨트롤 플레인을 위한 FIPS 140-2 규정 준수 모드는 ONTAP의 모든 제어 인터페이스를 보호합니다. 기본적으로 FIPS 140-2 전용 모드는 비활성화되어 있지만 '보안 구성 수정' 명령에 대해 'is-FIPS-enabled' 매개 변수를 'true'로 설정하여 이 모드를 활성화할 수 있습니다.
+
+ONTAP 클러스터에서 FIPS 모드를 활성화하려면 다음 명령을 실행합니다.
+
+....
+fp-health::> security config modify -interface SSL -is-fips-enabled true
+....
+SSL FIPS 모드가 활성화되면 ONTAP에서 외부 클라이언트 또는 ONTAP 외부의 서버 구성 요소로의 SSL 통신은 SSL을 위해 FIPS 컴플레인 암호화를 사용합니다.
+
+전체 클러스터에 대해 FIPS 상태를 표시하려면 다음 명령을 실행합니다.
+
+....
+fp-health::> set advanced
+fp-health::*> security config modify -interface SSL -is-fips-enabled true
+....
+link:flexpod-fips-solution-benefits-of-flexpod-converged-infrastructure.html["다음으로, FlexPod 통합 인프라의 솔루션 이점에 대해 알아보십시오."]

@@ -8028,4 +8028,318 @@
   <block id="d6205320f3a7011e64b601100518be60" category="sidebar">딥 러닝 설계 가이드용 Cisco UCS C480 ML을 지원하는 AI/ML용 FlexPod 데이터 센터</block>
   <block id="26b2da44f63ebbe0d09d512b64685d73" category="sidebar">VMware 및 NVIDIA를 통한 3D 그래픽 시각화를 제공하는 FlexPod</block>
   <block id="ebf263f6e0d06b26f79aafb2dda2fffe" category="sidebar">Citrix 및 NVIDIA를 통한 3D 그래픽 시각화를 위한 FlexPod(백서)</block>
+  <block id="5e50bdb7cd2b4dd7be0e0e6f6811181b" category="summary">FlexPod 시스템에서 FIPS 설정을 시연하기 위해 FlexPod 시스템에서 랩 설정 및 워크로드 검증을 위해 오픈 소스 EHR과 오픈 소스 사진 아카이빙 및 통신 시스템(PACS) 시스템을 사용했습니다.</block>
+  <block id="27a8ee15dbe86832611f5c64a9400ea3" category="doc">FlexPod 통합 인프라의 솔루션 이점</block>
+  <block id="016947c86218013bf4c8d19c236c54fd" category="inline-link-macro">이전:FlexPod NetApp ONTAP 스토리지 및 FIPS 140-2가 있습니다.</block>
+  <block id="25141adc199187cef69fb7aee9afd013" category="paragraph"><block ref="25141adc199187cef69fb7aee9afd013" category="inline-link-macro-rx"></block></block>
+  <block id="bc7d831677f01bcc97c5ae742158188f" category="inline-link">TR-4881: 전자 건강 기록 시스템용 FlexPod</block>
+  <block id="a1771cef65cfbac53728d4e2a32669e9" category="paragraph">의료 조직에는 몇 가지 미션 크리티컬 시스템이 있습니다. 가장 중요한 시스템 두 가지는 EHR(전자 건강 기록) 시스템과 의료 영상 시스템입니다. FlexPod 시스템에서 FIPS 설정을 시연하기 위해 FlexPod 시스템에서 랩 설정 및 워크로드 검증을 위해 오픈 소스 EHR과 오픈 소스 사진 아카이빙 및 통신 시스템(PACS) 시스템을 사용했습니다. EHR 기능, EHR 논리적 애플리케이션 구성 요소 및 EHR 시스템을 FlexPod 시스템에 구현할 경우 EHR 시스템이 어떤 이점을 누릴 수 있는지 보려면 을 참조하십시오<block ref="5bcf3fed6ddb0e81be5a27103d6b125d" category="inline-link-rx"></block>. 의료 영상 시스템 기능, 논리적 응용 프로그램 구성 요소 및 의료 영상 시스템이 FlexPod에 구현될 때 어떤 이점을 얻을 수 있는지 전체 목록은 를 참조하십시오<block ref="54fae404abe124fc88ee339c76ea8ed4" category="inline-link-rx"></block>.</block>
+  <block id="b27e9c1162938cd6a83531da0ae18ec7" category="paragraph">FIPS 설정 및 워크로드 검증 과정에서 NetApp은 일반적인 의료 기관을 대표하는 워크로드 특성을 실행했습니다. 예를 들어, 오픈 소스 EHR 시스템을 사용하여 현실적인 환자 데이터 액세스 및 변경 시나리오를 포함했습니다. 또한 ' * 에서 디지털 이미징 및 의료(DICOM) 개체 통신 등의 의료 영상 작업 부하를 행사했습니다. DCM의 파일 형식입니다. 메타데이터가 있는 DICOM 객체가 파일 및 블록 스토리지에 모두 저장되었습니다. 또한 가상화된 RedHat Enterprise Linux(RHEL) 서버 내에서 다중 경로 기능을 구현했습니다. NFS에 DICOM 객체, iSCSI를 사용하여 마운트된 LUN 및 FC를 사용하여 마운트된 LUN을 저장했습니다. FIPS 설정 및 검증 중에 FlexPod 통합 인프라가 당사의 기대치를 초과하고 원활하게 수행된다는 것을 확인했습니다.</block>
+  <block id="4fc32ae057d9fee1cfa4ff5026ca084e" category="paragraph">다음 그림은 FIPS 설정 및 검증에 사용되는 FlexPod 시스템을 보여 줍니다. 우리는 을 활용했습니다<block ref="69429a6d0c3d623ad8b6ac530d0f3f28" category="inline-link-rx"></block> 설치 프로세스 중</block>
+  <block id="1cbf57d17d3770eb4fee08cc5d13997c" category="paragraph"><block ref="1cbf57d17d3770eb4fee08cc5d13997c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="165c5d5b56b3779a635966e3f1147bb3" category="paragraph">다음 두 그림은 FlexPod에서 FIPS 테스트를 수행할 때 각각 사용되는 하드웨어 및 소프트웨어 구성 요소를 나열합니다. 이러한 표의 권장사항은 예이며, NetApp SME와 협력하여 해당 구성요소가 귀사에 적합한지 확인해야 합니다. 또한 에서 구성 요소 및 버전이 지원되는지 확인합니다<block ref="b7322bec4509d45107de6de43ca1f517" category="inline-link-rx"></block> (IMT) 및<block ref="64415f5b492bec102b21b846c79e2183" category="inline-link-rx"></block>.</block>
+  <block id="5b99ac1617d568ce52a0778c375ba684" category="cell">3 B200 M5</block>
+  <block id="ca264a2a134b65bc0a59b2c77363ba75" category="cell">RHEL 7.X를 참조하십시오</block>
+  <block id="3310c3b93d1be5f58a2d25d3673264f7" category="cell">VMware vCenter Server 6.7 U3(vCSA) 이상</block>
+  <block id="87db8dff04a60479a9a05cb2384baadc" category="cell">4.1(1c) 이상</block>
+  <block id="fdbce88fc39cb6d8954ebb6f0b2e45c0" category="cell">하이퍼바이저 관리 시스템 VMware vCenter Server 6.7 U3(vCSA) 이상</block>
+  <block id="5064c22c3590d6deecbb5fc72d3d0c50" category="inline-link-macro">다음: 추가 FlexPod 보안 고려 사항.</block>
+  <block id="16a98b4d8ae0967c98e20275e0245478" category="paragraph"><block ref="16a98b4d8ae0967c98e20275e0245478" category="inline-link-macro-rx"></block></block>
+  <block id="7fe87815ddd8b96dfa8819b0074e0e90" category="summary">FlexPod 플랫폼에서 의료 애플리케이션을 실행하면 FIPS 140-2를 지원하는 플랫폼을 통해 의료 조직을 더욱 안전하게 보호할 수 있습니다. FlexPod은 컴퓨팅, 네트워크, 스토리지 등 모든 단일 구성 요소에서 다계층 보호를 제공합니다. FlexPod 데이터 보호 기능은 사용되지 않는 데이터나 사용 중인 데이터를 보호하고, 필요할 때 백업을 안전하게 보호합니다.</block>
+  <block id="2d1d507ade26256ca490ebebd35bb936" category="inline-link-macro">이전: 추가 FlexPod 보안 고려 사항.</block>
+  <block id="4a3c8effd09d4490851c34739a23cbb0" category="paragraph"><block ref="4a3c8effd09d4490851c34739a23cbb0" category="inline-link-macro-rx"></block></block>
+  <block id="deffe65808d15760c69739698ed4f8bd" category="paragraph">FlexPod 플랫폼에서 의료 애플리케이션을 실행하면 FIPS 140-2를 지원하는 플랫폼을 통해 의료 조직을 더욱 안전하게 보호할 수 있습니다. FlexPod은 컴퓨팅, 네트워크, 스토리지 등 모든 단일 구성 요소에서 다계층 보호를 제공합니다. FlexPod 데이터 보호 기능은 사용되지 않는 데이터나 사용 중인 데이터를 보호하고, 필요할 때 백업을 안전하게 보호합니다.</block>
+  <block id="91dece5ca9c8f5f91f820e14bb710609" category="paragraph">Cisco와 NetApp의 전략적 파트너십을 통해 엄격한 테스트를 거친 FlexPod 사전 검증된 설계를 활용하여 사람의 실수를 방지합니다. FlexPod 시스템은 FIPS 140-2를 컴퓨팅, 네트워킹 및 스토리지 계층에서 사용할 수 있는 경우에도 성능에 거의 영향을 주지 않으면서 예측 가능하고 낮은 대기 시간의 시스템 성능과 고가용성을 제공하도록 엔지니어링 및 설계되었습니다. 이러한 접근 방식은 사용자의 사용 환경이 뛰어나고 사용자의 HIT 시스템 사용자에게 최적의 응답 시간을 제공합니다.</block>
+  <block id="3d4b5fa6f56d4668b819f91245fe2397" category="inline-link-macro">다음: 감사의 말, 버전 기록 및 추가 정보를 찾을 위치.</block>
+  <block id="792222ba934ffbf9364f68ebec6b1cf6" category="paragraph"><block ref="792222ba934ffbf9364f68ebec6b1cf6" category="inline-link-macro-rx"></block></block>
+  <block id="a1536edd1fc73105f35b5477b950a35f" category="summary">소프트웨어 8.4.x가 포함된 Cisco MDS 9000 시리즈 플랫폼은 FIPS 140-2 규격을 준수합니다. Cisco MDS는 SNMPv3 및 SSH에 대해 암호화 모듈 및 다음 서비스를 구현합니다.</block>
+  <block id="416d6ca8b7c4bc65c37f312bc78c5718" category="doc">FlexPod Cisco 네트워킹 및 FIPS 140-2</block>
+  <block id="5932ad7965612d3d444c08088392cc86" category="inline-link-macro">이전: FlexPod Cisco UCS 컴퓨팅 및 FIPS 140-2가 지원됩니다.</block>
+  <block id="a6f61219e55f909f56c116affba00160" category="paragraph"><block ref="a6f61219e55f909f56c116affba00160" category="inline-link-macro-rx"></block></block>
+  <block id="e8dec60e5181ad1ce64a39f9756637c4" category="section-title">Cisco MDS를 참조하십시오</block>
+  <block id="3782f8cafabc164aa17d7b44467d1dfd" category="inline-link">FIPS 140-2 규격 준수</block>
+  <block id="3d9fc100fa550287ae93216718972627" category="paragraph">소프트웨어 8.4.x가 포함된 Cisco MDS 9000 시리즈 플랫폼은<block ref="66b7ff50d2b517d1fd869a61ad1a1ea8" category="inline-link-rx"></block>. Cisco MDS는 SNMPv3 및 SSH에 대해 암호화 모듈 및 다음 서비스를 구현합니다.</block>
+  <block id="33525489d60cd49b1db55defbccc80bd" category="list-text">각 서비스를 지원하는 세션 설정</block>
+  <block id="ec1144303950ac2bab2689f59e9b3e8a" category="list-text">각 서비스 키 파생 기능을 지원하는 모든 기본 암호화 알고리즘</block>
+  <block id="1cce5e9b7f5ab7c6317b1f84cb33a564" category="list-text">각 서비스에 대한 해싱입니다</block>
+  <block id="87503f3441f5d3e3ec7deadce1aa0bfc" category="list-text">각 서비스의 대칭 암호화</block>
+  <block id="9ccf95aa52aa6ca7b8defd82c621c890" category="paragraph">FIPS 모드를 활성화하기 전에 MDS 스위치에서 다음 작업을 완료합니다.</block>
+  <block id="89f65589c73a9bf65a843285bb12438f" category="list-text">암호의 길이는 최소 8자 이상이어야 합니다.</block>
+  <block id="8fd4c284aabfdf6079c4bfee285e40f3" category="list-text">텔넷을 비활성화합니다. 사용자는 SSH만 사용하여 로그인해야 합니다.</block>
+  <block id="c2ffe25d2939f6c1224d3db4e611a498" category="list-text">RADIUS/TACACS+를 통해 원격 인증을 비활성화합니다. 스위치에 로컬로 있는 사용자만 인증을 받을 수 있습니다.</block>
+  <block id="5baaf8c317baf502a3c5eec45184ce43" category="list-text">SNMP v1 및 v2를 비활성화합니다. SNMPv3에 대해 구성된 스위치의 기존 사용자 계정은 인증을 위해 SHA 와 개인 정보 보호를 위해 AES/3DES 로만 구성해야 합니다.</block>
+  <block id="906e6268bd522b4800118b1d21beae6c" category="list-text">VRRP를 비활성화합니다.</block>
+  <block id="b0a36cdf2acdbb55383c6368527a6505" category="list-text">인증을 위해 MD5가 있거나 암호화를 위해 DES가 있는 모든 IKE 정책을 삭제합니다. 인증에 SHA를 사용하고 암호화에 3DES/AES를 사용하도록 정책을 수정합니다.</block>
+  <block id="91595b663853b22658891703609cea01" category="list-text">모든 SSH 서버 RSA1 키 쌍을 삭제합니다.</block>
+  <block id="3a893c3209cfce34cf1a1c5f9e95fdfb" category="paragraph">FIPS 모드를 활성화하고 MDS 스위치에 FIPS 상태를 표시하려면 다음 단계를 수행하십시오.</block>
+  <block id="a0a75a824aabb4820c13104949603d0f" category="list-text">FIPS 상태를 표시합니다.</block>
+  <block id="4e80eac9842f7b78e9dc3081e00ae1dd" category="list-text">2048비트 SSH 키를 설정합니다.</block>
+  <block id="99a9b92da18ef985e325bc956e36f265" category="list-text">FIPS 모드를 활성화합니다.</block>
+  <block id="fecfdcf0601904049575bc4fb753ee47" category="list-text">실행 중인 구성에 구성을 저장합니다.</block>
+  <block id="79bdd6d32b7d4a467c62a913d23f9450" category="list-text">MDS 스위치를 다시 시작합니다</block>
+  <block id="c1c7590f0d4593715a257a960572276b" category="inline-link">FIPS 모드 활성화</block>
+  <block id="2d84cad566788b82b8414aaae9529717" category="paragraph">자세한 내용은 을 참조하십시오<block ref="e5b3dc9fdcec4265dbce43ddc03675cc" category="inline-link-rx"></block>.</block>
+  <block id="0dcb2191110b73659feefcbf8d9c1413" category="paragraph">Cisco Nexus 9000 시리즈 스위치(버전 9.3)는<block ref="077e11f9b5fca63bd6b69a24bbb415b0" category="inline-link-rx"></block>. Cisco Nexus는 SNMPv3 및 SSH에 대해 암호화 모듈 및 다음 서비스를 구현합니다.</block>
+  <block id="be4d72a48bb84cbed4bad44920a0c745" category="paragraph">FIPS 모드를 활성화하기 전에 Cisco Nexus 스위치에서 다음 작업을 완료하십시오.</block>
+  <block id="8201a2d8fbbf4f1e17d330a3b392100f" category="list-text">텔넷을 비활성화합니다. 사용자는 SSH(Secure Shell)만 사용하여 로그인해야 합니다.</block>
+  <block id="21c408350c264241e7363f0e99572430" category="list-text">SNMPv1 및 v2를 비활성화합니다. SNMPv3에 대해 구성된 장치의 기존 사용자 계정은 인증을 위해 SHA 와 개인 정보 보호를 위해 AES/3DES 로만 구성해야 합니다.</block>
+  <block id="53f45ef0ed15620932edc7de2a44c708" category="list-text">모든 SSH 서버 RSA1 키 쌍을 삭제합니다.</block>
+  <block id="a72cef5720dc796200600b39f4d5ad91" category="list-text">Cisco TrustSec 보안 연결 프로토콜(SAP) 협상 중에 사용할 HMAC-SHA1 메시지 무결성 검사(MIC)를 활성화합니다. 이렇게 하려면 CTS-MANUAL 또는 CTS-dot1x 모드에서 SAP hash-algorithm HMAC-SHA-1 명령을 입력한다.</block>
+  <block id="315d142b4f767d806d8da1bda48166e7" category="paragraph">Nexus 스위치에서 FIPS 모드를 활성화하려면 다음 단계를 수행하십시오.</block>
+  <block id="0ed37f4995f395e6edefc1dc2253d7c8" category="list-text">2048비트 SSH 키를 설정합니다.</block>
+  <block id="ce953b1224357ed05fa0d83e882fa6b6" category="list-text">Nexus 스위치를 다시 시작합니다.</block>
+  <block id="d1e89cc52d4940f1198998b3ccc547e1" category="paragraph">또한 Cisco NX OS 소프트웨어는 네트워크 이상 및 보안 검색을 향상시키는 NetFlow 기능을 지원합니다. NetFlow는 네트워크의 모든 대화 메타데이터, 통신 관련 당사자, 사용 중인 프로토콜 및 트랜잭션 기간을 캡처합니다. 정보를 집계 및 분석한 후에는 정상적인 동작에 대한 통찰력을 제공할 수 있습니다. 또한 수집된 데이터를 통해 네트워크를 통해 확산되는 맬웨어와 같은 의심스러운 활동 패턴을 식별할 수 있으며, 그렇지 않을 경우 이를 간과할 수 있습니다. NetFlow는 흐름을 사용하여 네트워크 모니터링에 대한 통계를 제공합니다. 흐름은 소스 인터페이스(또는 VLAN)에 도착하고 키에 대해 동일한 값을 갖는 패킷의 단방향 스트림입니다. 키는 패킷 내의 필드에 대해 식별된 값입니다. 유동 레코드를 사용하여 유동의 고유 키를 정의하는 유동을 만듭니다. 흐름 내보내기를 사용하여 Cisco Stealthwatch와 같은 원격 NetFlow 수집기로 플로우에 대해 NetFlow에서 수집하는 데이터를 내보낼 수 있습니다. Stealthwatch는 이 정보를 사용하여 네트워크를 지속적으로 모니터링하고 랜섬웨어 발생 시 실시간 위협 탐지 및 사고 대응 법의학 조사를 제공합니다.</block>
+  <block id="6ee008de7211470c77953188ab343de0" category="inline-link-macro">다음으로, FlexPod NetApp ONTAP 스토리지와 FIPS 140-2를 살펴보겠습니다.</block>
+  <block id="4dc727714c83d88492b7bba96cac03e5" category="paragraph"><block ref="4dc727714c83d88492b7bba96cac03e5" category="inline-link-macro-rx"></block></block>
+  <block id="aa5109849487a5fc8b6b38b267307fcd" category="summary">FlexPod 인프라는 모듈식, 컨버지드, 선택적으로 가상화, 확장 가능(스케일아웃 및 스케일업) 및 비용 효율적인 플랫폼입니다. FlexPod 플랫폼을 사용하면 컴퓨팅, 네트워크, 스토리지를 독립적으로 확장하여 애플리케이션 구축을 가속할 수 있습니다. 모듈식 아키텍처를 사용하므로 시스템 스케일아웃 및 업그레이드 작업 중에도 무중단으로 운영할 수 있습니다.</block>
+  <block id="92c3772806cadda362fa4a175cecc08e" category="doc">추가 FlexPod 보안 고려 사항</block>
+  <block id="0690e1feb8f76e2e2036e72665861c9f" category="inline-link-macro">이전: FlexPod 통합 인프라의 솔루션 이점</block>
+  <block id="9be7bd50f0027da56827934d512c6f0d" category="paragraph"><block ref="9be7bd50f0027da56827934d512c6f0d" category="inline-link-macro-rx"></block></block>
+  <block id="0f7014942067fd465b14f8fd0cdb8cc8" category="paragraph">HIT 시스템의 여러 구성 요소는 SMB/CIFS, NFS, ext4 및 NTFS 파일 시스템에 데이터를 저장해야 합니다. 즉, 인프라가 NFS, CIFS 및 SAN 프로토콜을 통해 데이터 액세스를 제공해야 합니다. 단일 NetApp 스토리지 시스템에서 이러한 모든 프로토콜을 지원하여 프로토콜 관련 스토리지 시스템의 기존 관행을 제거할 수 있습니다. 또한, 단일 NetApp 스토리지 시스템은 EHR, PACS 또는 VNA, 유전체학, VDI 등 다양한 HIT 워크로드를 지원할 수 있습니다. 보장된 구성 가능한 성능 수준</block>
+  <block id="54d5f6efe9cca71128c5809fd3d0588f" category="paragraph">HIT는 FlexPod 시스템에 배포되면 의료 산업에만 해당되는 여러 가지 이점을 제공합니다. 다음 목록은 이러한 이점에 대한 자세한 설명입니다.</block>
+  <block id="3e746f7ec373b1eb6a130880b1a4daed" category="inline-link">TR-4802: 랜섬웨어에 대한 솔루션</block>
+  <block id="cfab4e853b276ccc6ed244f4a5de1c1f" category="inline-link">FIPS 140-2를 준수합니다</block>
+  <block id="55ee48f6fb8a46db0b4888aeac6559c4" category="list-text">* FlexPod 보안 *. 보안은 FlexPod 시스템의 기초가 됩니다. 지난 몇 년 동안 랜섬웨어는 위협이 되었습니다. 랜섬웨어는 암호화 바이러스, 암호화를 사용하여 악성 소프트웨어를 빌드하는 일종의 맬웨어입니다. 이 맬웨어는 대칭 키 암호화와 비대칭 키 암호화를 모두 사용하여 피해자의 데이터를 잠그고 데이터 암호를 해독할 키를 제공하는 대가로 금전을 요구합니다. FlexPod 솔루션이 랜섬웨어와 같은 위협을 완화하는 방법을 알아보려면 을 참조하십시오<block ref="001a983a4f66d0170741f13805c59471" category="inline-link-rx"></block>. FlexPod 인프라 구성 요소도 포함되어 있습니다<block ref="5515eeec71d17b77b91938413b579e31" category="inline-link-rx"></block>.</block>
+  <block id="b52d625b8f7e9051d37999b56c0793ca" category="list-text">Cisco Intersight. * Cisco Intersight는 혁신적인 클라우드 기반의 서비스형 관리 플랫폼으로, 전체 스택 FlexPod 관리 및 오케스트레이션을 위한 단일 창을 제공합니다. Intersight 플랫폼은 FIPS 140-2 보안 호환 암호화 모듈을 사용합니다. 플랫폼의 대역 외 관리 아키텍처는 HIPAA와 같은 일부 표준 또는 감사 범위를 벗어납니다. 네트워크에서 개인 식별 가능한 건강 정보는 Intersight 포털에 전송되지 않습니다.</block>
+  <block id="7d21d518de2c665e81f83487a04e8ec5" category="list-text">* NetApp FPolicy 기술. * 이름 파일 정책의 진화된 FPolicy는 NFS 또는 SMB/CIFS 프로토콜을 통한 파일 액세스를 모니터링하고 관리하기 위한 파일 액세스 알림 프레임워크입니다. 이 기술은 10년 이상 ONTAP 데이터 관리 소프트웨어의 일부였습니다. 랜섬웨어의 탐지에 유용합니다. 이 제로 트러스트 엔진은 ACL(액세스 제어 목록)의 사용 권한 외에 추가적인 보안 조치를 제공합니다. FPolicy는 두 가지 운영 모드, 즉 기본 및 외부 모드를 사용합니다.</block>
+  <block id="a01b60d8c030b70b6a2c754b17b0f468" category="list-text">기본 모드는 파일 확장명의 블랙리스트와 화이트리스팅을 모두 제공합니다.</block>
+  <block id="33d6886892dec381fb059a953055e3ee" category="inline-link">랜섬웨어에 대항하기: 3부 – 강력한 기본(무료) 툴인 ONTAP FPolicy</block>
+  <block id="ccceb5a483933db326a9a0f81aa4032e" category="list-text">외부 모드는 네이티브 모드와 동일한 기능을 제공하지만, ONTAP 시스템 외부에서 실행되는 FPolicy 서버와 SIEM(보안 정보 및 이벤트 관리) 시스템과도 통합됩니다. 랜섬웨어에 대항하는 방법에 대한 자세한 내용은 를 참조하십시오<block ref="172de664fbe52579e8aee1b02ba10b5f" category="inline-link-rx"></block> 블로그:</block>
+  <block id="01e2096ad1a3fc62bc1850e2508cb998" category="list-text">* 저장된 데이터 *. ONTAP 9 이상에서는 FIPS 140-2를 준수하는 세 가지 유휴 데이터 암호화 솔루션이 있습니다.</block>
+  <block id="60857006e179c92f8cb0a5ed8b6c3053" category="list-text">NSE는 자체 암호화 드라이브를 사용하는 하드웨어 솔루션입니다.</block>
+  <block id="ac98e38ea1a92e80bfd5f2a8a0641516" category="list-text">NVE는 각 볼륨의 고유 키를 사용해 활성화된 모든 드라이브 유형의 모든 데이터 볼륨을 암호화할 수 있는 소프트웨어 솔루션입니다.</block>
+  <block id="31e39fab3b99b97f9de7c6e2c5f31071" category="list-text">NAE는 각 애그리게이트의 고유 키를 사용하여 활성화된 모든 드라이브 유형의 모든 데이터 볼륨을 암호화할 수 있는 소프트웨어 솔루션입니다.</block>
+  <block id="82419594c64ce13759024fdcb87418c5" category="admonition">ONTAP 9.7부터 NAE와 NVE는 VE라는 이름의 NetApp NVE 라이센스 패키지가 설치된 경우 기본적으로 활성화됩니다.</block>
+  <block id="e26796b56579b20753312ed838a3d0ce" category="list-text">* 비행 중인 데이터 *. ONTAP 9.8부터 IPsec(인터넷 프로토콜 보안)은 클라이언트와 ONTAP SVM 사이의 모든 IP 트래픽에 엔드 투 엔드 암호화 지원을 제공합니다. 모든 IP 트래픽에 대한 IPsec 데이터 암호화에는 NFS, iSCSI 및 SMB/CIFS 프로토콜이 포함됩니다. IPsec은 iSCSI 트래픽에 대해 전송 중인 유일한 암호화 옵션을 제공합니다.</block>
+  <block id="5d57476fef362b00a377bdcd73c2ed5d" category="list-text">* 하이브리드 멀티 클라우드 Data Fabric * 에서 엔드 투 엔드 데이터 암호화 데이터 복제 트래픽에 NSE 또는 NVE, CPE(Cluster 피어링 암호화)와 같은 유휴 데이터 암호화 기술을 사용하는 고객은 이제 ONTAP 9.8 이상으로 업그레이드하고 IPsec을 사용하여 하이브리드 멀티 클라우드 데이터 패브릭 전체에서 클라이언트와 스토리지 간의 엔드 투 엔드 암호화를 사용할 수 있습니다. ONTAP 9부터는 클러스터 차원의 제어 평면 인터페이스를 위해 FIPS 140-2 규정 준수 모드를 활성화할 수 있습니다. 기본적으로 FIPS 140-2 전용 모드는 비활성화되어 있습니다. ONTAP 9.6부터 CPE는 ONTAP SnapMirror, NetApp SnapVault 및 NetApp FlexCache 기술과 같은 데이터 복제 기능에 TLS 1.2 AES-256 GCM 암호화 지원을 제공합니다. 암호화는 두 클러스터 피어 간에 미리 공유된 키(PSK)를 통해 설정됩니다.</block>
+  <block id="d8c24aa3566987a400d13ef04fd0fefd" category="list-text">* 보안 멀티 테넌시 *. 가상화된 서버 및 스토리지 공유 인프라의 증가하는 요구 사항을 지원하여 특히 데이터베이스 및 소프트웨어의 여러 인스턴스를 호스팅할 때 시설별 정보의 안전한 멀티 테넌시를 지원합니다.</block>
+  <block id="cffa78cf6f1f0f5eb29bb04c932c4f48" category="paragraph"><block ref="cffa78cf6f1f0f5eb29bb04c932c4f48" category="inline-link-macro-rx"></block></block>
+  <block id="6e5ddeab7c2ea3c3727ca9c7e09a0364" category="doc">감사의 말, 버전 기록 및 추가 정보를 찾을 수 있는 위치</block>
+  <block id="2e240897109c5037e05afe0bf035d177" category="inline-link-macro">이전: 결론.</block>
+  <block id="830c285c18762ac0a98894fa6f8dd540" category="paragraph"><block ref="830c285c18762ac0a98894fa6f8dd540" category="inline-link-macro-rx"></block></block>
+  <block id="f7675364c353916abc1f96f5872aa8e7" category="list-text">Cisco MDS 9000 제품군 NX-OS 보안 구성 가이드</block>
+  <block id="c0b7d89a6b3af8b52cca447e38e433b7" category="paragraph"><block ref="c0b7d89a6b3af8b52cca447e38e433b7" category="inline-link-rx"></block></block>
+  <block id="e0b3190a3f64f7be872934136d7a8207" category="list-text">Cisco Nexus 9000 시리즈 NX-OS 보안 구성 가이드, 릴리즈 9.3(x)</block>
+  <block id="5aeaa6d8ef03bc5f49185431ec147dcc" category="paragraph"><block ref="5aeaa6d8ef03bc5f49185431ec147dcc" category="inline-link-rx"></block></block>
+  <block id="20038822e4002375d07dbbaa2f842177" category="list-text">NetApp 및 FIPS(Federal Information Processing Standard) 간행물 140-2</block>
+  <block id="01ad4c25dc606d42af63966d1d192007" category="paragraph"><block ref="01ad4c25dc606d42af63966d1d192007" category="inline-link-rx"></block></block>
+  <block id="8a5275b722854cee8913aea0acdc2c33" category="list-text">FIPS 140-2</block>
+  <block id="381d74f2d7dbcffad4ff739176b2ab91" category="paragraph"><block ref="381d74f2d7dbcffad4ff739176b2ab91" category="inline-link-rx"></block></block>
+  <block id="b142182673eaef19aa257c978e64bdf6" category="list-text">NetApp ONTAP 9 강화 가이드</block>
+  <block id="df6fe2c19a68ed7ab33ed42f7d8b48c6" category="paragraph"><block ref="df6fe2c19a68ed7ab33ed42f7d8b48c6" category="inline-link-rx"></block></block>
+  <block id="32a205a6c059cf9285d47b38c93cfe7e" category="paragraph"><block ref="32a205a6c059cf9285d47b38c93cfe7e" category="inline-link-rx"></block></block>
+  <block id="8976b0d9a3096c54654d952ae6a99888" category="list-text">NVE 및 NAE 데이터시트</block>
+  <block id="8561522253f450b4ca81bec36eefa91f" category="paragraph"><block ref="8561522253f450b4ca81bec36eefa91f" category="inline-link-rx"></block></block>
+  <block id="d945a8f23239206005994bedcd92d467" category="list-text">NSE 데이터시트</block>
+  <block id="05c7788d0b0c80f9f13684d84fcb21a9" category="paragraph"><block ref="05c7788d0b0c80f9f13684d84fcb21a9" category="inline-link-rx"></block></block>
+  <block id="245ccd4cdd5cb484215315baf93697ce" category="list-text">Cisco 및 FIPS 140-2 규정 준수</block>
+  <block id="2d817d24735f352fea82322ab2c9e621" category="paragraph"><block ref="2d817d24735f352fea82322ab2c9e621" category="inline-link-rx"></block></block>
+  <block id="6770ff13f95abd8619a19519877aedf9" category="list-text">NetApp 암호화 보안 모듈</block>
+  <block id="02817beae9581784d8cd2f39ddda543b" category="paragraph"><block ref="02817beae9581784d8cd2f39ddda543b" category="inline-link-rx"></block></block>
+  <block id="846bf2df66c90e0dd774c49f7106f381" category="list-text">의료 산업 사이버 보안 사례: 위협 관리 및 환자 보호</block>
+  <block id="2902b923b2807abc94a366d08ff1bda6" category="paragraph"><block ref="2902b923b2807abc94a366d08ff1bda6" category="inline-link-rx"></block></block>
+  <block id="bf7fa6fb49dfa01515f774f7a86c6270" category="list-text">중대형 의료 조직을 위한 사이버 보안 사례</block>
+  <block id="d1bf3cb27e5807caa3600fcdce477355" category="paragraph"><block ref="d1bf3cb27e5807caa3600fcdce477355" category="inline-link-rx"></block></block>
+  <block id="3f6b1e7f286b82aada2164eae419754f" category="list-text">Cisco 및 CMVP(Cryptographic Module Validation Program)</block>
+  <block id="2035d7965b0d9306904545b7f1299daf" category="paragraph"><block ref="1f6cf078065ad92d550c7f8fc06953cd" category="inline-link-rx"></block></block>
+  <block id="8f8e7f38245f5c357d275915df1fb3d6" category="list-text">NetApp 스토리지 암호화, NVMe 자체 암호화 드라이브, NetApp 볼륨 암호화 및 NetApp 애그리게이트 암호화</block>
+  <block id="617326e2119d8781b2c939871e7a5f48" category="paragraph"><block ref="617326e2119d8781b2c939871e7a5f48" category="inline-link-rx"></block></block>
+  <block id="64f1ff1b6f99d34e2d1a43f8332c7947" category="list-text">NetApp 볼륨 암호화 및 NetApp 애그리게이트 암호화</block>
+  <block id="8f409251340bc75610f76c62ab133dbd" category="paragraph"><block ref="8f409251340bc75610f76c62ab133dbd" category="inline-link-rx"></block></block>
+  <block id="826703b67408dd5973ff8ccc401a9b8b" category="list-text">NetApp 스토리지 암호화</block>
+  <block id="c209b24d903630d5e2c4c76e84bf6ed4" category="paragraph"><block ref="c209b24d903630d5e2c4c76e84bf6ed4" category="inline-link-rx"></block></block>
+  <block id="187fa0150d76f09beb9a3b74c448990a" category="list-text">전자 건강 기록 시스템용 FlexPod</block>
+  <block id="c7387de998aff4cdf0301a2c3c14a06b" category="paragraph"><block ref="c7387de998aff4cdf0301a2c3c14a06b" category="inline-link-rx"></block></block>
+  <block id="6b57a182c5aa4ead2e88ed686db467c6" category="list-text">Data Now:클라우드 연결 플래시 기술로 Epic EHR 환경의 성능 향상</block>
+  <block id="ceb561875427a5be47ba89bdfcf68b15" category="paragraph"><block ref="ceb561875427a5be47ba89bdfcf68b15" category="inline-link-rx"></block></block>
+  <block id="2864ff7bf8dd51d85b7cc971111d79e6" category="list-text">Epic EHR 인프라용 FlexPod Datacenter</block>
+  <block id="55281df24e22fc716f53cc920cd0aec7" category="paragraph"><block ref="55281df24e22fc716f53cc920cd0aec7" category="inline-link-rx"></block></block>
+  <block id="60f9956fcc06affd8fe2e969cb45d71c" category="paragraph"><block ref="60f9956fcc06affd8fe2e969cb45d71c" category="inline-link-rx"></block></block>
+  <block id="79a4caf33538b199d14af02115050e0a" category="list-text">MEDITECH 소프트웨어용 FlexPod 데이터 센터 인프라</block>
+  <block id="ffa60417e05d983180333283807f72ae" category="paragraph"><block ref="ffa60417e05d983180333283807f72ae" category="inline-link-rx"></block></block>
+  <block id="a6fa8ad627834c7f49f4a12b4702211f" category="list-text">FlexPod 표준은 MEDITECH 소프트웨어로 확장됩니다</block>
+  <block id="54e915e9182cbe8568777d8c06952ce7" category="paragraph"><block ref="54e915e9182cbe8568777d8c06952ce7" category="inline-link-rx"></block></block>
+  <block id="fd7e77eecd78dc94c6676881733fcd14" category="paragraph"><block ref="fd7e77eecd78dc94c6676881733fcd14" category="inline-link-rx"></block></block>
+  <block id="a63e6ef2bab4a03e7407c66118723fd7" category="list-text">의료 영상 촬영용 FlexPod</block>
+  <block id="e997ca20dd931bcae1a9cc1d32eeeca7" category="paragraph"><block ref="e997ca20dd931bcae1a9cc1d32eeeca7" category="inline-link-rx"></block></block>
+  <block id="2af4f6ea027bdaba1ccaa895b5f614b0" category="list-text">의료 부문의 AI</block>
+  <block id="a53f09b2bd331120c3b796cb9e4ff287" category="list-text">Abhinav Singh, NetApp 기술 마케팅 엔지니어</block>
+  <block id="fadcd2d3cf8bcd04af16c2062209bfa7" category="list-text">Brian O는 NetApp의 솔루션 설계자 Healthcare(Epic) 입니다</block>
+  <block id="60b698d29839935a0d9df481d942789f" category="list-text">Brian Pruitt, NetApp 비즈니스 개발 매니저</block>
+  <block id="759cb078e7ce381034f0e679b20a33a3" category="list-text">Arvind Ramakrishnan, NetApp 수석 솔루션 설계자</block>
+  <block id="21b52a4b86af95be06bb6da00008c927" category="list-text">Michael Hommer, NetApp의 FlexPod 글로벌 현장 CTO</block>
+  <block id="c7b0e86345062bedaccd6a5198bf3a08" category="section-title">버전 기록</block>
+  <block id="9a4bface9098ff4cd4b35cca641c0042" category="cell">2021년 4월</block>
+  <block id="dfd02aef9802f4824ead7c08b8f81f1f" category="cell">최초 릴리스</block>
+  <block id="669810f5eb70a96eb2b2b2f731479073" category="summary">FIPS 140-2는 컴퓨터 및 통신 시스템의 중요한 정보를 보호하는 보안 시스템 내에서 사용되는 암호화 모듈에 대한 보안 요구 사항을 지정합니다.</block>
+  <block id="63c63acfde2bb653eda01362a8861d34" category="doc">FIPS 140-2 개요</block>
+  <block id="fe9f48b363df02cd8e9445206c35d5ba" category="inline-link-macro">이전: 의료 분야의 사이버 보안 위협</block>
+  <block id="bc3158036cbd180d44e62c1c20f3299c" category="paragraph"><block ref="bc3158036cbd180d44e62c1c20f3299c" category="inline-link-macro-rx"></block></block>
+  <block id="e16a6744cc66fab7e30192426c2f5213" category="paragraph"><block ref="f00f683f8766e452b17d0a15ab41cfdb" category="inline-link-rx"></block> 컴퓨터 및 통신 시스템의 중요한 정보를 보호하는 보안 시스템 내에서 사용되는 암호화 모듈에 대한 보안 요구 사항을 지정합니다. 암호화 모듈은 하드웨어, 소프트웨어, 펌웨어 또는 조합 세트여야 합니다. FIPS는 암호화 경계 내에 포함된 암호화 알고리즘, 키 생성 및 키 관리자에 적용됩니다. FIPS 140-2는 제품, 아키텍처, 데이터 또는 에코시스템이 아닌 암호화 모듈에 특히 적용된다는 점을 이해하는 것이 중요합니다. 이 문서의 뒷부분에 나오는 주요 용어로 정의된 암호화 모듈은 승인된 보안 기능을 구현하는 특정 구성 요소(하드웨어, 소프트웨어 및/또는 펌웨어)입니다. 또한 FIPS 140-2는 네 가지 레벨을 지정합니다. 승인된 암호화 알고리즘은 모든 수준에 공통적입니다. 각 보안 수준의 주요 요소 및 요구 사항은 다음과 같습니다.</block>
+  <block id="7e6295a284183df836328d24f49a0628" category="list-text">* 보안 수준 1 *</block>
+  <block id="8ca4b943b1ba06e5dda8673db1fcd8a1" category="list-text">암호화 모듈에 대한 기본 보안 요구 사항을 지정합니다(하나 이상의 승인된 알고리즘 또는 보안 기능이 필요함).</block>
+  <block id="b40db088876c64b6e274c9909a21c43b" category="list-text">운영 등급 구성 요소의 기본 요구 사항을 초과하는 수준 1에는 지정된 물리적 보안 메커니즘이 필요하지 않습니다.</block>
+  <block id="52cfb4a8c9a8917b963f902a54855463" category="list-text">* 보안 수준 2 *</block>
+  <block id="7945828e8b74e25383f9f5a8e797b40b" category="list-text">코팅 또는 봉인, 탈착식 커버 또는 암호화 모듈의 도어에 잠금 장치와 같은 변조 방지 솔루션을 사용하여 변조 증거에 대한 요구 사항을 추가하여 물리적 보안 메커니즘을 강화합니다.</block>
+  <block id="0a6f4b4e93eeb9bdc885fef3708fd8a7" category="list-text">최소한 역할 기반 액세스 제어(RBAC)가 필요하며, 이 경우 암호화 모듈은 운영자 또는 관리자의 권한을 인증하여 특정 역할을 수행하고 해당 기능 세트를 수행해야 합니다.</block>
+  <block id="c5bb1d7928a6671808b618494752a28a" category="list-text">* 보안 수준 3 *</block>
+  <block id="57a273085f24aa26c664e3acf80e1f97" category="list-text">레벨 2의 변조 가능한 요구 사항을 기반으로 암호화 모듈 내의 중요 보안 매개 변수(CSP)에 대한 추가 액세스를 방지합니다.</block>
+  <block id="b7eb1f78bc621705311b57a488810ecc" category="list-text">수준 3에 필요한 물리적 보안 메커니즘은 물리적 액세스 시도 또는 암호화 모듈의 사용 또는 수정 시도를 감지하고 이에 대응할 가능성이 높은 것을 목적으로 합니다. 암호화 모듈의 이동식 덮개가 열릴 때 모든 일반 텍스트 CSP를 제로화하는 강력한 인클로저, 변조 감지 및 응답 회로가 이러한 예에 포함될 수 있습니다.</block>
+  <block id="db88764d7b2984ee9349d8929f17cfe8" category="list-text">레벨 2에 지정된 RBAC 메커니즘의 보안을 강화하기 위해 ID 기반 인증 메커니즘이 필요합니다. 암호화 모듈은 운영자의 ID를 인증하고 운영자가 역할을 사용하고 역할의 기능을 수행할 권한이 있는지 확인합니다.</block>
+  <block id="9693b1383c69d4153812280ef60e8173" category="list-text">* 보안 수준 4 *</block>
+  <block id="53e39c497a357c08fb7e8fb316af2ccb" category="list-text">FIPS 140-2의 최고 보안 수준.</block>
+  <block id="c9f4af8b7a668c115c22854511edc2a6" category="list-text">물리적으로 보호되지 않는 환경에서 작업을 수행하는 데 가장 유용한 레벨입니다.</block>
+  <block id="0371c2e443d81ba163f7e5742a206bd3" category="list-text">이 수준에서 물리적 보안 메커니즘은 물리적 액세스에서 승인되지 않은 시도를 감지하고 대응하는 책임을 지고 암호화 모듈에 대한 완벽한 보호를 제공하기 위한 것입니다.</block>
+  <block id="d07e5c6f647d4df01fd79a88095c779f" category="list-text">암호화 모듈의 침투 또는 노출은 감지 가능성이 높으며 모든 비보안 또는 일반 텍스트 CSP의 즉각적인 제로로 이어질 수 있습니다.</block>
+  <block id="8fa5064f87ab7577c94402a5ccdd467d" category="inline-link-macro">다음: 컨트롤 플레인 대 데이터 플레인</block>
+  <block id="48832063c2ace3ecceba467edec7fe40" category="paragraph"><block ref="48832063c2ace3ecceba467edec7fe40" category="inline-link-macro-rx"></block></block>
+  <block id="11766bc9799694bc96453a6e6682f414" category="summary">의료에 대한 위협은 본질적으로 다차원적이며 영향을 줍니다. 전 세계 정부들은 ePHI를 보호하기 위해 다양한 규정을 제정했습니다. 의료 위협 요소의 해로운 영향과 진화하는 특성으로 인해 의료 기관은 모든 위협을 방어하기가 어렵습니다.</block>
+  <block id="5b1a2560ef659e3cb3d07ad259d09fa8" category="doc">의료 분야의 사이버 보안 위협</block>
+  <block id="b50a6314c8fe98507df35c49febced3f" category="paragraph"><block ref="b50a6314c8fe98507df35c49febced3f" category="inline-link-macro-rx"></block></block>
+  <block id="e98d2f001da5678b39482efbdf5770dc" category="inline-link">보고서</block>
+  <block id="0f644fc6356091b87c773ba1bc2fa9b8" category="paragraph">모든 문제는 새로운 기회를 제공합니다. COVID 범세계적 확산으로 인해 이러한 기회 중 하나가 발생할 수 있습니다. 에 따르면<block ref="f83c4046f7a26a79760847d8c7d0af23" category="inline-link-rx"></block> HHS(Department of Health and Human Services) 사이버 보안 프로그램을 통해 COVID 대응은 랜섬웨어 공격 횟수를 늘렸습니다. 2020년 3월 셋째 주에 등록된 새로운 인터넷 도메인은 6,000개에 달했습니다. 도메인 중 50% 이상이 맬웨어를 호스팅했습니다. 랜섬웨어 공격은 2020년 전체 의료 데이터 침해의 거의 50%를 차지하여 630개 이상의 의료 조직과 약 2,900만 개의 의료 기록에 영향을 주었습니다. 19개의 침공자/현장은 갈취의 두 배가 되었습니다. 24.5%에 의료 산업에서는 2020년에 데이터 유출 사고가 가장 많이 발생하였습니다.</block>
+  <block id="20c8b4324a2bcafd9f39424dfb6de93d" category="paragraph">악의적인 요원들이 정보를 판매하거나 이를 파괴하거나 노출시키겠다고 위협하여 PHI(Protected Health Information)의 보안 및 개인 정보를 침해하려고 시도했습니다. ePHI에 대한 무단 접근을 위해 대상 및 대량 방송 시도가 자주 이루어집니다. 2020년 하반기에 노출된 환자 기록의 약 75%는 업무 관계자가 피해를 본 덕분이었습니다.</block>
+  <block id="f8053593b404ed0239b193a9d6d00282" category="paragraph">다음 의료 조직 목록은 악의적인 에이전트의 표적이 되었습니다.</block>
+  <block id="b024fecc35b15d2d2283e27bf48ca983" category="list-text">병원 시스템</block>
+  <block id="d0a15f92e9511bcaa54fc6ad25d0b52f" category="list-text">생명 과학 연구소</block>
+  <block id="4d25936202681ad4fc1321ff1d37016e" category="list-text">연구 랩</block>
+  <block id="36a97c54e03d6f7c501c3f35e68f75d2" category="list-text">재활 시설</block>
+  <block id="92af2d1e9f16ef06873bd74f377aae2b" category="list-text">지역 병원 및 클리닉</block>
+  <block id="830ad2f02dfed22d8d7f275c337eb2f4" category="paragraph">의료 기관을 구성하는 애플리케이션의 다양성은 부인할 수 없으며 복잡성이 증가하고 있습니다. 정보 보안 사무소는 방대한 IT 시스템 및 자산에 대한 거버넌스를 제공해야 하는 과제를 안고 있습니다. 다음 그림은 일반적인 병원 시스템의 임상적 기능을 보여줍니다.</block>
+  <block id="f73aeae52ac37b8407303a57148e7a0c" category="paragraph"><block ref="f73aeae52ac37b8407303a57148e7a0c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="91f8c0b7a512f686c841d548ee549ceb" category="paragraph">환자 데이터가 이 영상의 중심에 있습니다. 환자 데이터 손실 및 민감한 의학적 상태와 관련된 오인은 매우 현실적입니다. 기타 중요한 문제로는 사회적 부담보, 협박메일, 프로파일링, 대상 마케팅, 악용, 지불자의 특권 이외의 의료 정보에 대한 지불자에 대한 잠재적인 재정적 책임 등이 있습니다.</block>
+  <block id="761e56c91eb82051002d10fc62124ce3" category="paragraph">다음은 의료 분야에서 확인된 일반적인 위협 목록입니다.</block>
+  <block id="a4f075a35ac35f916b099ee3bf931c3f" category="list-text">랜섬웨어 공격</block>
+  <block id="38f780b8fd1e8e21ea9b734fc2606f97" category="list-text">민감한 정보가 있는 장비 또는 데이터의 손실 또는 도난</block>
+  <block id="2eeb300db457f3d80f0ae7d134ccbd6f" category="list-text">피싱 공격</block>
+  <block id="6cea43e0074727eb57d32a506e3de601" category="list-text">환자 안전에 영향을 줄 수 있는 연결된 의료 기기에 대한 공격</block>
+  <block id="2c6393791b1b4cf769c54e037132567e" category="list-text">전자 메일 피싱 공격</block>
+  <block id="6738b9bdee2e1f4f23c7daa1f8b08e1c" category="list-text">장비 또는 데이터의 손실 또는 도난</block>
+  <block id="be7426b1adb5245c924f10c4d0fb8775" category="list-text">원격 데스크톱 프로토콜 손상</block>
+  <block id="91f1bc67a632bbf9c1f0cbef5e775521" category="list-text">소프트웨어 취약점</block>
+  <block id="a624e43b5f0b06a997bbd0361d6a3229" category="paragraph">의료 조직은 디지털 에코시스템과 같이 복잡한 법률 및 규정 환경에서 사업을 운영하고 있습니다. 이 환경에는 다음이 포함되지만 이에 국한되지는 않습니다.</block>
+  <block id="ce305ab269a2886bdf845d630141a943" category="list-text">국립보건조정관(의료 기술용) ONC 인증 전자보건정보기술상호운용성 표준</block>
+  <block id="cf97826eea7cdee3e3fc7f21154669d2" category="list-text">Medicare 액세스 및 아동 건강 보험 프로그램 재허가 법(MACRA)/의미 있는 사용</block>
+  <block id="c3e81f14489abe72ab9e5d0038250741" category="list-text">FDA(Food and Drug Administration)에 따른 다수의 의무</block>
+  <block id="90774b8006ecc60ddf1ecbcc22d06809" category="list-text">공동 위원회 인증 프로세스</block>
+  <block id="1cb83c7bfb4ba2cc5d73284eca7c530f" category="list-text">HIPAA 요구 사항</block>
+  <block id="899bd455a1e16419d6124dd164f5f22c" category="list-text">HITECH 요구 사항</block>
+  <block id="44138e8f10aef528ee4b15dcc7bce801" category="list-text">지불자의 최소 허용 위험 기준</block>
+  <block id="321821d5a5f7e76a8b35455b38e515d8" category="list-text">개인 정보 보호 및 보안 규칙</block>
+  <block id="410bb36676d3f7d87bdbf82d9e23cf9b" category="list-text">연방 정보 보안 현대화 법안 요구 사항 연방 계약 및 연구 보조금은 국가 보건원 등의 기관을 통해 통합됩니다</block>
+  <block id="0b94cb2ba7751c1c25401f5e08dbc648" category="list-text">PCI-DSS(Payment Card Industry Data Security Standard)</block>
+  <block id="2379ba323f6ddd3c737593340227cccf" category="list-text">약물 남용 및 정신 건강 서비스 관리(SAMHSA) 요건</block>
+  <block id="1d5a5ba788a7df116764e7e8db1f9c3f" category="list-text">재무 처리를 위한 Gramm-Leach-Bliley Act</block>
+  <block id="d5246ae1ce8ba4b3478d499f914ed9bd" category="list-text">Stark 법률은 제휴 조직에 서비스를 제공하는 것과 관련이 있습니다</block>
+  <block id="ada9710e85ba9f052bcc990ea0fd376d" category="list-text">고등 교육에 참여하는 기관을 위한 가족교육권 및 개인정보보호법(FERPA)</block>
+  <block id="a93d3856998b226537609d066fb739bb" category="list-text">유전정보차별금지법(GINA)</block>
+  <block id="b51dcba228834ada19f17a5840dd2492" category="list-text">EU의 새로운 GDPR(General Data Protection Regulation)</block>
+  <block id="9ae80d0430acdcbeec02908c0cb355eb" category="paragraph">악의적 행위자가 의료 정보 시스템에 영향을 주지 않도록 보안 아키텍처 표준이 빠르게 발전하고 있습니다. 이러한 표준 중 하나는 NIST(National Institute of Standards and Technology)에서 정의한 FIPS 140-2입니다. FIPS 140-2 은 미국에 대해 자세히 설명합니다 암호화 모듈에 대한 정부 요구 사항 보안 요구 사항은 암호화 모듈의 보안 설계 및 구현과 관련된 영역을 다루며, 보안 요구 사항을 적용하여 보안 기능을 강화할 수 있습니다. 잘 정의된 암호화 경계를 통해 암호화 모듈을 최신 상태로 유지하면서 보안 관리를 쉽게 수행할 수 있습니다. 이러한 경계는 악의적인 행위자가 쉽게 악용할 수 있는 약한 암호화 모듈을 방지하는 데 도움이 됩니다. 또한 표준 암호화 모듈을 관리할 때 인적 오류를 방지할 수 있습니다.</block>
+  <block id="140f8a823fa081dde772e389e4253047" category="paragraph">NIST는 CSE(Communications Security Establishment)와 함께 FIPS 140-2 검증 수준에 대한 암호화 모듈을 인증하기 위해 CMVP(Cryptographic Module Validation Program)를 설립했습니다. FIPS 140-2 인증 모듈을 사용하는 연방 조직은 이동 중에도 기밀 또는 가치 있는 데이터를 보호해야 합니다. 민감하거나 중요한 정보를 보호하는 데 성공했기 때문에 많은 의료 시스템이 법적으로 요구되는 최소 보안 수준 이상으로 FIPS 140-2 암호화 모듈을 사용하여 ePHI를 암호화하기로 결정했습니다.</block>
+  <block id="617b80b21ac1770524c797225aaf37d1" category="paragraph">FlexPod FIPS 140-2 기능을 활용하여 구현하는 데 몇 시간(며칠이 아님)만 걸립니다. FIPS를 준수하는 것은 규모와 관계없이 대부분의 의료 조직에서 가능합니다. 암호화 경계가 명확하게 정의되고 문서화되고 간단한 구현 단계를 통해 FIPS 140-2 규격 FlexPod 아키텍처는 인프라를 위한 견고한 보안 기반을 마련하고 보안 위협에 대한 보호 수준을 더욱 높이기 위해 간단한 개선 기능을 제공할 수 있습니다.</block>
+  <block id="c2f4ca316986fdc847a0aad4fbe365bb" category="inline-link-macro">다음: FIPS 140-2의 개요</block>
+  <block id="72fad8e758c79653886e38dc58285d82" category="paragraph"><block ref="72fad8e758c79653886e38dc58285d82" category="inline-link-macro-rx"></block></block>
+  <block id="036fb9e2e96860a580ec607703d702d9" category="summary">NetApp은 다양한 하드웨어, 소프트웨어 및 서비스를 제공하며, 여기에는 표준에 따라 검증된 암호화 모듈의 다양한 구성요소가 포함될 수 있습니다. 따라서 NetApp은 제어 플레인 및 데이터 플레인을 위해 FIPS 140-2 규정 준수를 위한 다양한 접근 방식을 사용합니다.</block>
+  <block id="88a22e01bcb2a32a771985c67f2fdfd8" category="doc">FlexPod NetApp ONTAP 스토리지 및 FIPS 140-2</block>
+  <block id="579afad0164d7653d494c87a8944e2b5" category="inline-link-macro">이전: FlexPod Cisco 네트워킹 및 FIPS 140-2.</block>
+  <block id="9fdbb3e96438d1416b3f42f96ca75d57" category="paragraph"><block ref="9fdbb3e96438d1416b3f42f96ca75d57" category="inline-link-macro-rx"></block></block>
+  <block id="2cc023df75a8dca3c9d011f1d12562ba" category="paragraph">NetApp은 다양한 하드웨어, 소프트웨어 및 서비스를 제공하며, 여기에는 표준에 따라 검증된 암호화 모듈의 다양한 구성요소가 포함될 수 있습니다. 따라서 NetApp은 제어 플레인 및 데이터 플레인을 위해 FIPS 140-2 규정 준수를 위한 다양한 접근 방식을 사용합니다.</block>
+  <block id="09c2245dfd0125b63997172ea88b7aae" category="list-text">NetApp에는 전송 중인 데이터 및 유휴 데이터의 암호화에 대한 레벨 1 검증을 획득한 암호화 모듈이 포함되어 있습니다.</block>
+  <block id="2be3d32ec5ba48ecaa616f5ea960f223" category="list-text">NetApp은 FIPS 140-2 검증을 거친 하드웨어 및 소프트웨어 모듈을 모두 인수합니다. 예를 들어, NetApp Storage Encryption 솔루션은 FIPS 레벨 2 인증 드라이브를 활용합니다.</block>
+  <block id="30fa9e253d772024d7633862f3bf5ea8" category="list-text">NetApp 제품은 제품 또는 기능이 검증 범위 내에 있지 않더라도 표준을 준수하는 방법으로 검증된 모듈을 사용할 수 있습니다. 예를 들어, NetApp Volume Encryption(NVE)은 FIPS 140-2 규정을 준수합니다. 이 솔루션은 개별적으로 검증되지 않았지만 레벨 1의 검증된 NetApp 암호화 모듈을 활용합니다. 사용 중인 ONTAP 버전에 대한 규정 준수 사항을 자세히 알아보려면 FlexPod SME에게 문의하십시오.</block>
+  <block id="fe48fc4cbc1b5d979fa8e1c1a740130e" category="paragraph">* NetApp 암호화 모듈은 FIPS 140-2 레벨 1의 검증을 거쳤습니다 *</block>
+  <block id="73a2075f8647ae15ce33ebcff7a14e80" category="list-text">NetApp CSM(Cryptographic Security Module)은 FIPS 140-2 레벨 1의 검증을 거쳤습니다.</block>
+  <block id="58ae9f7de1f47dc0f6742a96cf3d397c" category="paragraph">* NetApp 자체 암호화 드라이브는 FIPS 140-2 레벨 2의 검증을 거쳤습니다 *</block>
+  <block id="3955f332a1bae0df1703d0cc227aed1b" category="paragraph">NetApp은 FIPS 140-2 검증을 거친 SED(자체 암호화 드라이브)를 OEM(Original Equipment Manufacturer)에서 구입합니다. 이러한 드라이브를 찾는 고객은 주문 시 드라이브를 지정해야 합니다. 드라이브는 레벨 2에서 검증됩니다. 다음 NetApp 제품은 검증된 SED를 활용할 수 있습니다.</block>
+  <block id="27b6f393f2aa565da8d6855e213d9e3c" category="list-text">AFF A-Series 및 FAS 스토리지 시스템</block>
+  <block id="6dafe90f819b609e9bafd30b5b48d3f8" category="list-text">E-Series 및 EF-Series 스토리지 시스템을 구축합니다</block>
+  <block id="ea7cb8ef33adfc47df5ba7476b9b9dde" category="paragraph">* NetApp 애그리게이트 암호화 및 NetApp 볼륨 암호화 *</block>
+  <block id="5c92b7c731a0265513a65de73e9c1d48" category="paragraph">NVE 및 NetApp Aggregate Encryption(NAE) 기술을 사용하면 볼륨 및 애그리게이트 레벨에서 데이터를 암호화할 수 있으므로 솔루션이 물리적 드라이브에 제한되지 않습니다.</block>
+  <block id="9df7b77f2177f8bb229d2b1963ab428d" category="paragraph">NVE는 ONTAP 9.1부터 사용 가능한 소프트웨어 기반의 유휴 데이터 암호화 솔루션이며 ONTAP 9.2 이후 FIPS 140-2 를 준수합니다. NVE를 사용하면 ONTAP가 각 볼륨의 데이터를 세부적으로 암호화할 수 있습니다. ONTAP 9.6과 함께 제공되는 NAE는 NVE의 성장이 앞서며, ONTAP가 각 볼륨의 데이터를 암호화할 수 있으며 볼륨이 애그리게이트 전체에서 키를 공유할 수 있습니다. NVE와 NAE는 모두 AES 256비트 암호화를 사용합니다. SED가 없는 디스크에도 데이터를 저장할 수 있습니다. NVE와 NAE를 사용하면 암호화가 사용되는 경우에도 스토리지 효율성 기능을 사용할 수 있습니다. 애플리케이션 계층만 암호화하면 스토리지 효율성의 모든 이점을 누릴 수 없습니다. NVE와 NAE를 사용하면 데이터가 NetApp WAFL를 통해 네트워크에서 RAID 계층으로 전송되기 때문에 스토리지 효율성이 유지되고 데이터의 암호화 여부가 결정됩니다. 스토리지 효율성을 높이기 위해 NAE에서 애그리게이트 중복제거를 사용할 수 있습니다. NVE 볼륨과 NAE 볼륨이 동일한 NAE 애그리게이트에 공존할 수 있습니다. NAE 애그리게이트는 암호화되지 않은 볼륨을 지원하지 않습니다.</block>
+  <block id="e4f29b2ecb5e0ff124b4340ee0455bfb" category="paragraph">프로세스는 다음과 같이 진행됩니다. 데이터가 암호화되면 FIPS 140-2 레벨 1의 유효성이 검증된 암호화 모듈로 전송됩니다. 암호화 모듈은 데이터를 암호화하고 RAID 계층으로 다시 전송합니다. 그런 다음 암호화된 데이터가 디스크로 전송됩니다. 따라서 NVE와 NAE를 결합하여 데이터를 디스크로 이미 암호화할 수 있습니다. 읽기는 반대 경로를 따릅니다. 즉, 데이터가 암호화된 상태로 남아 RAID로 전송되고 암호화 모듈에 의해 해독되며 다음 그림과 같이 스택의 나머지 부분까지 전송됩니다.</block>
+  <block id="02442454f2d9ab154b95684f50b37c6c" category="paragraph"><block ref="02442454f2d9ab154b95684f50b37c6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f21bd82660e877d3be51dc4f4eb48973" category="admonition">NVE는 FIPS 140-2 레벨 1의 검증된 소프트웨어 암호화 모듈을 사용합니다.</block>
+  <block id="628f390542ef6d7965bd7ade25ffeeb1" category="inline-link">NVE 데이터시트</block>
+  <block id="fbd0c4c3bae5c05486d9bf4590569bff" category="paragraph">NVE에 대한 자세한 내용은 를 참조하십시오<block ref="c9df36a3703b98fc90fdb292babfc5d2" category="inline-link-rx"></block>.</block>
+  <block id="76e0b11f845e063a7e3010161d6ac7f4" category="paragraph">NVE는 클라우드의 데이터를 보호합니다. Cloud Volumes ONTAP 및 Azure NetApp Files는 FIPS 140-2 규격 데이터 암호화를 유휴 상태에서 제공할 수 있습니다.</block>
+  <block id="da3c09edf291202f25e141475a128482" category="paragraph">ONTAP 9.7부터 NVE 라이센스와 온보드 또는 외부 키 관리가 있을 때 새로 생성된 애그리게이트 및 볼륨이 기본적으로 암호화됩니다. ONTAP 9.6부터 애그리게이트 레벨 암호화를 사용하여 암호화할 볼륨의 포함된 애그리게이트에 키를 할당할 수 있습니다. Aggregate에서 생성한 볼륨은 기본적으로 암호화됩니다. 볼륨을 암호화할 때 기본값을 재정의할 수 있습니다.</block>
+  <block id="a917a7f3abd61ea328e2a70edb81afcd" category="section-title">ONTAP NAE CLI 명령</block>
+  <block id="628fdb42144d87cf09c6716047463142" category="paragraph">다음 CLI 명령을 실행하기 전에 클러스터에 필요한 NVE 라이센스가 있는지 확인하십시오.</block>
+  <block id="e0ef78ce546a0f4a64a3dbdbb7c8d4ef" category="paragraph">Aggregate를 생성하여 암호화하려면 다음 명령을 실행합니다(ONTAP 9.6 이상의 클러스터 CLI에서 실행 시).</block>
+  <block id="93a16c5fa0bd3d87baaabb54e2e47863" category="paragraph">NAE가 아닌 애그리게이트를 NAE A aggregate로 변환하려면 다음 명령을 실행합니다(ONTAP 9.6 및 이후 클러스터 CLI에서 실행되는 경우).</block>
+  <block id="427eee3e5bdfe9b3e7a4f16f4d373235" category="paragraph">NAE 애그리게이트를 NAE가 아닌 aggregate로 변환하려면 다음 명령을 실행하십시오(ONTAP 9.6 이상의 클러스터 CLI에서 실행되는 경우).</block>
+  <block id="398995ddde48e292fec610ff5cde5e71" category="section-title">ONTAP NVE CLI 명령</block>
+  <block id="e875dec0dd440be4d8d4b5e2a57bff65" category="paragraph">ONTAP 9.6부터 애그리게이트 레벨 암호화를 사용하여 암호화할 볼륨의 포함된 애그리게이트에 키를 할당할 수 있습니다. Aggregate에서 생성한 볼륨은 기본적으로 암호화됩니다.</block>
+  <block id="716d53a69fce16749c02120fb94d2a1b" category="paragraph">NAE가 활성화된 애그리게이트에서 볼륨을 생성하려면 다음 명령을 실행합니다(ONTAP 9.6 및 이후 클러스터 CLI에서 실행되는 경우).</block>
+  <block id="da914c22201fafd0edc14fa4532122de" category="paragraph">볼륨 이동 없이 기존 볼륨 "제자리에" 암호화를 활성화하려면 다음 명령을 실행합니다(ONTAP 9.6 이상 클러스터 CLI에서 실행 시).</block>
+  <block id="34c603648e35dc0c4572e04fbf6a0dc0" category="paragraph">볼륨에 암호화가 설정되어 있는지 확인하려면 다음 CLI 명령을 실행합니다.</block>
+  <block id="ac6d7f70650e35d39af1e736560cbfc3" category="section-title">NSE를 선택합니다</block>
+  <block id="e74270d1a83f9cdaeecf28e869da2b43" category="paragraph">NSE는 SED를 사용하여 하드웨어 가속 메커니즘을 통해 데이터 암호화를 수행합니다.</block>
+  <block id="8166e0624adedca5cc7d7fb69a93902c" category="paragraph">NSE는 AES 256비트 투명 디스크 암호화를 통해 유휴 데이터를 보호하여 규정 준수 및 스페어 반환을 지원하도록 FIPS 140-2 레벨 2 자체 암호화 드라이브를 구성합니다. 드라이브는 암호화 키 생성을 포함하여 다음 그림에 설명된 대로 내부적으로 모든 데이터 암호화 작업을 수행합니다. 데이터에 대한 무단 액세스를 방지하기 위해 스토리지 시스템은 드라이브를 처음 사용할 때 설정된 인증 키를 사용하여 드라이브에서 자체적으로 인증해야 합니다.</block>
+  <block id="107190bd33569ecfbc4b368740fe6b57" category="paragraph"><block ref="107190bd33569ecfbc4b368740fe6b57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="55b781fdb356bf8061c5765bf61ceea6" category="admonition">NSE는 FIPS 140-2 레벨 2의 검증된 각 드라이브에서 하드웨어 암호화를 사용합니다.</block>
+  <block id="dcc4fc2ab92191866df8bda399f65fc4" category="inline-link">NSE 데이터시트</block>
+  <block id="f86613808e9d02a924b60de33ac6a511" category="paragraph">NSE에 대한 자세한 내용은 를 참조하십시오<block ref="cc0f51e873265bda490e1cd95c9afdfa" category="inline-link-rx"></block>.</block>
+  <block id="b7810bbf74a08525c44fb375752d91b3" category="section-title">키 관리</block>
+  <block id="04dc80fc160d63e650cf3e8121f9fb3a" category="paragraph">FIPS 140-2 표준은 다음 그림과 같이 경계에서 정의한 암호화 모듈에 적용됩니다.</block>
+  <block id="1d889e71ef6c2c00091c61121c1285b6" category="paragraph"><block ref="1d889e71ef6c2c00091c61121c1285b6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="db18507a853a72cdf5434669bff83a8c" category="paragraph">키 관리자는 ONTAP에서 사용하는 모든 암호화 키를 추적합니다. NSE SED는 키 관리자를 사용하여 NSE SED의 인증 키를 설정합니다. 키 관리자를 사용할 때 NVE와 NAE의 결합된 솔루션은 소프트웨어 암호화 모듈, 암호화 키 및 키 관리자로 구성됩니다. NVE는 각 볼륨에 대해 키 관리자가 저장하는 고유한 XTS-AES 256 데이터 암호화 키를 사용합니다. 데이터 볼륨에 사용되는 키는 해당 클러스터의 데이터 볼륨에 고유하며 암호화된 볼륨이 생성될 때 생성됩니다. 마찬가지로 NAE 볼륨은 집합당 고유한 XTS-AES 256 데이터 암호화 키를 사용하며 키 관리자도 이 암호화 키를 저장합니다. NAE 키는 암호화된 Aggregate가 생성될 때 생성됩니다. ONTAP는 키를 미리 생성하거나 다시 사용하거나 일반 텍스트로 표시하지 않습니다. 키는 키 관리자에 의해 저장 및 보호됩니다.</block>
+  <block id="705a29ddb4bf98dd82b42dbb573d8577" category="section-title">외부 키 관리자 지원</block>
+  <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="inline-link">NetApp 상호 운용성 매트릭스</block>
+  <block id="1f799956e8c5310c8e09e4986bfa2375" category="paragraph">ONTAP 9.3부터 외부 키 관리자는 NVE 솔루션과 NSE 솔루션 모두에서 지원됩니다. FIPS 140-2 표준은 특정 공급업체의 구현에 사용되는 암호화 모듈에 적용됩니다. 대부분의 경우 FlexPod 및 ONTAP 고객은 에 따라 다음 검증 중 하나를 사용합니다<block ref="ae69c67e09c854d61b64be1ef166878d" category="inline-link-rx"></block>) 주요 관리자:</block>
+  <block id="091ed70632134e5ee4d6525912922240" category="list-text">Gemalto 또는 SafeNet AT</block>
+  <block id="bc631273ca19c709f1072f13a2abf091" category="list-text">보메트릭(목요일)</block>
+  <block id="cb635fb4586456dc138aeae49a5e1ef3" category="list-text">IBM SKLM</block>
+  <block id="8a349d9f16880458aa9ddd5db143b1ce" category="list-text">Utimaco(이전의 Microfocus, HPE)</block>
+  <block id="f3a3071abd4bdbd0317c818be3aa10e0" category="paragraph">NSE 및 NVMe SED 인증 키는 업계 표준 OASIS KMIP(Key Management Interoperability Protocol)를 사용하여 외부 키 관리자에 백업됩니다. 스토리지 시스템, 드라이브 및 키 관리자만이 키에 액세스할 수 있으며, 보안 도메인 외부로 드라이브를 이동하면 드라이브 잠금을 해제할 수 없으므로 데이터 유출을 방지할 수 있습니다. 외부 키 관리자는 NVE 볼륨 암호화 키와 NAE 애그리게이트 암호화 키도 저장합니다. 컨트롤러와 디스크가 더 이상 외부 키 관리자에 액세스할 수 없는 경우, NVE 및 NAE 볼륨은 액세스할 수 없으며 해독할 수 없습니다.</block>
+  <block id="8aa3e9037c1cb7b2c3e1c7d13092ddbc" category="paragraph">다음 명령 예에서는 외부 키 관리자가 SVM(Store Virtual Machine)의 vmname1"에 사용하는 서버 목록에 두 개의 키 관리 서버를 추가합니다.</block>
+  <block id="9db2d4fe7d2116bfba37f43e0965e48d" category="paragraph">ONTAP는 멀티테넌시 시나리오에서 FlexPod 데이터 센터를 사용 중인 경우 SVM 레벨에서 보안상의 이유로 테넌시를 제공하여 사용자를 지원합니다.</block>
+  <block id="ae8207ab19df5d409b144bf23edeee61" category="paragraph">외부 키 관리자 목록을 확인하려면 다음 CLI 명령을 실행합니다.</block>
+  <block id="b83b8cdd455e5919cb4aaeab57ab86ac" category="section-title">이중 암호화를 위한 암호화 결합(계층화된 방어)</block>
+  <block id="9955ff98f41f076e517fb9da6b027f7c" category="paragraph">데이터에 대한 액세스를 격리하고 데이터를 항상 보호해야 하는 경우 NSE SED를 네트워크 또는 패브릭 수준 암호화와 결합할 수 있습니다. NSE SED는 관리자가 상위 수준 암호화를 구성하거나 잘못 구성하는 경우 백스톱처럼 작동합니다. 두 개의 개별 암호화 계층의 경우 NSE SED를 NVE 및 NAE와 결합할 수 있습니다.</block>
+  <block id="6aca0a8e8105e5f9c27d4bc6c1a0b46d" category="section-title">NetApp ONTAP 클러스터 전체에서 데이터 제어 플레인 FIPS 모드를 지원합니다</block>
+  <block id="9a5cb049bd1e6af3661d9049537a4e0c" category="paragraph">NetApp ONTAP 데이터 관리 소프트웨어에는 고객을 위해 추가 보안 수준을 인스턴스화하는 FIPS 모드 구성이 있습니다. 이 FIPS 모드는 컨트롤 평면에만 적용됩니다. FIPS 모드가 활성화되면 FIPS 140-2의 주요 요소에 따라 전송 계층 보안 v1(TLSv1) 및 SSLv3이 비활성화되고 TLS v1.1 및 TLS v1.2만 활성화됩니다.</block>
+  <block id="bc48c111a62b89183acaa60aea6eae98" category="admonition">FIPS 모드의 ONTAP 클러스터 전체 제어 창은 FIPS 140-2 레벨 1을 준수합니다. 클러스터 전체 FIPS 모드는 NCSM에서 제공하는 소프트웨어 기반 암호화 모듈을 사용합니다.</block>
+  <block id="ce793f7235166d148101fae6c57d781f" category="paragraph">클러스터 전체 컨트롤 플레인을 위한 FIPS 140-2 규정 준수 모드는 ONTAP의 모든 제어 인터페이스를 보호합니다. 기본적으로 FIPS 140-2 전용 모드는 비활성화되어 있지만 '보안 구성 수정' 명령에 대해 'is-FIPS-enabled' 매개 변수를 'true'로 설정하여 이 모드를 활성화할 수 있습니다.</block>
+  <block id="2b444b668ce3275569acc78bf698f519" category="paragraph">ONTAP 클러스터에서 FIPS 모드를 활성화하려면 다음 명령을 실행합니다.</block>
+  <block id="e5cdd4129a5a2bd91834204ef4618929" category="paragraph">SSL FIPS 모드가 활성화되면 ONTAP에서 외부 클라이언트 또는 ONTAP 외부의 서버 구성 요소로의 SSL 통신은 SSL을 위해 FIPS 컴플레인 암호화를 사용합니다.</block>
+  <block id="6249ec016139fb6f8e8dd5757dd2d8c0" category="paragraph">전체 클러스터에 대해 FIPS 상태를 표시하려면 다음 명령을 실행합니다.</block>
+  <block id="a7d44139e4d48622a5177bf247377b19" category="inline-link-macro">다음으로, FlexPod 통합 인프라의 솔루션 이점에 대해 알아보십시오.</block>
+  <block id="1cd70cb030c9827468cc6950ac3ee629" category="paragraph"><block ref="1cd70cb030c9827468cc6950ac3ee629" category="inline-link-macro-rx"></block></block>
+  <block id="526dbf33d6e82d5402878f97258da16a" category="summary">이 문서는 FIPS 140-2 보안 규정을 준수해야 하는 하나 이상의 의료 IT 애플리케이션 또는 솔루션을 호스팅하기 위한 Cisco Unified Computing System(Cisco UCS), Cisco Nexus, Cisco MDS 및 NetApp ONTAP 기반 FlexPod 인프라의 기술 개요입니다.</block>
+  <block id="ee35f33f653d98fbd8a527077a6a9983" category="doc">TR-4892: FIPS 140-2 Security-compliant FlexPod solution for healthcare</block>
+  <block id="160cded89e2b1a5000cf17000f725937" category="paragraph">Cisco의 NetApp John McAbel, JayaKishore Esanakula</block>
+  <block id="da448de8c5ad731f8053be6c963e6f8b" category="inline-link">보안 규칙</block>
+  <block id="d423100ac1f116b5ab617b21cc5f8621" category="paragraph">경제 및 임상 보건법(HITECH)을 위한 의료 정보 기술(Health Information Technology for Economic and Clinical Health Act, HITECH)에는 전자 보호 건강 정보(ePHI)에 대한 FIPS(Federal Information Processing Standard) 140-2의 검증된 암호화가 필요합니다. Hit(Health Information Technology) 애플리케이션 및 소프트웨어는 FIPS 140-2를 준수하여 프로모션 상호 운용성 프로그램(이전의 의미 있는 사용 인센티브 프로그램) 인증을 취득해야 합니다. 자격을 갖춘 제공자 및 병원은 Medicare 및 Medicaid 인센티브를 받을 때 FIPS 140-2(Level 1) 준수 히트(Hit)를 사용하고 중앙 의료보험 및 메디케이드(Center for Medicare and Medicaid, CMS)에서 보상금 부과를 방지해야 합니다. FIPS 140-2 인증 암호화 알고리즘은 에 따라 필요한 기술 보호 수단으로서 제공됩니다<block ref="99604377ff96be27fdc136a40aa639fc" category="inline-link-rx"></block> HIPAA(Health Information Portability and Accountability Act).</block>
+  <block id="c6b96ee4e16af886038cf410a24f3678" category="paragraph">FIPS 140-2는 미국 중요한 정보를 보호하는 하드웨어, 소프트웨어 및 펌웨어의 암호화 모듈에 대한 보안 요구 사항을 설정하는 정부 표준입니다. 표준 준수는 미국 정부가 사용하도록 규정하고 있습니다 금융 서비스 및 의료와 같은 규제 대상 산업에서도 자주 사용됩니다. 이 기술 보고서를 통해 독자는 FIPS 140-2 보안 표준을 높은 수준에서 이해할 수 있습니다. 또한 의료 기관이 직면한 다양한 위협을 청중이 이해하는 데 도움이 됩니다. 마지막으로, 기술 보고서를 통해 FlexPod 통합 인프라에 FIPS 140-2 규격 FlexPod 시스템을 구축하여 의료 자산을 보호하는 방법을 파악할 수 있습니다.</block>
+  <block id="f04186754db0fa5f66aa27349835a569" category="paragraph">이 문서는 FIPS 140-2 보안 규정을 준수해야 하는 하나 이상의 의료 IT 애플리케이션 또는 솔루션을 호스팅하기 위한 Cisco Unified Computing System(Cisco UCS), Cisco Nexus, Cisco MDS 및 NetApp ONTAP 기반 FlexPod 인프라의 기술 개요입니다.</block>
+  <block id="8dd85c1d5606850fbc127f78d2fe348a" category="inline-link-macro">다음은 의료 분야의 사이버 보안 위협입니다.</block>
+  <block id="71b1bd2e136fb01f83080e7b5a5232a3" category="paragraph"><block ref="71b1bd2e136fb01f83080e7b5a5232a3" category="inline-link-macro-rx"></block></block>
+  <block id="27035b58b587f6cd772940b5b15b49f3" category="summary">FIPS 140-2 전략을 구현할 때는 어떤 것이 보호되고 있는지 이해하는 것이 중요합니다. 컨트롤 플레인과 데이터 플레인의 두 영역으로 쉽게 나눌 수 있습니다.</block>
+  <block id="9c6c65e045dcc05ee528d394156adf9b" category="doc">컨트롤 플레인 대 데이터 플레인</block>
+  <block id="c05d680b0ed5a9b887923d4b1ce47d22" category="inline-link-macro">이전: FIPS 140-2의 개요</block>
+  <block id="d0664f84ccd2e8693a59b62ec01252f3" category="paragraph"><block ref="d0664f84ccd2e8693a59b62ec01252f3" category="inline-link-macro-rx"></block></block>
+  <block id="ce686f2bdedc07b0a9c4b69775ddeb55" category="paragraph">FIPS 140-2 전략을 구현할 때는 어떤 것이 보호되고 있는지 이해하는 것이 중요합니다. 컨트롤 플레인과 데이터 플레인의 두 영역으로 쉽게 나눌 수 있습니다. 제어 계층이란 FlexPod 시스템 내에서 구성 요소의 제어 및 운영에 영향을 미치는 측면, 예를 들어 NetApp 스토리지 컨트롤러, Cisco Nexus 스위치, Cisco UCS 서버에 대한 관리 액세스 권한을 말합니다. 이 계층의 보호는 관리자가 장치에 연결하고 변경할 때 사용할 수 있는 프로토콜과 암호화 사이퍼를 제한함으로써 제공됩니다. 데이터 플레인은 FlexPod 시스템 내의 PHI와 같은 실제 정보를 나타냅니다. 이는 저장된 데이터를 암호화하고 FIPS를 위해 다시 암호화하여 보호하므로 사용 중인 암호화 모듈이 표준을 충족하도록 합니다.</block>
+  <block id="cd056f1a0fa25494edf56224a3107798" category="inline-link-macro">다음으로, FlexPod Cisco UCS 컴퓨팅 및 FIPS 140-2를 살펴보겠습니다.</block>
+  <block id="aec5bc253f7d3184dc4878121d0b1857" category="paragraph"><block ref="aec5bc253f7d3184dc4878121d0b1857" category="inline-link-macro-rx"></block></block>
+  <block id="5dc5c17d391d747172eb9e0c4dc117aa" category="summary">FlexPod 아키텍처는 FIPS 140-2를 준수하는 Cisco UCS 서버로 설계할 수 있습니다. 미국 S. NIST, Cisco UCS 서버는 FIPS 140-2 레벨 1 준수 모드에서 작동할 수 있습니다.</block>
+  <block id="7f469764e526c64dce57f80de8fb6866" category="doc">FlexPod Cisco UCS 컴퓨팅 및 FIPS 140-2</block>
+  <block id="7db2d7cb6d9503b3759cf6536440df18" category="inline-link-macro">이전: 컨트롤 플레인 대 데이터 플레인</block>
+  <block id="42f5b9d45b32b8392658d751cbaa16b3" category="paragraph"><block ref="42f5b9d45b32b8392658d751cbaa16b3" category="inline-link-macro-rx"></block></block>
+  <block id="eab9dba6124848fbe03453ba327e3b5a" category="inline-link">Cisco의 FIPS 140 페이지</block>
+  <block id="7c34faed16844d2a03e6066860330be5" category="paragraph">FlexPod 아키텍처는 FIPS 140-2를 준수하는 Cisco UCS 서버로 설계할 수 있습니다. 미국 S. NIST, Cisco UCS 서버는 FIPS 140-2 레벨 1 준수 모드에서 작동할 수 있습니다. FIPS 호환 Cisco 구성 요소의 전체 목록은 을 참조하십시오<block ref="be8fa685f2e94ca694f53859a51ad805" category="inline-link-rx"></block>. Cisco UCS Manager는 FIPS 140-2 검증을 거쳤습니다.</block>
+  <block id="de4f9a67ed37325a663b216de1288cb4" category="section-title">Cisco UCS 및 패브릭 인터커넥트</block>
+  <block id="693400ff380f83a06ccae73c6bbab285" category="paragraph">Cisco UCS Manager는 Cisco Fabric Interconnect(FI)에서 구축 및 실행됩니다.</block>
+  <block id="ab74a0d73e5b3eada00019b6523b5c7e" category="inline-link">Cisco UCS Manager 설명서</block>
+  <block id="dc4bcc023fa731d7638ba92355928b56" category="paragraph">Cisco UCS 및 FIPS 활성화 방법에 대한 자세한 내용은 를 참조하십시오<block ref="7bf2cac623df26870ce157f5bfde50be" category="inline-link-rx"></block>.</block>
+  <block id="37616fa7358f02f6c6bdd6608d248d43" category="paragraph">각 패브릭 A 및 B의 Cisco 패브릭 인터커넥트에서 FIPS 모드를 활성화하려면 다음 명령을 실행합니다.</block>
+  <block id="5ae16b91eea70397d1d53b428617882f" category="admonition">Cisco UCS Manager 릴리즈 3.2(3)의 클러스터에서 Cisco UCS Manager 릴리즈 3.2(3) 이전 릴리즈의 FI로 FI를 교체하려면 교체 FI를 클러스터에 추가하기 전에 기존 FI에서 FIPS 모드(FIPS 모드 비활성화)를 비활성화하십시오. Cisco UCS Manager의 부팅 과정에서 클러스터가 구성되면 FIPS 모드가 자동으로 설정됩니다.</block>
+  <block id="c9e3a613467db0f37ed2a0f4fd700f87" category="paragraph">Cisco는 컴퓨팅 또는 애플리케이션 계층에서 구현할 수 있는 다음과 같은 주요 제품을 제공합니다.</block>
+  <block id="da33751c0afa58640376f9db681a100d" category="list-text">* 엔드포인트용 Cisco AMP(Advanced Malware Protection).* Microsoft Windows 및 Linux 운영 체제에서 지원되는 이 솔루션은 예방, 검색 및 응답 기능을 통합합니다. 이 보안 소프트웨어는 침입을 방지하고 진입 지점에서 맬웨어를 차단하며 파일 및 프로세스 활동을 지속적으로 모니터링 및 분석하여 일선 방어를 우회할 수 있는 위협을 신속하게 탐지, 억제 및 해결합니다. AMP의 MAP(Malicious Activity Protection) 구성 요소는 모든 엔드포인트 활동을 지속적으로 모니터링하고 엔드포인트에서 실행 중인 프로그램의 비정상적인 동작을 런타임 감지 및 차단합니다. 예를 들어, 엔드포인트 동작에 랜섬웨어가 표시되면 문제가 되는 프로세스가 종료되어 엔드포인트 암호화가 예방되고 공격이 중지됩니다.</block>
+  <block id="66196711e9b4ca652973d44115ad860d" category="list-text">이메일 보안을 위한 * AMP. * 이메일은 맬웨어를 유포하고 사이버 공격을 수행하는 주요 수단으로 자리 잡았습니다. 평균적으로 하루 동안 약 1,000억 개의 이메일이 교환되며, 이를 통해 공격자들은 사용자 시스템에 대한 탁월한 침투 벡터를 얻을 수 있습니다. 따라서 이 공격 라인을 방어하는 것이 절대적으로 중요합니다. AMP는 제로 데이 익스플로잇(zero-day exploit) 및 악성 첨부 파일에 숨겨진 악성 맬웨어와 같은 위협에 대한 이메일을 분석합니다. 또한 업계 최고의 URL 인텔리전스를 사용하여 악성 링크를 차단합니다. 스피어 피싱, 랜섬웨어 및 기타 정교한 공격에 대한 고급 보호 기능을 제공합니다.</block>
+  <block id="90e80b4b70585606d8524c6c747fd276" category="list-text">* NGIPS(Next-Generation Intrusion Prevention System). * Cisco firepower NGIPS는 데이터 센터에서 물리적 어플라이언스로 구축하거나 VMware(NGIPSv for VMware)에서 가상 어플라이언스로 구축할 수 있습니다. 이 고효율 침입 방지 시스템은 안정적인 성능과 낮은 총 소유 비용을 제공합니다. AMP, 애플리케이션 가시성 및 제어, URL 필터링 기능을 제공하기 위해 선택적 구독 라이센스로 위협 보호를 확장할 수 있습니다. 가상화된 NGIPS는 VM(가상 시스템) 간의 트래픽을 검사하고 리소스가 제한된 사이트에서 NGIPS 솔루션을 쉽게 배포 및 관리할 수 있도록 하여 물리적 자산과 가상 자산 모두의 보호를 강화합니다.</block>
+  <block id="37ce2224d4dd130ed2218064a6b50a6a" category="inline-link-macro">다음으로, FlexPod Cisco 네트워킹 및 FIPS 140-2가 있습니다.</block>
+  <block id="cc6310948afe360432241667011f31c9" category="paragraph"><block ref="cc6310948afe360432241667011f31c9" category="inline-link-macro-rx"></block></block>
+  <block id="a64ea5c83794c25dba68d85f36d78edd" category="sidebar">FIPS 140-2 Security-호환 FlexPod 솔루션을 통한 의료 서비스 지원</block>
+  <block id="a33897f6d38339813891960e4bb3db40" category="sidebar">추가 정보를 찾을 수 있는 곳, 버전 기록 및 위치</block>
 </blocks>

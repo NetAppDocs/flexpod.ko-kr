@@ -21,3 +21,28 @@ entries:
     url: "/security/security-ransomware_acknowledgements.html"
   - title: 추가 정보
     url: "/security/security-ransomware_additional_information.html"
+- title: FIPS 140-2 Security-호환 FlexPod 솔루션을 통한 의료 서비스 지원
+  type: solutions
+  entries:
+  - title: 소개
+    url: "/security/flexpod-fips-introduction.html"
+  - title: 의료 분야의 사이버 보안 위협
+    url: "/security/flexpod-fips-cybersecurity-threats-in-healthcare.html"
+  - title: FIPS 140-2 개요
+    url: "/security/flexpod-fips-overview-of-fips-140-2.html"
+  - title: 컨트롤 플레인 대 데이터 플레인
+    url: "/security/flexpod-fips-control-plane-versus-data-plane.html"
+  - title: FlexPod Cisco UCS 컴퓨팅 및 FIPS 140-2
+    url: "/security/flexpod-fips-flexpod-cisco-ucs-compute-and-fips-140-2.html"
+  - title: FlexPod Cisco 네트워킹 및 FIPS 140-2
+    url: "/security/flexpod-fips-flexpod-cisco-networking-and-fips-140-2.html"
+  - title: FlexPod NetApp ONTAP 스토리지 및 FIPS 140-2
+    url: "/security/flexpod-fips-flexpod-netapp-ontap-storage-and-fips-140-2.html"
+  - title: FlexPod 통합 인프라의 솔루션 이점
+    url: "/security/flexpod-fips-solution-benefits-of-flexpod-converged-infrastructure.html"
+  - title: 추가 FlexPod 보안 고려 사항
+    url: "/security/flexpod-fips-additional-flexpod-security-consideration.html"
+  - title: 결론
+    url: "/security/flexpod-fips-conclusion.html"
+  - title: 추가 정보를 찾을 수 있는 곳, 버전 기록 및 위치
+    url: "/security/flexpod-fips-where-to-find-additional-information.html"
