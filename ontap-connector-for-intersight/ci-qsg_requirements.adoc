@@ -28,7 +28,7 @@ Cisco Intersight와 NetApp ONTAP 스토리지 통합을 위한 하드웨어, 소
 | NetApp ONTAP를 참조하십시오 | ONTAP 9.7P1 이상 
 
 
-| NetApp Active IQ Unified Manager를 참조하십시오 | NetApp Active IQ Unified Manager 9.10GA 이상 
+| NetApp Active IQ Unified Manager를 참조하십시오 | NetApp Active IQ Unified Manager의 최신 버전 권장(현재 9.10P1) 
 
 
 | NetApp 스토리지 어레이 | ONTAP 9.7P1 이상에서 모든 ONTAP ASA, AFF 및 FAS 스토리지 어레이가 지원됩니다 

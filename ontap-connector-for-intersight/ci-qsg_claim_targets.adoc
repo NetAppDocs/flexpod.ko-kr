@@ -24,4 +24,7 @@ image:ci-qsg_image7.png["활성화된 NetApp AIQ UM API 게이트웨이의 스�
 
 다음 예제는 Cisco Intersight에서 청구되는 NetApp AIQ UM 대상을 보여줍니다.
 
+
+NOTE: NetApp AIQ UM 타겟을 요청할 경우 Active IQ Unified Manager에서 관리하는 모든 클러스터가 Intersight에 자동으로 추가됩니다.
+
 image:ci-qsg_image8.png["Cisco Intersight에서 청구되는 NetApp AIQ UM 타겟의 스크린샷"]
