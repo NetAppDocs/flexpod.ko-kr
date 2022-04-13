@@ -6,6 +6,7 @@ summary: AFF A300 HA 쌍에서는 최대 Epic 인스턴스를 편안하게 실�
 ---
 = 워크로드 테스트
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

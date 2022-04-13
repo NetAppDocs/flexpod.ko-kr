@@ -6,6 +6,7 @@ summary: 이 섹션에서는 인프라를 구성하기 위해 제자리에 있�
 ---
 = 기본 인프라 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

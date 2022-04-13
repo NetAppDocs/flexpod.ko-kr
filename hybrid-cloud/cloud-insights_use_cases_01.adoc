@@ -6,6 +6,7 @@ summary: Cloud Insights 데이터 센터 솔루션을 모니터링할 수 있도
 ---
 = 사용 사례
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

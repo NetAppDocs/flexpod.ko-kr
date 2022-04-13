@@ -6,6 +6,7 @@ summary: 적절한 스토리지 아키텍처는 전체 데이터베이스 크기
 ---
 = Epic을 위한 NetApp 스토리지 참조 아키텍처
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

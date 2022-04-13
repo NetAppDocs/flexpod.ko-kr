@@ -6,6 +6,7 @@ summary: ONTAP에서 오브젝트 저장소를 추가하고 식별한 후 Fabric
 ---
 = 클라우드 계층을 ONTAP 애그리게이트에 연결합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

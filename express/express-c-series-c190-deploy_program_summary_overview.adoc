@@ -6,6 +6,7 @@ summary: FlexPod 데이터 센터 및 FlexPod 익스프레스는 기본 구성�
 ---
 = NVA-1142-deploy: FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series-NVA Deployment
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

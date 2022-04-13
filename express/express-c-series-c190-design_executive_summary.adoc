@@ -5,6 +5,7 @@ keywords: NVA-1139, design, infrastructure, cloud computing,
 summary: FlexPod Express는 Cisco Unified Computing System, Cisco Nexus 스위치 제품군, NetApp AFF 시스템을 기반으로 사전 설계되고 모범 사례 데이터 센터 아키텍처입니다. 
 ---
 = NVA-1139-design:FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series
+:allow-uri-read: 
 
 
 Savita Kumari, NetApp에서 기술 지원

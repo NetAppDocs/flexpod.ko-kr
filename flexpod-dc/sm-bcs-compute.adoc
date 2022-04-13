@@ -1,0 +1,149 @@
+---
+sidebar: sidebar 
+permalink: flexpod-dc/sm-bcs-compute.html 
+keywords: compute, connectivity, service profiles, san boot 
+summary: FlexPod SM-BC 솔루션의 컴퓨팅 구성은 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다. 또한 SM-BC 관련 고려 사항 중 일부는 구축 참조 및 지침을 제공하기 위해 강조되어 있습니다. 
+---
+= 솔루션 검증 - 컴퓨팅
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:sm-bcs-solution-validation_overview.html["개요."]
+
+FlexPod SM-BC 솔루션의 컴퓨팅 구성은 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다. 또한 SM-BC 관련 고려 사항 중 일부는 구축 참조 및 지침을 제공하기 위해 강조되어 있습니다.
+
+
+
+== 연결성
+
+UCS 5108 섀시 후면판 연결을 통해 UCS B200 블레이드 서버와 IOM 간의 연결이 UCS VIC 카드에 의해 제공됩니다. 검증에 사용된 UCS 2204XP 패브릭 익스텐더에는 각 서버에 2개씩 등 8개의 절반 너비 블레이드 서버에 연결할 수 있는 16개의 10G 포트가 있습니다. 서버 연결 대역폭을 높이기 위해 추가 메자닌 기반 VIC를 추가하여 각 서버에 4개의 10G 연결을 제공하는 대체 UCS 2408 IOM에 서버를 연결할 수 있습니다.
+
+image:sm-bcs-image17.png["오류: 그래픽 이미지가 없습니다"]
+
+UCS 5108 섀시와 검증에 사용된 UCS 6454 FI 간의 연결은 4개의 10G 연결을 사용하는 IOM 2204XP에서 제공합니다. 이러한 연결을 위해 FI 포트 1 - 4가 서버 포트로 구성됩니다. FI 포트 25~28은 로컬 사이트의 Nexus 스위치 A 및 B에 대한 네트워크 업링크 포트로 구성됩니다. 다음 그림과 표에는 UCS 5108 섀시 및 Nexus 스위치에 연결할 UCS 6454 FI의 연결 다이어그램 및 포트 연결 정보가 나와 있습니다.
+
+image:sm-bcs-image18.png["오류: 그래픽 이미지가 없습니다"]
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+| UCS 6454 FI A | 1 | IOM A를 지원합니다 | 1 
+
+
+|  | 2 |  | 2 
+
+
+|  | 3 |  | 3 
+
+
+|  | 4 |  | 4 
+
+
+|  | 25 | Nexus A | 1월 13일 
+
+
+|  | 26 |  | 2012년 1월 13일 
+
+
+|  | 27 | Nexus B | 3월 1일-13일 
+
+
+|  | 28 |  | 4월 1일-13일 
+
+
+|  | L1 | UCS 6454 FI B | L1 
+
+
+|  | L2 |  | L2 
+
+
+| UCS 6454 FI B | 1 | IOM B를 클릭합니다 | 1 
+
+
+|  | 2 |  | 2 
+
+
+|  | 3 |  | 3 
+
+
+|  | 4 |  | 4 
+
+
+|  | 25 | Nexus A | 3월 1일-13일 
+
+
+|  | 26 |  | 4월 1일-13일 
+
+
+|  | 27 | Nexus B | 1월 13일 
+
+
+|  | 28 |  | 2012년 1월 13일 
+
+
+|  | L1 | UCS 6454 FI A | L1 
+
+
+|  | L2 |  | L2 
+|===
+
+NOTE: 사이트 A는 Nexus 9336C-FX2switches를 사용하고 사이트 B는 Nexus 3232C 스위치를 사용함에도 불구하고 위의 연결은 A와 B 사이트 모두에서 비슷합니다. Nexus to Fi 연결에는 40g~4x10G 브레이크아웃 케이블이 사용됩니다. Nexus에 대한 FI 연결은 포트 채널을 사용하고 가상 포트 채널은 Nexus 스위치에서 구성되어 각 FI에 대한 연결을 통합합니다.
+
+
+NOTE: IOM, FI 및 Nexus 스위치 구성요소를 서로 다른 방법으로 함께 사용할 경우 환경 조합에 적절한 케이블과 포트 속도를 사용해야 합니다.
+
+
+NOTE: 더 빠른 연결 또는 더 많은 연결을 지원하는 구성 요소를 사용하여 추가 대역폭을 달성할 수 있습니다. 이를 지원하는 구성 요소와의 연결을 추가하여 이중화를 추가로 구현할 수 있습니다.
+
+
+
+== 서비스 프로필
+
+UCSM(UCS Manager) 또는 Cisco Intersight에서 관리하는 패브릭 인터커넥트를 사용하는 블레이드 서버 섀시는 UCSM에서 사용할 수 있는 서비스 프로필과 Intersight에서 서버 프로필을 사용하여 서버를 추상화할 수 있습니다. 이 검증에서는 UCSM 및 서비스 프로필을 사용하여 서버 관리를 간소화합니다. 서비스 프로필을 사용하면 원래 서비스 프로필을 새 하드웨어와 연결하기만 하면 서버를 교체하거나 업그레이드할 수 있습니다.
+
+생성된 서비스 프로필은 VMware ESXi 호스트에 대해 다음을 지원합니다.
+
+* iSCSI 프로토콜을 사용하여 양쪽 사이트의 AFF A250 스토리지에서 SAN을 부팅합니다.
+* 다음과 같은 서버에 대해 6개의 vNIC가 생성됩니다.
++
+** 2개의 중복 vNIC(vSwitch0-A 및 vSwitch0-B)는 대역 내 관리 트래픽을 전달합니다. 선택 사항으로, 이러한 vNIC는 SM-BC로 보호되지 않는 NFS 프로토콜 데이터에서도 사용할 수 있습니다.
+** vSphere 분산 스위치는 2개의 중복 vNIC(VDS-A 및 VDS-B)를 사용하여 VMware vMotion 및 기타 애플리케이션 트래픽을 전송합니다.
+** iSCSI - iSCSI에서 사용하는 vNIC - iSCSI-A 경로에 대한 액세스를 제공하는 vSwitch입니다.
+** iSCSI-B vSwitch에서 iSCSI-B vNIC를 사용하여 iSCSI-B 경로에 대한 액세스를 제공합니다.
+
+
+
+
+
+
+== SAN 부팅
+
+iSCSI SAN 부팅 구성의 경우 iSCSI 부트 매개 변수가 두 iSCSI 패브릭에서 iSCSI 부팅을 허용하도록 설정됩니다. 운영 클러스터를 사용할 수 없을 때 iSCSI SAN 부팅 LUN이 보조 클러스터에서 제공되는 SM-BC 페일오버 시나리오를 수용하기 위해 iSCSI 정적 타겟 구성에는 사이트 A와 사이트 B의 타겟이 모두 포함되어야 합니다 또한 부팅 LUN 가용성을 최대화하려면 모든 스토리지 컨트롤러에서 부팅하도록 iSCSI 부트 매개 변수 설정을 구성합니다.
+
+다음 그림과 같이 Set iSCSI Boot 매개 변수 대화 상자의 서비스 프로필 템플릿의 부팅 정책에서 iSCSI 정적 대상을 구성할 수 있습니다. 다음 표에는 고가용성을 달성하기 위해 위에서 설명한 부팅 전략을 구현하는 권장 iSCSI 부팅 매개 변수 설정 구성이 나와 있습니다.
+
+image:sm-bcs-image19.png["오류: 그래픽 이미지가 없습니다"]
+
+|===
+| iSCSI 패브릭 | 우선 순위 | iSCSI 타겟 | iSCSI LIF 
+
+
+| iSCSI A | 1 | 사이트 A iSCSI 타겟 | 사이트 A 컨트롤러 1 iSCSI A LIF 
+
+
+|  | 2 | 사이트 B iSCSI 타겟입니다 | 사이트 B 컨트롤러 2 iSCSI A LIF 
+
+
+| iSCSI B 를 선택합니다 | 1 | 사이트 B iSCSI 타겟입니다 | 사이트 B 컨트롤러 1 iSCSI B LIF입니다 
+
+
+|  | 2 | 사이트 A iSCSI 타겟 | 사이트 A 컨트롤러 2 iSCSI B LIF 
+|===
+* 제목: 네트워크 URL:/FlexPod-DC/sm-bcs-network.html
+

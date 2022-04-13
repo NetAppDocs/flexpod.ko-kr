@@ -6,6 +6,7 @@ summary: Genio는 Epic에서 사용하는 스토리지 성능 테스트 툴입�
 ---
 = Genio 도구
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -5,6 +5,7 @@ keywords: AFF C190, CIFS, NFS, iSCSI, FCP, SnapMirror, SnapVault, SnapRestore, S
 summary: 이 섹션에 나열된 기술은 아키텍처 설계 단계에서 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다. 
 ---
 = 디자인 선택
+:allow-uri-read: 
 
 
 이 섹션에 나열된 기술은 아키텍처 설계 단계에서 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다.

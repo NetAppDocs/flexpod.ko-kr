@@ -6,6 +6,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 사용할 Cisco UCS C-Ser
 ---
 = Cisco UCS C-Series 랙 서버 구축
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

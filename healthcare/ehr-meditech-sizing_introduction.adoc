@@ -6,6 +6,7 @@ summary: 이 보고서는 MEDITECH EHR 애플리케이션 소프트웨어 환경
 ---
 = TR-4774: MEDITECH 방향 크기 조정을 위한 FlexPod
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

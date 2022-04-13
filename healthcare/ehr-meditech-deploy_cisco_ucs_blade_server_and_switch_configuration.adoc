@@ -6,6 +6,7 @@ summary: 이 문서에서는 MEDITECH 소프트웨어용 FlexPod 환경의 기�
 ---
 = Cisco UCS 블레이드 서버 및 스위치 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

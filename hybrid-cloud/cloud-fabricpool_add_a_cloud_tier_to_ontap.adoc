@@ -6,6 +6,7 @@ summary: 오브젝트 저장소를 Aggregate에 첨부하려면 먼저 ONTAP에 
 ---
 = ONTAP에 클라우드 계층을 추가합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 이 문서에서는 ESXi 구성에 대한 Best Practice에 대해 간�
 ---
 = ESXi 구성 Best Practice
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -5,6 +5,7 @@ keywords: express, datacenter, select, converged infrastructure, CVD, NVA, AFF A
 summary: FlexPod 참조 아키텍처는 Cisco Validated Design 또는 NetApp 검증 아키텍처로 제공됩니다. 지정된 CVD 또는 NVA의 고객 요구 사항에 따른 편차는 이러한 변형으로 지원되지 않는 구성이 생성되지는 않을 경우 허용됩니다. 
 ---
 = 프로그램 요약
+:allow-uri-read: 
 
 
 이 FlexPod Express 솔루션은 FlexPod 통합 인프라 프로그램의 일부입니다.

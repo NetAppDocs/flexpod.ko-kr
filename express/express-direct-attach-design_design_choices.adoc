@@ -5,6 +5,7 @@ keywords: FAS2750, FAS2720, AFF A220, Nexus 3000, UCS B-Series, Virtual Interfac
 summary: 이 페이지에 나열된 기술은 이 설계를 설계하는 과정에서 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다. 
 ---
 = 디자인 선택
+:allow-uri-read: 
 
 
 이 설계를 설계하는 과정에서 다음과 같은 기술이 선택되었습니다. 각 기술은 FlexPod 익스프레스 인프라 솔루션에서 특정 목적에 부합합니다.

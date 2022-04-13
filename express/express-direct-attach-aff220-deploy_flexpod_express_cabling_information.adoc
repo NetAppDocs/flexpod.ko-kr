@@ -6,6 +6,7 @@ summary: 참조 검증 케이블 연결은 다음 표에 설명되어 있습니�
 ---
 = FlexPod 익스프레스 케이블 연결 정보
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

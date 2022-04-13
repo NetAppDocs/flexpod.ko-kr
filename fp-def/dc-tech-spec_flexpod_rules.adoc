@@ -6,6 +6,7 @@ summary: FlexPod 설계는 다양한 구성 요소와 소프트웨어 버전을 
 ---
 = FlexPod 규칙
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

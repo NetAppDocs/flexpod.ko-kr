@@ -6,6 +6,7 @@ summary: FlexPod Express를 사용하려면 선택한 하이퍼바이저와 네�
 ---
 = 기술 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

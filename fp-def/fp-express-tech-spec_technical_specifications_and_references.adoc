@@ -6,6 +6,7 @@ summary: 이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요�
 ---
 = 기술 사양 및 참조 자료
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -200,7 +201,7 @@ summary: 이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요�
 | 최대 NetApp Flash Pool 지능형 데이터 캐싱 2+| 24TB 
 |===
 
-NOTE: FAS 스토리지 컨트롤러 옵션에 대한 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/Controller/Index?platformTypeId=2032["FAS 모델"^] 섹션을 Hardware Universe 참조하십시오. AFF의 경우 를 참조하십시오 섹션을 참조하십시오.
+NOTE: FAS 스토리지 컨트롤러 옵션에 대한 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/Controller/Index?platformTypeId=2032["FAS 모델"^] 섹션을 Hardware Universe 참조하십시오. AFF의 경우 를 참조하십시오 https://hwu.netapp.com/Controller/Index?platformTypeId=5265148["AFF 모델"^] 섹션을 참조하십시오.
 
 다음 표에는 FAS8020 컨트롤러 시스템의 특성이 나와 있습니다.
 

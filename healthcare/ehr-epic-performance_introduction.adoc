@@ -6,6 +6,7 @@ summary: 이 보고서의 목표는 Epic Healthcare 워크로드가 포함된 Ne
 ---
 = TR-4784: Epic 성능 테스트를 위한 FlexPod
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

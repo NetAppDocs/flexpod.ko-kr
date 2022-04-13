@@ -6,6 +6,7 @@ summary: FlexPod는 가상화된 솔루션과 가상화되지 않은 솔루션 �
 ---
 = FlexPod 개요 및 아키텍처
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 의료에 대한 위협은 본질적으로 다차원적이며 영향을
 ---
 = 의료 분야의 사이버 보안 위협
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

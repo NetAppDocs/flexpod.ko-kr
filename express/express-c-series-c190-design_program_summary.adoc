@@ -5,6 +5,7 @@ keywords: Converged Infrastructure, Cisco Validated Design, CVD, NVA, Express, D
 summary: FlexPod 참조 아키텍처는 Cisco Validated Design 또는 NetApp Verified Architecture로 제공됩니다. 특정 CVD 또는 NVA의 고객 요구 사항을 기반으로 한 편차는 이러한 변형으로 인해 지원되지 않는 구성이 구축되지 않는 경우 허용됩니다. 
 ---
 = 프로그램 요약
+:allow-uri-read: 
 
 
 

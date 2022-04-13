@@ -6,6 +6,7 @@ summary: 이 FlexPod Express 솔루션은 FlexPod 통합 인프라 프로그램�
 ---
 = 솔루션 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

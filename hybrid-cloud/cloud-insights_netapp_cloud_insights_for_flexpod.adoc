@@ -6,6 +6,7 @@ summary: 이 기술 보고서에 설명된 솔루션은 NetApp FlexPod 데이터
 ---
 = TR-4868: FlexPod용 NetApp Cloud Insights
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

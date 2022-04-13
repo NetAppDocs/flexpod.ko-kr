@@ -5,6 +5,7 @@ keywords: summary, infrastructure, cisco, ucs, flexpod, datacenter
 summary: 업계 동향에 따르면 많은 데이터 센터가 공유 인프라 및 클라우드 컴퓨팅으로 전환하고 있습니다. 또한 기업에서는 데이터 센터에 친숙한 기술을 활용하여 원격 사무소 및 지사를 위한 간편하고 효율적인 솔루션을 찾고 있습니다. 
 ---
 = NVA-1123-deploy:FlexPod Express with VMware vSphere 6.7 and NetApp AFF A220 구축 가이드
+:allow-uri-read: 
 
 
 Savita Kumari, NetApp에서 기술 지원

@@ -6,6 +6,7 @@ summary: 다음 사람들은 이 가이드의 작성 및 작성에 기여했습�
 ---
 = 감사의 말
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

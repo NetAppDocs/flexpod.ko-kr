@@ -6,6 +6,7 @@ summary: 다음 링크 및 가이드는 이 문서 및 FlexPod 배포와 관련�
 ---
 = ONTAP 설명서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

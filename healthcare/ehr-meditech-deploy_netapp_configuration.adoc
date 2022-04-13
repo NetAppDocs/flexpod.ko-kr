@@ -6,6 +6,7 @@ summary: MEDITECH 소프트웨어 환경용 NetApp 스토리지는 고가용성 
 ---
 = NetApp 구성입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

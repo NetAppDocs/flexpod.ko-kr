@@ -6,6 +6,7 @@ summary: 'FlexPod Express는 Cisco UCS(Cisco Unified Computing System), Cisco Ne
 ---
 = NVA-1131-deploy: VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express(직접 연결 IP 기반 스토리지 포함
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

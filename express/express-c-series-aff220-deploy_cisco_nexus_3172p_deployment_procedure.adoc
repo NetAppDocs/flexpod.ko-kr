@@ -6,6 +6,7 @@ summary: 다음 섹션에서는 FlexPod 익스프레스 환경에 사용되는 C
 ---
 = Cisco Nexus 3172P 구축 절차
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

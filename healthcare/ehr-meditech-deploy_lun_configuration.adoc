@@ -6,6 +6,7 @@ summary: 사용자 환경의 MEDITECH 호스트 수에 따라 NetApp FAS 또는 
 ---
 = LUN 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

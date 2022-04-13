@@ -6,6 +6,7 @@ summary: 이 문서에 제공된 NetApp 스토리지 FlexPod 구축 지침은 ON
 ---
 = 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

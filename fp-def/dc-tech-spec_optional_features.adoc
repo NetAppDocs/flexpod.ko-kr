@@ -6,6 +6,7 @@ summary: NetApp은 FlexPod 데이터 센터 아키텍처를 한층 더 향상하
 ---
 = 선택적 기능
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

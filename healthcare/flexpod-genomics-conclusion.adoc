@@ -6,6 +6,7 @@ summary: 전 세계의 많은 의료 기관이 FlexPod를 공통 플랫폼으로
 ---
 = 결론
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

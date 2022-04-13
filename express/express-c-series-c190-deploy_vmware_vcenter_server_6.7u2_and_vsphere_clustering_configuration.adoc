@@ -6,6 +6,7 @@ summary: VMware vCenter Server 6.7 및 vSphere 클러스터링을 구성하려�
 ---
 = VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

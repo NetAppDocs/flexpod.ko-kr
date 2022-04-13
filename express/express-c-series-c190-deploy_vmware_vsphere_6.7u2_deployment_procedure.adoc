@@ -6,6 +6,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7U2를 설�
 ---
 = VMware vSphere 6.7U2 구축 절차
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

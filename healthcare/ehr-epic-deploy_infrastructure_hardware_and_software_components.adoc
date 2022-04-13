@@ -6,6 +6,7 @@ summary: '항상 상호 운용성 매트릭스 툴(IMT) 을 사용하여 모든 
 ---
 = 인프라 하드웨어 및 소프트웨어 구성요소
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

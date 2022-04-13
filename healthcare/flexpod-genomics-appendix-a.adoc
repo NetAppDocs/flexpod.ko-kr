@@ -6,6 +6,7 @@ summary: 이 섹션에서는 GATK의 JAR 파일 출력을 제공합니다.
 ---
 = JAR 파일을 사용하여 GATK 실행을 위한 출력입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

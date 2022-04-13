@@ -6,6 +6,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 VMware vCenter Server 6.7
 ---
 = VMware vCenter Server 6.7을 설치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

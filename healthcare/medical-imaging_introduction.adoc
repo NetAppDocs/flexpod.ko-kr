@@ -6,6 +6,7 @@ summary: FlexPod를 사용하면 단일 플랫폼에서 FC, FCoE, iSCSI, NFS/pNF
 ---
 = TR-4865: 의료 영상용 FlexPod
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -57,7 +58,7 @@ FlexPod를 사용하면 단일 플랫폼에서 FC, FCoE, iSCSI, NFS/pNFS, SMB/CI
 * 합성곱 신경망(convolutional neural networks)을 활용하는 ML 모델은 이미지 처리 기능을 실시간으로 자동화할 수 있으므로 GPU를 지원하는 인프라가 필요합니다. FlexPod는 동일한 시스템에 구축된 CPU와 GPU 컴퓨팅 구성요소를 모두 제공하며, CPU와 GPU를 독립적으로 확장할 수 있습니다.
 * DICOM 태그가 임상 모범 사례 권고에서 사실로 사용되는 경우 시스템은 지연 시간이 짧고 처리량이 많은 DICOM 아티팩트를 더 많이 판독해야 합니다.
 * 영상을 평가할 때 조직 전반에서 방사선 기사 간의 실시간 협업을 위해서는 최종 사용자 컴퓨팅 장치에서 고성능 그래픽 처리가 필요합니다. NetApp은 하이엔드 그래픽 사용 사례에 맞게 특별히 설계되고 검증된 업계 최고의 VDI 솔루션을 제공합니다. 자세한 내용은 을 참조하십시오 https://flexpod.com/solutions/use-cases/virtual-desktop-infrastructure/["여기"^].
-* ACO 의료 기관의 이미지 및 미디어 관리는 의료 분야의 디지털 영상 및 통신( )과 같은 프로토콜을 사용하여 이미지의 기록 시스템에 관계없이 단일 플랫폼을 사용할 수 있습니다 https://www.dicomstandard.org/about/["DICOM"^]DICOM 영구 객체()
+* ACO 의료 기관의 이미지 및 미디어 관리는 의료 분야의 디지털 영상 및 통신( )과 같은 프로토콜을 사용하여 이미지의 기록 시스템에 관계없이 단일 플랫폼을 사용할 수 있습니다 https://www.dicomstandard.org/about/["DICOM"^]DICOM 영구 객체( https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3447090/["WADO"^])
 * 건강 정보 교환( https://www.healthit.gov/topic/health-it-and-health-information-exchange-basics/what-hie["IE"^])에는 메시지에 포함된 이미지가 포함됩니다.
 * 핸드헬드, 무선 스캔 장치(예: 휴대폰에 연결된 포켓 핸드헬드 초음파 스캐너)와 같은 모바일 기법에는 엣지, 코어 및 클라우드에서 DoD 수준의 보안, 안정성 및 지연 시간을 지원하는 강력한 네트워크 인프라가 필요합니다. https://www.netapp.com/us/data-fabric.aspx["NetApp 구현 Data Fabric"^] 규모에 따라 확장 가능한 기능을 제공합니다.
 * 최신 Modality는 저장 공간이 기하급수적으로 필요합니다. 예를 들어, CT 및 MRI는 각 Modality에 수백 MB를 필요로 하지만 디지털 병리학 영상(전체 슬라이드 영상 포함)은 크기가 몇 GB가 될 수 있습니다. FlexPod는 로 설계되었습니다 https://www.netapp.com/us/media/sb-flexpod-advantage-performance-agility-economics.pdf["성능, 신뢰성 및 확장성을 기본 특성에 따라 제공합니다"^].
@@ -93,7 +94,7 @@ FlexPod는 의료 이미징 산업에 고유한 여러 가지 이점을 제공�
 * * 더 높은 생산성 * 이 솔루션은 임상의의 최종 사용자 경험을 최적화하기 위해 신속하게 배포하고 확장할 수 있습니다.
 * * Data Fabric. * NetApp이 제공하는 Data Fabric은 물리적 경계 및 애플리케이션 전반에 걸쳐 데이터를 제공합니다. NetApp이 제공하는 Data Fabric은 데이터 중심 세계에서 데이터 중심 기업을 위해 구축되었습니다. 데이터는 여러 위치에서 생성되고 사용되며 다른 위치, 애플리케이션 및 인프라와 활용되어 공유되어야 합니다. 그러므로 당신은 일관되고 통합된 방식으로 데이터를 관리하기를 원합니다. 이 솔루션을 사용하면 데이터를 관리할 수 있어 IT 팀이 끊임없이 증가하는 IT 복잡성을 단순하게 관리할 수 있습니다.
 * * FabricPool. * NetApp ONTAP FabricPool은 성능, 효율성, 보안, 보호를 그대로 유지하면서 스토리지 비용을 절감할 수 있도록 지원합니다. FabricPool는 엔터프라이즈 애플리케이션에 투명하며, 애플리케이션 인프라를 재설계할 필요 없이 스토리지 TCO를 절감하여 클라우드 효율성을 사용합니다. FlexPod은 FabricPool의 스토리지 계층화 기능을 활용하여 ONTAP 플래시 스토리지를 더욱 효율적으로 사용할 수 있습니다. 자세한 내용은 을 참조하십시오 https://www.netapp.com/us/media/tr-4801.pdf["FabricPool 및 FlexPod"^].
-* * FlexPod 보안. * 보안은 FlexPod의 기초가 됩니다. 지난 몇 년 동안 랜섬웨어는 심각하고 증가하는 위협이 되었습니다. 랜섬웨어는 암호화 바이러스, 암호화를 사용하여 악성 소프트웨어를 빌드하는 방법을 기반으로 하는 맬웨어입니다. 이 맬웨어는 대칭 키 암호화와 비대칭 키 암호화를 모두 사용하여 피해자의 데이터를 잠그고 데이터 암호를 해독할 키를 제공하는 대가로 금전을 요구합니다. FlexPod이 랜섬웨어와 같은 위협을 완화하는 방법을 알아보려면 을 참조하십시오 https://www.netapp.com/us/media/tr-4802.pdf["랜섬웨어에 대한 솔루션"^]. FlexPod 인프라 구성 요소는 연방 정보 처리 표준이기도 합니다 규정 준수:
+* * FlexPod 보안. * 보안은 FlexPod의 기초가 됩니다. 지난 몇 년 동안 랜섬웨어는 심각하고 증가하는 위협이 되었습니다. 랜섬웨어는 암호화 바이러스, 암호화를 사용하여 악성 소프트웨어를 빌드하는 방법을 기반으로 하는 맬웨어입니다. 이 맬웨어는 대칭 키 암호화와 비대칭 키 암호화를 모두 사용하여 피해자의 데이터를 잠그고 데이터 암호를 해독할 키를 제공하는 대가로 금전을 요구합니다. FlexPod이 랜섬웨어와 같은 위협을 완화하는 방법을 알아보려면 을 참조하십시오 https://www.netapp.com/us/media/tr-4802.pdf["랜섬웨어에 대한 솔루션"^]. FlexPod 인프라 구성 요소는 연방 정보 처리 표준이기도 합니다 https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf["제공합니다"^] 규정 준수:
 * * FlexPod 공동 지원. * NetApp과 Cisco는 FlexPod 통합 인프라의 고유한 지원 요구사항을 충족하는 강력하고 확장 가능하며 유연한 지원 모델인 FlexPod 공동 지원을 확립했습니다. 이 모델은 NetApp과 Cisco의 경험, 리소스, 기술 지원 전문성을 합쳐 문제 영역에 관계없이, FlexPod 지원 문제를 식별하고 해결할 수 있는 효율적인 프로세스를 제공합니다. FlexPod 공동 지원 모델을 통해 FlexPod 시스템이 효율적으로 작동하고 최신 기술의 이점을 누리는지 확인하는 동시에, 통합 문제를 해결할 수 있는 숙련된 팀을 제공할 수 있습니다.
 +
 FlexPod 공동 지원은 의료 조직에서 비즈니스 크리티컬 애플리케이션을 실행하는 경우에 특히 유용합니다. 아래 그림은 FlexPod 공동 지원 모델의 개요입니다.

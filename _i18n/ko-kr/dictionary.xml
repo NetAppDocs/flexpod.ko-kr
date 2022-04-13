@@ -8372,4 +8372,591 @@
   <block id="3537e24e4745c06b41a151532f5f0cd1" category="paragraph">Active IQ Unified Manager를 설치하거나 업그레이드하지 않은 경우(최신 버전 권장, 현재 9.10P1) 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
   <block id="f2fe8cac791595f71f03311fed4e6b2f" category="admonition">NetApp AIQ UM 타겟을 요청할 경우 Active IQ Unified Manager에서 관리하는 모든 클러스터가 Intersight에 자동으로 추가됩니다.</block>
   <block id="707a0e6f55c6b411d13ca40e08c31e14" category="cell">NetApp Active IQ Unified Manager의 최신 버전 권장(현재 9.10P1)</block>
+  <block id="07360078de4b958f771427531bf4153f" category="summary">SM-BC가 포함된 FlexPod 데이터 센터는 액티브-액티브 데이터 센터 설계를 사용하여 비즈니스 크리티컬 워크로드에 비즈니스 연속성 및 재해 복구를 제공합니다. 일반적으로 이 솔루션은 Metro 지역에 지리적으로 분산된 별도의 위치에 구축된 두 데이터 센터를 서로 연결합니다. NetApp SM-BC 솔루션은 동기식 복제를 사용하여 사이트 장애로부터 비즈니스 크리티컬 데이터 서비스를 보호합니다. 이 솔루션을 사용하려면 두 개의 FlexPod 배포 사이트에 10밀리초 미만의 라운드 트립 네트워크 지연 시간이 있어야 합니다.</block>
+  <block id="68465e6ec95e3e079a2ce31285c5ffca" category="inline-link-macro">이전: 솔루션 검증 시나리오.</block>
+  <block id="a14aa7b4eddc474a1b6e4d9e952daca6" category="paragraph"><block ref="a14aa7b4eddc474a1b6e4d9e952daca6" category="inline-link-macro-rx"></block></block>
+  <block id="7aba7461f6fcaebac35dffb91f314616" category="paragraph">세 번째 사이트에 구축된 NetApp ONTAP 중재자가 SM-BC 솔루션을 모니터링하고 사이트 재해가 탐지될 때 자동 페일오버를 지원합니다. VMware HA 및 VMware vSphere Metro Storage Cluster 구성을 지원하는 VMware vCenter는 NetApp SM-BC와 원활하게 연동되므로 원하는 제로 RPO 및 제로에 가까운 RTO 목표를 충족할 수 있습니다.</block>
+  <block id="3e037da4c687e36a67b82b75747ae958" category="paragraph">FlexPod SM-BC 솔루션은 기존 FlexPod 인프라스트럭처에서 요구 사항을 충족하는 경우 또는 기존 FlexPod에 FlexPod 솔루션을 추가하여 비즈니스 연속성 목표를 달성할 수도 있습니다. NetApp과 Cisco는 Cisco Intersight, Ansible, HashCorp Terraform 기반 자동화 등의 추가 관리, 모니터링 및 자동화 툴을 사용하여 솔루션을 쉽게 모니터링하고 운영에 대한 통찰력을 확보하며 구축 및 운영을 자동화할 수 있습니다.</block>
+  <block id="b52806cef125f9b9bee0c116a208a855" category="paragraph">Microsoft SQL Server와 같은 비즈니스에 중요한 애플리케이션의 관점에서 볼 때 ONTAP SM-BC CG 관계에 의해 보호되는 VMware 데이터 저장소에 상주하는 데이터베이스는 사이트 스토리지 중단이 발생해도 계속 사용할 수 있습니다. 검증 테스트 중에 확인된 바와 같이, 데이터베이스가 상주하는 스토리지 클러스터의 정전이 발생한 후 SM-BC CG 관계의 페일오버가 발생하고 Microsoft SQL Server 트랜잭션이 애플리케이션 중단 없이 재개됩니다.</block>
+  <block id="6064e07e43446e6aee4d94abadbddd44" category="paragraph">애플리케이션의 세분화된 데이터 보호를 통해 비즈니스 크리티컬 애플리케이션에 ONTAP SM-BC CG 관계를 생성하여 제로 RPO 및 제로에 가까운 RTO 요구사항을 충족할 수 있습니다. 따라서 Microsoft SQL Server 애플리케이션이 실행 중인 VMware 클러스터가 사이트 스토리지 가동 중단 시에도 유지될 수 있도록 각 사이트에 있는 ESXi 호스트의 부팅 LUN도 SM-BC CG 관계에 의해 보호됩니다.</block>
+  <block id="b8a64195f6bd6275799f5d7da0c8911e" category="paragraph">FlexPod의 유연성과 확장성을 활용하면 비즈니스 요구사항의 변화에 따라 성장 및 발전할 수 있는 적절한 규모의 인프라로 시작할 수 있습니다. 이 검증된 설계를 통해 분산된 통합 인프라에 VMware vSphere 기반 프라이빗 클라우드를 안정적으로 구축할 수 있으므로, 많은 단일 장애 지점 시나리오에 대한 복원력과 중요 비즈니스 데이터 서비스를 보호하지 못하는 사이트 장애 복구 기능을 갖춘 솔루션을 제공할 수 있습니다.</block>
+  <block id="fa85857e13e0f6d7620479158c9f3416" category="inline-link-macro">다음: 추가 정보 및 버전 기록을 찾을 위치.</block>
+  <block id="0dece230b7642f557d0efdba6bae8825" category="paragraph"><block ref="0dece230b7642f557d0efdba6bae8825" category="inline-link-macro-rx"></block></block>
+  <block id="24c974dec7e9ebb820775f4ee5e928ae" category="summary">FlexPod SM-BC 솔루션 설계 및 구현 세부사항은 특정 FlexPod 상황 구성 및 솔루션 목표에 따라 달라집니다. 일반적인 비즈니스 연속성 요구 사항이 정의된 후 FlexPod SM-BC 솔루션은 두 개의 새로운 FlexPod 시스템을 갖춘 완전히 새로운 솔루션을 구현하거나, 다른 사이트에 새 FlexPod를 추가하여 기존 FlexPod와 페어링하거나, 두 기존 FlexPod 시스템을 함께 페어링하여 생성할 수 있습니다.</block>
+  <block id="956f695311b03a7263d73658e1850744" category="doc">솔루션 검증 - 개요</block>
+  <block id="85c5fef27abce385b4a32476257223aa" category="inline-link-macro">이전: FlexPod SM-BC 솔루션</block>
+  <block id="f68e3104da8796e46150aaa480eac54d" category="paragraph"><block ref="f68e3104da8796e46150aaa480eac54d" category="inline-link-macro-rx"></block></block>
+  <block id="c9c8ce1b9ebbc43c5758733a06925275" category="paragraph">FlexPod 솔루션은 그 특성상 유연성이 뛰어나므로 지원되는 모든 FlexPod 구성과 구성 요소를 사용할 수 있습니다. 이 섹션의 나머지 부분에서는 VMware 기반 가상 인프라 솔루션에 대해 수행된 구현 검증에 대한 정보를 제공합니다. SM-BC 관련 측면을 제외하고 표준 FlexPod 구축 프로세스를 따릅니다. 일반적인 FlexPod 구현 정보에 대해서는 특정 구성에 적합한 FlexPod CVD 및 NVA를 참조하십시오.</block>
+  <block id="89800aa027a8c30ffa7d0d1985f266ad" category="section-title">검증 토폴로지</block>
+  <block id="67e5f25dfe5b0ba1bd54503333235c7b" category="paragraph">FlexPod SM-BC 솔루션의 검증을 위해 NetApp, Cisco 및 VMware에서 지원하는 기술 구성요소가 사용됩니다. 이 솔루션은 사이트 A의 ONTAP 9.10.1, 이중 Cisco Nexus 9336C-FX2 스위치를 실행하는 NetApp AFF A250 HA 쌍과 사이트 B의 이중 Cisco Nexus 3232C 스위치, Cisco UCS 6454 FI를 양쪽 사이트에서 모두 지원합니다. 그리고 VMware vSphere 7.0u2를 실행하고 UCS Manager 및 VMware vCenter Server에서 관리하는 각 사이트에 Cisco UCS B200 M5 서버 3개가 있습니다. 다음 그림은 사이트 A에서 실행되는 두 개의 FlexPod 시스템과 사이트 C에서 실행되는 확장된 계층 2 사이트 간 링크 및 ONTAP 중재자에 의해 연결된 사이트 B의 구성 요소 수준 솔루션 검증 토폴로지를 보여 줍니다</block>
+  <block id="24a78c21308239818de1b915e881a401" category="paragraph"><block ref="24a78c21308239818de1b915e881a401" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fec970de22ce00287e2503c38bda96b7" category="paragraph">다음 표에는 솔루션 검증에 사용된 하드웨어 및 소프트웨어가 나와 있습니다. Cisco, NetApp 및 VMware는 FlexPod의 특정 구현에 대한 지원을 결정하는 데 사용되는 상호 운용성 매트릭스를 보유하고 있습니다.</block>
+  <block id="592b2496cc4352ed1aeae5591919a086" category="list-text"><block ref="592b2496cc4352ed1aeae5591919a086" category="inline-link-rx"></block></block>
+  <block id="d44473496d593c44d9be3c18a5efaaf7" category="inline-link"><block ref="d44473496d593c44d9be3c18a5efaaf7" category="inline-link-rx"></block></block>
+  <block id="28e0d45b8cdcfb41fad36d71152dbc1c" category="list-text"><block ref="28e0d45b8cdcfb41fad36d71152dbc1c" category="inline-link-rx"></block></block>
+  <block id="3adbdb3ac060038aa0e6e6c138ef9873" category="cell">범주</block>
+  <block id="40ddf58fef213ff0d6433ef322edfe2e" category="cell">소프트웨어 버전</block>
+  <block id="1fa97e20c6dbbcab41f1f53b9ab7e789" category="cell">Cisco UCS Fabric Interconnect 6454</block>
+  <block id="5dcff1dc74d6cd6238f8d5cc7488fb2c" category="cell">4.2(1f)</block>
+  <block id="b7933d51de958f89ea9939c93a0a2f96" category="cell">4개(사이트당 2개)</block>
+  <block id="c7bd7c637a80e45c3d999c7a0ca18d89" category="cell">Cisco UCS B200 M5 서버</block>
+  <block id="07dfd7ac7ac23089d7f24a99d6a481bf" category="cell">6개(사이트당 3개)</block>
+  <block id="0572d19c4ead9f14d01e55483846a150" category="cell">Cisco UCS IOM 2204XP</block>
+  <block id="fc39ad5276920a19c10cf8badc5f5add" category="cell">Cisco VIC 1440(PID:UCSB-mLOM-40G-04)</block>
+  <block id="cc9d6832894e6279591b356d941c410d" category="cell">5.2(1a)</block>
+  <block id="4f1ab794051f11e06eb8f369921a3421" category="cell">2(사이트당 1개)</block>
+  <block id="e03cb690f20e789dd93a34ed8805481d" category="cell">Cisco VIC 1340(PID:UCSB-mLOM-40G-03)</block>
+  <block id="e2f81fb0163e07bf1c1ee0e1fd36056d" category="cell">4.5(1a)</block>
+  <block id="bccca60e2580f06daac38cd6d61844a2" category="cell">9.3(6)</block>
+  <block id="acc750a7ef19585007a275340240087a" category="cell">2(사이트 A)</block>
+  <block id="21cefb007c9064d8adcf6c162e74b0bf" category="cell">Cisco Nexus 3232C</block>
+  <block id="4147e83589a0fca953d8a5ebe484072c" category="cell">2(사이트 B)</block>
+  <block id="ea2aca94e5b174a1b84f2c3891379526" category="cell">9.10.1</block>
+  <block id="03b0980fed141ff65a4ee480b9f3b94c" category="cell">NetApp 시스템 관리자</block>
+  <block id="41457fb5d8e3c193881f54acf22a93b3" category="cell">9.10</block>
+  <block id="2ffe7358ce461fb4d630742ed966cf0b" category="cell">VMware vSphere용 NetApp ONTAP 툴</block>
+  <block id="d8ee09e7304a78e9ed280f17fb6f1043" category="cell">VMware vSphere용 NetApp SnapCenter 플러그인</block>
+  <block id="231910ff513901af9c1921224df901ba" category="cell">4.6</block>
+  <block id="f1fa5e6ccdbac25bb63068aebd57b7c2" category="cell">NetApp ONTAP 중재자</block>
+  <block id="0b0ec9f1cc28b3c19dc6c36dcd5af7cc" category="cell">1.3</block>
+  <block id="6ccd248cd02313575b465988f62f783e" category="cell">NAbox(NAbox)</block>
+  <block id="93541ca844cc8e0766af2148bee73692" category="cell">3.0.2</block>
+  <block id="a514874e2673f726592fdc81e33d378e" category="cell">NetApp 수집</block>
+  <block id="e6cbdf49c3f71c2274e05d1a6c692f1a" category="cell">21.11.1-1</block>
+  <block id="70962288c4edc19aa40f0b953095c224" category="cell">VMware ESXi nenic 이더넷 드라이버</block>
+  <block id="43e02e05b2879c1406a010bf6a28f8f7" category="cell">VMware vCenter를 참조하십시오</block>
+  <block id="bf25ac3fc5bee2b3ec36e32661767682" category="cell">VMware VAAI용 NetApp NFS 플러그인</block>
+  <block id="d1bd83a33f1a841ab7fda32449746cc4" category="cell">2.0</block>
+  <block id="fa6a5a3224d7da66d9e0bdec25f62cf0" category="cell">테스트 중</block>
+  <block id="3a824154b16ed7dab899bf000b80eeee" category="cell">2022</block>
+  <block id="ea6b2efbdd4255a9f1b3bbc6399b58f4" category="cell">2019년</block>
+  <block id="81b43651c3a694ee2791f1f72e535088" category="cell">Microsoft SQL Server Management Studio 를 참조하십시오</block>
+  <block id="b1d8969d01aa0304dd3465c7e39361e0" category="cell">18.10</block>
+  <block id="e3cf940afa524b20b15c43b20405be77" category="cell">HammerDB</block>
+  <block id="a16b0b39889181577ded41b49cd80b1b" category="cell">4.3</block>
+  <block id="dd8f1e8a4b71cba95f086a5df0073935" category="cell">Iometer를 표시합니다</block>
+  <block id="7d23ff901039aef6293954d33d23c066" category="cell">1.1.0</block>
+  <block id="bd92f26c426509a602e4e071a55dd7d4" category="inline-link-macro">다음: 솔루션 검증 - 컴퓨팅.</block>
+  <block id="e2ae000c1e1ce6a7571ee607596d9c48" category="paragraph"><block ref="e2ae000c1e1ce6a7571ee607596d9c48" category="inline-link-macro-rx"></block></block>
+  <block id="b39aed889c382b6901948c53e4f93baa" category="summary">FlexPod Datacenter SM-BC 솔루션은 다양한 단일 장애 지점 시나리오와 사이트 재해에서 데이터 서비스를 보호합니다. 각 사이트에 구현된 이중화 설계는 고가용성을 제공하며, 사이트 간 동기식 데이터 복제를 통해 SM-BC를 구현하면 한 사이트의 사이트 전체에 걸친 재해 발생 시 데이터 서비스를 보호할 수 있습니다. 배포된 솔루션은 원하는 솔루션 기능 및 솔루션이 보호되도록 설계된 다양한 장애 시나리오에 대해 검증되었습니다.</block>
+  <block id="62685e8381365cd8914177b38786cc9f" category="doc">솔루션 검증 시나리오</block>
+  <block id="cfd19a385bc77472210a50ca20d669fb" category="inline-link-macro">이전: 솔루션 검증 - 가상화.</block>
+  <block id="ab7e34b23710acd06c346b984f8813fc" category="paragraph"><block ref="ab7e34b23710acd06c346b984f8813fc" category="inline-link-macro-rx"></block></block>
+  <block id="7a06599d60e94ff767c7f9c30aa59241" category="section-title">솔루션 기능 검증</block>
+  <block id="858e84b5670f24c73fac74a1d335e223" category="paragraph">솔루션 기능을 검증하고 부분 및 전체 사이트 장애 시나리오를 시뮬레이션하기 위해 다양한 테스트 사례가 사용됩니다. Cisco Validated Design Program의 기존 FlexPod 데이터 센터 솔루션에서 이미 수행된 테스트의 중복을 최소화하기 위해 이 보고서의 중점 내용은 솔루션의 SM-BC 관련 측면에 있습니다. 실무자가 구현 검증을 위해 거쳐야 하는 일반적인 FlexPod 유효성 검사가 몇 가지 포함되어 있습니다.</block>
+  <block id="a8fcb4424ad51a51d04b83f538136e73" category="paragraph">솔루션 검증을 위해 ESXi 호스트당 하나의 Windows 10 가상 머신이 두 사이트의 모든 ESXi 호스트에 생성되었습니다. IOMeter 도구가 설치되어 공유 로컬 iSCSI 데이터 저장소에서 매핑된 두 개의 가상 데이터 디스크에 대한 I/O를 생성하는 데 사용되었습니다. 구성된 IOMeter 워크로드 매개 변수는 8KB I/O, 75% 읽기 및 50% 랜덤으로 각 데이터 디스크에 대해 8개의 탁월한 I/O 명령을 구성했습니다. 수행되는 대부분의 테스트 시나리오에서 IOMeter I/O를 계속 수행하면 해당 시나리오에서 데이터 서비스 중단이 발생하지는 않았음을 알 수 있습니다.</block>
+  <block id="30bf13d55e83bb6392b76d92aabe6690" category="paragraph">SM-BC는 데이터베이스 서버와 같은 비즈니스 애플리케이션에 매우 중요하기 때문에 Windows Server 2022의 가상 머신에 있는 Microsoft SQL Server 2019 인스턴스는 로컬 사이트의 스토리지를 사용할 수 없고 애플리케이션 없이 원격 사이트 스토리지에서 데이터 서비스가 재개될 때 애플리케이션이 계속 실행되는지 확인하기 위한 테스트의 일부로 포함되어 있었습니다 운영 중단:</block>
+  <block id="dd3f17458866cabb06103ffd7c5dd98a" category="section-title">ESXi 호스트 iSCSI SAN 부팅 테스트입니다</block>
+  <block id="b7e25394cdd58976445d42c9accba7c0" category="paragraph">솔루션의 ESXi 호스트는 iSCSI SAN에서 부팅하도록 구성됩니다. SAN 부트를 사용하면 추가 구성 변경 없이 IT가 부팅할 수 있도록 서버의 서비스 프로필을 새 서버와 연결할 수 있으므로 서버 교체 시 서버 관리가 간소화됩니다.</block>
+  <block id="2c79110ea66dbf59c30607ec5c964ab4" category="paragraph">로컬 iSCSI 부트 LUN에서 사이트에 있는 ESXi 호스트를 부팅하는 것 외에도 로컬 스토리지 컨트롤러가 Takeover 상태에 있거나 로컬 스토리지 클러스터를 완전히 사용할 수 없을 때 ESXi 호스트를 부팅하기 위해 테스트가 수행되었습니다. 이러한 검증 시나리오에서는 ESXi 호스트가 설계별로 올바르게 구성되어 있는지 확인하고 스토리지 유지 보수 또는 재해 복구 시나리오에서 부팅하여 비즈니스 연속성을 제공합니다.</block>
+  <block id="effe6740451e770b2c99f6470ee924b9" category="paragraph">SM-BC 정합성 보장 그룹 관계가 구성되기 전에 스토리지 컨트롤러 HA 쌍에서 호스팅되는 iSCSI LUN의 경로가 4개(Best Practice 구현을 기반으로 각 iSCSI 패브릭을 통해 2개)입니다. 호스트는 2개의 iSCSI VLAN/패브릭을 통해 LUN 호스팅 컨트롤러에 연결할 수 있고 컨트롤러의 고가용성 파트너를 통해 LUN에 연결할 수 있습니다.</block>
+  <block id="779f9d72487bc06de1d4dd6575cf1abc" category="paragraph">SM-BC 정합성 보장 그룹 관계가 구성되고 미러링된 LUN이 이니시에이터에 제대로 매핑되면 LUN의 경로 수가 두 배가 됩니다. 이 구축 환경에서는 2개의 활성/최적화 경로와 2개의 활성/최적화 경로를 갖는 것에서부터 2개의 활성/최적화 경로와 6개의 활성/비최적화 경로를 갖는 것까지 모두 포함됩니다.</block>
+  <block id="01d3af4aa938319d3230fd9227032d20" category="paragraph">다음 그림에서는 LUN 0과 같이 ESXi 호스트가 LUN을 액세스하는 데 사용할 수 있는 경로를 보여 줍니다. LUN이 사이트 A 컨트롤러 01에 연결되므로 해당 컨트롤러를 통해 LUN에 직접 액세스하는 2개의 경로만 액티브/최적화되고 나머지 6개 경로만 액티브/비최적화되어 있습니다.</block>
+  <block id="68c0826dc3cc47ed3a809a39395a1944" category="paragraph"><block ref="68c0826dc3cc47ed3a809a39395a1944" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e9bfcc66125565f8d0783b206973c8a1" category="paragraph">다음 스토리지 디바이스 경로 정보 스크린샷은 ESXi 호스트에서 두 가지 유형의 디바이스 경로를 보는 방법을 보여 줍니다. 두 개의 Active/Optimized Path는 Active(I/O) Path 상태를 가지고 있는 것으로 표시되며, 6개의 Active/Non-Optimized Path는 Active로 표시됩니다. 또한 Target 열에는 두 개의 iSCSI 타겟과 타겟에 액세스할 수 있는 각 iSCSI LIF IP 주소가 표시됩니다.</block>
+  <block id="976e15be3669a59aa4ee855de1055973" category="paragraph"><block ref="976e15be3669a59aa4ee855de1055973" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="93e70340052732a2ab34f29ad1a7b8a8" category="paragraph">스토리지 컨트롤러 중 하나가 유지보수 또는 업그레이드를 위해 중단되면 다운 컨트롤러에 연결되는 두 개의 경로를 더 이상 사용할 수 없으며 대신 경로 상태가 'dad'로 표시됩니다.</block>
+  <block id="4a50d18bba95021fefe36cc740160a98" category="paragraph">정합성 보장 그룹의 페일오버가 수동 페일오버 테스트 또는 자동 재해 페일오버로 인해 운영 스토리지 클러스터에서 발생하는 경우, 보조 스토리지 클러스터는 SM-BC 정합성 보장 그룹의 LUN에 대한 데이터 서비스를 계속 제공합니다. LUN ID는 보존되고 데이터는 동기식으로 복제되므로 SM-BC 정합성 보장 그룹에 의해 보호되는 모든 ESXi 호스트 부팅 LUN은 원격 스토리지 클러스터에서 계속 사용할 수 있습니다.</block>
+  <block id="e6dffdc8f6d0dfeeb8be7d38628997a3" category="section-title">VMware vMotion 및 VM/호스트 선호도 테스트</block>
+  <block id="ac27418936f343a79345273f45126dbf" category="paragraph">일반 FlexPod VMware 데이터 센터 솔루션은 FC, iSCSI, NVMe 및 NFS와 같은 멀티 프로토콜을 지원하지만 FlexPod SM-BC 솔루션 기능은 일반적으로 비즈니스 크리티컬 솔루션에 사용되는 FC 및 iSCSI SAN 프로토콜을 지원합니다. 이 검증에서는 iSCSI 프로토콜 기반 데이터 저장소와 iSCSI SAN 부팅만 사용합니다.</block>
+  <block id="10ed02be76241c0c94216e379600b108" category="paragraph">가상 머신이 SM-BC 사이트 중 하나에서 스토리지 서비스를 사용할 수 있도록 하려면 두 사이트의 iSCSI 데이터 저장소를 클러스터의 모든 호스트에서 마운트해야 두 사이트 간에 가상 머신을 마이그레이션할 수 있고 재해 페일오버 시나리오를 수행할 수 있습니다.</block>
+  <block id="9fc6df3d1f096fd6eef2d6324efb64b9" category="paragraph">사이트 간 SM-BC 정합성 보장 그룹 보호가 필요하지 않은 가상 인프라에서 실행되는 애플리케이션의 경우 NFS 프로토콜 및 NFS 데이터 저장소도 사용할 수 있습니다. 이 경우 비즈니스 크리티컬 애플리케이션이 SM-BC 정합성 보장 그룹에 의해 보호되는 SAN 데이터 저장소를 제대로 사용하여 비즈니스 연속성을 제공하도록 VM용 스토리지를 할당할 때는 주의해야 합니다.</block>
+  <block id="96a9dfe952daba8fef3e00253fb12af1" category="paragraph">다음 스크린샷은 호스트가 두 사이트에서 iSCSI 데이터 저장소를 마운트하도록 구성되어 있음을 보여 줍니다.</block>
+  <block id="dec5cbb3a951fa6d35079531698f83eb" category="paragraph"><block ref="dec5cbb3a951fa6d35079531698f83eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="060c73be745b11b3a01d9ff618e0a328" category="paragraph">다음 그림과 같이 두 사이트에서 사용 가능한 iSCSI 데이터 저장소 간에 가상 시스템 디스크를 마이그레이션할 수 있습니다. 성능을 고려하려면 로컬 스토리지 클러스터의 스토리지를 사용하여 가상 시스템에 대해 디스크 I/O 지연 시간을 줄이는 것이 좋습니다. 특히 100km 거리당 약 1ms의 물리적 왕복 거리 지연 시간 때문에 두 사이트가 서로 떨어져 있는 경우 더욱 그렇습니다.</block>
+  <block id="2c52e19006187a938678027788550da8" category="paragraph"><block ref="2c52e19006187a938678027788550da8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="10d35814901409091a7af569605345c2" category="paragraph">사이트 간 및 동일한 사이트의 다른 호스트에 대한 가상 머신의 vMotion 테스트가 수행되어 성공했습니다. 사이트 간에 가상 머신을 수동으로 마이그레이션한 후에는 VM/호스트 선호도 규칙이 가상 머신을 정상 조건 하에 있는 그룹으로 활성화하고 다시 마이그레이션합니다.</block>
+  <block id="005c15308fc282c14f74fc423aadd9c4" category="section-title">계획된 스토리지 페일오버</block>
+  <block id="2eeac46aa1c00254aab234b4ea3ade9b" category="paragraph">스토리지 페일오버 후 솔루션이 제대로 작동하는지 확인하려면 초기 구성 후 솔루션에 대해 계획된 스토리지 페일오버 작업을 수행해야 합니다. 이 테스트는 I/O 중단을 일으킬 수 있는 연결 또는 구성 문제를 식별하는 데 도움이 될 수 있습니다. 연결 또는 구성 문제를 정기적으로 테스트하고 해결하면 실제 사이트 재해가 발생할 때 중단 없는 데이터 서비스를 제공하는 데 도움이 됩니다. 계획된 스토리지 페일오버는 예약된 스토리지 유지보수 작업 전에 사용할 수 있으므로 영향을 받지 않는 사이트에서 데이터 서비스를 제공할 수 있습니다.</block>
+  <block id="de38bbec025684a26af05f74b6ed4f94" category="paragraph">사이트 A 스토리지 데이터 서비스의 수동 페일오버를 사이트 B에 시작하려면 사이트 B ONTAP 시스템 관리자를 사용하여 작업을 수행할 수 있습니다.</block>
+  <block id="fcaf9961b012e44c6c032ee99672f775" category="list-text">보호 &gt; 관계 화면으로 이동하여 정합성 보장 그룹 관계 상태가 '동기화 중'인지 확인합니다. 아직 동기화 중인 상태라면 장애 조치를 수행하기 전에 동기화 중 상태가 될 때까지 기다립니다.</block>
+  <block id="1161fec7b25d7cf23a19d6c672d4f86c" category="list-text">소스 이름 옆의 점을 확장하고 장애 조치를 클릭합니다.</block>
+  <block id="e5137e4f8e06f10e33011dcd2d73da8f" category="paragraph"><block ref="e5137e4f8e06f10e33011dcd2d73da8f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b693449c463380c29eec4c11104bfe14" category="list-text">작업을 시작할 대체 작동을 확인합니다.</block>
+  <block id="42677b8e6a37924af563e0ebe782efc5" category="paragraph"><block ref="42677b8e6a37924af563e0ebe782efc5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2d8f3a0a44af6cd64d05bf48813bd594" category="paragraph">사이트 B System Manager GUI에서 두 정합성 보장 그룹 CG_ESXi_A와 CG_infra_datastore_A의 페일오버를 시작한 직후 사이트 A에서 두 정합성 보장 그룹을 사이트 B로 이동했습니다 그 결과, 사이트의 I/O가 System Manager 성능 창에 표시된 것처럼 크게 감소했습니다.</block>
+  <block id="9881fdc2069e5f2583af734ff7465fde" category="paragraph"><block ref="9881fdc2069e5f2583af734ff7465fde" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9c99852f17a0d53a681c03fe4dc154e5" category="paragraph">반면, 사이트 B System Manager 대시보드의 성능 창에는 사이트 A에서 약 130K IOP로 이동하는 추가 I/O 덕분에 IOP가 크게 증가한 것으로 표시됩니다. 약 1GB/s의 처리량과 1밀리초 미만의 I/O 지연 시간을 유지했습니다.</block>
+  <block id="16c6afdf305438c2ed12ef39b6df8c96" category="paragraph"><block ref="16c6afdf305438c2ed12ef39b6df8c96" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8bb3a3cb1654ec8cab43949210d4d898" category="paragraph">I/O가 사이트 A에서 사이트 B로 투명하게 마이그레이션되면 예약된 유지 관리를 위해 사이트 A 스토리지 컨트롤러를 가져올 수 있습니다. 유지 관리 작업 또는 테스트가 완료되고 사이트 A 스토리지 클러스터가 백업 및 작동 가능으로 전환된 후 장애 조치를 수행하기 전에 정합성 보장 그룹 보호 상태가 다시 "동기화 중"으로 바뀔 때까지 기다린 후 사이트 B의 페일오버 입출력을 사이트 A로 되돌립니다 유지 관리 또는 테스트를 위해 사이트가 다운되는 시간이 길어질수록 데이터가 동기화되고 정합성 보장 그룹이 '동기화 중' 상태로 되돌아가는 데 시간이 더 오래 걸립니다.</block>
+  <block id="b102de62ff98238287aff2fba0812737" category="paragraph"><block ref="b102de62ff98238287aff2fba0812737" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6d8b9cb0819076358b7dd488b2e3fbd2" category="section-title">계획되지 않은 스토리지 페일오버</block>
+  <block id="3453e5c1f7fee8331d17af3a001b4f20" category="paragraph">계획되지 않은 스토리지 페일오버는 실제 재해가 발생하거나 재해 시뮬레이션 중에 발생할 수 있습니다. 예를 들어 사이트 A의 스토리지 시스템에서 정전이 발생하거나, 계획되지 않은 스토리지 페일오버가 트리거되고, 사이트 A LUN에 대한 데이터 서비스가 SM-BC 관계에 의해 보호되면 사이트 B에서 계속 이어지는 그림을 참조하십시오</block>
+  <block id="391e7083306f139b4130dee44743cb82" category="paragraph"><block ref="391e7083306f139b4130dee44743cb82" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dbfec800f7b65de48d694e095d88e10d" category="paragraph">사이트 A에서 스토리지 재해를 시뮬레이션하기 위해 전원 스위치를 물리적으로 끄고 컨트롤러에 대한 전원 공급을 중단하면 사이트 A의 두 스토리지 컨트롤러의 전원을 끌 수 있습니다. 또는 스토리지 컨트롤러 서비스 프로세서의 시스템 전원 관리 명령을 사용하여 컨트롤러의 전원을 끕니다.</block>
+  <block id="64751fdba03d43500681f3ab1bb778dc" category="paragraph">사이트의 스토리지 클러스터에 손실이 발생할 경우 사이트 A 스토리지 클러스터에서 데이터 서비스가 갑자기 중지됩니다. 그런 다음, 세 번째 사이트에서 SM-BC 솔루션을 모니터링하는 ONTAP 중재자가 사이트의 스토리지 장애 상태를 감지하고 SM-BC 솔루션에서 자동화된 계획되지 않은 페일오버를 수행할 수 있도록 합니다. 이를 통해 사이트 B 스토리지 컨트롤러는 사이트 A와의 SM-BC 정합성 보장 그룹 관계에 구성된 LUN에 대해 데이터 서비스를 계속할 수 있습니다</block>
+  <block id="2cfdb538aed18fffc7018c7b39abb185" category="paragraph">애플리케이션 측면에서 운영 체제가 LUN의 경로 상태를 확인한 후 남아 있는 사이트 B 스토리지 컨트롤러에 대한 사용 가능한 경로에서 입출력을 재개하는 동안 데이터 서비스가 잠시 일시 중지됩니다.</block>
+  <block id="564a86177f3a50d7f9c0fcb62c7aea4d" category="paragraph">검증 테스트 중에 두 사이트의 VM에 있는 IOMeter 툴은 로컬 데이터 저장소에 대한 입출력을 생성합니다. 사이트 A 클러스터의 전원이 꺼진 후 입출력이 잠시 일시 중지되었다가 나중에 다시 시작됩니다. 각 사이트에서 약 80k IOPS와 600MB/s 처리량을 보여 주는 재해 전에 사이트 A와 사이트 B의 스토리지 클러스터 대시보드에 대한 다음 두 그림을 참조하십시오.</block>
+  <block id="f6adbb8fc80b9d9c2084a93242639f73" category="paragraph"><block ref="f6adbb8fc80b9d9c2084a93242639f73" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="55210cd28d413b1aceffbd374e20b9de" category="paragraph"><block ref="55210cd28d413b1aceffbd374e20b9de" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9c040da50755f0706931f8bdad30931" category="paragraph">사이트 A에서 스토리지 컨트롤러의 전원을 끈 후 사이트 B 스토리지 컨트롤러 I/O가 급격히 증가하여 사이트 A를 대신하여 추가 데이터 서비스를 제공하는지를 육안으로 확인할 수 있습니다(다음 그림 참조). 또한 IOMeter VM의 GUI는 사이트 A 스토리지 클러스터 중단에도 불구하고 I/O가 계속 유지된다는 것을 보여 주었습니다. SM-BC 관계에 의해 보호되지 않는 LUN에서 백업한 추가 데이터 저장소가 있는 경우 스토리지 재해가 발생할 때 해당 데이터 저장소에 더 이상 액세스할 수 없습니다. 따라서 다양한 애플리케이션 데이터의 비즈니스 요구 사항을 평가하고 비즈니스 연속성을 제공하기 위해 이를 SM-BC 관계에 의해 보호되는 데이터 저장소에 적절히 배치하는 것이 중요합니다.</block>
+  <block id="e3ecab7648df8217681ed35970733c7c" category="paragraph"><block ref="e3ecab7648df8217681ed35970733c7c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="809cc5e94479b45f3e3aee800ba39572" category="paragraph">사이트 A 클러스터가 다운된 상태에서 정합성 보장 그룹의 관계는 다음 그림과 같이 동기화 중단 상태로 표시됩니다. 사이트 A의 스토리지 컨트롤러에 대한 전원을 다시 켜면 스토리지 클러스터가 부팅되고 사이트 A와 사이트 B 간의 데이터 동기화가 자동으로 수행됩니다.</block>
+  <block id="c8dcf7928124fde6db9db80701ebc68a" category="paragraph"><block ref="c8dcf7928124fde6db9db80701ebc68a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c13b800dbe9192deeaebbbccebd0d6fc" category="paragraph">사이트 B의 데이터 서비스를 사이트 A로 다시 반환하기 전에 사이트 A System Manager를 확인하고 SM-BC 관계가 제대로 인식되었는지, 그리고 상태가 다시 동기화되었는지 확인해야 합니다. 정합성 보장 그룹이 동기화 중임을 확인한 후 수동 페일오버 작업을 시작하여 정합성 보장 그룹 관계의 데이터 서비스를 사이트 A로 다시 반환할 수 있습니다</block>
+  <block id="1eeb5f24fc3939d51bfee5788ed8905d" category="paragraph"><block ref="1eeb5f24fc3939d51bfee5788ed8905d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a3e7907d9d92abafe948272003b2cfda" category="section-title">사이트 유지 관리 또는 사이트 장애 완료</block>
+  <block id="94e1f67a9eaa3debcd9c5921a6fe8751" category="paragraph">현장에 현장 유지 보수, 전력 손실 또는 허리케인이나 지진과 같은 자연 재해로 인한 영향이 있을 수 있습니다. 따라서 FlexPod SM-BC 솔루션이 모든 비즈니스 크리티컬 애플리케이션 및 데이터 서비스에 대해 이러한 장애를 극복할 수 있도록 적절히 구성되도록 계획되었거나 계획되지 않은 사이트 장애 시나리오를 실행하는 것이 중요합니다. 다음 사이트 관련 시나리오가 검증되었습니다.</block>
+  <block id="e0953b89b7f701d0e7e7c04baebc697d" category="list-text">가상 시스템 및 중요 데이터 서비스를 다른 사이트로 마이그레이션하여 사이트 유지 관리 시나리오를 계획했습니다</block>
+  <block id="f25c2923b6a057e53249a6c23de5fc8b" category="list-text">재해 시뮬레이션을 위해 서버 및 스토리지 컨트롤러의 전원을 꺼서 계획되지 않은 사이트 중단 시나리오</block>
+  <block id="4518b03678a4ceb2aa5bcd6f5f25ff1a" category="paragraph">계획된 사이트 유지 관리를 위해 사이트를 준비하려면 영향을 받는 가상 시스템을 vMotion과 함께 사이트 외부로 마이그레이션하고, 가상 머신 및 중요 데이터 서비스를 대체 사이트로 마이그레이션하려면 SM-BC 정합성 보장 그룹 관계의 수동 페일오버가 필요합니다. 테스트는 두 가지 다른 순서로 수행되었습니다. 먼저 vMotion을 실행한 후 SM-BC 페일오버 및 SM-BC 페일오버 후에 vMotion을 먼저 실행하여 가상 머신이 계속 실행되고 데이터 서비스가 중단되지 않는지 확인했습니다.</block>
+  <block id="2529342fe0b49ceead1124cdd0985c74" category="paragraph">계획된 마이그레이션을 수행하기 전에 VM/호스트 선호도 규칙을 업데이트하여 현재 사이트에서 실행 중인 VM이 유지 보수 중인 사이트에서 자동으로 마이그레이션되도록 합니다. 다음 스크린샷은 사이트 A에서 사이트 B로 자동으로 마이그레이션할 VM에 대한 사이트 A VM/호스트 선호도 규칙을 수정하는 예를 보여 줍니다. 이제 사이트 B에서 VM을 실행해야 하는 대신 VM을 수동으로 마이그레이션할 수 있도록 선호도 규칙을 일시적으로 비활성화할 수도 있습니다.</block>
+  <block id="6a5233f0e7c5c47e7647a49d3a7e773d" category="paragraph"><block ref="6a5233f0e7c5c47e7647a49d3a7e773d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6d74d923e145c1aad92758827d849e91" category="paragraph">가상 머신 및 스토리지 서비스를 마이그레이션한 후에는 서버, 스토리지 컨트롤러, 디스크 쉘프 및 스위치의 전원을 끄고 필요한 사이트 유지 관리 작업을 수행할 수 있습니다. 사이트 유지 관리가 완료되고 FlexPod 인스턴스가 백업되면 VM에 대한 호스트 그룹 선호도를 변경하여 원래 사이트로 돌아갈 수 있습니다. 그런 다음 "그룹의 호스트에서 실행해야 함" VM/호스트 사이트 선호도 규칙을 다시 "그룹의 호스트에서 실행해야 함"으로 변경하여 재해가 발생할 경우 다른 사이트의 호스트에서 가상 시스템을 실행할 수 있도록 해야 합니다. 검증 테스트를 위해 모든 가상 시스템이 다른 사이트로 성공적으로 마이그레이션되었으며, SM-BC 관계에 대한 페일오버를 수행한 후에도 데이터 서비스가 문제 없이 계속됩니다.</block>
+  <block id="94e3e7ba85557776c1293f8556d55cd3" category="paragraph">계획되지 않은 사이트 재해 시뮬레이션의 경우 서버 및 스토리지 컨트롤러의 전원을 꺼서 사이트 재해를 시뮬레이션했습니다. VMware HA 기능은 다운된 가상 시스템을 감지하고 정상 작동하는 사이트에서 해당 가상 시스템을 다시 시작합니다. 또한 세 번째 사이트에서 실행 중인 ONTAP 중재자가 사이트 장애를 감지하고 정상 작동하는 사이트가 페일오버를 시작하고 필요에 따라 중단 사이트에 데이터 서비스를 제공하기 시작합니다.</block>
+  <block id="d50edfe267cec15d690ec015a7156e39" category="paragraph">다음 스크린샷은 사이트의 스토리지 재해 시뮬레이션을 위해 스토리지 컨트롤러의 서비스 프로세서 CLI를 사용하여 사이트의 전원을 갑자기 끄는 것을 보여 줍니다.</block>
+  <block id="2b0620efb1a7f731997edf6317a12174" category="paragraph"><block ref="2b0620efb1a7f731997edf6317a12174" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d494470e2cbfb6c2f4f7e78037299573" category="paragraph">NetApp Harvest 데이터 수집 툴에서 캡처되고 NAbox 모니터링 도구의 Grafana 대시보드에 표시되는 스토리지 클러스터의 스토리지 가상 머신 대시보드는 다음 두 개의 스크린샷에 나와 있습니다. IOPS 및 처리량 그래프의 오른쪽에서 볼 수 있듯이, 사이트 B 클러스터는 사이트 A 클러스터가 다운된 직후 클러스터 A 스토리지 워크로드를 선택합니다.</block>
+  <block id="5c2d61ae9704cebfe8150f81696530ff" category="paragraph"><block ref="5c2d61ae9704cebfe8150f81696530ff" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ac4c49b6a5447a461af32ba2d8e6966f" category="paragraph"><block ref="ac4c49b6a5447a461af32ba2d8e6966f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6f171c5c1d5ae4c8e70d1b33c3ceada9" category="paragraph">Microsoft SQL Server는 엔터프라이즈 IT를 위해 널리 채택되고 배포된 데이터베이스 플랫폼입니다. Microsoft SQL Server 2019 릴리스는 관계형 및 분석 엔진에 많은 새로운 기능과 향상된 기능을 제공합니다. 이 솔루션은 사내, 클라우드에서 실행되는 애플리케이션과 하이브리드 퍼블릭 클라우드 모두에서 2가지 워크로드를 지원합니다. 또한 Windows, Linux 및 컨테이너를 포함한 여러 플랫폼에 배포할 수 있습니다.</block>
+  <block id="d23e0b67e4eb3eb198b6bc355999516c" category="paragraph">FlexPod SM-BC 솔루션의 비즈니스 크리티컬 워크로드 검증에 따라, Windows Server 2022 VM에 설치된 Microsoft SQL Server 2019가 SM-BC 계획 및 계획되지 않은 스토리지 페일오버 테스트를 위한 IOMeter VM과 함께 포함됩니다. Windows Server 2022 VM에서는 SQL Server를 관리하기 위해 SQL Server Management Studio가 설치됩니다. 테스트를 위해 HammerDB 데이터베이스 도구를 사용하여 데이터베이스 트랜잭션을 생성합니다.</block>
+  <block id="b351abc44f63df299b47b6ffed47c5ce" category="paragraph">Microsoft SQL Server TPROC-C 워크로드를 사용하여 테스트하도록 HammerDB 데이터베이스 테스트 도구를 구성했습니다. 스키마 빌드 구성의 경우 다음 스크린샷과 같이 10명의 가상 사용자가 있는 100개의 웨어하우스를 사용하도록 옵션이 업데이트되었습니다.</block>
+  <block id="87f99ef6fa5be0ed57c5dbf0a419b070" category="paragraph"><block ref="87f99ef6fa5be0ed57c5dbf0a419b070" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9e2d2b46f15ab19122ed8e0a97a74014" category="paragraph">스키마 빌드 옵션이 업데이트된 후 스키마 빌드 프로세스가 시작되었습니다. 몇 분 후에 시스템 프로세서 CLI 명령을 사용하여 두 노드 AFF A250 스토리지 클러스터의 두 노드 전원을 동시에 꺼서 예정되지 않은 사이트 B 스토리지 클러스터 장애가 발생했습니다.</block>
+  <block id="47189c011b8e846918efcf2311e491ec" category="paragraph">데이터베이스 트랜잭션을 잠시 일시 중지한 후 재해 복구를 위한 자동 페일오버가 시작되고 트랜잭션이 다시 시작되었습니다. 다음 스크린샷은 해당 시간에 대한 HammerDB 트랜잭션 카운터 스크린샷을 보여 줍니다. Microsoft SQL Server의 데이터베이스는 일반적으로 사이트 B 스토리지 클러스터에 상주하므로 사이트 B의 스토리지가 다운된 후 트랜잭션이 잠시 일시 중지되었다가 자동 페일오버가 발생한 후 다시 시작됩니다.</block>
+  <block id="70e4185b9daa95bdd38c763537c51dab" category="paragraph"><block ref="70e4185b9daa95bdd38c763537c51dab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0cfbccf792115fc29e978aecb3c82a2a" category="paragraph">Storge 클러스터 메트릭은 NetApp Harvest 모니터링 툴이 설치된 NAbox 툴을 사용하여 캡처되었습니다. 결과는 스토리지 가상 머신 및 기타 스토리지 개체에 대한 사전 정의된 Grafana 대시보드에 표시됩니다. 대시보드는 사이트 B와 사이트 A에 대해 분리된 읽기 및 쓰기 통계와 함께 지연 시간, 처리량, IOPS 및 추가 세부 정보에 대한 매트릭스를 제공합니다</block>
+  <block id="c84be84ab2121fb2e8ab240e966d920d" category="paragraph">이 스크린샷은 사이트 B 스토리지 클러스터에 대한 NAbox Grafana 성능 대시보드를 보여줍니다.</block>
+  <block id="d5cdf555ee7df233cf973ce326d19ab0" category="paragraph"><block ref="d5cdf555ee7df233cf973ce326d19ab0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1387596ae133caf422ffc9241ba216b6" category="paragraph">사이트 B 스토리지 클러스터의 IOPS는 재해가 발생하기 전에 약 100K IOPS 였습니다. 그런 다음, 성능 메트릭이 재해로 인해 그래프 오른쪽에서 0으로 급격히 하락하는 것을 보였습니다. 사이트 B 스토리지 클러스터가 다운되었기 때문에 재해가 발생한 후 사이트 B 클러스터에서 아무것도 수집되지 않았습니다.</block>
+  <block id="2a14ff89df5dda027fda4cf42047a1f6" category="paragraph">반면 사이트 A 스토리지 클러스터의 IOPS는 자동 페일오버 후 사이트 B에서 추가 워크로드를 선택했습니다. 다음 스크린샷에서는 IOPS 및 처리량 그래프의 오른쪽에 추가 워크로드를 쉽게 볼 수 있습니다. 이 그래프에는 사이트 A 스토리지 클러스터의 NAbox Grafana 성능 대시보드가 나와 있습니다.</block>
+  <block id="df6fb0c4cb3df54105dbbc86c219957e" category="paragraph"><block ref="df6fb0c4cb3df54105dbbc86c219957e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="61ee2ddd1ac5ffc022e2da8b2cf9e931" category="paragraph">위의 스토리지 재해 테스트 시나리오에서는 데이터베이스가 상주하는 사이트 B에서 Microsoft SQL Server 워크로드가 전체 스토리지 클러스터 중단 시에도 계속 유지될 수 있다는 것이 확인되었습니다. 애플리케이션은 재해가 감지되고 페일오버가 발생한 후 사이트에서 스토리지 클러스터로 제공되는 데이터 서비스를 투명하게 사용했습니다.</block>
+  <block id="f5c451f1cedf3e66c63549acb1998ee3" category="paragraph">컴퓨팅 계층에서 특정 사이트에서 실행 중인 VM에 호스트 장애가 발생하면 VM은 VMware HA 기능을 통해 자동으로 다시 시작하도록 설계되어 있습니다. 전체 사이트 컴퓨팅 중단을 위해 VM/호스트 선호도 규칙을 통해 남아 있는 사이트에서 VM을 다시 시작할 수 있습니다. 하지만 비즈니스 크리티컬 애플리케이션에서 무중단 서비스를 제공하려면 애플리케이션 다운타임을 방지하기 위해 Microsoft Failover Cluster 또는 Kubernetes 컨테이너 기반 애플리케이션 아키텍처와 같은 애플리케이션 기반 클러스터링이 필요합니다. 이 기술 보고서의 범위를 벗어나는 애플리케이션 기반 클러스터링의 구현 방법은 관련 문서를 참조하십시오.</block>
+  <block id="fc37581a93e14f865030ca55b7270290" category="paragraph"><block ref="fc37581a93e14f865030ca55b7270290" category="inline-link-macro-rx"></block></block>
+  <block id="9bba922e59a4daeddb1809c2781a44a1" category="summary">FlexPod SM-BC 솔루션의 컴퓨팅 구성은 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다. 또한 SM-BC 관련 고려 사항 중 일부는 구축 참조 및 지침을 제공하기 위해 강조되어 있습니다.</block>
+  <block id="bc8a1d734e83e27cc8a2adc1858d6959" category="doc">솔루션 검증 - 컴퓨팅</block>
+  <block id="ed0d7e76ce8e3038702fbab0cb9524ab" category="inline-link-macro">개요.</block>
+  <block id="e38775cef86d4cc66d36ea249100c217" category="paragraph"><block ref="e38775cef86d4cc66d36ea249100c217" category="inline-link-macro-rx"></block></block>
+  <block id="3f0294fb25b6df81fd5b767f0d74974f" category="paragraph">UCS 5108 섀시 후면판 연결을 통해 UCS B200 블레이드 서버와 IOM 간의 연결이 UCS VIC 카드에 의해 제공됩니다. 검증에 사용된 UCS 2204XP 패브릭 익스텐더에는 각 서버에 2개씩 등 8개의 절반 너비 블레이드 서버에 연결할 수 있는 16개의 10G 포트가 있습니다. 서버 연결 대역폭을 높이기 위해 추가 메자닌 기반 VIC를 추가하여 각 서버에 4개의 10G 연결을 제공하는 대체 UCS 2408 IOM에 서버를 연결할 수 있습니다.</block>
+  <block id="faf94a25f3b3dbcdc7d8df2b1e466b18" category="paragraph"><block ref="faf94a25f3b3dbcdc7d8df2b1e466b18" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3e760ed69fcce8d06a007f41a5c61d17" category="paragraph">UCS 5108 섀시와 검증에 사용된 UCS 6454 FI 간의 연결은 4개의 10G 연결을 사용하는 IOM 2204XP에서 제공합니다. 이러한 연결을 위해 FI 포트 1 - 4가 서버 포트로 구성됩니다. FI 포트 25~28은 로컬 사이트의 Nexus 스위치 A 및 B에 대한 네트워크 업링크 포트로 구성됩니다. 다음 그림과 표에는 UCS 5108 섀시 및 Nexus 스위치에 연결할 UCS 6454 FI의 연결 다이어그램 및 포트 연결 정보가 나와 있습니다.</block>
+  <block id="c6dd3a48117647945bebcc115abb8629" category="paragraph"><block ref="c6dd3a48117647945bebcc115abb8629" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4dd5e1c262b334b75713798615378310" category="cell">UCS 6454 FI A</block>
+  <block id="5cdf02cc1cc523d3abdae4b7fa856dd8" category="cell">IOM A를 지원합니다</block>
+  <block id="8e296a067a37563370ded05f5a3bf3ec" category="cell">25</block>
+  <block id="19630796906a81f321eb2c76bbb10bac" category="cell">Nexus A</block>
+  <block id="26501ba97c684cd722b33b9755ef0dba" category="cell">1월 13일</block>
+  <block id="4e732ced3463d06de0ca9a15b6153677" category="cell">26</block>
+  <block id="4cdb91f64bcc968939cab93b46464b40" category="cell">2012년 1월 13일</block>
+  <block id="7456d96f8c8db139387a6120d3d24d55" category="cell">Nexus B</block>
+  <block id="7789aa4bac3f89f6033c10cbdd67d334" category="cell">3월 1일-13일</block>
+  <block id="33e75ff09dd601bbe69f351039152189" category="cell">28</block>
+  <block id="2d73824c65cba850008ab880aae967f1" category="cell">4월 1일-13일</block>
+  <block id="9ec4c0afd450ceac7adb81c3bcfc9732" category="cell">L1</block>
+  <block id="d65e9db3ca9fe5a5b3409c6676068511" category="cell">UCS 6454 FI B</block>
+  <block id="7e6aa2d53f6ee2b1a34b017fa403cb76" category="cell">L2</block>
+  <block id="977159f7bb4f0bab752c1b340782e48c" category="cell">IOM B를 클릭합니다</block>
+  <block id="d1846819f7e6f286fed6fa7a54dbb257" category="admonition">사이트 A는 Nexus 9336C-FX2switches를 사용하고 사이트 B는 Nexus 3232C 스위치를 사용함에도 불구하고 위의 연결은 A와 B 사이트 모두에서 비슷합니다. Nexus to Fi 연결에는 40g~4x10G 브레이크아웃 케이블이 사용됩니다. Nexus에 대한 FI 연결은 포트 채널을 사용하고 가상 포트 채널은 Nexus 스위치에서 구성되어 각 FI에 대한 연결을 통합합니다.</block>
+  <block id="5db79ec7bffed5b6b6af4d52ad6b2241" category="admonition">IOM, FI 및 Nexus 스위치 구성요소를 서로 다른 방법으로 함께 사용할 경우 환경 조합에 적절한 케이블과 포트 속도를 사용해야 합니다.</block>
+  <block id="6df25b5fb39ff5fa539e727e2254a866" category="admonition">더 빠른 연결 또는 더 많은 연결을 지원하는 구성 요소를 사용하여 추가 대역폭을 달성할 수 있습니다. 이를 지원하는 구성 요소와의 연결을 추가하여 이중화를 추가로 구현할 수 있습니다.</block>
+  <block id="4b86591776fc42ddcf8cb89e01768aaf" category="section-title">서비스 프로필</block>
+  <block id="e233bcb8957b6e6f4b1933c238a30273" category="paragraph">UCSM(UCS Manager) 또는 Cisco Intersight에서 관리하는 패브릭 인터커넥트를 사용하는 블레이드 서버 섀시는 UCSM에서 사용할 수 있는 서비스 프로필과 Intersight에서 서버 프로필을 사용하여 서버를 추상화할 수 있습니다. 이 검증에서는 UCSM 및 서비스 프로필을 사용하여 서버 관리를 간소화합니다. 서비스 프로필을 사용하면 원래 서비스 프로필을 새 하드웨어와 연결하기만 하면 서버를 교체하거나 업그레이드할 수 있습니다.</block>
+  <block id="5a8a8c704590cbdb2553107bdaf0fb82" category="paragraph">생성된 서비스 프로필은 VMware ESXi 호스트에 대해 다음을 지원합니다.</block>
+  <block id="0a980278599a7a8f202edf452fb52785" category="list-text">iSCSI 프로토콜을 사용하여 양쪽 사이트의 AFF A250 스토리지에서 SAN을 부팅합니다.</block>
+  <block id="e48a1c6b4c86f73671741df9ae65050a" category="list-text">다음과 같은 서버에 대해 6개의 vNIC가 생성됩니다.</block>
+  <block id="e42f1656522f026a4a7201fda2534a16" category="list-text">2개의 중복 vNIC(vSwitch0-A 및 vSwitch0-B)는 대역 내 관리 트래픽을 전달합니다. 선택 사항으로, 이러한 vNIC는 SM-BC로 보호되지 않는 NFS 프로토콜 데이터에서도 사용할 수 있습니다.</block>
+  <block id="877cc12ba9cd72dc90bf3e7f3ecb2885" category="list-text">vSphere 분산 스위치는 2개의 중복 vNIC(VDS-A 및 VDS-B)를 사용하여 VMware vMotion 및 기타 애플리케이션 트래픽을 전송합니다.</block>
+  <block id="96de6cb5ae7ab86747558a7756243087" category="list-text">iSCSI - iSCSI에서 사용하는 vNIC - iSCSI-A 경로에 대한 액세스를 제공하는 vSwitch입니다.</block>
+  <block id="35fc2427b2a52b34587ab7a3a4b9daac" category="list-text">iSCSI-B vSwitch에서 iSCSI-B vNIC를 사용하여 iSCSI-B 경로에 대한 액세스를 제공합니다.</block>
+  <block id="445bfa48fdef1999bb00d0ae561f8e01" category="paragraph">iSCSI SAN 부팅 구성의 경우 iSCSI 부트 매개 변수가 두 iSCSI 패브릭에서 iSCSI 부팅을 허용하도록 설정됩니다. 운영 클러스터를 사용할 수 없을 때 iSCSI SAN 부팅 LUN이 보조 클러스터에서 제공되는 SM-BC 페일오버 시나리오를 수용하기 위해 iSCSI 정적 타겟 구성에는 사이트 A와 사이트 B의 타겟이 모두 포함되어야 합니다 또한 부팅 LUN 가용성을 최대화하려면 모든 스토리지 컨트롤러에서 부팅하도록 iSCSI 부트 매개 변수 설정을 구성합니다.</block>
+  <block id="2341218b89ffeb0e95de8a94808dc1af" category="paragraph">다음 그림과 같이 Set iSCSI Boot 매개 변수 대화 상자의 서비스 프로필 템플릿의 부팅 정책에서 iSCSI 정적 대상을 구성할 수 있습니다. 다음 표에는 고가용성을 달성하기 위해 위에서 설명한 부팅 전략을 구현하는 권장 iSCSI 부팅 매개 변수 설정 구성이 나와 있습니다.</block>
+  <block id="b3360862d0e98ea04db2b2c54d13c081" category="paragraph"><block ref="b3360862d0e98ea04db2b2c54d13c081" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3bdc6d549899cc7ea734bf186a7df1c7" category="cell">iSCSI 패브릭</block>
+  <block id="502996d9790340c5fd7b86a5b93b1c9f" category="cell">우선 순위</block>
+  <block id="ba168a9601baaefb6e715226a8be8629" category="cell">iSCSI 타겟</block>
+  <block id="78ad16677c3c367a8a8aec744bff8555" category="cell">iSCSI LIF</block>
+  <block id="9eab269a8ed687dd91b11209ed6284eb" category="cell">iSCSI A</block>
+  <block id="579e78241cf6a4652ac73bf45787d704" category="cell">사이트 A iSCSI 타겟</block>
+  <block id="8cfa0bf1642b326dc134539a161216cf" category="cell">사이트 A 컨트롤러 1 iSCSI A LIF</block>
+  <block id="8f952d17ea2abbbc5a2748b95e5b4944" category="cell">사이트 B iSCSI 타겟입니다</block>
+  <block id="7bcaa8316e0807fd4f1560e5e852138d" category="cell">사이트 B 컨트롤러 2 iSCSI A LIF</block>
+  <block id="6add07bc86a316af4f25422f4c8887b7" category="cell">iSCSI B 를 선택합니다</block>
+  <block id="56d1b12d5a4e9f59a4453bb6a7cb7b08" category="cell">사이트 B 컨트롤러 1 iSCSI B LIF입니다</block>
+  <block id="5975420dbf2246f6edb6a902578b5ff1" category="cell">사이트 A 컨트롤러 2 iSCSI B LIF</block>
+  <block id="5e7b9ab3adef639ef9c61005fee6237c" category="list-text">제목: 네트워크 URL:/FlexPod-DC/sm-bcs-network.html</block>
+  <block id="efa3c8203ca8f331abebfd2b1b8197b6" category="summary">FlexPod SM-BC 솔루션의 네트워크 구성은 각 사이트의 일반적인 FlexPod 솔루션 Best Practice를 따릅니다. 사이트 간 연결의 경우, 솔루션 검증 구성은 두 사이트의 FlexPod Nexus 스위치를 서로 연결하여 두 사이트 간에 VLAN을 확장하는 사이트 간 연결을 제공합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다.</block>
+  <block id="74b5d0143f42e7eea9541ccef14b9fb7" category="doc">솔루션 검증 - 네트워크</block>
+  <block id="698c40fe15891da5bf5654625e3efc65" category="paragraph">각 사이트의 FlexPod Nexus 스위치는 고가용성 구성에서 UCS 컴퓨팅과 ONTAP 스토리지 간의 로컬 연결을 제공합니다. 이중화 구성 요소와 이중화 연결을 통해 단일 장애 지점 시나리오에 대한 복원력을 제공합니다.</block>
+  <block id="b1cb4f7e68966720bb2fb6ab56947b83" category="paragraph">다음 다이어그램은 각 사이트의 Nexus 스위치 로컬 연결을 보여 줍니다. 다이어그램에 표시된 내용 외에 표시되지 않은 각 구성 요소에 대한 콘솔 및 관리 네트워크 연결도 있습니다. 40G~4 x 10G 브레이크아웃 케이블은 Nexus 스위치를 UCS FI 및 ONTAP AFF A250 스토리지 컨트롤러에 연결하는 데 사용됩니다. 또는 100G~4개의 25G 브레이크아웃 케이블을 사용하여 Nexus 스위치와 AFF A250 스토리지 컨트롤러 간의 통신 속도를 높일 수도 있습니다. 간단하게 하기 위해 2개의 AFF A250 컨트롤러는 케이블 연결 그림을 위해 논리적으로 나란히 표시됩니다. 두 스토리지 컨트롤러 간의 두 가지 연결을 통해 스토리지가 스위치가 없는 클러스터를 구성할 수 있습니다.</block>
+  <block id="4ba70b31ad5c60939fec9e9be3382a39" category="paragraph"><block ref="4ba70b31ad5c60939fec9e9be3382a39" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a39991fd2cc5d1a162e80a5a0b5dc413" category="paragraph">다음 표에는 각 사이트에 있는 Nexus 스위치와 AFF A250 스토리지 컨트롤러 간의 접속이 나와 있습니다.</block>
+  <block id="02ebbe4b6f7e4f1b43260e942cc56d56" category="cell">1/10/1</block>
+  <block id="1b16a119f87dee2f17d519dc3a7ca80c" category="cell">AFF A250 A</block>
+  <block id="9cb7b36b3f2bccc776862e6f2f494077" category="cell">E1A</block>
+  <block id="faa1f67856ad0ffedb981039b287dfb5" category="cell">1/10/2</block>
+  <block id="e737b5ac24a63afc00e81377a906728d" category="cell">e1b</block>
+  <block id="648d85b1b558eb14dd08a38f4e342b9c" category="cell">1/10/3</block>
+  <block id="d7167d4973554d077458158ba905b5a8" category="cell">AFF A250 B</block>
+  <block id="d5aafa08f3301b85d82fefb677c74a90" category="cell">1/10/4</block>
+  <block id="3a080b2a2f11ddee1a665fb9807eec24" category="cell">e1c</block>
+  <block id="7d4ab9ed3c0110be73af0fcd7e353f5d" category="cell">e1d</block>
+  <block id="8488d5257822f6fb065e88d06fa3992f" category="paragraph">사이트 A와 사이트 B의 FlexPod 스위치 간 연결은 다음 그림에 나와 있는 케이블 연결 세부 정보와 함께 표시됩니다. 각 사이트에 있는 두 스위치 간의 연결이 vPC 피어 링크에 대한 것입니다. 반면, 사이트 간 스위치 간의 연결은 사이트 간 링크를 제공합니다. 이 링크는 원격 사이트 리소스에 대한 인터클러스터 통신, SM-BC 데이터 복제, 대역 내 관리 및 데이터 액세스를 위해 사이트 전체에서 VLAN을 확장합니다.</block>
+  <block id="560c8a216aaf0a8175bd1c490ba14806" category="paragraph"><block ref="560c8a216aaf0a8175bd1c490ba14806" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="68cf320e1ad0a674f48ca2a74fba0bae" category="cell">사이트 A 스위치 A</block>
+  <block id="182be0c5cdcd5072bb1864cdee4d3d6e" category="cell">33</block>
+  <block id="91a6ad14308435c69100cc91ff6ff248" category="cell">사이트 B 스위치 A</block>
+  <block id="c16a5320fa475530d9583c34fd356ef5" category="cell">31</block>
+  <block id="e369853df766fa44e1ed0ff613f563bd" category="cell">34</block>
+  <block id="6364d3f0f495b6ab9dcf8d3b5c6e0b01" category="cell">32</block>
+  <block id="9d842db30672923722d95b54c2f4ee64" category="cell">사이트 A 스위치 B</block>
+  <block id="94a6b1c7756fbbdac699d7a97eda30fc" category="cell">사이트 B 스위치 B</block>
+  <block id="d86b6dd5a7865845ef10607ad1527ff3" category="admonition">위 표에는 각 FlexPod 스위치의 관점에서 연결된 정보가 나와 있습니다. 따라서 표에 가독성을 위한 중복 정보가 포함되어 있습니다.</block>
+  <block id="2acff16d6784867d4d2d2bbda158c6c0" category="section-title">포트 채널 및 가상 포트 채널입니다</block>
+  <block id="27923238cea40df4cb1391b537629a8f" category="paragraph">포트 채널은 대역폭 집선 및 링크 장애 복구를 위해 LACP(Link Aggregation Control Protocol)를 사용하여 링크 집계를 활성화합니다. 가상 포트 채널(vPC)을 사용하면 두 Nexus 스위치 간의 포트 채널 연결이 논리적으로 하나로 표시됩니다. 따라서 단일 링크 장애 또는 단일 스위치 장애와 같은 시나리오에 대한 장애 복구 성능이 더욱 향상됩니다.</block>
+  <block id="f38b37d866c20c890fc1a7483c54f820" category="paragraph">스토리지에 대한 UCS 서버 트래픽은 IOM A에서 FI A로, IOM B에서 FI B로 경로를 가져가 Nexus 스위치에 도달하기 전에 먼저 합니다. Nexus 스위치에 대한 Fi 연결이 FI 측의 포트 채널과 Nexus 스위치 측의 가상 포트 채널을 활용함에 따라 UCS 서버는 두 Nexus 스위치를 통해 경로를 효과적으로 사용할 수 있으며 단일 장애 지점 시나리오에서도 유지될 수 있습니다. 이전 그림과 같이 두 사이트 간에 Nexus 스위치가 상호 연결되어 있습니다. 사이트 간에 스위치 쌍을 연결하는 링크는 각각 두 개이며 포트 채널 구성도 사용합니다.</block>
+  <block id="daea38d83b283fd14f6b63858872a799" category="paragraph">대역 내 관리, 클러스터 간 및 iSCSI/NFS 데이터 스토리지 프로토콜 연결은 중복 구성에서 각 사이트의 스토리지 컨트롤러를 로컬 Nexus 스위치에 상호 연결하여 제공됩니다. 각 스토리지 컨트롤러는 2개의 Nexus 스위치에 연결됩니다. 스토리지 인터페이스 그룹의 일부로 구성된 4개의 연결은 복구 성능을 높여 줍니다. Nexus 스위치 측에서는 이러한 포트도 스위치 간 vPC에 속합니다.</block>
+  <block id="fd1b3e9213e316dc1eb0902973bb8068" category="paragraph">다음 표에는 각 사이트의 포트 채널 ID 및 사용량이 나열되어 있습니다.</block>
+  <block id="0eca0ee5c011f7fbfe0916ad0a5e0b05" category="cell">포트 채널 ID입니다</block>
+  <block id="c64518704ce0c0d5501a45763f464276" category="cell">사용</block>
+  <block id="d6e0666e2a456f5d77f6e18373092fe6" category="cell">로컬 Nexus 피어 링크</block>
+  <block id="77b575a922ebd0de9af42f1012a915aa" category="cell">패브릭 인터커넥트 A 링크</block>
+  <block id="ade197264e891e882499adfb88c13f81" category="cell">패브릭 인터커넥트 B 링크</block>
+  <block id="116a0b6a71c744bf4634ab7969a55b15" category="cell">스토리지 컨트롤러 A 링크</block>
+  <block id="b498b5e98a8791b15bb784668713ed85" category="cell">스토리지 컨트롤러 B 링크</block>
+  <block id="f899139df5e1059396431415e770c6dd" category="cell">100</block>
+  <block id="5079f34eca8e111842431425b7af4101" category="cell">사이트 간 스위치 A 링크</block>
+  <block id="3644a684f98ea8fe223c713b77189a77" category="cell">200</block>
+  <block id="8a448f82fc906d5783a1fdec09476125" category="cell">사이트 간 스위치 B 링크</block>
+  <block id="87495e311a3944910e3cc0c7bee3d754" category="section-title">VLAN</block>
+  <block id="d0fccd96812e9060947e921b7bb488b7" category="paragraph">다음 표에는 FlexPod SM-BC 솔루션 검증 환경을 설정하기 위해 구성된 VLAN과 해당 사용량이 나열되어 있습니다.</block>
+  <block id="49ee3087348e8d44e1feda1917443987" category="cell">이름</block>
+  <block id="a94423b85557ae3746b860781f6b49ee" category="cell">네이티브 - VLAN</block>
+  <block id="acfe0550b27169cff6127ec69ce18cca" category="cell">기본 VLAN 대신 기본 VLAN으로 사용되는 VLAN 2(1)</block>
+  <block id="efd6214a93c0d74dc05cdd319b18364a" category="cell">OOB-MGMT-VLAN</block>
+  <block id="2be9bd7a3434f7038ca27d1918de58bd" category="cell">3333</block>
+  <block id="4f317d7b1e3519d9d2bf2fa2d8336cb4" category="cell">장치용 대역외 관리 VLAN</block>
+  <block id="97fdfddeebc2ba811d7fbc0c68f49843" category="cell">IB-MGMT-VLAN</block>
+  <block id="331316d4efb44682092a006307b9ae3a" category="cell">3334</block>
+  <block id="ea76b0fe19ec3d10fd0f1dd8f05d1fd4" category="cell">ESXi 호스트에 대한 대역 내 관리 VLAN, VM 관리 등</block>
+  <block id="b18880b438397d829ae559fcd6cec9c3" category="cell">NFS-VLAN</block>
+  <block id="59a3adea76fadcb6dd9e54c96fc155d1" category="cell">3335</block>
+  <block id="370d9092e1637bcff15d3d02725fbbc1" category="cell">NFS 트래픽용 선택적 NFS VLAN</block>
+  <block id="98bd65207ee83bfd17ebb0db971eddf9" category="cell">3336</block>
+  <block id="9fecbc1245a71b86a4063d382dd1b924" category="cell">iSCSI - iSCSI 트래픽을 위한 패브릭 VLAN입니다</block>
+  <block id="a4fa7175d4757e45eac71a8487751f63" category="cell">3337</block>
+  <block id="2d266ed8b228b49e3e8966a724bdcd9a" category="cell">iSCSI 트래픽용 iSCSI-B 패브릭 VLAN</block>
+  <block id="e112bcac4afaa30ed9ccb59b9e0b06cb" category="cell">VMotion - VLAN</block>
+  <block id="2de7cf2043693db2ee898479a6e44529" category="cell">3338</block>
+  <block id="8146886324c60518c6f897b17bd218f9" category="cell">VMware vMotion 트래픽 VLAN</block>
+  <block id="79be4b1857439c33a2a470d993d3eca6" category="cell">VM-Traffic-VLAN</block>
+  <block id="7ba0691b7777b6581397456412a41390" category="cell">3339</block>
+  <block id="112f1a9e12ed6a86ebb72e2ecc18c07f" category="cell">VMware VM 트래픽 VLAN</block>
+  <block id="8bcaeab695054b959c9ab15d28174f67" category="cell">인터클러스터 - VLAN</block>
+  <block id="f471223d1a1614b58a7dc45c9d01df19" category="cell">3340</block>
+  <block id="58d4d8fd300f92c3bac8231ae2a1b9ee" category="cell">ONTAP 클러스터 피어 통신을 위한 인터클러스터 VLAN</block>
+  <block id="02154716f03ff4e1482b38c58ed2d8cf" category="admonition">SM-BC는 비즈니스 연속성을 위해 NFS 또는 CIFS 프로토콜을 지원하지 않지만, 비즈니스 연속성을 위해 보호할 필요가 없는 워크로드에 사용할 수 있습니다. 이 검증을 위해 NFS 데이터 저장소가 생성되지 않았습니다.</block>
+  <block id="8d5ef1ff8ff6d0fcdbc8e9a431c6cf69" category="summary">다중 사이트 FlexPod SM-BC 솔루션에서 단일 VMware vCenter가 전체 솔루션의 가상 인프라스트럭처 리소스를 관리합니다. 두 데이터 센터의 호스트는 두 데이터 센터를 포괄하는 단일 VMware HA 클러스터에 참여합니다. 호스트는 정의된 SM-BC 관계가 있는 스토리지를 두 사이트 모두에서 액세스할 수 있는 NetApp SM-BC 솔루션에 액세스할 수 있습니다.</block>
+  <block id="ec5040ac921964cc196a3adba148d2bb" category="doc">솔루션 검증 - 가상화</block>
+  <block id="c5e72f7daa822cf194f3859af7a1910f" category="inline-link-macro">이전: 솔루션 검증 - 스토리지.</block>
+  <block id="7377f7c70d91b3224b98ca91011cc2c9" category="paragraph"><block ref="7377f7c70d91b3224b98ca91011cc2c9" category="inline-link-macro-rx"></block></block>
+  <block id="a228baed6afc642e3c7a6aa967a4f7e1" category="paragraph">TH SM-BC 솔루션 스토리지는 VMware vMSC(vSphere Metro Storage Cluster) 기능의 일관된 액세스 모델을 준수하므로 재해 및 다운타임을 방지할 수 있습니다. 가상 시스템의 성능을 최적화하려면 로컬 NetApp AFF A250 시스템에서 가상 머신 디스크를 호스팅하여 WAN 링크 전반의 지연 시간 및 트래픽을 정상 운영 상태에서 최소화해야 합니다.</block>
+  <block id="cd60e2316ddd792a67c9d799e88980f5" category="paragraph">설계 구현의 일부로 두 사이트에 걸친 가상 시스템의 배포를 결정해야 합니다. 사이트 기본 설정 및 애플리케이션 요구 사항에 따라 두 사이트에 걸쳐 가상 머신 사이트 선호도와 애플리케이션 배포를 결정할 수 있습니다. VMware 클러스터 VM/호스트 그룹 및 VM/호스트 규칙은 VM/호스트 선호도를 구성하여 원하는 사이트의 호스트에서 VM이 실행되고 있는지 확인하는 데 사용됩니다.</block>
+  <block id="389ab4e0b3a788e3909cce9eda41904b" category="paragraph">그러나 두 사이트에서 VM을 실행할 수 있는 구성을 사용하면 원격 사이트 호스트의 VMware HA에서 VM을 다시 시작하여 솔루션 복원력을 제공할 수 있습니다. 두 사이트에서 실행할 가상 머신을 수용하려면 모든 ESXi 호스트에 모든 iSCSI 공유 데이터 저장소를 마운트하여 사이트 간에 가상 머신을 원활하게 vMotion 작업을 수행해야 합니다.</block>
+  <block id="27f059ef259584a1b824e765cdd0e9d0" category="paragraph">다음 그림에서는 컴퓨팅 및 스토리지 서비스에 고가용성을 제공하는 VMware HA 및 vMSC 기능을 모두 포함하는 상위 수준의 FlexPod SM-BC 솔루션 가상화 뷰를 보여 줍니다. 액티브-액티브 데이터 센터 솔루션 아키텍처는 사이트 간 워크로드 이동성을 지원하고 DR/BC 보호 기능을 제공합니다.</block>
+  <block id="a147a552c32d5037b987ab2312e69d7c" category="paragraph"><block ref="a147a552c32d5037b987ab2312e69d7c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="186dd87f4e04649aa13ab6280b6c9f56" category="section-title">엔드 투 엔드 네트워크 연결</block>
+  <block id="1a3e67186367dcdcd8767a83f26e215c" category="paragraph">FlexPod SM-BC 솔루션에는 각 사이트의 FlexPod 인프라, 사이트 간 네트워크 연결 및 필요한 RPO 및 RTO 목표를 충족하기 위해 세 번째 사이트에 구축된 ONTAP 중재자가 포함됩니다. 다음 그림은 각 사이트의 Cisco UCS B200M5 서버와 사이트 내부 및 사이트 전체에서 SM-BC 기능을 지원하는 NetApp 스토리지 간의 엔드-투-엔드 네트워크 연결을 보여 줍니다.</block>
+  <block id="053a2ac180463981566102bfcfad8e9d" category="paragraph"><block ref="053a2ac180463981566102bfcfad8e9d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d764408dc842bea0b64076752e22142c" category="paragraph">FlexPod 배포 아키텍처는 이 솔루션 유효성 검사를 위해 각 사이트에서 동일합니다. 그러나 이 솔루션은 비대칭 배포를 지원하며 요구 사항을 충족하는 기존 FlexPod 솔루션에 추가할 수도 있습니다.</block>
+  <block id="22884a3cdeeeeb7dad2ea9a498fa8e37" category="paragraph">확장된 계층 2 아키텍처는 각 데이터 센터에서 포트 채널형 Cisco UCS 컴퓨팅과 NetApp 스토리지 간의 연결과 데이터 센터 간의 연결을 제공하는 원활한 다중 사이트 데이터 패브릭에 사용됩니다. 필요한 경우 포트 채널 구성 및 가상 포트 채널 구성은 컴퓨팅, 네트워크 및 스토리지 계층 간의 대역폭 집계 및 내결함성 및 사이트 간 링크에 사용됩니다. 따라서 UCS 블레이드 서버는 로컬 및 원격 NetApp 스토리지 모두에 대한 연결 및 다중 경로 액세스를 지원합니다.</block>
+  <block id="ce5ffb451af47dfa2491eb63c5143d6d" category="section-title">가상 네트워킹</block>
+  <block id="a36a62d7f651f0199b63aad7ba80cfb0" category="paragraph">클러스터의 각 호스트는 위치에 관계없이 동일한 가상 네트워킹을 사용하여 구축됩니다. 이 설계는 VMware 가상 스위치(vSwitch)와 VMware vDS(Virtual Distributed Switch)를 사용하여 다양한 트래픽 유형을 분리합니다. VMware vSwitch는 주로 FlexPod 인프라스트럭처 네트워크에 사용되고 vDS는 애플리케이션 네트워크에 사용되나 반드시 필요한 것은 아닙니다.</block>
+  <block id="3b7a3052edf1e478832ea4d7ace49f8a" category="paragraph">가상 스위치(vSwitch, VDS)는 가상 스위치당 2개의 업링크와 함께 구축되며, ESXi 하이퍼바이저 레벨의 업링크를 Cisco UCS 소프트웨어에서 vmnics 및 vNIC(Virtual NIC)라고 합니다. vNIC는 Cisco UCS 서비스 프로필을 사용하여 각 서버의 Cisco UCS VIC 어댑터에 생성됩니다. vNIC 6개가 정의되었으며, vSwitch0의 경우 2개, vDS0의 경우 2개, vSwitch1의 경우 2개, iSCSI 업링크의 경우 2개가 정의됩니다.</block>
+  <block id="9f183657927c112be3e7cd269ec8c091" category="paragraph"><block ref="9f183657927c112be3e7cd269ec8c091" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="686c074d49721a316f632385b9203318" category="paragraph">vSwitch0은 VMware ESXi 호스트 구성 중에 정의되며 FlexPod 인프라스트럭처 관리 VLAN 및 관리를 위한 ESXi 호스트 VMK(VMkernel) 포트가 포함되어 있습니다. 필요한 모든 중요 인프라스트럭처 관리 가상 머신에 대해 인프라스트럭처 관리 가상 머신 포트 그룹도 vSwitch0에 배치됩니다.</block>
+  <block id="19e8dd753125c0dfd41811cd6a73bce4" category="paragraph">FlexPod 인프라를 종료하거나 전원을 껐다가 켠 후 원래 실행 중인 호스트가 아닌 호스트에서 해당 관리 가상 시스템을 활성화하려고 할 경우 VDS 대신 vSwitch0에 이러한 관리 인프라 가상 시스템을 배치하는 것이 중요합니다. vSwitch0의 네트워크에서 정상적으로 부팅됩니다. 이 프로세스는 VMware vCenter가 관리 가상 머신인 경우 특히 중요합니다. vCenter가 VDS에 있고 다른 호스트로 이동한 다음 부팅된 경우 부팅 후 네트워크에 연결되지 않습니다.</block>
+  <block id="ba931ab340d3854ea4b99e903ecc28dd" category="paragraph">이 설계에는 두 개의 iSCSI 부트 vSwitch가 사용됩니다. Cisco UCS iSCSI 부팅에는 iSCSI 부팅을 위한 별도의 vNIC가 필요합니다. 이러한 vNIC는 해당 패브릭의 iSCSI VLAN을 기본 VLAN으로 사용하며 해당 iSCSI 부트 vSwitch에 연결됩니다. 필요에 따라 새 VDS를 배포하거나 기존 VDS를 사용하여 VDS에 iSCSI 네트워크를 배포할 수도 있습니다.</block>
+  <block id="f75bfddb1eecf3b144615b95d65a7c9a" category="section-title">VM-호스트 선호도 그룹 및 규칙</block>
+  <block id="7886b5fd570cb4a0ac1afa513b8bb583" category="paragraph">두 SM-BC 사이트의 ESXi 호스트에서 가상 머신을 실행하려면 모든 ESXi 호스트가 두 사이트에서 iSCSI 데이터 저장소를 마운트해야 합니다. 두 사이트의 데이터 저장소가 모든 ESXi 호스트에 의해 올바르게 마운트된 경우 vMotion을 사용하는 모든 호스트 간에 가상 머신을 마이그레이션할 수 있으며 VM은 해당 데이터 저장소에서 생성된 모든 가상 디스크에 대한 액세스를 계속 유지할 수 있습니다.</block>
+  <block id="47255a6cccc113ca9b4b931d0052da9f" category="paragraph">로컬 데이터 저장소를 사용하는 가상 머신의 경우 가상 디스크가 원격 사이트의 호스트로 마이그레이션되면 가상 디스크에 대한 액세스가 원격으로 되어 사이트 간의 물리적 거리로 인해 읽기 작업 지연 시간이 늘어납니다. 따라서 로컬 호스트에 가상 시스템을 유지하고 사이트의 로컬 스토리지를 활용하는 것이 좋습니다.</block>
+  <block id="e1601d0972684722879adfb7a305e296" category="paragraph">VM/호스트 선호도 메커니즘을 사용하여 VM/호스트 그룹을 사용하여 특정 사이트에 있는 가상 머신 및 호스트에 대한 VM 그룹 및 호스트 그룹을 생성할 수 있습니다. VM/호스트 규칙을 사용하여 따를 VM 및 호스트에 대한 정책을 지정할 수 있습니다. 사이트 유지 관리 또는 재해 시나리오 중에 사이트 간에 가상 시스템 마이그레이션을 허용하려면 이러한 유연성을 위해 "그룹의 호스트에서 실행해야 함" 정책 사양을 사용합니다.</block>
+  <block id="b9e562fbb462b9be2f3e290d60547d73" category="paragraph">다음 스크린샷은 사이트 A와 사이트 B 호스트 및 VM에 대해 두 개의 호스트 그룹과 두 개의 VM 그룹이 생성되었음을 보여 줍니다</block>
+  <block id="01b148bd0fb942366a52b413b45d5f52" category="paragraph"><block ref="01b148bd0fb942366a52b413b45d5f52" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="38bb03bcade9630945dd6d8bcfff7dfd" category="paragraph">또한 다음 두 그림에서는 사이트 A 및 사이트 B VM이 "그룹의 호스트에서 실행해야 함" 정책을 사용하여 각 사이트의 호스트에서 실행될 수 있도록 만들어진 VM/호스트 규칙을 보여 줍니다.</block>
+  <block id="5bb0c28b54b5f67f2b7a73129cc0182f" category="paragraph"><block ref="5bb0c28b54b5f67f2b7a73129cc0182f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="282079ecc0078000644d18fca4709052" category="paragraph"><block ref="282079ecc0078000644d18fca4709052" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6bd1ed4b0ed716bf9b964ae5ea8a4397" category="section-title">vSphere HA 하트비트입니다</block>
+  <block id="172ba0f1e9e72809918e4f8b777adcd2" category="paragraph">VMware vSphere HA에는 호스트 상태 검증을 위한 하트비트 메커니즘이 있습니다. 기본 하트비트 메커니즘은 네트워킹을 통해, 보조 하트비트 메커니즘은 데이터 저장소를 통해 이루어집니다. 하트비트가 수신되지 않으면 기본 게이트웨이나 수동으로 구성된 격리 주소를 ping하여 하트비트가 네트워크에서 격리되는지 결정합니다. 데이터 저장소 하트비트의 경우 확대 클러스터에 대해 하트비트 데이터 저장소를 최소 2개에서 4개로 늘리는 것이 좋습니다.</block>
+  <block id="0323b32e97bf4ad40c68f0b32844cb6b" category="paragraph">솔루션 검증을 위해 두 개의 ONTAP 클러스터 관리 IP 주소가 격리 주소로 사용됩니다. 또한 다음 그림과 같이 값이 4인 권장 vSphere HA 고급 옵션 d.heartbeatDsPerHost가 추가되었습니다.</block>
+  <block id="6a43b8562de203cf6c04bcb09d868c1c" category="paragraph"><block ref="6a43b8562de203cf6c04bcb09d868c1c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4833f38d3ef45f44218f78ed6d010a1e" category="paragraph">하트비트 데이터 저장소의 경우 다음 그림과 같이 클러스터에서 4개의 공유 데이터 저장소를 지정하고 자동으로 보완합니다.</block>
+  <block id="beaa9bcc804e12c2597167f766b7c9aa" category="paragraph"><block ref="beaa9bcc804e12c2597167f766b7c9aa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9eb2bd2480a35c698be7fc3c56207ade" category="inline-link">vSphere HA 클러스터 생성 및 사용</block>
+  <block id="58486898b4fe52f80d7a134d74186a4c" category="inline-link">VMware vMSC(vSphere Metro Storage Cluster)</block>
+  <block id="af5299e77d937d0f90b53f5c8d31f369" category="inline-link">NetApp ONTAP with NetApp SnapMirror 비즈니스 연속성(SM-BC) 및 VMware vSphere Metro Storage Cluster(vMSC)</block>
+  <block id="fbf1a5366eed75e49cdd525f7972eadc" category="paragraph">VMware HA 클러스터 및 VMware vSphere Metro 스토리지 클러스터에 대한 추가 Best Practice와 구성은 를 참조하십시오<block ref="e1c1274de4ccc0d5560df65f90d3e6aa" category="inline-link-rx"></block>,<block ref="4f7c5688f5dfddf1590f2246102bcda0" category="inline-link-rx"></block> 및 에 대한 VMware KB를 참조하십시오<block ref="82bb4696814a89c9685efdd36751466a" category="inline-link-rx"></block>.</block>
+  <block id="04efca99cb9ed979fd07e0b0adfcd574" category="inline-link-macro">다음으로 솔루션 검증 시나리오를 살펴보겠습니다.</block>
+  <block id="3af9ad1096d1f95cac10da1c470c8ede" category="paragraph"><block ref="3af9ad1096d1f95cac10da1c470c8ede" category="inline-link-macro-rx"></block></block>
+  <block id="276f6adc3fdf9f6540c8de077b236afa" category="summary">높은 수준의 FlexPod SM-BC 솔루션은 두 개의 FlexPod 시스템으로 구성되어 있으며, 서로 연결되고 서로 연결되어 어느 정도 거리가 떨어져 있는 두 개의 사이트에 배치되어 사이트 장애 시에도 무중단 업무 운영을 제공할 수 있는 가용성이 높고 유연성이 뛰어나며 신뢰성이 높은 데이터 센터 솔루션을 제공합니다.</block>
+  <block id="9af5ccbc39ef9aaa593f52b2f61e513b" category="doc">FlexPod SM-BC 솔루션</block>
+  <block id="d6ea02e137d772bf4a6d50ea64e92259" category="paragraph"><block ref="d6ea02e137d772bf4a6d50ea64e92259" category="inline-link-macro-rx"></block></block>
+  <block id="30ff361479db216fbf25e9b5d21572e5" category="paragraph">FlexPod SM-BC 솔루션을 구축하기 위해 두 개의 새로운 FlexPod 인프라를 구축할 뿐만 아니라, SM-BC와 호환되는 두 개의 기존 FlexPod 인프라에 솔루션을 구축하거나 기존 FlexPod와 함께 새로운 FlexPod를 추가하여 구축할 수도 있습니다.</block>
+  <block id="e2b7862864feaaf0fc2ab902c6d5c536" category="paragraph">FlexPod SM-BC 솔루션의 두 FlexPod 시스템은 구성에서 동일하지 않아도 됩니다. 그러나 두 ONTAP 클러스터는 두 AFF 시스템 또는 두 ASA 시스템 중 하나의 스토리지 제품군이어야 하지만 반드시 동일한 하드웨어 모델이 아니어야 합니다. SM-BC 솔루션은 FAS 시스템을 지원하지 않습니다.</block>
+  <block id="22f7bbb4f3ccb6be869f61075736a37f" category="paragraph">두 FlexPod 사이트는 솔루션 대역폭과 서비스 품질 요구 사항을 충족하는 네트워크 연결이 필요하며, ONTAP SM-BC 솔루션에서 요구하는 대로 사이트 간 라운드 트립 지연 시간이 10밀리초(10ms) 미만입니다. 이 FlexPod SM-BC 솔루션 검증을 위해 두 FlexPod 사이트는 동일한 실험실에서 확장된 Layer-2 네트워크를 통해 상호 연결됩니다.</block>
+  <block id="50479180c763aab6165404a4ab431c12" category="paragraph">NetApp ONTAP SM-BC 솔루션은 두 NetApp 스토리지 클러스터 간에 동기식 복제를 제공하여 캠퍼스 또는 도심 지역에서 고가용성 및 재해 복구를 지원합니다. 세 번째 사이트에 구축된 ONTAP 중재자가 솔루션을 모니터링하고 사이트 재해 시 자동 페일오버를 지원합니다. 다음 그림은 솔루션 구성 요소에 대한 개략적인 보기를 제공합니다.</block>
+  <block id="88e2670c42a759ff89cc5580aa14c867" category="paragraph"><block ref="88e2670c42a759ff89cc5580aa14c867" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="61f2be6cbf24e7c92dc2edfb8f2fb54d" category="paragraph">FlexPod SM-BC 솔루션을 사용하면 VMware vSphere 기반 프라이빗 클라우드를 분산형의 통합 인프라에 구축할 수 있습니다. 통합 솔루션을 사용하면 여러 사이트를 단일 솔루션 인프라로 통합하여 다양한 단일 장애 지점 및 전체 사이트 장애로부터 데이터 서비스를 보호할 수 있습니다.</block>
+  <block id="f70547bb7e90203dfbd186b062251235" category="paragraph">이 기술 보고서에서는 FlexPod SM-BC 솔루션의 일부 엔드 투 엔드 설계 고려 사항을 중점적으로 다룹니다. 실무자는 다양한 FlexPod CVD 및 NVA에서 사용 가능한 정보를 참조하여 FlexPod 솔루션 구현 세부정보를 추가로 받는 것이 좋습니다.</block>
+  <block id="ee8a8d1c326a758e8bbce6904b954221" category="paragraph">이 솔루션은 CVD에 문서화된 FlexPod 모범 사례를 기반으로 두 개의 FlexPod 시스템을 구축하여 검증되었지만, SM-BC 솔루션의 요구사항을 고려합니다. 이 보고서에 설명된 구축된 FlexPod SM-BC 솔루션은 다양한 장애 시나리오 및 시뮬레이션된 사이트 장애 시나리오 중에 복구 성능 및 내결함성을 검증했습니다.</block>
+  <block id="5f95fbda20eeb9ce0859afe2ac6f42fa" category="section-title">솔루션 요구 사항</block>
+  <block id="d55296f4b026e62a918241b622da3019" category="paragraph">FlexPod SM-BC 솔루션은 다음과 같은 주요 요구 사항을 충족하도록 설계되었습니다.</block>
+  <block id="9301701eb20799a5377cbb244546c8bf" category="list-text">전체 데이터 센터(사이트)에 장애가 발생할 경우 비즈니스 크리티컬 애플리케이션 및 데이터 서비스를 위한 비즈니스 연속성</block>
+  <block id="418c9ae18f07098eebf00a990e90f160" category="list-text">데이터 센터 간에 워크로드 이동성을 통해 유연하고 분산된 워크로드 배치</block>
+  <block id="cfa5ddb0c2614aae7bad0ecc332e80bd" category="list-text">정상 운영 중에 동일한 데이터 센터 사이트에서 가상 머신 데이터에 로컬로 액세스하는 사이트 친화성</block>
+  <block id="b849aa70383a86467dc914361535be70" category="list-text">사이트 장애 발생 시 데이터 손실 없이 빠른 복구</block>
+  <block id="7e897f23ed71aef1c0a8acf1ae54e9e4" category="section-title">솔루션 구성 요소</block>
+  <block id="ff5962f66a546cab0b5c1d09acdc96bf" category="section-title">Cisco 컴퓨팅 구성 요소</block>
+  <block id="0fddfe4f687bfe7be984708ccac8ea1e" category="paragraph">Cisco UCS는 통합 컴퓨팅 인프라로 통합 컴퓨팅 리소스, 통합 패브릭 및 통합 관리를 제공합니다. 기업에서는 이 솔루션을 사용하여 가상화 및 베어 메탈 워크로드를 비롯한 애플리케이션의 구축을 자동화하고 가속화할 수 있습니다. Cisco UCS는 원격 및 지점, 데이터 센터 및 하이브리드 클라우드 사용 사례를 비롯한 광범위한 구축 사용 사례를 지원합니다. 특정 솔루션 요구 사항에 따라 FlexPod Cisco 컴퓨팅 구현은 다양한 범위의 구성 요소를 사용할 수 있습니다. 다음 하위 섹션에서는 UCS 구성요소 중 일부에 대한 추가 정보를 제공합니다.</block>
+  <block id="1c1324773aa16af39308c092452bba66" category="section-title">UCS 서버 및 컴퓨팅 노드</block>
+  <block id="cbf2c961915d245c5bc4dbe6e9f03e9f" category="paragraph">다음 그림은 UCS C-Series 랙 서버, B-Series 블레이드 서버가 포함된 UCS 5108 섀시, X-Series 컴퓨팅 노드가 포함된 새로운 UCS X9508 섀시 등 UCS 서버 구성요소의 예를 보여줍니다. Cisco UCS C-Series 랙 서버는 1개 및 2개의 랙 유닛(RU) 폼 팩터, Intel 및 AMD CPU 기반 모델, 다양한 CPU 속도 및 코어, 메모리, I/O 옵션으로 제공됩니다. Cisco UCS B-Series 블레이드 서버와 새로운 X-Series 컴퓨팅 노드를 다양한 CPU, 메모리 및 I/O 옵션과 함께 사용할 수도 있으며, 이러한 모든 기능을 FlexPod 아키텍처에서 지원하여 다양한 비즈니스 요구사항을 충족합니다.</block>
+  <block id="b151b6585232af32237f041490ff3138" category="paragraph"><block ref="b151b6585232af32237f041490ff3138" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="67dfbae173a16bb9b4212febac631ca3" category="paragraph">이 그림에 표시된 최신 세대 C220/C225/C240/C245 M6 랙 서버, B200 M6 블레이드 서버 및 X210c 컴퓨팅 노드 외에도 이전 세대의 랙 및 블레이드 서버가 계속 지원되는 경우에도 사용할 수 있습니다.</block>
+  <block id="137da4195668819859d586a01dedf130" category="section-title">I/O 모듈 및 지능형 패브릭 모듈</block>
+  <block id="d1716f8ac396e71d8e8e6994441c7da8" category="paragraph">I/O 모듈(IOM)/Fabric Extender 및 IFM(Intelligent Fabric Module)은 각각 Cisco UCS 5108 블레이드 서버 섀시 및 Cisco UCS X9508 X 시리즈 섀시에 대한 통합 패브릭 연결을 제공합니다.</block>
+  <block id="da6bb411d50f863cf84182075f1567fa" category="paragraph">4세대 UCS IOM 2408에는 UCS 5108 섀시를 패브릭 인터커넥트(FI)와 연결하기 위한 25G 통합 이더넷 포트 8개가 있습니다. 각 2408에는 미드플레인을 통해 섀시의 각 블레이드 서버에 4개의 10-G 백플레인 이더넷 연결이 있습니다.</block>
+  <block id="499454a33348a1b03fb6f906647fc1f1" category="paragraph">UCSX 9108 25G IFM에는 패브릭 상호 연결을 통해 UCS X9508 섀시의 블레이드 서버를 연결하기 위한 8개의 25-G 통합 이더넷 포트가 있습니다. 각 9108에는 X9108 섀시의 각 UCS X210c 컴퓨팅 노드에 대한 25-G 연결 4개가 있습니다. 9108 IFM은 패브릭 상호 연결과 함께 작동하여 섀시 환경을 관리합니다.</block>
+  <block id="e3602a6de7a1f5b1512e48791e0dc249" category="paragraph">다음 그림은 UCS 5108 섀시의 UCS 2408 및 이전 IOM 세대 및 X9508 섀시의 경우 9108 IFM을 보여 줍니다.</block>
+  <block id="ba5a5683193c8cbfe4814060da408c75" category="paragraph"><block ref="ba5a5683193c8cbfe4814060da408c75" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="865f1fa02c43bb64704d961f4dfdec88" category="section-title">UCS Fabric 인터커넥트</block>
+  <block id="8a3f2923cd31b679d734278ed58a2e62" category="paragraph">Cisco UCS FI(Fabric Interconnect)는 전체 Cisco UCS에 대한 연결 및 관리 기능을 제공합니다. 일반적으로 액티브/액티브 쌍으로 구축되는 이 시스템의 FI는 모든 구성 요소를 Cisco UCS Manager 또는 Cisco Intersight에서 제어하는 고가용성 단일 관리 도메인에 통합합니다. Cisco UCS FI는 단일 케이블 세트를 사용하여 LAN, SAN 및 관리 트래픽을 지원하는 짧은 지연 시간과 무손실 컷스루 스위칭을 제공하는 단일 통합 패브릭을 시스템에 제공합니다.</block>
+  <block id="f251e9c5fd5520519a13968cc733d9d3" category="paragraph">4세대 Cisco UCS FI에는 UCS FI 6454 및 64108의 두 가지 모델이 있습니다. 여기에는 10/25Gbps 이더넷 포트, 1/10/25Gbps 이더넷 포트, 40/100Gbps 이더넷 업 링크 포트, 10/25Gigabit Ethernet 또는 8/16/32Gbps 파이버 채널을 지원할 수 있는 통합 포트 등이 포함됩니다. 다음 그림은 4세대 Cisco UCS FI와 함께 지원되는 3세대 모델도 보여 줍니다.</block>
+  <block id="61ea2a31c9217928f9ea8d75cf1a2967" category="paragraph"><block ref="61ea2a31c9217928f9ea8d75cf1a2967" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="57cb5ae4f8a0ecc07803f2d384dd8fa9" category="admonition">Cisco UCS X-Series 섀시를 지원하려면 Intersight 관리 모드(IMM)로 구성된 4세대 패브릭 상호 연결이 필요합니다. 그러나 Cisco UCS 5108 B 시리즈 섀시는 IMM 모드와 UCSM 관리 모드 모두에서 지원됩니다.</block>
+  <block id="52c695853e43619847d8405057610e1e" category="admonition">UCS FI 6324는 IOM 폼 팩터를 사용하며 소형 UCS 도메인만 필요한 구축을 위해 UCS Mini 섀시에 내장되어 있습니다.</block>
+  <block id="3cacd032a25fe82301a65cf290e0040b" category="section-title">UCS 가상 인터페이스 카드</block>
+  <block id="ba382b2c0e15cf03e7aec9f9d06d324b" category="paragraph">Cisco UCS VICS(Virtual Interface Card)는 랙 및 블레이드 서버의 시스템 관리 및 LAN 및 SAN 연결을 통합합니다. vNIC(Virtual Network Interface Card) 또는 Cisco SingleConnect 기술을 사용하는 vHBA(Virtual Host Bus Adapter)로 최대 256개의 가상 장치를 지원합니다. 가상화의 결과로 VIC 카드는 네트워크 연결을 크게 간소화하고 솔루션 배포에 필요한 네트워크 어댑터, 케이블 및 스위치 포트의 수를 줄입니다. 다음 그림은 B 시리즈, C 시리즈 서버 및 X 시리즈 컴퓨팅 노드에 사용할 수 있는 일부 Cisco UCS VICS를 보여 줍니다.</block>
+  <block id="e4bd8cdd88e968cab636ac39cac6fcfd" category="paragraph"><block ref="e4bd8cdd88e968cab636ac39cac6fcfd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2ad3ddc9acd4f860fe2c398d9366d702" category="paragraph">다양한 어댑터 모델은 포트 수, 포트 속도 및 폼 팩터가 서로 다른 블레이드 및 랙 서버를 지원하며, 모듈식 MLOM(LAN on Motherboard), 메자닌 카드 및 PCIe 인터페이스를 지원합니다. 어댑터는 10/25/40/100G 이더넷 및 FCoE(Fibre Channel over Ethernet)의 일부 조합을 지원할 수 있습니다. Cisco의 CNA(Converged Network Adapter) 기술을 통합하고 종합적인 기능 세트를 지원하며 어댑터 관리 및 애플리케이션 구축을 단순화합니다. 예를 들어 VIC는 Cisco UCS 패브릭 상호 연결 포트를 가상 머신으로 확장하는 Cisco의 VM-FEX(Data Center Virtual Machine Fabric Extender) 기술을 지원하므로 서버 가상화 구축을 간소화할 수 있습니다.</block>
+  <block id="17e203aab8d4072397615b333b8f9cfc" category="paragraph">mLOM, 메자닌 및 포트 확장기 및 브리지 카드 구성에서 Cisco VIC를 결합하면 블레이드 서버에서 사용할 수 있는 대역폭과 연결을 최대한 활용할 수 있습니다. 예를 들어, X210c 컴퓨팅 노드에 대해 VIC 14825(mLOM) 및 14425(메자닌) 및 14000(브리지 카드)의 25-G 링크 2개를 사용하여 결합된 VIC 대역폭은 2 x 50-G + 2 x 50-G입니다. 또는 듀얼 IFM 구성을 사용하여 서버당 100G/IFM 및 서버당 총 200g</block>
+  <block id="8b3c2a8f703d14f1847400f765000c3b" category="inline-link">Cisco UCS</block>
+  <block id="aadc15f6998b9c88df15d3c5ca31c972" category="paragraph">Cisco UCS 제품군, 기술 사양 및 문서에 대한 자세한 내용은 를 참조하십시오<block ref="bcb0aaa6cd00f9ce97e568312fbca54f" category="inline-link-rx"></block> 웹 사이트를 참조하십시오.</block>
+  <block id="58ad6353bd749ce60542e9a1dc2da72c" category="section-title">Cisco 스위칭 구성 요소</block>
+  <block id="32d10992b210b4704a64acfc286014e5" category="paragraph">FlexPod은 Cisco Nexus 시리즈 스위치를 사용하여 Cisco UCS와 NetApp 스토리지 컨트롤러 간의 통신에 이더넷 스위칭 패브릭을 제공합니다. FlexPod 배포에는 Cisco Nexus 3000, 5000, 7000, 9000 시리즈를 비롯하여 현재 지원되는 모든 Cisco Nexus 스위치 모델이 지원됩니다.</block>
+  <block id="0eaa3c550576ab6a5a7a6f8d94d6690c" category="paragraph">FlexPod 구축을 위한 스위치 모델을 선택할 때 성능, 포트 속도, 포트 밀도, 스위칭 지연 시간, 또한 설계 목표뿐 아니라 스위치의 지원 시간(TimeSpan)을 위해 ACI 및 VXLAN과 같은 프로토콜을 지원합니다.</block>
+  <block id="febf5b21efd458dcd08118fd63bc4e23" category="paragraph">최신 FlexPod CVD에 대한 검증에서는 Nexus 9336C-FX2 및 Nexus 93180YC-FX3과 같은 Cisco Nexus 9000 시리즈 스위치를 사용합니다. 이 스위치는 고성능 40/100G 및 10//25G 포트, 짧은 지연 시간, 뛰어난 전력 효율성을 소형 1U 폼 팩터에서 제공합니다. 업링크 포트 및 브레이크아웃 케이블을 통해 추가 속도가 지원됩니다. 다음 그림은 이 검증에 사용된 Nexus 9336C-FX2 및 Nexus 3232C를 포함하여 몇 개의 Cisco Nexus 9k 및 3k 스위치를 보여줍니다.</block>
+  <block id="62975fbc145c03e0b3ee3bef4794986c" category="paragraph"><block ref="62975fbc145c03e0b3ee3bef4794986c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="00b72b9c60d99dffe6e5389480cd8ba5" category="inline-link">Cisco 데이터 센터 스위치</block>
+  <block id="a7d8e8f019be4a66106ed930b22aaf86" category="paragraph">을 참조하십시오<block ref="dd5f74353659ef96ab60875379009895" category="inline-link-rx"></block> 사용 가능한 Nexus 스위치 및 사양 및 문서에 대한 자세한 내용은</block>
+  <block id="0770fc8319897f8444acad85a7dec263" category="section-title">MDS 스위치</block>
+  <block id="7d1b814bca229019bf2699315a374bf5" category="paragraph">Cisco MDS 9100/9200/9300 시리즈 패브릭 스위치는 FlexPod 아키텍처의 선택적 구성 요소입니다. 이러한 스위치는 매우 안정적이고, 매우 유연하고, 안전하며, Fabric의 트래픽 흐름에 대한 가시성을 제공할 수 있습니다. 다음 그림에서는 애플리케이션 및 비즈니스 요구 사항을 충족하기 위해 FlexPod 솔루션을 위한 이중화된 FC SAN 패브릭을 구축하는 데 사용할 수 있는 MDS 스위치의 예를 보여 줍니다.</block>
+  <block id="1c9c2abf5a68dc60b6bd853d9db75408" category="paragraph"><block ref="1c9c2abf5a68dc60b6bd853d9db75408" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c133fcf9dd074ad5c1961f224a67c3b1" category="paragraph">Cisco MDS 9132T/9148T/9396T 고성능 32G 멀티레이어 패브릭 스위치는 비용 효율적이며 매우 안정적이고 유연하며 확장성이 뛰어납니다. 고급 스토리지 네트워킹 기능은 관리가 용이하며 전체 Cisco MDS 9000 제품군 포트폴리오와 호환되므로 안정적인 SAN 구현이 가능합니다.</block>
+  <block id="0ab60c8932ff5ce20b5435dd4ead51d2" category="paragraph">이 차세대 하드웨어 플랫폼에는 최첨단 SAN 분석 및 원격 측정 기능이 내장되어 있습니다. 프레임 헤더 검사에서 추출된 원격 측정 데이터를 Cisco Data Center Network Manager를 비롯한 분석 시각화 플랫폼으로 스트리밍할 수 있습니다. MDS 9148S와 같이 16G FC를 지원하는 MDS 스위치도 FlexPod에서 지원됩니다. 또한 FC 프로토콜 외에 FCoE 및 FCIP 프로토콜을 지원하는 MDS 9250i와 같은 멀티서비스 MDS 스위치도 FlexPod 솔루션 포트폴리오에 포함됩니다.</block>
+  <block id="538eb82bb05d5deebb7268362852c7a1" category="paragraph">9132T 및 9396T와 같은 반모듈식 MDS 스위치에서 추가 포트 확장 모듈 및 포트 라이센스를 추가하여 추가 디바이스 접속을 지원할 수 있습니다. 9148T와 같은 고정 스위치에서는 필요에 따라 포트 라이센스를 추가할 수 있습니다. 이와 같이 확장 가능한 지불 유연성을 통해 운영 비용 구성 요소를 제공하여 MDS 스위치 기반 SAN 인프라를 구축하고 운영하는 데 드는 자본 비용을 절감할 수 있습니다.</block>
+  <block id="a4a1f1ade604d49da8231eac6a2a4240" category="inline-link">Cisco MDS 패브릭 스위치</block>
+  <block id="8c3bc47cd13b79709265f1dc8f5010be" category="paragraph">을 참조하십시오<block ref="5a625fda7351d34515186d7331bfcf20" category="inline-link-rx"></block> 사용 가능한 MDS Fabric 스위치에 대한 자세한 내용은 를 참조하십시오<block ref="9276805d6b0dd5ecb28d9ad89af92eab" category="inline-link-rx"></block> 및<block ref="9663e16401acc5458c2d08f12e7ec029" category="inline-link-rx"></block> 지원되는 SAN 스위치의 전체 목록을 확인하십시오.</block>
+  <block id="dc4bc50705ba670ab0e5e3a38fb42338" category="paragraph">ONTAP 소프트웨어 9.8 이상을 실행하는 이중 NetApp AFF 또는 ASA 컨트롤러는 FlexPod SM-BC 솔루션을 생성해야 합니다. SM-BC 배포에서는 ONTAP 혁신, 성능 및 품질 향상을 지속적으로 활용하고 SM-BC 지원에 대한 최대 개체 수를 늘릴 수 있도록 현재 9.10.1인 최신 ONTAP 릴리스를 권장합니다.</block>
+  <block id="0a8b52d930014bbe307146d18b325b63" category="paragraph">업계 최고의 성능과 혁신 기능을 갖춘 NetApp AFF 및 ASA 컨트롤러는 엔터프라이즈 데이터 보호 기능과 강력한 데이터 관리 기능을 제공합니다. AFF 및 ASA 시스템은 NVMe 연결 SSD 및 NVMe over Fibre Channel(NVMe/FC) 프론트 엔드 호스트 연결을 포함한 엔드 투 엔드 NVMe 기술을 지원합니다. NVMe/FC 기반 SAN 인프라를 채택하면 워크로드 처리량을 높이고 I/O 지연 시간을 줄일 수 있습니다. 하지만 SM-BC 솔루션은 현재 iSCSI 및 FC 프로토콜만 지원하므로 NVMe/FC 기반 데이터 저장소는 SM-BC로 보호되지 않는 워크로드에 대해서만 사용할 수 있습니다.</block>
+  <block id="1fd8840850e07e757d99d362e5fdbd02" category="paragraph">NetApp AFF 및 ASA 스토리지 컨트롤러는 또한 고객이 NetApp Data Fabric에서 지원하는 원활한 데이터 이동성을 활용할 수 있도록 하이브리드 클라우드 기반을 제공합니다. Data Fabric을 사용하면 데이터가 생성되는 에지에서 코어, 사용될 코어로, 그리고 클라우드로 데이터를 쉽게 가져올 수 있습니다. 또한 온디맨드 방식으로 탄력적인 컴퓨팅 및 AI 및 ML 기능을 활용하여 비즈니스 인사이트를 얻을 수 있습니다.</block>
+  <block id="b18e01c669760da29746d740d29840d1" category="paragraph">다음 그림과 같이 NetApp은 고객의 성능 및 용량 요구사항을 충족할 수 있도록 다양한 스토리지 컨트롤러와 디스크 쉘프를 제공합니다. NetApp AFF 및 ASA 컨트롤러 기능 및 사양에 대한 자세한 내용은 다음 표를 참조하십시오.</block>
+  <block id="5307013968ce8ca68927da621ab25f67" category="paragraph"><block ref="5307013968ce8ca68927da621ab25f67" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8fcb4cf909a1e717c8e14cba12717e1d" category="cell">AFF 시리즈</block>
+  <block id="0f8dd7cba67dcc47444d804a7106cd3c" category="inline-link-macro">AFF 시리즈 문서</block>
+  <block id="15da6d8626b1765a984b122772587fc9" category="cell"><block ref="15da6d8626b1765a984b122772587fc9" category="inline-link-macro-rx"></block></block>
+  <block id="7c108156e35361e38bd149e0cd5192f0" category="cell">ASA 시리즈</block>
+  <block id="d97374ec4f5cfe9d6dc727396402521d" category="inline-link-macro">ASA 시리즈 문서</block>
+  <block id="3fc681e7694b642c59733ee9ee571332" category="cell"><block ref="3fc681e7694b642c59733ee9ee571332" category="inline-link-macro-rx"></block></block>
+  <block id="029f6f3d6d94376868a542dc9f992a86" category="inline-link">NetApp 디스크 쉘프 및 스토리지 미디어 문서</block>
+  <block id="c25fd9b70494845a20dd21814241524d" category="paragraph">을 참조하십시오<block ref="dad413ffea13e60f46bf0b7da6acba7e" category="inline-link-rx"></block> 및<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> 각 스토리지 컨트롤러 모델에 대해 디스크 쉘프 및 지원되는 디스크 쉘프에 대한 자세한 내용은 를 참조하십시오.</block>
+  <block id="8b68a94e939becf799000e74594ceec1" category="section-title">솔루션 토폴로지</block>
+  <block id="849cdcc0290877dcdcdc288864fc273f" category="paragraph">FlexPod 솔루션은 유연한 토폴로지로 다양한 솔루션 요구사항을 충족하도록 확장하거나 축소할 수 있습니다. 다음 그림과 같이 비즈니스 연속성 보호가 필요하고 최소한의 컴퓨팅 및 스토리지 리소스만 단순한 솔루션 토폴로지를 사용할 수 있습니다. 이 간단한 토폴로지에서는 추가 디스크 쉘프 없이 컨트롤러에 SSD가 있는 UCS C-Series 랙 서버와 AFF/ASA 컨트롤러를 사용합니다.</block>
+  <block id="5082a4434d976e5a6455354fa5cc6950" category="paragraph"><block ref="5082a4434d976e5a6455354fa5cc6950" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6b173d0cede30ee7d46fdfb1033b909b" category="paragraph">이중화된 컴퓨팅, 네트워크 및 스토리지 구성 요소는 구성 요소 간의 이중화 연결로 상호 연결됩니다. 고가용성 설계로 솔루션 복원력을 제공하고 단일 장애 지점 시나리오를 견딜 수 있습니다. 멀티 사이트 설계와 ONTAP SM-BC 동기식 데이터 복제 관계는 단일 사이트 스토리지 장애가 발생할 가능성에도 불구하고 비즈니스 크리티컬 데이터 서비스를 제공합니다.</block>
+  <block id="271f9b5d9a6d430b924c85d080bc4ee4" category="paragraph">데이터 센터와 대도시 지역의 지사 간에 회사에서 사용할 수 있는 비대칭 배포 토폴로지는 다음 그림과 같이 나타날 수 있습니다. 이와 같이 비대칭 설계에서는 데이터 센터에 더 많은 컴퓨팅 및 스토리지 리소스를 갖춘 고성능 FlexPod가 필요합니다. 그러나 지사 요구 사항은 더 적으며 훨씬 더 작은 FlexPod를 통해 충족할 수 있습니다.</block>
+  <block id="80eecd57b5fc9633a123b989c0b55aa5" category="paragraph"><block ref="80eecd57b5fc9633a123b989c0b55aa5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="70386b41b4b650f2b140ca020de291bd" category="paragraph">컴퓨팅 및 스토리지 리소스 요구 사항이 더 크고 사이트가 여러 개인 기업의 경우 VXLAN 기반 멀티 사이트 패브릭을 통해 여러 사이트에서 원활한 네트워크 패브릭을 통해 애플리케이션 이동성을 지원하여 모든 사이트에서 애플리케이션을 제공할 수 있습니다.</block>
+  <block id="51ccc8f1fcc2135dce8bfff469482f2d" category="paragraph">새로운 FlexPod 인스턴스로 보호해야 하는 Cisco UCS 5108 섀시 및 B-Series 블레이드 서버를 사용하는 기존 FlexPod 솔루션이 있을 수 있습니다. 새 FlexPod 인스턴스는 다음 그림과 같이 Cisco Intersight에서 관리하는 X210c 컴퓨팅 노드와 함께 최신 UCS X9508 섀시를 사용할 수 있습니다. 이 경우 각 사이트의 FlexPod 시스템은 더 큰 데이터센터 패브릭에 연결되고 사이트는 상호 연결 네트워크를 통해 연결되어 VXLAN 멀티 사이트 패브릭을 형성합니다.</block>
+  <block id="2b80351477a32cc101ae034494c3ed09" category="paragraph"><block ref="2b80351477a32cc101ae034494c3ed09" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a09b49349906a5c6fc7c466b71f682c9" category="paragraph">비즈니스 연속성을 제공하기 위해 모든 데이터를 보호해야 하는 도심 지역에 데이터 센터와 여러 지사를 둔 회사의 경우 다음 그림에 나와 있는 FlexPod SM-BC 구축 토폴로지를 구현하여 중요한 애플리케이션 및 데이터 서비스를 보호하여 모든 지점 사이트에서 제로 RPO 및 제로에 가까운 RTO 목표를 달성할 수 있습니다.</block>
+  <block id="15a42d0cf8468dfb5ad24d2529d273e4" category="paragraph"><block ref="15a42d0cf8468dfb5ad24d2529d273e4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cad73cdbb5479bd1c54e58c21c9608d6" category="paragraph">이 구축 모델을 위해 각 지사는 데이터센터와 SM-BC 관계 및 정합성 보장 그룹을 설정합니다. 지원되는 SM-BC 개체 제한을 고려해야 하므로 전반적인 일관성 그룹 관계 및 끝점 수가 데이터 센터에서 지원되는 최대값을 초과하지 않습니다.</block>
+  <block id="7a2e958fb7c5046e59035ba1726ad02b" category="inline-link-macro">다음: 솔루션 검증 개요</block>
+  <block id="3fc165d3b04f40190da4689cdf0e0853" category="paragraph"><block ref="3fc165d3b04f40190da4689cdf0e0853" category="inline-link-macro-rx"></block></block>
+  <block id="9fc7e91d0cfa196bee652e5b3ab8991b" category="doc">솔루션 검증</block>
+  <block id="29f5f58038d9fc18e3673d9f64beb81c" category="summary">이 페이지에서는 NetApp SnapMirror 비즈니스 연속성 및 ONTAP 9.10을 사용하는 FlexPod 데이터 센터 솔루션에 대해 소개합니다.</block>
+  <block id="ed7f5de9cce855ce8d22d0d26afcdfd0" category="doc">TR-4920: NetApp SnapMirror 비즈니스 연속성 및 ONTAP 9.10을 지원하는 FlexPod 데이터 센터</block>
+  <block id="b51c42078dea4cad69d330e2e65bf73e" category="paragraph">Jyh-shing Chen, NetApp</block>
+  <block id="b3a453722b38c1104de9561b33f9de2b" category="section-title">FlexPod 솔루션</block>
+  <block id="5964ddd52cd2fc9ce93694e8ae4e3014" category="paragraph">FlexPod은 Cisco와 NetApp의 다음 구성 요소를 포함하는 모범 사례 통합 인프라 데이터 센터 아키텍처입니다.</block>
+  <block id="f431b7cb714f9a8378b57b6f8ef92ab6" category="list-text">Cisco UCS(Cisco Unified Computing System)</block>
+  <block id="3584b38b025e179747a58996a30623c2" category="list-text">Cisco Nexus 및 MDS 스위치 제품군</block>
+  <block id="5c927677aae2a75bc0bce175f0d8721e" category="list-text">NetApp FAS, NetApp AFF 및 NetApp ASA(All SAN Array) 시스템</block>
+  <block id="afccd3e97cff2cb182efde52a8c9ba77" category="paragraph">다음 그림에서는 FlexPod 솔루션을 만드는 데 사용되는 일부 구성 요소를 보여 줍니다. 이러한 구성요소는 Cisco와 NetApp의 모범 사례에 따라 연결 및 구성되었으므로 다양한 엔터프라이즈 워크로드를 안심하고 실행할 수 있는 이상적인 플랫폼을 제공합니다.</block>
+  <block id="e45496f48ee3edb8aea9e00ad6f4a493" category="paragraph"><block ref="e45496f48ee3edb8aea9e00ad6f4a493" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d053a252411ec8347c2220434bc68511" category="paragraph">CVD(Cisco Validated Design) 및 NVA(NetApp Verified Architecture)의 대규모 포트폴리오를 사용할 수 있습니다. CVD 및 NVA는 모든 주요 데이터 센터 워크로드를 다루며, NetApp과 Cisco on FlexPod 솔루션 간의 지속적인 협력 및 혁신을 통해 얻은 결과입니다.</block>
+  <block id="738c77b57bbb8696160cdd1ca725a9f9" category="paragraph">FlexPod CVD 및 NVA는 제작 프로세스에서 포괄적인 테스트 및 검증을 통합했으며, 파트너와 고객이 FlexPod 솔루션을 배포하고 채택하도록 도와주는 참조 솔루션 아키텍처 설계와 단계별 배포 가이드를 제공합니다. 기업은 이러한 CVD 및 NVA를 설계 및 구현 가이드로 사용하여 위험을 줄이고 솔루션 다운타임을 줄이며 구축하는 FlexPod 솔루션의 가용성, 확장성, 유연성 및 보안을 강화할 수 있습니다.</block>
+  <block id="b36481fbcb76752b7c6862e9a567e4b6" category="paragraph">표시된 각 FlexPod 구성요소 제품군(Cisco UCS, Cisco Nexus/MDS 스위치 및 NetApp 스토리지)은 FlexPod의 구성 및 연결 모범 사례에 필요한 기능을 지원하는 동시에 인프라를 스케일업 또는 스케일다운할 수 있는 플랫폼 및 리소스 옵션을 제공합니다. 또한 FlexPod는 추가 FlexPod 스택을 롤아웃하여 일관된 다중 구축이 필요한 환경을 위해 스케일아웃할 수 있습니다.</block>
+  <block id="e4696c4718fd3cdeb771bd13a2469f6a" category="section-title">재해 복구 및 비즈니스 연속성</block>
+  <block id="36da1149b7c346ffc03a7f9be2631271" category="paragraph">기업에서 재해에 따라 애플리케이션 및 데이터 서비스를 빠르게 복구할 수 있도록 다양한 방법을 채택할 수 있습니다. DR(재해 복구) 및 BC(비즈니스 연속성) 계획을 세우고, 비즈니스 목표를 충족하는 솔루션을 구현하며, 재해 시나리오를 정기적으로 테스트하여 재해 상황이 발생한 후에도 재해를 복구하고 중요한 비즈니스 서비스를 계속할 수 있습니다.</block>
+  <block id="2974a37910d6b9a22cecf7d9cacc35d2" category="paragraph">회사마다 애플리케이션 및 데이터 서비스의 유형에 따라 DR 및 BC 요구사항이 다를 수 있습니다. 일부 애플리케이션과 데이터는 긴급 상황이나 재해 상황에서 필요하지 않을 수 있으며, 비즈니스 요구사항을 지원하기 위해 계속 사용 가능한 애플리케이션이 필요할 수도 있습니다.</block>
+  <block id="75faab0b3cb14d5bfd20e377a120804e" category="paragraph">미션 크리티컬 애플리케이션 및 데이터 서비스를 사용할 수 없을 때 비즈니스에 방해가 될 수 있는 경우, 비즈니스에 고려해야 할 유지 관리 및 재해 시나리오 유형 등의 질문에 대해 신중하게 평가해야 합니다. 재해 발생 시 기업이 손실을 감수할 수 있는 데이터의 양과 복구 시간이 얼마나 빨라야 하고 얼마나 빨리 발생해야 하는지를 나타냅니다.</block>
+  <block id="88781bc78d3ab90ea0630c4156fecc89" category="paragraph">수익 창출을 위해 데이터 서비스를 이용하는 기업의 경우 다양한 단일 장애 지점 시나리오뿐만 아니라 지속적인 비즈니스 운영을 위한 사이트 중단 재해 시나리오를 견딜 수 있는 솔루션으로 데이터 서비스를 보호해야 할 필요가 있습니다.</block>
+  <block id="27873d50d29dbb90b764c150fdc767bd" category="section-title">복구 지점 목표 및 복구 시간 목표</block>
+  <block id="16c13429b2100171458973a13f863bb9" category="paragraph">복구 지점 목표(RPO)는 손실을 감수할 수 있는 데이터의 양 또는 데이터를 복구할 수 있는 시점을 측정합니다. 일일 백업 계획을 사용하면 재해 발생 시 마지막 백업 이후 데이터 변경 사항이 손실될 수 있기 때문에 하루 동안 데이터를 손실할 수 있습니다. 비즈니스 크리티컬 및 미션 크리티컬 데이터 서비스의 경우, 데이터 손실 없이 데이터를 보호하기 위해 제로 RPO와 관련 계획 및 인프라가 필요할 수 있습니다.</block>
+  <block id="503c0362dd209631b96351a010cf6e37" category="paragraph">복구 시간 목표(RTO)는 데이터를 사용할 수 없는 상태로 유지하는 데 걸리는 시간 또는 데이터 서비스를 신속하게 백업해야 하는 시간을 측정합니다. 예를 들어, 회사의 크기로 인해 특정 데이터 집합에 기존 테이프를 사용하는 백업 및 복구 구현이 있을 수 있습니다. 따라서 백업 테이프에서 데이터를 복원하려면 인프라 오류가 발생한 경우 몇 시간이나 며칠이 걸릴 수 있습니다. 또한 시간 고려 사항에는 데이터 복원과 함께 인프라를 백업할 시간도 포함되어야 합니다. 미션 크리티컬 데이터 서비스의 경우 매우 낮은 RTO가 필요할 수 있으므로 비즈니스 연속성을 위해 데이터 서비스를 신속하게 온라인으로 전환하는 데 몇 초 또는 몇 분의 장애 조치 시간도 허용할 수 있습니다.</block>
+  <block id="152bd193ad82e78daa1aeac187780314" category="section-title">SM - BC</block>
+  <block id="c085087673f5bd7a3b0fa950792847b2" category="paragraph">ONTAP 9.8부터 NetApp SM-BC를 통해 투명한 애플리케이션 장애 조치를 위해 SAN 워크로드를 보호할 수 있습니다. 두 AFF 클러스터 간에 일관성 그룹 관계를 생성하거나 데이터 복제를 위해 두 ASA 클러스터 간에 일관성 그룹 관계를 생성하여 제로 RPO 및 제로에 가까운 RTO를 달성할 수 있습니다.</block>
+  <block id="a6c6fc6de80f2efe2880bfd79ba5a506" category="paragraph">SM-BC 솔루션은 IP 네트워크를 통해 SnapMirror Synchronous 기술을 사용하여 데이터를 복제합니다. iSCSI 또는 FC 프로토콜 기반 SAN LUN을 사용하여 애플리케이션 레벨 세분화와 자동 페일오버를 제공하여 Microsoft SQL Server, Oracle 등과 같은 비즈니스에 중요한 데이터 서비스를 보호합니다. 세 번째 사이트에 구축된 ONTAP 중재자가 SM-BC 솔루션을 모니터링하고 사이트 재해 시 자동 페일오버를 지원합니다.</block>
+  <block id="30a3c42957ac38f5bb5b42bc4f0ff852" category="paragraph">일관성 그룹(CG)은 비즈니스 연속성을 위해 보호해야 하는 애플리케이션 워크로드에 대한 쓰기 순서 일관성 보장을 제공하는 FlexVol 볼륨의 모음입니다. 특정 시점의 볼륨 컬렉션에 대해 충돌 시에도 정합성이 보장되는 Snapshot 복사본을 동시에 사용할 수 있습니다. CG 관계라고도 하는 SnapMirror 관계는 소스 CG와 대상 CG 간에 설정됩니다. CG에 속하는 것으로 선택된 볼륨 그룹은 애플리케이션 인스턴스, 애플리케이션 인스턴스 그룹 또는 전체 솔루션에 매핑할 수 있습니다. 또한 비즈니스 요구 사항 및 변경 사항에 따라 필요에 따라 SM-BC 정합성 보장 그룹 관계를 생성하거나 삭제할 수 있습니다.</block>
+  <block id="1fa08e94e60e2700844c8771baab0ea1" category="paragraph">다음 그림과 같이 일관성 그룹의 데이터는 재해 복구 및 비즈니스 연속성을 위해 두 번째 ONTAP 클러스터에 복제됩니다. 애플리케이션은 두 ONTAP 클러스터 모두에서 LUN에 연결됩니다. 일반적으로 운영 클러스터에서 I/O를 제공하고 운영 클러스터에서 재해가 발생할 경우 보조 클러스터에서 자동으로 재개합니다. SM-BC 솔루션을 설계할 때는 지원되는 한도를 초과하지 않도록 CG 관계에 대해 지원되는 오브젝트 수(예: 최대 20개의 CG 및 최대 200개의 엔드포인트)를 준수해야 합니다.</block>
+  <block id="4a7da73f847d9f12eb7e453d01604ab8" category="paragraph"><block ref="4a7da73f847d9f12eb7e453d01604ab8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="babf43012b910d7f98ae060e8f718349" category="inline-link-macro">다음: FlexPod SM-BC 솔루션</block>
+  <block id="7db90d25efb147bf4878f6fec9466170" category="paragraph"><block ref="7db90d25efb147bf4878f6fec9466170" category="inline-link-macro-rx"></block></block>
+  <block id="093a45d87b6b8692e6c9a73c1a04c137" category="doc">추가 정보 및 버전 기록을 찾을 수 있는 위치</block>
+  <block id="05a45991363cf9b2d3487c588a24c16b" category="paragraph"><block ref="05a45991363cf9b2d3487c588a24c16b" category="inline-link-macro-rx"></block></block>
+  <block id="2b700c19ef20ee180935ccd2eb7dddd1" category="list-text">FlexPod 홈 페이지</block>
+  <block id="7e2e9ba533867bc2e0337175d24205ca" category="list-text">FlexPod용 Cisco Validated Design 및 구축 가이드</block>
+  <block id="895f63a6e9912cd9f4cff1fa786be7a2" category="list-text">Cisco 서버 - UCS(Unified Computing System)</block>
+  <block id="3cd8b5fe5ca94a9fdb5caaf96875ef7e" category="inline-link"><block ref="3cd8b5fe5ca94a9fdb5caaf96875ef7e" category="inline-link-rx"></block></block>
+  <block id="6bfac05f3cc2c0adace9c385ef708fd9" category="paragraph"><block ref="6bfac05f3cc2c0adace9c385ef708fd9" category="inline-link-rx"></block></block>
+  <block id="60912794da9f465a275c0f0eb81e242c" category="list-text">UCS 관리 모드, VMware vSphere 7.0 U2 및 NetApp ONTAP 9.9에서 Cisco UCS 4.2(1)가 지원되는 FlexPod 데이터 센터 설계 가이드</block>
+  <block id="070aab031dbd1f01b07e6d74522ad4af" category="inline-link"><block ref="070aab031dbd1f01b07e6d74522ad4af" category="inline-link-rx"></block></block>
+  <block id="e865ddbce846644ac8a203fbf896a951" category="paragraph"><block ref="e865ddbce846644ac8a203fbf896a951" category="inline-link-rx"></block></block>
+  <block id="3fb886f7d378f8993086b399cbc42dfa" category="list-text">UCS 관리 모드, VMware vSphere 7.0 U2 및 NetApp ONTAP 9.9에서 Cisco UCS 4.2(1)가 지원되는 FlexPod 데이터 센터 구축 가이드</block>
+  <block id="ee94f02a3ab62318d9af06b2b2cb3991" category="inline-link"><block ref="ee94f02a3ab62318d9af06b2b2cb3991" category="inline-link-rx"></block></block>
+  <block id="ac977a73f1cb59251e7b2919b2069f41" category="paragraph"><block ref="ac977a73f1cb59251e7b2919b2069f41" category="inline-link-rx"></block></block>
+  <block id="4a8df3ad772c408338bf3b14f5fcf7b9" category="list-text">Cisco UCS X-Series, VMware 7.0 U2 및 NetApp ONTAP 9.9를 지원하는 FlexPod 데이터 센터 설계 가이드</block>
+  <block id="177190825c127fb85928d6705e05cbe9" category="inline-link"><block ref="177190825c127fb85928d6705e05cbe9" category="inline-link-rx"></block></block>
+  <block id="16c4284420fc680417cef199f93ab137" category="paragraph"><block ref="16c4284420fc680417cef199f93ab137" category="inline-link-rx"></block></block>
+  <block id="8344230dacf5765b09ccbf005c7a6ac0" category="list-text">FlexPod 데이터 센터 및 Cisco UCS X 시리즈, VMware 7.0 U2 및 NetApp ONTAP 9.9 구축 가이드</block>
+  <block id="9c4917cae82b3b77f4e5655173e8d546" category="inline-link"><block ref="9c4917cae82b3b77f4e5655173e8d546" category="inline-link-rx"></block></block>
+  <block id="27c758d585ce4e93c483fd6f6c95dddc" category="paragraph"><block ref="27c758d585ce4e93c483fd6f6c95dddc" category="inline-link-rx"></block></block>
+  <block id="04a3344cda9c34adafc53a3a845cf96e" category="list-text">FlexPod Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp AFF/FAS NVA 설계 가이드</block>
+  <block id="2eaaed414f833a584e30dd5a33d13e0c" category="paragraph"><block ref="2eaaed414f833a584e30dd5a33d13e0c" category="inline-link-rx"></block></block>
+  <block id="d32a057bfbbbc089d69a8f97ce2b63eb" category="list-text">FlexPod Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp AFF/FAS NVA 구축 가이드</block>
+  <block id="68e019739173183f72d148751f45b0c1" category="paragraph"><block ref="68e019739173183f72d148751f45b0c1" category="inline-link-rx"></block></block>
+  <block id="b316806ad7781b9ba4c7a357182173a1" category="list-text">VXLAN 멀티 사이트 프런트엔드 패브릭을 사용하는 FlexPod MetroCluster IP</block>
+  <block id="c5904944998c9d8971f82e838aa20aae" category="inline-link"><block ref="c5904944998c9d8971f82e838aa20aae" category="inline-link-rx"></block></block>
+  <block id="a9da560cfa7afb0e337b53562318198d" category="paragraph"><block ref="a9da560cfa7afb0e337b53562318198d" category="inline-link-rx"></block></block>
+  <block id="548154ef6ff2d5d9d7b0e2270128b0ab" category="inline-link"><block ref="548154ef6ff2d5d9d7b0e2270128b0ab" category="inline-link-rx"></block></block>
+  <block id="c433b7eb50bc88ded8f9c48135130e28" category="paragraph"><block ref="c433b7eb50bc88ded8f9c48135130e28" category="inline-link-rx"></block></block>
+  <block id="f7080908d8b268ad04ad99671289ee7a" category="inline-link"><block ref="f7080908d8b268ad04ad99671289ee7a" category="inline-link-rx"></block></block>
+  <block id="3df26ff7ed45549c7227d7c11ac64481" category="paragraph"><block ref="3df26ff7ed45549c7227d7c11ac64481" category="inline-link-rx"></block></block>
+  <block id="df7b6f99cac600ea13a6b3d9bda08e5f" category="inline-link"><block ref="df7b6f99cac600ea13a6b3d9bda08e5f" category="inline-link-rx"></block></block>
+  <block id="643be86208528436ffbb2e32c951a9e9" category="paragraph"><block ref="643be86208528436ffbb2e32c951a9e9" category="inline-link-rx"></block></block>
+  <block id="1989c908909050dc1f8610bb560fecba" category="list-text">TR-4878: SM-BC(SnapMirror 비즈니스 연속성) ONTAP 9.8</block>
+  <block id="9038a93557de432fcfaca71342a59971" category="inline-link"><block ref="9038a93557de432fcfaca71342a59971" category="inline-link-rx"></block></block>
+  <block id="841e048e22838f566123911f3e0be2b3" category="paragraph"><block ref="841e048e22838f566123911f3e0be2b3" category="inline-link-rx"></block></block>
+  <block id="6a3ced0e806303d25bd9470e394e3916" category="list-text">SnapMirror 관계 ONTAP 9를 올바르게 삭제하는 방법</block>
+  <block id="7ae5f66d4ce65a0584b430cf8358e94f" category="inline-link"><block ref="7ae5f66d4ce65a0584b430cf8358e94f" category="inline-link-rx"></block></block>
+  <block id="15f6ac2f75a004ac74fc2bf633751d77" category="paragraph"><block ref="15f6ac2f75a004ac74fc2bf633751d77" category="inline-link-rx"></block></block>
+  <block id="58749e1fa46114aab2056041133a84b9" category="list-text">SnapMirror Synchronous 재해 복구 기본 사항</block>
+  <block id="9d44e2e91088d41a986c68b35e7addb1" category="inline-link"><block ref="9d44e2e91088d41a986c68b35e7addb1" category="inline-link-rx"></block></block>
+  <block id="1726ceb383554e9feadccf93460453d4" category="paragraph"><block ref="1726ceb383554e9feadccf93460453d4" category="inline-link-rx"></block></block>
+  <block id="882884d52fb8d922c4576ca62aa00f6f" category="list-text">비동기식 SnapMirror 재해 복구 기본 사항</block>
+  <block id="94e1d7d3198aa2c25d5656bb140edbcc" category="inline-link"><block ref="94e1d7d3198aa2c25d5656bb140edbcc" category="inline-link-rx"></block></block>
+  <block id="15a8e730a99ac3951725ec26a2303de8" category="paragraph"><block ref="15a8e730a99ac3951725ec26a2303de8" category="inline-link-rx"></block></block>
+  <block id="03c39d763ca15978d9ef16c2ba5fe98a" category="list-text">데이터 보호 및 재해 복구</block>
+  <block id="e708f30d18e0c35946ecf377308668ea" category="inline-link"><block ref="e708f30d18e0c35946ecf377308668ea" category="inline-link-rx"></block></block>
+  <block id="e23356d1f27b95964905abe3ede1030b" category="paragraph"><block ref="e23356d1f27b95964905abe3ede1030b" category="inline-link-rx"></block></block>
+  <block id="71a38375f76a7ed87f8e28fa9645d356" category="list-text">ONTAP 중재자 서비스를 설치하거나 업그레이드합니다</block>
+  <block id="e38e35c79a69f1b3454bc51321bf3046" category="inline-link"><block ref="e38e35c79a69f1b3454bc51321bf3046" category="inline-link-rx"></block></block>
+  <block id="247926d418ad56ee7198494c45019659" category="paragraph"><block ref="247926d418ad56ee7198494c45019659" category="inline-link-rx"></block></block>
+  <block id="21e41f19959ca7dea2ba5cf3729eeb5d" category="section-title">VMware vSphere HA 및 vSphere Metro Storage Cluster를 지원합니다</block>
+  <block id="ae37e8baa68245d9d2c894d2da1bab32" category="inline-link"><block ref="ae37e8baa68245d9d2c894d2da1bab32" category="inline-link-rx"></block></block>
+  <block id="33add6e3cb0eb6498644cf9001f98fd5" category="paragraph"><block ref="33add6e3cb0eb6498644cf9001f98fd5" category="inline-link-rx"></block></block>
+  <block id="de8402faa342fc9625bdaa3961573a1b" category="inline-link"><block ref="de8402faa342fc9625bdaa3961573a1b" category="inline-link-rx"></block></block>
+  <block id="eda0ad9ec468bbcaad6eca5eb6ef6925" category="paragraph"><block ref="eda0ad9ec468bbcaad6eca5eb6ef6925" category="inline-link-rx"></block></block>
+  <block id="d50e63b9f70efedde8dc093be8ec12b2" category="list-text">VMware vSphere Metro Storage Cluster 권장 사례</block>
+  <block id="9e211a0ec0ebb7c473ed61cbc37819a8" category="inline-link"><block ref="9e211a0ec0ebb7c473ed61cbc37819a8" category="inline-link-rx"></block></block>
+  <block id="734feebed99ef4959e1522728f6dbd8a" category="paragraph"><block ref="734feebed99ef4959e1522728f6dbd8a" category="inline-link-rx"></block></block>
+  <block id="c912dc73def9e5758eb6e130fd3b21ee" category="list-text">NetApp ONTAP with NetApp SnapMirror SM-BC(Business Continuity) with VMware vSphere Metro Storage Cluster(vMSC). (83370)</block>
+  <block id="e42e1f7327a67ae6a4439a303fc9c81d" category="inline-link"><block ref="e42e1f7327a67ae6a4439a303fc9c81d" category="inline-link-rx"></block></block>
+  <block id="077317c6b779e004e75e33d28168bab8" category="paragraph"><block ref="077317c6b779e004e75e33d28168bab8" category="inline-link-rx"></block></block>
+  <block id="0fb53f6fd950dbb18a8f27d8735f5ed7" category="list-text">VMware vSphere Metro Storage Cluster 및 ONTAP를 사용하여 계층 1 애플리케이션과 데이터베이스를 보호합니다</block>
+  <block id="1fb0c828050c8732d84945ca6ded7c37" category="inline-link"><block ref="1fb0c828050c8732d84945ca6ded7c37" category="inline-link-rx"></block></block>
+  <block id="7105f117d2822e18aa8b108416306262" category="paragraph"><block ref="7105f117d2822e18aa8b108416306262" category="inline-link-rx"></block></block>
+  <block id="c0ff01bc62a5fd31ba0e537030243f17" category="section-title">Microsoft SQL 및 HammerDB</block>
+  <block id="f6d2c8f6c5f57ce5542457131b856e66" category="list-text">Microsoft SQL Server 2019</block>
+  <block id="a0ce43473bf333ef719887f309aa1a01" category="inline-link"><block ref="a0ce43473bf333ef719887f309aa1a01" category="inline-link-rx"></block></block>
+  <block id="4f04e1cba6b79808453a88555b1b8b9c" category="paragraph"><block ref="4f04e1cba6b79808453a88555b1b8b9c" category="inline-link-rx"></block></block>
+  <block id="ced5bb365341602e07a076509e79d013" category="list-text">VMware vSphere 기반 Microsoft SQL Server 설계 Best Practices Guide를 참조하십시오</block>
+  <block id="0e3bf5e326af487aef0404982ac6b6bd" category="inline-link"><block ref="0e3bf5e326af487aef0404982ac6b6bd" category="inline-link-rx"></block></block>
+  <block id="f46bc0bb92b41bfe04d99b9ecc22fb8d" category="paragraph"><block ref="f46bc0bb92b41bfe04d99b9ecc22fb8d" category="inline-link-rx"></block></block>
+  <block id="9a7ba451c083642a4249fcb908d1e675" category="list-text">HammerDB 웹 사이트</block>
+  <block id="2275bc8a958a9046b4c1fb9447a632cd" category="inline-link"><block ref="2275bc8a958a9046b4c1fb9447a632cd" category="inline-link-rx"></block></block>
+  <block id="b6529ced98949d9a27cefcb6c236e24e" category="paragraph"><block ref="b6529ced98949d9a27cefcb6c236e24e" category="inline-link-rx"></block></block>
+  <block id="2827ebfd09192aa78e8ebf5fc1e5b769" category="section-title">호환성 매트릭스</block>
+  <block id="18c8dc765719dd560c9a80ef03cf87e2" category="inline-link"><block ref="18c8dc765719dd560c9a80ef03cf87e2" category="inline-link-rx"></block></block>
+  <block id="864917b1ac2563708daec0b6fb665d8b" category="paragraph"><block ref="864917b1ac2563708daec0b6fb665d8b" category="inline-link-rx"></block></block>
+  <block id="0cf6fdc2108556d64f002f7b2bff8700" category="inline-link"><block ref="0cf6fdc2108556d64f002f7b2bff8700" category="inline-link-rx"></block></block>
+  <block id="373f063717834529bc600f08b98fc66c" category="paragraph"><block ref="373f063717834529bc600f08b98fc66c" category="inline-link-rx"></block></block>
+  <block id="cbb9a6e025db26e6e93575dee2958256" category="paragraph">NetApp SnapMirror 비즈니스 연속성(SM-BC) 및 ONTAP 9.10 솔루션을 지원하는 FlexPod 데이터 센터는 단일 장애 지점 시나리오와 함께 사이트 장애 시나리오로부터 비즈니스 크리티컬 데이터를 보호합니다. 이 기술 보고서에서는 FlexPod SM-BC 솔루션 및 솔루션 구성 요소에 대해 간략하게 설명하고 솔루션의 일부 구성 및 검증 측면을 중점적으로 다룹니다.</block>
+  <block id="11d56047eb2c0edaf57e943fb8e6a2af" category="summary">FlexPod SM-BC 솔루션의 스토리지 구성은 각 사이트의 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. SM-BC 클러스터 피어링과 데이터 복제의 경우 두 사이트의 FlexPod 스위치 간에 설정된 사이트 간 링크를 사용합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다.</block>
+  <block id="d996e1a7c19a3c614597fe3d017735e3" category="doc">솔루션 검증 - 스토리지</block>
+  <block id="a5c83135920d14aae2bfd3bb752f5726" category="inline-link-macro">이전: 솔루션 검증 - 개요.</block>
+  <block id="41b051617d64484449db4f9e8900e50c" category="paragraph"><block ref="41b051617d64484449db4f9e8900e50c" category="inline-link-macro-rx"></block></block>
+  <block id="06a162921ff2263e0d2871473d84695c" category="paragraph">로컬 UCS FI 및 블레이드 서버에 대한 스토리지 연결은 로컬 사이트의 Nexus 스위치를 통해 제공됩니다. 사이트 간 Nexus 스위치 연결을 통해 원격 UCS 블레이드 서버에서도 스토리지에 액세스할 수 있습니다. 다음 그림과 표에서는 스토리지 연결 다이어그램과 각 사이트의 스토리지 컨트롤러에 대한 연결 목록을 보여 줍니다.</block>
+  <block id="8d5a21ecdaacb7041f30f1ec08f09734" category="paragraph"><block ref="8d5a21ecdaacb7041f30f1ec08f09734" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cfde5efedf8c38f0dabe7dd36607a381" category="section-title">연결 및 인터페이스</block>
+  <block id="e5676954a0640c487fa545ebf76683c3" category="paragraph">각 스토리지 컨트롤러의 물리적 포트 2개가 각 Nexus 스위치에 연결되어 대역폭 애그리게이션 및 이중화를 위해 제공됩니다. 이러한 4개의 접속은 스토리지의 인터페이스 그룹 구성에 포함됩니다. Nexus 스위치의 해당 포트는 링크 집선 및 복원력에 대한 vPC에 사용됩니다.</block>
+  <block id="9cbd0bfae1c6b1fd16d45c202ec7079d" category="paragraph">대역 내 관리, 클러스터 간 및 NFS/iSCSI 데이터 스토리지 프로토콜은 VLAN을 사용합니다. VLAN 포트는 인터페이스 그룹에 생성되어 다른 유형의 트래픽을 분리합니다. 각 기능에 대한 논리 인터페이스(LIF)는 해당 VLAN 포트 위에 생성됩니다. 다음 그림에서는 물리적 연결, 인터페이스 그룹, VLAN 포트 및 논리 인터페이스 간의 관계를 보여 줍니다.</block>
+  <block id="e54c07bea9f9ec56e70f7617e6655e0a" category="paragraph"><block ref="e54c07bea9f9ec56e70f7617e6655e0a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a0cbdd0f9fa2b6b926f068804645359d" category="paragraph">FlexPod 솔루션에서 Cisco UCS 서버용 SAN 부트를 구현하는 것이 좋습니다. SAN 부팅을 구현하면 NetApp 스토리지 시스템 내에서 운영 체제를 안전하게 보호할 수 있으므로 더 나은 성능과 유연성을 얻을 수 있습니다. 이 솔루션의 경우 iSCSI SAN 부팅이 검증되었습니다.</block>
+  <block id="28d253d13551c6a1fdcd21944f3d5cca" category="paragraph">다음 그림은 NetApp 스토리지에서 Cisco UCS 서버의 iSCSI SAN 부팅에 대한 연결을 보여 줍니다. iSCSI SAN 부팅에서 각 Cisco UCS 서버에는 서버에서 스토리지까지 모두 이중화된 연결을 제공하는 2개의 iSCSI vNIC(각 SAN 패브릭당 1개)가 할당됩니다. Nexus 스위치에 연결된 10/25-G 이더넷 스토리지 포트(이 예에서는 E1A, e1b, e1c 및 e1d)는 함께 그룹화하여 하나의 인터페이스 그룹(ifgrp)을 구성합니다(이 예에서는 a0a). iSCSI VLAN 포트는 ifgrp에서 생성되며 iSCSI VLAN 포트에서 iSCSI LIF가 생성됩니다.</block>
+  <block id="cb41f38ec7e49697e0d27007ac150944" category="paragraph">각 iSCSI 부트 LUN은 부트 igroup에서 부트 LUN을 서버의 IQN(iSCSI 정규화된 이름)과 연결하여 iSCSI LIF를 통해 부팅되는 서버에 매핑됩니다. 서버의 부팅 igroup에는 각 vNIC/SAN 패브릭마다 하나씩 두 개의 IQN이 포함되어 있습니다. 이 기능을 사용하면 권한이 부여된 서버만 해당 서버에 대해 특별히 생성된 부팅 LUN에 액세스할 수 있습니다.</block>
+  <block id="55ac8f95de03dae63e773cf18fa9e42c" category="paragraph"><block ref="55ac8f95de03dae63e773cf18fa9e42c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fa823ae2ebe162d7679db67051dbcec5" category="section-title">클러스터 피어링</block>
+  <block id="5523ee15c7f11760b1c12c909bb93f73" category="paragraph">ONTAP 클러스터 피어는 인터클러스터 LIF를 통해 통신합니다. ONTAP System Manager를 사용하여 두 클러스터에 대해 보호 &gt; 개요 창에서 필요한 인터클러스터 LIF를 만들 수 있습니다.</block>
+  <block id="2ef037e6fd3215a5e5f43453eb38fd9f" category="paragraph"><block ref="2ef037e6fd3215a5e5f43453eb38fd9f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3994219c5d8592586d602006783ccde8" category="paragraph">두 클러스터를 함께 클러스터하려면 다음 단계를 완료하십시오.</block>
+  <block id="418040e7ecd8f332fdbb7c9d2e17c503" category="list-text">첫 번째 클러스터에서 클러스터 피어링 암호를 생성합니다.</block>
+  <block id="d7482f3c9d6aeec74e75962e8dd48e9b" category="paragraph"><block ref="d7482f3c9d6aeec74e75962e8dd48e9b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f0a4d0b4aa8a7b2219a12713ede495a" category="list-text">두 번째 클러스터에서 피어 클러스터 옵션을 호출하고 암호 구문 및 인터클러스터 LIF 정보를 제공합니다.</block>
+  <block id="8ebe8c770968c184503552f19042f546" category="paragraph"><block ref="8ebe8c770968c184503552f19042f546" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6e6e55dbd232503db3d7ce09f1d55067" category="list-text">System Manager 보호 &gt; 개요 창에 클러스터 피어 정보가 표시됩니다.</block>
+  <block id="c340f73561a220e105229294aa9d0139" category="paragraph"><block ref="c340f73561a220e105229294aa9d0139" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0ef91273109acbed8effcf5b1be24116" category="section-title">ONTAP 중재자 설치 및 구성</block>
+  <block id="bd32fe592cad4acb8313af5687a61387" category="paragraph">ONTAP 중재자가 SM-BC 관계에서 ONTAP 클러스터에 대한 쿼럼을 설정합니다. 장애가 감지되면 자동 장애 조치를 조정하고 각 클러스터가 동시에 기본 클러스터로 제어를 설정하려고 할 때 브레인 분할 시나리오를 방지하는 데 도움이 됩니다.</block>
+  <block id="f3d138059c90d7379267d72988cf023b" category="paragraph">ONTAP 중재자를 설치하기 전에 을 확인하십시오<block ref="8286668f8f150ad8639fad5d717953b0" category="inline-link-rx"></block> 사전 요구 사항, 지원되는 Linux 버전 및 지원되는 다양한 Linux 운영 체제에 설치하는 절차를 보려면 페이지를 참조하십시오.</block>
+  <block id="ad580b3d90a601ed6970a73155cceef1" category="paragraph">ONTAP 중재자를 설치한 후 ONTAP 클러스터에 ONTAP 중재자의 보안 인증서를 추가한 다음 System Manager 보호 &gt; 개요 창에서 ONTAP 중재자를 구성할 수 있습니다. 다음 스크린샷은 ONTAP 중재자 구성 GUI를 보여 줍니다.</block>
+  <block id="a3c3465ab2f22395f2c552ae6d0faee7" category="paragraph"><block ref="a3c3465ab2f22395f2c552ae6d0faee7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="276ec2da41abd62121ae9d50c680f9f2" category="paragraph">필요한 정보를 제공하면 구성된 ONTAP 중재자가 시스템 관리자 보호 &gt; 개요 창에 나타납니다.</block>
+  <block id="476d6e2be625e9f0b52f2fa23edac311" category="paragraph"><block ref="476d6e2be625e9f0b52f2fa23edac311" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="91396f32084a9998cb0143b6427a9e1c" category="section-title">SM-BC 정합성 보장 그룹</block>
+  <block id="6fe78c84732eb9b36fc9158ee16ef46f" category="paragraph">정합성 보장 그룹은 지정된 볼륨 컬렉션을 포함하는 애플리케이션 워크로드에 대해 쓰기 순서 정합성을 보장합니다. ONTAP 9.10.1의 경우 몇 가지 중요한 제한 사항과 제한 사항이 있습니다.</block>
+  <block id="78352ff4c785a1d0437f0fc1e1c67ceb" category="list-text">클러스터에서 SM-BC 정합성 보장 그룹 관계의 최대 수는 20개입니다.</block>
+  <block id="43d4069eb239ba838fc082850887f934" category="list-text">SM-BC 관계당 지원되는 최대 볼륨 수는 16개입니다.</block>
+  <block id="d76bce2b9d2e4187054b98c5d875cbff" category="list-text">클러스터의 총 소스 및 대상 엔드포인트의 최대 수는 200개입니다.</block>
+  <block id="f129f10b239e6d4050491901be3a8a29" category="inline-link">제한 및 제한 사항</block>
+  <block id="05e4b2d9ec40019e07ce6bde5ed92eb5" category="paragraph">자세한 내용은 의 ONTAP SM-BC 설명서를 참조하십시오<block ref="2b9ee9e7077ed59597a8e36380145b36" category="inline-link-rx"></block>.</block>
+  <block id="6b7d2b918d790ac901761dcac7291c41" category="paragraph">검증 구성의 경우 ONTAP System Manager를 사용하여 정합성 보장 그룹을 생성하여 ESXi 부팅 LUN과 두 사이트의 공유 데이터 저장소 LUN을 모두 보호했습니다. 정합성 보장 그룹 생성 대화 상자는 보호 &gt; 개요 &gt; 무중단 업무 운영 보호 &gt; 정합성 보장 그룹 보호 로 이동하여 액세스할 수 있습니다. 정합성 보장 그룹을 생성하려면 필요한 소스 볼륨, 대상 클러스터 및 대상 스토리지 가상 머신 정보를 생성하여 생성합니다.</block>
+  <block id="d07f3b4d4b8a441b456537ec163ed5af" category="paragraph"><block ref="d07f3b4d4b8a441b456537ec163ed5af" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5d7e4c0a4f8aebc3ece496af69e138ce" category="paragraph">다음 표에는 검증 테스트를 위해 생성된 4개의 정합성 보장 그룹과 각 정합성 보장 그룹에 포함된 볼륨이 나와 있습니다.</block>
+  <block id="26ed02718973e705cd69ee6e109400e0" category="cell">시스템 관리자</block>
+  <block id="ae9e13b66877a85be97724063f459ec2" category="cell">일관성 그룹</block>
+  <block id="564a95e2696af68aa1c3a4953ecd1ce9" category="cell">사이트 A</block>
+  <block id="ba1ebd1e1e2245fa87263eda5dba5471" category="cell">CG_ESXi_A</block>
+  <block id="ba53713f8e79803793a4194009c5ebf7" category="cell">ESXi_A</block>
+  <block id="2cd730287a3329495c24f79df61c62fd" category="cell">cg_infra_datastore_a입니다</block>
+  <block id="70b3634f10ae5a6bf44eb1bf8ba96d2b" category="cell">infra_datastore_A_01 infra_datastore_A_02</block>
+  <block id="bb713afeab82bcb45a45d3cc1411e3eb" category="cell">사이트 B</block>
+  <block id="fdf8707b5db2d54d9a74aef7ae263c20" category="cell">CG_ESXi_b입니다</block>
+  <block id="45a2db8a4219a462f57d6e7ab58147df" category="cell">ESXi_b</block>
+  <block id="6da1db591917cf5fc22ae3ce17b426f6" category="cell">cg_infra_datastore_b입니다</block>
+  <block id="fe1d4fc67faf81ca96cd377b1fcf913a" category="cell">infra_datastore_b_01 infra_datastore_b_02</block>
+  <block id="c509a982b5d03a70dd249079a1b9778d" category="paragraph">일관성 그룹이 생성된 후에는 사이트 A 및 사이트 B의 해당 보호 관계 아래에 표시됩니다</block>
+  <block id="b70bea0f1a6d707e69c6b7c9d4edb42b" category="paragraph">이 스크린샷은 사이트 A의 일관성 그룹 관계를 보여 줍니다</block>
+  <block id="e3c14bd2eb264e172c1d8d0b4e6ca18d" category="paragraph"><block ref="e3c14bd2eb264e172c1d8d0b4e6ca18d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="546972fb4d05b96ea4543b38bd362780" category="paragraph">이 스크린샷은 사이트 B의 일관성 그룹 관계를 보여 줍니다</block>
+  <block id="81fda0bef41eea0774ec8eafd653e1aa" category="paragraph"><block ref="81fda0bef41eea0774ec8eafd653e1aa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8a91f7851ff41198009931e0638b682e" category="paragraph">이 스크린샷은 CG_infra_datastore_b 그룹에 대한 정합성 보장 그룹 관계 세부 정보를 보여 줍니다.</block>
+  <block id="a0e6bfc59ba895e9122ebfb6462a1ac4" category="paragraph"><block ref="a0e6bfc59ba895e9122ebfb6462a1ac4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bd413320f29058521b15e80d18cebd3b" category="section-title">볼륨, LUN 및 호스트 매핑</block>
+  <block id="6564ddd31817f3c2ca6e76c4634dd89d" category="paragraph">일관성 그룹이 생성되고 나면 SnapMirror는 소스 볼륨과 타겟 볼륨을 동기화하여 데이터가 항상 동기화될 수 있도록 합니다. 원격 사이트의 대상 볼륨은 _ dest가 끝나는 볼륨 이름을 전달합니다. 예를 들어 사이트 A 클러스터의 ESXi_A 볼륨의 경우 사이트 B에 해당하는 ESXi_A_dest 데이터 보호(DP) 볼륨이 있습니다</block>
+  <block id="c6e12ac81b9fdfe7758da0cedec13578" category="paragraph">이 스크린샷은 사이트 A의 볼륨 정보를 보여 줍니다</block>
+  <block id="85ac4d8dafd13306e842035ab093815b" category="paragraph"><block ref="85ac4d8dafd13306e842035ab093815b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f414a5a361a296288e3479f40a488be5" category="paragraph">이 스크린샷은 사이트 B의 볼륨 정보를 보여 줍니다</block>
+  <block id="1dec3a6773b283635108af7e39c2ea93" category="paragraph"><block ref="1dec3a6773b283635108af7e39c2ea93" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30c2d0e3e8f3be4a108053cf24dc5f53" category="paragraph">투명한 애플리케이션 페일오버를 지원하기 위해 미러링된 SM-BC LUN도 대상 클러스터의 호스트에 매핑되어야 합니다. 이를 통해 호스트는 소스 클러스터와 대상 클러스터 모두에서 LUN에 대한 경로를 올바르게 볼 수 있습니다. 사이트 A와 사이트 B의 "igroup show" 및 "lun show" 출력은 다음 두 스크린샷에서 캡처됩니다. 생성된 매핑에서 클러스터의 각 ESXi 호스트는 고유한 SAN 부팅 LUN을 ID 0으로, 4개의 모든 공유 iSCSI 데이터 저장소 LUN으로 인식합니다.</block>
+  <block id="c85dcc7a58bce2a7b09436fe6df63c20" category="paragraph">이 스크린샷은 사이트 A 클러스터의 호스트 igroup 및 LUN 매핑을 보여 줍니다.</block>
+  <block id="70454f7d864dcb1bcd98ae914297eb70" category="paragraph"><block ref="70454f7d864dcb1bcd98ae914297eb70" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="edd1aecfd23dac52aaa6864e47531f66" category="paragraph">이 스크린샷은 사이트 B 클러스터에 대한 호스트 igroup 및 LUN 매핑을 보여 줍니다.</block>
+  <block id="816e6c704d1dad7cb3a94e32c2da8ffe" category="paragraph"><block ref="816e6c704d1dad7cb3a94e32c2da8ffe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bac8b52ac8113098f074ef33a0441eb1" category="inline-link-macro">다음: 솔루션 검증 - 가상화.</block>
+  <block id="aa81b985470b358604c301c837d7c91b" category="paragraph"><block ref="aa81b985470b358604c301c837d7c91b" category="inline-link-macro-rx"></block></block>
+  <block id="c1d535c9a4692514b630f09f40f0b0dc" category="sidebar">NetApp SnapMirror 비즈니스 연속성 및 ONTAP 9.10이 설치된 FlexPod 데이터 센터</block>
+  <block id="097c7979ec41d500c7beaecba9d80bfd" category="sidebar">검증된 시나리오</block>
 </blocks>

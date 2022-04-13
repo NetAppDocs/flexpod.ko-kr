@@ -5,6 +5,7 @@ keywords: flexpod, epic, directional, sizing, solution, benefits, scope
 summary: '이 기술 보고서에서는 Epic EHR(Electronic Health Record) 애플리케이션 소프트웨어 환경에 대한 FlexPod(NetApp 스토리지 및 Cisco Unified Computing System)의 사이징 지침을 제공합니다.' 
 ---
 = FlexPod for Epic 방향 사이징 가이드
+:allow-uri-read: 
 
 
 Brian O'mahony, Ganesh Kamath, Atil Bhalodia, NetApp Mike Brennan, Jon Ebmeier, Cisco의

@@ -6,6 +6,7 @@ summary: 'Epic은 GenationIO 툴(Genio)을 사용하여 스토리지를 운영 �
 ---
 = 테스트 방법론
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

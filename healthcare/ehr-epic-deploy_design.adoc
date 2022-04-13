@@ -6,6 +6,7 @@ summary: 'FlexPod for Epic의 아키텍처는 Epic, Cisco, NetApp의 지침과 �
 ---
 = 설계
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

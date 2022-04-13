@@ -6,6 +6,7 @@ summary:
 ---
 = FlexPod 플랫폼
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

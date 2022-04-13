@@ -6,6 +6,7 @@ summary: FlexPod 참조 아키텍처는 Cisco Validated Design 또는 NetApp Ver
 ---
 = 프로그램 요약
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

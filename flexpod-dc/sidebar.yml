@@ -2,6 +2,31 @@
 section: flexpod-dc
 title: FlexPod 데이터 센터
 entries:
+- title: NetApp SnapMirror 비즈니스 연속성 및 ONTAP 9.10이 설치된 FlexPod 데이터 센터
+  type: solutions
+  entries:
+  - title: 소개
+    url: "/flexpod-dc/sm-bcs-introduction.html"
+  - title: FlexPod SM-BC 솔루션
+    url: "/flexpod-dc/sm-bcs-flexpod-sm-bc-solution.html"
+  - title: 솔루션 검증
+    entries:
+    - title: 개요
+      url: "/flexpod-dc/sm-bcs-solution-validation_overview.html"
+    - title: 컴퓨팅
+      url: "/flexpod-dc/sm-bcs-compute.html"
+    - title: 네트워크
+      url: "/flexpod-dc/sm-bcs-network.html"
+    - title: 스토리지
+      url: "/flexpod-dc/sm-bcs-storage.html"
+    - title: 포함되었습니다
+      url: "/flexpod-dc/sm-bcs-virtualization.html"
+    - title: 검증된 시나리오
+      url: "/flexpod-dc/sm-bcs-validated-scenarios.html"
+  - title: 결론
+    url: "/flexpod-dc/sm-bcs-conclusion.html"
+  - title: 추가 정보 및 버전 기록을 찾을 수 있는 위치
+    url: "/flexpod-dc/sm-bcs-where-to-find-additional-information-and-version-history.html"
 - title: VMware vSphere 7.0, Cisco VXLAN 단일 사이트 패브릭 및 NetApp ONTAP 9.7 설계 가이드를 지원하는
     FlexPod 데이터 센터
   url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi70_vxlan_evpn_design.html

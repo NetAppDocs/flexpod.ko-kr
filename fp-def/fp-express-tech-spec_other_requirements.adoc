@@ -6,6 +6,7 @@ summary: FlexPod Express에 대한 추가 요구 사항은 다음과 같습니�
 ---
 = 기타 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

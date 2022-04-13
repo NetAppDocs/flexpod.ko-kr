@@ -1,0 +1,201 @@
+---
+sidebar: sidebar 
+permalink: flexpod-dc/sm-bcs-storage.html 
+keywords: connectivity, connections, interfaces, san boot, cluster peering, ONTAP Mediator, sm-bc consistency group, volumes, luns, host mappings 
+summary: FlexPod SM-BC 솔루션의 스토리지 구성은 각 사이트의 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. SM-BC 클러스터 피어링과 데이터 복제의 경우 두 사이트의 FlexPod 스위치 간에 설정된 사이트 간 링크를 사용합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다. 
+---
+= 솔루션 검증 - 스토리지
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:sm-bcs-solution-validation_overview.html["이전: 솔루션 검증 - 개요."]
+
+FlexPod SM-BC 솔루션의 스토리지 구성은 각 사이트의 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. SM-BC 클러스터 피어링과 데이터 복제의 경우 두 사이트의 FlexPod 스위치 간에 설정된 사이트 간 링크를 사용합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다.
+
+
+
+== 연결성
+
+로컬 UCS FI 및 블레이드 서버에 대한 스토리지 연결은 로컬 사이트의 Nexus 스위치를 통해 제공됩니다. 사이트 간 Nexus 스위치 연결을 통해 원격 UCS 블레이드 서버에서도 스토리지에 액세스할 수 있습니다. 다음 그림과 표에서는 스토리지 연결 다이어그램과 각 사이트의 스토리지 컨트롤러에 대한 연결 목록을 보여 줍니다.
+
+image:sm-bcs-image22.png["오류: 그래픽 이미지가 없습니다"]
+
+|===
+| 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
+
+
+| AFF A250 A | e0c | AFF A250 B | e0c 
+
+
+|  | e0d |  | e0d 
+
+
+|  | E1A | Nexus A | 1/10/1 
+
+
+|  | e1b |  | 1/10/2 
+
+
+|  | e1c | Nexus B | 1/10/1 
+
+
+|  | e1d |  | 1/10/2 
+
+
+| AFF A250 B | e0c | AFF A250 A | e0c 
+
+
+|  | e0d |  | e0d 
+
+
+|  | E1A | Nexus A | 1/10/3 
+
+
+|  | e1b |  | 1/10/4 
+
+
+|  | e1c | Nexus B | 1/10/3 
+
+
+|  | e1d |  | 1/10/4 
+|===
+
+
+== 연결 및 인터페이스
+
+각 스토리지 컨트롤러의 물리적 포트 2개가 각 Nexus 스위치에 연결되어 대역폭 애그리게이션 및 이중화를 위해 제공됩니다. 이러한 4개의 접속은 스토리지의 인터페이스 그룹 구성에 포함됩니다. Nexus 스위치의 해당 포트는 링크 집선 및 복원력에 대한 vPC에 사용됩니다.
+
+대역 내 관리, 클러스터 간 및 NFS/iSCSI 데이터 스토리지 프로토콜은 VLAN을 사용합니다. VLAN 포트는 인터페이스 그룹에 생성되어 다른 유형의 트래픽을 분리합니다. 각 기능에 대한 논리 인터페이스(LIF)는 해당 VLAN 포트 위에 생성됩니다. 다음 그림에서는 물리적 연결, 인터페이스 그룹, VLAN 포트 및 논리 인터페이스 간의 관계를 보여 줍니다.
+
+image:sm-bcs-image23.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== SAN 부팅
+
+FlexPod 솔루션에서 Cisco UCS 서버용 SAN 부트를 구현하는 것이 좋습니다. SAN 부팅을 구현하면 NetApp 스토리지 시스템 내에서 운영 체제를 안전하게 보호할 수 있으므로 더 나은 성능과 유연성을 얻을 수 있습니다. 이 솔루션의 경우 iSCSI SAN 부팅이 검증되었습니다.
+
+다음 그림은 NetApp 스토리지에서 Cisco UCS 서버의 iSCSI SAN 부팅에 대한 연결을 보여 줍니다. iSCSI SAN 부팅에서 각 Cisco UCS 서버에는 서버에서 스토리지까지 모두 이중화된 연결을 제공하는 2개의 iSCSI vNIC(각 SAN 패브릭당 1개)가 할당됩니다. Nexus 스위치에 연결된 10/25-G 이더넷 스토리지 포트(이 예에서는 E1A, e1b, e1c 및 e1d)는 함께 그룹화하여 하나의 인터페이스 그룹(ifgrp)을 구성합니다(이 예에서는 a0a). iSCSI VLAN 포트는 ifgrp에서 생성되며 iSCSI VLAN 포트에서 iSCSI LIF가 생성됩니다.
+
+각 iSCSI 부트 LUN은 부트 igroup에서 부트 LUN을 서버의 IQN(iSCSI 정규화된 이름)과 연결하여 iSCSI LIF를 통해 부팅되는 서버에 매핑됩니다. 서버의 부팅 igroup에는 각 vNIC/SAN 패브릭마다 하나씩 두 개의 IQN이 포함되어 있습니다. 이 기능을 사용하면 권한이 부여된 서버만 해당 서버에 대해 특별히 생성된 부팅 LUN에 액세스할 수 있습니다.
+
+image:sm-bcs-image24.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 클러스터 피어링
+
+ONTAP 클러스터 피어는 인터클러스터 LIF를 통해 통신합니다. ONTAP System Manager를 사용하여 두 클러스터에 대해 보호 > 개요 창에서 필요한 인터클러스터 LIF를 만들 수 있습니다.
+
+image:sm-bcs-image25.png["오류: 그래픽 이미지가 없습니다"]
+
+두 클러스터를 함께 클러스터하려면 다음 단계를 완료하십시오.
+
+. 첫 번째 클러스터에서 클러스터 피어링 암호를 생성합니다.
++
+image:sm-bcs-image26.png["오류: 그래픽 이미지가 없습니다"]
+
+. 두 번째 클러스터에서 피어 클러스터 옵션을 호출하고 암호 구문 및 인터클러스터 LIF 정보를 제공합니다.
++
+image:sm-bcs-image27.png["오류: 그래픽 이미지가 없습니다"]
+
+. System Manager 보호 > 개요 창에 클러스터 피어 정보가 표시됩니다.
++
+image:sm-bcs-image28.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+
+
+== ONTAP 중재자 설치 및 구성
+
+ONTAP 중재자가 SM-BC 관계에서 ONTAP 클러스터에 대한 쿼럼을 설정합니다. 장애가 감지되면 자동 장애 조치를 조정하고 각 클러스터가 동시에 기본 클러스터로 제어를 설정하려고 할 때 브레인 분할 시나리오를 방지하는 데 도움이 됩니다.
+
+ONTAP 중재자를 설치하기 전에 을 확인하십시오 https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"^] 사전 요구 사항, 지원되는 Linux 버전 및 지원되는 다양한 Linux 운영 체제에 설치하는 절차를 보려면 페이지를 참조하십시오.
+
+ONTAP 중재자를 설치한 후 ONTAP 클러스터에 ONTAP 중재자의 보안 인증서를 추가한 다음 System Manager 보호 > 개요 창에서 ONTAP 중재자를 구성할 수 있습니다. 다음 스크린샷은 ONTAP 중재자 구성 GUI를 보여 줍니다.
+
+image:sm-bcs-image29.png["오류: 그래픽 이미지가 없습니다"]
+
+필요한 정보를 제공하면 구성된 ONTAP 중재자가 시스템 관리자 보호 > 개요 창에 나타납니다.
+
+image:sm-bcs-image30.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== SM-BC 정합성 보장 그룹
+
+정합성 보장 그룹은 지정된 볼륨 컬렉션을 포함하는 애플리케이션 워크로드에 대해 쓰기 순서 정합성을 보장합니다. ONTAP 9.10.1의 경우 몇 가지 중요한 제한 사항과 제한 사항이 있습니다.
+
+* 클러스터에서 SM-BC 정합성 보장 그룹 관계의 최대 수는 20개입니다.
+* SM-BC 관계당 지원되는 최대 볼륨 수는 16개입니다.
+* 클러스터의 총 소스 및 대상 엔드포인트의 최대 수는 200개입니다.
+
+
+자세한 내용은 의 ONTAP SM-BC 설명서를 참조하십시오 https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_additional_restrictions_and_limitations.html["제한 및 제한 사항"^].
+
+검증 구성의 경우 ONTAP System Manager를 사용하여 정합성 보장 그룹을 생성하여 ESXi 부팅 LUN과 두 사이트의 공유 데이터 저장소 LUN을 모두 보호했습니다. 정합성 보장 그룹 생성 대화 상자는 보호 > 개요 > 무중단 업무 운영 보호 > 정합성 보장 그룹 보호 로 이동하여 액세스할 수 있습니다. 정합성 보장 그룹을 생성하려면 필요한 소스 볼륨, 대상 클러스터 및 대상 스토리지 가상 머신 정보를 생성하여 생성합니다.
+
+image:sm-bcs-image31.png["오류: 그래픽 이미지가 없습니다"]
+
+다음 표에는 검증 테스트를 위해 생성된 4개의 정합성 보장 그룹과 각 정합성 보장 그룹에 포함된 볼륨이 나와 있습니다.
+
+|===
+| 시스템 관리자 | 일관성 그룹 | 볼륨 
+
+
+| 사이트 A | CG_ESXi_A | ESXi_A 
+
+
+| 사이트 A | cg_infra_datastore_a입니다 | infra_datastore_A_01 infra_datastore_A_02 
+
+
+| 사이트 B | CG_ESXi_b입니다 | ESXi_b 
+
+
+| 사이트 B | cg_infra_datastore_b입니다 | infra_datastore_b_01 infra_datastore_b_02 
+|===
+일관성 그룹이 생성된 후에는 사이트 A 및 사이트 B의 해당 보호 관계 아래에 표시됩니다
+
+이 스크린샷은 사이트 A의 일관성 그룹 관계를 보여 줍니다
+
+image:sm-bcs-image32.png["오류: 그래픽 이미지가 없습니다"]
+
+이 스크린샷은 사이트 B의 일관성 그룹 관계를 보여 줍니다
+
+image:sm-bcs-image33.png["오류: 그래픽 이미지가 없습니다"]
+
+이 스크린샷은 CG_infra_datastore_b 그룹에 대한 정합성 보장 그룹 관계 세부 정보를 보여 줍니다.
+
+image:sm-bcs-image34.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 볼륨, LUN 및 호스트 매핑
+
+일관성 그룹이 생성되고 나면 SnapMirror는 소스 볼륨과 타겟 볼륨을 동기화하여 데이터가 항상 동기화될 수 있도록 합니다. 원격 사이트의 대상 볼륨은 _ dest가 끝나는 볼륨 이름을 전달합니다. 예를 들어 사이트 A 클러스터의 ESXi_A 볼륨의 경우 사이트 B에 해당하는 ESXi_A_dest 데이터 보호(DP) 볼륨이 있습니다
+
+이 스크린샷은 사이트 A의 볼륨 정보를 보여 줍니다
+
+image:sm-bcs-image35.png["오류: 그래픽 이미지가 없습니다"]
+
+이 스크린샷은 사이트 B의 볼륨 정보를 보여 줍니다
+
+image:sm-bcs-image36.png["오류: 그래픽 이미지가 없습니다"]
+
+투명한 애플리케이션 페일오버를 지원하기 위해 미러링된 SM-BC LUN도 대상 클러스터의 호스트에 매핑되어야 합니다. 이를 통해 호스트는 소스 클러스터와 대상 클러스터 모두에서 LUN에 대한 경로를 올바르게 볼 수 있습니다. 사이트 A와 사이트 B의 "igroup show" 및 "lun show" 출력은 다음 두 스크린샷에서 캡처됩니다. 생성된 매핑에서 클러스터의 각 ESXi 호스트는 고유한 SAN 부팅 LUN을 ID 0으로, 4개의 모든 공유 iSCSI 데이터 저장소 LUN으로 인식합니다.
+
+이 스크린샷은 사이트 A 클러스터의 호스트 igroup 및 LUN 매핑을 보여 줍니다.
+
+image:sm-bcs-image37.png["오류: 그래픽 이미지가 없습니다"]
+
+이 스크린샷은 사이트 B 클러스터에 대한 호스트 igroup 및 LUN 매핑을 보여 줍니다.
+
+image:sm-bcs-image38.png["오류: 그래픽 이미지가 없습니다"]
+
+link:sm-bcs-virtualization.html["다음: 솔루션 검증 - 가상화."]

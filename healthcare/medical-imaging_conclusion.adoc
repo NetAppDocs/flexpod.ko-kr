@@ -6,6 +6,7 @@ summary: 의료 기관은 FlexPod에서 의료 영상 환경을 실행하여 직
 ---
 = 결론
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

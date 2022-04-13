@@ -6,6 +6,7 @@ summary: FlexPod 데이터 센터 구성에는 스위치, 패브릭 인터커넥
 ---
 = 최소 하드웨어 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

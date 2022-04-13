@@ -6,6 +6,7 @@ summary: 소프트웨어 8.4.x가 포함된 Cisco MDS 9000 시리즈 플랫폼�
 ---
 = FlexPod Cisco 네트워킹 및 FIPS 140-2
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

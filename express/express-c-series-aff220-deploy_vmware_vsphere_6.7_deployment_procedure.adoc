@@ -6,6 +6,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7을 설치
 ---
 = VMware vSphere 6.7 구축 절차
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

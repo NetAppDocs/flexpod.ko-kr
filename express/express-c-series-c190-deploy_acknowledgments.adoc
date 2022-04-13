@@ -6,6 +6,7 @@ summary: 저자는 John George가 이 설계에 대한 지원과 기여에 대�
 ---
 = 감사의 말
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

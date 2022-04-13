@@ -6,6 +6,7 @@ summary: Tiering-Minimum-Cooling-Days 설정은 자동 또는 스냅샷 전용 �
 ---
 = 볼륨 계층화 최소 냉각 일 수 설정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

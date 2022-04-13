@@ -6,6 +6,7 @@ summary: NetApp은 다양한 하드웨어, 소프트웨어 및 서비스를 제�
 ---
 = FlexPod NetApp ONTAP 스토리지 및 FIPS 140-2
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

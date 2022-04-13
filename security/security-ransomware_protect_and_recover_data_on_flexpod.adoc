@@ -6,6 +6,7 @@ summary: 이 섹션에서는 공격 발생 시 최종 사용자의 데이터를 
 ---
 = FlexPod에서 데이터 보호 및 복구
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

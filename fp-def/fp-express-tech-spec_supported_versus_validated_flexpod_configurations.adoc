@@ -6,6 +6,7 @@ summary: 'FlexPod 아키텍처는 이 문서에 설명된 규칙 집합으로 �
 ---
 = 지원되는 구성과 검증된 FlexPod 구성 비교
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

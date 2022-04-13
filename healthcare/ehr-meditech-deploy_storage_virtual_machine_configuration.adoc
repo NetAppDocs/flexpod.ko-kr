@@ -6,6 +6,7 @@ summary: 이 섹션은 ONTAP 8.3 이상 버전에 구축하는 방법을 다룹�
 ---
 = 스토리지 가상 머신 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

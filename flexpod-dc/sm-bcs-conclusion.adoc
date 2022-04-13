@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: flexpod-dc/sm-bcs-conclusion.html 
+keywords: conclusion 
+summary: SM-BC가 포함된 FlexPod 데이터 센터는 액티브-액티브 데이터 센터 설계를 사용하여 비즈니스 크리티컬 워크로드에 비즈니스 연속성 및 재해 복구를 제공합니다. 일반적으로 이 솔루션은 Metro 지역에 지리적으로 분산된 별도의 위치에 구축된 두 데이터 센터를 서로 연결합니다. NetApp SM-BC 솔루션은 동기식 복제를 사용하여 사이트 장애로부터 비즈니스 크리티컬 데이터 서비스를 보호합니다. 이 솔루션을 사용하려면 두 개의 FlexPod 배포 사이트에 10밀리초 미만의 라운드 트립 네트워크 지연 시간이 있어야 합니다. 
+---
+= 결론
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:sm-bcs-validated-scenarios.html["이전: 솔루션 검증 시나리오."]
+
+SM-BC가 포함된 FlexPod 데이터 센터는 액티브-액티브 데이터 센터 설계를 사용하여 비즈니스 크리티컬 워크로드에 비즈니스 연속성 및 재해 복구를 제공합니다. 일반적으로 이 솔루션은 Metro 지역에 지리적으로 분산된 별도의 위치에 구축된 두 데이터 센터를 서로 연결합니다. NetApp SM-BC 솔루션은 동기식 복제를 사용하여 사이트 장애로부터 비즈니스 크리티컬 데이터 서비스를 보호합니다. 이 솔루션을 사용하려면 두 개의 FlexPod 배포 사이트에 10밀리초 미만의 라운드 트립 네트워크 지연 시간이 있어야 합니다.
+
+세 번째 사이트에 구축된 NetApp ONTAP 중재자가 SM-BC 솔루션을 모니터링하고 사이트 재해가 탐지될 때 자동 페일오버를 지원합니다. VMware HA 및 VMware vSphere Metro Storage Cluster 구성을 지원하는 VMware vCenter는 NetApp SM-BC와 원활하게 연동되므로 원하는 제로 RPO 및 제로에 가까운 RTO 목표를 충족할 수 있습니다.
+
+FlexPod SM-BC 솔루션은 기존 FlexPod 인프라스트럭처에서 요구 사항을 충족하는 경우 또는 기존 FlexPod에 FlexPod 솔루션을 추가하여 비즈니스 연속성 목표를 달성할 수도 있습니다. NetApp과 Cisco는 Cisco Intersight, Ansible, HashCorp Terraform 기반 자동화 등의 추가 관리, 모니터링 및 자동화 툴을 사용하여 솔루션을 쉽게 모니터링하고 운영에 대한 통찰력을 확보하며 구축 및 운영을 자동화할 수 있습니다.
+
+Microsoft SQL Server와 같은 비즈니스에 중요한 애플리케이션의 관점에서 볼 때 ONTAP SM-BC CG 관계에 의해 보호되는 VMware 데이터 저장소에 상주하는 데이터베이스는 사이트 스토리지 중단이 발생해도 계속 사용할 수 있습니다. 검증 테스트 중에 확인된 바와 같이, 데이터베이스가 상주하는 스토리지 클러스터의 정전이 발생한 후 SM-BC CG 관계의 페일오버가 발생하고 Microsoft SQL Server 트랜잭션이 애플리케이션 중단 없이 재개됩니다.
+
+애플리케이션의 세분화된 데이터 보호를 통해 비즈니스 크리티컬 애플리케이션에 ONTAP SM-BC CG 관계를 생성하여 제로 RPO 및 제로에 가까운 RTO 요구사항을 충족할 수 있습니다. 따라서 Microsoft SQL Server 애플리케이션이 실행 중인 VMware 클러스터가 사이트 스토리지 가동 중단 시에도 유지될 수 있도록 각 사이트에 있는 ESXi 호스트의 부팅 LUN도 SM-BC CG 관계에 의해 보호됩니다.
+
+FlexPod의 유연성과 확장성을 활용하면 비즈니스 요구사항의 변화에 따라 성장 및 발전할 수 있는 적절한 규모의 인프라로 시작할 수 있습니다. 이 검증된 설계를 통해 분산된 통합 인프라에 VMware vSphere 기반 프라이빗 클라우드를 안정적으로 구축할 수 있으므로, 많은 단일 장애 지점 시나리오에 대한 복원력과 중요 비즈니스 데이터 서비스를 보호하지 못하는 사이트 장애 복구 기능을 갖춘 솔루션을 제공할 수 있습니다.
+
+link:sm-bcs-where-to-find-additional-information-and-version-history.html["다음: 추가 정보 및 버전 기록을 찾을 위치."]

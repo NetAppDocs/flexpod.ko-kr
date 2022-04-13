@@ -6,6 +6,7 @@ summary:
 ---
 = 테스트 결과
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

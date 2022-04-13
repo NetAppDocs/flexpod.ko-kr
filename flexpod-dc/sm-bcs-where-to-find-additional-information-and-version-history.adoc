@@ -1,0 +1,187 @@
+---
+sidebar: sidebar 
+permalink: flexpod-dc/sm-bcs-where-to-find-additional-information-and-version-history.html 
+keywords:  
+summary:  
+---
+= 추가 정보 및 버전 기록을 찾을 수 있는 위치
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:sm-bcs-conclusion.html["이전: 결론."]
+
+이 문서에 설명된 정보에 대해 자세히 알아보려면 다음 문서 및/또는 웹 사이트를 검토하십시오.
+
+
+
+== FlexPod
+
+* FlexPod 홈 페이지
++
+https://www.flexpod.com["https://www.flexpod.com"^]
+
+* FlexPod용 Cisco Validated Design 및 구축 가이드
++
+https://www.cisco.com/c/en/us/solutions/design-zone/data-center-design-guides/flexpod-design-guides.html["https://www.cisco.com/c/en/us/solutions/design-zone/data-center-design-guides/flexpod-design-guides.html"^]
+
+* Cisco 서버 - UCS(Unified Computing System)
++
+https://www.cisco.com/c/en/us/products/servers-unified-computing/index.html["https://www.cisco.com/c/en/us/products/servers-unified-computing/index.html"^]
+
+* NetApp 제품 설명서
++
+https://www.netapp.com/support-and-training/documentation/["https://www.netapp.com/support-and-training/documentation/"^]
+
+* UCS 관리 모드, VMware vSphere 7.0 U2 및 NetApp ONTAP 9.9에서 Cisco UCS 4.2(1)가 지원되는 FlexPod 데이터 센터 설계 가이드
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_m6_esxi7u2_design.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_m6_esxi7u2_design.html"^]
+
+* UCS 관리 모드, VMware vSphere 7.0 U2 및 NetApp ONTAP 9.9에서 Cisco UCS 4.2(1)가 지원되는 FlexPod 데이터 센터 구축 가이드
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_m6_esxi7u2.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_m6_esxi7u2.html"^]
+
+* Cisco UCS X-Series, VMware 7.0 U2 및 NetApp ONTAP 9.9를 지원하는 FlexPod 데이터 센터 설계 가이드
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_xseries_esxi7u2_design.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_xseries_esxi7u2_design.html"^]
+
+* FlexPod 데이터 센터 및 Cisco UCS X 시리즈, VMware 7.0 U2 및 NetApp ONTAP 9.9 구축 가이드
++
+https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_xseries_vmware_7u2.html["https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_xseries_vmware_7u2.html"^]
+
+* FlexPod Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp AFF/FAS NVA 설계 가이드
++
+https://www.netapp.com/pdf.html?item=/media/22621-nva-1154-DESIGN.pdf[]
+
+* FlexPod Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp AFF/FAS NVA 구축 가이드
++
+https://www.netapp.com/pdf.html?item=/media/21938-nva-1154-DEPLOY.pdf[]
+
+* VXLAN 멀티 사이트 프런트엔드 패브릭을 사용하는 FlexPod MetroCluster IP
++
+https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/flexpod-metrocluster-ip-vxlan-multi-site-wp.pdf["https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/flexpod-metrocluster-ip-vxlan-multi-site-wp.pdf"^]
+
+* NAbox(NAbox)
++
+https://nabox.org["https://nabox.org"^]
+
+* NetApp 수집
++
+https://github.com/NetApp/harvest/releases["https://github.com/NetApp/harvest/releases"^]
+
+
+
+
+
+== SM - BC
+
+* SM - BC
++
+https://docs.netapp.com/us-en/ontap/smbc/index.html["https://docs.netapp.com/us-en/ontap/smbc/index.html"^]
+
+* TR-4878: SM-BC(SnapMirror 비즈니스 연속성) ONTAP 9.8
++
+https://www.netapp.com/pdf.html?item=/media/21888-tr-4878.pdf["https://www.netapp.com/pdf.html?item=/media/21888-tr-4878.pdf"^]
+
+* SnapMirror 관계 ONTAP 9를 올바르게 삭제하는 방법
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapMirror/How_to_correctly_delete_a_SnapMirror_relationship_ONTAP_9["https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapMirror/How_to_correctly_delete_a_SnapMirror_relationship_ONTAP_9"^]
+
+* SnapMirror Synchronous 재해 복구 기본 사항
++
+https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-synchronous-disaster-recovery-basics-concept.html["https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-synchronous-disaster-recovery-basics-concept.html"^]
+
+* 비동기식 SnapMirror 재해 복구 기본 사항
++
+https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html#data-protection-relationships"^]
+
+* 데이터 보호 및 재해 복구
++
+https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html"^]
+
+* ONTAP 중재자 서비스를 설치하거나 업그레이드합니다
++
+https://docs.netapp.com/us-en/ontap/mediator/index.html["https://docs.netapp.com/us-en/ontap/mediator/index.html"^]
+
+
+
+
+
+== VMware vSphere HA 및 vSphere Metro Storage Cluster를 지원합니다
+
+* vSphere HA 클러스터 생성 및 사용
++
+https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html"^]
+
+* VMware vMSC(vSphere Metro Storage Cluster)
++
+https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-vmsc["https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-vmsc"^]
+
+* VMware vSphere Metro Storage Cluster 권장 사례
++
+https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-recommended-practices["https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-recommended-practices"^]
+
+* NetApp ONTAP with NetApp SnapMirror SM-BC(Business Continuity) with VMware vSphere Metro Storage Cluster(vMSC). (83370)
++
+https://kb.vmware.com/s/article/83370["https://kb.vmware.com/s/article/83370"^]
+
+* VMware vSphere Metro Storage Cluster 및 ONTAP를 사용하여 계층 1 애플리케이션과 데이터베이스를 보호합니다
++
+https://community.netapp.com/t5/Tech-ONTAP-Blogs/Protect-tier-1-applications-and-databases-with-VMware-vSphere-Metro-Storage/ba-p/171636["https://community.netapp.com/t5/Tech-ONTAP-Blogs/Protect-tier-1-applications-and-databases-with-VMware-vSphere-Metro-Storage/ba-p/171636"^]
+
+
+
+
+
+== Microsoft SQL 및 HammerDB
+
+* Microsoft SQL Server 2019
++
+https://www.microsoft.com/en-us/sql-server/sql-server-2019["https://www.microsoft.com/en-us/sql-server/sql-server-2019"^]
+
+* VMware vSphere 기반 Microsoft SQL Server 설계 Best Practices Guide를 참조하십시오
++
+https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/solutions/sql-server-on-vmware-best-practices-guide.pdf["https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/solutions/sql-server-on-vmware-best-practices-guide.pdf"^]
+
+* HammerDB 웹 사이트
++
+https://www.hammerdb.com["https://www.hammerdb.com"^]
+
+
+
+
+
+== 호환성 매트릭스
+
+* Cisco UCS 하드웨어 호환성 매트릭스
++
+https://ucshcltool.cloudapps.cisco.com/public/["https://ucshcltool.cloudapps.cisco.com/public/"^]
+
+* NetApp 상호 운용성 매트릭스 툴
++
+https://support.netapp.com/matrix/["https://support.netapp.com/matrix/"^]
+
+* NetApp Hardware Universe를 참조하십시오
++
+https://hwu.netapp.com["https://hwu.netapp.com"^]
+
+* VMware 호환성 가이드 를 참조하십시오
++
+http://www.vmware.com/resources/compatibility/search.php["http://www.vmware.com/resources/compatibility/search.php"^]
+
+
+
+
+
+== 버전 기록
+
+|===
+| 버전 | 날짜 | 문서 버전 기록 
+
+
+| 버전 1.0 | 2022년 4월 | 최초 릴리스. 
+|===

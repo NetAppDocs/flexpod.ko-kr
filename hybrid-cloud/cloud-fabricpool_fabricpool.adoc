@@ -6,6 +6,7 @@ summary: 'FabricPool은 ONTAP의 하이브리드 스토리지 솔루션으로, A
 ---
 = FabricPool
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

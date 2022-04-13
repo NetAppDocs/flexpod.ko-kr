@@ -6,6 +6,7 @@ summary: NetApp 라이센스 파일을 받은 후 OnCommand System Manager로 �
 ---
 = FabricPool 라이센스를 설치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

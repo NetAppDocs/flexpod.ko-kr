@@ -6,6 +6,7 @@ summary: Cloud Insights for FlexPod를 구축하려면 다음 작업을 완료�
 ---
 = FlexPod for Cloud Insights 구축
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

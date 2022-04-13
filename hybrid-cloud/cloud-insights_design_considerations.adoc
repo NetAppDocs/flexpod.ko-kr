@@ -6,6 +6,7 @@ summary: FlexPod 데이터 센터 솔루션은 Cisco와 NetApp이 설계한 통�
 ---
 = 설계 고려 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

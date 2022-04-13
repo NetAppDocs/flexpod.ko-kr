@@ -6,6 +6,7 @@ summary: Cisco는 Epic을 구축할 때 Epic의 모범 사례에 맞게 Cisco UC
 ---
 = Epic을 위한 Cisco UCS 참조 아키텍처
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

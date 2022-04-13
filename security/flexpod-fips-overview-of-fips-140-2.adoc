@@ -6,6 +6,7 @@ summary: FIPS 140-2는 컴퓨터 및 통신 시스템의 중요한 정보를 보
 ---
 = FIPS 140-2 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

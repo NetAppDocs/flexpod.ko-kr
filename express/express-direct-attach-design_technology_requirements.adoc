@@ -5,6 +5,7 @@ keywords: requirements, hardware, software, A220, HA, VIC, B200 m5, fabric inter
 summary: FlexPod 익스프레스 시스템에는 하드웨어 및 소프트웨어 구성 요소의 조합이 필요합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 설명합니다. 
 ---
 = 기술 요구 사항
+:allow-uri-read: 
 
 
 FlexPod 익스프레스 시스템에는 하드웨어 및 소프트웨어 구성 요소의 조합이 필요합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 설명합니다.

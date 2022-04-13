@@ -6,6 +6,7 @@ summary: FlexPod 플랫폼에서 의료 애플리케이션을 실행하면 FIPS 
 ---
 = 결론
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

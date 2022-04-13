@@ -6,6 +6,7 @@ summary: 발행 당시에는 GATK 툴이 사내 GPU 기반 실행을 기본적�
 ---
 = GPU 설정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

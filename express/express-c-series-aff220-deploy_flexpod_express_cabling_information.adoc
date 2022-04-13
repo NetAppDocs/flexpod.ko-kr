@@ -6,6 +6,7 @@ summary: 이 섹션에서는 Cisco Nexus 스위치 3172P A 및 B와 NetApp AFF A
 ---
 = FlexPod Express 케이블링 정보
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

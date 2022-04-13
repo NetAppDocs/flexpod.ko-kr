@@ -6,6 +6,7 @@ summary: 랜섬웨어는 암호화 바이러스 를 기반으로 하는 맬웨�
 ---
 = TR-4802: FlexPod, 랜섬웨어에 대한 솔루션
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

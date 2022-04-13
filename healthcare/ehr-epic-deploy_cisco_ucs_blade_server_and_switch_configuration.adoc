@@ -6,6 +6,7 @@ summary: FlexPod for Epic 소프트웨어는 모든 레벨에서 내결함성을
 ---
 = Cisco UCS 블레이드 서버 및 스위치 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

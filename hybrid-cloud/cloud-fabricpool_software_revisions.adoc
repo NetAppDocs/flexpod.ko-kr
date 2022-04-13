@@ -6,6 +6,7 @@ summary: 다음 표에는 검증된 하드웨어 및 소프트웨어 버전이 �
 ---
 = 소프트웨어 개정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: flexpod-dc/sm-bcs-solution-validation_overview.html 
+keywords: validation topology, hardware, software, compute, connectivity, service, profiles, san boot, Port channel, virtual port channel 
+summary: FlexPod SM-BC 솔루션 설계 및 구현 세부사항은 특정 FlexPod 상황 구성 및 솔루션 목표에 따라 달라집니다. 일반적인 비즈니스 연속성 요구 사항이 정의된 후 FlexPod SM-BC 솔루션은 두 개의 새로운 FlexPod 시스템을 갖춘 완전히 새로운 솔루션을 구현하거나, 다른 사이트에 새 FlexPod를 추가하여 기존 FlexPod와 페어링하거나, 두 기존 FlexPod 시스템을 함께 페어링하여 생성할 수 있습니다. 
+---
+= 솔루션 검증 - 개요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:sm-bcs-flexpod-sm-bc-solution.html["이전: FlexPod SM-BC 솔루션"]
+
+FlexPod SM-BC 솔루션 설계 및 구현 세부사항은 특정 FlexPod 상황 구성 및 솔루션 목표에 따라 달라집니다. 일반적인 비즈니스 연속성 요구 사항이 정의된 후 FlexPod SM-BC 솔루션은 두 개의 새로운 FlexPod 시스템을 갖춘 완전히 새로운 솔루션을 구현하거나, 다른 사이트에 새 FlexPod를 추가하여 기존 FlexPod와 페어링하거나, 두 기존 FlexPod 시스템을 함께 페어링하여 생성할 수 있습니다.
+
+FlexPod 솔루션은 그 특성상 유연성이 뛰어나므로 지원되는 모든 FlexPod 구성과 구성 요소를 사용할 수 있습니다. 이 섹션의 나머지 부분에서는 VMware 기반 가상 인프라 솔루션에 대해 수행된 구현 검증에 대한 정보를 제공합니다. SM-BC 관련 측면을 제외하고 표준 FlexPod 구축 프로세스를 따릅니다. 일반적인 FlexPod 구현 정보에 대해서는 특정 구성에 적합한 FlexPod CVD 및 NVA를 참조하십시오.
+
+
+
+== 검증 토폴로지
+
+FlexPod SM-BC 솔루션의 검증을 위해 NetApp, Cisco 및 VMware에서 지원하는 기술 구성요소가 사용됩니다. 이 솔루션은 사이트 A의 ONTAP 9.10.1, 이중 Cisco Nexus 9336C-FX2 스위치를 실행하는 NetApp AFF A250 HA 쌍과 사이트 B의 이중 Cisco Nexus 3232C 스위치, Cisco UCS 6454 FI를 양쪽 사이트에서 모두 지원합니다. 그리고 VMware vSphere 7.0u2를 실행하고 UCS Manager 및 VMware vCenter Server에서 관리하는 각 사이트에 Cisco UCS B200 M5 서버 3개가 있습니다. 다음 그림은 사이트 A에서 실행되는 두 개의 FlexPod 시스템과 사이트 C에서 실행되는 확장된 계층 2 사이트 간 링크 및 ONTAP 중재자에 의해 연결된 사이트 B의 구성 요소 수준 솔루션 검증 토폴로지를 보여 줍니다
+
+image:sm-bcs-image16.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+== 하드웨어 및 소프트웨어
+
+다음 표에는 솔루션 검증에 사용된 하드웨어 및 소프트웨어가 나와 있습니다. Cisco, NetApp 및 VMware는 FlexPod의 특정 구현에 대한 지원을 결정하는 데 사용되는 상호 운용성 매트릭스를 보유하고 있습니다.
+
+* http://support.netapp.com/matrix/["http://support.netapp.com/matrix/"^]
+* http://www.cisco.com/web/techdoc/ucs/interoperability/matrix/matrix.html["Cisco UCS 하드웨어 및 소프트웨어 상호 운용성 툴"^]
+* http://www.vmware.com/resources/compatibility/search.php["http://www.vmware.com/resources/compatibility/search.php"^]
+
+
+|===
+| 범주 | 구성 요소 | 소프트웨어 버전 | 수량 
+
+
+| 컴퓨팅 | Cisco UCS Fabric Interconnect 6454 | 4.2(1f) | 4개(사이트당 2개) 
+
+
+|  | Cisco UCS B200 M5 서버 | 4.2(1f) | 6개(사이트당 3개) 
+
+
+|  | Cisco UCS IOM 2204XP | 4.2(1f) | 4개(사이트당 2개) 
+
+
+|  | Cisco VIC 1440(PID:UCSB-mLOM-40G-04) | 5.2(1a) | 2(사이트당 1개) 
+
+
+|  | Cisco VIC 1340(PID:UCSB-mLOM-40G-03) | 4.5(1a) | 4개(사이트당 2개) 
+
+
+| 네트워크 | Cisco Nexus 9336C-FX2 | 9.3(6) | 2(사이트 A) 
+
+
+|  | Cisco Nexus 3232C | 9.3(6) | 2(사이트 B) 
+
+
+| 스토리지 | NetApp AFF A250 | 9.10.1 | 4개(사이트당 2개) 
+
+
+|  | NetApp 시스템 관리자 | 9.10.1 | 2(사이트당 1개) 
+
+
+|  | NetApp Active IQ Unified Manager를 참조하십시오 | 9.10 | 1 
+
+
+|  | VMware vSphere용 NetApp ONTAP 툴 | 9.10 | 1 
+
+
+|  | VMware vSphere용 NetApp SnapCenter 플러그인 | 4.6 | 1 
+
+
+|  | NetApp ONTAP 중재자 | 1.3 | 1 
+
+
+|  | NAbox(NAbox) | 3.0.2 | 1 
+
+
+|  | NetApp 수집 | 21.11.1-1 | 1 
+
+
+| 포함되었습니다 | VMware ESXi | 7.0U2 | 6개(사이트당 3개) 
+
+
+|  | VMware ESXi nenic 이더넷 드라이버 | 1.0.35.0 | 6개(사이트당 3개) 
+
+
+|  | VMware vCenter를 참조하십시오 | 7.0U2 | 1 
+
+
+|  | VMware VAAI용 NetApp NFS 플러그인 | 2.0 | 6개(사이트당 3개) 
+
+
+| 테스트 중 | Microsoft Windows | 2022 | 1 
+
+
+|  | Microsoft SQL Server를 참조하십시오 | 2019년 | 1 
+
+
+|  | Microsoft SQL Server Management Studio 를 참조하십시오 | 18.10 | 1 
+
+
+|  | HammerDB | 4.3 | 1 
+
+
+|  | Microsoft Windows | 10 | 6개(사이트당 3개) 
+
+
+|  | Iometer를 표시합니다 | 1.1.0 | 6개(사이트당 3개) 
+|===
+link:sm-bcs-compute.html["다음: 솔루션 검증 - 컴퓨팅."]

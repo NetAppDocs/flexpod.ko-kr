@@ -6,6 +6,7 @@ summary: FlexPod 설계에는 전원 및 케이블 연결에 대한 최소 요�
 ---
 = 전원 및 케이블 연결 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

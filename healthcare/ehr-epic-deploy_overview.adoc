@@ -6,6 +6,7 @@ summary: 이 기술 보고서는 FlexPod 시스템에 Epic을 구축하려는 �
 ---
 = TR-4693: Epic EHR용 FlexPod 데이터 센터 구축 가이드
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

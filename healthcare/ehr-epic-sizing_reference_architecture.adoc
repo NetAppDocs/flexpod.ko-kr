@@ -6,6 +6,7 @@ summary:
 ---
 = 명확히 설명하십시오
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 'FC를 데이터 네트워크 프로토콜로 사용할 경우 각 스�
 ---
 = 이니시에이터 그룹 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

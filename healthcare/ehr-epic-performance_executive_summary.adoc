@@ -6,6 +6,7 @@ summary: NetApp은 NetApp All Flash FAS 플랫폼의 스토리지 효율성과 �
 ---
 = 핵심 요약
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

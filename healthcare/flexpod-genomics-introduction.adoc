@@ -6,6 +6,7 @@ summary: FlexPod 통합 인프라 플랫폼을 사용하는 의료 조직은 하
 ---
 = TR-4911: FlexPod 유전체학
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

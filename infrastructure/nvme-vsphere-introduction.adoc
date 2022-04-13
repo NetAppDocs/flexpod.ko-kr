@@ -6,6 +6,7 @@ summary: 이 솔루션은 FlexPod 기반의 VMware vSphere 7을 사용한 FC-NVM
 ---
 = TR-4914: Cisco UCSM, VMware vSphere 7.0 및 NetApp ONTAP 9를 사용하는 FlexPod용 엔드 투 엔드 NVMe
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

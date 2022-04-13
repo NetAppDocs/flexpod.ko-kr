@@ -6,6 +6,7 @@ summary:
 ---
 = 볼륨 계층화 정책 설정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

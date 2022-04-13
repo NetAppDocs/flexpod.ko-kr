@@ -6,6 +6,7 @@ summary: igroup을 생성하려면 클러스터 관리 노드의 SSH 연결에�
 ---
 = NetApp AFF 스토리지 구축 절차(2부)
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

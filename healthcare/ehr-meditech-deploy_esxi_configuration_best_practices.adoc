@@ -6,6 +6,7 @@ summary: ESXi 호스트 측 구성의 경우 엔터프라이즈 데이터베이�
 ---
 = ESXi 구성 Best Practice
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

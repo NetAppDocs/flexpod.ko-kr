@@ -6,6 +6,7 @@ summary: 이 섹션에서는 FlexPod 익스프레스 설계의 전원 및 최소
 ---
 = 전원 및 케이블 연결 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

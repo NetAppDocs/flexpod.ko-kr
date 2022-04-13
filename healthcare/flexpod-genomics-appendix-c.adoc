@@ -6,6 +6,7 @@ summary: 이 섹션에서는 Cromwell 엔진을 사용하여 GATK를 실행한 �
 ---
 = Cromwell 엔진을 사용하여 GATK 실행을 위한 출력
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

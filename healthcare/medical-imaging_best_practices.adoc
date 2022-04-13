@@ -6,6 +6,7 @@ summary: 이 섹션에서는 NetApp FlexPod Express 스토리지 클러스터 �
 ---
 = 모범 사례
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

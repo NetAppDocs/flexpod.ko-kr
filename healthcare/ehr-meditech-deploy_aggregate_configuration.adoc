@@ -6,6 +6,7 @@ summary: NetApp RAID DP 기술은 일반 NetApp Flash Pool 애그리게이트를
 ---
 = 애그리게이트 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

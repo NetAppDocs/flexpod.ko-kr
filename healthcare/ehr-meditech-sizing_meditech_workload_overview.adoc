@@ -6,6 +6,7 @@ summary: 이 섹션에서는 MEDITECH 환경에서 얻을 수 있는 컴퓨팅 �
 ---
 = MEDITECH 워크로드 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

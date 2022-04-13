@@ -6,6 +6,7 @@ summary: 다음 단계를 완료하여 VMware vCenter Server 6.7 및 vSphere 클
 ---
 = VMware vCenter Server 6.7 및 vSphere 클러스터링 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

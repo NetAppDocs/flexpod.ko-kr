@@ -6,6 +6,7 @@ summary: 이 섹션에서는 이 솔루션에 사용되는 솔루션 인프라 �
 ---
 = 솔루션 인프라 하드웨어 및 소프트웨어 구성 요소
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -22,7 +23,7 @@ image:flexpod-genomics-image6.png["오류: 그래픽 이미지가 없습니다"]
 
 image:flexpod-genomics-image7.png["오류: 그래픽 이미지가 없습니다"]
 
-다음 표에는 FlexPod에서 GATK 테스트 활성화 중에 사용되는 하드웨어 구성 요소가 나열되어 있습니다. 여기 가 있습니다 https://mysupport.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴"^] (IMT) 및.
+다음 표에는 FlexPod에서 GATK 테스트 활성화 중에 사용되는 하드웨어 구성 요소가 나열되어 있습니다. 여기 가 있습니다 https://mysupport.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴"^] (IMT) 및 https://ucshcltool.cloudapps.cisco.com/public/["Cisco HCL(하드웨어 호환 목록)"^].
 
 |===
 | 레이어 | 제품군 | 수량 및 모델 | 세부 정보 

@@ -6,6 +6,7 @@ summary: 이 섹션에서는 다양한 버전의 FlexPod Express에 대한 연�
 ---
 = 연결 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

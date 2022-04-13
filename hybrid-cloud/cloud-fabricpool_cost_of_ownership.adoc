@@ -6,6 +6,7 @@ summary: FabricPool 경제성 계산기는 독립적인 IT 분석 기업인 Eval
 ---
 = 소유 비용
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

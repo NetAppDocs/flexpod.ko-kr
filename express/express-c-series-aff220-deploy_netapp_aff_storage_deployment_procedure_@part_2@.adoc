@@ -6,6 +6,7 @@ summary: igroup을 생성하려면 iSCSI 이니시에이터 IQN이 필요하며 
 ---
 = NetApp AFF 스토리지 구현 절차(2부)
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

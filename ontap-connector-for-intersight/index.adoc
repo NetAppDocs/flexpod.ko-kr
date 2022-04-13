@@ -6,6 +6,7 @@ summary: NetApp과 Cisco는 협력 관계를 맺고 FlexPod 에코시스템을 �
 ---
 = Cisco Intersight with NetApp ONTAP 스토리지: 빠른 시작 가이드
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: MEDITECH 애플리케이션은 여러 모듈과 구성 요소를 포함
 ---
 = MEDITECH 모듈 및 구성 요소
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

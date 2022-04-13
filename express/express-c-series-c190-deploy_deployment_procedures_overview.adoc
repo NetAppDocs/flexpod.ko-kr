@@ -6,6 +6,7 @@ summary: 이 문서에서는 완전히 이중화된 고가용성 FlexPod Express
 ---
 = 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

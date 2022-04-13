@@ -6,6 +6,7 @@ summary: MEDITECH 호스트 전용 MEDITECH 볼륨은 일반 또는 씬 프로�
 ---
 = 볼륨 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

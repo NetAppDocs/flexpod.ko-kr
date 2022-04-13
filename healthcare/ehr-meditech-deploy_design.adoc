@@ -6,6 +6,7 @@ summary: MEDITECH용 FlexPod의 아키텍처는 MEDITECH, Cisco 및 NetApp의 �
 ---
 = 설계
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

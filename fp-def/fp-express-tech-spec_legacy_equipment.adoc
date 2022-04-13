@@ -6,6 +6,7 @@ summary: 이 섹션에는 NetApp의 기존 디스크 쉘프, FAS 컨트롤러 �
 ---
 = 레거시 장비
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: FlexPod 익스프레스 시스템에는 하드웨어 및 소프트웨�
 ---
 = 기술 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

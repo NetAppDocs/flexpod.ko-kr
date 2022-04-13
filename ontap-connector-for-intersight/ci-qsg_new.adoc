@@ -6,6 +6,7 @@ summary: Cisco Intersight는 새로운 기능, 향상된 기능 및 버그 수�
 ---
 = 새로운 기능
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 이 문서에서는 FlexPod 익스프레스 플랫폼의 기술 사양�
 ---
 = FlexPod 플랫폼
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

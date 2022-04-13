@@ -6,6 +6,7 @@ summary: 이 섹션에서는 FC-NVMe on FlexPod 검증 테스트에 대한 간�
 ---
 = 테스트 접근 방식
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

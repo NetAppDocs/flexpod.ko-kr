@@ -6,6 +6,7 @@ summary: FIPS 140-2 전략을 구현할 때는 어떤 것이 보호되고 있는
 ---
 = 컨트롤 플레인 대 데이터 플레인
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

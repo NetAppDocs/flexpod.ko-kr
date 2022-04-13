@@ -6,6 +6,7 @@ summary: 이 섹션에 나열된 스토리지 운영 체제는 FlexPod Express �
 ---
 = 스토리지 소프트웨어
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

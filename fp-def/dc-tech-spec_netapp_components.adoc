@@ -6,6 +6,7 @@ summary: NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데�
 ---
 = NetApp 구성 요소
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

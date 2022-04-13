@@ -1,0 +1,201 @@
+---
+sidebar: sidebar 
+permalink: flexpod-dc/sm-bcs-flexpod-sm-bc-solution.html 
+keywords: overview, requirements, components, compute, server, intelligent fabric module 
+summary: 높은 수준의 FlexPod SM-BC 솔루션은 두 개의 FlexPod 시스템으로 구성되어 있으며, 서로 연결되고 서로 연결되어 어느 정도 거리가 떨어져 있는 두 개의 사이트에 배치되어 사이트 장애 시에도 무중단 업무 운영을 제공할 수 있는 가용성이 높고 유연성이 뛰어나며 신뢰성이 높은 데이터 센터 솔루션을 제공합니다. 
+---
+= FlexPod SM-BC 솔루션
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:sm-bcs-introduction.html["이전: 소개."]
+
+
+
+== 솔루션 개요
+
+높은 수준의 FlexPod SM-BC 솔루션은 두 개의 FlexPod 시스템으로 구성되어 있으며, 서로 연결되고 서로 연결되어 어느 정도 거리가 떨어져 있는 두 개의 사이트에 배치되어 사이트 장애 시에도 무중단 업무 운영을 제공할 수 있는 가용성이 높고 유연성이 뛰어나며 신뢰성이 높은 데이터 센터 솔루션을 제공합니다.
+
+FlexPod SM-BC 솔루션을 구축하기 위해 두 개의 새로운 FlexPod 인프라를 구축할 뿐만 아니라, SM-BC와 호환되는 두 개의 기존 FlexPod 인프라에 솔루션을 구축하거나 기존 FlexPod와 함께 새로운 FlexPod를 추가하여 구축할 수도 있습니다.
+
+FlexPod SM-BC 솔루션의 두 FlexPod 시스템은 구성에서 동일하지 않아도 됩니다. 그러나 두 ONTAP 클러스터는 두 AFF 시스템 또는 두 ASA 시스템 중 하나의 스토리지 제품군이어야 하지만 반드시 동일한 하드웨어 모델이 아니어야 합니다. SM-BC 솔루션은 FAS 시스템을 지원하지 않습니다.
+
+두 FlexPod 사이트는 솔루션 대역폭과 서비스 품질 요구 사항을 충족하는 네트워크 연결이 필요하며, ONTAP SM-BC 솔루션에서 요구하는 대로 사이트 간 라운드 트립 지연 시간이 10밀리초(10ms) 미만입니다. 이 FlexPod SM-BC 솔루션 검증을 위해 두 FlexPod 사이트는 동일한 실험실에서 확장된 Layer-2 네트워크를 통해 상호 연결됩니다.
+
+NetApp ONTAP SM-BC 솔루션은 두 NetApp 스토리지 클러스터 간에 동기식 복제를 제공하여 캠퍼스 또는 도심 지역에서 고가용성 및 재해 복구를 지원합니다. 세 번째 사이트에 구축된 ONTAP 중재자가 솔루션을 모니터링하고 사이트 재해 시 자동 페일오버를 지원합니다. 다음 그림은 솔루션 구성 요소에 대한 개략적인 보기를 제공합니다.
+
+image:sm-bcs-image4.png["오류: 그래픽 이미지가 없습니다"]
+
+FlexPod SM-BC 솔루션을 사용하면 VMware vSphere 기반 프라이빗 클라우드를 분산형의 통합 인프라에 구축할 수 있습니다. 통합 솔루션을 사용하면 여러 사이트를 단일 솔루션 인프라로 통합하여 다양한 단일 장애 지점 및 전체 사이트 장애로부터 데이터 서비스를 보호할 수 있습니다.
+
+이 기술 보고서에서는 FlexPod SM-BC 솔루션의 일부 엔드 투 엔드 설계 고려 사항을 중점적으로 다룹니다. 실무자는 다양한 FlexPod CVD 및 NVA에서 사용 가능한 정보를 참조하여 FlexPod 솔루션 구현 세부정보를 추가로 받는 것이 좋습니다.
+
+이 솔루션은 CVD에 문서화된 FlexPod 모범 사례를 기반으로 두 개의 FlexPod 시스템을 구축하여 검증되었지만, SM-BC 솔루션의 요구사항을 고려합니다. 이 보고서에 설명된 구축된 FlexPod SM-BC 솔루션은 다양한 장애 시나리오 및 시뮬레이션된 사이트 장애 시나리오 중에 복구 성능 및 내결함성을 검증했습니다.
+
+
+
+== 솔루션 요구 사항
+
+FlexPod SM-BC 솔루션은 다음과 같은 주요 요구 사항을 충족하도록 설계되었습니다.
+
+* 전체 데이터 센터(사이트)에 장애가 발생할 경우 비즈니스 크리티컬 애플리케이션 및 데이터 서비스를 위한 비즈니스 연속성
+* 데이터 센터 간에 워크로드 이동성을 통해 유연하고 분산된 워크로드 배치
+* 정상 운영 중에 동일한 데이터 센터 사이트에서 가상 머신 데이터에 로컬로 액세스하는 사이트 친화성
+* 사이트 장애 발생 시 데이터 손실 없이 빠른 복구
+
+
+
+
+== 솔루션 구성 요소
+
+
+
+=== Cisco 컴퓨팅 구성 요소
+
+Cisco UCS는 통합 컴퓨팅 인프라로 통합 컴퓨팅 리소스, 통합 패브릭 및 통합 관리를 제공합니다. 기업에서는 이 솔루션을 사용하여 가상화 및 베어 메탈 워크로드를 비롯한 애플리케이션의 구축을 자동화하고 가속화할 수 있습니다. Cisco UCS는 원격 및 지점, 데이터 센터 및 하이브리드 클라우드 사용 사례를 비롯한 광범위한 구축 사용 사례를 지원합니다. 특정 솔루션 요구 사항에 따라 FlexPod Cisco 컴퓨팅 구현은 다양한 범위의 구성 요소를 사용할 수 있습니다. 다음 하위 섹션에서는 UCS 구성요소 중 일부에 대한 추가 정보를 제공합니다.
+
+
+
+==== UCS 서버 및 컴퓨팅 노드
+
+다음 그림은 UCS C-Series 랙 서버, B-Series 블레이드 서버가 포함된 UCS 5108 섀시, X-Series 컴퓨팅 노드가 포함된 새로운 UCS X9508 섀시 등 UCS 서버 구성요소의 예를 보여줍니다. Cisco UCS C-Series 랙 서버는 1개 및 2개의 랙 유닛(RU) 폼 팩터, Intel 및 AMD CPU 기반 모델, 다양한 CPU 속도 및 코어, 메모리, I/O 옵션으로 제공됩니다. Cisco UCS B-Series 블레이드 서버와 새로운 X-Series 컴퓨팅 노드를 다양한 CPU, 메모리 및 I/O 옵션과 함께 사용할 수도 있으며, 이러한 모든 기능을 FlexPod 아키텍처에서 지원하여 다양한 비즈니스 요구사항을 충족합니다.
+
+image:sm-bcs-image5.png["오류: 그래픽 이미지가 없습니다"]
+
+이 그림에 표시된 최신 세대 C220/C225/C240/C245 M6 랙 서버, B200 M6 블레이드 서버 및 X210c 컴퓨팅 노드 외에도 이전 세대의 랙 및 블레이드 서버가 계속 지원되는 경우에도 사용할 수 있습니다.
+
+
+
+==== I/O 모듈 및 지능형 패브릭 모듈
+
+I/O 모듈(IOM)/Fabric Extender 및 IFM(Intelligent Fabric Module)은 각각 Cisco UCS 5108 블레이드 서버 섀시 및 Cisco UCS X9508 X 시리즈 섀시에 대한 통합 패브릭 연결을 제공합니다.
+
+4세대 UCS IOM 2408에는 UCS 5108 섀시를 패브릭 인터커넥트(FI)와 연결하기 위한 25G 통합 이더넷 포트 8개가 있습니다. 각 2408에는 미드플레인을 통해 섀시의 각 블레이드 서버에 4개의 10-G 백플레인 이더넷 연결이 있습니다.
+
+UCSX 9108 25G IFM에는 패브릭 상호 연결을 통해 UCS X9508 섀시의 블레이드 서버를 연결하기 위한 8개의 25-G 통합 이더넷 포트가 있습니다. 각 9108에는 X9108 섀시의 각 UCS X210c 컴퓨팅 노드에 대한 25-G 연결 4개가 있습니다. 9108 IFM은 패브릭 상호 연결과 함께 작동하여 섀시 환경을 관리합니다.
+
+다음 그림은 UCS 5108 섀시의 UCS 2408 및 이전 IOM 세대 및 X9508 섀시의 경우 9108 IFM을 보여 줍니다.
+
+image:sm-bcs-image6.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+==== UCS Fabric 인터커넥트
+
+Cisco UCS FI(Fabric Interconnect)는 전체 Cisco UCS에 대한 연결 및 관리 기능을 제공합니다. 일반적으로 액티브/액티브 쌍으로 구축되는 이 시스템의 FI는 모든 구성 요소를 Cisco UCS Manager 또는 Cisco Intersight에서 제어하는 고가용성 단일 관리 도메인에 통합합니다. Cisco UCS FI는 단일 케이블 세트를 사용하여 LAN, SAN 및 관리 트래픽을 지원하는 짧은 지연 시간과 무손실 컷스루 스위칭을 제공하는 단일 통합 패브릭을 시스템에 제공합니다.
+
+4세대 Cisco UCS FI에는 UCS FI 6454 및 64108의 두 가지 모델이 있습니다. 여기에는 10/25Gbps 이더넷 포트, 1/10/25Gbps 이더넷 포트, 40/100Gbps 이더넷 업 링크 포트, 10/25Gigabit Ethernet 또는 8/16/32Gbps 파이버 채널을 지원할 수 있는 통합 포트 등이 포함됩니다. 다음 그림은 4세대 Cisco UCS FI와 함께 지원되는 3세대 모델도 보여 줍니다.
+
+image:sm-bcs-image7.png["오류: 그래픽 이미지가 없습니다"]
+
+
+NOTE: Cisco UCS X-Series 섀시를 지원하려면 Intersight 관리 모드(IMM)로 구성된 4세대 패브릭 상호 연결이 필요합니다. 그러나 Cisco UCS 5108 B 시리즈 섀시는 IMM 모드와 UCSM 관리 모드 모두에서 지원됩니다.
+
+
+NOTE: UCS FI 6324는 IOM 폼 팩터를 사용하며 소형 UCS 도메인만 필요한 구축을 위해 UCS Mini 섀시에 내장되어 있습니다.
+
+
+
+==== UCS 가상 인터페이스 카드
+
+Cisco UCS VICS(Virtual Interface Card)는 랙 및 블레이드 서버의 시스템 관리 및 LAN 및 SAN 연결을 통합합니다. vNIC(Virtual Network Interface Card) 또는 Cisco SingleConnect 기술을 사용하는 vHBA(Virtual Host Bus Adapter)로 최대 256개의 가상 장치를 지원합니다. 가상화의 결과로 VIC 카드는 네트워크 연결을 크게 간소화하고 솔루션 배포에 필요한 네트워크 어댑터, 케이블 및 스위치 포트의 수를 줄입니다. 다음 그림은 B 시리즈, C 시리즈 서버 및 X 시리즈 컴퓨팅 노드에 사용할 수 있는 일부 Cisco UCS VICS를 보여 줍니다.
+
+image:sm-bcs-image8.png["오류: 그래픽 이미지가 없습니다"]
+
+다양한 어댑터 모델은 포트 수, 포트 속도 및 폼 팩터가 서로 다른 블레이드 및 랙 서버를 지원하며, 모듈식 MLOM(LAN on Motherboard), 메자닌 카드 및 PCIe 인터페이스를 지원합니다. 어댑터는 10/25/40/100G 이더넷 및 FCoE(Fibre Channel over Ethernet)의 일부 조합을 지원할 수 있습니다. Cisco의 CNA(Converged Network Adapter) 기술을 통합하고 종합적인 기능 세트를 지원하며 어댑터 관리 및 애플리케이션 구축을 단순화합니다. 예를 들어 VIC는 Cisco UCS 패브릭 상호 연결 포트를 가상 머신으로 확장하는 Cisco의 VM-FEX(Data Center Virtual Machine Fabric Extender) 기술을 지원하므로 서버 가상화 구축을 간소화할 수 있습니다.
+
+mLOM, 메자닌 및 포트 확장기 및 브리지 카드 구성에서 Cisco VIC를 결합하면 블레이드 서버에서 사용할 수 있는 대역폭과 연결을 최대한 활용할 수 있습니다. 예를 들어, X210c 컴퓨팅 노드에 대해 VIC 14825(mLOM) 및 14425(메자닌) 및 14000(브리지 카드)의 25-G 링크 2개를 사용하여 결합된 VIC 대역폭은 2 x 50-G + 2 x 50-G입니다. 또는 듀얼 IFM 구성을 사용하여 서버당 100G/IFM 및 서버당 총 200g
+
+Cisco UCS 제품군, 기술 사양 및 문서에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/products/servers-unified-computing/index.html["Cisco UCS"^] 웹 사이트를 참조하십시오.
+
+
+
+=== Cisco 스위칭 구성 요소
+
+
+
+==== Nexus 스위치
+
+FlexPod은 Cisco Nexus 시리즈 스위치를 사용하여 Cisco UCS와 NetApp 스토리지 컨트롤러 간의 통신에 이더넷 스위칭 패브릭을 제공합니다. FlexPod 배포에는 Cisco Nexus 3000, 5000, 7000, 9000 시리즈를 비롯하여 현재 지원되는 모든 Cisco Nexus 스위치 모델이 지원됩니다.
+
+FlexPod 구축을 위한 스위치 모델을 선택할 때 성능, 포트 속도, 포트 밀도, 스위칭 지연 시간, 또한 설계 목표뿐 아니라 스위치의 지원 시간(TimeSpan)을 위해 ACI 및 VXLAN과 같은 프로토콜을 지원합니다.
+
+최신 FlexPod CVD에 대한 검증에서는 Nexus 9336C-FX2 및 Nexus 93180YC-FX3과 같은 Cisco Nexus 9000 시리즈 스위치를 사용합니다. 이 스위치는 고성능 40/100G 및 10//25G 포트, 짧은 지연 시간, 뛰어난 전력 효율성을 소형 1U 폼 팩터에서 제공합니다. 업링크 포트 및 브레이크아웃 케이블을 통해 추가 속도가 지원됩니다. 다음 그림은 이 검증에 사용된 Nexus 9336C-FX2 및 Nexus 3232C를 포함하여 몇 개의 Cisco Nexus 9k 및 3k 스위치를 보여줍니다.
+
+image:sm-bcs-image9.png["오류: 그래픽 이미지가 없습니다"]
+
+을 참조하십시오 https://www.cisco.com/c/en/us/products/switches/data-center-switches/index.html["Cisco 데이터 센터 스위치"^] 사용 가능한 Nexus 스위치 및 사양 및 문서에 대한 자세한 내용은
+
+
+
+==== MDS 스위치
+
+Cisco MDS 9100/9200/9300 시리즈 패브릭 스위치는 FlexPod 아키텍처의 선택적 구성 요소입니다. 이러한 스위치는 매우 안정적이고, 매우 유연하고, 안전하며, Fabric의 트래픽 흐름에 대한 가시성을 제공할 수 있습니다. 다음 그림에서는 애플리케이션 및 비즈니스 요구 사항을 충족하기 위해 FlexPod 솔루션을 위한 이중화된 FC SAN 패브릭을 구축하는 데 사용할 수 있는 MDS 스위치의 예를 보여 줍니다.
+
+image:sm-bcs-image10.png["오류: 그래픽 이미지가 없습니다"]
+
+Cisco MDS 9132T/9148T/9396T 고성능 32G 멀티레이어 패브릭 스위치는 비용 효율적이며 매우 안정적이고 유연하며 확장성이 뛰어납니다. 고급 스토리지 네트워킹 기능은 관리가 용이하며 전체 Cisco MDS 9000 제품군 포트폴리오와 호환되므로 안정적인 SAN 구현이 가능합니다.
+
+이 차세대 하드웨어 플랫폼에는 최첨단 SAN 분석 및 원격 측정 기능이 내장되어 있습니다. 프레임 헤더 검사에서 추출된 원격 측정 데이터를 Cisco Data Center Network Manager를 비롯한 분석 시각화 플랫폼으로 스트리밍할 수 있습니다. MDS 9148S와 같이 16G FC를 지원하는 MDS 스위치도 FlexPod에서 지원됩니다. 또한 FC 프로토콜 외에 FCoE 및 FCIP 프로토콜을 지원하는 MDS 9250i와 같은 멀티서비스 MDS 스위치도 FlexPod 솔루션 포트폴리오에 포함됩니다.
+
+9132T 및 9396T와 같은 반모듈식 MDS 스위치에서 추가 포트 확장 모듈 및 포트 라이센스를 추가하여 추가 디바이스 접속을 지원할 수 있습니다. 9148T와 같은 고정 스위치에서는 필요에 따라 포트 라이센스를 추가할 수 있습니다. 이와 같이 확장 가능한 지불 유연성을 통해 운영 비용 구성 요소를 제공하여 MDS 스위치 기반 SAN 인프라를 구축하고 운영하는 데 드는 자본 비용을 절감할 수 있습니다.
+
+을 참조하십시오 https://www.cisco.com/c/en/us/products/storage-networking/index.html["Cisco MDS 패브릭 스위치"^] 사용 가능한 MDS Fabric 스위치에 대한 자세한 내용은 를 참조하십시오 https://mysupport.netapp.com/matrix/["NetApp IMT를 참조하십시오"^] 및 https://ucshcltool.cloudapps.cisco.com/public/["Cisco 하드웨어 및 소프트웨어 호환성 목록"^] 지원되는 SAN 스위치의 전체 목록을 확인하십시오.
+
+
+
+=== NetApp 구성 요소
+
+ONTAP 소프트웨어 9.8 이상을 실행하는 이중 NetApp AFF 또는 ASA 컨트롤러는 FlexPod SM-BC 솔루션을 생성해야 합니다. SM-BC 배포에서는 ONTAP 혁신, 성능 및 품질 향상을 지속적으로 활용하고 SM-BC 지원에 대한 최대 개체 수를 늘릴 수 있도록 현재 9.10.1인 최신 ONTAP 릴리스를 권장합니다.
+
+업계 최고의 성능과 혁신 기능을 갖춘 NetApp AFF 및 ASA 컨트롤러는 엔터프라이즈 데이터 보호 기능과 강력한 데이터 관리 기능을 제공합니다. AFF 및 ASA 시스템은 NVMe 연결 SSD 및 NVMe over Fibre Channel(NVMe/FC) 프론트 엔드 호스트 연결을 포함한 엔드 투 엔드 NVMe 기술을 지원합니다. NVMe/FC 기반 SAN 인프라를 채택하면 워크로드 처리량을 높이고 I/O 지연 시간을 줄일 수 있습니다. 하지만 SM-BC 솔루션은 현재 iSCSI 및 FC 프로토콜만 지원하므로 NVMe/FC 기반 데이터 저장소는 SM-BC로 보호되지 않는 워크로드에 대해서만 사용할 수 있습니다.
+
+NetApp AFF 및 ASA 스토리지 컨트롤러는 또한 고객이 NetApp Data Fabric에서 지원하는 원활한 데이터 이동성을 활용할 수 있도록 하이브리드 클라우드 기반을 제공합니다. Data Fabric을 사용하면 데이터가 생성되는 에지에서 코어, 사용될 코어로, 그리고 클라우드로 데이터를 쉽게 가져올 수 있습니다. 또한 온디맨드 방식으로 탄력적인 컴퓨팅 및 AI 및 ML 기능을 활용하여 비즈니스 인사이트를 얻을 수 있습니다.
+
+다음 그림과 같이 NetApp은 고객의 성능 및 용량 요구사항을 충족할 수 있도록 다양한 스토리지 컨트롤러와 디스크 쉘프를 제공합니다. NetApp AFF 및 ASA 컨트롤러 기능 및 사양에 대한 자세한 내용은 다음 표를 참조하십시오.
+
+image:sm-bcs-image11.png["오류: 그래픽 이미지가 없습니다"]
+
+|===
+| 제품군 | 기술 사양 
+
+
+| AFF 시리즈 | link:https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62247["AFF 시리즈 문서"^] 
+
+
+| ASA 시리즈 | link:https://docs.netapp.com/allsan/index.jsp["ASA 시리즈 문서"^] 
+|===
+을 참조하십시오 https://www.netapp.com/data-storage/disk-shelves-storage-media/["NetApp 디스크 쉘프 및 스토리지 미디어 문서"^] 및 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] 각 스토리지 컨트롤러 모델에 대해 디스크 쉘프 및 지원되는 디스크 쉘프에 대한 자세한 내용은 를 참조하십시오.
+
+
+
+== 솔루션 토폴로지
+
+FlexPod 솔루션은 유연한 토폴로지로 다양한 솔루션 요구사항을 충족하도록 확장하거나 축소할 수 있습니다. 다음 그림과 같이 비즈니스 연속성 보호가 필요하고 최소한의 컴퓨팅 및 스토리지 리소스만 단순한 솔루션 토폴로지를 사용할 수 있습니다. 이 간단한 토폴로지에서는 추가 디스크 쉘프 없이 컨트롤러에 SSD가 있는 UCS C-Series 랙 서버와 AFF/ASA 컨트롤러를 사용합니다.
+
+image:sm-bcs-image12.png["오류: 그래픽 이미지가 없습니다"]
+
+이중화된 컴퓨팅, 네트워크 및 스토리지 구성 요소는 구성 요소 간의 이중화 연결로 상호 연결됩니다. 고가용성 설계로 솔루션 복원력을 제공하고 단일 장애 지점 시나리오를 견딜 수 있습니다. 멀티 사이트 설계와 ONTAP SM-BC 동기식 데이터 복제 관계는 단일 사이트 스토리지 장애가 발생할 가능성에도 불구하고 비즈니스 크리티컬 데이터 서비스를 제공합니다.
+
+데이터 센터와 대도시 지역의 지사 간에 회사에서 사용할 수 있는 비대칭 배포 토폴로지는 다음 그림과 같이 나타날 수 있습니다. 이와 같이 비대칭 설계에서는 데이터 센터에 더 많은 컴퓨팅 및 스토리지 리소스를 갖춘 고성능 FlexPod가 필요합니다. 그러나 지사 요구 사항은 더 적으며 훨씬 더 작은 FlexPod를 통해 충족할 수 있습니다.
+
+image:sm-bcs-image13.png["오류: 그래픽 이미지가 없습니다"]
+
+컴퓨팅 및 스토리지 리소스 요구 사항이 더 크고 사이트가 여러 개인 기업의 경우 VXLAN 기반 멀티 사이트 패브릭을 통해 여러 사이트에서 원활한 네트워크 패브릭을 통해 애플리케이션 이동성을 지원하여 모든 사이트에서 애플리케이션을 제공할 수 있습니다.
+
+새로운 FlexPod 인스턴스로 보호해야 하는 Cisco UCS 5108 섀시 및 B-Series 블레이드 서버를 사용하는 기존 FlexPod 솔루션이 있을 수 있습니다. 새 FlexPod 인스턴스는 다음 그림과 같이 Cisco Intersight에서 관리하는 X210c 컴퓨팅 노드와 함께 최신 UCS X9508 섀시를 사용할 수 있습니다. 이 경우 각 사이트의 FlexPod 시스템은 더 큰 데이터센터 패브릭에 연결되고 사이트는 상호 연결 네트워크를 통해 연결되어 VXLAN 멀티 사이트 패브릭을 형성합니다.
+
+image:sm-bcs-image14.png["오류: 그래픽 이미지가 없습니다"]
+
+비즈니스 연속성을 제공하기 위해 모든 데이터를 보호해야 하는 도심 지역에 데이터 센터와 여러 지사를 둔 회사의 경우 다음 그림에 나와 있는 FlexPod SM-BC 구축 토폴로지를 구현하여 중요한 애플리케이션 및 데이터 서비스를 보호하여 모든 지점 사이트에서 제로 RPO 및 제로에 가까운 RTO 목표를 달성할 수 있습니다.
+
+image:sm-bcs-image15.png["오류: 그래픽 이미지가 없습니다"]
+
+이 구축 모델을 위해 각 지사는 데이터센터와 SM-BC 관계 및 정합성 보장 그룹을 설정합니다. 지원되는 SM-BC 개체 제한을 고려해야 하므로 전반적인 일관성 그룹 관계 및 끝점 수가 데이터 센터에서 지원되는 최대값을 초과하지 않습니다.
+
+link:sm-bcs-solution-validation_overview.html["다음: 솔루션 검증 개요"]

@@ -6,6 +6,7 @@ summary: 이 섹션에서는 FlexPod 및 GATK의 설정 및 Cromwell 엔진, JAR
 ---
 = 유전체학 - GATK 설정 및 실행
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -28,7 +29,7 @@ link:flexpod-genomics-solution-infrastructure-hardware-and-software-components.h
 
 . 검체 채취.
 . https://medlineplus.gov/genetics/understanding/testing/sequencing/["게놈 염기서열분석"^] 시퀀서를 사용하여 원시 데이터를 생성합니다.
-. 사전 처리. 예를 들면, 다음과 같습니다. https://www.nature.com/articles/nmeth.4268.pdf?origin=ppub["중복 제거"^] 사용.
+. 사전 처리. 예를 들면, 다음과 같습니다. https://www.nature.com/articles/nmeth.4268.pdf?origin=ppub["중복 제거"^] 사용 https://broadinstitute.github.io/picard/["Picard"^].
 . 게놈 분석.
 +
 .. 참조 게놈에 매핑.
@@ -134,7 +135,7 @@ image:flexpod-genomics-image17.png["오류: 그래픽 이미지가 없습니다"
 RedHat Enterprise 8.3 Linux VM에 다음 필수 구성 요소를 설치합니다.
 
 * Java 8 또는 SDK 1.8 이상
-* Broad Institute에서 GATK 4.2.0.0 다운로드 https://github.com/broadinstitute/gatk/releases["GitHub 사이트"^]. 게놈 시퀀스 데이터는 일반적으로 탭으로 구분된 ASCII 열 형태로 저장됩니다. 그러나 ASCII에서는 저장할 공간이 너무 많이 필요합니다. 따라서 BAM(\ *.BAM) 파일이라는 새로운 표준이 발전했습니다. BAM 파일은 시퀀스 데이터를 압축, 인덱싱 및 바이너리 형식으로 저장합니다. 저희가 에서 GATK 실행을 위해 공개적으로 사용할 수 있는 BAM 파일 집합. 또한 인덱스 파일(\*.dai), 사전 파일(\*)도 다운로드했습니다. 참조 데이터 파일(*. fasta) 동일한 공용 도메인에서.
+* Broad Institute에서 GATK 4.2.0.0 다운로드 https://github.com/broadinstitute/gatk/releases["GitHub 사이트"^]. 게놈 시퀀스 데이터는 일반적으로 탭으로 구분된 ASCII 열 형태로 저장됩니다. 그러나 ASCII에서는 저장할 공간이 너무 많이 필요합니다. 따라서 BAM(\ *.BAM) 파일이라는 새로운 표준이 발전했습니다. BAM 파일은 시퀀스 데이터를 압축, 인덱싱 및 바이너리 형식으로 저장합니다. 저희가 https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/["다운로드되었습니다"^] 에서 GATK 실행을 위해 공개적으로 사용할 수 있는 BAM 파일 집합 https://www.nih.gov/["공용 도메인입니다"^]. 또한 인덱스 파일(\*.dai), 사전 파일(\*)도 다운로드했습니다. 참조 데이터 파일(*. fasta) 동일한 공용 도메인에서.
 
 
 다운로드 후 GATK 도구 키트에는 JAR 파일과 지원 스크립트 세트가 있습니다.
@@ -149,7 +150,7 @@ BAM 파일과 해당 인덱스, 사전 및 참조 게놈 파일을 아버지, �
 
 === 크롬웰 엔진
 
-Cromwell은 워크플로우 관리를 지원하는 과학적 워크플로우에 맞춰 설계된 오픈 소스 엔진입니다. 크렘웰 엔진은 2개로 작동할 수 있습니다 https://cromwell.readthedocs.io/en/stable/Modes/["모드"^], 서버 모드 또는 단일 워크플로 실행 모드. 크롬웰 엔진의 동작은 를 사용하여 제어할 수 있습니다.
+Cromwell은 워크플로우 관리를 지원하는 과학적 워크플로우에 맞춰 설계된 오픈 소스 엔진입니다. 크렘웰 엔진은 2개로 작동할 수 있습니다 https://cromwell.readthedocs.io/en/stable/Modes/["모드"^], 서버 모드 또는 단일 워크플로 실행 모드. 크롬웰 엔진의 동작은 를 사용하여 제어할 수 있습니다 https://github.com/broadinstitute/cromwell/blob/develop/cromwell.example.backends/cromwell.examples.conf["Cromwell 엔진 구성 파일"^].
 
 * 서버 모드 * 를 활성화합니다 https://cromwell.readthedocs.io/en/stable/api/RESTAPI/["휴식"^] 크렘웰 엔진의 워크플로 실행.
 * * 실행 모드. * 실행 모드는 Cromwell에서 단일 워크플로를 실행하는 데 가장 적합합니다. https://cromwell.readthedocs.io/en/stable/CommandLine/["참조"^] 실행 모드에서 사용할 수 있는 전체 옵션 세트를 확인합니다.

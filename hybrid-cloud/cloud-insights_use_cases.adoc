@@ -6,6 +6,7 @@ summary: 이 솔루션이 적용되는 대상 및 사례가 이 섹션에 나와
 ---
 = 사용 사례
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

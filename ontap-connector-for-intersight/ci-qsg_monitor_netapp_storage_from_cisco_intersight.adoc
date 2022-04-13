@@ -6,6 +6,7 @@ summary: 대상이 확보되면 Advantage 계층 라이센스가 있는 경우 N
 ---
 = Cisco Intersight에서 NetApp 스토리지 모니터링
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

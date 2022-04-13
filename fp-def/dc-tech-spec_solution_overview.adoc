@@ -6,6 +6,7 @@ summary: 'FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco 
 ---
 = TR-4036: FlexPod 데이터 센터 기술 사양
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

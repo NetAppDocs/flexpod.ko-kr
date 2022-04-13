@@ -5,6 +5,7 @@ keywords: software, hardware, hypervisor, network, AFF C190, Cisco UCS C220 M5, 
 summary: FlexPod Express를 사용하려면 선택한 하이퍼바이저와 네트워크 속도에 따라 하드웨어 및 소프트웨어 구성요소를 조합해야 합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 배치합니다. 
 ---
 = 기술 요구 사항
+:allow-uri-read: 
 
 
 FlexPod Express를 사용하려면 선택한 하이퍼바이저와 네트워크 속도에 따라 하드웨어 및 소프트웨어 구성요소를 조합해야 합니다. 또한 FlexPod Express는 하이퍼바이저 노드를 시스템에 추가하는 데 필요한 하드웨어 구성요소를 2개 단위로 배치합니다.

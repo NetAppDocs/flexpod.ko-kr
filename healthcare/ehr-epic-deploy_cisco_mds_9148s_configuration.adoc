@@ -6,6 +6,7 @@ summary: Cisco MDS 9100 시리즈 FC 스위치는 NetApp AFF A700 컨트롤러�
 ---
 = Cisco MDS 9148S 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

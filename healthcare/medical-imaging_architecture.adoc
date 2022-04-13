@@ -6,6 +6,7 @@ summary: FlexPod 아키텍처는 전체 컴퓨팅, 네트워크 및 스토리지
 ---
 = 있습니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
