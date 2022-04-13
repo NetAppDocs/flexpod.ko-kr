@@ -145,5 +145,4 @@ image:sm-bcs-image19.png["오류: 그래픽 이미지가 없습니다"]
 
 |  | 2 | 사이트 A iSCSI 타겟 | 사이트 A 컨트롤러 2 iSCSI B LIF 
 |===
-* 제목: 네트워크link:sm-bcs-network.html["다음: 솔루션 검증 - 네트워크."]
-
+link:sm-bcs-network.html["다음: 솔루션 검증 - 네트워크."]
