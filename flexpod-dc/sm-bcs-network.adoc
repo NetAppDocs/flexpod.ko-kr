@@ -13,6 +13,8 @@ summary: FlexPod SM-BC 솔루션의 네트워크 구성은 각 사이트의 일�
 :imagesdir: ./../media/
 
 
+link:sm-bcs-compute.html["이전: 솔루션 검증 - 컴퓨팅."]
+
 FlexPod SM-BC 솔루션의 네트워크 구성은 각 사이트의 일반적인 FlexPod 솔루션 Best Practice를 따릅니다. 사이트 간 연결의 경우, 솔루션 검증 구성은 두 사이트의 FlexPod Nexus 스위치를 서로 연결하여 두 사이트 간에 VLAN을 확장하는 사이트 간 연결을 제공합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다.
 
 
@@ -186,3 +188,5 @@ NOTE: 위 표에는 각 FlexPod 스위치의 관점에서 연결된 정보가 �
 |===
 
 NOTE: SM-BC는 비즈니스 연속성을 위해 NFS 또는 CIFS 프로토콜을 지원하지 않지만, 비즈니스 연속성을 위해 보호할 필요가 없는 워크로드에 사용할 수 있습니다. 이 검증을 위해 NFS 데이터 저장소가 생성되지 않았습니다.
+
+link:sm-bcs-storage.html["다음: 솔루션 검증 - 스토리지."]

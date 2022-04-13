@@ -8527,8 +8527,6 @@
   <block id="fc37581a93e14f865030ca55b7270290" category="paragraph"><block ref="fc37581a93e14f865030ca55b7270290" category="inline-link-macro-rx"></block></block>
   <block id="9bba922e59a4daeddb1809c2781a44a1" category="summary">FlexPod SM-BC 솔루션의 컴퓨팅 구성은 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다. 또한 SM-BC 관련 고려 사항 중 일부는 구축 참조 및 지침을 제공하기 위해 강조되어 있습니다.</block>
   <block id="bc8a1d734e83e27cc8a2adc1858d6959" category="doc">솔루션 검증 - 컴퓨팅</block>
-  <block id="ed0d7e76ce8e3038702fbab0cb9524ab" category="inline-link-macro">개요.</block>
-  <block id="e38775cef86d4cc66d36ea249100c217" category="paragraph"><block ref="e38775cef86d4cc66d36ea249100c217" category="inline-link-macro-rx"></block></block>
   <block id="3f0294fb25b6df81fd5b767f0d74974f" category="paragraph">UCS 5108 섀시 후면판 연결을 통해 UCS B200 블레이드 서버와 IOM 간의 연결이 UCS VIC 카드에 의해 제공됩니다. 검증에 사용된 UCS 2204XP 패브릭 익스텐더에는 각 서버에 2개씩 등 8개의 절반 너비 블레이드 서버에 연결할 수 있는 16개의 10G 포트가 있습니다. 서버 연결 대역폭을 높이기 위해 추가 메자닌 기반 VIC를 추가하여 각 서버에 4개의 10G 연결을 제공하는 대체 UCS 2408 IOM에 서버를 연결할 수 있습니다.</block>
   <block id="faf94a25f3b3dbcdc7d8df2b1e466b18" category="paragraph"><block ref="faf94a25f3b3dbcdc7d8df2b1e466b18" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3e760ed69fcce8d06a007f41a5c61d17" category="paragraph">UCS 5108 섀시와 검증에 사용된 UCS 6454 FI 간의 연결은 4개의 10G 연결을 사용하는 IOM 2204XP에서 제공합니다. 이러한 연결을 위해 FI 포트 1 - 4가 서버 포트로 구성됩니다. FI 포트 25~28은 로컬 사이트의 Nexus 스위치 A 및 B에 대한 네트워크 업링크 포트로 구성됩니다. 다음 그림과 표에는 UCS 5108 섀시 및 Nexus 스위치에 연결할 UCS 6454 FI의 연결 다이어그램 및 포트 연결 정보가 나와 있습니다.</block>
@@ -8575,7 +8573,6 @@
   <block id="6add07bc86a316af4f25422f4c8887b7" category="cell">iSCSI B 를 선택합니다</block>
   <block id="56d1b12d5a4e9f59a4453bb6a7cb7b08" category="cell">사이트 B 컨트롤러 1 iSCSI B LIF입니다</block>
   <block id="5975420dbf2246f6edb6a902578b5ff1" category="cell">사이트 A 컨트롤러 2 iSCSI B LIF</block>
-  <block id="5e7b9ab3adef639ef9c61005fee6237c" category="list-text">제목: 네트워크 URL:/FlexPod-DC/sm-bcs-network.html</block>
   <block id="efa3c8203ca8f331abebfd2b1b8197b6" category="summary">FlexPod SM-BC 솔루션의 네트워크 구성은 각 사이트의 일반적인 FlexPod 솔루션 Best Practice를 따릅니다. 사이트 간 연결의 경우, 솔루션 검증 구성은 두 사이트의 FlexPod Nexus 스위치를 서로 연결하여 두 사이트 간에 VLAN을 확장하는 사이트 간 연결을 제공합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다.</block>
   <block id="74b5d0143f42e7eea9541ccef14b9fb7" category="doc">솔루션 검증 - 네트워크</block>
   <block id="698c40fe15891da5bf5654625e3efc65" category="paragraph">각 사이트의 FlexPod Nexus 스위치는 고가용성 구성에서 UCS 컴퓨팅과 ONTAP 스토리지 간의 로컬 연결을 제공합니다. 이중화 구성 요소와 이중화 연결을 통해 단일 장애 지점 시나리오에 대한 복원력을 제공합니다.</block>
@@ -8886,8 +8883,6 @@
   <block id="cbb9a6e025db26e6e93575dee2958256" category="paragraph">NetApp SnapMirror 비즈니스 연속성(SM-BC) 및 ONTAP 9.10 솔루션을 지원하는 FlexPod 데이터 센터는 단일 장애 지점 시나리오와 함께 사이트 장애 시나리오로부터 비즈니스 크리티컬 데이터를 보호합니다. 이 기술 보고서에서는 FlexPod SM-BC 솔루션 및 솔루션 구성 요소에 대해 간략하게 설명하고 솔루션의 일부 구성 및 검증 측면을 중점적으로 다룹니다.</block>
   <block id="11d56047eb2c0edaf57e943fb8e6a2af" category="summary">FlexPod SM-BC 솔루션의 스토리지 구성은 각 사이트의 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. SM-BC 클러스터 피어링과 데이터 복제의 경우 두 사이트의 FlexPod 스위치 간에 설정된 사이트 간 링크를 사용합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다.</block>
   <block id="d996e1a7c19a3c614597fe3d017735e3" category="doc">솔루션 검증 - 스토리지</block>
-  <block id="a5c83135920d14aae2bfd3bb752f5726" category="inline-link-macro">이전: 솔루션 검증 - 개요.</block>
-  <block id="41b051617d64484449db4f9e8900e50c" category="paragraph"><block ref="41b051617d64484449db4f9e8900e50c" category="inline-link-macro-rx"></block></block>
   <block id="06a162921ff2263e0d2871473d84695c" category="paragraph">로컬 UCS FI 및 블레이드 서버에 대한 스토리지 연결은 로컬 사이트의 Nexus 스위치를 통해 제공됩니다. 사이트 간 Nexus 스위치 연결을 통해 원격 UCS 블레이드 서버에서도 스토리지에 액세스할 수 있습니다. 다음 그림과 표에서는 스토리지 연결 다이어그램과 각 사이트의 스토리지 컨트롤러에 대한 연결 목록을 보여 줍니다.</block>
   <block id="8d5a21ecdaacb7041f30f1ec08f09734" category="paragraph"><block ref="8d5a21ecdaacb7041f30f1ec08f09734" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cfde5efedf8c38f0dabe7dd36607a381" category="section-title">연결 및 인터페이스</block>
@@ -8959,4 +8954,14 @@
   <block id="aa81b985470b358604c301c837d7c91b" category="paragraph"><block ref="aa81b985470b358604c301c837d7c91b" category="inline-link-macro-rx"></block></block>
   <block id="c1d535c9a4692514b630f09f40f0b0dc" category="sidebar">NetApp SnapMirror 비즈니스 연속성 및 ONTAP 9.10이 설치된 FlexPod 데이터 센터</block>
   <block id="097c7979ec41d500c7beaecba9d80bfd" category="sidebar">검증된 시나리오</block>
+  <block id="926c55d6254734317efca9c578785222" category="inline-link-macro">사전 구성: 솔루션 검증 - 개요</block>
+  <block id="015b55d92ffe05728fcc13ea0f166b7d" category="paragraph"><block ref="015b55d92ffe05728fcc13ea0f166b7d" category="inline-link-macro-rx"></block></block>
+  <block id="2624162f080c891f91de0c93697cdcd6" category="inline-link-macro">다음: 솔루션 검증 - 네트워크.</block>
+  <block id="510a9ef55077a4c865a658827d82e4ba" category="list-text">제목: 네트워크<block ref="a400e1c221e8c3e8b80a81f5085a481d" category="inline-link-macro-rx"></block></block>
+  <block id="abcffbe98efe96e429a99d1585c42fea" category="inline-link-macro">이전: 솔루션 검증 - 컴퓨팅.</block>
+  <block id="b3b724b3ba2d9437c4399b9adc6bd618" category="paragraph"><block ref="b3b724b3ba2d9437c4399b9adc6bd618" category="inline-link-macro-rx"></block></block>
+  <block id="49bca3ae2bb88d593b1c6cd906f3a1f5" category="inline-link-macro">다음: 솔루션 검증 - 스토리지.</block>
+  <block id="aa19bc894bc9430b5e38f9f1186a4112" category="paragraph"><block ref="aa19bc894bc9430b5e38f9f1186a4112" category="inline-link-macro-rx"></block></block>
+  <block id="182b99dd6e6e03bd87c6e4742f0efe61" category="inline-link-macro">이전: 솔루션 검증 - 네트워크.</block>
+  <block id="b039f508b07fa442d12ced167cdee4ab" category="paragraph"><block ref="b039f508b07fa442d12ced167cdee4ab" category="inline-link-macro-rx"></block></block>
 </blocks>
