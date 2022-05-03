@@ -35,10 +35,6 @@ https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_v
 +
 http://docs.netapp.com["http://docs.netapp.com"^]
 
-* 롤링을 영광으로 생각합니다
-+
-https://www.netapp.com/blog/achieving-epic-honor-roll/["https://www.netapp.com/blog/achieving-epic-honor-roll/"^]
-
 * 민첩하고 효율적인 FlexPod으로 데이터 센터 현대화 실현
 +
 https://www.flexpod.com/idc-white-paper/["https://www.flexpod.com/idc-white-paper/"^]
