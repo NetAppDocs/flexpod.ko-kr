@@ -17,7 +17,6 @@ FlexPod 플랫폼에는 3가지 플랫폼이 있습니다.
 
 * * FlexPod 데이터 센터. * 이 플랫폼은 워크로드 엔터프라이즈 애플리케이션, 가상화, VDI, 퍼블릭 및 프라이빗 클라우드에 적합한 대규모 확장형 가상 데이터 센터 인프라입니다. FlexPod 데이터 센터에서는 에 나와 있는 고유 사양이 제공됩니다 https://docs.netapp.com/us-en/flexpod/fp-def/dc-tech-spec_solution_overview.html["TR-4036: FlexPod 데이터 센터 기술 사양"^].
 * * FlexPod 익스프레스. * 이 플랫폼은 원격 사무소 및 에지 사용 사례를 대상으로 하는 소형 통합 인프라입니다.
-* * FlexPod Select. * 이 플랫폼은 과 같은 고성능 애플리케이션을 위해 특별히 제작된 아키텍처입니다 http://www.netapp.com/us/media/nva-0012-design.pdf["고성능 Oracle RAC를 위한 FlexPod 선택"^]
 
 
 이 문서에서는 FlexPod 익스프레스 플랫폼의 기술 사양을 제공합니다.
