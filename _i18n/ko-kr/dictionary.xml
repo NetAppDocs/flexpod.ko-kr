@@ -3689,15 +3689,10 @@
   <block id="88ade68952e1a8d9f1c49b5ed85b5af5" category="list-text">Intersight Assist 어플라이언스 구축 후</block>
   <block id="dba06e35ee25a3095d873c4534514037" category="list-text">로 이동합니다<block ref="f9e0ea639036dbfc655ff5cf553db753" category="inline-link-rx"></block> 제품의 설치 후 설정을 완료합니다.</block>
   <block id="bca0d681ab79310b7d18a7976928af12" category="paragraph">설치 프로세스가 자동으로 시작됩니다. Intersight.com 대역폭에 따라 최대 1시간이 소요될 수 있습니다. 또한 VM의 전원을 켜면 보안 사이트가 작동하는 데 몇 초 정도 걸릴 수 있습니다.</block>
-  <block id="275571fec9813ba1f9a0316d6c6f2fb6" category="list-text">배포 후 프로세스 중에 설치할 항목을 선택합니다.</block>
-  <block id="c00e17d94315de3169768bef7aab5657" category="list-text">*Intersight Connected Virtual Appliance.* 이 배포에서는 Intersight.com 의 모든 기능을 위해 필요한 서비스에 대한 업데이트 및 액세스를 위해 Cisco 및 Intersight 서비스에 다시 연결해야 합니다.</block>
-  <block id="393c0ea686ccae41560844de6267272c" category="list-text">*Intersight Private Virtual Appliance.* 이 배포는 데이터 센터를 연결되지 않은(공극) 모드로 운영하는 환경을 위한 것입니다.</block>
   <block id="3920eddb38a93c54b93b962bbdea7c26" category="list-text">* Intersight Assist. * 이 배포를 통해 SaaS 모델을 Cisco Intersight에 연결할 수 있습니다.</block>
-  <block id="1453aed754bf50218b4f4d0151fdacf0" category="admonition">Intersight Assist를 선택한 경우 계속하기 전에 장치 ID와 클레임 코드를 기록해 두십시오.</block>
   <block id="32f55ec9f00aee8539ca16e146d53713" category="inline-image-macro">Intersight 배포 옵션 스크린샷</block>
   <block id="df2ced2f2ca7e12619f0e054224c6230" category="paragraph"><block ref="df2ced2f2ca7e12619f0e054224c6230" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2f88e5cbd35ab951b0bce5a96b06bb36" category="list-text">Proceed * 를 클릭합니다.</block>
-  <block id="1943b315b7a1e50917c318abee014486" category="list-text">Intersight Assist * 를 선택한 경우 다음 단계를 수행하십시오.</block>
   <block id="6f6002ff113b47d720b948fdbd799d5c" category="inline-link"><block ref="6f6002ff113b47d720b948fdbd799d5c" category="inline-link-rx"></block></block>
   <block id="3aa4c250877220ced11dd5118f05b73c" category="list-text">에서 SaaS Intersight 계정으로 이동합니다<block ref="b140963de237118a210eda3a58c6a981" category="inline-link-rx"></block>.</block>
   <block id="66b6809a917e6f7acac28f8accbdedc3" category="list-text">Targets *, * Cisco Intersight Assist * 를 클릭한 다음 * Start * 를 클릭합니다.</block>
@@ -3836,7 +3831,6 @@
   <block id="4c797a8e70e93514000fabd2051b5ddb" category="paragraph"><block ref="4c797a8e70e93514000fabd2051b5ddb" category="inline-link-rx"></block></block>
   <block id="2155a8941fd728202c18dade730100d6" category="paragraph"><block ref="2155a8941fd728202c18dade730100d6" category="inline-link-rx"></block></block>
   <block id="0580772620331f949057ed6afbb098ea" category="inline-link">Cisco Intersight 시작하기 개요</block>
-  <block id="c126a38a1e6af9c2dcbdc8fc12037c4b" category="paragraph"><block ref="c126a38a1e6af9c2dcbdc8fc12037c4b" category="inline-link-rx"></block></block>
   <block id="5cce77ecfcdbd5857d67110262f7b5a9" category="paragraph"><block ref="5cce77ecfcdbd5857d67110262f7b5a9" category="inline-link-rx"></block></block>
   <block id="72e4b75a2e802dbadf7541d1d11c1d65" category="summary">이 섹션에서는 스터디 수와 해당 인프라 요구 사항에 대해 설명합니다.</block>
   <block id="523e6018f15ab131831a53a71040932a" category="doc">솔루션 사이징</block>
@@ -6004,8 +5998,6 @@
   <block id="d0ed65e54397020ba99377dad07d0960" category="inline-link">TR-4036: FlexPod 데이터 센터 기술 사양</block>
   <block id="b751a075630ee799e9ae603044754240" category="list-text">* FlexPod 데이터 센터. * 이 플랫폼은 워크로드 엔터프라이즈 애플리케이션, 가상화, VDI, 퍼블릭 및 프라이빗 클라우드에 적합한 대규모 확장형 가상 데이터 센터 인프라입니다. FlexPod 데이터 센터에서는 에 나와 있는 고유 사양이 제공됩니다<block ref="c74831bb1a85ac0f8575eb8eeac86329" category="inline-link-rx"></block>.</block>
   <block id="ec80c81f43eaed2db319aaaddeb1b47c" category="list-text">* FlexPod 익스프레스. * 이 플랫폼은 원격 사무소 및 에지 사용 사례를 대상으로 하는 소형 통합 인프라입니다.</block>
-  <block id="82da3c7bdf42770183f1b2651ae3ac0a" category="inline-link">고성능 Oracle RAC를 위한 FlexPod 선택</block>
-  <block id="ea29f1a94a5cc0b3c2459d7f61b47043" category="list-text">* FlexPod Select. * 이 플랫폼은 과 같은 고성능 애플리케이션을 위해 특별히 제작된 아키텍처입니다<block ref="6aad01ba0b9744c0d680fcb06a4741ad" category="inline-link-rx"></block></block>
   <block id="e40160a33afbac1229efb757e5e03591" category="summary">이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요한 추가 기술 사양에 대해 설명합니다.</block>
   <block id="209fbfad3dfefea8146a1134b927e2ab" category="doc">기술 사양 및 참조 자료</block>
   <block id="8731b9061e726c6b3db4589162b8561d" category="section-title">Cisco UCS B-Series 블레이드 서버</block>
@@ -7278,21 +7270,11 @@
   <block id="6b2cd9fd5e6df687c3d2d950a0504cb2" category="list-text">CDP 인접 항목 객체 추가</block>
   <block id="1b178e202b7d2a2988fd16b3b67c6a9b" category="list-text">Cisco Intersight에서 NetApp 워크플로우 스토리지 작업을 추가했습니다. 을 참조하십시오 <block ref="026b254cc8ff2f5d36709bcf93418a5f" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
   <block id="054ea9c656473e275b7ae5b69269cc81" category="list-text">볼륨에 스토리지 내보내기 정책을 추가합니다</block>
-  <block id="005bfd913eb29ed0d97dbcf92a1dc44b" category="list-text">스토리지 호스트(igroup)에 이니시에이터 연결</block>
   <block id="aa4edcb7e57123151162ef878a3a3bb4" category="list-text">스토리지 LUN 을 확장합니다</block>
   <block id="cb036c70939fadc3637cbeb990d0a969" category="list-text">스토리지 볼륨 을 확장합니다</block>
   <block id="01b698a596504162b7fcdf910e9175db" category="list-text">NetApp igroup LUN 맵을 찾습니다</block>
   <block id="9e5d320b5556f2516f70b24e91d5f757" category="list-text">ID별로 스토리지 LUN을 찾습니다</block>
   <block id="783d5727a583df3d75bb078907ef7716" category="list-text">ID별로 스토리지 볼륨을 찾습니다</block>
-  <block id="2e98a15a497ccdd705c1aacbc2565767" category="list-text">새로운 스토리지 Fibre Channel 인터페이스</block>
-  <block id="a2e112440799116f544e38030177ebc7" category="list-text">새로운 스토리지 IP 인터페이스</block>
-  <block id="97ac0e10ec1653fdd6d33b534b4fb581" category="list-text">새 스토리지 LUN</block>
-  <block id="194f7608b74b74a368090a870f7d5fcb" category="list-text">새 스토리지 LUN ID입니다</block>
-  <block id="8984b5a23cc2d3327a7853fd1f99478b" category="list-text">새로운 스토리지 볼륨</block>
-  <block id="306682b00b95423c3808ed174d82d2b5" category="list-text">스토리지 엑스포트 정책을 제거합니다</block>
-  <block id="51509d7e2140913e263274d44c95a454" category="list-text">스토리지 호스트를 제거합니다</block>
-  <block id="e85a681fd3a43de819202fa65bd57afb" category="list-text">스토리지 LUN을 제거합니다</block>
-  <block id="4b80c44802bcd924cae1f359acfed1d8" category="list-text">스토리지 LUN ID를 제거합니다</block>
   <block id="f44bd35636cd69c25b2f240a770ab0a5" category="list-text">저장소 볼륨을 제거합니다</block>
   <block id="5cb81d48ffabbd08e273eb1371ff2113" category="list-text">새 스토리지 스냅샷 정책</block>
   <block id="46c325550313b45bd974662a8ba5d5c5" category="list-text">새 스토리지 스냅샷 정책 스케줄입니다</block>
@@ -7311,9 +7293,6 @@
   <block id="0027d78119d537368b4fd4055fdfdd69" category="list-text">스토리지 IP 인터페이스를 제거합니다</block>
   <block id="2205b729cc3612050bfabb80d4d267a0" category="list-text">스토리지 가상 머신을 제거합니다</block>
   <block id="091e9fb66636892d6015097e15c3353a" category="list-text">스토리지 가상 머신에 대한 애그리게이트를 편집합니다</block>
-  <block id="c124f401989eb56f128d81a49069b568" category="list-text">새로운 저장소 NAS 스마트 볼륨</block>
-  <block id="961513c69619cf93fef1cda04ea9a298" category="list-text">새로운 스토리지 스마트 LUN</block>
-  <block id="207134fdf4cc60a2571bb638077b925c" category="list-text">Storage Smart LUN을 제거합니다</block>
   <block id="fc763aee087e01aba254202f6cfd6ba9" category="admonition">새 스토리지 NAS 스마트 볼륨 및 새 스토리지 스마트 LUN 작업은 ONTAP 9.8 이상에서만 작동합니다. ONTAP 9.7P1이(가) 현재 지원되는 최소 버전입니다.</block>
   <block id="d3723866fd8ed566ec4269ff8a1cde80" category="inline-link-macro">NetApp Active IQ Unified Manager 문서</block>
   <block id="3537e24e4745c06b41a151532f5f0cd1" category="paragraph">Active IQ Unified Manager를 설치하거나 업그레이드하지 않은 경우(최신 버전 권장, 현재 9.10P1) 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
@@ -7912,4 +7891,35 @@
   <block id="b039f508b07fa442d12ced167cdee4ab" category="paragraph"><block ref="b039f508b07fa442d12ced167cdee4ab" category="inline-link-macro-rx"></block></block>
   <block id="a400e1c221e8c3e8b80a81f5085a481d" category="paragraph"><block ref="a400e1c221e8c3e8b80a81f5085a481d" category="inline-link-macro-rx"></block></block>
   <block id="77adde3767ae2cc82097445aa8b15e86" category="list-text">이중화 구성의 10Gbps 표준 이더넷 스위치 2개(Cisco Nexus 31108 권장, Cisco Nexus 3000 및 9000 모델 지원)</block>
+  <block id="40ad3b682c80f313282c440b74ef7360" category="paragraph"><block ref="40ad3b682c80f313282c440b74ef7360" category="inline-link-rx"></block></block>
+  <block id="d1cdbd3c8324f3afbc5b420ce471feff" category="section-title">2022년 7월</block>
+  <block id="f4b185ec676b1beb34726576b20e3951" category="list-text">이제 Capacity 위젯에서 클러스터 데이터 축소율에 대한 향상된 시각 자료를 사용할 수 있습니다</block>
+  <block id="451cf77b3f516b53f84c38860a146687" category="list-text">네트워크 인터페이스 페이지에 FC 인터페이스 탭이 추가되었습니다</block>
+  <block id="5a2fc567d92a62161d2b6939225dc099" category="list-text">일반 "새 저장소 볼륨" 작업을 사용하여 새 볼륨을 생성하면 볼륨 공간 보장이 없음으로 설정되고 스냅숏 예비 공간 비율은 0%로 설정됩니다</block>
+  <block id="f4735a0179c438df4f0652a2213627a4" category="list-text">이제 스냅샷 정책 편집 작업 아래에 주석 필드가 선택 사항이므로 더 이상 필수가 아닙니다</block>
+  <block id="8666295a1715993c51aadd871206b296" category="list-text">UI 인벤토리 및 오케스트레이션 일관성 향상</block>
+  <block id="c913ce3283ef4e82118b70e853725332" category="list-text">이제 System Manager와 일치하는 클러스터 용량 아래의 Intersight 용량 정보</block>
+  <block id="351ddfe27ca97ad456ea7b228dc67218" category="list-text">사용 편의성을 높이기 위해 새 관리 인터페이스를 생성할 때 모든 매개 변수를 표시하는 New Storage Virtual Machine 작업 아래에 확인란이 추가되었습니다</block>
+  <block id="ab652f6ea9944d5915c3894a6de4a64f" category="list-text">클라이언트 일치 아래 프로토콜을 이동했으므로 이제 System Manager와 일치합니다</block>
+  <block id="f4e3ab18e9c0fc16b6bf62f0f2357c60" category="list-text">이제 액세스 프로토콜을 표시하는 엑스포트 정책 일반 페이지</block>
+  <block id="f44e0c940713ce3079a40ba9bc222f07" category="list-text">iGroup 제거가 이제 조건부로 기록되었습니다</block>
+  <block id="fa4af406aa8e6bea78d3f4f656f199fe" category="list-text">새 스토리지 NAS 데이터 인터페이스 및 새 스토리지 iSCSI 데이터 인터페이스 아래에 NAS에 대한 "페일오버 정책" 및 "자동 변환" 매개 변수가 추가되었습니다</block>
+  <block id="5f5cca73b8e0b0dcf13ae37abd1b30a6" category="list-text">새 저장소 NAS에 대한 롤백 Smart Volume 작업은 연결된 다른 볼륨이 없는 경우 엑스포트 정책을 제거합니다</block>
+  <block id="85c1767724516ce4c530e386f6a8e04e" category="list-text">Smart Volume 및 Smart LUN 작업을 위한 향상된 기능을 제공합니다</block>
+  <block id="0de3d10d428301dc752a4aea634acb40" category="list-text">스토리지 호스트에 이니시에이터를 연결합니다</block>
+  <block id="9fc1d1408b035b5f699e246b36f2e395" category="list-text">새로운 NetApp 스토리지 파이버 채널 인터페이스</block>
+  <block id="a5df94fc588067cf92394a3554329601" category="list-text">새로운 스토리지 IP 인터페이스</block>
+  <block id="d7e057b4be4f5aec2f39a363e6970a26" category="list-text">새 스토리지 LUN</block>
+  <block id="4c807515ded4b2b7b3cea9068a98c67c" category="list-text">새 스토리지 LUN ID입니다</block>
+  <block id="c6751b7723c681fbbc53d1ece3f78e57" category="list-text">새로운 NetApp Storage NAS Smart Volume</block>
+  <block id="8221f154a0cd2642f264529279893b96" category="list-text">새로운 NetApp Storage Smart LUN을 도입했습니다</block>
+  <block id="e86a1c0d2603c82b6b81f234dae454af" category="list-text">새 스토리지 볼륨</block>
+  <block id="40f53794e58186747b2ca794fc115708" category="list-text">스토리지 엑스포트 정책을 제거합니다</block>
+  <block id="92deb106459eb050b785db2fe57cce48" category="list-text">스토리지 호스트를 제거합니다</block>
+  <block id="bd400b36b257aae8e728e6440fee9fe6" category="list-text">스토리지 LUN을 제거합니다</block>
+  <block id="020226a8130f1d7d0a9df708c3d7b600" category="list-text">스토리지 LUN ID를 제거합니다</block>
+  <block id="93eafe4433d296a1dd07b95ce951c9a7" category="list-text">NetApp Storage Smart LUN을 제거합니다</block>
+  <block id="b8a3a6101b5ada36c1e5927fd398157d" category="list-text">배포 후 프로세스 중에 다음 옵션을 선택합니다.</block>
+  <block id="05b3bc98db36aa487224a23de09ab3be" category="admonition">Intersight Assist를 선택할 때 계속하기 전에 장치 ID 및 클레임 코드를 기록해 두십시오.</block>
+  <block id="fd7b91f0228fe4adf25f7fca76314e8d" category="list-text">Intersight Assist * 를 선택하고 다음 단계를 완료합니다.</block>
 </blocks>
