@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/flexpod/issues/new?body=Page%3A%20[FabricPool](https://docs.netapp.com/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/flexpod/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/flexpod/blob/main/hybrid-cloud/cloud-fabricpool_fabricpool.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/flexpod/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/flexpod/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/flexpod/issues/new?body=Page%3A%20[FabricPool](https://docs.netapp.com/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/flexpod/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/flexpod/blob/main/hybrid-cloud/cloud-fabricpool_fabricpool.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/flexpod/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/flexpod/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -258,11 +258,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/flexpod/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -277,35 +279,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">한국어</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">한국어</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/flexpod/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ko-kr/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/flexpod/hybrid-cloud/cloud-fabricpool_fabricpool.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -349,7 +343,7 @@
   <div class="col-md-3" id="sidebar-height">
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
-    <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>사용 가능한 PDF<span>
     </span>
   </a>
 </div>
@@ -359,7 +353,7 @@
         
         
         <a target="_blank" href="/ko-kr/flexpod/pdfs/fullsite-sidebar/FlexPod_솔루션.pdf" >
-          <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+          <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>이 문서 사이트의 PDF</a>
 
 
 
@@ -374,7 +368,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_정의.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod 정의
           </a>
           
@@ -390,7 +384,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_익스프레스_기술_사양.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod 익스프레스 기술 사양
           </a>
           
@@ -428,8 +422,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -449,7 +441,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_데이터_센터_기술_사양.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod 데이터 센터 기술 사양
           </a>
           
@@ -487,8 +479,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -496,8 +486,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -517,7 +505,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_데이터_센터.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod 데이터 센터
           </a>
           
@@ -533,7 +521,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/NetApp_SnapMirror_비즈니스_연속성_및_ONTAP_9_10이_설치된_FlexPod_데이터_센터.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             NetApp SnapMirror 비즈니스 연속성 및 ONTAP 9.10이 설치된 FlexPod 데이터 센터
           </a>
           
@@ -553,7 +541,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/솔루션_검증.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             솔루션 검증
           </a>
           
@@ -569,8 +557,17 @@
 
 
 
+        </li>
+      </ul>
+    
 
-          
+  
+
+
+
+
+
+
         </li>
       </ul>
     
@@ -583,12 +580,6 @@
 
 
 
-          
-        </li>
-      </ul>
-    
-
-  
 
 
 
@@ -606,15 +597,6 @@
 
 
 
-
-
-
-
-
-
-
-
-          
         </li>
       </ul>
     
@@ -634,7 +616,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/하이브리드_클라우드.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             하이브리드 클라우드
           </a>
           
@@ -650,7 +632,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod용_NetApp_Cloud_Insights.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod용 NetApp Cloud Insights
           </a>
           
@@ -670,8 +652,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -691,7 +671,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_with_FabricPool___Amazon_AWS_S3로_비활성_데이터_계층화.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod with FabricPool - Amazon AWS S3로 비활성 데이터 계층화
           </a>
           
@@ -699,14 +679,7 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/flexpod/pdfs/pages/hybrid-cloud/cloud-fabricpool_fabricpool.pdf" >
-    <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
 
@@ -724,7 +697,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/구성.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             구성
           </a>
           
@@ -742,8 +715,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -759,8 +730,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -776,8 +745,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -797,7 +764,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/엔터프라이즈_데이터베이스.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             엔터프라이즈 데이터베이스
           </a>
           
@@ -813,7 +780,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/제공합니다.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             제공합니다
           </a>
           
@@ -857,8 +824,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -878,7 +843,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/오라클.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             오라클
           </a>
           
@@ -890,8 +855,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -911,7 +874,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/Microsoft_SQL_Server를_참조하십시오.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             Microsoft SQL Server를 참조하십시오
           </a>
           
@@ -925,8 +888,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -934,8 +895,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -955,7 +914,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/의료.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             의료
           </a>
           
@@ -971,7 +930,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/유전체학을_위한_FlexPod.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             유전체학을 위한 FlexPod
           </a>
           
@@ -993,8 +952,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1014,7 +971,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/MEDITECH_방향_사이징_가이드용_FlexPod.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             MEDITECH 방향 사이징 가이드용 FlexPod
           </a>
           
@@ -1028,8 +985,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1049,7 +1004,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/MEDITECH용_FlexPod_데이터_센터_배포_가이드.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             MEDITECH용 FlexPod 데이터 센터 배포 가이드
           </a>
           
@@ -1069,7 +1024,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/구축_및_구성.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             구축 및 구성
           </a>
           
@@ -1095,8 +1050,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1110,8 +1063,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1131,7 +1082,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/의료_영상용_FlexPod.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             의료 영상용 FlexPod
           </a>
           
@@ -1149,8 +1100,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1158,8 +1107,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1179,7 +1126,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/가상_데스크톱_인프라.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             가상 데스크톱 인프라
           </a>
           
@@ -1195,8 +1142,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1216,7 +1161,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/최신_앱.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             최신 앱
           </a>
           
@@ -1242,8 +1187,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1263,7 +1206,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/Microsoft_애플리케이션.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             Microsoft 애플리케이션
           </a>
           
@@ -1275,8 +1218,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1296,7 +1237,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_익스프레스.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod 익스프레스
           </a>
           
@@ -1312,7 +1253,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_및_NetApp_AFF_C190_Series_설계_가이드_를_참조하십시오.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 설계 가이드 를 참조하십시오
           </a>
           
@@ -1328,8 +1269,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1349,7 +1288,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_및_NetApp_AFF_C190_Series_구축_가이드_를_참조하십시오.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 구축 가이드 를 참조하십시오
           </a>
           
@@ -1373,7 +1312,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/구현_절차.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             구현 절차
           </a>
           
@@ -1395,8 +1334,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1412,8 +1349,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1433,7 +1368,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_and_AFF_A220_Series_설계_가이드_를_참조하십시오.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod Express with Cisco UCS C-Series and AFF A220 Series 설계 가이드 를 참조하십시오
           </a>
           
@@ -1453,8 +1388,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1474,7 +1407,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_Express_with_Cisco_UCS_C_Series_and_AFF_A220_Series_구축_가이드_를_참조하십시오.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod Express with Cisco UCS C-Series and AFF A220 Series 구축 가이드 를 참조하십시오
           </a>
           
@@ -1498,7 +1431,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/구현_절차.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             구현 절차
           </a>
           
@@ -1516,8 +1449,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1529,8 +1460,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1550,7 +1479,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/AFF_Express_with_VMware_vSphere_6_7U1_and_NetApp_FlexPod_A220_with_Direct_Attached_IP_기반_스토리지_설계_가이드_를_참조하십시오.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             AFF Express with VMware vSphere 6.7U1 and NetApp FlexPod A220 with Direct-Attached IP 기반 스토리지 설계 가이드 를 참조하십시오
           </a>
           
@@ -1570,8 +1499,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1591,7 +1518,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/직접_연결_IP_기반_스토리지를_사용하는_VMware_vSphere_6_7U1_및_NetApp_AFF_A220을_지원하는_FlexPod_Express.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express
           </a>
           
@@ -1609,8 +1536,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1620,8 +1545,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1641,7 +1564,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod_및_보안.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod 및 보안
           </a>
           
@@ -1657,7 +1580,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FlexPod__랜섬웨어에_대한_솔루션.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FlexPod, 랜섬웨어에 대한 솔루션
           </a>
           
@@ -1677,8 +1600,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1698,7 +1619,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/FIPS_140_2_Security_호환_FlexPod_솔루션을_통한_의료_서비스_지원.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             FIPS 140-2 Security-호환 FlexPod 솔루션을 통한 의료 서비스 지원
           </a>
           
@@ -1724,8 +1645,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1733,8 +1652,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1754,7 +1671,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/Cisco_Intersight_with_NetApp_ONTAP_스토리지_빠른_시작_가이드.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             Cisco Intersight with NetApp ONTAP 스토리지 빠른 시작 가이드
           </a>
           
@@ -1774,8 +1691,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1795,7 +1710,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/검토할_수_있습니다.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             검토할 수 있습니다
           </a>
           
@@ -1811,7 +1726,7 @@
               href="/ko-kr/flexpod/pdfs/sidebar/Cisco_UCSM__VMware_vSphere_7_0_및_NetApp_ONTAP_9를_사용하는_FlexPod용_엔드_투_엔드_NVMe.pdf" 
             
           >
-            <img src="/ko-kr/flexpod/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/flexpod/images/pdf.png" alt="" width="16" height="16"/>
             Cisco UCSM, VMware vSphere 7.0 및 NetApp ONTAP 9를 사용하는 FlexPod용 엔드 투 엔드 NVMe
           </a>
           
@@ -1823,8 +1738,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1832,19 +1745,16 @@
   
 
 
-
-          
         </li>
       </ul>
     
 
   
-
 
 </li></ul>
   <div class="zip-pdf-link-container" style="display: none;">   
     <a href="#" id="zipPdf">
-      <img src="/ko-kr/flexpod/images/pdf-zip.png" width="16" height="16"/>
+      <img src="/ko-kr/flexpod/images/pdf-zip.png" alt="" width="16" height="16"/>
       <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
     </a><div id="zip-link-popup" class="hide">
     <div class="inner-modal">
@@ -1877,7 +1787,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/flexpod/index.html">
         FlexPod 솔루션 설명서
       </a></li><li class="subfolders "><a href="#">
@@ -2897,4 +2807,5 @@ NSE 또는 NVE는 선택 사항이며 FabricPool를 사용할 필요가 없습�
     </script>
     <script src='/ko-kr/flexpod/js/www-ntap.js'></script>
     <script src='/ko-kr/flexpod/js/tabbed-blocks.js'></script>
+    <script src='/ko-kr/flexpod/js/sidebar.js'></script>
   </body></html>
