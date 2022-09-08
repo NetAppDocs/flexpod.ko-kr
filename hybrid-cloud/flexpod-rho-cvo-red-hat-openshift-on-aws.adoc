@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/flexpod-rho-cvo-red-hat-openshift-on-aws.html 
+keywords: red hat, openshift, aws, deployment, master, worker 
+summary: DR 사이트로 AWS에 별도의 자가 관리 OpenShift Container Platform 4 클러스터가 구축됩니다. 마스터 노드와 작업자 노드는 고가용성을 위해 세 개의 가용성 영역에 걸쳐 있습니다. 
+---
+= AWS 기반 Red Hat OpenShift
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:flexpod-rho-cvo-flexpod-for-openshift-container-platform-4-bare-metal-installation.html["이전: OpenShift Container Platform 4 베어메탈 설치용 FlexPod"]
+
+DR 사이트로 AWS에 별도의 자가 관리 OpenShift Container Platform 4 클러스터가 구축됩니다. 마스터 노드와 작업자 노드는 고가용성을 위해 세 개의 가용성 영역에 걸쳐 있습니다.
+
+image:flexpod-rho-cvo-image10.png["오류: 그래픽 이미지가 없습니다"]
+
+....
+[ec2-user@ip-172-30-164-92 ~]$ oc get nodes
+NAME                             STATUS   ROLES    AGE   VERSION
+ip-172-30-164-128.ec2.internal   Ready    worker   29m   v1.22.8+f34b40c
+ip-172-30-164-209.ec2.internal   Ready    master   36m   v1.22.8+f34b40c
+ip-172-30-165-160.ec2.internal   Ready    master   33m   v1.22.8+f34b40c
+ip-172-30-165-93.ec2.internal    Ready    worker   30m   v1.22.8+f34b40c
+ip-172-30-166-162.ec2.internal   Ready    master   36m   v1.22.8+f34b40c
+ip-172-30-166-51.ec2.internal    Ready    worker   28m   v1.22.8+f34b40c
+....
+OpenShift는 로 배포됩니다 https://docs.openshift.com/container-platform/4.8/installing/installing_aws/installing-aws-private.html["프라이빗 클러스터"^] AWS 기반 기존 VPC에. 사설 OpenShift Container Platform 클러스터는 외부 엔드포인트를 노출하지 않으며 내부 네트워크에서만 액세스할 수 있고 인터넷에서는 볼 수 없습니다. NetApp Cloud Manager를 사용하여 단일 노드 NetApp Cloud Volumes ONTAP를 구축하고 Astra Trident에 스토리지 백엔드를 제공합니다.
+
+AWS에 OpenShift를 설치하는 방법에 대한 자세한 내용은 를 참조하십시오 https://docs.openshift.com/container-platform/4.8/installing/installing_aws/installing-aws-vpc.html["OpenShift 문서"^].
+
+link:flexpod-rho-cvo-netapp-cloud-volumes-ontap.html["다음은 NetApp Cloud Volumes ONTAP의 차례입니다."]

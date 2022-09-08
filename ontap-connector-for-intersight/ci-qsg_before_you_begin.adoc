@@ -20,7 +20,7 @@ Cisco Intersight에서 NetApp 스토리지를 모니터링 및 오케스트레�
 
 == NetApp Active IQ Unified Manager 설치 또는 업그레이드
 
-Active IQ Unified Manager를 설치하거나 업그레이드하지 않은 경우(최신 버전 권장, 현재 9.10P1) 자세한 내용은 로 이동하십시오 link:https://docs.netapp.com/us-en/active-iq-unified-manager/["NetApp Active IQ Unified Manager 문서"].
+아직 설치하지 않았다면 Active IQ Unified Manager(최신 버전이 필요하며 현재 9.11 GA)로 설치하거나 업그레이드하십시오. 자세한 내용은 로 이동하십시오 link:https://docs.netapp.com/us-en/active-iq-unified-manager/["NetApp Active IQ Unified Manager 문서"].
 
 
 

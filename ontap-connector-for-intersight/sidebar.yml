@@ -1,6 +1,6 @@
 ---
 section: ontap-connector-for-intersight
-title: Cisco Intersight with NetApp ONTAP 스토리지 빠른 시작 가이드
+title: NetApp ONTAP 스토리지와 Cisco Intersight
 entries:
 - title: 소개
   url: "/ontap-connector-for-intersight/index.html"

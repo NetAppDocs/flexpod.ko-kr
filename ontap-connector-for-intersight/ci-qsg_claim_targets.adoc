@@ -19,7 +19,7 @@ Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 가상화
 
 NOTE: NetApp AIQ UM(Active IQ Unified Manager) API 게이트웨이가 활성화되어 있는지 확인하십시오.
 
-설정 > 일반 > 기능 설정 * 으로 이동합니다.
+NetApp IQ Unified Manager에서 * 설정 > 일반 > 기능 설정 * 으로 이동합니다.
 
 image:ci-qsg_image7.png["활성화된 NetApp AIQ UM API 게이트웨이의 스크린샷"]
 

@@ -1,0 +1,277 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/flexpod-rho-cvo-application-recovery-with-remote-backups.html 
+keywords: application-consistent backup, recovery, use case, remote, backup, operatorhub 
+summary: Astra를 사용하면 애플리케이션 정합성이 보장된 전체 백업을 수행할 수 있습니다. 이 백업을 사용하여 사내 데이터 센터 또는 퍼블릭 클라우드에서 실행 중인 다른 Kubernetes 클러스터로 데이터를 가진 애플리케이션을 복원할 수 있습니다. 성공적인 애플리케이션 복구를 검증하려면 FlexPod 시스템에서 실행 중인 애플리케이션의 사내 장애를 시뮬레이션하고 원격 백업을 사용하여 클라우드에서 실행 중인 K8s 클러스터로 애플리케이션을 복구합니다. 
+---
+= 원격 백업을 사용한 애플리케이션 복구
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:flexpod-rho-cvo-solution-validation_overview.html["이전: 솔루션 검증 개요"]
+
+Astra를 사용하면 애플리케이션 정합성이 보장된 전체 백업을 수행할 수 있습니다. 이 백업을 사용하여 사내 데이터 센터 또는 퍼블릭 클라우드에서 실행 중인 다른 Kubernetes 클러스터로 데이터를 가진 애플리케이션을 복원할 수 있습니다.
+
+성공적인 애플리케이션 복구를 검증하려면 FlexPod 시스템에서 실행 중인 애플리케이션의 사내 장애를 시뮬레이션하고 원격 백업을 사용하여 클라우드에서 실행 중인 K8s 클러스터로 애플리케이션을 복구합니다.
+
+샘플 응용 프로그램은 데이터베이스에 MySQL을 사용하는 가격 목록 응용 프로그램입니다. 배포를 자동화하기 위해 을 사용했습니다 https://argo-cd.readthedocs.io/en/stable/["argo CD"^] 도구. argo CD는 선언적 GitOps, 지속적인 Kubernetes 제공 툴입니다.
+
+. 온-프레미스 OpenShift 클러스터에 로그인하여 이름이 argocd인 새 프로젝트를 만듭니다.
++
+image:flexpod-rho-cvo-image34.png["오류: 그래픽 이미지가 없습니다"]
+
+. OperatorHub에서 argocd를 검색하고 Argo CD 연산자를 선택합니다.
++
+image:flexpod-rho-cvo-image35.png["오류: 그래픽 이미지가 없습니다"]
+
+. 'argocd' 네임스페이스에 연산자를 설치합니다.
++
+image:flexpod-rho-cvo-image36.png["오류: 그래픽 이미지가 없습니다"]
+
+. 운영자로 이동하여 ArgoCD 생성 을 클릭합니다.
++
+image:flexpod-rho-cvo-image37.png["오류: 그래픽 이미지가 없습니다"]
+
+. 아르고 CD 인스턴스를 "argocd" 프로젝트에 배포하려면 이름을 입력하고 만들기 를 클릭합니다.
++
+image:flexpod-rho-cvo-image38.png["오류: 그래픽 이미지가 없습니다"]
+
+. Argo CD에 로그인하려면 기본 사용자는 admin이고 암호는 "argocd-NetApp-cluster"라는 이름의 비밀 파일에 있어야 합니다.
++
+image:flexpod-rho-cvo-image39.png["오류: 그래픽 이미지가 없습니다"]
+
+. 측면 메뉴에서 루트 > 위치를 선택하고 "argocd" 루트의 URL을 클릭합니다. 사용자 이름과 암호를 입력합니다.
++
+image:flexpod-rho-cvo-image40.png["오류: 그래픽 이미지가 없습니다"]
+
+. CLI를 통해 Argo CD에 온-프레미스 OpenShift 클러스터를 추가합니다.
++
+....
+####Login to Argo CD####
+abhinav3@abhinav-ansible$ argocd-linux-amd64 login argocd-netapp-server-argocd.apps.ocp.flexpod.netapp.com --insecure
+Username: admin
+Password:
+'admin:login' logged in successfully
+Context'argocd-netapp-server-argocd.apps.ocp.flexpod.netapp.com' updated
+####List the On-Premises OpenShift cluster####
+abhinav3@abhinav-ansible$ argocd-linux-amd64 cluster add
+ERRO[0000] Choose a context name from:
+CURRENT  NAME                                                          CLUSTER              SERVER
+*        default/api-ocp-flexpod-netapp-com:6443/abhinav3              api-ocp-flexpod-netapp-com:6443   https://api.ocp.flexpod.netapp.com:6443
+         default/api-ocp1-flexpod-netapp-com:6443/abhinav3             api-ocp1-flexpod-netapp-com:6443  https://api.ocp1.flexpod.netapp.com:6443
+####Add On-Premises OpenShift cluster###
+abhinav3@abhinav-ansible$ argocd-linux-amd64 cluster add default/api-ocp1-flexpod-netapp-com:6443/abhinav3
+WARNING: This will create a service account `argocd-manager` on the cluster referenced by context `default/api-ocp1-flexpod-netapp-com:6443/abhinav3` with full cluster level admin privileges. Do you want to continue [y/N]? y
+INFO[0002] ServiceAccount "argocd-manager" already exists in namespace "kube-system"
+INFO[0002] ClusterRole "argocd-manager-role" updated
+INFO[0002] ClusterRoleBinding "argocd-manager-role-binding" updated
+Cluster 'https://api.ocp1.flexpod.netapp.com:6443' added
+....
+. ArgoCD UI에서 새 앱 을 클릭하고 앱 이름 및 코드 리포지토리에 대한 세부 정보를 입력합니다.
++
+image:flexpod-rho-cvo-image41.png["오류: 그래픽 이미지가 없습니다"]
+
+. 네임스페이스와 함께 앱을 배포할 OpenShift 클러스터를 입력합니다.
++
+image:flexpod-rho-cvo-image42.png["오류: 그래픽 이미지가 없습니다"]
+
+. 온-프레미스 OpenShift 클러스터에 앱을 배포하려면 동기화 를 클릭합니다.
++
+image:flexpod-rho-cvo-image43.png["오류: 그래픽 이미지가 없습니다"]
+
+. OpenShift Container Platform 콘솔에서 Project Pricelist로 이동한 후 Storage에서 PVC의 이름과 크기를 확인합니다.
++
+image:flexpod-rho-cvo-image44.png["오류: 그래픽 이미지가 없습니다"]
+
+. System Manager에 로그인하여 PVC를 확인합니다.
++
+image:flexpod-rho-cvo-image45.png["오류: 그래픽 이미지가 없습니다"]
+
+. Pod가 실행된 후 측면 메뉴에서 네트워킹 > 경로를 선택하고 위치 에서 URL을 클릭합니다.
++
+image:flexpod-rho-cvo-image46.png["오류: 그래픽 이미지가 없습니다"]
+
+. 가격 목록 앱 홈 페이지가 표시됩니다.
++
+image:flexpod-rho-cvo-image47.png["오류: 그래픽 이미지가 없습니다"]
+
+. 웹 페이지에서 몇 개의 레코드를 만듭니다.
++
+image:flexpod-rho-cvo-image48.png["오류: 그래픽 이미지가 없습니다"]
+
+. 이 앱은 Astra Control Center에서 발견됩니다. 앱을 관리하려면 응용 프로그램 > 검색으로 이동하여 가격 목록 앱을 선택하고 작업 에서 응용 프로그램 관리 를 클릭합니다.
++
+image:flexpod-rho-cvo-image49.png["오류: 그래픽 이미지가 없습니다"]
+
+. 가격 목록 앱을 클릭하고 데이터 보호 를 선택합니다. 이때 스냅샷 또는 백업이 없어야 합니다. 스냅샷 생성 을 클릭하여 필요 시 스냅샷을 생성합니다.
++
+image:flexpod-rho-cvo-image50.png["오류: 그래픽 이미지가 없습니다"]
+
++
+
+NOTE: NetApp Astra Control Center는 주문형 스냅샷과 예약된 스냅샷 및 백업을 모두 지원합니다.
+
+. 스냅샷이 생성되고 상태가 양호하면 해당 스냅샷을 사용하여 원격 백업을 생성합니다. 이 백업은 S3 버킷에 저장됩니다.
++
+image:flexpod-rho-cvo-image51.png["오류: 그래픽 이미지가 없습니다"]
+
+. AWS S3 버킷을 선택하고 백업 작업을 시작합니다.
++
+image:flexpod-rho-cvo-image52.png["오류: 그래픽 이미지가 없습니다"]
+
+. 백업 작업에서는 AWS S3 버킷에 여러 오브젝트가 포함된 폴더를 생성해야 합니다.
++
+image:flexpod-rho-cvo-image53.png["오류: 그래픽 이미지가 없습니다"]
+
+. 원격 백업이 완료되면 PV의 백업 볼륨을 호스팅하는 SVM(스토리지 가상 머신)을 중지하여 온프레미스 재해 상황을 시뮬레이션합니다.
++
+image:flexpod-rho-cvo-image54.png["오류: 그래픽 이미지가 없습니다"]
+
+. 웹 페이지를 새로 고쳐 중단을 확인합니다. 웹 페이지를 사용할 수 없습니다.
++
+image:flexpod-rho-cvo-image55.png["오류: 그래픽 이미지가 없습니다"]
+
++
+예상대로 웹 사이트가 다운되었습니다. 이제 Astra를 사용하여 AWS에서 실행되는 OpenShift 클러스터로 원격 백업에서 앱을 빠르게 복구하겠습니다.
+
+. Astra Control Center에서 Pricelist 앱을 클릭하고 Data Protection > Backups를 선택합니다. 백업을 선택하고 작업 에서 응용 프로그램 복원 을 클릭합니다.
++
+image:flexpod-rho-cvo-image56.png["오류: 그래픽 이미지가 없습니다"]
+
+. 대상 클러스터로 OCP-AWS를 선택하고 이름 공간에 이름을 지정합니다. 필요 시 백업, 다음, 복원을 차례로 클릭합니다.
++
+image:flexpod-rho-cvo-image57.png["오류: 그래픽 이미지가 없습니다"]
+
+. AWS에서 실행되는 OpenShift 클러스터에서 'pricelist-app'이라는 이름의 새 앱이 표시됩니다.
++
+image:flexpod-rho-cvo-image58.png["오류: 그래픽 이미지가 없습니다"]
+
+. OpenShift 웹 콘솔에서도 동일하게 확인합니다.
++
+image:flexpod-rho-cvo-image59.png["오류: 그래픽 이미지가 없습니다"]
+
+. Pricelist-AWS 프로젝트 아래의 모든 포드가 실행 중인 후 루트 로 이동한 다음 URL을 클릭하여 웹 페이지를 시작합니다.
++
+image:flexpod-rho-cvo-image60.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+이 프로세스는 Pricelist 애플리케이션이 성공적으로 복원되었으며 Astra Control Center의 도움을 받아 AWS에서 원활하게 실행되는 OpenShift 클러스터에서 데이터 무결성이 유지되었는지 확인합니다.
+
+
+
+== DevTest를 위한 스냅샷 복사본 및 애플리케이션 이동성으로 데이터 보호
+
+이 사용 사례는 다음 섹션에 설명된 대로 두 부분으로 구성됩니다.
+
+
+
+=== 파트 1
+
+Astra Control Center를 사용하면 로컬 데이터 보호를 위해 애플리케이션 인식 스냅샷을 생성할 수 있습니다. 실수로 데이터를 삭제하거나 손상된 경우 이전에 기록된 스냅샷을 사용하여 응용 프로그램 및 관련 데이터를 알려진 양호한 상태로 되돌릴 수 있습니다.
+
+이 시나리오에서 개발 및 테스트(DevTest) 팀은 Ghost 블로그 응용 프로그램인 샘플 상태 저장 응용 프로그램(블로그 사이트)을 배포하고 일부 콘텐츠를 추가하며 앱을 사용 가능한 최신 버전으로 업그레이드합니다. Ghost 응용 프로그램은 SQLite를 데이터베이스에 사용합니다. 애플리케이션을 업그레이드하기 전에 Astra Control Center를 사용하여 데이터 보호를 위한 스냅샷(필요 시)을 생성합니다. 자세한 단계는 다음과 같습니다.
+
+. 샘플 블로깅 앱을 배포하고 ArgoCD에서 동기화합니다.
++
+image:flexpod-rho-cvo-image61.png["오류: 그래픽 이미지가 없습니다"]
+
+. 첫 번째 OpenShift 클러스터에 로그인한 후 Project로 이동하여 검색 표시줄에 Blog를 입력합니다.
++
+image:flexpod-rho-cvo-image62.png["오류: 그래픽 이미지가 없습니다"]
+
+. 측면 메뉴에서 네트워킹 > 경로를 선택하고 URL을 클릭합니다.
++
+image:flexpod-rho-cvo-image63.png["오류: 그래픽 이미지가 없습니다"]
+
+. 블로그 홈 페이지가 표시됩니다. 일부 콘텐츠를 블로그 사이트에 추가하고 게시합니다.
++
+image:flexpod-rho-cvo-image64.png["오류: 그래픽 이미지가 없습니다"]
+
+. Astra Control Center로 이동합니다. 먼저 검색된 탭에서 앱을 관리하고 스냅샷 복사본을 만듭니다.
++
+image:flexpod-rho-cvo-image65.png["오류: 그래픽 이미지가 없습니다"]
+
++
+
+NOTE: 스냅샷, 백업 또는 둘 모두를 정의된 일정에 따라 생성하여 앱을 보호할 수도 있습니다. 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/astra-control-center/use/protect-apps.html["스냅샷 및 백업으로 애플리케이션 보호"^].
+
+. 주문형 스냅샷이 생성된 후 앱을 최신 버전으로 업그레이드하십시오. 현재 이미지 버전은 고스트: 3.6-알파인(Ghost: 3.6-알파인)이며 타겟 버전은 유령: 최신이다. 앱을 업그레이드하려면 Git 리포지토리로 직접 변경하고 Argo CD에 동기화하십시오.
++
+image:flexpod-rho-cvo-image66.png["오류: 그래픽 이미지가 없습니다"]
+
+. 블로그 사이트가 다운되고 전체 응용 프로그램이 손상되었기 때문에 최신 버전으로 직접 업그레이드할 수 없습니다.
++
+image:flexpod-rho-cvo-image67.png["오류: 그래픽 이미지가 없습니다"]
+
+. 블로그 사이트를 사용할 수 없음을 확인하려면 URL을 새로 고치십시오.
++
+image:flexpod-rho-cvo-image68.png["오류: 그래픽 이미지가 없습니다"]
+
+. 스냅샷에서 앱을 복구합니다.
++
+image:flexpod-rho-cvo-image69.png["오류: 그래픽 이미지가 없습니다"]
+
+. 앱은 동일한 OpenShift 클러스터에서 복원됩니다.
++
+image:flexpod-rho-cvo-image70.png["오류: 그래픽 이미지가 없습니다"]
+
+. 앱 복원 프로세스가 즉시 시작됩니다.
++
+image:flexpod-rho-cvo-image71.png["오류: 그래픽 이미지가 없습니다"]
+
+. 몇 분 후 사용 가능한 스냅샷에서 앱이 성공적으로 복구됩니다.
++
+image:flexpod-rho-cvo-image72.png["오류: 그래픽 이미지가 없습니다"]
+
+. 웹 페이지를 사용할 수 있는지 확인하려면 URL을 새로 고치십시오.
++
+image:flexpod-rho-cvo-image73.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+DevTest 팀은 Astra Control Center를 통해 스냅샷을 사용하여 블로그 사이트 앱 및 관련 데이터를 성공적으로 복구할 수 있습니다.
+
+
+
+=== 2부
+
+Astra Control Center를 사용하면 클러스터 위치에 관계없이 온프레미스 또는 클라우드의 전체 애플리케이션과 함께 Kubernetes 클러스터 간에 데이터를 이동할 수 있습니다.
+
+. DevTest 팀은 처음에 앱을 지원되는 버전('Ghost-4.6-Alpine')으로 업그레이드한 후 최종 버전('Ghost-latest')으로 업그레이드하여 프로덕션을 준비합니다. 그런 다음 다른 FlexPod 시스템에서 실행되는 프로덕션 OpenShift 클러스터에 클론 복제된 앱을 업그레이드합니다.
+. 이때 앱이 최신 버전으로 업그레이드되어 운영 클러스터에 클론 복제할 준비가 됩니다.
++
+image:flexpod-rho-cvo-image74.png["오류: 그래픽 이미지가 없습니다"]
+
+. 새 테마를 확인하려면 블로그 사이트를 새로 고칩니다.
++
+image:flexpod-rho-cvo-image75.png["오류: 그래픽 이미지가 없습니다"]
+
+. Astra Control Center에서 VMware vSphere에서 실행 중인 다른 운영 OpenShift 클러스터로 앱을 복제합니다.
++
+image:flexpod-rho-cvo-image76.png["오류: 그래픽 이미지가 없습니다"]
+
++
+이제 운영 OpenShift 클러스터에서 새 애플리케이션 클론이 프로비저닝됩니다.
+
++
+image:flexpod-rho-cvo-image77.png["오류: 그래픽 이미지가 없습니다"]
+
+. Production OpenShift 클러스터에 로그인하여 프로젝트 블로그를 검색합니다.
++
+image:flexpod-rho-cvo-image78.png["오류: 그래픽 이미지가 없습니다"]
+
+. 측면 메뉴에서 네트워킹 > 경로를 선택하고 위치 아래에서 URL을 클릭합니다. 콘텐츠가 포함된 동일한 홈페이지가 표시됩니다.
++
+image:flexpod-rho-cvo-image79.png["오류: 그래픽 이미지가 없습니다"]
+
+
+
+이것으로 Astra Control Center 솔루션 검증을 마치겠습니다. 이제 Kubernetes 클러스터의 위치에 관계없이 전체 애플리케이션과 해당 데이터를 Kubernetes 클러스터 간에 복제할 수 있습니다.
+
+link:flexpod-rho-cvo-conclusion.html["다음: 결론."]

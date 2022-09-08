@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/flexpod-rho-cvo-netapp-cloud-volumes-ontap.html 
+keywords: cvo, astra, connector, cloud manager, storage backend, snapshot 
+summary: 이 섹션에서는 AWS에 Cloud Volumes ONTAP 및 Astra Trident를 구축하는 방법을 설명합니다. 
+---
+= NetApp Cloud Volumes ONTAP를 참조하십시오
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:flexpod-rho-cvo-red-hat-openshift-on-aws.html["이전: AWS의 Red Hat OpenShift"]
+
+NetApp Cloud Volumes ONTAP 인스턴스는 AWS에 구축되며 Astra Trident에 백엔드 스토리지 역할을 합니다. Cloud Volumes ONTAP 작업 환경을 추가하기 전에 커넥터를 구축해야 합니다. 커넥터가 없는 상태에서 첫 번째 Cloud Volumes ONTAP 작업 환경을 생성하려고 하면 Cloud Manager에서 메시지가 표시됩니다. AWS에 Connector를 구축하려면 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["커넥터를 작성합니다"^].
+
+AWS에 Cloud Volumes ONTAP를 구축하려면 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["AWS 환경을 위한 빠른 시작"^].
+
+Cloud Volumes ONTAP를 구축한 후 Astra Trident를 설치하고 OpenShift Container Platform 클러스터에서 스토리지 백엔드 및 스냅샷 클래스를 구성할 수 있습니다.
+
+link:flexpod-rho-cvo-astra-control-center-installation-on-openshift-container-platform.html["다음: OpenShift Container Platform에 Astra Control Center를 설치합니다."]
