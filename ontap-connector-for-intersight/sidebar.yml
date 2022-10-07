@@ -11,6 +11,8 @@ entries:
   url: "/ontap-connector-for-intersight/ci-qsg_requirements.html"
 - title: 시작하기 전에
   url: "/ontap-connector-for-intersight/ci-qsg_before_you_begin.html"
+- title: IMT 서비스용 AIQ UM 프록시 서버를 구성합니다
+  url: "/ontap-connector-for-intersight/ci-qsg_aiqum_imt_proxy_config.html"
 - title: 청구 대상
   url: "/ontap-connector-for-intersight/ci-qsg_claim_targets.html"
 - title: Cisco Intersight에서 NetApp 스토리지 모니터링

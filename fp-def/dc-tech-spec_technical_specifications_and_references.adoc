@@ -437,16 +437,16 @@ NetApp 디스크 쉘프의 기술 사양에는 폼 팩터 크기, 엔클로저�
 | 구성 요소 | NetApp FAS/AFF 디스크 쉘프 문서 
 
 
-| NetApp DS212C 디스크 쉘프 | http://docs.netapp.com/platstor/topic/com.netapp.nav.sas3/home.html["DS212C 디스크 쉘프 문서"] 
+| NetApp DS212C 디스크 쉘프 | https://www.netapp.com/data-storage/disk-shelves-storage-media/["DS212C 디스크 쉘프 문서"] 
 
 
-| NetApp DS224C 디스크 쉘프 | http://docs.netapp.com/platstor/topic/com.netapp.nav.sas3/home.html["DS224C 디스크 쉘프 문서"] 
+| NetApp DS224C 디스크 쉘프 | https://www.netapp.com/data-storage/disk-shelves-storage-media/["DS224C 디스크 쉘프 문서"] 
 
 
-| NetApp DS460C 디스크 쉘프 | http://docs.netapp.com/platstor/topic/com.netapp.nav.sas3/home.html["DS460C 디스크 쉘프 문서"] 
+| NetApp DS460C 디스크 쉘프 | https://www.netapp.com/data-storage/disk-shelves-storage-media/["DS460C 디스크 쉘프 문서"] 
 
 
-| NetApp NS224 NVMe-SSD 디스크 쉘프 | https://docs.netapp.com/platstor/index.jsp?topic=%2Fcom.netapp.doc.hw-ds-nvme-shelfid%2FGUID-2C057CF4-8897-4270-BF57-CA90333FBCF4.html&lang=en["NS224 디스크 쉘프 문서"] 
+| NetApp NS224 NVMe-SSD 디스크 쉘프 | https://www.netapp.com/data-storage/disk-shelves-storage-media/["NS224 디스크 쉘프 문서"] 
 |===
 
 

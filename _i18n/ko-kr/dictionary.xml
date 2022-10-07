@@ -6464,16 +6464,12 @@
   <block id="7f0e76e050a690f383ba518e5dc386f3" category="cell">NetApp FAS/AFF 디스크 쉘프 문서</block>
   <block id="e76c07915a60bfdaf4c9dd87979fa449" category="cell">NetApp DS212C 디스크 쉘프</block>
   <block id="b539e925204802559371bf5b81d79954" category="inline-link">DS212C 디스크 쉘프 문서</block>
-  <block id="ef162519d16b1936bf31da3a369049a1" category="cell"><block ref="ef162519d16b1936bf31da3a369049a1" category="inline-link-rx"></block></block>
   <block id="215bdc4f5901db3322a51a02e5573550" category="cell">NetApp DS224C 디스크 쉘프</block>
   <block id="2a23643eed53b0879cb9ffff0a404bfb" category="inline-link">DS224C 디스크 쉘프 문서</block>
-  <block id="779556aec1edf8b5675c2d3dfa53e0c3" category="cell"><block ref="779556aec1edf8b5675c2d3dfa53e0c3" category="inline-link-rx"></block></block>
   <block id="d7592745d562764dea1fb30de121bb8a" category="cell">NetApp DS460C 디스크 쉘프</block>
   <block id="cc65918bd28bab6767cc0d37580a9bd0" category="inline-link">DS460C 디스크 쉘프 문서</block>
-  <block id="c1993083b76561b6cc7488ea49dad053" category="cell"><block ref="c1993083b76561b6cc7488ea49dad053" category="inline-link-rx"></block></block>
   <block id="a3cf3a1f214dd05382c45e1c59088a60" category="cell">NetApp NS224 NVMe-SSD 디스크 쉘프</block>
   <block id="87db9ffbb33e8796f7f110bc6b8b591d" category="inline-link">NS224 디스크 쉘프 문서</block>
-  <block id="e509169f7b763c049d6e1cd8959bb624" category="cell"><block ref="68bc1010e02188d9b3d4ec8388e14a51" category="inline-link-rx"></block></block>
   <block id="16f17b706ba2e29ed39978b26d5efd75" category="section-title">NetApp 드라이브</block>
   <block id="1db61abeed53a1e4b952c0d4bae14ca3" category="paragraph">NetApp 드라이브의 기술 사양에는 폼 팩터 크기, 디스크 용량, 디스크 RPM, 지원 컨트롤러 및 ONTAP 버전 요구사항이 포함됩니다. 이러한 사양은 의 드라이브 섹션에서 찾을 수 있습니다<block ref="afd6b1daca313ab42848776252cb3eb9" category="inline-link-rx"></block>.</block>
   <block id="ce4b913bf13efbff79cb8ef44a60fbcc" category="summary">이 섹션에서는 FlexPod 익스프레스 설계의 전원 및 최소 케이블 연결 요구 사항에 대해 설명합니다.</block>
@@ -9192,4 +9188,19 @@
   <block id="b2f3408c9d01ee65202784c85e804e29" category="inline-link-macro">다음: 컨트롤러에서 Terraform 실행.</block>
   <block id="b676b4f0a7c70c0b6b427d2d63263495" category="paragraph"><block ref="b676b4f0a7c70c0b6b427d2d63263495" category="inline-link-macro-rx"></block></block>
   <block id="549e147409126d885754994939d9cb6c" category="sidebar">NetApp Cloud Volumes ONTAP 및 Cisco Intersight가 지원되는 Google 클라우드 플랫폼용 FlexPod 하이브리드 클라우드</block>
+  <block id="b77014effa68d8bd1b8a5868123a2a63" category="summary">프록시 서버 구성을 사용하는 AIQ UM은 IMT 서비스를 활용하기 위해 CLI를 통해 설정해야 합니다.</block>
+  <block id="e814e5396b09bd235085ad390f6ea986" category="doc">IMT 서비스용 AIQ UM 프록시 서버를 구성합니다</block>
+  <block id="5a66f19b0ec8be9c2e0a7c58787ea9b1" category="paragraph">NetApp ONTAP 스토리지와 Cisco Intersight를 위해 AIQ UM이 포함된 프록시 서버를 사용하는 경우 IMT(상호 운용성 매트릭스 툴 서비스)를 활용하려면 CLI(Command Line Interface)를 통해 설정을 구성해야 합니다. AIQ UM 프록시 서버 설정을 구성하려면 OVA(Active IQ Unified Manager 가상 머신) 진단 셸을 사용해야 합니다.</block>
+  <block id="80b32c2ac8f5fd5845a3ccaf583c8c8b" category="inline-link">OVA(Active IQ Unified Manager Virtual Machine) DIAG 셸에 액세스하는 방법</block>
+  <block id="baf8ab71191c15b45a74e4bc93f0b0cf" category="admonition">AIQ UM 진단 셸에 액세스하는 방법에 대한 자세한 내용은 을 참조하십시오<block ref="6b434b6393786ea1d3dba8a708c6486d" category="inline-link-rx"></block></block>
+  <block id="22b912c9ddb3da961206d948f4472107" category="list-text">AIQ UM 터미널에 로그인하고 다음 명령을 실행하여 um에 로그인합니다.</block>
+  <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 예 *</block>
+  <block id="6cb809a8bc4e94ce05646c538ea53abd" category="list-text">다음 명령어를 실행해 IMT_PROXY_HOST와 IMT_PROXY_PORT를 설정한다.</block>
+  <block id="527a65460dc1c7f686c7683b3ab72495" category="admonition">IMT 프록시는 AutoSupport(ASUP) 프록시 구성과 별도의 구성입니다.</block>
+  <block id="37f4f54ba1187a9487a7c7c02790e03e" category="admonition">IMT 프록시 서버 구성은 인증을 지원하지 않습니다.</block>
+  <block id="3b9d69f0a29fb6e182f8d000f6c02f3e" category="list-text">IMT 프록시 세부 정보를 확인하여 다음 명령어를 통해 proxy_host와 proxy_port 설정을 확인한다.</block>
+  <block id="1a8a82d18ec89729783cfac8c1b987e5" category="cell"><block ref="1a8a82d18ec89729783cfac8c1b987e5" category="inline-link-rx"></block></block>
+  <block id="f205de40b1d0e559049d3fcc494e1df9" category="cell"><block ref="f205de40b1d0e559049d3fcc494e1df9" category="inline-link-rx"></block></block>
+  <block id="a7925e750bfc040002383b6d7dc9f5ac" category="cell"><block ref="a7925e750bfc040002383b6d7dc9f5ac" category="inline-link-rx"></block></block>
+  <block id="eaa8da373e73883b20c172d7d760cc68" category="cell"><block ref="eaa8da373e73883b20c172d7d760cc68" category="inline-link-rx"></block></block>
 </blocks>

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: ontap-connector-for-intersight/ci-qsg_aiqum_imt_proxy_config.html 
+keywords: cisco, intersight, intersight assist, netapp, ontap, connector, configuration, active iq unified manager, proxy, imt, deployment, interoperability, ai qm, ova, cli 
+summary: 프록시 서버 구성을 사용하는 AIQ UM은 IMT 서비스를 활용하기 위해 CLI를 통해 설정해야 합니다. 
+---
+= IMT 서비스용 AIQ UM 프록시 서버를 구성합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+[role="lead"]
+NetApp ONTAP 스토리지와 Cisco Intersight를 위해 AIQ UM이 포함된 프록시 서버를 사용하는 경우 IMT(상호 운용성 매트릭스 툴 서비스)를 활용하려면 CLI(Command Line Interface)를 통해 설정을 구성해야 합니다. AIQ UM 프록시 서버 설정을 구성하려면 OVA(Active IQ Unified Manager 가상 머신) 진단 셸을 사용해야 합니다.
+
+
+NOTE: AIQ UM 진단 셸에 액세스하는 방법에 대한 자세한 내용은 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/How_to_access_Active_IQ_Unified_Manager_Virtual_Machine_OVA_DIAG_shell["OVA(Active IQ Unified Manager Virtual Machine) DIAG 셸에 액세스하는 방법"]
+
+* 단계 *
+
+. AIQ UM 터미널에 로그인하고 다음 명령을 실행하여 um에 로그인합니다.
++
+[listing]
+----
+um cli login -u <um maintenance user name>
+----
++
+* 예 *
+
++
+[listing]
+----
+um cli login -u admin
+----
+. 다음 명령어를 실행해 IMT_PROXY_HOST와 IMT_PROXY_PORT를 설정한다.
++
+
+NOTE: IMT 프록시는 AutoSupport(ASUP) 프록시 구성과 별도의 구성입니다.
+
++
+[listing]
+----
+um option set imt.https.proxy.host=<IMT_PROXY_HOST>
+um option set imt.https.proxy.port=<IMT_PROXY_PORT>
+----
++
+* 예 *
+
++
+[listing]
+----
+um option set imt.https.proxy.host=example-proxy.cls.eng.com
+um option set imt.https.proxy.port=8200
+----
++
+
+NOTE: IMT 프록시 서버 구성은 인증을 지원하지 않습니다.
+
+. IMT 프록시 세부 정보를 확인하여 다음 명령어를 통해 proxy_host와 proxy_port 설정을 확인한다.
++
+[listing]
+----
+um option list |grep imt
+----
+
