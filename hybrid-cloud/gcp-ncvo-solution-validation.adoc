@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/gcp-ncvo-solution-validation.html 
+keywords: validation, data replication workflow, measurements 
+summary: 이 페이지에서는 샘플 데이터 복제 워크플로우를 사용하여 솔루션을 다시 검토하고, 몇 가지 측정을 통해 FlexPod에서 실행되는 NetApp ONTAP 인스턴스에서 Google Cloud에서 실행되는 NetApp Cloud Volumes ONTAP로 데이터 복제가 수행되었는지 확인합니다. 
+---
+= 솔루션 검증
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:gcp-ncvo-terraform-execution-from-controller.html["이전: 컨트롤러에서 Terraform 실행."]
+
+이 섹션에서는 샘플 데이터 복제 워크플로우를 사용하여 솔루션을 다시 검토하고, 몇 가지 측정을 통해 FlexPod에서 실행되는 NetApp ONTAP 인스턴스에서 Google Cloud에서 실행되는 NetApp Cloud Volumes ONTAP로 데이터 복제가 수행되었는지 확인합니다.
+
+이 솔루션에서 Cisco Intersight 워크플로우 오케스트레이터를 사용했으며 이 오케스트레이터는 앞으로도 당사의 활용 사례에 사용될 것입니다.
+
+특히, 이 솔루션에 사용되는 제한된 Cisco Intersight 워크플로 집합은 Cisco Intersight에 장착된 전체 워크플로 집합을 나타내지 않습니다. 특정 요구 사항에 따라 사용자 지정 워크플로우를 생성하고 Cisco Intersight에서 트리거하도록 할 수 있습니다.
+
+성공적인 DR 시나리오에 대한 유효성 검사를 수행하려면 먼저 FlexPod에 속한 ONTAP의 볼륨에서 SnapMirror를 사용하여 Cloud Volumes ONTAP로 데이터를 이동합니다. 그런 다음 Google 클라우드 컴퓨팅 인스턴스에서 데이터에 액세스한 후 데이터 무결성 검사를 수행할 수 있습니다.
+
+이 솔루션의 성공 기준을 확인하는 데 사용되는 단계는 다음과 같습니다.
+
+. FlexPod의 ONTAP 볼륨에 있는 샘플 데이터 세트에 SHA256 체크섬을 생성합니다.
+. FlexPod에서 ONTAP와 Cloud Volumes ONTAP 간에 볼륨 SnapMirror 관계를 설정합니다.
+. 샘플 데이터 세트를 FlexPod에서 Cloud Volumes ONTAP로 복제합니다.
+. SnapMirror 관계를 유지하고 Cloud Volumes ONTAP의 볼륨을 운영 볼륨으로 승격하십시오.
+. Cloud Volumes ONTAP 볼륨과 데이터 세트를 Google Cloud의 컴퓨팅 인스턴스에 매핑합니다.
+. Cloud Volumes ONTAP의 샘플 데이터세트에 SHA256 체크섬을 생성합니다.
+. 소스와 대상의 체크섬을 비교합니다. 아마도 양쪽의 체크섬이 일치합니다.
+
+
+온-프레미스 워크플로를 실행하려면 다음 단계를 완료합니다.
+
+. Intersight에서 온-프레미스 FlexPod에 대한 워크플로를 만듭니다.
++
+image:gcp-ncvo-image78.png["스크린샷"]
+
+. 필요한 입력을 제공하고 워크플로우를 실행합니다.
++
+image:gcp-ncvo-image79.png["스크린샷"]
+
+. 시스템 관리자에서 새로 생성한 SVM을 확인합니다.
++
+image:gcp-ncvo-image80.png["스크린샷"]
+
+. 또 다른 재해 복구 워크플로우를 생성 및 실행하여 온프레미스 FlexPod에 볼륨을 생성하고 FlexPod와 Cloud Volumes ONTAP에서 이 볼륨 간에 SnapMirror 관계를 설정합니다.
++
+image:gcp-ncvo-image81.png["스크린샷"]
+
+. ONTAP system manager에서 새로 생성된 볼륨을 확인합니다.
++
+image:gcp-ncvo-image82.png["스크린샷"]
+
+. 동일한 NFS 볼륨을 사내 가상 머신에 마운트한 다음 샘플 데이터 세트를 복사하고 체크섬을 수행합니다.
++
+image:gcp-ncvo-image83.png["스크린샷"]
+
++
+image:gcp-ncvo-image84.png["스크린샷"]
+
+. Cloud Manager에서 복제 상태를 확인합니다. 데이터 크기에 따라 데이터 전송에 몇 분이 걸릴 수 있습니다. 이 작업이 완료되면 SnapMirror 상태를 * 유휴 * 로 볼 수 있습니다.
++
+image:gcp-ncvo-image85.png["스크린샷"]
+
+. 데이터 전송이 완료되면 Test_vol1 볼륨을 호스팅하는 SVM을 중지하여 소스 측에서 재해를 시뮬레이션합니다.
++
+SVM이 중지된 후에는 Cloud Manager에서 Test_vol1 볼륨이 표시되지 않습니다.
+
++
+image:gcp-ncvo-image86.png["스크린샷"]
+
+. 복제 관계를 끊은 후 Cloud Volumes ONTAP 대상 볼륨을 운영 볼륨으로 승격합니다.
++
+image:gcp-ncvo-image87.png["스크린샷"]
+
++
+image:gcp-ncvo-image88.png["스크린샷"]
+
+. 볼륨을 편집하고 내보내기 정책에 연결하여 클라이언트 액세스를 활성화합니다.
++
+image:gcp-ncvo-image89.png["스크린샷"]
+
+. 볼륨에 대한 즉시 사용 가능한 마운트 명령을 가져옵니다.
++
+image:gcp-ncvo-image90.png["스크린샷"]
+
++
+image:gcp-ncvo-image91.png["스크린샷"]
+
+. 컴퓨팅 인스턴스에 볼륨을 마운트하고 데이터가 대상 볼륨에 있는지 확인한 다음 'ample_dataset_2GB' 파일의 SHA256 체크섬을 생성합니다.
++
+image:gcp-ncvo-image92.png["스크린샷"]
+
+. 소스(FlexPod)와 대상(Cloud Volumes ONTAP) 모두에서 체크섬 값을 비교합니다.
+. 체크섬은 소스 및 대상과 일치합니다.
+
+
+소스에서 대상으로 데이터 복제가 성공적으로 완료되었으며 데이터 무결성이 유지되었는지 확인할 수 있습니다. 이제 소스 사이트가 복구를 수행하는 동안 애플리케이션에서 이 데이터를 안전하게 사용하여 클라이언트에 제공할 수 있습니다.
+
+link:gcp-ncvo-conclusion.html["다음: 결론."]

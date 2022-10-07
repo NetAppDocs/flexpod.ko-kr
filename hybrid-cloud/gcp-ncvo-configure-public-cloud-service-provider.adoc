@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/gcp-ncvo-configure-public-cloud-service-provider.html 
+keywords: netapp cloud manager, connector 
+summary: 이 페이지에서는 NetApp Cloud Manager에 액세스하는 방법과 Connector를 구축하는 방법을 설명합니다. 
+---
+= 퍼블릭 클라우드 서비스 공급자 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:gcp-ncvo-terraform-cloud-integration-with-ico-prerequisite.html["이전: ICO 사전 요구 사항에 대한 Terraform Cloud 통합."]
+
+
+
+== 절차 1: NetApp Cloud Manager에 액세스하십시오
+
+NetApp Cloud Manager 및 기타 클라우드 서비스에 액세스하려면 에 가입해야 합니다 https://cloud.netapp.com/["NetApp Cloud Central에서"^].
+
+
+NOTE: Cloud Central 계정에서 작업 영역 및 사용자를 설정하려면 을 클릭합니다 https://docs.netapp.com/us-en/occm/task_setting_up_cloud_central_accounts.html["여기"^].
+
+
+
+== 절차 2: 커넥터 전개
+
+Google Cloud에 Connector를 배포하려면 다음을 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#creating-a-connector-in-google-cloud["링크"^].
+
+link:gcp-ncvo-automated-deployment-of-hybrid-cloud-netapp-storage.html["그 다음: 하이브리드 클라우드 NetApp 스토리지의 자동화된 구축"]

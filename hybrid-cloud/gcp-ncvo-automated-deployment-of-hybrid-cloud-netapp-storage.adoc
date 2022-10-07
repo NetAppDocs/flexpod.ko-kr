@@ -1,0 +1,190 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/gcp-ncvo-automated-deployment-of-hybrid-cloud-netapp-storage.html 
+keywords: google cloud, Cloud Volumes ONTAP, google cloud, environmental prerequisites, github repository, NetApp Cloud Manager API 
+summary: 이 섹션에서는 하이브리드 클라우드 NetApp 스토리지의 자동화된 구축에 대해 설명합니다. 
+---
+= 하이브리드 클라우드 NetApp 스토리지 자동 구축
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:gcp-ncvo-configure-public-cloud-service-provider.html["이전: 공용 클라우드 서비스 공급자 구성"]
+
+
+
+== Google 클라우드
+
+먼저, API를 사용하도록 설정하고 Cloud Manager에 Connector와 같은 프로젝트나 다른 프로젝트에 있는 Cloud Volumes ONTAP 시스템을 배포 및 관리할 수 있는 권한을 제공하는 서비스 계정을 만들어야 합니다.
+
+Google Cloud 프로젝트에 커넥터를 배포하기 전에 커넥터가 사용자 구내 또는 다른 클라우드 공급자에서 실행되고 있지 않은지 확인합니다.
+
+Cloud Manager에서 직접 Connector를 구축하기 전에 다음 두 가지 권한 세트가 있어야 합니다.
+
+* Cloud Manager에서 Connector VM 인스턴스를 시작할 수 있는 권한이 있는 Google 계정을 사용하여 Connector를 배포해야 합니다.
+* Connector를 배포할 때 VM 인스턴스를 선택하라는 메시지가 표시됩니다. Cloud Manager는 서비스 계정에서 권한을 받아 사용자를 대신하여 Cloud Volumes ONTAP 시스템을 생성하고 관리합니다. 서비스 계정에 사용자 지정 역할을 첨부하면 권한이 제공됩니다. 사용자와 서비스 계정에 필요한 권한이 포함된 YAML 파일을 두 개 설정해야 합니다. 를 사용하는 방법을 알아보십시오 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["YAML 파일을 사용하여 권한을 설정합니다"^] 여기.
+
+
+을 참조하십시오 https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f3d0368b-7165-4d43-a76e-ae01011853d6["자세한 비디오입니다"^] 모든 필수 사전 요구 사항에 대해.
+
+
+
+=== Cloud Volumes ONTAP 배포 모드 및 아키텍처
+
+Cloud Volumes ONTAP는 Google Cloud에서 단일 노드 시스템으로 고가용성(HA) 노드 쌍으로 제공됩니다. 요구사항에 따라 Cloud Volumes ONTAP 구축 모드를 선택할 수 있습니다. 단일 노드 시스템을 HA 쌍으로 업그레이드하는 것은 지원되지 않습니다. 단일 노드 시스템과 HA 쌍 간에 전환하려면 새 시스템을 구축하고 기존 시스템의 데이터를 새 시스템으로 복제해야 합니다.
+
+
+
+=== Google Cloud의 고가용성 Cloud Volumes ONTAP
+
+Google Cloud는 여러 지리적 지역 및 한 지역 내의 여러 영역에 리소스를 배포할 수 있도록 지원합니다. HA 구축은 강력한 n1-표준 또는 n2-표준 시스템 유형을 사용하는 ONTAP 노드 2개로 구성되어 Google Cloud에서 사용할 수 있습니다. 두 Cloud Volumes ONTAP 노드 간에 데이터가 동기식으로 복제되어 장애 발생 시 가용성을 제공합니다. Cloud Volumes ONTAP의 HA 구축을 위해서는 각 VPC에 VPC 4개와 프라이빗 서브넷이 필요합니다. 4개의 VPC에 있는 서브넷에는 중복되는 CIDR 범위가 없어야 합니다.
+
+4개의 VPC는 다음과 같은 용도로 사용됩니다.
+
+* VPC 0은 데이터 및 Cloud Volumes ONTAP 노드에 대한 인바운드 통신을 지원합니다.
+* VPC 1 는 Cloud Volumes ONTAP 노드 간 클러스터 연결을 제공합니다.
+* VPC 2는 노드 간 비휘발성 RAM(NVRAM) 복제를 지원합니다.
+* VPC 3은 노드 재구축을 위한 HA 중재자 인스턴스 및 디스크 복제 트래픽에 연결하는 데 사용됩니다.
+
+
+다음 이미지는 Goggle Cloud의 고가용성 Cloud Volumes ONTAP를 보여줍니다.
+
+image:gcp-ncvo-image6.png["이 이미지는 Goggle Cloud의 고가용성 Cloud Volumes ONTAP를 보여줍니다."]
+
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["이 링크"^].
+
+Google Cloud의 Cloud Volumes ONTAP에 대한 네트워킹 요구사항은 을 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html["이 링크"^].
+
+데이터 계층화에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["이 링크"^].
+
+
+
+=== 환경 사전 요구 사항 설정
+
+Cloud Volumes ONTAP 클러스터 자동 생성, 온프레미스 볼륨과 클라우드 볼륨 간 SnapMirror 구성, 클라우드 볼륨 생성 등의 작업은 Terraform 구성을 사용하여 수행됩니다. 이러한 Terraform 구성은 Terraform Cloud for Business 계정에서 호스팅됩니다. Intersight Cloud Orchestrator를 사용하면 Terraform Cloud for Business 계정에서 작업 영역을 만들고, 모든 필수 변수를 작업 영역에 추가하고, Terraform Plan을 실행하는 등의 작업을 조정할 수 있습니다.
+
+이러한 자동화 및 오케스트레이션 작업의 경우 다음 섹션에 설명된 대로 몇 가지 요구사항과 데이터가 필요합니다.
+
+
+
+=== GitHub 리포지토리
+
+Terraform 코드를 호스팅하려면 GitHub 계정이 필요합니다. Intersight Orchestrator는 Terraform Cloud for Business 계정에 새 작업 공간을 만듭니다. 이 작업 영역은 버전 제어 워크플로로 구성됩니다. 이를 위해 Terraform 구성을 GitHub 리포지토리에 유지하고 작업 영역을 만드는 동안 입력으로 제공해야 합니다.
+
+https://github.com/NetApp-Automation/FlexPod-hybrid-cloud-for-GCP-with-Intersight-and-CVO["이 GitHub 링크를 클릭합니다"^] 다양한 리소스를 포함하는 Terraform 구성을 제공합니다. 이 리포지토리를 포크하고 GitHub 계정에서 복사본을 만들 수 있습니다.
+
+이 리포지터리에서 provider.tf는 필요한 Terraform 공급자에 대한 정의를 갖습니다. NetApp Cloud Manager의 Terraform 공급자가 사용됩니다.
+
+변수 tf에는 변수 선언이 모두 있습니다. 이러한 변수의 값은 Intersight Cloud Orchestrator의 워크플로 입력으로 입력됩니다. 이렇게 하면 값을 작업 공간에 전달하고 Terraform 구성을 실행할 수 있는 편리한 방법이 제공됩니다.
+
+'소스.TF'는 작업 환경에 온프레미스 ONTAP를 추가하고, Google Cloud에 단일 노드 Cloud Volumes ONTAP 클러스터를 생성하고, 온프레미스 및 Cloud Volumes ONTAP 간에 SnapMirror 관계를 설정하고, Cloud Volumes ONTAP에 클라우드 볼륨을 생성하는 데 필요한 다양한 리소스를 정의합니다.
+
+이 리포지토리에서:
+
+* 'provider.tf'는 NetApp Cloud Manager를 필수 Terraform 공급업체를 위한 정의로 보유하고 있습니다.
+* variables.tf에는 Intersight Cloud Orchestrator 워크플로의 입력으로 사용되는 변수 선언이 있습니다. 이렇게 하면 값을 작업 공간에 전달하고 Terraform 구성을 실행할 수 있는 편리한 방법이 제공됩니다.
+* resources.tf는 작업 환경에 온프레미스 ONTAP를 추가하고, Google Cloud에 단일 노드 Cloud Volumes ONTAP 클러스터를 생성하고, 온프레미스 및 Cloud Volumes ONTAP 간에 SnapMirror 관계를 설정하고, Cloud Volumes ONTAP에 클라우드 볼륨을 생성하는 등 다양한 리소스를 정의합니다.
+
+
+추가 리소스 블록을 추가하여 Cloud Volumes ONTAP에 여러 볼륨을 생성하거나 COUNT 또는 'For_each' Terraform 구문을 사용할 수 있습니다.
+
+Terraform 작업 공간, 모듈 및 정책 집합을 Terraform 구성이 포함된 git 저장소로 연결하려면 Terraform Cloud가 GitHub repo에 액세스해야 합니다.
+
+클라이언트를 추가하면 클라이언트의 OAuth 토큰 ID가 Intersight Cloud Orchestrator의 워크플로 입력 중 하나로 사용됩니다.
+
+. Terraform Cloud for Business 계정에 로그인합니다. 설정 > 공급자 * 로 이동합니다.
+. VCS 공급자 추가 * 를 클릭합니다.
+. 버전을 선택합니다.
+. 공급자 설정 * 의 단계를 따릅니다.
+. VCS 제공자 * 에서 추가된 클라이언트를 볼 수 있습니다. OAuth 토큰 ID를 기록해 둡니다.
+
+
+
+
+=== NetApp Cloud Manager API 작업에서 토큰을 새로 고칠 수 있습니다
+
+Cloud Manager에는 웹 브라우저 인터페이스 외에도 SaaS 인터페이스를 통해 소프트웨어 개발자가 Cloud Manager 기능에 직접 액세스할 수 있도록 지원하는 REST API가 있습니다. Cloud Manager 서비스는 확장 가능한 개발 플랫폼을 총체적으로 형성하는 몇 가지 개별 구성요소로 구성되어 있습니다. 새로 고침 토큰을 사용하면 각 API 호출에 대해 권한 부여 헤더에 추가하는 액세스 토큰을 생성할 수 있습니다.
+
+NetApp-cloudManager 공급자는 API를 직접 호출하지 않고 업데이트 토큰을 사용하여 Terraform 리소스를 해당 API 호출로 변환합니다. 에서 NetApp Cloud Manager API 작업에 대한 업데이트 토큰을 생성해야 합니다 https://services.cloud.netapp.com/refresh-token["NetApp Cloud Central에서"^].
+
+Cloud Volumes ONTAP 클러스터 생성, SnapMirror 구성 등과 같은 Cloud Manager 리소스를 생성하려면 Cloud Manager Connector의 클라이언트 ID가 필요합니다.
+
+. Cloud Manager 로그인: https://cloudmanager.netapp.com/["https://cloudmanager.netapp.com/"^].
+. 커넥터 * 를 클릭합니다.
+. 커넥터 관리 * 를 클릭합니다.
+. 줄임표를 클릭하고 커넥터 ID를 복사합니다.
+
+
+
+
+== Cisco Intersight Cloud Orchestrator 워크플로우를 개발합니다
+
+Cisco Intersight Cloud Orchestrator는 다음과 같은 경우 Cisco Intersight에서 사용할 수 있습니다.
+
+* Intersight Premier 라이센스를 설치했습니다.
+* 계정 관리자, 스토리지 관리자, 가상화 관리자 또는 서버 관리자이며 최소 하나의 서버가 할당되어 있습니다.
+
+
+
+
+=== 워크플로 디자이너
+
+Workflow Designer를 사용하면 새 워크플로(작업 및 데이터 형식)를 만들고 기존 워크플로를 편집하여 Cisco Intersight에서 대상을 관리할 수 있습니다.
+
+Workflow Designer를 시작하려면 * Orchestration > Workflow * 로 이동합니다. 대시보드에는 * 내 워크플로 *, * 샘플 워크플로 * 및 * 모든 워크플로 * 탭 아래에 다음 세부 정보가 표시됩니다.
+
+* 검증 상태
+* 마지막 실행 상태
+* 실행 횟수별 상위 워크플로
+* 상위 워크플로 범주
+* 시스템 정의 워크플로 수
+* 대상별 상위 워크플로
+
+
+대시보드를 사용하여 탭을 생성, 편집, 클론 복제 또는 삭제할 수 있습니다. 사용자 지정 보기 탭을 만들려면 * + * 를 클릭하고 이름을 지정한 다음 열, 태그 열 및 위젯에 표시되어야 하는 필수 매개 변수를 선택합니다. 탭에 * 잠금 * 아이콘이 없으면 탭 이름을 바꿀 수 있습니다.
+
+대시보드 아래에는 다음 정보를 표시하는 표 형식의 워크플로 목록이 있습니다.
+
+* 표시 이름
+* 설명
+* 시스템 정의
+* 기본 버전
+* 실행
+* 마지막 실행 상태
+* 검증 상태
+* 마지막 업데이트
+* 조직
+
+
+작업 열에서 다음 작업을 수행할 수 있습니다.
+
+* * 실행. * 워크플로를 실행합니다.
+* * 기록. * 워크플로 실행 기록을 표시합니다.
+* * 버전 관리 * 워크플로의 버전을 만들고 관리합니다.
+* * 삭제. * 워크플로를 삭제합니다.
+* * 재시도. * 실패한 워크플로를 다시 시도하십시오.
+
+
+
+
+=== 워크플로우
+
+다음 단계로 구성된 워크플로를 만듭니다.
+
+* * 워크플로 정의 * 표시 이름, 설명 및 기타 중요한 속성을 지정합니다.
+* * 워크플로 입력 및 워크플로 출력을 정의합니다. * 워크플로 실행에 필요한 입력 매개 변수와 성공적인 실행에 생성된 출력을 지정합니다
+* * 워크플로 작업을 추가합니다. * 워크플로를 수행하는 데 필요한 워크플로 작업을 워크플로 디자이너에서 하나 이상 추가합니다.
+* * 워크플로 유효성 검사. * 워크플로를 검증하여 작업 입력 및 출력 연결에 오류가 없는지 확인합니다.
+
+
+
+
+=== 사내 FlexPod 스토리지를 위한 워크플로우를 생성합니다
+
+온-프레미스 FlexPod 스토리지에 대한 워크플로우를 구성하려면 를 참조하십시오 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_cvo_ico_ntap.html["이 링크"^].
+
+link:gcp-ncvo-dr-workflow.html["다음: DR 워크플로우."]

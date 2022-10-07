@@ -1,0 +1,227 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/gcp-ncvo-solution-components.html 
+keywords: flexpod, cisco intersight, licensing, Terraform Cloud Integration, ICO, NetApp Cloud Volumes ONTAP, Cloud Central, Connector, Active IQ Unified Manager, Hardware, software 
+summary: 이 섹션에서는 이 솔루션을 구축하는 데 필요한 모든 솔루션 구성 요소에 대해 설명합니다. 
+---
+= 솔루션 구성 요소
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:gcp-ncvo-solution-overview.html["이전: 솔루션 개요"]
+
+
+
+== FlexPod
+
+FlexPod는 가상화된 솔루션과 가상화되지 않은 솔루션 모두를 위한 통합된 기반을 형성하는 정의된 하드웨어 및 소프트웨어 세트입니다. FlexPod에는 NetApp ONTAP 스토리지, Cisco Nexus 네트워킹, Cisco MDS 스토리지 네트워킹 및 Cisco UCS(Unified Computing System)가 포함되어 있습니다. 이 설계는 네트워킹, 컴퓨팅 및 스토리지가 하나의 데이터 센터 랙에 장착되거나 고객의 데이터 센터 설계에 따라 배포될 수 있을 만큼 유연합니다. 포트 밀도를 통해 네트워킹 구성 요소가 여러 구성을 수용할 수 있습니다.
+
+
+
+== Cisco Intersight를 참조하십시오
+
+Cisco Intersight는 기존 및 클라우드 네이티브 애플리케이션과 인프라에 대한 지능형 자동화, 관찰 가능성 및 최적화를 제공하는 SaaS 플랫폼입니다. 이 플랫폼은 IT 팀의 변화를 주도하는 데 도움이 되며 하이브리드 클라우드용으로 설계된 운영 모델을 제공합니다. Cisco Intersight는 다음과 같은 이점을 제공합니다.
+
+* 신속한 제공.* 민첩한 기반 소프트웨어 개발 모델로 인해 잦은 업데이트와 지속적인 혁신을 통해 클라우드 또는 고객의 데이터 센터에서 서비스로 제공됩니다. 따라서 고객은 LOB에 대한 제공 속도를 높이는 데 주력할 수 있습니다.
+* * 운영 간소화. * 공통의 인벤토리, 인증 및 API가 포함된 안전한 단일 툴을 사용하여 운영을 간소화함으로써 전체 스택 및 모든 위치에서 작업을 수행할 수 있으므로 팀 간의 사일로를 제거할 수 있습니다. 사내 물리적 서버 및 하이퍼바이저 관리부터 VM, K8s, 서버리스, 자동화, 사내 및 퍼블릭 클라우드 전반에서 최적화 및 비용 제어
+* * 지속적인 최적화. * Cisco Intersight가 모든 계층 및 Cisco TAC에 제공하는 인텔리전스를 사용하여 환경을 지속적으로 최적화합니다. 이 인텔리전스는 권장 및 자동화 작업으로 변환되므로 작업 부하 이동, 물리적 서버 상태 모니터링, 작업 중인 퍼블릭 클라우드 비용 절감 권장 사항 등 모든 변화에 실시간으로 대응할 수 있습니다.
+
+
+Cisco Intersight를 사용하면 UCSM 관리 모드(UMM)와 Intersight 관리 모드(IMM)의 두 가지 관리 작업 모드를 사용할 수 있습니다. 패브릭 상호 연결의 초기 설정 중에 패브릭 연결 Cisco UCS 시스템에 대한 네이티브 UMM 또는 IMM을 선택할 수 있습니다. 이 솔루션에서는 네이티브 IMM이 사용됩니다.
+
+
+
+=== Cisco Intersight 라이센스
+
+Cisco Intersight는 여러 계층의 가입 기반 라이센스를 사용합니다.
+
+Cisco Intersight 라이센스 계층은 다음과 같습니다.
+
+* * Cisco Intersight Essentials. * 모든 기본 기능과 함께 다음 기능이 포함되어 있습니다.
++
+** Cisco UCS 센트럴
+** Cisco IMC 감독자 자격
+** 서버 프로파일을 사용한 정책 기반 구성
+** 펌웨어 관리
+** 하드웨어 호환성 목록(HCL)과의 호환성 평가
+
+
+* * Cisco Intersight Advantage. * Essentials 계층의 기능과 다음 기능이 포함됩니다.
++
+** 물리적 컴퓨팅, 네트워크, 스토리지, VMware 가상화 및 AWS 퍼블릭 클라우드에서 위젯, 인벤토리, 용량, 활용률 기능 및 도메인 간 인벤토리 상관 관계
+** 고객이 영향을 받는 엔드포인트 장치에 대한 중요한 보안 경고 및 현장 알림을 받을 수 있는 Cisco 보안 권고 서비스입니다.
+
+
+* * Cisco Intersight Premier. * Cisco Intersight Premier는 Advantage 계층에서 제공되는 기능 외에도 다음과 같은 기능을 제공합니다.
++
+** Cisco 및 타사 컴퓨팅, 네트워크, 스토리지, 통합 시스템, 가상화, 컨테이너 및 퍼블릭 클라우드 플랫폼을 사용하고 있습니다
+** Cisco UCS Director의 전체 구독 신청은 추가 비용 없이 가능합니다.
+
+
+
+
+Intersight Licensing 및 각 라이센스에서 지원되는 기능에 대한 자세한 내용은 를 참조하십시오 https://intersight.com/help/saas/getting_started/licensing_requirements["여기"^].
+
+
+NOTE: 이 솔루션에서는 가시화 클라우드 오케스트레이터 및 Intersight 서비스를 하시사테라폼에 사용합니다. 이러한 기능은 Intersight Premier 라이센스가 있는 사용자가 사용할 수 있으므로 이 라이센스 계층을 활성화해야 합니다.
+
+
+
+=== ICO와의 Terraform 클라우드 통합
+
+Cisco Intersight Cloud Orchestrator(ICO)를 사용하여 TFC(Terraform Cloud) API를 호출하는 워크플로우를 생성하고 실행할 수 있습니다. 웹 API 요청 호출 작업은 Terraform Cloud를 대상으로 지원하며 HTTP 메서드를 사용하여 Terraform Cloud API로 구성할 수 있습니다. 따라서 워크플로에서는 일반 API 작업 및 기타 작업을 사용하여 여러 Terraform Cloud API를 호출하는 작업을 조합하여 사용할 수 있습니다. ICO 기능을 사용하려면 프리미어 라이센스가 필요합니다.
+
+
+
+=== Cisco Intersight Assist를 참조하십시오
+
+Cisco Intersight Assist를 사용하면 엔드포인트 장치를 Cisco Intersight에 추가할 수 있습니다. 데이터 센터에는 Cisco Intersight와 직접 연결되지 않는 여러 장치가 있을 수 있습니다. Cisco Intersight에서 지원되지만 직접 연결되지 않는 장치는 연결 메커니즘이 필요합니다. Cisco Intersight Assist는 이러한 연결 메커니즘을 제공하며 Cisco Intersight에 장치를 추가할 수 있도록 도와줍니다.
+
+Cisco Intersight Assist는 OVA(Open Virtual Appliance) 파일 형식에 포함된 배포 가능한 가상 머신으로 배포되는 Cisco Intersight Virtual Appliance 내에서 사용할 수 있습니다. ESXi 서버에 어플라이언스를 설치할 수 있습니다. 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/support/servers-unified-computing/intersight/products-installation-guides-list.html["Cisco Intersight 가상 어플라이언스 시작 가이드"^].
+
+Intersight Assist를 Intersight에 사용한 후 Intersight Assist 옵션을 통해 클레임 장치를 청구할 수 있습니다. 자세한 내용은 을 참조하십시오 https://intersight.com/help/getting_started["시작하기"^].
+
+
+
+== NetApp Cloud Volumes ONTAP를 참조하십시오
+
+* 내장된 데이터 중복제거, 데이터 압축, 씬 프로비저닝 및 복제를 활용하여 스토리지 비용을 최소화합니다.
+* 클라우드 환경에서 장애 발생 시에도 지속적인 운영과 엔터프라이즈급 안정성 제공
+* Cloud Volumes ONTAP는 업계 최고의 복제 기술인 NetApp SnapMirror를 사용하여 온프레미스 데이터를 클라우드로 복제하므로 여러 사용 사례에서 2차 복사본을 쉽게 사용할 수 있습니다.
+* Cloud Volumes ONTAP은 또한 Cloud Backup Service와 통합되어 클라우드 데이터를 보호하고 장기간 보관하기 위한 백업 및 복원 기능을 제공합니다.
+* 애플리케이션을 오프라인으로 전환하지 않고도 필요에 따라 고성능 및 고성능 스토리지 풀 간에 전환할 수 있습니다.
+* NetApp SnapCenter를 사용하여 스냅샷 복사본의 일관성 제공
+* Cloud Volumes ONTAP는 데이터 암호화를 지원하고 바이러스 및 랜섬웨어에 대한 보호를 제공합니다.
+* 클라우드 데이터 센스와 통합되어 데이터 컨텍스트를 이해하고 중요한 데이터를 식별할 수 있습니다.
+
+
+
+
+== Cloud Central을 참조하십시오
+
+Cloud Central은 NetApp 클라우드 데이터 서비스에 액세스하고 이를 관리할 수 있는 중앙의 위치입니다. 이러한 서비스를 사용하여 클라우드에서 중요한 애플리케이션을 실행하고, 자동화된 DR 사이트를 생성하고, SaaS 데이터를 백업하고, 여러 클라우드 간에 데이터를 효과적으로 마이그레이션 및 제어할 수 있습니다. 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/occm35/concept_cloud_central.html["Cloud Central을 참조하십시오"^].
+
+
+
+== 클라우드 관리자
+
+Cloud Manager는 엔터프라이즈급 SaaS 기반 관리 플랫폼으로, IT 전문가와 클라우드 설계자가 NetApp 클라우드 솔루션을 사용하여 하이브리드 멀티 클라우드 인프라를 중앙에서 관리할 수 있도록 지원합니다. 이 솔루션은 중앙 집중식 시스템을 통해 사내 및 클라우드 스토리지를 확인 및 관리하여 여러 하이브리드 클라우드 공급자와 계정을 지원합니다. 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/occm/index.html["클라우드 관리자"^].
+
+
+
+== 커넥터
+
+Connector를 사용하면 Cloud Manager에서 퍼블릭 클라우드 환경 내의 리소스 및 프로세스를 관리할 수 있습니다. Connector 인스턴스는 Cloud Manager에서 제공하는 다양한 기능을 사용해야 하며 클라우드 또는 사내 네트워크에 구축할 수 있습니다. 커넥터는 다음 위치에서 지원됩니다.
+
+* 설치하고
+* Microsoft Azure를 참조하십시오
+* Google 클라우드
+* 온프레미스
+
+
+
+
+== NetApp Active IQ Unified Manager를 참조하십시오
+
+NetApp Active IQ Unified Manager를 사용하면 재설계된 직관적인 단일 인터페이스에서 ONTAP 스토리지 클러스터를 모니터링하여 커뮤니티의 지혜 및 AI 분석을 제공할 수 있습니다. 스토리지 환경 및 스토리지 환경에서 실행되는 가상 시스템에 대한 포괄적인 운영, 성능 및 사전 예방적 통찰력을 제공합니다. 스토리지 인프라에서 문제가 발생하면 Unified Manager에서 문제의 세부 정보를 알려 근본 원인을 파악할 수 있습니다. 가상 머신 대시보드에서는 VM의 성능 통계를 볼 수 있으므로 vSphere 호스트에서 네트워크를 거쳐 마지막으로 스토리지까지 전체 입출력 경로를 조사할 수 있습니다.
+
+일부 이벤트는 문제를 해결하기 위해 취할 수 있는 개선 조치도 제공합니다. 이벤트가 발생할 때 e-메일 및 SNMP 트랩을 통해 알림을 받도록 이벤트에 대한 사용자 지정 알림을 구성할 수 있습니다. Active IQ Unified Manager를 사용하면 용량 및 사용 추세를 예측하여 문제가 발생하기 전에 능동적으로 조치를 취함으로써 장기적인 문제를 해결할 수 있는 단기적인 의사 결정을 방지할 수 있으므로 사용자의 스토리지 요구 사항을 계획할 수 있습니다.
+
+
+
+== VMware vSphere를 참조하십시오
+
+VMware vSphere는 CPU, 스토리지 및 네트워킹을 포함한 대규모 인프라 컬렉션을 완벽하고 다재다능한 동적 운영 환경으로 전체적으로 관리하는 가상화 플랫폼입니다. 개별 시스템을 관리하는 기존 운영 체제와 달리 VMware vSphere는 전체 데이터 센터의 인프라를 통합하여 필요한 애플리케이션에 빠르고 동적으로 할당할 수 있는 리소스를 갖춘 강력한 단일 시스템을 구축합니다.
+
+VMware vSphere에 대한 자세한 내용은 을 참조하십시오 https://www.vmware.com/products/vsphere.html["이 링크"^].
+
+
+
+== VMware vSphere vCenter를 참조하십시오
+
+VMware vCenter Server는 단일 콘솔에서 모든 호스트와 VM을 통합 관리하고 클러스터, 호스트 및 VM의 성능 모니터링을 통합합니다. VMware vCenter Server를 통해 관리자는 컴퓨팅 클러스터, 호스트, VM, 스토리지, 게스트 OS, 가상 인프라스트럭처의 기타 주요 구성 요소 VMware vCenter는 VMware vSphere 환경에서 사용할 수 있는 다양한 기능을 관리합니다.
+
+
+
+== 하드웨어 및 소프트웨어 버전
+
+이 하이브리드 클라우드 솔루션은 NetApp 상호 운용성 매트릭스 툴 및 Cisco UCS 하드웨어 호환성 목록에 정의된 대로 지원되는 소프트웨어, 펌웨어, 하드웨어 버전을 실행하는 FlexPod 환경으로 확장할 수 있습니다.
+
+사내 환경의 기준 플랫폼으로 사용되는 FlexPod 솔루션은 설명된 지침과 사양에 따라 배포되었습니다 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_xseries_vmware_7u2.html["여기"^].
+
+이 환경 내의 네트워크는 ACI 기반입니다. 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9k_aci.html["여기"^].
+
+* 자세한 내용은 다음 링크를 참조하십시오.
+* http://support.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴"^]
+* http://www.vmware.com/resources/compatibility/search.php["VMware 호환성 가이드 를 참조하십시오"^]
+* https://www.cisco.com/web/techdoc/ucs/interoperability/matrix/matrix.html["Cisco UCS 하드웨어 및 소프트웨어 상호 운용성 툴"^]
+
+
+다음 표에는 FlexPod 하드웨어 및 소프트웨어 버전이 나와 있습니다.
+
+|===
+| 구성 요소 | 제품 | 버전 
+
+
+| 컴퓨팅 | Cisco UCS X210C-M6 | 5.0(1b) 
+
+
+|  | Cisco UCS Fabric 인터커넥트 6454 | 4.2(2a) 
+
+
+| 네트워크 | Cisco Nexus 9332C(척추) | 14.2(7초) 
+
+
+|  | Cisco Nexus 9336C-FX2(리프) | 14.2(7초) 
+
+
+|  | Cisco ACI를 참조하십시오 | 4.2(7개) 
+
+
+| 스토리지 | NetApp AFF A220을 참조하십시오 | 9.11.1 
+
+
+|  | VMware vSphere용 NetApp ONTAP 툴 | 9.10 
+
+
+|  | VMware VAAI용 NetApp NFS 플러그인 | 2.0-15 
+
+
+|  | Active IQ Unified Manager | 9.11 
+
+
+| 소프트웨어 | vSphere ESXi | 7.0(U3) 
+
+
+|  | VMware vCenter 어플라이언스 | 7.0.3 
+
+
+|  | Cisco Intersight Assist 가상 어플라이언스 | 1.0.11-306 
+|===
+Terraform 구성은 Terraform Cloud for Business 계정에서 실행됩니다. Terraform 구성에서는 NetApp Cloud Manager의 Terraform 공급자를 사용합니다.
+
+다음 표에는 공급업체, 제품 및 버전이 나와 있습니다.
+
+|===
+| 구성 요소 | 제품 | 버전 
+
+
+| 하시코프 | Terraform(Terraform | 1.2.7 
+|===
+다음 표에서는 Cloud Manager 및 Cloud Volumes ONTAP 버전을 보여 줍니다.
+
+|===
+| 구성 요소 | 제품 | 버전 
+
+
+| 넷엡 | Cloud Volumes ONTAP | 9.11 
+
+
+|  | 클라우드 관리자 | 3.9.21 
+|===
+link:gcp-ncvo-deploy-flexpod.html["다음: 설치 및 구성 - FlexPod 배포"]

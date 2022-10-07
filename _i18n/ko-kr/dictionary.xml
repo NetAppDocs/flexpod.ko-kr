@@ -8428,4 +8428,768 @@
   <block id="99e101fa8a67abbcc78b48de44a36fe8" category="paragraph"><block ref="99e101fa8a67abbcc78b48de44a36fe8" category="inline-link-macro-rx"></block></block>
   <block id="4a4ae8a45209f121c5563aef13d0350d" category="sidebar">NetApp ONTAP 스토리지와 Cisco Intersight</block>
   <block id="791474f815efa1479f85126e0698e330" category="sidebar">NetApp Astra 및 Cisco Intersight, Red Hat OpenShift를 포함하는 FlexPod 하이브리드 클라우드</block>
+  <block id="28d5cfec2cd9fc90ebbf8f74a625f0f2" category="summary">이 솔루션에서는 Cisco Intersight Cloud Orchestrator를 기반으로 하는 퍼블릭 클라우드를 통해 DR 솔루션을 구축하는 데 NetApp Cloud Data Service, Cloud Volumes ONTAP 및 FlexPod Datacenter 인프라가 사용되었습니다. FlexPod 솔루션은 고객이 애플리케이션 및 비즈니스 제공 프로세스를 현대화할 수 있도록 지속적으로 진화해 왔습니다. 이 솔루션을 사용하면 DR 솔루션 비용을 낮게 유지하면서 임시 또는 전체 시간 DR 계획을 위한 전환 위치로 퍼블릭 클라우드에 BCDR 계획을 수립할 수 있습니다.</block>
+  <block id="55b703aabe54821b6b01a0b44f42d5bc" category="inline-link-macro">이전: 솔루션 검증.</block>
+  <block id="a32e4e95364ffbad606090ede21ebdd0" category="paragraph"><block ref="a32e4e95364ffbad606090ede21ebdd0" category="inline-link-macro-rx"></block></block>
+  <block id="812bf5909886df82811c165a4ed8b01d" category="paragraph">사내 FlexPod와 NetApp Cloud Volumes ONTAP 간 데이터 복제는 검증된 SnapMirror 기술을 통해 처리되었지만, 데이터 이동성 요구사항에 맞춰 Cloud Sync와 같은 다른 NetApp 데이터 전송 및 동기화 툴을 선택할 수도 있습니다. TLS/AES 기반의 내장 암호화 기술로 전송 중인 데이터의 보안</block>
+  <block id="a18714e0708f254b05cd644112b5728b" category="paragraph">애플리케이션에 대한 임시 DR 계획이 있거나 비즈니스에 대한 전체 재해 복구 계획이 있는 경우 이 솔루션에 사용되는 제품 포트폴리오는 규모에 따라 두 가지 요구 사항을 모두 충족할 수 있습니다. Cisco Intersight Workflow Orchestrator를 기반으로 하므로 사전 구축된 워크플로우를 통해 프로세스를 재구성할 필요가 없으며 BCDR 계획의 구현 속도를 높일 수 있습니다.</block>
+  <block id="d543fe011b5ca59d76b0601285d35c3a" category="paragraph">이 솔루션을 사용하면 Cisco Intersight Cloud Orchestrator에서 제공하는 자동화 및 오케스트레이션을 통해 하이브리드 클라우드 전반에서 FlexPod 온프레미스 및 데이터 복제를 매우 쉽고 편리하게 관리할 수 있습니다.</block>
+  <block id="d3b7c913cd04ebfec0e9ec32cb6fd58c" category="section-title">GitHub를 참조하십시오</block>
+  <block id="6ccd6e595c753175e7ea6b9c3c00feb9" category="list-text">모든 Terraform 설정이 사용됩니다</block>
+  <block id="c179b6fa575bc7fa32dfb7610146c685" category="inline-link"><block ref="c179b6fa575bc7fa32dfb7610146c685" category="inline-link-rx"></block></block>
+  <block id="68e15b733420e402fbbb000ebeca5961" category="paragraph"><block ref="68e15b733420e402fbbb000ebeca5961" category="inline-link-rx"></block></block>
+  <block id="f8ea35d5f1082c0d4ebadcaeb5c4ce9b" category="list-text">워크플로 가져오기를 위한 JSON 파일</block>
+  <block id="d36eb67bdeda5d26432b94d3b21665aa" category="inline-link"><block ref="d36eb67bdeda5d26432b94d3b21665aa" category="inline-link-rx"></block></block>
+  <block id="7ee1c41b1421d2dc52ff2a6c0ca34454" category="paragraph"><block ref="7ee1c41b1421d2dc52ff2a6c0ca34454" category="inline-link-rx"></block></block>
+  <block id="a9ec7bb4f4f0cf0273cc7a2d54798374" category="list-text">Cisco Intersight 도움말 센터</block>
+  <block id="325ef16488c41cabfb77587d00f90537" category="list-text">Cisco Intersight Cloud Orchestrator 설명서:</block>
+  <block id="fa212deb4193a2682a5adc2e636644bd" category="inline-link"><block ref="fa212deb4193a2682a5adc2e636644bd" category="inline-link-rx"></block></block>
+  <block id="99839072ce01f98f3b6cf15b8382c597" category="paragraph"><block ref="99839072ce01f98f3b6cf15b8382c597" category="inline-link-rx"></block></block>
+  <block id="30de9c74ca24ef6c8bab1b4a84f1fde5" category="list-text">HiashCorp Terraform 문서용 Cisco Intersight 서비스</block>
+  <block id="3eb9b36a3168b0f6da765e2ada88617d" category="inline-link"><block ref="3eb9b36a3168b0f6da765e2ada88617d" category="inline-link-rx"></block></block>
+  <block id="fd09af68db9c0dfd650f7c4e78a460f8" category="paragraph"><block ref="fd09af68db9c0dfd650f7c4e78a460f8" category="inline-link-rx"></block></block>
+  <block id="3060910bb320ad2fd34d07464c85725f" category="inline-link"><block ref="3060910bb320ad2fd34d07464c85725f" category="inline-link-rx"></block></block>
+  <block id="6fbda78dbf9544421ca94656af2d60d0" category="paragraph"><block ref="6fbda78dbf9544421ca94656af2d60d0" category="inline-link-rx"></block></block>
+  <block id="04d452bb65ecf39ba22501bcfe33a74d" category="list-text">Cisco Intersight Cloud Orchestrator 데이터 시트</block>
+  <block id="88ab9197aec1a2d2e6b750005780355b" category="inline-link"><block ref="88ab9197aec1a2d2e6b750005780355b" category="inline-link-rx"></block></block>
+  <block id="7694a8b09c651585b616cd5c2e2d315f" category="paragraph"><block ref="7694a8b09c651585b616cd5c2e2d315f" category="inline-link-rx"></block></block>
+  <block id="04de9f12c9816edbaa3c2e844070e26d" category="list-text">HiashCorp Terraform Data Sheet를 위한 Cisco Intersight 서비스</block>
+  <block id="cbf7792df5787e2488397b0a12491eec" category="inline-link"><block ref="cbf7792df5787e2488397b0a12491eec" category="inline-link-rx"></block></block>
+  <block id="4b69ade29c4ddd1a50169396d2e6167a" category="paragraph"><block ref="4b69ade29c4ddd1a50169396d2e6167a" category="inline-link-rx"></block></block>
+  <block id="87a10d4cd20cfd124b01902a2c1429a7" category="paragraph"><block ref="87a10d4cd20cfd124b01902a2c1429a7" category="inline-link-rx"></block></block>
+  <block id="5264da9809f5f966f5f03e5a027a117a" category="list-text">Cisco UCS X-Series 및 FlexPod 데이터 센터</block>
+  <block id="67a915151759ecc737f698391f7cfd08" category="section-title">상호 운용성</block>
+  <block id="1f735b42d50924526fea1c1512159c8c" category="paragraph"><block ref="1f735b42d50924526fea1c1512159c8c" category="inline-link-rx"></block></block>
+  <block id="f58e06fa88f4c2a1b6785754a9e0a782" category="section-title">NetApp Cloud Volumes ONTAP 참조 문서</block>
+  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
+  <block id="9fdeec9ecb7581b5b8e2d2a5fcc66adc" category="paragraph"><block ref="9fdeec9ecb7581b5b8e2d2a5fcc66adc" category="inline-link-rx"></block></block>
+  <block id="384f18164b60938c5ad89d5effb32d7b" category="list-text">Cloud Volumes ONTAP TCO 계산기</block>
+  <block id="1464cfd03ef9221a5c46576dbb5acaaf" category="paragraph"><block ref="1464cfd03ef9221a5c46576dbb5acaaf" category="inline-link-rx"></block></block>
+  <block id="89a8336752fe296450613297e4b900cf" category="list-text">Cloud Volumes ONTAP Sizer</block>
+  <block id="60bd11ea0e09744eaeccf06ad57d256f" category="inline-link"><block ref="60bd11ea0e09744eaeccf06ad57d256f" category="inline-link-rx"></block></block>
+  <block id="a86cb95749eab7bd0c6a482d4da0d720" category="paragraph"><block ref="a86cb95749eab7bd0c6a482d4da0d720" category="inline-link-rx"></block></block>
+  <block id="77484b50042596806200eb9ad8a1034b" category="list-text">클라우드 평가 툴</block>
+  <block id="1069773ac12400966d826141fdef9d8b" category="paragraph"><block ref="1069773ac12400966d826141fdef9d8b" category="inline-link-rx"></block></block>
+  <block id="e2616fc1fdb50365b35d1d5473ed3dce" category="list-text">NetApp 하이브리드 클라우드</block>
+  <block id="9fcffeb3a73be8377997a3dbce512929" category="paragraph"><block ref="9fcffeb3a73be8377997a3dbce512929" category="inline-link-rx"></block></block>
+  <block id="23efdbe8862f0b39feb5fee8ba6a9555" category="list-text">Cloud Manager API 설명서</block>
+  <block id="3fa5dc240c6c9a67734c097894aad63a" category="inline-link"><block ref="3fa5dc240c6c9a67734c097894aad63a" category="inline-link-rx"></block></block>
+  <block id="c832101e61c0299f840aa2fb0dc54a5f" category="paragraph"><block ref="c832101e61c0299f840aa2fb0dc54a5f" category="inline-link-rx"></block></block>
+  <block id="b9a6d65bed31fdf5f2527866fa0dfd9d" category="section-title">문제 해결</block>
+  <block id="868df23d9e8dc922a264062fa79c2241" category="inline-link"><block ref="868df23d9e8dc922a264062fa79c2241" category="inline-link-rx"></block></block>
+  <block id="3f6b4966cbc4a579bb0f9bef161c8fa5" category="paragraph"><block ref="3f6b4966cbc4a579bb0f9bef161c8fa5" category="inline-link-rx"></block></block>
+  <block id="303e96f80576360d0c7b07ae7528fa4b" category="section-title">Terraform(Terraform</block>
+  <block id="2286ccbf59b9435994947e88725c76e8" category="list-text">Terraform 클라우드</block>
+  <block id="e07006e711ecd6f73bd7048090b7e2ab" category="inline-link"><block ref="e07006e711ecd6f73bd7048090b7e2ab" category="inline-link-rx"></block></block>
+  <block id="98ca9412177a5814dfc1273e93b809e8" category="paragraph"><block ref="98ca9412177a5814dfc1273e93b809e8" category="inline-link-rx"></block></block>
+  <block id="fb6bb9990406d2b2738dce70c36fb9f5" category="list-text">Terraform 문서</block>
+  <block id="1ed30a4b55ba790efa401b303c8c37f4" category="inline-link"><block ref="1ed30a4b55ba790efa401b303c8c37f4" category="inline-link-rx"></block></block>
+  <block id="3a05ef5172fb9c6f0659f46f7acb6e1a" category="paragraph"><block ref="3a05ef5172fb9c6f0659f46f7acb6e1a" category="inline-link-rx"></block></block>
+  <block id="844506467bd58ba94370953ce011170b" category="list-text">NetApp Cloud Manager 레지스트리</block>
+  <block id="3820325f9ee4ef1564a4956854301751" category="inline-link"><block ref="3820325f9ee4ef1564a4956854301751" category="inline-link-rx"></block></block>
+  <block id="99bdab1ba48d99c6b9acd194ae1eb5df" category="paragraph"><block ref="99bdab1ba48d99c6b9acd194ae1eb5df" category="inline-link-rx"></block></block>
+  <block id="c731f72e1d22a7c5e01a7cb789a8885e" category="section-title">GCP</block>
+  <block id="369e0f23a1a6dd50bf713d3771a63ab4" category="list-text">GCP용 ONTAP 고가용성</block>
+  <block id="ad697fee8b8edd1e753ec60060dd1394" category="inline-link"><block ref="ad697fee8b8edd1e753ec60060dd1394" category="inline-link-rx"></block></block>
+  <block id="abfe0d8c399de2e80383ac64ea642a0f" category="paragraph"><block ref="abfe0d8c399de2e80383ac64ea642a0f" category="inline-link-rx"></block></block>
+  <block id="08c7c6c7a0eaf45b1812976fa5f40a08" category="list-text">GCP 페르쿼트</block>
+  <block id="07cd340ee20e09fd5ad828c27798a62c" category="inline-link"><block ref="07cd340ee20e09fd5ad828c27798a62c" category="inline-link-rx"></block></block>
+  <block id="fe6eee3642045f58dd18597ab300a43a" category="paragraph"><block ref="fe6eee3642045f58dd18597ab300a43a" category="inline-link-rx"></block></block>
+  <block id="bbe9a5129b8211f586f57fa3c81a56d0" category="summary">이 섹션에서는 이 솔루션을 구축하는 데 필요한 모든 솔루션 구성 요소에 대해 설명합니다.</block>
+  <block id="037d666bf4e372500ae12a5586124677" category="paragraph"><block ref="037d666bf4e372500ae12a5586124677" category="inline-link-macro-rx"></block></block>
+  <block id="7833bbc47611761f05b9a8273bfcc9b8" category="paragraph">FlexPod는 가상화된 솔루션과 가상화되지 않은 솔루션 모두를 위한 통합된 기반을 형성하는 정의된 하드웨어 및 소프트웨어 세트입니다. FlexPod에는 NetApp ONTAP 스토리지, Cisco Nexus 네트워킹, Cisco MDS 스토리지 네트워킹 및 Cisco UCS(Unified Computing System)가 포함되어 있습니다. 이 설계는 네트워킹, 컴퓨팅 및 스토리지가 하나의 데이터 센터 랙에 장착되거나 고객의 데이터 센터 설계에 따라 배포될 수 있을 만큼 유연합니다. 포트 밀도를 통해 네트워킹 구성 요소가 여러 구성을 수용할 수 있습니다.</block>
+  <block id="746c911b9080ad5685beb48bc4e87fdc" category="paragraph">Cisco Intersight는 기존 및 클라우드 네이티브 애플리케이션과 인프라에 대한 지능형 자동화, 관찰 가능성 및 최적화를 제공하는 SaaS 플랫폼입니다. 이 플랫폼은 IT 팀의 변화를 주도하는 데 도움이 되며 하이브리드 클라우드용으로 설계된 운영 모델을 제공합니다. Cisco Intersight는 다음과 같은 이점을 제공합니다.</block>
+  <block id="91b14ca67790413a539614bfb9b60060" category="list-text">신속한 제공.* 민첩한 기반 소프트웨어 개발 모델로 인해 잦은 업데이트와 지속적인 혁신을 통해 클라우드 또는 고객의 데이터 센터에서 서비스로 제공됩니다. 따라서 고객은 LOB에 대한 제공 속도를 높이는 데 주력할 수 있습니다.</block>
+  <block id="e80d745eb45409b15c92907b1a4370c8" category="list-text">* 운영 간소화. * 공통의 인벤토리, 인증 및 API가 포함된 안전한 단일 툴을 사용하여 운영을 간소화함으로써 전체 스택 및 모든 위치에서 작업을 수행할 수 있으므로 팀 간의 사일로를 제거할 수 있습니다. 사내 물리적 서버 및 하이퍼바이저 관리부터 VM, K8s, 서버리스, 자동화, 사내 및 퍼블릭 클라우드 전반에서 최적화 및 비용 제어</block>
+  <block id="f787f087a1f6eaed7b5cccfde5cd5306" category="list-text">* 지속적인 최적화. * Cisco Intersight가 모든 계층 및 Cisco TAC에 제공하는 인텔리전스를 사용하여 환경을 지속적으로 최적화합니다. 이 인텔리전스는 권장 및 자동화 작업으로 변환되므로 작업 부하 이동, 물리적 서버 상태 모니터링, 작업 중인 퍼블릭 클라우드 비용 절감 권장 사항 등 모든 변화에 실시간으로 대응할 수 있습니다.</block>
+  <block id="7a3e1f28e5357956ed40f51eaffef792" category="paragraph">Cisco Intersight를 사용하면 UCSM 관리 모드(UMM)와 Intersight 관리 모드(IMM)의 두 가지 관리 작업 모드를 사용할 수 있습니다. 패브릭 상호 연결의 초기 설정 중에 패브릭 연결 Cisco UCS 시스템에 대한 네이티브 UMM 또는 IMM을 선택할 수 있습니다. 이 솔루션에서는 네이티브 IMM이 사용됩니다.</block>
+  <block id="6275a2d3828d6e9e1283549c6eb97d28" category="section-title">Cisco Intersight 라이센스</block>
+  <block id="2bffe2ef90c9dd706416edd74f9979f3" category="paragraph">Cisco Intersight는 여러 계층의 가입 기반 라이센스를 사용합니다.</block>
+  <block id="ad76b447719ee525367b3f9e1d2d74db" category="paragraph">Cisco Intersight 라이센스 계층은 다음과 같습니다.</block>
+  <block id="ea355e3c3cb577b3107b711a9afd53f3" category="list-text">* Cisco Intersight Essentials. * 모든 기본 기능과 함께 다음 기능이 포함되어 있습니다.</block>
+  <block id="ad9fb76f4c570d079c7d1aaafed445ab" category="list-text">Cisco UCS 센트럴</block>
+  <block id="1d964f5f3de3fa97d800e6e0775ae950" category="list-text">Cisco IMC 감독자 자격</block>
+  <block id="a815ed7f01e05b7d30cee5f576c4fd83" category="list-text">서버 프로파일을 사용한 정책 기반 구성</block>
+  <block id="dd56e6cd0992d8514725a4acede35af7" category="list-text">펌웨어 관리</block>
+  <block id="1d4fe46da3e791622416090e0316b7a1" category="list-text">하드웨어 호환성 목록(HCL)과의 호환성 평가</block>
+  <block id="479a03e9ed8f4b73028173a264932046" category="list-text">* Cisco Intersight Advantage. * Essentials 계층의 기능과 다음 기능이 포함됩니다.</block>
+  <block id="bea8e01cf1c3f6b2c8cc0c6f7f5d62f6" category="list-text">물리적 컴퓨팅, 네트워크, 스토리지, VMware 가상화 및 AWS 퍼블릭 클라우드에서 위젯, 인벤토리, 용량, 활용률 기능 및 도메인 간 인벤토리 상관 관계</block>
+  <block id="e7c1fab5556e3293d7c694df8118e4ef" category="list-text">고객이 영향을 받는 엔드포인트 장치에 대한 중요한 보안 경고 및 현장 알림을 받을 수 있는 Cisco 보안 권고 서비스입니다.</block>
+  <block id="32085592ea7375e22d4e50fb250ab93b" category="list-text">* Cisco Intersight Premier. * Cisco Intersight Premier는 Advantage 계층에서 제공되는 기능 외에도 다음과 같은 기능을 제공합니다.</block>
+  <block id="8689723938ad68dca4800a06de385d61" category="list-text">Cisco 및 타사 컴퓨팅, 네트워크, 스토리지, 통합 시스템, 가상화, 컨테이너 및 퍼블릭 클라우드 플랫폼을 사용하고 있습니다</block>
+  <block id="7c7cb6774a222f136c322cbd6271909f" category="list-text">Cisco UCS Director의 전체 구독 신청은 추가 비용 없이 가능합니다.</block>
+  <block id="c138302b39330092178afca4d6a1b99d" category="paragraph">Intersight Licensing 및 각 라이센스에서 지원되는 기능에 대한 자세한 내용은 를 참조하십시오<block ref="7eb168891f5d1b0113edfcdbba242d25" category="inline-link-rx"></block>.</block>
+  <block id="635a4cf8fefd5a9d753528bc767bfc5f" category="admonition">이 솔루션에서는 가시화 클라우드 오케스트레이터 및 Intersight 서비스를 하시사테라폼에 사용합니다. 이러한 기능은 Intersight Premier 라이센스가 있는 사용자가 사용할 수 있으므로 이 라이센스 계층을 활성화해야 합니다.</block>
+  <block id="c4111b747373051b5b95ba533ab26cda" category="section-title">ICO와의 Terraform 클라우드 통합</block>
+  <block id="c905a15b564036aed889ec79a12b2b42" category="paragraph">Cisco Intersight Cloud Orchestrator(ICO)를 사용하여 TFC(Terraform Cloud) API를 호출하는 워크플로우를 생성하고 실행할 수 있습니다. 웹 API 요청 호출 작업은 Terraform Cloud를 대상으로 지원하며 HTTP 메서드를 사용하여 Terraform Cloud API로 구성할 수 있습니다. 따라서 워크플로에서는 일반 API 작업 및 기타 작업을 사용하여 여러 Terraform Cloud API를 호출하는 작업을 조합하여 사용할 수 있습니다. ICO 기능을 사용하려면 프리미어 라이센스가 필요합니다.</block>
+  <block id="e23b1faaa773bc841675a9d4e18ef128" category="section-title">Cisco Intersight Assist를 참조하십시오</block>
+  <block id="f21c1da9fbfdee9365a8996cefe9d817" category="paragraph">Cisco Intersight Assist를 사용하면 엔드포인트 장치를 Cisco Intersight에 추가할 수 있습니다. 데이터 센터에는 Cisco Intersight와 직접 연결되지 않는 여러 장치가 있을 수 있습니다. Cisco Intersight에서 지원되지만 직접 연결되지 않는 장치는 연결 메커니즘이 필요합니다. Cisco Intersight Assist는 이러한 연결 메커니즘을 제공하며 Cisco Intersight에 장치를 추가할 수 있도록 도와줍니다.</block>
+  <block id="8b83e74c5234b94ef4aa50c7e8355cf7" category="inline-link">Cisco Intersight 가상 어플라이언스 시작 가이드</block>
+  <block id="30f75ac7800191b38f765a03e95e4e92" category="paragraph">Cisco Intersight Assist는 OVA(Open Virtual Appliance) 파일 형식에 포함된 배포 가능한 가상 머신으로 배포되는 Cisco Intersight Virtual Appliance 내에서 사용할 수 있습니다. ESXi 서버에 어플라이언스를 설치할 수 있습니다. 자세한 내용은 를 참조하십시오<block ref="9ec2007768c9abd4b84d3e74335f0c5f" category="inline-link-rx"></block>.</block>
+  <block id="bf647454e36069fd16f1a7a35cf6a865" category="inline-link">시작하기</block>
+  <block id="ec0f396f2d3d02970c125145260fcc38" category="paragraph">Intersight Assist를 Intersight에 사용한 후 Intersight Assist 옵션을 통해 클레임 장치를 청구할 수 있습니다. 자세한 내용은 을 참조하십시오<block ref="5c61a46cbaf3644182eeea7ed23b0ac8" category="inline-link-rx"></block>.</block>
+  <block id="4bd50825ba17a2acb595707efca60c74" category="list-text">내장된 데이터 중복제거, 데이터 압축, 씬 프로비저닝 및 복제를 활용하여 스토리지 비용을 최소화합니다.</block>
+  <block id="5b22d57ae20a13353e0800be8fda5c50" category="list-text">클라우드 환경에서 장애 발생 시에도 지속적인 운영과 엔터프라이즈급 안정성 제공</block>
+  <block id="d14748164dcd7407330b974fba978880" category="list-text">Cloud Volumes ONTAP는 업계 최고의 복제 기술인 NetApp SnapMirror를 사용하여 온프레미스 데이터를 클라우드로 복제하므로 여러 사용 사례에서 2차 복사본을 쉽게 사용할 수 있습니다.</block>
+  <block id="5b8323c8e9d9958da4242126519064e5" category="list-text">Cloud Volumes ONTAP은 또한 Cloud Backup Service와 통합되어 클라우드 데이터를 보호하고 장기간 보관하기 위한 백업 및 복원 기능을 제공합니다.</block>
+  <block id="7439de3a5dc39945bf626d0f142fb2a3" category="list-text">애플리케이션을 오프라인으로 전환하지 않고도 필요에 따라 고성능 및 고성능 스토리지 풀 간에 전환할 수 있습니다.</block>
+  <block id="e47f4d50b9a7d31850314f79b07c89b9" category="list-text">NetApp SnapCenter를 사용하여 스냅샷 복사본의 일관성 제공</block>
+  <block id="18c70a53630dad3791a51d3a1b08b562" category="paragraph">Cloud Central은 NetApp 클라우드 데이터 서비스에 액세스하고 이를 관리할 수 있는 중앙의 위치입니다. 이러한 서비스를 사용하여 클라우드에서 중요한 애플리케이션을 실행하고, 자동화된 DR 사이트를 생성하고, SaaS 데이터를 백업하고, 여러 클라우드 간에 데이터를 효과적으로 마이그레이션 및 제어할 수 있습니다. 자세한 내용은 을 참조하십시오<block ref="ef2f80fcac56775a5e4c8b298adc8f42" category="inline-link-rx"></block>.</block>
+  <block id="d7bd0f007a100411c8b59ce1a239d505" category="paragraph">Cloud Manager는 엔터프라이즈급 SaaS 기반 관리 플랫폼으로, IT 전문가와 클라우드 설계자가 NetApp 클라우드 솔루션을 사용하여 하이브리드 멀티 클라우드 인프라를 중앙에서 관리할 수 있도록 지원합니다. 이 솔루션은 중앙 집중식 시스템을 통해 사내 및 클라우드 스토리지를 확인 및 관리하여 여러 하이브리드 클라우드 공급자와 계정을 지원합니다. 자세한 내용은 을 참조하십시오<block ref="78eaae3c42f31156debba144f4ad7dca" category="inline-link-rx"></block>.</block>
+  <block id="17bdc8141e5dc3e45f3b56856eac1502" category="paragraph">Connector를 사용하면 Cloud Manager에서 퍼블릭 클라우드 환경 내의 리소스 및 프로세스를 관리할 수 있습니다. Connector 인스턴스는 Cloud Manager에서 제공하는 다양한 기능을 사용해야 하며 클라우드 또는 사내 네트워크에 구축할 수 있습니다. 커넥터는 다음 위치에서 지원됩니다.</block>
+  <block id="4df40e141b0559f15db8f84f78aed013" category="list-text">온프레미스</block>
+  <block id="7ee3affd9e60ceb2b9e3a6591e5bdb60" category="paragraph">NetApp Active IQ Unified Manager를 사용하면 재설계된 직관적인 단일 인터페이스에서 ONTAP 스토리지 클러스터를 모니터링하여 커뮤니티의 지혜 및 AI 분석을 제공할 수 있습니다. 스토리지 환경 및 스토리지 환경에서 실행되는 가상 시스템에 대한 포괄적인 운영, 성능 및 사전 예방적 통찰력을 제공합니다. 스토리지 인프라에서 문제가 발생하면 Unified Manager에서 문제의 세부 정보를 알려 근본 원인을 파악할 수 있습니다. 가상 머신 대시보드에서는 VM의 성능 통계를 볼 수 있으므로 vSphere 호스트에서 네트워크를 거쳐 마지막으로 스토리지까지 전체 입출력 경로를 조사할 수 있습니다.</block>
+  <block id="b6bececf79765f735afe96ca6a372677" category="paragraph">일부 이벤트는 문제를 해결하기 위해 취할 수 있는 개선 조치도 제공합니다. 이벤트가 발생할 때 e-메일 및 SNMP 트랩을 통해 알림을 받도록 이벤트에 대한 사용자 지정 알림을 구성할 수 있습니다. Active IQ Unified Manager를 사용하면 용량 및 사용 추세를 예측하여 문제가 발생하기 전에 능동적으로 조치를 취함으로써 장기적인 문제를 해결할 수 있는 단기적인 의사 결정을 방지할 수 있으므로 사용자의 스토리지 요구 사항을 계획할 수 있습니다.</block>
+  <block id="c2e2fce3a995f59900d7afbbe58683f5" category="inline-link">이 링크</block>
+  <block id="edc471e35cb4a935ff2612be287b4622" category="paragraph">VMware vSphere에 대한 자세한 내용은 을 참조하십시오<block ref="1c79928d773a6a687b99f75e1531d5b3" category="inline-link-rx"></block>.</block>
+  <block id="80d88dcb4abb4fb16a3dcd2b30537a5d" category="section-title">하드웨어 및 소프트웨어 버전</block>
+  <block id="5b5b418e0c91979a9827fe792ba8dc75" category="paragraph">이 하이브리드 클라우드 솔루션은 NetApp 상호 운용성 매트릭스 툴 및 Cisco UCS 하드웨어 호환성 목록에 정의된 대로 지원되는 소프트웨어, 펌웨어, 하드웨어 버전을 실행하는 FlexPod 환경으로 확장할 수 있습니다.</block>
+  <block id="2c6e4ca4692997fe4d11c99c80dfbb47" category="paragraph">사내 환경의 기준 플랫폼으로 사용되는 FlexPod 솔루션은 설명된 지침과 사양에 따라 배포되었습니다<block ref="f10eda6a1028e8f651dae68f5081fe48" category="inline-link-rx"></block>.</block>
+  <block id="7dc4cb6e5cc764021edf603ee8086766" category="paragraph">이 환경 내의 네트워크는 ACI 기반입니다. 자세한 내용은 을 참조하십시오<block ref="52978bee2b81a5e001ad2371304c6c3c" category="inline-link-rx"></block>.</block>
+  <block id="0de80610a4cf8c45d9737ee7c93ff699" category="list-text">자세한 내용은 다음 링크를 참조하십시오.</block>
+  <block id="78bb864de2f3628a86c0e8e70bb5087d" category="list-text"><block ref="78bb864de2f3628a86c0e8e70bb5087d" category="inline-link-rx"></block></block>
+  <block id="0d87b9270aecd2565c2b1c531fbb959b" category="list-text"><block ref="0d87b9270aecd2565c2b1c531fbb959b" category="inline-link-rx"></block></block>
+  <block id="071525c85bdb987cadd64553952b977b" category="list-text"><block ref="071525c85bdb987cadd64553952b977b" category="inline-link-rx"></block></block>
+  <block id="b9ac0f5a408543b25267c7b18f92a793" category="paragraph">다음 표에는 FlexPod 하드웨어 및 소프트웨어 버전이 나와 있습니다.</block>
+  <block id="8a14b9430ecf77aa29cf62499a6805cc" category="cell">Cisco UCS X210C-M6</block>
+  <block id="636209f84e6a091cb33e0a4b0797d517" category="cell">5.0(1b)</block>
+  <block id="4050fe42ef663681f4a0351a830abc54" category="cell">4.2(2a)</block>
+  <block id="36a884b66a05fe2f14e97457ff65959a" category="cell">Cisco Nexus 9332C(척추)</block>
+  <block id="573f11f9a84b4e05919220d25b4a4171" category="cell">14.2(7초)</block>
+  <block id="4835ce1897802aec129296c17be6f0a9" category="cell">Cisco Nexus 9336C-FX2(리프)</block>
+  <block id="3156dd33c46cdf0b0f85ee56fdbde4aa" category="cell">Cisco ACI를 참조하십시오</block>
+  <block id="d6cee59c00e824e53b470f1f765a127f" category="cell">4.2(7개)</block>
+  <block id="cedd98a2f38cdafe187d3e9aa5657c60" category="cell">VMware VAAI용 NetApp NFS 플러그인</block>
+  <block id="217c407fc866eb13dd653007eb45c079" category="cell">2.0-15</block>
+  <block id="5ecb6b24c169667ff1a176768115659e" category="cell">Active IQ Unified Manager</block>
+  <block id="f2991c5b36598de40e8da0ad1cce293d" category="cell">7.0(U3)</block>
+  <block id="03bc88feb8c0ce198a12645fce792b30" category="cell">7.0.3</block>
+  <block id="88cf5495333c55b8342dbb57bd6d7ebe" category="cell">1.0.11-306</block>
+  <block id="fa7ceb8575b8fff909615662ac46674b" category="paragraph">Terraform 구성은 Terraform Cloud for Business 계정에서 실행됩니다. Terraform 구성에서는 NetApp Cloud Manager의 Terraform 공급자를 사용합니다.</block>
+  <block id="164284cc4b6224def696228983b76364" category="paragraph">다음 표에는 공급업체, 제품 및 버전이 나와 있습니다.</block>
+  <block id="1129ea7ef173c0128f37020fea647cec" category="cell">하시코프</block>
+  <block id="8733519a60fd49dee81fe221b6da28b5" category="cell">1.2.7</block>
+  <block id="0da1750004f7c759d1e8c561d641c115" category="paragraph">다음 표에서는 Cloud Manager 및 Cloud Volumes ONTAP 버전을 보여 줍니다.</block>
+  <block id="cfaa375bf6c7f9fcc1bc04d4f30c9154" category="cell">넷엡</block>
+  <block id="4f8261c495074e5d5a19d690ba126b0f" category="cell">3.9.21</block>
+  <block id="5e879ef49b48cebf265dca9ffe1788a9" category="inline-link-macro">다음: 설치 및 구성 - FlexPod 배포</block>
+  <block id="f76a180ca674dd6361693a55c8dac231" category="paragraph"><block ref="f76a180ca674dd6361693a55c8dac231" category="inline-link-macro-rx"></block></block>
+  <block id="2a897edf7367a756ab404301bb53432b" category="summary">이 페이지에는 FlexPod와 Cisco Intersight를 구성하는 데 필요한 리소스가 나열되어 있습니다.</block>
+  <block id="d78c53e860299f27f327545be8febaa7" category="doc">Cisco Intersight 구성</block>
+  <block id="4f85f6f72a3271e0f8a966edde764e81" category="inline-link-macro">이전: FlexPod 배포.</block>
+  <block id="bc608a93bb7019bc779b1f1a5c15f0fa" category="paragraph"><block ref="bc608a93bb7019bc779b1f1a5c15f0fa" category="inline-link-macro-rx"></block></block>
+  <block id="293126242dbc358f87bde4141dbc530c" category="paragraph">Cisco Intersight 및 Intersight Assist를 구성하려면 찾은 FlexPod용 Cisco 검증 설계를 참조하십시오<block ref="4be172445d052df3a6539293c3fe29ba" category="inline-link-rx"></block>.</block>
+  <block id="8215c4882674a4305767399d9a43d7db" category="inline-link-macro">다음: ICO 사전 요구 사항에 대한 Terraform 클라우드 통합.</block>
+  <block id="34203f61fde9b873964b6623029c0f4b" category="paragraph"><block ref="34203f61fde9b873964b6623029c0f4b" category="inline-link-macro-rx"></block></block>
+  <block id="69b1ef6590180c408bc0feb1d9769f0b" category="summary">이 페이지에서는 샘플 데이터 복제 워크플로우를 사용하여 솔루션을 다시 검토하고, 몇 가지 측정을 통해 FlexPod에서 실행되는 NetApp ONTAP 인스턴스에서 Google Cloud에서 실행되는 NetApp Cloud Volumes ONTAP로 데이터 복제가 수행되었는지 확인합니다.</block>
+  <block id="1e472079c22b08f805b1720281baba6b" category="inline-link-macro">이전: 컨트롤러에서 Terraform 실행.</block>
+  <block id="d48cab5f1b30eb3578b5a170ba59ee23" category="paragraph"><block ref="d48cab5f1b30eb3578b5a170ba59ee23" category="inline-link-macro-rx"></block></block>
+  <block id="dac0bd43fff7f9c89199f39a23accb80" category="paragraph">이 섹션에서는 샘플 데이터 복제 워크플로우를 사용하여 솔루션을 다시 검토하고, 몇 가지 측정을 통해 FlexPod에서 실행되는 NetApp ONTAP 인스턴스에서 Google Cloud에서 실행되는 NetApp Cloud Volumes ONTAP로 데이터 복제가 수행되었는지 확인합니다.</block>
+  <block id="89518a07acbdbe4dde36fa54a24cb816" category="paragraph">이 솔루션에서 Cisco Intersight 워크플로우 오케스트레이터를 사용했으며 이 오케스트레이터는 앞으로도 당사의 활용 사례에 사용될 것입니다.</block>
+  <block id="ef1fc9473334d665707fc654387aca5e" category="paragraph">특히, 이 솔루션에 사용되는 제한된 Cisco Intersight 워크플로 집합은 Cisco Intersight에 장착된 전체 워크플로 집합을 나타내지 않습니다. 특정 요구 사항에 따라 사용자 지정 워크플로우를 생성하고 Cisco Intersight에서 트리거하도록 할 수 있습니다.</block>
+  <block id="7c8fa5fc944f50775d2964313e47defe" category="paragraph">성공적인 DR 시나리오에 대한 유효성 검사를 수행하려면 먼저 FlexPod에 속한 ONTAP의 볼륨에서 SnapMirror를 사용하여 Cloud Volumes ONTAP로 데이터를 이동합니다. 그런 다음 Google 클라우드 컴퓨팅 인스턴스에서 데이터에 액세스한 후 데이터 무결성 검사를 수행할 수 있습니다.</block>
+  <block id="ff20347981f12a7025f66d58eaa6c0ab" category="paragraph">이 솔루션의 성공 기준을 확인하는 데 사용되는 단계는 다음과 같습니다.</block>
+  <block id="df99bb72ae33d1183cac370f481b9e10" category="list-text">FlexPod의 ONTAP 볼륨에 있는 샘플 데이터 세트에 SHA256 체크섬을 생성합니다.</block>
+  <block id="07639f7b00b1b739b185812f67970a39" category="list-text">FlexPod에서 ONTAP와 Cloud Volumes ONTAP 간에 볼륨 SnapMirror 관계를 설정합니다.</block>
+  <block id="77b0649a68bd12e30a079c58814fbde9" category="list-text">샘플 데이터 세트를 FlexPod에서 Cloud Volumes ONTAP로 복제합니다.</block>
+  <block id="33a9919927d0bf146771949f2a55fa84" category="list-text">SnapMirror 관계를 유지하고 Cloud Volumes ONTAP의 볼륨을 운영 볼륨으로 승격하십시오.</block>
+  <block id="22924722760dff5d15bb33fb7cdefeee" category="list-text">Cloud Volumes ONTAP 볼륨과 데이터 세트를 Google Cloud의 컴퓨팅 인스턴스에 매핑합니다.</block>
+  <block id="97e56ddd25631d14f7c9c089b257aede" category="list-text">Cloud Volumes ONTAP의 샘플 데이터세트에 SHA256 체크섬을 생성합니다.</block>
+  <block id="0231c5857fad88e331211ab5f7c53f0a" category="list-text">소스와 대상의 체크섬을 비교합니다. 아마도 양쪽의 체크섬이 일치합니다.</block>
+  <block id="cc59c9678564230fb99ee54dd3f3426f" category="paragraph">온-프레미스 워크플로를 실행하려면 다음 단계를 완료합니다.</block>
+  <block id="1f44fa5edf8dde5cf4f8d97507bf7b91" category="list-text">Intersight에서 온-프레미스 FlexPod에 대한 워크플로를 만듭니다.</block>
+  <block id="3afbd9828e011526955ca93b48b57524" category="inline-image-macro">스크린샷</block>
+  <block id="c2e63941a3546d0ebc5271eb1ddafdbf" category="paragraph"><block ref="c2e63941a3546d0ebc5271eb1ddafdbf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b4bb537f5b737d6b3712a2eecf29acc7" category="list-text">필요한 입력을 제공하고 워크플로우를 실행합니다.</block>
+  <block id="9ea97ae83ff13cf8f80bbb724a092b2e" category="paragraph"><block ref="9ea97ae83ff13cf8f80bbb724a092b2e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="21a4653f598384f9cdda211b72da3624" category="list-text">시스템 관리자에서 새로 생성한 SVM을 확인합니다.</block>
+  <block id="2fd71dd02dfb2c14fb0f30a41805db27" category="paragraph"><block ref="2fd71dd02dfb2c14fb0f30a41805db27" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9fa79629cb187cd1f1a80cac0b9b9007" category="list-text">또 다른 재해 복구 워크플로우를 생성 및 실행하여 온프레미스 FlexPod에 볼륨을 생성하고 FlexPod와 Cloud Volumes ONTAP에서 이 볼륨 간에 SnapMirror 관계를 설정합니다.</block>
+  <block id="4b20a3dca129415313af4db062a56ebd" category="paragraph"><block ref="4b20a3dca129415313af4db062a56ebd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="17926f4cb78686060a868e0a8742bc8c" category="list-text">ONTAP system manager에서 새로 생성된 볼륨을 확인합니다.</block>
+  <block id="25cf9d1383c6264b6751d4720c8aa51d" category="paragraph"><block ref="25cf9d1383c6264b6751d4720c8aa51d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cc57d96c6da10e00338fa9d33d59011a" category="list-text">동일한 NFS 볼륨을 사내 가상 머신에 마운트한 다음 샘플 데이터 세트를 복사하고 체크섬을 수행합니다.</block>
+  <block id="88c00f5f5ead28999ec0e3159505b1d1" category="paragraph"><block ref="88c00f5f5ead28999ec0e3159505b1d1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="41bf7ceb253ae81a9674f61836fa2c00" category="paragraph"><block ref="41bf7ceb253ae81a9674f61836fa2c00" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9d6b440f824474c319ab03ece17865b7" category="list-text">Cloud Manager에서 복제 상태를 확인합니다. 데이터 크기에 따라 데이터 전송에 몇 분이 걸릴 수 있습니다. 이 작업이 완료되면 SnapMirror 상태를 * 유휴 * 로 볼 수 있습니다.</block>
+  <block id="dd2b3db97d3d98314f7f000eb77ba5d3" category="paragraph"><block ref="dd2b3db97d3d98314f7f000eb77ba5d3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="16dcbc91e3d6627c2617510737097188" category="list-text">데이터 전송이 완료되면 Test_vol1 볼륨을 호스팅하는 SVM을 중지하여 소스 측에서 재해를 시뮬레이션합니다.</block>
+  <block id="8d89ccec0beb51ea153dc13eb743549e" category="paragraph">SVM이 중지된 후에는 Cloud Manager에서 Test_vol1 볼륨이 표시되지 않습니다.</block>
+  <block id="2daed770d7e1d57858018a3a284d3a74" category="paragraph"><block ref="2daed770d7e1d57858018a3a284d3a74" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="893f57c92cb33f610732ab3f7a7410fc" category="list-text">복제 관계를 끊은 후 Cloud Volumes ONTAP 대상 볼륨을 운영 볼륨으로 승격합니다.</block>
+  <block id="e0596816fb067c94052d80ece82ec4eb" category="paragraph"><block ref="e0596816fb067c94052d80ece82ec4eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="54c3c46ad0c220c48a9e99a365a35d18" category="paragraph"><block ref="54c3c46ad0c220c48a9e99a365a35d18" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d1722b4dd68c0912192fc57695a9f0cb" category="list-text">볼륨을 편집하고 내보내기 정책에 연결하여 클라이언트 액세스를 활성화합니다.</block>
+  <block id="ac04f704c43ebea8c94fa6262227178c" category="paragraph"><block ref="ac04f704c43ebea8c94fa6262227178c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e14869af2399ae859c15fd7cec22023d" category="list-text">볼륨에 대한 즉시 사용 가능한 마운트 명령을 가져옵니다.</block>
+  <block id="a50580afd0e21cf96c2f96ae4a20a529" category="paragraph"><block ref="a50580afd0e21cf96c2f96ae4a20a529" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ef11a0e63459aea7adc66c2ea6f2aa99" category="paragraph"><block ref="ef11a0e63459aea7adc66c2ea6f2aa99" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="952791a95d4123c909c667d51ba1b32e" category="list-text">컴퓨팅 인스턴스에 볼륨을 마운트하고 데이터가 대상 볼륨에 있는지 확인한 다음 'ample_dataset_2GB' 파일의 SHA256 체크섬을 생성합니다.</block>
+  <block id="fc35d462e743c1b522358aa115268e09" category="paragraph"><block ref="fc35d462e743c1b522358aa115268e09" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6ae581d3bc4fc3d47d8b728efedfb6aa" category="list-text">소스(FlexPod)와 대상(Cloud Volumes ONTAP) 모두에서 체크섬 값을 비교합니다.</block>
+  <block id="34aac2a1392e30ab3ec0e33c17f4b6ec" category="list-text">체크섬은 소스 및 대상과 일치합니다.</block>
+  <block id="01b934dfa12e16dd2064227df772dccc" category="paragraph">소스에서 대상으로 데이터 복제가 성공적으로 완료되었으며 데이터 무결성이 유지되었는지 확인할 수 있습니다. 이제 소스 사이트가 복구를 수행하는 동안 애플리케이션에서 이 데이터를 안전하게 사용하여 클라이언트에 제공할 수 있습니다.</block>
+  <block id="fd5a0331dea68ef832dc37e290b1bfd5" category="paragraph"><block ref="fd5a0331dea68ef832dc37e290b1bfd5" category="inline-link-macro-rx"></block></block>
+  <block id="1110378103a587f562da59b8232a4bb5" category="summary">이 페이지에서는 NetApp Cloud Manager에 액세스하는 방법과 Connector를 구축하는 방법을 설명합니다.</block>
+  <block id="296905c924222c83eef2d46cfc06670c" category="doc">퍼블릭 클라우드 서비스 공급자 구성</block>
+  <block id="a93bd8fac0274b3d8a9a725b02a7006e" category="inline-link-macro">이전: ICO 사전 요구 사항에 대한 Terraform Cloud 통합.</block>
+  <block id="14f746f4385eed664c63e7c2ceb0c33f" category="paragraph"><block ref="14f746f4385eed664c63e7c2ceb0c33f" category="inline-link-macro-rx"></block></block>
+  <block id="60d1ed6349be5d3bad11d86129f158ce" category="section-title">절차 1: NetApp Cloud Manager에 액세스하십시오</block>
+  <block id="49fc376ed35249f3841846ede4dab884" category="inline-link">NetApp Cloud Central에서</block>
+  <block id="881118b4505a907203f96d7d4bb2464b" category="paragraph">NetApp Cloud Manager 및 기타 클라우드 서비스에 액세스하려면 에 가입해야 합니다<block ref="25c9ce3f64e912d3750c233c5edfffad" category="inline-link-rx"></block>.</block>
+  <block id="4f39c070d98fb8261f08a9f4af4bfcea" category="admonition">Cloud Central 계정에서 작업 영역 및 사용자를 설정하려면 을 클릭합니다<block ref="8db968382215ca64c3ec159bc6512f38" category="inline-link-rx"></block>.</block>
+  <block id="2e4179358198d20865e3e24968e6d2d5" category="section-title">절차 2: 커넥터 전개</block>
+  <block id="4d12f9411baea75a585912a995cd84b2" category="paragraph">Google Cloud에 Connector를 배포하려면 다음을 참조하십시오<block ref="7d420e21b1b4b492131970b38e3c7184" category="inline-link-rx"></block>.</block>
+  <block id="5dcab386a1ca963fc73435340cd17e59" category="inline-link-macro">그 다음: 하이브리드 클라우드 NetApp 스토리지의 자동화된 구축</block>
+  <block id="fa0a9a98c8d38275c036e1e42c650fda" category="paragraph"><block ref="fa0a9a98c8d38275c036e1e42c650fda" category="inline-link-macro-rx"></block></block>
+  <block id="31ff2f42aa06afb4f688413ec87469d6" category="summary">이 페이지에서는 Cisco Intersight 및 Terraform Cloud에 연결하는 방법, 사용자 토큰을 생성하는 방법, Terraform 클라우드 타겟을 요청하는 방법, Terraform 클라우드 에이전트를 추가하는 방법에 대해 설명합니다.</block>
+  <block id="4ede2f96caaa6d0a14cb67452b876f33" category="doc">ICO 사전 요구 사항으로 Terraform Cloud 통합</block>
+  <block id="5879a343b1bb9064ae1b5f83edd2ef96" category="inline-link-macro">이전: Cisco Intersight 구성.</block>
+  <block id="9923c0ce9a58421f785fd2ec60966fa0" category="paragraph"><block ref="9923c0ce9a58421f785fd2ec60966fa0" category="inline-link-macro-rx"></block></block>
+  <block id="a6988e0328985acf7d14b582d5555880" category="section-title">절차 1: Cisco Intersight 및 Terraform Cloud 연결</block>
+  <block id="ee8cc5791df61140cfb2aea76b83f8bf" category="list-text">관련 Terraform Cloud 계정 세부 정보를 제공하여 Terraform 클라우드 타겟을 청구하거나 생성합니다.</block>
+  <block id="2d3d08c3c299f80b1db3e3ab39bd5e9d" category="list-text">고객이 데이터 센터에 에이전트를 설치하고 Terraform Cloud와 통신할 수 있도록 프라이빗 클라우드에 대한 Terraform Cloud Agent 타겟을 생성합니다.</block>
+  <block id="e795699f1e20cc25510953719622f9d5" category="paragraph">자세한 내용은 을 참조하십시오<block ref="b0ae32ca311a918c6584fdf584508f49" category="inline-link-rx"></block>.</block>
+  <block id="3c8df17370cf0099f92c862dacb4d915" category="section-title">절차 2: 사용자 토큰을 생성합니다</block>
+  <block id="50ee5c7def2aa3f096824e3771b588e8" category="paragraph">Terraform Cloud의 대상을 추가하려면 Terraform Cloud 설정 페이지에서 사용자 이름 및 API 토큰을 제공해야 합니다.</block>
+  <block id="f0748d5a29db5c42275c71bacbf7b318" category="inline-link"><block ref="f0748d5a29db5c42275c71bacbf7b318" category="inline-link-rx"></block></block>
+  <block id="d8ce22891e0723b7eeee7a765f4a5cc3" category="list-text">Terraform Cloud에 로그인하고 * 사용자 토큰 * 으로 이동합니다.<block ref="17cc5c2ab5dcc5826fcbbb07a90f0daf" category="inline-link-rx"></block>.</block>
+  <block id="9b2ee2ae96e5d4c8d4b3b0f66fe7df42" category="list-text">Create a new API token * 을 클릭합니다.</block>
+  <block id="fe47798a8cf5a4b54428db97b1575099" category="list-text">이름을 지정하여 토큰을 저장하고 안전한 장소에 보관합니다.</block>
+  <block id="567bb7dbf851c80cdad13709527b8fe4" category="section-title">절차 3: 클라우드 타겟 Terraform을 청구하십시오</block>
+  <block id="499cdf50f6393130fb7562787505e0b6" category="list-text">계정 관리자, 장치 관리자 또는 장치 기술자 권한과 Intersight에 로그인합니다.</block>
+  <block id="251c74ead0c418fa078f0c1e22cec6d0" category="list-text">admin &gt; Targets &gt; Claim a New Target * 으로 이동합니다.</block>
+  <block id="79799ecc6d36bcf3957363636b103690" category="list-text">범주 * 에서 * 클라우드 * 를 클릭합니다.</block>
+  <block id="af27c28ff13fff9d7517cc61d73656a8" category="list-text">Terraform Cloud * 를 클릭하고 * Start * 를 클릭합니다.</block>
+  <block id="f5b9111f5dc9bef0e747df00fbf3c562" category="inline-image-macro">Cisco Intersight에서 대상 유형을 선택한 스크린샷</block>
+  <block id="9929cbe75f34fd901af504920af58598" category="paragraph"><block ref="9929cbe75f34fd901af504920af58598" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="54dd0edd01e7b44d9d7b6650811a5371" category="list-text">다음 이미지에 표시된 대로 대상의 이름, Terraform Cloud의 사용자 이름, API 토큰 및 기본 조직을 Terraform Cloud에 입력합니다.</block>
+  <block id="886830cc9a5858d1b7a331cc2a121c7b" category="list-text">기본 관리 호스트 * 필드에서 다른 관리 호스트와 함께 다음 링크를 추가해야 합니다.</block>
+  <block id="99cd2175108d157588c04758296d1cfc" category="list-text">github.com</block>
+  <block id="9d98de09b6621ae9fd7f0eb049b1f741" category="list-text">github-releases.githubusercontent.com</block>
+  <block id="fc811e15680d7a50fb87286f43f21586" category="inline-image-macro">기본 관리 호스트 필드의 스크린샷.</block>
+  <block id="0caf227dbb5a9076a42a8ce059ae6989" category="paragraph"><block ref="0caf227dbb5a9076a42a8ce059ae6989" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8f8d8af9e7fbf9ed4ffa66123038be65" category="paragraph">모든 항목이 올바르게 입력되면 * Intersight Targets * 섹션에 Terraform Cloud 목표가 표시됩니다.</block>
+  <block id="a600abea4743a1020e3054d7f0d1d4b6" category="section-title">절차 4: 클라우드 에이전트 Terraform 추가</block>
+  <block id="d9a414100020a5250a8c1cc4fe4fbf37" category="paragraph">필수 구성 요소:</block>
+  <block id="b8c01b6d6fe36ce040e64ceff8826c00" category="list-text">Terraform 클라우드 대상.</block>
+  <block id="7d1e08eb7ef6f0e089234809924f9c39" category="list-text">Terraform Cloud Agent를 배포하기 전에 Intersight Assist를 Intersight에 요청하였습니다.</block>
+  <block id="c1fd3e81639213ed522aaf2e3c32216a" category="admonition">각 보조 기능에 대해 5명의 상담원만 요청할 수 있습니다.</block>
+  <block id="94e2b8e1267c7917d55d166c968c3a0c" category="admonition">Terraform에 대한 연결을 만든 후에는 Terraform Agent를 스핀업하여 Terraform 코드를 실행해야 합니다.</block>
+  <block id="d2084a59a070c3501f66c833653dc567" category="list-text">Terraform 클라우드 목표의 드롭다운 목록에서 * 클라우드 에이전트 청구 * 를 클릭합니다.</block>
+  <block id="a8ed570074883ca89e4621acdab32e95" category="list-text">Terraform Cloud 에이전트의 세부 정보를 입력합니다. 다음 스크린샷은 Terraform 에이전트에 대한 구성 세부 정보를 보여 줍니다.</block>
+  <block id="9f284b799dfd58daa76a14382b7bd24f" category="inline-image-macro">Terraform 에이전트의 구성 세부 정보를 보여 주는 스크린샷</block>
+  <block id="645a47bef1e62282538b1a2d830385e5" category="paragraph"><block ref="645a47bef1e62282538b1a2d830385e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ece792e07bf61bd54a9916d5d929b96d" category="admonition">Terraform Agent 속성을 업데이트할 수 있습니다. 대상이 * 연결되지 않음 * 상태이고 * 연결됨 * 상태인 적이 없는 경우 Terraform 에이전트에 대한 토큰이 생성되지 않습니다.</block>
+  <block id="291ac555f717d4866ec72c236e9096cd" category="paragraph">에이전트 검증이 성공하고 에이전트 토큰이 생성되면 조직 및/또는 에이전트 풀을 재구성할 수 없습니다. Terraform 에이전트를 성공적으로 배포하면 * Connected * 상태가 표시됩니다.</block>
+  <block id="1ca2f2b2beadbfe86f870a9f168c11d2" category="paragraph">Terraform Cloud 통합을 활성화하고 주장하면 하나 이상의 Terraform Cloud 에이전트를 Cisco Intersight Assist에 배포할 수 있습니다. Terraform Cloud 에이전트는 Terraform Cloud 대상의 하위 대상으로 모델링됩니다. 상담원 목표를 청구할 때 목표 클레임이 진행 중임을 나타내는 메시지가 표시됩니다.</block>
+  <block id="24b4fd83a46960113ab73823a154f60e" category="paragraph">몇 초 후 타겟이 * Connected * 상태로 이동되고 Intersight 플랫폼은 에이전트에서 Terraform Cloud 게이트웨이로 HTTPS 패킷을 라우팅합니다.</block>
+  <block id="184297381718797eca63d6a84ecb34f7" category="paragraph">Terraform 상담원은 올바른 클레임을 받아야 하며 대상 아래에 * Connected * 로 표시되어야 합니다.</block>
+  <block id="f80fe732577f113390f34169fcf0b4fe" category="inline-link-macro">다음으로 퍼블릭 클라우드 서비스 공급자를 구성합니다.</block>
+  <block id="0ccdb94ed44bc398f844df4243736680" category="paragraph"><block ref="0ccdb94ed44bc398f844df4243736680" category="inline-link-macro-rx"></block></block>
+  <block id="e82ada92461b044ecb6548922062c0e1" category="summary">이 섹션에서는 하이브리드 클라우드 NetApp 스토리지의 자동화된 구축에 대해 설명합니다.</block>
+  <block id="d4c2de0376e264ac418c3475c22d0c6a" category="doc">하이브리드 클라우드 NetApp 스토리지 자동 구축</block>
+  <block id="701c920bd07e80f235f1b3624e88579f" category="inline-link-macro">이전: 공용 클라우드 서비스 공급자 구성</block>
+  <block id="065938048c5b098791d2afdfba3c7823" category="paragraph"><block ref="065938048c5b098791d2afdfba3c7823" category="inline-link-macro-rx"></block></block>
+  <block id="1a862f0d66480d9b27e538c2428596f1" category="paragraph">먼저, API를 사용하도록 설정하고 Cloud Manager에 Connector와 같은 프로젝트나 다른 프로젝트에 있는 Cloud Volumes ONTAP 시스템을 배포 및 관리할 수 있는 권한을 제공하는 서비스 계정을 만들어야 합니다.</block>
+  <block id="edf2dce39ac9e5dc8c9a59814c8fdc8e" category="paragraph">Google Cloud 프로젝트에 커넥터를 배포하기 전에 커넥터가 사용자 구내 또는 다른 클라우드 공급자에서 실행되고 있지 않은지 확인합니다.</block>
+  <block id="9233d9e2d56c82c6f122b2d20ce21c26" category="paragraph">Cloud Manager에서 직접 Connector를 구축하기 전에 다음 두 가지 권한 세트가 있어야 합니다.</block>
+  <block id="3526fec7a2fc1c05d2e7efd2b10c86bf" category="list-text">Cloud Manager에서 Connector VM 인스턴스를 시작할 수 있는 권한이 있는 Google 계정을 사용하여 Connector를 배포해야 합니다.</block>
+  <block id="2c828a2343e9ab9a5d153a7ab41c6f75" category="inline-link">YAML 파일을 사용하여 권한을 설정합니다</block>
+  <block id="95050f5bd3904367150961e719746644" category="list-text">Connector를 배포할 때 VM 인스턴스를 선택하라는 메시지가 표시됩니다. Cloud Manager는 서비스 계정에서 권한을 받아 사용자를 대신하여 Cloud Volumes ONTAP 시스템을 생성하고 관리합니다. 서비스 계정에 사용자 지정 역할을 첨부하면 권한이 제공됩니다. 사용자와 서비스 계정에 필요한 권한이 포함된 YAML 파일을 두 개 설정해야 합니다. 를 사용하는 방법을 알아보십시오<block ref="ec334313a613ea3857a0d57616b8f502" category="inline-link-rx"></block> 여기.</block>
+  <block id="80980cb345f62c55d7f9fcd7be376762" category="inline-link">자세한 비디오입니다</block>
+  <block id="8b3e19e9e211deaadf299929396c3c39" category="paragraph">을 참조하십시오<block ref="b4bfd16ca1370613cfc70d28d5b22331" category="inline-link-rx"></block> 모든 필수 사전 요구 사항에 대해.</block>
+  <block id="000723be1d44c44ab8fa3b3fc8ed45c1" category="section-title">Cloud Volumes ONTAP 배포 모드 및 아키텍처</block>
+  <block id="e8839bc783eb8d4aa6150b2341161cf5" category="paragraph">Cloud Volumes ONTAP는 Google Cloud에서 단일 노드 시스템으로 고가용성(HA) 노드 쌍으로 제공됩니다. 요구사항에 따라 Cloud Volumes ONTAP 구축 모드를 선택할 수 있습니다. 단일 노드 시스템을 HA 쌍으로 업그레이드하는 것은 지원되지 않습니다. 단일 노드 시스템과 HA 쌍 간에 전환하려면 새 시스템을 구축하고 기존 시스템의 데이터를 새 시스템으로 복제해야 합니다.</block>
+  <block id="896b59e33470d2c92de6bbf68534df87" category="section-title">Google Cloud의 고가용성 Cloud Volumes ONTAP</block>
+  <block id="b40cbbb06d34a0c086ea56aa92d09aad" category="paragraph">Google Cloud는 여러 지리적 지역 및 한 지역 내의 여러 영역에 리소스를 배포할 수 있도록 지원합니다. HA 구축은 강력한 n1-표준 또는 n2-표준 시스템 유형을 사용하는 ONTAP 노드 2개로 구성되어 Google Cloud에서 사용할 수 있습니다. 두 Cloud Volumes ONTAP 노드 간에 데이터가 동기식으로 복제되어 장애 발생 시 가용성을 제공합니다. Cloud Volumes ONTAP의 HA 구축을 위해서는 각 VPC에 VPC 4개와 프라이빗 서브넷이 필요합니다. 4개의 VPC에 있는 서브넷에는 중복되는 CIDR 범위가 없어야 합니다.</block>
+  <block id="e04f7cb4a1e7257672b951d625f5dd1d" category="paragraph">4개의 VPC는 다음과 같은 용도로 사용됩니다.</block>
+  <block id="08f211ac064f1894c38aeccc8f373a88" category="list-text">VPC 0은 데이터 및 Cloud Volumes ONTAP 노드에 대한 인바운드 통신을 지원합니다.</block>
+  <block id="adc4af935bc0b6b89a0965272d39d14a" category="list-text">VPC 1 는 Cloud Volumes ONTAP 노드 간 클러스터 연결을 제공합니다.</block>
+  <block id="25f3bf8b47526deb5c3ecdb747758f28" category="list-text">VPC 2는 노드 간 비휘발성 RAM(NVRAM) 복제를 지원합니다.</block>
+  <block id="82b6ef023ce64963a4365b4e83a85d46" category="list-text">VPC 3은 노드 재구축을 위한 HA 중재자 인스턴스 및 디스크 복제 트래픽에 연결하는 데 사용됩니다.</block>
+  <block id="0cf69c2984ade860d2753bf4996ce2fa" category="paragraph">다음 이미지는 Goggle Cloud의 고가용성 Cloud Volumes ONTAP를 보여줍니다.</block>
+  <block id="59c13f2b608f3a08acecf9da255acbc1" category="inline-image-macro">이 이미지는 Goggle Cloud의 고가용성 Cloud Volumes ONTAP를 보여줍니다.</block>
+  <block id="76e127464c6a0508d6cb195b830cbd17" category="paragraph"><block ref="76e127464c6a0508d6cb195b830cbd17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f9dd39754b56818ded8b6a437467608b" category="paragraph">자세한 내용은 을 참조하십시오<block ref="25499db4d92b67cf576ffeab74dfdce5" category="inline-link-rx"></block>.</block>
+  <block id="d9c41124d325e9784fdb11dd235e4a94" category="paragraph">Google Cloud의 Cloud Volumes ONTAP에 대한 네트워킹 요구사항은 을 참조하십시오<block ref="b6d23153f6f14250e195a9b12e33da52" category="inline-link-rx"></block>.</block>
+  <block id="46997dd4ba70f9ba99d1953550a8918b" category="paragraph">데이터 계층화에 대한 자세한 내용은 를 참조하십시오<block ref="56116f49c6aab0a2aa039ee7dcf6d319" category="inline-link-rx"></block>.</block>
+  <block id="7961691383c428907e93b78059e36e92" category="section-title">환경 사전 요구 사항 설정</block>
+  <block id="8191532958596b0c0d1bdf6e22ba0aa3" category="paragraph">Cloud Volumes ONTAP 클러스터 자동 생성, 온프레미스 볼륨과 클라우드 볼륨 간 SnapMirror 구성, 클라우드 볼륨 생성 등의 작업은 Terraform 구성을 사용하여 수행됩니다. 이러한 Terraform 구성은 Terraform Cloud for Business 계정에서 호스팅됩니다. Intersight Cloud Orchestrator를 사용하면 Terraform Cloud for Business 계정에서 작업 영역을 만들고, 모든 필수 변수를 작업 영역에 추가하고, Terraform Plan을 실행하는 등의 작업을 조정할 수 있습니다.</block>
+  <block id="2380402e21335066ce7f825004be024d" category="paragraph">이러한 자동화 및 오케스트레이션 작업의 경우 다음 섹션에 설명된 대로 몇 가지 요구사항과 데이터가 필요합니다.</block>
+  <block id="4a6c7893abd7ef92fb09d3359e17324d" category="section-title">GitHub 리포지토리</block>
+  <block id="6e44f8632722e86d98fe7e921e8cddd3" category="paragraph">Terraform 코드를 호스팅하려면 GitHub 계정이 필요합니다. Intersight Orchestrator는 Terraform Cloud for Business 계정에 새 작업 공간을 만듭니다. 이 작업 영역은 버전 제어 워크플로로 구성됩니다. 이를 위해 Terraform 구성을 GitHub 리포지토리에 유지하고 작업 영역을 만드는 동안 입력으로 제공해야 합니다.</block>
+  <block id="f36238daba7154b059d99557a05d4b86" category="inline-link">이 GitHub 링크를 클릭합니다</block>
+  <block id="2a1ab138896d11febbe935a77aa86ff3" category="paragraph"><block ref="187a40dfe1da2425129f8bce9ad2adb6" category="inline-link-rx"></block> 다양한 리소스를 포함하는 Terraform 구성을 제공합니다. 이 리포지토리를 포크하고 GitHub 계정에서 복사본을 만들 수 있습니다.</block>
+  <block id="58d1c40a160c26ce9b569468f46bf446" category="paragraph">이 리포지터리에서 provider.tf는 필요한 Terraform 공급자에 대한 정의를 갖습니다. NetApp Cloud Manager의 Terraform 공급자가 사용됩니다.</block>
+  <block id="17762b2242b4236a9aa2db59ff7bbe61" category="paragraph">변수 tf에는 변수 선언이 모두 있습니다. 이러한 변수의 값은 Intersight Cloud Orchestrator의 워크플로 입력으로 입력됩니다. 이렇게 하면 값을 작업 공간에 전달하고 Terraform 구성을 실행할 수 있는 편리한 방법이 제공됩니다.</block>
+  <block id="6d6e98862becc20ef7c3d6a7a2551efe" category="paragraph">'소스.TF'는 작업 환경에 온프레미스 ONTAP를 추가하고, Google Cloud에 단일 노드 Cloud Volumes ONTAP 클러스터를 생성하고, 온프레미스 및 Cloud Volumes ONTAP 간에 SnapMirror 관계를 설정하고, Cloud Volumes ONTAP에 클라우드 볼륨을 생성하는 데 필요한 다양한 리소스를 정의합니다.</block>
+  <block id="24014a368e640c718de8d41ac423ebe4" category="paragraph">이 리포지토리에서:</block>
+  <block id="c7b0cbe6cc86b2bfab6b2600f3fb9313" category="list-text">'provider.tf'는 NetApp Cloud Manager를 필수 Terraform 공급업체를 위한 정의로 보유하고 있습니다.</block>
+  <block id="5169c8485b0025d15c4009590639fe90" category="list-text">variables.tf에는 Intersight Cloud Orchestrator 워크플로의 입력으로 사용되는 변수 선언이 있습니다. 이렇게 하면 값을 작업 공간에 전달하고 Terraform 구성을 실행할 수 있는 편리한 방법이 제공됩니다.</block>
+  <block id="8e1a90a49a6ca036b3a6e91a2e9b8ac1" category="list-text">resources.tf는 작업 환경에 온프레미스 ONTAP를 추가하고, Google Cloud에 단일 노드 Cloud Volumes ONTAP 클러스터를 생성하고, 온프레미스 및 Cloud Volumes ONTAP 간에 SnapMirror 관계를 설정하고, Cloud Volumes ONTAP에 클라우드 볼륨을 생성하는 등 다양한 리소스를 정의합니다.</block>
+  <block id="9a4b495acde072eac52f58f2e595d42b" category="paragraph">추가 리소스 블록을 추가하여 Cloud Volumes ONTAP에 여러 볼륨을 생성하거나 COUNT 또는 'For_each' Terraform 구문을 사용할 수 있습니다.</block>
+  <block id="1e8c1360ad8b0e59f39b6990b1b4ab96" category="paragraph">Terraform 작업 공간, 모듈 및 정책 집합을 Terraform 구성이 포함된 git 저장소로 연결하려면 Terraform Cloud가 GitHub repo에 액세스해야 합니다.</block>
+  <block id="f33a6ec23d6d12597211b79291da676e" category="paragraph">클라이언트를 추가하면 클라이언트의 OAuth 토큰 ID가 Intersight Cloud Orchestrator의 워크플로 입력 중 하나로 사용됩니다.</block>
+  <block id="c453a2687a6416a81da4dcfbebf97dbd" category="list-text">Terraform Cloud for Business 계정에 로그인합니다. 설정 &gt; 공급자 * 로 이동합니다.</block>
+  <block id="3577307b044427a08d13483e4dff13d4" category="list-text">VCS 공급자 추가 * 를 클릭합니다.</block>
+  <block id="1f035cbd86cc02a83f8e3f63cab7a15c" category="list-text">버전을 선택합니다.</block>
+  <block id="38fb13061239fec81c8479a02e0cace2" category="list-text">공급자 설정 * 의 단계를 따릅니다.</block>
+  <block id="3a9ea0e2f618860775f078f5bb938e73" category="list-text">VCS 제공자 * 에서 추가된 클라이언트를 볼 수 있습니다. OAuth 토큰 ID를 기록해 둡니다.</block>
+  <block id="277b24082fc32501bb70e90558ede1a7" category="section-title">NetApp Cloud Manager API 작업에서 토큰을 새로 고칠 수 있습니다</block>
+  <block id="59e2bf08dc87fd36e9c6ea718a40d302" category="paragraph">Cloud Manager에는 웹 브라우저 인터페이스 외에도 SaaS 인터페이스를 통해 소프트웨어 개발자가 Cloud Manager 기능에 직접 액세스할 수 있도록 지원하는 REST API가 있습니다. Cloud Manager 서비스는 확장 가능한 개발 플랫폼을 총체적으로 형성하는 몇 가지 개별 구성요소로 구성되어 있습니다. 새로 고침 토큰을 사용하면 각 API 호출에 대해 권한 부여 헤더에 추가하는 액세스 토큰을 생성할 수 있습니다.</block>
+  <block id="1ce82783c12853924d053ebd63247046" category="paragraph">NetApp-cloudManager 공급자는 API를 직접 호출하지 않고 업데이트 토큰을 사용하여 Terraform 리소스를 해당 API 호출로 변환합니다. 에서 NetApp Cloud Manager API 작업에 대한 업데이트 토큰을 생성해야 합니다<block ref="5d608bb84d68f48fc0f2a082711072a5" category="inline-link-rx"></block>.</block>
+  <block id="27ac2feaf42890f9f136ed93221af6d5" category="paragraph">Cloud Volumes ONTAP 클러스터 생성, SnapMirror 구성 등과 같은 Cloud Manager 리소스를 생성하려면 Cloud Manager Connector의 클라이언트 ID가 필요합니다.</block>
+  <block id="3b36da93270e0e511323c2728740350a" category="inline-link"><block ref="3b36da93270e0e511323c2728740350a" category="inline-link-rx"></block></block>
+  <block id="ef0b4202fe6d78c5c95e834a5dd3c5e6" category="list-text">Cloud Manager 로그인:<block ref="706fcc69dfde34fadb1d98758f4b70dd" category="inline-link-rx"></block>.</block>
+  <block id="9e704e76a760053c0baca32c96d9c6a3" category="list-text">커넥터 * 를 클릭합니다.</block>
+  <block id="5e6a0548d1a9b870a897fd2b63da39c6" category="list-text">커넥터 관리 * 를 클릭합니다.</block>
+  <block id="51f4228ddd4fe603c9e044ac87746f5f" category="list-text">줄임표를 클릭하고 커넥터 ID를 복사합니다.</block>
+  <block id="234940416f28d73aee62456f57c10e26" category="section-title">Cisco Intersight Cloud Orchestrator 워크플로우를 개발합니다</block>
+  <block id="e12890c02d1e827bd500e83e8b8bd93f" category="paragraph">Cisco Intersight Cloud Orchestrator는 다음과 같은 경우 Cisco Intersight에서 사용할 수 있습니다.</block>
+  <block id="2e7a3e122946e52b9bd6cad92bc04668" category="list-text">Intersight Premier 라이센스를 설치했습니다.</block>
+  <block id="b24a31a922ff107a390c5b600d15b80a" category="list-text">계정 관리자, 스토리지 관리자, 가상화 관리자 또는 서버 관리자이며 최소 하나의 서버가 할당되어 있습니다.</block>
+  <block id="c98cfe5cdd448c672c0c618f3b41618e" category="section-title">워크플로 디자이너</block>
+  <block id="22b1acbed4769f006d14253ac5251cf4" category="paragraph">Workflow Designer를 사용하면 새 워크플로(작업 및 데이터 형식)를 만들고 기존 워크플로를 편집하여 Cisco Intersight에서 대상을 관리할 수 있습니다.</block>
+  <block id="1741a420bbdaade3a21007a67110829b" category="paragraph">Workflow Designer를 시작하려면 * Orchestration &gt; Workflow * 로 이동합니다. 대시보드에는 * 내 워크플로 *, * 샘플 워크플로 * 및 * 모든 워크플로 * 탭 아래에 다음 세부 정보가 표시됩니다.</block>
+  <block id="8e9560a6eefa3d416a0c4345a49521ad" category="list-text">검증 상태</block>
+  <block id="35dfcf569b2a1406ce3084cdd3dcb66c" category="list-text">마지막 실행 상태</block>
+  <block id="82e55bfa47d2b4717b859e51acaa5652" category="list-text">실행 횟수별 상위 워크플로</block>
+  <block id="016038815fd0e8409805a3b5068fb703" category="list-text">상위 워크플로 범주</block>
+  <block id="700bfdbf6b944209562981975d64ad88" category="list-text">시스템 정의 워크플로 수</block>
+  <block id="45ab0cc3ff3fb80905d6bef9b29fcbc2" category="list-text">대상별 상위 워크플로</block>
+  <block id="5cf2b499f88f34a10257b7e33fb893b6" category="paragraph">대시보드를 사용하여 탭을 생성, 편집, 클론 복제 또는 삭제할 수 있습니다. 사용자 지정 보기 탭을 만들려면 * + * 를 클릭하고 이름을 지정한 다음 열, 태그 열 및 위젯에 표시되어야 하는 필수 매개 변수를 선택합니다. 탭에 * 잠금 * 아이콘이 없으면 탭 이름을 바꿀 수 있습니다.</block>
+  <block id="35460d6cdbeebda533e198dd06589be1" category="paragraph">대시보드 아래에는 다음 정보를 표시하는 표 형식의 워크플로 목록이 있습니다.</block>
+  <block id="b48968e1c912da07df5e8d6d246291ec" category="list-text">표시 이름</block>
+  <block id="331e02b0f91351acf8ea7fa064aed310" category="list-text">시스템 정의</block>
+  <block id="fb090683926f552466ff36786889c76f" category="list-text">기본 버전</block>
+  <block id="936770f2606e780ce536b4f29068542d" category="list-text">실행</block>
+  <block id="28b65ad4fb748f1996eafbe159d05998" category="list-text">마지막 업데이트</block>
+  <block id="d6b258792ff06f82933c74eeb8aef591" category="list-text">조직</block>
+  <block id="e79e91e91bf3a1d2a45a62d55768d44f" category="paragraph">작업 열에서 다음 작업을 수행할 수 있습니다.</block>
+  <block id="91861dc7544e845187a16da6e4d4308e" category="list-text">* 실행. * 워크플로를 실행합니다.</block>
+  <block id="c90c40db0730485bce04ecf2a3650a9b" category="list-text">* 기록. * 워크플로 실행 기록을 표시합니다.</block>
+  <block id="7b6b5b57fd825a6222de0ea81c7bd4a1" category="list-text">* 버전 관리 * 워크플로의 버전을 만들고 관리합니다.</block>
+  <block id="4b4e7da9d3cc46c75752d62482d49c31" category="list-text">* 삭제. * 워크플로를 삭제합니다.</block>
+  <block id="348085f57882fef41411b9f1e077d489" category="list-text">* 재시도. * 실패한 워크플로를 다시 시도하십시오.</block>
+  <block id="24f47cdbe9ddba774a7cc53e51d9032e" category="section-title">워크플로우</block>
+  <block id="ebeda20ea80501703d720ed926bcc672" category="paragraph">다음 단계로 구성된 워크플로를 만듭니다.</block>
+  <block id="7b03c6ca8491ecbb7ef8c7c514eb7ed5" category="list-text">* 워크플로 정의 * 표시 이름, 설명 및 기타 중요한 속성을 지정합니다.</block>
+  <block id="42eaae923446ad64ccc8f13c659e2617" category="list-text">* 워크플로 입력 및 워크플로 출력을 정의합니다. * 워크플로 실행에 필요한 입력 매개 변수와 성공적인 실행에 생성된 출력을 지정합니다</block>
+  <block id="0cff3459089a1cd2aa442bcd858581f1" category="list-text">* 워크플로 작업을 추가합니다. * 워크플로를 수행하는 데 필요한 워크플로 작업을 워크플로 디자이너에서 하나 이상 추가합니다.</block>
+  <block id="4d13a537d644eccf16164597d630b091" category="list-text">* 워크플로 유효성 검사. * 워크플로를 검증하여 작업 입력 및 출력 연결에 오류가 없는지 확인합니다.</block>
+  <block id="2c58b038a23924ab191e07c85e25d618" category="section-title">사내 FlexPod 스토리지를 위한 워크플로우를 생성합니다</block>
+  <block id="d3bca7ba7e33f926a10ed8fcc8de8ec3" category="paragraph">온-프레미스 FlexPod 스토리지에 대한 워크플로우를 구성하려면 를 참조하십시오<block ref="41f2862aa0eb5051c9fc124ae78328c7" category="inline-link-rx"></block>.</block>
+  <block id="cf97cc03318693cbdded070f94f5b46c" category="inline-link-macro">다음: DR 워크플로우.</block>
+  <block id="268bb3713362394a1d7347baf0ae0560" category="paragraph"><block ref="268bb3713362394a1d7347baf0ae0560" category="inline-link-macro-rx"></block></block>
+  <block id="3bca1d42af3e949da58b5de9d8f29c69" category="summary">이 기술 보고서에서는 FlexPod 통합 인프라 솔루션, Google Cloud의 NetApp Cloud Volumes ONTAP, DR을 위한 하이브리드 클라우드 데이터 센터를 구축하는 Cisco Intersight를 소개합니다. 이 솔루션에서는 Cisco Intersight Cloud Orchestrator를 사용하여 사내 ONTAP 워크플로우를 설계 및 실행하는 방법에 대해 논의합니다. 또한 하시코프 테르래양식용 Cisco Intersight Service를 사용하여 NetApp Cloud Volumes ONTAP를 구현하고 FlexPod와 Cloud Volumes ONTAP 간의 데이터 복제 및 DR을 조정 및 자동화하는 방법에 대해서도 설명합니다.</block>
+  <block id="67fb8bc34c076b891ef2e252568f0b08" category="doc">TR-4939: NetApp Cloud Volumes ONTAP 및 Cisco Intersight가 지원되는 Google 클라우드 플랫폼용 FlexPod 하이브리드 클라우드</block>
+  <block id="be7c09eaec2df4eee7d0d859b405f265" category="paragraph">Ruchika Lahoti, NetApp</block>
+  <block id="d9d72f0e09f5303cc791114d8ca77b83" category="paragraph">DR(재해 복구)으로 데이터를 보호하는 것은 비즈니스 연속성을 유지하는 데 있어 중요한 목표입니다. DR을 통해 조직은 비즈니스 운영을 2차 위치로 페일오버하고 나중에 복구한 후 운영 사이트로 효율적이고 안정적으로 페일백할 수 있습니다. 자연 재해, 네트워크 장애, 소프트웨어 취약성 및 인적 오류와 같은 여러 가지 우려 때문에 DR 전략을 개발하는 것이 IT의 최우선 과제가 됩니다.</block>
+  <block id="60e509f4c2a479e71fc4bd263d288f35" category="paragraph">DR의 경우 기본 사이트에서 실행 중인 모든 워크로드를 DR 사이트에서 충실히 복제해야 합니다. 또한 데이터베이스, 파일 서비스, NFS 및 iSCSI 스토리지 등의 모든 엔터프라이즈 데이터에 대한 최신 복사본이 조직에 있어야 합니다. 운영 환경의 데이터는 계속 업데이트되므로 변경사항을 정기적으로 DR 사이트로 전송해야 합니다.</block>
+  <block id="50e559db3a49f2f2d5786cc21ecad81e" category="paragraph">대부분의 조직은 인프라와 사이트의 독립성 요구사항으로 인해 DR 환경을 구축하는 데 어려움을 겪고 있습니다. 필요한 리소스 수와 2차 데이터 센터의 설정, 테스트, 유지 관리 비용이 매우 높아서 일반적으로 전체 운영 환경의 비용이 거의 들지 않습니다. 데이터를 지속적으로 동기화하고 원활한 페일오버 및 페일백을 설정하면서 적절한 보호 기능을 통해 데이터 사용 공간을 최소화하는 것은 쉽지 않습니다. DR 사이트를 구축한 후에는 운영 환경의 데이터를 복제하고 동기화된 상태를 계속 유지해야 합니다.</block>
+  <block id="97db86093854566a22324169fb54b084" category="paragraph">다음 그림에서는 솔루션 개요를 제공합니다.</block>
+  <block id="e53e6c9fc9ceb403d3b917f9e7a44fbb" category="inline-image-macro">솔루션 개요</block>
+  <block id="8bc986d6444a9f305e8ff058a168615b" category="paragraph"><block ref="8bc986d6444a9f305e8ff058a168615b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3bb9b78652268d04123a9e7f5ead8686" category="paragraph">이 솔루션은 다음과 같은 여러 가지 이점을 제공합니다.</block>
+  <block id="70be46411c63c1fdcfe954aad410cd0f" category="list-text">* 오케스트레이션 및 자동화 * Cisco Intersight는 자동화를 통해 제공되는 일관된 오케스트레이션 프레임워크를 제공하여 FlexPod 하이브리드 클라우드 인프라의 일상적인 운영을 단순화합니다.</block>
+  <block id="ad9530d8397f09d8e042a1f9d87acac0" category="list-text">* 맞춤형 보호. * Cloud Volumes ONTAP는 증분 업데이트를 통해 ONTAP에서 클라우드로 블록 레벨 데이터 복제를 제공하여 대상을 최신 상태로 유지합니다. 사용자는 전송되는 소스의 변경 사항에 따라 5분마다 또는 1시간마다 동기화 일정을 지정할 수 있습니다.</block>
+  <block id="0c7eb04c9a4fc034ca52506c2b891367" category="list-text">* 원활한 페일오버 및 페일백. * 재해가 발생하면 스토리지 관리자가 클라우드 볼륨으로 빠르게 페일오버할 수 있습니다. 운영 사이트가 복구되면 DR 환경에서 생성된 새 데이터가 소스 볼륨과 다시 동기화되어 2차 데이터 복제를 다시 설정합니다.</block>
+  <block id="931a3a34289953d269bf50963a7e4f60" category="list-text">* 효율성: * 보조 클라우드 복사본의 스토리지 공간 및 비용은 데이터 압축, 씬 프로비저닝, 중복제거를 통해 최적화됩니다. 데이터는 압축 및 중복제거된 형태로 블록 레벨에서 전송되므로 전송 속도가 향상됩니다. 또한 데이터는 저비용 오브젝트 스토리지로 자동 계층화되며 DR 시나리오와 같은 액세스 시에만 고성능 스토리지로 돌아갑니다. 따라서 지속적으로 발생하는 스토리지 비용이 크게 절감됩니다.</block>
+  <block id="084bb74193afd078e7861a2c4ccc2c0a" category="list-text">* IT 생산성 향상. * Intersight를 인프라 및 애플리케이션 라이프사이클 관리를 위한 안전한 단일 엔터프라이즈급 플랫폼으로 사용하면 솔루션의 규모에 따라 구성 관리 및 수동 작업 자동화를 간소화할 수 있습니다.</block>
+  <block id="f55a2a8f9b2487bd5170f3018454452c" category="paragraph">이 문서의 대상에는 세일즈 엔지니어, 현장 컨설턴트, 프로페셔널 서비스, IT 매니저, IT 효율성을 제공하고 IT 혁신을 지원하는 인프라를 활용하려는 파트너 엔지니어, 사이트 안정성 엔지니어, 클라우드 설계자, 클라우드 엔지니어, 고객이 포함됩니다.</block>
+  <block id="90a9345438f7f62f0bd7592a1efd7441" category="paragraph">이 섹션에서는 솔루션의 논리적 토폴로지를 설명합니다. 다음 그림은 사내 FlexPod 환경, Google Cloud에서 실행되는 NetApp Cloud Volumes ONTAP, Cisco Intersight 및 NetApp Cloud Manager의 솔루션 토폴로지를 나타낸 것입니다.</block>
+  <block id="ae13399f9eae080f1ee446f22465ba75" category="inline-image-macro">솔루션 토폴로지</block>
+  <block id="f5d6d29c01ea632db44f859919a20a5d" category="paragraph"><block ref="f5d6d29c01ea632db44f859919a20a5d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3cc897795eb078113b130d7b2dd56d12" category="paragraph">컨트롤 평면과 데이터 평면은 끝점 사이에 명확하게 표시됩니다. 데이터 플레인은 안전한 사이트-사이트 VPN 연결을 사용하여 FlexPod All Flash FAS에서 실행되는 ONTAP 인스턴스를 Google Cloud의 NetApp Cloud Volumes ONTAP 인스턴스에 연결합니다.</block>
+  <block id="fa04036d3b397d88f70b09ed396dc749" category="paragraph">FlexPod에서 NetApp Cloud Volumes ONTAP으로 워크로드 데이터 복제를 처리하는 작업은 NetApp SnapMirror에서 처리하며, 전체 프로세스는 온프레미스 및 클라우드 환경 모두에서 Cisco Intersight Cloud Orchestrator를 사용하여 오케스트레이션합니다. Cisco Intersight Cloud Orchestrator는 NetApp Cloud Manager가 NetApp Cloud Volumes ONTAP 구축과 관련된 운영을 수행하고 데이터 복제 관계를 확립하기 위해 Terraform 리소스 공급자를 사용합니다.</block>
+  <block id="6852fcb4ce5743154f76135a97cc44ce" category="admonition">이 솔루션에서는 NetApp Cloud Volumes ONTAP 인스턴스에 상주하는 콜드 데이터를 Google Cloud 스토리지에 선택적으로 백업 및 계층화할 수 있습니다.</block>
+  <block id="aeb00977712ce36ebb3418bf98d9e22b" category="paragraph"><block ref="aeb00977712ce36ebb3418bf98d9e22b" category="inline-link-macro-rx"></block></block>
+  <block id="2e568ff051eec49694b904e35bfedae2" category="summary">컨트롤러를 사용하여 Terraform 계획을 실행할 수 있습니다. 이미 ICO 워크플로를 사용하여 Terraform 계획을 실행한 경우 이 섹션을 건너뛸 수 있습니다.</block>
+  <block id="b9358f74cbb8544ccf7f80cf40bb01d3" category="doc">컨트롤러에서 Terraform 실행</block>
+  <block id="fb9ed767511e21c1fa58778f50382e2d" category="inline-link-macro">이전: DR 워크플로우.</block>
+  <block id="4a1f91340d0b06b63ab8b00484b300ca" category="paragraph"><block ref="4a1f91340d0b06b63ab8b00484b300ca" category="inline-link-macro-rx"></block></block>
+  <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">필수 구성 요소</block>
+  <block id="ce1a30861453d414389a37f815cb055b" category="paragraph">솔루션의 설정은 인터넷에 액세스할 수 있고 Terraform의 설치가 정상적으로 작동하는 관리 워크스테이션에서 시작합니다.</block>
+  <block id="23182bc94fff9d0274b57dbccbdc2558" category="paragraph">Terraform 설치 설명서를 찾을 수 있습니다<block ref="7230226aef03d3cffc8b7eda070620c6" category="inline-link-rx"></block>.</block>
+  <block id="843e2880ef9703d0e40a0a1020002449" category="section-title">GitHub 를 다시 복제합니다</block>
+  <block id="0b387b7cce0d4d005bb4715743406aa7" category="paragraph">프로세스의 첫 번째 단계는 GitHub를 관리 워크스테이션의 새 빈 폴더에 복제하는 것입니다. GitHub 리포지토리를 클론하려면 다음 단계를 완료하십시오.</block>
+  <block id="99a088c1781035daa7bcc9c1d06f0799" category="list-text">관리 워크스테이션에서 프로젝트의 새 폴더를 만듭니다. 이 폴더 안에 '/root/SnapMirror-cvo'라는 새 폴더를 만들고 GitHub에 다시 복제합니다.</block>
+  <block id="def2f0ed80912b2b0aaaecfb424e8e1b" category="list-text">관리 워크스테이션에서 명령줄 또는 콘솔 인터페이스를 열고 디렉토리를 방금 생성한 새 폴더로 변경합니다.</block>
+  <block id="0984cdc454054f2578739547ca9cc083" category="list-text">다음 명령을 사용하여 GitHub 컬렉션을 복제합니다.</block>
+  <block id="8a47191b618a17a87fbfc7378272e3a8" category="list-text">디렉터리를 'napmirror-cvo'라는 새 폴더로 변경합니다.</block>
+  <block id="9f26147930994fa195dd59fdcf2d0144" category="paragraph">* Terraform 실행 *</block>
+  <block id="7f6e711c0fe8c9c5324d36a69f3b9749" category="inline-image-macro">Terraform 실행을 위한 도면.</block>
+  <block id="a3f2fcf1bb459f018c79c7286cc1c672" category="paragraph"><block ref="a3f2fcf1bb459f018c79c7286cc1c672" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c6735b7d927594a2b630d5dcb152d97" category="list-text">* 초기화 * (로컬) Terraform 환경을 초기화합니다. 일반적으로 세션당 한 번만 실행됩니다.</block>
+  <block id="b765d4897ee406cd3587d4fddb89d280" category="list-text">* Plan. * Terraform 상태를 클라우드의 AS-IN 상태와 비교하고 실행 계획을 수립 및 표시합니다. 이렇게 해도 배포는 변경되지 않습니다(읽기 전용).</block>
+  <block id="19ff72873ed231c81efcbd5ef35ffa20" category="list-text">* 적용 * 계획 단계에서 계획을 적용합니다. 이렇게 하면 배포(읽기 및 쓰기)가 변경될 수 있습니다.</block>
+  <block id="cbb1f81ca111acdcb63438f2e3c02c73" category="list-text">* destroy. * 이 특정 Terraform 환경에 의해 관리되는 모든 리소스입니다.</block>
+  <block id="bfc841d25732f34686fa48cbab7b7e00" category="paragraph">자세한 내용은 을 참조하십시오<block ref="99767708057bef9b40bd678f37692e87" category="inline-link-rx"></block>.</block>
+  <block id="e8d3f61f51562ad245b65242dc92c0da" category="inline-link-macro">다음: 솔루션 검증.</block>
+  <block id="8eff5d8d81cf0c32df5ff72792ff16b3" category="paragraph"><block ref="8eff5d8d81cf0c32df5ff72792ff16b3" category="inline-link-macro-rx"></block></block>
+  <block id="f8c0f096af034a83e40cfb8c311fb375" category="summary">이 페이지에는 FlexPod 인스턴스를 배포하는 데 필요한 리소스가 나열되어 있습니다.</block>
+  <block id="363a32b2498b5885eeaa5882884a2069" category="doc">FlexPod 구축</block>
+  <block id="fab70cba13311b99a01d1d366d9dc6b5" category="paragraph"><block ref="fab70cba13311b99a01d1d366d9dc6b5" category="inline-link-macro-rx"></block></block>
+  <block id="82fbf7051f82e4d7c615c32e6f7aeb5a" category="inline-link">FlexPod을 위한 Cisco 검증 설계</block>
+  <block id="d23887744900f66c7e4a925440bbda99" category="paragraph">설계 및 관련 모범 사례의 다양한 요소 구성을 비롯하여 FlexPod 설계 및 배포 세부 사항에 대한 자세한 내용은 을 참조하십시오<block ref="49cd090650905838ab4084970dd71adf" category="inline-link-rx"></block>.</block>
+  <block id="f86ba2e9668a8b6515d17da31c294a07" category="paragraph">FlexPod는 UCS 관리 모드와 Cisco Intersight 관리 모드 모두에서 구축할 수 있습니다. UCS 관리 모드에서 FlexPod를 구축하는 경우 최신 Cisco Validated Design을 찾을 수 있습니다<block ref="1512ec962a6258d1959b900880952ef0" category="inline-link-rx"></block>.</block>
+  <block id="86af9fe337ee661dd14a9342cd42bc1e" category="paragraph">Cisco UCS(Cisco Unified Compute System) X-Series는 클라우드에서 구성 및 관리되는 완전히 새로운 모듈식 컴퓨팅 시스템입니다. 최신 애플리케이션의 요구 사항을 충족하고 적응성이 뛰어나고 미래를 대비한 모듈식 설계를 통해 운영 효율성, 민첩성 및 확장성을 개선하도록 설계되었습니다. FlexPod 인프라 내에 Cisco Intersight-managed UCS X-Series 플랫폼을 통합하는 방법에 대한 설계 지침을 확인할 수 있습니다<block ref="121085e9839537ca1d6c20eb7b594e4c" category="inline-link-rx"></block>.</block>
+  <block id="83fd95562d7fefb430d031ab01d81478" category="paragraph">Cisco ACI 지원 FlexPod를 찾을 수 있습니다<block ref="52978bee2b81a5e001ad2371304c6c3c" category="inline-link-rx"></block>.</block>
+  <block id="7e7b5b619cbafb1d9e4e2760288e085a" category="inline-link-macro">다음: Cisco Intersight 구성.</block>
+  <block id="678501a3f6fca7f30ea2a2c56bded3e5" category="paragraph"><block ref="678501a3f6fca7f30ea2a2c56bded3e5" category="inline-link-macro-rx"></block></block>
+  <block id="6c5ca08ee34f34f8f2e8ce60b49d9c8b" category="summary">이 페이지에는 재해 복구 워크플로를 구현하는 데 필요한 11개의 절차가 나와 있습니다.</block>
+  <block id="6682bc21a120ebd5bee9fe0b122ac419" category="doc">DR 워크플로우</block>
+  <block id="734f90208110ec4b00e4b94f33242a6e" category="inline-link-macro">이전: 하이브리드 클라우드 NetApp 스토리지의 자동화된 구축</block>
+  <block id="736d8eadce4dfe5319c63837c7098d41" category="paragraph"><block ref="736d8eadce4dfe5319c63837c7098d41" category="inline-link-macro-rx"></block></block>
+  <block id="772269c24b386e0367b475a48f3a8e47" category="paragraph">단계의 순서는 다음과 같습니다.</block>
+  <block id="5d996f5feca62b1b07a4daf069a51b60" category="list-text">워크플로를 정의합니다.</block>
+  <block id="dd679c13fd867f1678d47a7a062249bc" category="list-text">재해 복구 워크플로와 같이 사용자에게 친숙한 짧은 이름을 생성합니다.</block>
+  <block id="f80272ab10a586a09cc5697e34438857" category="list-text">워크플로 입력을 정의합니다. 이 워크플로우를 위해 취하는 입력은 다음과 같습니다.</block>
+  <block id="f3524a65be845d3f6909937b866e950b" category="list-text">볼륨 옵션(볼륨 이름, 마운트 경로)</block>
+  <block id="5d8bdae6b2483b4c4c9fa1dde086e0ca" category="list-text">볼륨 용량입니다</block>
+  <block id="427169b539a8d17a0e21e4b4415ffe10" category="list-text">새 데이터 저장소와 연결된 데이터 센터입니다</block>
+  <block id="6f1184b7fddfbf7504c928d98c08d3ac" category="list-text">데이터 저장소가 호스팅되는 클러스터입니다</block>
+  <block id="5fc691467ac1a832e7b17ea7ae51f0d3" category="list-text">vCenter에서 생성할 새 데이터 저장소의 이름입니다</block>
+  <block id="815c6647d097a73a10594eb89b5bac9c" category="list-text">새 데이터 저장소의 유형 및 버전입니다</block>
+  <block id="a3563fd8e5b5e85c75327249c84f034c" category="list-text">Terraform 조직의 이름입니다</block>
+  <block id="834d44ab782658afe263948a646c14ef" category="list-text">Terraform 작업 영역</block>
+  <block id="5895441fe8c803c5b617467a815c8dd6" category="list-text">Terraform 작업 영역에 대한 설명입니다</block>
+  <block id="792762e9adebe2483bf96e0b6a7b0db6" category="list-text">Terraform 구성을 실행하는 데 필요한 변수(민감하고 민감하지 않음</block>
+  <block id="cbc049c794c793a05ee939090e92f447" category="list-text">계획을 시작한 이유</block>
+  <block id="e0aec5dab82d5cd3f942ee414ee05d3e" category="list-text">워크플로 작업을 추가합니다.</block>
+  <block id="7d29d65c886f070402f94d919783cc66" category="paragraph">FlexPod의 작업과 관련된 작업은 다음과 같습니다.</block>
+  <block id="6babdf7fdae58a04ab08aebbc9b1fd50" category="list-text">FlexPod에서 볼륨을 생성합니다.</block>
+  <block id="6ff21f2142f05369c3a93555c910d529" category="list-text">생성된 볼륨에 스토리지 엑스포트 정책을 추가합니다.</block>
+  <block id="80a7b868721d7dd164d05294d4a8a896" category="list-text">새로 생성된 볼륨을 VMware vCenter의 데이터 저장소에 매핑합니다.</block>
+  <block id="25324271d0af46fd827255f3b835fa3d" category="paragraph">Cloud Volumes ONTAP 클러스터 생성과 관련된 작업:</block>
+  <block id="31bab440c5a7b9e237ec8ba3b9289ac4" category="list-text">Terraform 작업 영역을 추가합니다</block>
+  <block id="f0a9d3e8da1f1311368ba8e42f0a9197" category="list-text">Terraform 변수를 추가합니다</block>
+  <block id="66eea08911793c55847125b1f4706f85" category="list-text">Terraform 중요 변수를 추가합니다</block>
+  <block id="0d5b2d358551d6924599718b3844670b" category="list-text">새 Terraform 계획을 시작합니다</block>
+  <block id="939d04d53873e7867489c426c748875d" category="list-text">Terraform 실행을 확인합니다</block>
+  <block id="38d93bd48eede9b5c660886046e77e9b" category="list-text">워크플로를 확인합니다.</block>
+  <block id="5b05cb7f9bce3dc3fd835d1eb491f753" category="section-title">절차 1: 워크플로를 만듭니다</block>
+  <block id="b2a604fe4c5200a724edd96d727d287b" category="list-text">왼쪽 탐색 창에서 * Orchestration * 을 클릭하고 * Create Workflow * 를 클릭합니다.</block>
+  <block id="0b72002ec45b5da69892a00e8886df6d" category="list-text">일반 * 탭에서:</block>
+  <block id="e04ad64ff0ee02d02253625645c05e9f" category="list-text">표시 이름 제공(재해 복구 워크플로우)</block>
+  <block id="344d4e4bc1344bf0e11e1070a48c583c" category="list-text">조직을 선택하고 태그를 설정한 다음 설명을 입력합니다.</block>
+  <block id="647e6bea1cdb16ba59c14da6aa8737a1" category="inline-image-macro">변수 입력 화면을 보여 주는 스크린샷</block>
+  <block id="84f2337233bc2321ce11e26cebf148bd" category="paragraph"><block ref="84f2337233bc2321ce11e26cebf148bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="33239222030e6ae719a52c45bd6a7e0e" category="section-title">절차 2. FlexPod에서 새 볼륨을 생성합니다</block>
+  <block id="37243340d2b11bb0c9891da89db8f1f9" category="list-text">디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 작업 * 을 클릭합니다.</block>
+  <block id="4d7950afd16b463f6633315243c9daa8" category="list-text">Tools * 섹션에서 * Storage &gt; New Storage Volume * 작업을 * Design * 영역으로 끌어다 놓습니다.</block>
+  <block id="d0a9be56d13baf133c3cc7d0c892b8fe" category="list-text">새 저장소 볼륨 * 을 클릭합니다.</block>
+  <block id="6d132b23e31e788225862e4cc59a2875" category="inline-image-macro">새 스토리지 볼륨을 보여 주는 스크린샷</block>
+  <block id="56277f51d03031bb2761b6d47a59c3f7" category="paragraph"><block ref="56277f51d03031bb2761b6d47a59c3f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="66c1291b28dceee84d9001752e852765" category="list-text">작업 속성 * 영역에서 * 일반 * 탭을 클릭합니다. 필요에 따라 이 작업의 이름과 설명을 변경할 수 있습니다. 이 예에서 작업 이름은 * FlexPod * 에서 볼륨 생성 * 입니다.</block>
+  <block id="ab4156ba4d36c738a47ed7403d43b5f0" category="inline-image-macro">새 연결을 보여 주는 스크린샷</block>
+  <block id="d764dd757fac5547c9bbd74db2ed7a1f" category="paragraph"><block ref="d764dd757fac5547c9bbd74db2ed7a1f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="41627ef5efb657fae649237b6a04ae95" category="list-text">작업 속성 * 영역에서 * 입력 * 을 클릭합니다.</block>
+  <block id="ce489996351eba1d042d289503715065" category="list-text">Storage Device * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="f147023b967c4a4cb95d7eca135ca74e" category="inline-image-macro">매핑 단계를 보여 주는 스크린샷</block>
+  <block id="5fa5aac9d5261f3860a44af51c5436b1" category="paragraph"><block ref="5fa5aac9d5261f3860a44af51c5436b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="11e3c696ab17a1e0c20de32c1d36674e" category="list-text">정적 값 * 을 선택하고 * 저장 장치 선택 * 을 클릭합니다.</block>
+  <block id="53d221a3d676c8fd58692a58f34217ed" category="list-text">추가된 스토리지 대상을 클릭하고 * 선택 * 을 클릭합니다.</block>
+  <block id="8617c54eb46a1df5da7e3eb64a16f498" category="inline-image-macro">스토리지 타겟을 선택하는 방법을 보여 주는 스크린샷</block>
+  <block id="113360e88e0569c46c50324ea3704eca" category="paragraph"><block ref="113360e88e0569c46c50324ea3704eca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8a29f973af6b92f1a6fc52495eca5973" category="list-text">Map * 을 클릭합니다.</block>
+  <block id="f623665283dbf5554e5d45c6c7002331" category="inline-image-macro">Map 작업 입력을 보여 주는 스크린샷.</block>
+  <block id="c72aa1d7e0839d4ad8fa92b8a0cf5b42" category="paragraph"><block ref="c72aa1d7e0839d4ad8fa92b8a0cf5b42" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e28b6513be508e9a3e8a3866cbb828da" category="list-text">Storage Vendor Virtual Machine * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="b2af792f107fd793d868741e8d04ef0b" category="inline-image-macro">스토리지 공급업체 가상 시스템 필드를 보여 주는 스크린샷</block>
+  <block id="221aa9cafd1ebd52c01aedd545f0bf53" category="paragraph"><block ref="221aa9cafd1ebd52c01aedd545f0bf53" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4cc3d0249a67180ee548e79fa9e91b52" category="list-text">정적 값 * 을 선택하고 * 스토리지 가상 머신 선택 * 을 클릭합니다.</block>
+  <block id="d6c57e11a3050cdd11511f4c1a3521d2" category="inline-image-macro">스토리지 가상 머신을 선택하는 방법을 보여 주는 스크린샷</block>
+  <block id="88035795b404a99c7c9ec5252dbdb4c9" category="paragraph"><block ref="88035795b404a99c7c9ec5252dbdb4c9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="66d5fba025795e8fdee7fa15a6ad1b30" category="list-text">볼륨을 생성해야 하는 스토리지 가상 머신을 선택하고 * Select * 를 클릭합니다.</block>
+  <block id="ec37ed7256625a3ae46e17394c41ee40" category="inline-image-macro">볼륨을 생성해야 하는 스토리지 가상 머신을 보여 주는 스크린샷</block>
+  <block id="05cacb1b5d1ac9ff4fa35d463750310f" category="paragraph"><block ref="05cacb1b5d1ac9ff4fa35d463750310f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c5cc17fd6aa2f959949572984117e87" category="paragraph"><block ref="2c5cc17fd6aa2f959949572984117e87" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="94ac13636c7349ca504f558d6d6f23d8" category="list-text">스토리지 공급업체 집계 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="7dae5360fc6d8096e7f61cddbd104a24" category="inline-image-macro">스토리지 공급업체 집계 필드를 보여 주는 스크린샷</block>
+  <block id="4195fcfc4da194170eb671fa5d87ce4e" category="paragraph"><block ref="4195fcfc4da194170eb671fa5d87ce4e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d50257dc7ed0b3d5e8c5a29ee83b61b2" category="list-text">정적 값 * 을 선택하고 * 스토리지 애그리게이트 선택 * 을 클릭합니다. Aggregate를 선택하고 * Select * 를 클릭합니다.</block>
+  <block id="3fd76b1c3435eb9891abb7b3387f1e87" category="inline-image-macro">스토리지 애그리게이트를 선택하는 방법을 보여 주는 스크린샷</block>
+  <block id="0fdc6dd5bf534b59ceea1ce2ef08151c" category="paragraph"><block ref="0fdc6dd5bf534b59ceea1ce2ef08151c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2265b33da88cd0967b634ff56c6f574f" category="list-text">스토리지 공급업체 볼륨 옵션 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="36edb4949b2f825be592abe4e7824f25" category="list-text">직접 매핑 * 을 선택하고 * 워크플로 입력 * 을 클릭합니다.</block>
+  <block id="07bc93d5465b5be18caada014c3f2115" category="inline-image-macro">맵 작업 입력을 보여 주는 스크린샷</block>
+  <block id="eb0f90d9e7f8b58c90bc437dc50e7339" category="paragraph"><block ref="eb0f90d9e7f8b58c90bc437dc50e7339" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cd600b350fdb0da54bc271d13678fdca" category="list-text">입력 추가 마법사에서 다음 단계를 완료합니다.</block>
+  <block id="dea9fbddfdcc65f30e41e43a36cfe698" category="list-text">표시 이름과 참조 이름을 입력합니다(선택 사항).</block>
+  <block id="d24b9db8f383a7b40be343edfc72353e" category="list-text">유형 * 에 대해 * 스토리지 공급업체 볼륨 옵션 * 이 선택되어 있는지 확인합니다.</block>
+  <block id="1439138599740dd3b38a02a8f09c7e39" category="list-text">Set Default Value(기본값 설정) 및 Override(무시) * 를 클릭합니다.</block>
+  <block id="e3444523418e01c9e6d0e28d413fb2a8" category="list-text">필수 * 를 클릭합니다.</block>
+  <block id="e1371b25bd6f39c88c77ffba8a21da20" category="list-text">플랫폼 유형 * 을 * NetApp Active IQ Unified Manager * 로 설정합니다.</block>
+  <block id="706916bc3704b9eb776f55138ca08704" category="list-text">볼륨 * 에서 생성된 볼륨의 기본값을 제공합니다.</block>
+  <block id="4cefacbcadb12e0319424b086b179677" category="list-text">NFS * 를 클릭합니다. NFS가 설정되면 NFS 볼륨이 생성됩니다. 이 값을 false로 설정하면 SAN 볼륨이 생성됩니다.</block>
+  <block id="101bd0277dbe3517704a5e3b8e7a204b" category="list-text">마운트 경로를 제공하고 * 추가 * 를 클릭합니다.</block>
+  <block id="d30745c09e9946eccbeba6725d8fd9b7" category="inline-image-macro">워크플로 추가 입력 화면을 보여 주는 스크린샷</block>
+  <block id="171bf5680b8b31636818afac6c84d9cc" category="paragraph"><block ref="171bf5680b8b31636818afac6c84d9cc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="215b422959ba704f608b998c649e6055" category="list-text">Volume Capacity * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="8126ee8cc706af488750a2d5386d0812" category="list-text">입력 이름 * 을 클릭하고 * 워크플로 입력 생성 * 을 클릭합니다.</block>
+  <block id="9f2031b6f0c5d9daebff9e0a8b1e233f" category="inline-image-macro">지도 작업 입력 화면에서 이름을 만드는 방법을 보여 주는 스크린샷</block>
+  <block id="0286b925805ca43237d2bd0dfe372456" category="paragraph"><block ref="0286b925805ca43237d2bd0dfe372456" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8ab09dc1846d8f3be53f9588659b2f46" category="list-text">입력 추가 마법사에서 다음을 수행합니다.</block>
+  <block id="81fd4bd095837002cc71d3e2b55d9315" category="list-text">표시 이름과 참조 이름을 입력합니다(선택 사항).</block>
+  <block id="44b1b1e517f090c2ad3b42e972bb2640" category="list-text">Type * 에서 * 스토리지 용량 * 을 선택합니다.</block>
+  <block id="8673d3d84878e8cdef67ee0942b0621a" category="list-text">볼륨 크기 및 단위에 대한 기본값을 제공합니다.</block>
+  <block id="7dee7e783d13b6d5d415926ce0bfc306" category="list-text">추가 * 를 클릭합니다.</block>
+  <block id="29ccd14da68ba5854fb96c1163f4e387" category="inline-image-macro">스크린샷은 입력 추가 마법사의 데이터 입력을 보여 줍니다.</block>
+  <block id="0ab5b14c0dc6d07a42afea2afb9ecd1f" category="paragraph"><block ref="0ab5b14c0dc6d07a42afea2afb9ecd1f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5646ec28b1b7c7bd305da1e5b39bef94" category="list-text">커넥터를 사용하여 * 시작 * 과 * FlexPod * 에서 볼륨 만들기 작업 사이에 연결을 만들고 * 저장 * 을 클릭합니다.</block>
+  <block id="cd4e27c784eea4df3e97824facdbac48" category="inline-image-macro">오류: 스크린 샷은 FlexPod 작업에서 시작 볼륨과 볼륨 만들기 사이의 연결을 만드는 방법을 보여줍니다.</block>
+  <block id="482b2adccd1e52c6fa756bf1e1b5aa63" category="paragraph"><block ref="482b2adccd1e52c6fa756bf1e1b5aa63" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f77f6eda767428572b45651b06125dc5" category="admonition">지금 오류를 무시합니다. 이 오류는 성공적인 전환을 지정하는 데 필요한 * FlexPod * 에서 볼륨 생성 * 및 * 성공 * 작업 사이에 연결이 없기 때문에 표시됩니다.</block>
+  <block id="193591e02b6d4337d0e696b80ff37607" category="section-title">절차 3: 스토리지 엑스포트 정책 추가</block>
+  <block id="c7ea583764d707a03f22932449ec0475" category="list-text">Design * 영역의 * Tools * 섹션에서 * Storage &gt; Add Storage Export Policy to Volume * 작업을 끌어서 놓습니다.</block>
+  <block id="fa785b209683158e970c13e592f61a73" category="list-text">볼륨에 스토리지 내보내기 정책 추가 * 를 클릭합니다. 작업 속성 * 영역에서 * 일반 * 탭을 클릭합니다. 필요에 따라 이 작업의 이름과 설명을 변경할 수 있습니다. 이 예에서 작업 이름은 스토리지 내보내기 정책 추가 입니다.</block>
+  <block id="30a3be9ce038a1ffa384a70099b97739" category="list-text">커넥터를 사용하여 작업 * FlexPod * 에서 볼륨 생성 및 * 스토리지 내보내기 정책 추가 * 간에 연결을 설정합니다. 저장 * 을 클릭합니다.</block>
+  <block id="38d73fdf8202f78a1ecf54c07e937bc5" category="inline-image-macro">FlexPod에서 볼륨 생성 작업과 스토리지 내보내기 정책 추가 작업을 연결하는 방법을 보여 주는 스크린샷</block>
+  <block id="79ad4882aa28341466f4d1ea3617419c" category="paragraph"><block ref="79ad4882aa28341466f4d1ea3617419c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e54b8fcb56f8f7c580e1fd7c97ee4218" category="paragraph"><block ref="e54b8fcb56f8f7c580e1fd7c97ee4218" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ab0f4e5c4a299632bc8672003f6cebc8" category="list-text">정적 값 * 을 선택하고 * 저장 장치 선택 * 을 클릭합니다. 새 스토리지 볼륨을 생성하는 이전 작업을 생성하는 동안 추가한 동일한 스토리지 타겟을 선택합니다.</block>
+  <block id="249f6e3d2412ef75cd516f7f8ce68428" category="inline-image-macro">매핑 단계 2를 보여 주는 스크린샷</block>
+  <block id="3c71beaec48c2248fe306a1c24998c98" category="paragraph"><block ref="3c71beaec48c2248fe306a1c24998c98" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a741c50959e6b262e91d5fafd6fe5c51" category="list-text">정적 값 * 을 선택하고 * 스토리지 가상 머신 선택 * 을 클릭합니다. 새 스토리지 볼륨을 생성하는 이전 작업을 생성하는 동안 추가한 동일한 스토리지 가상 머신을 선택합니다.</block>
+  <block id="f88d4c7b31fadac661226595603960e7" category="inline-image-macro">정적 값을 선택하고 스토리지 가상 시스템 선택 을 클릭하는 방법을 보여 주는 스크린샷</block>
+  <block id="bdded88e0d930d2d5cf164ed449bab7e" category="paragraph"><block ref="bdded88e0d930d2d5cf164ed449bab7e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="88cf683ef515f62206e1a449f4cd973d" category="list-text">Volume * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="fdf0b9a37f6bda4fbaec86366198fd8a" category="list-text">작업 이름 * 을 클릭한 다음 * FlexPod * 에서 볼륨 생성 을 클릭합니다. 출력 이름 * 을 클릭한 다음 * 볼륨 * 을 클릭합니다.</block>
+  <block id="dcdd5d92697e970c2cf4da448a3fd67f" category="admonition">Cisco Intersight Cloud Orchestrator에서는 이전 작업의 결과를 새 작업의 입력으로 제공할 수 있습니다. 이 예에서 * 볼륨 * 정보는 * FlexPod * 에서 볼륨 생성 작업에서 * 저장소 내보내기 정책 추가 * 작업에 대한 입력으로 제공되었습니다.</block>
+  <block id="ce22c4cc1ced67cf7535b954d3ea7fc8" category="inline-image-macro">이전 작업의 출력을 새 작업의 입력으로 제공하는 방법을 보여 주는 스크린샷</block>
+  <block id="de2df1dbfe613372f541ac0f859307cb" category="paragraph"><block ref="de2df1dbfe613372f541ac0f859307cb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="074a6109822169f193049d695ce36a56" category="list-text">Export Policy * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="1458860a0ee7de6f8f9a08fd32e32714" category="list-text">정적 값 * 을 선택하고 * 내보내기 정책 선택 * 을 클릭합니다. 생성된 엑스포트 정책을 선택합니다.</block>
+  <block id="7332de0449c59e4a4479e15e9788cfc9" category="paragraph"><block ref="7332de0449c59e4a4479e15e9788cfc9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f8f82962ab357f0a7e2afd638821c0af" category="list-text">지도 * 를 클릭한 다음 * 저장 * 을 클릭합니다.</block>
+  <block id="8f9124bef4e8915c43036b7abecac20f" category="admonition">그러면 볼륨에 엑스포트 정책이 추가됩니다. 그런 다음 생성된 볼륨을 매핑하는 새 데이터 저장소를 생성합니다.</block>
+  <block id="565f3e900139ac92e0b91101646c665e" category="section-title">절차 4: FlexPod 볼륨을 데이터 저장소에 매핑</block>
+  <block id="0bf914ef7e766cec80d5d5d19f362ad4" category="list-text">Design * 영역의 * Tools * 섹션에서 * Virtualization &gt; New Hypervisor Datastore * 작업을 끌어다 놓습니다.</block>
+  <block id="7b4b39c55cf0242acb2025a3f71fd095" category="list-text">Connector를 사용하여 * Add Storage Export Policy * 와 * New Hypervisor Datastore * 작업을 연결합니다. 저장 * 을 클릭합니다.</block>
+  <block id="a98a6ee0326bda81640c1933bb147305" category="paragraph"><block ref="a98a6ee0326bda81640c1933bb147305" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d142df7224d947489295feab1f266d93" category="list-text">New Hypervisor Datastore * 를 클릭합니다. 작업 속성 * 영역에서 * 일반 * 탭을 클릭합니다. 필요에 따라 이 작업의 이름과 설명을 변경할 수 있습니다. 이 예에서 작업 이름은 * 데이터 저장소에 볼륨 매핑 * 입니다.</block>
+  <block id="5e675472020c3b3ff5609625beb17e90" category="paragraph"><block ref="5e675472020c3b3ff5609625beb17e90" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="295dd81e4bf468f9eb9167446c1c4795" category="list-text">하이퍼바이저 관리자 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="70c0c11eabe795305d6445365d10115a" category="list-text">정적 값 * 을 선택하고 * 하이퍼바이저 관리자 선택 * 을 클릭합니다. VMware vCenter 타겟을 클릭합니다.</block>
+  <block id="e8092b124a48b9eac914df57df02b28f" category="paragraph"><block ref="e8092b124a48b9eac914df57df02b28f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dbc69e815d01b5efd6dea5f30de342e0" category="paragraph"><block ref="dbc69e815d01b5efd6dea5f30de342e0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8f3fb14925e336b2ea5d35f575ace4bd" category="list-text">데이터 센터 * 필드에서 * 맵 * 을 클릭합니다. 새 데이터 저장소와 연결된 데이터 센터입니다.</block>
+  <block id="52b0c8b6f3f8da7a6c88d14cef59f08a" category="list-text">입력 이름 * 을 클릭한 다음 * 워크플로 입력 작성 * 을 클릭합니다.</block>
+  <block id="8e542f222c1595fe65f0edc1f5adf51d" category="paragraph"><block ref="8e542f222c1595fe65f0edc1f5adf51d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0533ee465d5fd33878e66cc36d59994f" category="list-text">유형으로 * Datacenter * 를 선택합니다.</block>
+  <block id="96cdfa445701bdf6bbb8e07c3021b724" category="list-text">데이터 센터 선택 * 을 클릭합니다.</block>
+  <block id="80c525a4fe0344296e93a244e5e453c1" category="list-text">새 데이터 저장소와 연결된 데이터 센터를 클릭한 다음 * Select * 를 클릭합니다.</block>
+  <block id="be91d8d619ee84709756fee2e91c4b77" category="paragraph"><block ref="be91d8d619ee84709756fee2e91c4b77" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c3c144240031f4c640bd5f5235bce135" category="list-text">Cluster * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="19a0181cec2dc0bbe84eac5671140978" category="paragraph"><block ref="19a0181cec2dc0bbe84eac5671140978" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="760e6e9e8e0277e6eaf914248a7090f3" category="list-text">유형으로 Cluster(클러스터) 를 선택합니다.</block>
+  <block id="413e0dd75a8c2f8d2866a9befa78bc99" category="list-text">Select Cluster * 를 클릭합니다.</block>
+  <block id="d3268a3895301d83e93e7570fa1a99e2" category="list-text">새 데이터 저장소와 연결된 클러스터를 클릭합니다.</block>
+  <block id="a2396693254d9ec35f0b6faa885e8f58" category="list-text">선택 * 을 클릭합니다.</block>
+  <block id="f5fe76c5305d7ab25540c0c6bae99ca1" category="paragraph"><block ref="f5fe76c5305d7ab25540c0c6bae99ca1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2a93b6e240c97677ff19bf2a8879be00" category="list-text">Host * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="e18b144f923bd20dfca2460aadd366f5" category="paragraph"><block ref="e18b144f923bd20dfca2460aadd366f5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a947918eb09a399408ed87d568ca5c5f" category="list-text">정적 값 * 을 선택하고 데이터 저장소가 호스팅될 호스트를 클릭합니다. 클러스터를 지정하면 호스트가 무시됩니다.</block>
+  <block id="11a626b17cae5dba61e52c32a67bee33" category="paragraph"><block ref="11a626b17cae5dba61e52c32a67bee33" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4cebacaed40a481b45cde2207d71dee8" category="list-text">선택 및 매핑 * 을 클릭합니다.</block>
+  <block id="4a6fa1ffac6aa1366be0555506f3d231" category="list-text">Datastore * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="f74cc3721b60a5a1f20ff2788171b57a" category="paragraph"><block ref="f74cc3721b60a5a1f20ff2788171b57a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="533163b2482ce67466dfdb36cd6585d9" category="list-text">데이터 저장소에 대한 기본값을 제공하고 * Add * 를 클릭합니다.</block>
+  <block id="e5d4dbd58d0a011e36b71c6dad3f2a02" category="paragraph"><block ref="e5d4dbd58d0a011e36b71c6dad3f2a02" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5bcce873d6d71d72bf3fa4d08ac87844" category="list-text">입력 필드에서 * Map * 을 클릭합니다 * 데이터 저장소 유형 *.</block>
+  <block id="d61396251afff8e50b3f8dd3efcf2d8a" category="paragraph"><block ref="d61396251afff8e50b3f8dd3efcf2d8a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9d7293a4af215135872234e697071d9c" category="list-text">표시 이름 및 참조 이름(선택 사항)을 입력하고 * 필수 * 를 클릭합니다.</block>
+  <block id="4ddddb8b907d575bb88a23a6ff6d2f88" category="list-text">데이터 저장소 유형 * 을 선택하고 * 기본값 설정 및 재정의 * 를 클릭합니다.</block>
+  <block id="b124873c7adbed52dfb47d4890835ff8" category="paragraph"><block ref="b124873c7adbed52dfb47d4890835ff8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1ff30fe36cafac1e2d9965e216c6b2bd" category="list-text">원격 경로를 제공합니다. NFS 마운트 지점의 원격 경로입니다.</block>
+  <block id="065e03fdef4251d4647cd91edacd9542" category="list-text">NFS 서버 주소 에 원격 NFS 서버의 호스트 이름 또는 IP 주소를 입력합니다.</block>
+  <block id="de292fc5afb4b1f8b8fe49ae5e8e876f" category="list-text">액세스 모드 * 를 클릭합니다. 액세스 모드는 NFS 서버에 대한 것입니다. 볼륨을 읽기 전용으로 내보내는 경우 읽기 전용 을 클릭합니다. 추가 * 를 클릭합니다.</block>
+  <block id="c023401432e40d3ddb7e5709b6ee2585" category="paragraph"><block ref="c023401432e40d3ddb7e5709b6ee2585" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">저장 * 을 클릭합니다.</block>
+  <block id="e23071796c21231bcaa5b76783fefd0d" category="paragraph">이것으로 데이터 저장소 생성 작업이 완료되었습니다. 사내 FlexPod 데이터 센터에서 수행한 모든 작업이 완료됩니다.</block>
+  <block id="6b616830514b6de48d9a4aa7042a3158" category="paragraph"><block ref="6b616830514b6de48d9a4aa7042a3158" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2a1b2c5e63adea2791748c03d2acbf7c" category="section-title">절차 5: 새 Terraform 작업 영역을 추가합니다</block>
+  <block id="ca5a3c99cc82fb97415d7bbb5d78ffe8" category="list-text">디자인 영역의 도구 섹션에서 * Terraform Cloud &gt; Terraform Workspace * 작업 추가를 끌어서 놓습니다.</block>
+  <block id="b89ada204a1d9666d159755eaf5b6c9e" category="list-text">Connector를 사용하여 * Map 볼륨을 Datastore * 에 연결하고 * Terraform Workspace * 작업을 추가하고 * Save * 를 클릭합니다.</block>
+  <block id="6556c808e09c3cce95116efffe37509b" category="list-text">Terraform Workspace 추가 * 를 클릭합니다. 작업 속성 영역에서 * 일반 * 탭을 클릭합니다. 필요에 따라 이 작업의 이름 및 설명을 변경할 수 있습니다.</block>
+  <block id="7da851d402c1d154fb0946bb0fac2af6" category="paragraph"><block ref="7da851d402c1d154fb0946bb0fac2af6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="556caa4b2d2ab4ac194aa630c3a0ecb7" category="list-text">작업 속성 영역에서 * 입력 * 을 클릭합니다.</block>
+  <block id="0b14a18cdd5b3b4b4c393b1d0aca06e4" category="list-text">입력 필드 * Terraform Cloud Target * 에서 * Map * 을 클릭합니다.</block>
+  <block id="a873ef71d19ea066a5ea85d10d2dbc63" category="inline-link-macro">HaashCorp Terraform에 대한 Cisco Intersight 서비스를 구성합니다</block>
+  <block id="5472001b4d6770b809fbbffa76c52f2b" category="list-text">정적 값 * 을 선택하고 * 클라우드 타겟 선택 * 을 클릭합니다. 에 설명된 대로 추가한 Terraform Cloud for Business 계정을 선택합니다 <block ref="d702817a0d262e0d18041c9b5395a08d" category="inline-link-macro-rx"></block>".</block>
+  <block id="e195faecfe873b904ebb47a989ccb8d0" category="paragraph"><block ref="e195faecfe873b904ebb47a989ccb8d0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8e69fb5b76e89d6986e20bf3b3006cd2" category="list-text">입력 필드 * Terraform 조직 이름 * 에서 * Map * 을 클릭합니다.</block>
+  <block id="884812e14725666421637d9af44eedb0" category="list-text">정적 값 * 을 선택한 다음 * 조직 구조 선택 * 을 클릭합니다. Terraform Cloud for Business 계정에 속해 있는 Terraform 조직의 이름을 선택합니다.</block>
+  <block id="d4579f9c5c62eeba83337b2abd2370a7" category="paragraph"><block ref="d4579f9c5c62eeba83337b2abd2370a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a258d73ea05c607b1a28101ae083f1c3" category="list-text">Terraform Workspace Name * 필드에서 * Map * 을 클릭합니다. Terraform Cloud for Business 계정의 새 작업 영역입니다.</block>
+  <block id="1dc7516a27a6ca8f8a911983906042a3" category="paragraph"><block ref="1dc7516a27a6ca8f8a911983906042a3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e7ea77d6619f5812b5ad7129e1b9fdcd" category="list-text">Type * 에 대해 * String * 을 선택해야 합니다.</block>
+  <block id="a26907578e5ec8ce75776b64d489c5c7" category="list-text">작업 영역의 기본 이름을 제공합니다.</block>
+  <block id="8e40588dc26559dc183d06a439034545" category="paragraph"><block ref="8e40588dc26559dc183d06a439034545" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b1d7ee105c5c07ae9780839602cff178" category="list-text">Workspace Description * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="7b20a28a20199e6ff39630e1bdcf8b52" category="paragraph"><block ref="7b20a28a20199e6ff39630e1bdcf8b52" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bf1d9f58592ca29198cc5ed8122f262f" category="list-text">작업 영역 설명을 입력하고 * 추가 * 를 클릭합니다.</block>
+  <block id="36dc10e083fbcceb3ca2d82c8693a06d" category="paragraph"><block ref="36dc10e083fbcceb3ca2d82c8693a06d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="238f8416f6737e3bc6b9e7a825f31641" category="list-text">Execution Mode * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="0ce0cc148512532225f04579b2832bea" category="list-text">정적 값 * 을 선택하고 * 실행 모드 * 를 클릭한 다음 * 원격 * 을 클릭합니다.</block>
+  <block id="def519c0e31d0aa499671e55330f0037" category="paragraph"><block ref="def519c0e31d0aa499671e55330f0037" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d51f549dd0be0b4575aa612f7dfac88c" category="list-text">Apply Method * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="18a5fc679f5af161af991629f8ffc8a1" category="list-text">정적 값 * 을 선택하고 * 메서드 적용 * 을 클릭합니다. Manual Apply * 를 클릭합니다.</block>
+  <block id="809f8577cb0dcd5cf6b721d43f1352a8" category="paragraph"><block ref="809f8577cb0dcd5cf6b721d43f1352a8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be93c70fc671625d1fe7b57e0d277c81" category="list-text">사용자 인터페이스 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="752534af9e96f08ee5102962c9cff74e" category="list-text">정적 값 * 을 선택하고 * 사용자 인터페이스 * 를 클릭합니다. 콘솔 UI * 를 클릭합니다.</block>
+  <block id="ea4a101b7ae1f6cdaafad6db0075e7e3" category="paragraph"><block ref="ea4a101b7ae1f6cdaafad6db0075e7e3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="412d515223293b6bab18705751a75d40" category="list-text">입력 필드에서 * Map * 을 클릭하고 워크플로를 선택합니다.</block>
+  <block id="9c357b53bdf1e6aee4a86be4ed9ad4b0" category="list-text">정적 값 * 을 선택하고 * 워크플로 선택 * 을 클릭합니다. 버전 제어 워크플로 * 를 클릭합니다.</block>
+  <block id="3c28f1f86cce7b9f6cccd84c353320aa" category="paragraph"><block ref="3c28f1f86cce7b9f6cccd84c353320aa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="baf8ff06d7e7509dbb1525fc95dee350" category="list-text">다음 GitHub 리포지토리 세부 정보를 제공합니다.</block>
+  <block id="f00cb64c44901d8b140ee5334ba42392" category="inline-link-macro">"환경 필수 구성 요소 설정"</block>
+  <block id="4a470f461c007e22030142a71b593456" category="list-text">리포지토리 이름 * 에서 섹션에 자세히 설명된 리포지토리 이름을 입력합니다 <block ref="3bd0a1108a23c22c460b332b6044d46b" category="inline-link-macro-rx"></block>.</block>
+  <block id="7ad0c2df34976d7bd8b12ea9e4d942f5" category="list-text">섹션에 자세히 설명된 대로 OAuth 토큰 ID를 제공합니다 <block ref="3bd0a1108a23c22c460b332b6044d46b" category="inline-link-macro-rx"></block>.</block>
+  <block id="cc52ae3c0b42500f9340757e4535abe9" category="list-text">자동 트리거 실행 * 옵션을 선택합니다.</block>
+  <block id="7dc4834a62425cc62d13478addab1f09" category="paragraph"><block ref="7dc4834a62425cc62d13478addab1f09" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="51b0e138743de6b27eb2983b1e789a5d" category="paragraph">그러면 Terraform Cloud for Business 계정에서 작업 영역을 만드는 작업이 완료됩니다.</block>
+  <block id="3a0eac03a9c460ab6cff0a2624ba21af" category="section-title">절차 6: 작업 영역에 중요하지 않은 변수를 추가합니다</block>
+  <block id="f632468bad5159e9e6061b29c2e8784f" category="list-text">Designer * 탭으로 이동하고 * Tools * 섹션에서 * Workflow를 클릭합니다.</block>
+  <block id="fc567f1c0f743fbb67b94d066a592f2c" category="list-text">* Design * 영역의 * Tools * 섹션에서 * Terraform &gt; Add Terraform Variables * (Terraform 변수 추가) 워크플로우를 끌어서 놓습니다.</block>
+  <block id="ec9d48ae41a228f399522ad84fdb0950" category="list-text">Connector를 사용하여 * Terraform Workspace 추가 * 및 * Terraform 변수 추가 * 작업을 연결합니다. 저장 * 을 클릭합니다.</block>
+  <block id="2cf9f929b7fd546d1a2e3e82000e49c6" category="list-text">Terraform 변수 추가 * 를 클릭합니다. Workflow Properties * 영역에서 * General * 탭을 클릭합니다. 필요에 따라 이 작업의 이름과 설명을 변경할 수 있습니다.</block>
+  <block id="01ed8d9b52acd6913bce86b69751c3b5" category="paragraph"><block ref="01ed8d9b52acd6913bce86b69751c3b5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="662f9d0db2f2dea1cb132e598a3a48e1" category="list-text">Workflow Properties * 영역에서 * Inputs * 를 클릭합니다.</block>
+  <block id="e977d89ad0d0fbdc6ececa771a438f1f" category="list-text">Terraform Cloud Target * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="fb64e71acf4aa4de06c489263c48da02" category="paragraph"><block ref="fb64e71acf4aa4de06c489263c48da02" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4faa4d57695922164dfc78b307eab7a4" category="list-text">Terraform 조직 이름 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="8edd642e23864d6e971c3e3bda604fb4" category="list-text">정적 값 * 을 선택하고 * 조직 Terraform 선택 * 을 클릭합니다. Terraform Cloud for Business 계정에 속해 있는 Terraform 조직의 이름을 선택합니다.</block>
+  <block id="28629e939400ad6037f28be2125b7c80" category="paragraph"><block ref="28629e939400ad6037f28be2125b7c80" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6b68c21095ada7b8b964a3c927c9b70d" category="list-text">Terraform Workspace Name * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="e4c6cb254394276c3f3c2b82e26bc0a8" category="list-text">직접 매핑 * 을 선택하고 * 작업 출력 * 을 클릭합니다.</block>
+  <block id="2f6858fe2ae7c129a46bfeb632764432" category="list-text">작업 이름 * 을 클릭하고 * Terraform 작업 영역 추가 * 를 클릭합니다.</block>
+  <block id="c19ac7c1c04261f391df0a60605246f9" category="paragraph"><block ref="c19ac7c1c04261f391df0a60605246f9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="37b39d4ffe666c0f19b5cbafc8077145" category="list-text">출력 이름 * 을 클릭하고 * 작업 공간 이름 * 을 클릭합니다.</block>
+  <block id="cb6a4d03e92f80323204573d5f039e7a" category="list-text">변수 추가 옵션 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="8a7826b81306102f3fb51a0d1d685823" category="paragraph"><block ref="8a7826b81306102f3fb51a0d1d685823" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dfa0d7d8d0cf8d559f394ea8f19c4952" category="list-text">표시 이름과 참조 이름을 입력합니다(선택 사항).</block>
+  <block id="97745752e546e6413c3e3619dcf0a498" category="list-text">Type * 에 대해 * String * 을 선택해야 합니다.</block>
+  <block id="920552b0f438378a71987719f434334e" category="list-text">변수 유형 * 을 클릭한 다음 * 비민감 변수 * 를 클릭합니다.</block>
+  <block id="cbedd84b3bc9a1a56d08b4d9b3e13463" category="list-text">Terraform 변수 추가 * 섹션에서 다음 정보를 제공합니다.</block>
+  <block id="c4ab987808b4863ce12716f8684c5d9b" category="list-text">* 키. * 'name_of_on-premise-ONTAP'입니다</block>
+  <block id="080e2bd938a89c6a3b55f0457caaf4f8" category="list-text">* 값. * 온-프레미스 ONTAP의 이름을 제공합니다.</block>
+  <block id="b7d374371e730d267834843a58f37c2b" category="list-text">* 설명. * 온-프레미스 ONTAP의 이름입니다.</block>
+  <block id="1c13d5c742b63f94434ab958d6de3578" category="list-text">변수를 추가하려면 * + * 를 클릭합니다.</block>
+  <block id="e86708fbc922cf92b4c8544c7c8b68a0" category="paragraph"><block ref="e86708fbc922cf92b4c8544c7c8b68a0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5146e9306fed25fd1c442cdf0c7c100c" category="list-text">다음 표와 같이 모든 Terraform 변수를 추가합니다. 기본값을 제공할 수도 있습니다.</block>
+  <block id="9e77151dd2afa3e5c43be330df9768de" category="cell">Terraform 변수 이름입니다</block>
+  <block id="f3ba59e834d24c981cb01b03314a25d4" category="cell">이름_of_on-premise-ONTAP</block>
+  <block id="a5fff921f5ad52f59fd50fe2932651e7" category="cell">온프레미스 ONTAP(FlexPod)의 이름</block>
+  <block id="182c90bf03a410c8148880d068a107c1" category="cell">사내 - ONTAP_cluster_IP</block>
+  <block id="30e36d10d4826f340912d2070c38929f" category="cell">스토리지 클러스터 관리 인터페이스의 IP 주소입니다</block>
+  <block id="ae1ef39476b3e55648bd3b86b8f9f560" category="cell">사내 - ONTAP_USER_NAME</block>
+  <block id="85d2d0af1ea340e0364fc1ddec278c45" category="cell">스토리지 클러스터의 관리자 사용자 이름입니다</block>
+  <block id="b3ff996fe5c77610359114835baf9b38" category="cell">Zone(영역)</block>
+  <block id="4e2fa5166acdf1df2b001059ae4f0ffb" category="cell">작업 환경을 생성할 GCP 지역</block>
+  <block id="fe866fcb2725fcd80b024a7957795b65" category="cell">서브넷_id</block>
+  <block id="6d11d98399a4bf9ec9a84426b4289430" category="cell">작업 환경을 생성할 GCP 서브넷 ID입니다</block>
+  <block id="b26086b0825721c46b343c2486e643b7" category="cell">VPC_ID입니다</block>
+  <block id="10ee079778df6fb021dd8525dbaa98d5" category="cell">작업 환경을 생성할 VPC ID입니다</block>
+  <block id="f56f446f407f0b78757ec937357eec94" category="cell">capacity_package_name입니다</block>
+  <block id="bc45069b691918b98f218ebb3bf9441f" category="cell">사용할 라이센스 유형입니다</block>
+  <block id="ee515ad089ea756256cb1f767ac287e8" category="cell">source_volume</block>
+  <block id="bc02973b293f761c370533e7a39576d8" category="cell">소스 볼륨의 이름입니다</block>
+  <block id="7425deadb19fc08412afb65e7bd73a1b" category="cell">source_storage_vm_name입니다</block>
+  <block id="3a7296826057e6d967be17fa2c5f49d7" category="cell">소스 SVM의 이름입니다</block>
+  <block id="045fb4be8169d31479f33ba077fae7fc" category="cell">destination_volume</block>
+  <block id="a1c1df336bc308c9801e9d8e3943de8d" category="cell">Cloud Volumes ONTAP의 볼륨 이름입니다</block>
+  <block id="41ee84966c806dc207e8df9783fb3b16" category="cell">복제 일정 _</block>
+  <block id="c9885d42964613096df96fb9ccb8cd98" category="cell">기본값은 1시간입니다</block>
+  <block id="b9b6e45226f283c37e84f7de3cf9b2f6" category="cell">볼륨 _ 의 이름 _ 을(를) _ create_on_cvo 로 지정합니다</block>
+  <block id="c1cd0d56866b7320dc62486a3b9f582e" category="cell">클라우드 볼륨의 이름입니다</block>
+  <block id="ffedea8bc70a36b6b1d7afc960244647" category="cell">작업 공간 ID</block>
+  <block id="a49962c89c5d84ca15cf007d119e4d51" category="cell">작업 환경을 생성할 workspace_id입니다</block>
+  <block id="c6ca42045dd8974f126f41167ddb8635" category="cell">프로젝트_ID</block>
+  <block id="b07b1fe41116396ec2707697a92c77ab" category="cell">작업 환경을 생성할 PROJECT_ID입니다</block>
+  <block id="557a61c5d4189ea360feb274384db6ee" category="cell">cvo_cluster의 이름입니다</block>
+  <block id="cde59e72298039f9a1fb42987aefbfc4" category="cell">Cloud Volumes ONTAP 작업 환경의 이름입니다</block>
+  <block id="71f81d1d643bb01a1a1496b42f24ba8a" category="cell">GCP_SERVICE_ACCOUNT입니다</block>
+  <block id="350b3481868a2b974433574648038b09" category="cell">Cloud Volumes ONTAP 작업 환경의 GCP_SERVICE_ACCOUNT입니다</block>
+  <block id="b5a5b9a29d368bf3c7ae00c4d01afcfb" category="paragraph"><block ref="b5a5b9a29d368bf3c7ae00c4d01afcfb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ed7f7c8c55ed7f5a712ea5541170b012" category="paragraph">그러면 필요한 Terraform 변수를 작업 공간에 추가하는 작업이 완료됩니다. 그런 다음 필요한 중요 Terraform 변수를 작업 공간에 추가합니다. 두 가지 모두를 하나의 작업으로 결합할 수도 있습니다.</block>
+  <block id="8dbe7eef079864130882eb9f2c3a1c43" category="section-title">절차 7: 작업 영역에 중요한 변수를 추가합니다</block>
+  <block id="3e1ad43c13af0cac129b8a64ea2142b5" category="list-text">디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 워크플로 * 를 클릭합니다.</block>
+  <block id="68234ab797837d6cd669d44a4a4cca1e" category="list-text">Connector를 사용하여 2개의 * Terraform Workspace * 추가 작업을 연결합니다. 저장 * 을 클릭합니다.</block>
+  <block id="dee3dd236a8cea3bb461ec720a7d6880" category="admonition">두 작업의 이름이 동일함을 나타내는 경고가 나타납니다. 다음 단계에서 작업 이름을 변경했으므로 지금 오류를 무시합니다.</block>
+  <block id="ddd72a9d78e672ce84078e188779949c" category="list-text">Terraform 변수 추가 * 를 클릭합니다. Workflow Properties * 영역에서 * General * 탭을 클릭합니다. 이름을 * Terraform Sensitive Variables * 로 변경합니다.</block>
+  <block id="86e3738a676f0f748478273a1ce2b051" category="paragraph"><block ref="86e3738a676f0f748478273a1ce2b051" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e4ca1dde984190c01aa1ba387d335714" category="list-text">정적 값 * 을 선택하고 * 클라우드 타겟 선택 * 을 클릭합니다. 섹션에 추가된 Terraform Cloud for Business 계정을 선택합니다 <block ref="d702817a0d262e0d18041c9b5395a08d" category="inline-link-macro-rx"></block>.”</block>
+  <block id="0909d486af935a1c2692bc83bfd41208" category="list-text">Terraform 조직 이름 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="545d38093ae01cc865196046ef8df048" category="list-text">작업 이름 * 을 클릭한 다음 * Terraform 작업 영역 추가 * 를 클릭합니다.</block>
+  <block id="f15511d51e5bb056616e87512dc8d70e" category="list-text">출력 이름 * 을 클릭하고 출력 * 작업 공간 이름 * 을 클릭합니다.</block>
+  <block id="1621bf2df26116272259f0f4c5a30928" category="list-text">직접 매핑 * 을 선택한 다음 * 워크플로 입력 * 을 클릭합니다.</block>
+  <block id="22d7df80c543ee33b0d328f7ae6bbf7d" category="list-text">유형에 대해 * Terraform 변수 추가 옵션 * 을 선택해야 합니다.</block>
+  <block id="bb43b8f2eaa5a1d72122aa9a1fc612b5" category="list-text">기본값 설정 * 을 클릭합니다.</block>
+  <block id="db1e9a5622120f7cbf5d0e20d8599b6a" category="list-text">변수 유형 * 을 클릭한 다음 * 민감한 변수 * 를 클릭합니다.</block>
+  <block id="33a8343b68cadf3b9b0375f6a3b573df" category="paragraph"><block ref="33a8343b68cadf3b9b0375f6a3b573df" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c6f2f9cf14b7430dd6b2a0e485a6d8a" category="list-text">키. * 'cloudmanager_refresh_token'.</block>
+  <block id="e97bbbb4aa99cae4a317dc1978ea02ce" category="list-text">* 가치. * NetApp Cloud Manager API 작업에 대한 업데이트 토큰을 입력합니다.</block>
+  <block id="c0635c122427dfcc192d6c29ee84e3fb" category="list-text">* 설명 * 토큰 새로 고침.</block>
+  <block id="253f26b8ee128a839e34d1b24a799e82" category="inline-link-macro">“환경 필수 구성 요소 설정.”</block>
+  <block id="0873f157a13b94ec2c2cb69ff4d2f25d" category="admonition">NetApp Cloud Manager API 작업을 위한 업데이트 토큰을 얻는 방법에 대한 자세한 내용은 섹션을 참조하십시오 <block ref="e494838bdd9d1128badc766b5008a232" category="inline-link-macro-rx"></block></block>
+  <block id="d05613edc0c7136089b620dec8c8d9de" category="paragraph"><block ref="d05613edc0c7136089b620dec8c8d9de" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca0fb47f75ab6fca4e951b8cbe658bdd" category="list-text">아래 표와 같이 Terraform에 민감한 변수를 모두 추가합니다. 기본값을 제공할 수도 있습니다.</block>
+  <block id="eb8e560b05e9ad296a7e85c8465ee698" category="cell">Terraform 민감한 변수 이름입니다</block>
+  <block id="11fb5dbd9970666e6f5ff557e8db45b6" category="cell">cloudmanager_refresh_token을 참조하십시오</block>
+  <block id="71e26c072786939da31ffe1ad8004bb6" category="cell">토큰을 새로 고칩니다. 다음에서 받기:</block>
+  <block id="2b69d2ab5aec459dabdafdaa2bf52655" category="cell">커넥터_ID</block>
+  <block id="3e4184fa8ebacaa6de933be7e25c6e3f" category="cell">Cloud Manager Connector의 클라이언트 ID입니다. 에서 구할 수 있습니다</block>
+  <block id="60ff2f8a66906dcf6fcefa276011c101" category="cell">CVO_ADMIN_PASSWORD를 입력합니다</block>
+  <block id="e15f5086b4dfd0fa7f74c0e5ed873056" category="cell">Cloud Volumes ONTAP의 admin 암호입니다</block>
+  <block id="19b83ac8b13fdd7885b86b68fae29495" category="cell">사내 - ONTAP_USER_PASSWORD</block>
+  <block id="d1a9b65a9414d8fa602a4d3615c6f2dd" category="cell">스토리지 클러스터의 admin 암호입니다</block>
+  <block id="b4c5f9b8c9aec141677bcee5c0da850c" category="list-text">Map * 을 클릭합니다. 그러면 필요한 Terraform 중요 변수를 작업 공간에 추가하는 작업이 완료됩니다. 그런 다음 구성된 작업 영역에서 새 Terraform 계획을 시작합니다.</block>
+  <block id="06cc56ce304a1110c660e081886ed872" category="section-title">절차 8: 새 Terraform 계획을 시작합니다</block>
+  <block id="36b4bcd6a2c5ee8c9ea599fa50d27990" category="list-text">* Design * 영역의 * Tools * 섹션에서 * Terraform Cloud &gt; Start New Terraform Plan * 작업을 끌어서 놓습니다.</block>
+  <block id="e4934b3e12228c001d2da98bceffa242" category="list-text">Connector를 사용하여 태스크 * Terraform Sensitive Variables * 추가 및 * 새 Terraform Plan 작업 시작 * 을 연결합니다. 저장 * 을 클릭합니다.</block>
+  <block id="0718f3b2cb784c592a49b4647ae12367" category="list-text">Start New Terraform Plan * 을 클릭합니다. 작업 속성 * 영역에서 * 일반 * 탭을 클릭합니다. 필요에 따라 이 작업의 이름과 설명을 변경할 수 있습니다.</block>
+  <block id="c8dd881caff964ec71daef697b92213f" category="paragraph"><block ref="c8dd881caff964ec71daef697b92213f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="20510649666748d1b8c02988d968d290" category="list-text">정적 값 * 을 선택하고 * 클라우드 타겟 선택 * 을 클릭합니다. "Configuring Cisco Intersight Service for HashiCorp Terraform" 섹션에 추가된 Terraform Cloud for Business 계정을 선택합니다.</block>
+  <block id="21cb844f70fedbba0d33de64e2a99eb9" category="list-text">Workspace ID * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="b5b4b94ed4730d8189f79b769152da59" category="paragraph"><block ref="b5b4b94ed4730d8189f79b769152da59" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03d4edfdfae72f25232b9ec58800881e" category="list-text">출력 이름 *, * 작업 공간 ID *, * 맵 * 을 차례로 클릭합니다.</block>
+  <block id="f5717dbada2ed48feb3d79e1d913d47f" category="list-text">계획 시작 이유 * 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="f5dc2f6942066a4f2694590b19444adc" category="list-text">계획 시작 이유 * 에 대한 기본값을 입력하고 * 추가 * 를 클릭합니다.</block>
+  <block id="14a230365d0b42a0e7199663b315eddf" category="paragraph"><block ref="14a230365d0b42a0e7199663b315eddf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="36ae0267a1eb1ecf130591466ea570ad" category="list-text">Plan Operation * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="0316b559b06256a3a3e01b5aa3f2e297" category="list-text">정적 값 * 을 선택하고 * 계획 작업 * 을 클릭합니다. 새 계획 * 을 클릭합니다.</block>
+  <block id="784011cde26225d6d9d719de9c52f273" category="paragraph"><block ref="784011cde26225d6d9d719de9c52f273" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6a5d7e4e6edaf5408f217414e43b7656" category="paragraph">그러면 Terraform Cloud for Business 계정에 Terraform 플랜을 추가하는 작업이 완료됩니다. 그런 다음 몇 초 동안 절전 작업을 만듭니다.</block>
+  <block id="718e657978cd41152df75e4485090339" category="section-title">절차 9: 동기화를 위한 절전 작업</block>
+  <block id="6c87848fc54410cc1c75ccf05331e0b1" category="paragraph">Terraform 적용에는 RunID가 필요하며, 이 ID는 Terraform 계획 작업의 일부로 생성됩니다. Terraform Plan과 Terraform Apply 작업 사이에 몇 초 동안 대기하면 타이밍 문제가 방지됩니다.</block>
+  <block id="38ffdd65709853a10d34ce7d03dcfc49" category="list-text">Design * 영역의 * Tools * 섹션에서 * Core Tasks &gt; Sleep Task * 를 끌어 놓습니다.</block>
+  <block id="e3033042a2088c2e3a186bc0b7b57a44" category="list-text">커넥터를 사용하여 작업을 연결합니다 * 새 Terraform 계획 시작 * 및 * 절전 작업 *. 저장 * 을 클릭합니다.</block>
+  <block id="13ac5359b7980ee6c9fa3392eb3df214" category="paragraph"><block ref="13ac5359b7980ee6c9fa3392eb3df214" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="39057865c7092f42f8ab8f84ed0ec950" category="list-text">절전 작업 * 을 클릭합니다. 작업 속성 * 영역에서 * 일반 * 탭을 클릭합니다. 필요에 따라 이 작업의 이름과 설명을 변경할 수 있습니다. 이 예제에서 작업 이름은 * Synchronize * 입니다.</block>
+  <block id="3f37ed5747ccc2a0c5bc701e77ee57aa" category="list-text">[초 단위 절전 시간] 필드에서 * 맵 * 을 클릭합니다.</block>
+  <block id="bcebd8fb5ea0990fd8873a54ab8ecf52" category="list-text">정적 값 * 을 선택하고 * 절전 시간(초) * 에 * 15 * 를 입력합니다.</block>
+  <block id="df136f6368428a12c860058b70f3f894" category="paragraph"><block ref="df136f6368428a12c860058b70f3f894" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c430f1cf6c2907c1c0385aba8a8aeb53" category="paragraph">이것으로 수면 작업이 완료되었습니다. 그런 다음 이 워크플로의 마지막 작업을 만들어 Terraform 실행을 확인하고 적용합니다.</block>
+  <block id="e3d6e044b917c76bf244507e9d051003" category="section-title">절차 10: Terraform 실행을 확인하고 적용합니다</block>
+  <block id="386a7bcb4405dbf3fa5bc6db44ae0fe5" category="list-text">* Design * 영역의 * Tools * 섹션에서 * Terraform Cloud &gt; Confirm and Apply Terraform Run * 작업을 끌어서 놓습니다.</block>
+  <block id="c2d809cf8192caf73bdf6d73a8605e9f" category="list-text">커넥터를 사용하여 작업 * 동기화 * 및 * Terraform 실행 확인 및 적용 * 을 연결합니다. 저장 * 을 클릭합니다.</block>
+  <block id="0e1dc6077d34ff33ff253e09c3d0bdce" category="list-text">Confirm(확인) * 과 * Apply Terraform Run(Terraform 실행 적용) * 을 클릭합니다. 작업 속성 * 영역에서 * 일반 * 탭을 클릭합니다. 필요에 따라 이 작업의 이름과 설명을 변경할 수 있습니다.</block>
+  <block id="8671194a007739e451570e012816c39a" category="paragraph"><block ref="8671194a007739e451570e012816c39a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a5f0204b18f1ec88cd1117ce0776f621" category="list-text">정적 값 * 을 선택하고 * 클라우드 타겟 선택 * 을 클릭합니다. 에 추가된 Terraform Cloud for Business 계정을 선택합니다 <block ref="d702817a0d262e0d18041c9b5395a08d" category="inline-link-macro-rx"></block>.”</block>
+  <block id="0b4dd6539d76e12c9cd96d7348977d1c" category="list-text">Run ID * 필드에서 * Map * 을 클릭합니다.</block>
+  <block id="c2fe66ef87838d7855958b06ffc78b52" category="list-text">작업 이름 * 을 클릭하고 * 새 Terraform 계획 시작 * 을 클릭합니다.</block>
+  <block id="383bcf9dd2a8b183184ceb15f839adb0" category="list-text">출력 이름 * 을 클릭한 다음 * 실행 ID * 를 클릭합니다.</block>
+  <block id="b764d9dba6189360e00a563c935c9108" category="paragraph"><block ref="b764d9dba6189360e00a563c935c9108" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c1f1b5d000e01325d0d94db9b5c2b01" category="list-text">모든 작업이 정렬되도록 * 워크플로 자동 정렬 * 을 클릭합니다. 저장 * 을 클릭합니다.</block>
+  <block id="e027bfaf34a26d810b29037e48b5ee56" category="paragraph"><block ref="e027bfaf34a26d810b29037e48b5ee56" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eb91734c80c3059460de3a91e7023f5d" category="paragraph">그러면 Terraform 실행 확인 및 적용 작업이 완료됩니다. Connector를 사용하여 * Terraform Run * 작업 확인 및 적용 과 * Success * 및 * Failed * 작업 간에 연결합니다.</block>
+  <block id="8cbb982b1133f487dca2f7b50b3bb7d1" category="section-title">절차 11: Cisco에서 만든 워크플로 가져오기</block>
+  <block id="4c3da47674ee039671b7ee3017283cc2" category="paragraph">Cisco Intersight Cloud Orchestrator를 사용하면 Cisco Intersight 계정에서 시스템으로 워크플로우를 내보낸 다음 다른 계정으로 가져올 수 있습니다. JSON 파일은 사용자 계정으로 가져올 수 있는 기본 워크플로를 내보내서 생성되었습니다.</block>
+  <block id="aa7206c393519866735d718a745db075" category="paragraph">Workflow 구성 요소의 JSON 파일은 에서 사용할 수 있습니다<block ref="f9ca7c1dbbbd005395883eb34560fa1c" category="inline-link-rx"></block>.</block>
+  <block id="b2f3408c9d01ee65202784c85e804e29" category="inline-link-macro">다음: 컨트롤러에서 Terraform 실행.</block>
+  <block id="b676b4f0a7c70c0b6b427d2d63263495" category="paragraph"><block ref="b676b4f0a7c70c0b6b427d2d63263495" category="inline-link-macro-rx"></block></block>
+  <block id="549e147409126d885754994939d9cb6c" category="sidebar">NetApp Cloud Volumes ONTAP 및 Cisco Intersight가 지원되는 Google 클라우드 플랫폼용 FlexPod 하이브리드 클라우드</block>
 </blocks>

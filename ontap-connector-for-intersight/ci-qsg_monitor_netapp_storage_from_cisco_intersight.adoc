@@ -22,7 +22,7 @@ summary: 대상이 확보되면 Advantage 계층 라이센스가 있는 경우 N
 
 다음 스크린샷은 * Operate > Storage * 화면을 표시합니다.
 
-image:ci-qsg_image9.png["스크린샷은 Operate & GT; Storage 화면을 표시합니다"]
+image:ci-qsg_image9.png["스크린샷은 Operate  GT; Storage 화면을 표시합니다"]
 
 다음 스크린샷은 스토리지 클러스터 개요를 보여 줍니다.
 

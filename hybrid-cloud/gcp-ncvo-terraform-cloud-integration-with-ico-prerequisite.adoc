@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/gcp-ncvo-terraform-cloud-integration-with-ico-prerequisite.html 
+keywords: user token, terraform cloud target, agents, api 
+summary: 이 페이지에서는 Cisco Intersight 및 Terraform Cloud에 연결하는 방법, 사용자 토큰을 생성하는 방법, Terraform 클라우드 타겟을 요청하는 방법, Terraform 클라우드 에이전트를 추가하는 방법에 대해 설명합니다. 
+---
+= ICO 사전 요구 사항으로 Terraform Cloud 통합
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:gcp-ncvo-cisco-intersight-configuration.html["이전: Cisco Intersight 구성."]
+
+
+
+== 절차 1: Cisco Intersight 및 Terraform Cloud 연결
+
+. 관련 Terraform Cloud 계정 세부 정보를 제공하여 Terraform 클라우드 타겟을 청구하거나 생성합니다.
+. 고객이 데이터 센터에 에이전트를 설치하고 Terraform Cloud와 통신할 수 있도록 프라이빗 클라우드에 대한 Terraform Cloud Agent 타겟을 생성합니다.
++
+자세한 내용은 을 참조하십시오 https://intersight.com/help/saas/features/terraform_cloud/admin["이 링크"^].
+
+
+
+
+
+== 절차 2: 사용자 토큰을 생성합니다
+
+Terraform Cloud의 대상을 추가하려면 Terraform Cloud 설정 페이지에서 사용자 이름 및 API 토큰을 제공해야 합니다.
+
+. Terraform Cloud에 로그인하고 * 사용자 토큰 * 으로 이동합니다. https://app.terraform.io/app/settings/tokens["https://app.terraform.io/app/settings/tokens"^].
+. Create a new API token * 을 클릭합니다.
+. 이름을 지정하여 토큰을 저장하고 안전한 장소에 보관합니다.
+
+
+
+
+== 절차 3: 클라우드 타겟 Terraform을 청구하십시오
+
+. 계정 관리자, 장치 관리자 또는 장치 기술자 권한과 Intersight에 로그인합니다.
+. admin > Targets > Claim a New Target * 으로 이동합니다.
+. 범주 * 에서 * 클라우드 * 를 클릭합니다.
+. Terraform Cloud * 를 클릭하고 * Start * 를 클릭합니다.
++
+image:gcp-ncvo-image3.png["Cisco Intersight에서 대상 유형을 선택한 스크린샷"]
+
+. 다음 이미지에 표시된 대로 대상의 이름, Terraform Cloud의 사용자 이름, API 토큰 및 기본 조직을 Terraform Cloud에 입력합니다.
+. 기본 관리 호스트 * 필드에서 다른 관리 호스트와 함께 다음 링크를 추가해야 합니다.
++
+** github.com
+** github-releases.githubusercontent.com
++
+image:gcp-ncvo-image4.png["기본 관리 호스트 필드의 스크린샷."]
+
+
+
+
+
+모든 항목이 올바르게 입력되면 * Intersight Targets * 섹션에 Terraform Cloud 목표가 표시됩니다.
+
+
+
+== 절차 4: 클라우드 에이전트 Terraform 추가
+
+필수 구성 요소:
+
+* Terraform 클라우드 대상.
+* Terraform Cloud Agent를 배포하기 전에 Intersight Assist를 Intersight에 요청하였습니다.
+
+
+
+NOTE: 각 보조 기능에 대해 5명의 상담원만 요청할 수 있습니다.
+
+
+NOTE: Terraform에 대한 연결을 만든 후에는 Terraform Agent를 스핀업하여 Terraform 코드를 실행해야 합니다.
+
+. Terraform 클라우드 목표의 드롭다운 목록에서 * 클라우드 에이전트 청구 * 를 클릭합니다.
+. Terraform Cloud 에이전트의 세부 정보를 입력합니다. 다음 스크린샷은 Terraform 에이전트에 대한 구성 세부 정보를 보여 줍니다.
++
+image:gcp-ncvo-image5.png["Terraform 에이전트의 구성 세부 정보를 보여 주는 스크린샷"]
+
+
+
+
+NOTE: Terraform Agent 속성을 업데이트할 수 있습니다. 대상이 * 연결되지 않음 * 상태이고 * 연결됨 * 상태인 적이 없는 경우 Terraform 에이전트에 대한 토큰이 생성되지 않습니다.
+
+에이전트 검증이 성공하고 에이전트 토큰이 생성되면 조직 및/또는 에이전트 풀을 재구성할 수 없습니다. Terraform 에이전트를 성공적으로 배포하면 * Connected * 상태가 표시됩니다.
+
+Terraform Cloud 통합을 활성화하고 주장하면 하나 이상의 Terraform Cloud 에이전트를 Cisco Intersight Assist에 배포할 수 있습니다. Terraform Cloud 에이전트는 Terraform Cloud 대상의 하위 대상으로 모델링됩니다. 상담원 목표를 청구할 때 목표 클레임이 진행 중임을 나타내는 메시지가 표시됩니다.
+
+몇 초 후 타겟이 * Connected * 상태로 이동되고 Intersight 플랫폼은 에이전트에서 Terraform Cloud 게이트웨이로 HTTPS 패킷을 라우팅합니다.
+
+Terraform 상담원은 올바른 클레임을 받아야 하며 대상 아래에 * Connected * 로 표시되어야 합니다.
+
+link:gcp-ncvo-configure-public-cloud-service-provider.html["다음으로 퍼블릭 클라우드 서비스 공급자를 구성합니다."]

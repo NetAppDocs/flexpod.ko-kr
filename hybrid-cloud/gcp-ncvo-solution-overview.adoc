@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/gcp-ncvo-solution-overview.html 
+keywords: tr4939, 4939, introduction, audience, solution topology 
+summary: 이 기술 보고서에서는 FlexPod 통합 인프라 솔루션, Google Cloud의 NetApp Cloud Volumes ONTAP, DR을 위한 하이브리드 클라우드 데이터 센터를 구축하는 Cisco Intersight를 소개합니다. 이 솔루션에서는 Cisco Intersight Cloud Orchestrator를 사용하여 사내 ONTAP 워크플로우를 설계 및 실행하는 방법에 대해 논의합니다. 또한 하시코프 테르래양식용 Cisco Intersight Service를 사용하여 NetApp Cloud Volumes ONTAP를 구현하고 FlexPod와 Cloud Volumes ONTAP 간의 데이터 복제 및 DR을 조정 및 자동화하는 방법에 대해서도 설명합니다. 
+---
+= TR-4939: NetApp Cloud Volumes ONTAP 및 Cisco Intersight가 지원되는 Google 클라우드 플랫폼용 FlexPod 하이브리드 클라우드
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+Ruchika Lahoti, NetApp
+
+
+
+== 소개
+
+DR(재해 복구)으로 데이터를 보호하는 것은 비즈니스 연속성을 유지하는 데 있어 중요한 목표입니다. DR을 통해 조직은 비즈니스 운영을 2차 위치로 페일오버하고 나중에 복구한 후 운영 사이트로 효율적이고 안정적으로 페일백할 수 있습니다. 자연 재해, 네트워크 장애, 소프트웨어 취약성 및 인적 오류와 같은 여러 가지 우려 때문에 DR 전략을 개발하는 것이 IT의 최우선 과제가 됩니다.
+
+DR의 경우 기본 사이트에서 실행 중인 모든 워크로드를 DR 사이트에서 충실히 복제해야 합니다. 또한 데이터베이스, 파일 서비스, NFS 및 iSCSI 스토리지 등의 모든 엔터프라이즈 데이터에 대한 최신 복사본이 조직에 있어야 합니다. 운영 환경의 데이터는 계속 업데이트되므로 변경사항을 정기적으로 DR 사이트로 전송해야 합니다.
+
+대부분의 조직은 인프라와 사이트의 독립성 요구사항으로 인해 DR 환경을 구축하는 데 어려움을 겪고 있습니다. 필요한 리소스 수와 2차 데이터 센터의 설정, 테스트, 유지 관리 비용이 매우 높아서 일반적으로 전체 운영 환경의 비용이 거의 들지 않습니다. 데이터를 지속적으로 동기화하고 원활한 페일오버 및 페일백을 설정하면서 적절한 보호 기능을 통해 데이터 사용 공간을 최소화하는 것은 쉽지 않습니다. DR 사이트를 구축한 후에는 운영 환경의 데이터를 복제하고 동기화된 상태를 계속 유지해야 합니다.
+
+이 기술 보고서에서는 FlexPod 통합 인프라 솔루션, Google Cloud의 NetApp Cloud Volumes ONTAP, DR을 위한 하이브리드 클라우드 데이터 센터를 구축하는 Cisco Intersight를 소개합니다. 이 솔루션에서는 Cisco Intersight Cloud Orchestrator를 사용하여 사내 ONTAP 워크플로우를 설계 및 실행하는 방법에 대해 논의합니다. 또한 하시코프 테르래양식용 Cisco Intersight Service를 사용하여 NetApp Cloud Volumes ONTAP를 구현하고 FlexPod와 Cloud Volumes ONTAP 간의 데이터 복제 및 DR을 조정 및 자동화하는 방법에 대해서도 설명합니다.
+
+다음 그림에서는 솔루션 개요를 제공합니다.
+
+image:gcp-ncvo-image1.png["솔루션 개요"]
+
+이 솔루션은 다음과 같은 여러 가지 이점을 제공합니다.
+
+* * 오케스트레이션 및 자동화 * Cisco Intersight는 자동화를 통해 제공되는 일관된 오케스트레이션 프레임워크를 제공하여 FlexPod 하이브리드 클라우드 인프라의 일상적인 운영을 단순화합니다.
+* * 맞춤형 보호. * Cloud Volumes ONTAP는 증분 업데이트를 통해 ONTAP에서 클라우드로 블록 레벨 데이터 복제를 제공하여 대상을 최신 상태로 유지합니다. 사용자는 전송되는 소스의 변경 사항에 따라 5분마다 또는 1시간마다 동기화 일정을 지정할 수 있습니다.
+* * 원활한 페일오버 및 페일백. * 재해가 발생하면 스토리지 관리자가 클라우드 볼륨으로 빠르게 페일오버할 수 있습니다. 운영 사이트가 복구되면 DR 환경에서 생성된 새 데이터가 소스 볼륨과 다시 동기화되어 2차 데이터 복제를 다시 설정합니다.
+* * 효율성: * 보조 클라우드 복사본의 스토리지 공간 및 비용은 데이터 압축, 씬 프로비저닝, 중복제거를 통해 최적화됩니다. 데이터는 압축 및 중복제거된 형태로 블록 레벨에서 전송되므로 전송 속도가 향상됩니다. 또한 데이터는 저비용 오브젝트 스토리지로 자동 계층화되며 DR 시나리오와 같은 액세스 시에만 고성능 스토리지로 돌아갑니다. 따라서 지속적으로 발생하는 스토리지 비용이 크게 절감됩니다.
+* * IT 생산성 향상. * Intersight를 인프라 및 애플리케이션 라이프사이클 관리를 위한 안전한 단일 엔터프라이즈급 플랫폼으로 사용하면 솔루션의 규모에 따라 구성 관리 및 수동 작업 자동화를 간소화할 수 있습니다.
+
+
+
+
+== 대상
+
+이 문서의 대상에는 세일즈 엔지니어, 현장 컨설턴트, 프로페셔널 서비스, IT 매니저, IT 효율성을 제공하고 IT 혁신을 지원하는 인프라를 활용하려는 파트너 엔지니어, 사이트 안정성 엔지니어, 클라우드 설계자, 클라우드 엔지니어, 고객이 포함됩니다.
+
+
+
+== 솔루션 토폴로지
+
+이 섹션에서는 솔루션의 논리적 토폴로지를 설명합니다. 다음 그림은 사내 FlexPod 환경, Google Cloud에서 실행되는 NetApp Cloud Volumes ONTAP, Cisco Intersight 및 NetApp Cloud Manager의 솔루션 토폴로지를 나타낸 것입니다.
+
+image:gcp-ncvo-image2.png["솔루션 토폴로지"]
+
+컨트롤 평면과 데이터 평면은 끝점 사이에 명확하게 표시됩니다. 데이터 플레인은 안전한 사이트-사이트 VPN 연결을 사용하여 FlexPod All Flash FAS에서 실행되는 ONTAP 인스턴스를 Google Cloud의 NetApp Cloud Volumes ONTAP 인스턴스에 연결합니다.
+
+FlexPod에서 NetApp Cloud Volumes ONTAP으로 워크로드 데이터 복제를 처리하는 작업은 NetApp SnapMirror에서 처리하며, 전체 프로세스는 온프레미스 및 클라우드 환경 모두에서 Cisco Intersight Cloud Orchestrator를 사용하여 오케스트레이션합니다. Cisco Intersight Cloud Orchestrator는 NetApp Cloud Manager가 NetApp Cloud Volumes ONTAP 구축과 관련된 운영을 수행하고 데이터 복제 관계를 확립하기 위해 Terraform 리소스 공급자를 사용합니다.
+
+
+NOTE: 이 솔루션에서는 NetApp Cloud Volumes ONTAP 인스턴스에 상주하는 콜드 데이터를 Google Cloud 스토리지에 선택적으로 백업 및 계층화할 수 있습니다.
+
+link:gcp-ncvo-solution-components.html["다음: 솔루션 구성 요소."]
