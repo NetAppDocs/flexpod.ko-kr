@@ -233,7 +233,7 @@ HaplotypeCaller \
 * R 파라미터로 기준 게놈을 통과하고 있다.
 
 
-실행 후 출력 상세 정보는 섹션에서 확인할 수 있습니다 link:flexpod-genomics-appendix-b.html["'./GATK' 스크립트를 사용한 GATK 실행 출력"]
+실행 후 출력 상세 정보는 섹션에서 확인할 수 있습니다 link:flexpod-genomics-appendix-b.html["016e203cf9beada735f224ab14d0b3af"]
 
 
 

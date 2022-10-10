@@ -13,7 +13,7 @@ summary: 이 섹션에서는 Cromwell 엔진을 사용하여 GATK를 실행한 �
 :imagesdir: ./../media/
 
 
-link:flexpod-genomics-appendix-b.html["이전: './GATK' 스크립트를 사용한 GATK 실행 출력"]
+link:flexpod-genomics-appendix-b.html["11fffe01d469840980d9b9a5f45bf9ed"]
 
 크롬웰 엔진을 사용하여 GATK를 실행하면 다음과 같은 샘플 출력이 생성됩니다.
 
