@@ -4419,17 +4419,6 @@
   <block id="d6805acb6dfc9c9a27c05441e138d49d" category="list-text">모든 이미징 데이터는 FC LUN에 호스팅됩니다. FlexVol 볼륨에서 서로 다른 스토리지 컨트롤러 노드가 소유한 Aggregate에 분산되는 LUN을 생성합니다.</block>
   <block id="9b33e5a688f125caa6d59dcbad14cda6" category="paragraph">스토리지 볼륨에 LUN을 배치하려면 다음 섹션의 지침을 따르십시오.</block>
   <block id="22e802f805cc0ae139fc4fa75879cc1f" category="section-title">스토리지 볼륨</block>
-  <block id="ede0f58b02d65e48674f43605d4ddff5" category="paragraph">최적의 성능, 관리 및 백업 작업을 위해 NetApp은 다음과 같은 볼륨 설계 모범 사례를 권장합니다.</block>
-  <block id="056e750e41892102ae79348e2b9e2f49" category="list-text">하루 종일 다양한 볼륨에 I/O 집약적 쿼리를 사용하여 데이터베이스를 격리하고 최종적으로 데이터베이스를 백업할 별도의 작업을 가집니다.</block>
-  <block id="e975458608b303ba58462de41dcd441e" category="list-text">빠른 복구를 위해서는 최소 복구 시간 목표(RTO)가 있는 대규모 데이터베이스와 데이터베이스를 별도의 볼륨에 배치하십시오.</block>
-  <block id="4cf129d5843e23dd548bc4d82794c729" category="list-text">중요도가 덜하거나 I/O 요구사항이 적은 중소 규모의 데이터베이스를 단일 볼륨으로 통합합니다. 동일한 볼륨에 상주하는 많은 데이터베이스를 백업할 경우 더 적은 수의 스냅샷 복사본을 유지해야 합니다. 또한 Oracle 데이터베이스 서버 인스턴스를 통합하여 동일한 볼륨을 사용하여 생성한 백업 Snapshot 복사본 수를 제어할 것을 권장합니다.</block>
-  <block id="cbf0715d629bf29c459420acadf976bc" category="list-text">데이터베이스 복제본의 경우 모든 노드의 동일한 폴더 구조에 복제본에 대한 데이터 및 로그 파일을 배치합니다.</block>
-  <block id="188e02487d0c64c88aae3664cf14ed70" category="list-text">데이터베이스 파일을 단일 FlexVol에 배치하고 FlexVol에 분산하지 마십시오.</block>
-  <block id="9c92316e1a390dff04d96ebb8cabc9b9" category="list-text">공간 부족 상태를 방지하기 위해 필요한 경우 볼륨 자동 크기 정책을 구성합니다.</block>
-  <block id="2e88f8f20e70c0cb2747195410e3f806" category="list-text">데이터베이스 I/O 프로필이 주로 의사 결정 지원 시스템 워크로드와 같은 대규모 순차 읽기로 구성된 경우 볼륨에 대한 읽기 재할당을 활성화합니다. 읽기 재할당은 성능 향상을 위해 블록을 최적화합니다.</block>
-  <block id="6d0d353edf8beab592842c085ad129ec" category="list-text">운영 관점에서 쉽게 모니터링하려면 볼륨의 스냅샷 복사본 예약 공간 값을 0으로 설정합니다.</block>
-  <block id="e4692669d2ba2cd6e132b6c3ca5da116" category="list-text">스토리지 Snapshot 복사본 일정 및 보존 정책을 사용하지 않도록 설정합니다. 대신 Oracle 데이터베이스용 NetApp SnapCenter 플러그인을 사용하여 Oracle 데이터 볼륨의 스냅샷 복사본을 조정할 수 있습니다.</block>
-  <block id="67d07174c442dd1a0a47543b9fc3abc8" category="list-text">사용자 데이터 파일과 로그 파일을 별도의 FlexVol에 배치하여 각 FlexVol에 적절한 QoS를 구성하고 다른 백업 일정을 생성할 수 있도록 합니다.</block>
   <block id="d5350d8759b1ec84607e47908809058e" category="section-title">애그리게이트</block>
   <block id="e9c694050e93c601dd70234fb234d8cd" category="paragraph">Aggregate는 NetApp 스토리지 구성의 운영 스토리지 컨테이너로, 데이터 디스크와 패리티 디스크로 구성된 하나 이상의 RAID 그룹을 포함합니다.</block>
   <block id="f631f7430ddf641b7a19f499b140c88c" category="paragraph">NetApp은 데이터 파일과 트랜잭션 로그 파일을 분리한 상태로 공유 및 전용 애그리게이트를 사용하여 다양한 I/O 워크로드 특성 테스트를 수행했습니다. 테스트 결과, RAID 그룹 및 드라이브(HDD 또는 SSD)가 더 많은 대형 Aggregate가 스토리지 성능을 최적화 및 개선하고 관리자가 다음과 같은 두 가지 이유로 더 쉽게 관리할 수 있는 것으로 나타났습니다.</block>
@@ -4475,7 +4464,6 @@
   <block id="318245cf077eb2f36c50adf4aa79740e" category="list-text">의료 영상 시스템 공급업체와 협력하여 신속한 배포 및 유지 관리를 위해 VM 템플릿을 준비하는 가장 좋은 방법을 파악합니다.</block>
   <block id="b122cbb51e08e5873db5c423182f46a5" category="list-text">관리, 스토리지 및 운영 네트워크에서는 데이터베이스에 대한 LAN 분리가 필요하며, VMware vMotion에 대해 격리된 VLAN이 있어야 합니다.</block>
   <block id="794cb725c5631ad99b5b7c000307f0df" category="inline-link">SnapMirror를 참조하십시오</block>
-  <block id="4cdde416153c6d117181383b93534ec1" category="list-text">라는 NetApp 스토리지 어레이 기반 복제 기술을 사용합니다<block ref="133ca7709616c45e80024be2d7da217e" category="inline-link-rx"></block> vSphere 기반 복제 대신,</block>
   <block id="e3679fa0631ab408c36d8aed9abdf535" category="list-text">VMware API를 활용하는 백업 기술을 사용합니다. 백업 윈도우는 일반 운영 시간을 벗어나야 합니다.</block>
   <block id="83e7705bd84427a330d9d7e0fa059be5" category="summary">다음 사람들은 이 가이드의 작성 및 작성에 기여했습니다.</block>
   <block id="4b7c82b30e98ad9f06ef3dc1e15418ea" category="list-text">Brandon AGEE, NetApp 기술 마케팅 엔지니어</block>
@@ -9203,4 +9191,11 @@
   <block id="f205de40b1d0e559049d3fcc494e1df9" category="cell"><block ref="f205de40b1d0e559049d3fcc494e1df9" category="inline-link-rx"></block></block>
   <block id="a7925e750bfc040002383b6d7dc9f5ac" category="cell"><block ref="a7925e750bfc040002383b6d7dc9f5ac" category="inline-link-rx"></block></block>
   <block id="eaa8da373e73883b20c172d7d760cc68" category="cell"><block ref="eaa8da373e73883b20c172d7d760cc68" category="inline-link-rx"></block></block>
+  <block id="ae2687dae8f23f6af065bc15c7d3826e" category="paragraph">최적의 성능 및 관리를 위해 다음과 같은 볼륨 설계 모범 사례를 따르는 것이 좋습니다.</block>
+  <block id="33af7418734d2a05ae9f18eb5524c449" category="list-text">개별 스토리지 볼륨에서 I/O 집약적 쿼리로 데이터베이스를 격리합니다.</block>
+  <block id="7bf8d318ffb4b6475f643ef9cfbbcfee" category="list-text">단일 LUN 또는 볼륨에 데이터 파일을 배치할 수 있지만 높은 처리량을 위해서는 여러 볼륨/LUN을 사용하는 것이 좋습니다.</block>
+  <block id="abf2a187f8a2f19880402e4c694785a4" category="list-text">여러 LUN을 사용하는 경우 지원되는 모든 파일 시스템을 사용하여 입출력 병렬 처리를 수행할 수 있습니다.</block>
+  <block id="7ab9ea8d60880f13606485669ddd6049" category="list-text">데이터베이스 파일 및 트랜잭션 로그를 별도의 볼륨에 배치하여 복구 세분성을 높입니다.</block>
+  <block id="8219ca1a94f009ddb8447bb619fb79ce" category="list-text">자동 크기, 스냅샷 예약, QoS 등과 같은 볼륨 특성을 사용하는 것을 고려해 보십시오.</block>
+  <block id="7048837fdc10598b502f6bed64d8ef66" category="list-text">라는 NetApp 스토리지 어레이 기반 복제 기술을 사용합니다<block ref="133ca7709616c45e80024be2d7da217e" category="inline-link-rx"></block> vSphere 기반 복제 대신,</block>
 </blocks>
