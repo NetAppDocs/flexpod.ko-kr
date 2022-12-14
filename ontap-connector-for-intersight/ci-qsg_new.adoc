@@ -20,7 +20,7 @@ summary: Cisco Intersight는 새로운 기능, 향상된 기능 및 버그 수�
 == 2022년 8월
 
 
-NOTE: 최신 릴리스와의 호환성 및 모든 기능을 보장하려면 NetApp Active IQ Unified Manager 9.11 GA로 업그레이드해야 합니다. 이 릴리스와 관련된 알려진 문제 목록은 를 참조하십시오  Issues.
+NOTE: 최신 릴리스와의 호환성 및 모든 기능을 보장하려면 NetApp Active IQ Unified Manager 9.11 GA로 업그레이드해야 합니다. 이 릴리스와 관련된 알려진 문제 목록은 를 참조하십시오 <<알려진 문제>>.
 
 * System Manager와 일치하도록 클러스터 가용 용량 계산을 업데이트했습니다
 * 성능 데이터가 채워질 때까지 성능 메트릭 요약을 숨기려면 클러스터 일반 페이지를 업데이트했습니다

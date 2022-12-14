@@ -118,9 +118,9 @@ image:express-c-series-aff220-deploy_image23.png["오류: 그래픽 이미지가
 . 스페이스바를 사용하여 IPv6 사용(재시작 필요) 옵션을 선택 취소하여 IPv6을 사용하지 않도록 설정합니다. Enter 키를 누릅니다.
 . DNS 설정을 구성하는 메뉴로 들어갑니다.
 . IP 주소는 수동으로 할당되므로 DNS 정보도 수동으로 입력해야 합니다.
-. Primary DNS 서버의 IP 주소를 입력합니다".
+. Primary DNS 서버의 IP 주소를 입력합니다<<nameserver_ip>>".
 . (선택 사항) 보조 DNS 서버의 IP 주소를 입력합니다.
-. VMware ESXi 호스트 이름:'에 대한 FQDN을 입력합니다".
+. VMware ESXi 호스트 이름:'에 대한 FQDN을 입력합니다<<esxi_host_fqdn>>".
 . Enter 키를 눌러 DNS 구성의 변경 사항을 적용합니다.
 . Esc 키를 눌러 Configure Management Network 하위 메뉴를 종료합니다.
 . Y 를 눌러 변경 사항을 확인하고 서버를 재부팅합니다.
