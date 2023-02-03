@@ -14,7 +14,7 @@ summary: 프록시 서버 구성을 사용하는 AIQ UM은 IMT 서비스를 활�
 
 
 [role="lead"]
-NetApp ONTAP 스토리지와 Cisco Intersight를 위해 AIQ UM이 포함된 프록시 서버를 사용하는 경우 IMT(상호 운용성 매트릭스 툴 서비스)를 활용하려면 CLI(Command Line Interface)를 통해 설정을 구성해야 합니다. AIQ UM 프록시 서버 설정을 구성하려면 OVA(Active IQ Unified Manager 가상 머신) 진단 셸을 사용해야 합니다.
+NetApp ONTAP 스토리지와 Cisco Intersight를 위해 AIQ UM이 포함된 프록시 서버를 사용하는 경우 IMT(상호 운용성 매트릭스 툴 서비스)를 활용하려면 CLI(Command Line Interface)를 통해 설정을 구성해야 합니다. IMT 서비스는 * 통합 시스템 * 페이지의 * 상호 운용성 * 탭에서 사용할 수 있습니다. AIQ UM 프록시 서버 설정을 구성하려면 OVA(Active IQ Unified Manager 가상 머신) 진단 셸을 사용해야 합니다.
 
 
 NOTE: AIQ UM 진단 셸에 액세스하는 방법에 대한 자세한 내용은 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/How_to_access_Active_IQ_Unified_Manager_Virtual_Machine_OVA_DIAG_shell["OVA(Active IQ Unified Manager Virtual Machine) DIAG 셸에 액세스하는 방법"]
