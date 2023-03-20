@@ -2,6 +2,23 @@
 section: hybrid-cloud
 title: 하이브리드 클라우드
 entries:
+- title: FlexPod 하이브리드 클라우드 및 Cloud Volumes ONTAP for Epic
+  type: solutions
+  entries:
+  - title: 솔루션 개요
+    url: "/hybrid-cloud/fhc-cvoe-solution-overview.html"
+  - title: 솔루션 구성 요소
+    url: "/hybrid-cloud/fhc-cvoe-solution-components.html"
+  - title: 설치 및 구성
+    url: "/hybrid-cloud/fhc-cvoe-installation-and-configuration.html"
+  - title: SAN 구성
+    url: "/hybrid-cloud/fhc-cvoe-san-configuration.html"
+  - title: 솔루션 검증
+    url: "/hybrid-cloud/fhc-cvoe-solution-validation.html"
+  - title: 결론
+    url: "/hybrid-cloud/fhc-cvoe-conclusion.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/hybrid-cloud/fhc-cvoe-where-to-find-additional-information.html"
 - title: NetApp Cloud Volumes ONTAP 및 Cisco Intersight가 지원되는 Google 클라우드 플랫폼용 FlexPod
     하이브리드 클라우드
   type: solutions

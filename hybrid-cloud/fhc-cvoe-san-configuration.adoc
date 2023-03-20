@@ -1,0 +1,309 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/fhc-cvoe-san-configuration.html 
+keywords: san, configuration, host utility kit, discover storage, multipathing, physical volume, group, logical volume, file system, snapmirror 
+summary: 이 섹션에서는 EHR이 소프트웨어를 NetApp 스토리지와 가장 완벽하게 통합하도록 지원하는 데 필요한 호스트 측 구성에 대해 설명합니다. 이 부문에서는 Linux 운영 체제용 호스트 통합에 대해 구체적으로 논의합니다. 
+---
+= SAN 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+link:fhc-cvoe-installation-and-configuration.html["이전: 설치 및 구성."]
+
+[role="lead"]
+이 섹션에서는 EHR이 소프트웨어를 NetApp 스토리지와 가장 완벽하게 통합하도록 지원하는 데 필요한 호스트 측 구성에 대해 설명합니다. 이 부문에서는 Linux 운영 체제용 호스트 통합에 대해 구체적으로 논의합니다. 를 사용합니다 https://imt.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴(IMT)"^] 소프트웨어 및 펌웨어의 모든 버전을 검증합니다.
+
+
+NOTE: 다음 구성 단계는 이 솔루션에 사용된 CentOS 8 호스트에만 적용됩니다.
+
+
+
+== NetApp 호스트 유틸리티 키트
+
+NetApp 스토리지 시스템에 접속되어 있는 호스트의 운영 체제에 NetApp Host Utility Kit(Host Utilities)를 설치하는 것이 좋습니다. 기본 Microsoft MPIO(Multipath I/O)가 지원됩니다. OS는 다중 경로에 대해 ALUA(Asymmetric Logical Unit Access)를 지원해야 합니다. Host Utilities를 설치하면 NetApp 스토리지에 대한 HBA(호스트 버스 어댑터) 설정이 구성됩니다.
+
+NetApp Host Utilities를 다운로드할 수 있습니다 https://mysupport.netapp.com/site/products/all/details/hostutilities/downloads-tab["여기"^]. 이 솔루션에서는 호스트에 Linux Host Utilities 7.1을 설치했습니다.
+
+....
+[root@hc-cloud-secure-1 ~]# rpm -ivh netapp_linux_unified_host_utilities-7-1.x86_64.rpm
+....
+
+
+== ONTAP 스토리지에 대해 알아보십시오
+
+로그인이 발생해야 할 때 iSCSI 서비스가 실행되고 있는지 확인합니다. 타겟의 특정 포털 또는 타겟의 모든 포털에 대한 로그인 모드를 설정하려면 을 사용합니다 `iscsiadm` 명령.
+
+....
+[root@hc-cloud-secure-1 ~]# rescan-scsi-bus.sh
+[root@hc-cloud-secure-1 ~]# iscsiadm -m discovery -t sendtargets -p <iscsi-lif-ip>
+[root@hc-cloud-secure-1 ~]# iscsiadm -m node -L all
+....
+이제 를 사용할 수 있습니다 `sanlun` 호스트에 접속된 LUN에 대한 정보를 표시합니다. 호스트에서 루트로 로그인되어 있는지 확인합니다.
+
+....
+[root@hc-cloud-secure-1 ~]# sanlun lun show
+controller(7mode/E-Series)/
+                                    device    host             lun
+vserver(cDOT/FlashRay) lun-pathname filename  adapter protocol size   product
+-----------------------------------------------------------------------------
+Healthcare_SVM                       /dev/sdb host33  iSCSI    200g    cDOT
+                       /vol/hc_iscsi_vol/iscsi_lun1
+
+Healthcare_SVM                       /dev/sdc host34  iSCSI    200g    cDOT
+                       /vol/hc_iscsi_vol/iscsi_lun1
+....
+
+
+== 다중 경로를 구성합니다
+
+장치 매퍼 다중 경로(DM 다중 경로)는 Linux의 기본 다중 경로 유틸리티입니다. 중복 및 성능 개선에 사용할 수 있습니다. 서버와 스토리지 간의 여러 I/O 경로를 집계하거나 결합하여 OS 레벨에서 단일 디바이스를 생성합니다.
+
+. 시스템에서 DM 다중 경로를 설정하기 전에 시스템이 업데이트되었고 가 포함되어 있는지 확인합니다 `device-mapper-multipath` 패키지.
++
+....
+[root@hc-cloud-secure-1 ~]# rpm -qa|grep multipath
+device-mapper-multipath-libs-0.8.4-31.el8.x86_64
+device-mapper-multipath-0.8.4-31.el8.x86_64
+....
+. 구성 파일은 입니다 `/etc/multipath.conf` 파일. 아래와 같이 구성 파일을 업데이트합니다.
++
+....
+[root@hc-cloud-secure-1 ~]# cat /etc/multipath.conf
+defaults {
+   path_checker      readsector0
+   no_path_retry      fail
+}
+devices {
+   device {
+      vendor         "NETAPP  "
+      product         "LUN.*"
+      no_path_retry     queue
+      path_checker      tur
+   }
+}
+....
+. 다중 경로 서비스를 활성화하고 시작합니다.
++
+....
+[root@hc-cloud-secure-1 ~]# systemctl enable multipathd.service
+[root@hc-cloud-secure-1 ~]# systemctl start  multipathd.service
+....
+. 로드 가능한 커널 모듈을 추가합니다 `dm-multipath` 다중 경로 서비스를 다시 시작합니다. 마지막으로 경로 다중화 상태를 확인합니다.
++
+....
+[root@hc-cloud-secure-1 ~]# modprobe -v dm-multipath
+insmod /lib/modules/4.18.0-408.el8.x86_64/kernel/drivers/md/dm-multipath.ko.xz
+
+[root@hc-cloud-secure-1 ~]# systemctl restart multipathd.service
+
+[root@hc-cloud-secure-1 ~]# multipath -ll
+3600a09803831494c372b545a4d786278 dm-2 NETAPP,LUN C-Mode
+size=200G features='3 queue_if_no_path pg_init_retries 50' hwhandler='1 alua' wp=rw
+|-+- policy='service-time 0' prio=50 status=active
+| `- 33:0:0:0 sdb 8:16 active ready running
+`-+- policy='service-time 0' prio=10 status=enabled
+`- 34:0:0:0 sdc 8:32 active ready running
+....
+
+
+
+NOTE: 이러한 단계에 대한 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/ontap-sanhost/hu_centos_80.html["여기"^].
+
+
+
+== 물리적 볼륨을 생성합니다
+
+를 사용합니다 `pvcreate` 물리적 볼륨으로 사용할 블록 디바이스를 초기화하는 명령입니다. 초기화는 파일 시스템을 포맷하는 것과 유사합니다.
+
+....
+[root@hc-cloud-secure-1 ~]# pvcreate /dev/sdb
+Physical volume "/dev/sdb" successfully created.
+....
+
+
+== 볼륨 그룹을 생성합니다
+
+하나 이상의 물리적 볼륨에서 볼륨 그룹을 생성하려면 를 사용합니다 `vgcreate` 명령. 이 명령은 이름으로 새 볼륨 그룹을 생성하고 하나 이상의 물리적 볼륨을 추가합니다.
+
+....
+[root@hc-cloud-secure-1 ~]# vgcreate datavg /dev/sdb
+Volume group "datavg" successfully created.
+....
+를 클릭합니다 `vgdisplay` 명령을 사용하여 볼륨 그룹 속성(예: 크기, 익스텐트, 물리적 볼륨 수 등)을 고정 형식으로 표시할 수 있습니다.
+
+....
+[root@hc-cloud-secure-1 ~]# vgdisplay datavg
+  --- Volume group ---
+  VG Name               datavg
+  System ID
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  1
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                0
+  Open LV               0
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <200.00 GiB
+  PE Size               4.00 MiB
+  Total PE              51199
+  Alloc PE / Size       0 / 0
+  Free  PE / Size       51199 / <200.00 GiB
+  VG UUID               C7jmI0-J0SS-Cq91-t6b4-A9xw-nTfi-RXcy28
+....
+
+
+== 논리적 볼륨을 생성합니다
+
+논리적 볼륨을 생성할 때 볼륨 그룹을 구성하는 물리적 볼륨에서 사용 가능한 익스텐트를 사용하여 볼륨 그룹에서 논리적 볼륨이 조각됩니다.
+
+....
+[root@hc-cloud-secure-1 ~]# lvcreate - l 100%FREE -n datalv datavg
+Logical volume "datalv" created.
+....
+이 명령은 라는 논리적 볼륨을 생성합니다 `datalv` 에서는 볼륨 그룹의 할당되지 않은 모든 공간을 사용합니다 `datavg`.
+
+
+
+== 파일 시스템을 생성합니다
+
+....
+[root@hc-cloud-secure-1 ~]# mkfs.xfs -K /dev/datavg/datalv
+meta-data=/dev/datavg/datalv     isize=512    agcount=4, agsize=13106944 blks
+         =                       sectsz=4096  attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=0 inobtcount=0
+data     =                       bsize=4096   blocks=52427776, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=25599, version=2
+         =                       sectsz=4096  sunit=1 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+....
+
+
+== 마운트할 폴더를 만듭니다
+
+....
+[root@hc-cloud-secure-1 ~]# mkdir /file1
+....
+
+
+== 파일 시스템을 마운트합니다
+
+....
+[root@hc-cloud-secure-1 ~]# mount -t xfs /dev/datavg/datalv /file1
+
+[root@hc-cloud-secure-1 ~]# df -k
+Filesystem                1K-blocks    Used Available Use% Mounted on
+devtmpfs                    8072804       0   8072804   0% /dev
+tmpfs                       8103272       0   8103272   0% /dev/shm
+tmpfs                       8103272    9404   8093868   1% /run
+tmpfs                       8103272       0   8103272   0% /sys/fs/cgroup
+/dev/mapper/cs-root        45496624 5642104  39854520  13% /
+/dev/sda2                   1038336  258712    779624  25% /boot
+/dev/sda1                    613184    7416    605768   2% /boot/efi
+tmpfs                       1620652      12   1620640   1% /run/user/42
+tmpfs                       1620652       0   1620652   0% /run/user/0
+/dev/mapper/datavg-datalv 209608708 1494520 208114188   1% /file1
+....
+이러한 작업에 대한 자세한 내용은 페이지를 참조하십시오 link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/logical_volume_manager_administration/lvm_cli["LVM 관리 및 CLI 명령"].
+
+
+
+== 데이터 생성
+
+ `Dgen.pl` 는 EHR의 I/O 시뮬레이터(GenerateIO)용 영구 스크립트 데이터 생성기입니다. EHR을 통해 LUN 내부 데이터를 생성할 수 있습니다 `Dgen.pl` 스크립트. 이 스크립트는 EHR 데이터베이스 내에서 찾을 수 있는 것과 유사한 데이터를 만들도록 설계되었습니다.
+
+....
+[root@hc-cloud-secure-1 ~]# cd GenerateIO-1.17.3/
+
+[root@hc-cloud-secure-1 GenerateIO-1.17.3]# ./dgen.pl --directory /file1 --jobs 80
+
+[root@hc-cloud-secure-1 ~]# cd /file1/
+[root@hc-cloud-secure-1 file1]# ls
+dir01  dir05  dir09  dir13  dir17  dir21  dir25  dir29  dir33  dir37  dir41  dir45  dir49  dir53  dir57  dir61  dir65  dir69  dir73  dir77  dir02  dir06  dir10  dir14  dir18  dir22  dir26  dir30  dir34  dir38  dir42  dir46  dir50  dir54  dir58  dir62  dir66  dir70  dir74  dir78  dir03  dir07  dir11  dir15  dir19  dir23  dir27  dir31  dir35  dir39  dir43  dir47  dir51  dir55  dir59  dir63  dir67  dir71  dir75  dir79  dir04  dir08  dir12  dir16  dir20  dir24  dir28  dir32  dir36  dir40  dir44  dir48  dir52  dir56  dir60  dir64  dir68  dir72  dir76  dir80
+
+[root@hc-cloud-secure-1 file1]# df -k .
+Filesystem                 1K-blocks  Used       Available  Use%  Mounted on
+/dev/mapper/datavg-datalv  209608708  178167156  31441552   85%   /file1
+....
+를 실행하는 동안 `Dgen.pl` 스크립트는 기본적으로 파일 시스템의 85%를 데이터 생성에 사용합니다.
+
+
+
+== 사내 ONTAP와 Cloud Volumes ONTAP 간에 SnapMirror 복제를 구성합니다
+
+NetApp SnapMirror는 LAN 또는 WAN을 통해 데이터를 고속으로 복제하여 가상 환경과 기존 환경 모두에서 높은 데이터 가용성과 빠른 데이터 복제를 실현할 수 있습니다. 데이터를 NetApp 스토리지 시스템에 복제하고 2차 데이터를 지속적으로 업데이트함으로써 데이터가 최신 상태로 유지되고 필요할 때마다 사용할 수 있고 외부 복제 서버가 필요하지 않습니다.
+
+온프레미스 ONTAP 시스템과 CVO 간에 SnapMirror 복제를 구성하려면 다음 단계를 완료하십시오.
+
+. 탐색 메뉴에서 * Storage * > * Canvas * 를 선택합니다.
+. Canvas에서 소스 볼륨이 포함된 작업 환경을 선택하고 볼륨을 복제할 작업 환경으로 끈 다음 * Replication * 을 선택합니다.
++
+image:fhc-cvoe-image8.jpeg["이 스크린샷은 온프레미스 ONTAP 인스턴스의 드롭다운에서 복제를 선택한 BlueXP Canvas 화면을 보여 줍니다."]
+
++
+나머지 단계에서는 Cloud Volumes ONTAP와 온프레미스 ONTAP 클러스터 간에 동기식 관계를 만드는 방법을 설명합니다.
+
+. * 소스 및 대상 피어링 설정 * 이 페이지가 나타나면 클러스터 피어 관계에 대한 모든 인터클러스터 LIF를 선택합니다.
++
+image:fhc-cvoe-image9.png["이 스크린샷은 BlueXP 소스 피어링 설정 화면을 보여줍니다."]
+
+. * 소스 볼륨 선택. * 복제할 볼륨을 선택합니다.
++
+image:fhc-cvoe-image10.jpeg["이 스크린샷은 볼륨 14개가 표시된 BlueXP 소스 볼륨 선택 화면을 보여줍니다."]
+
+. * 대상 디스크 유형 및 계층화. * 타겟이 Cloud Volumes ONTAP 시스템인 경우 대상 디스크 유형을 선택하고 데이터 계층화 활성화 여부를 선택합니다.
++
+image:fhc-cvoe-image11.jpeg["이 스크린샷은 범용 SSD가 선택된 BlueXP 대상 디스크 유형 화면을 보여줍니다."]
+
+. * 대상 볼륨 이름: * 대상 볼륨 이름을 지정하고 대상 애그리게이트를 선택합니다. 대상이 ONTAP 클러스터인 경우 대상 스토리지 VM도 지정해야 합니다.
++
+image:fhc-cvoe-image12.jpeg["이 스크린샷은 관련 정보를 입력한 BlueXP 대상 볼륨 이름 화면을 보여줍니다."]
+
+. * 최대 전송 속도. * 데이터를 전송할 수 있는 최대 속도(초당 메가바이트)를 지정합니다.
++
+image:fhc-cvoe-image13.jpeg["이 스크린샷은 100MB/s가 입력된 BlueXP 최대 전송 속도 화면을 보여줍니다."]
+
+. * 복제 정책. * 기본 정책을 선택하거나 * 추가 정책 * 을 클릭한 다음 고급 정책 중 하나를 선택합니다. 도움이 필요한 경우 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication-policies.html["복제 정책에 대해 자세히 알아보십시오"^].
++
+image:fhc-cvoe-image14.jpeg["이 스크린샷은 미러 또는 미러 및 백업의 기본 정책이 표시된 BlueXP 복제 정책 페이지를 보여 줍니다."]
+
+. 별표. * 1회 복사 또는 반복 일정을 선택합니다. 몇 가지 기본 스케줄을 사용할 수 있습니다. 다른 일정을 사용하려면 에서 새 일정을 만들어야 합니다 `destination cluster` System Manager 사용:
++
+image:fhc-cvoe-image15.jpeg["이 스크린샷은 여러 타이밍 옵션이 표시된 BlueXP 복제 설정 일정 화면을 보여 줍니다."]
+
+. * 검토. * 선택 사항을 검토하고 * Go * 를 클릭합니다.
++
+image:fhc-cvoe-image16.jpeg["이 스크린샷은 BlueXP Replication Setup Review and Approve(BlueXP 복제 설정 검토 및 승인) 화면을 보여 줍니다."]
+
+
+
+이러한 구성 단계에 대한 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["여기"^].
+
+BlueXP는 데이터 복제 프로세스를 시작합니다. 이제 사내 ONTAP 시스템과 Cloud Volumes ONTAP 간에 설정된 * 복제 * 서비스를 확인할 수 있습니다.
+
+image:fhc-cvoe-image17.jpeg["이 스크린샷은 CVO 인스턴스와 온-프레미스 ONTAP 인스턴스 사이의 선으로 표시된 복제 서비스가 포함된 BlueXP Canvas 화면을 보여 줍니다."]
+
+Cloud Volumes ONTAP 클러스터에서 새로 생성된 볼륨을 볼 수 있습니다.
+
+image:fhc-cvoe-image18.png["이 스크린샷은 새 볼륨이 표시된 BlueXP 볼륨 탭을 보여줍니다."]
+
+또한, 온프레미스 볼륨과 클라우드 볼륨 사이에 SnapMirror 관계가 설정되어 있는지 확인할 수도 있습니다.
+
+image:fhc-cvoe-image19.jpeg["이 스크린샷은 방금 생성한 복제 관계에 대한 정보가 포함된 BlueXP 복제 탭을 보여 줍니다."]
+
+복제 작업에 대한 자세한 내용은 * Replication * 탭에서 확인할 수 있습니다.
+
+image:fhc-cvoe-image20.png["이 스크린샷은 복제 탭 아래에 확장된 정보를 보여 줍니다."]
+
+link:fhc-cvoe-solution-validation.html["다음: 솔루션 검증."]
