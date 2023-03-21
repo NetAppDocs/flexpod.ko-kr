@@ -9207,13 +9207,10 @@
   <block id="20554b7070a41f183c39f879d9542b90" category="list-text">작업 최적화를 통해 통찰력을 높이고 환자 결과를 개선할 수 있습니다.</block>
   <block id="47b7068ff550075db8c23110dd3c06b0" category="list-text">확장 가능하고 안정적인 인프라로 이미징 애플리케이션 간소화</block>
   <block id="082dcbe360c49ca4c12f46f0b9c45717" category="list-text">EHR과 같은 의료 관련 앱을 위한 검증된 접근 방식으로 빠르고 효율적으로 배포</block>
-  <block id="e3f530e977d74053c6d70eb84886e756" category="section-title">대단한</block>
-  <block id="5487d5465f5bef86877c53f4bee269b7" category="paragraph">Epic Electronic Health Records(EHR)는 중대형 의료 그룹, 병원 및 통합 의료 조직을 위한 소프트웨어를 만듭니다. 또한 커뮤니티 병원, 학술 시설, 아동 기관, 안전망 제공자 및 다중 병원 시스템도 고객이 포함됩니다. EHR 통합 소프트웨어는 임상, 액세스 및 수익 기능을 확장하여 집으로 확장합니다.</block>
   <block id="61e92578533bbca384b0827757c3828b" category="paragraph">의료 기관 조직은 업계 최고의 EHR에 투자함으로써 얻을 수 있는 이익을 극대화해야 한다는 압박을 받고 있습니다. 고객은 EHR 솔루션 및 미션 크리티컬 애플리케이션을 위한 데이터 센터를 설계할 때 데이터 센터 아키텍처에서 다음 목표를 식별하는 경우가 많습니다.</block>
   <block id="3e77b8f2742f9c6c9e5431bb6a507cc0" category="list-text">EHR 애플리케이션의 고가용성</block>
   <block id="0bf306b1478661b1ec659d3d45732ce6" category="list-text">데이터 센터에 EHR을 손쉽게 구현할 수 있습니다</block>
   <block id="2104af181edd8195e9eacb28f07d9434" category="list-text">새로운 EHR 릴리즈 또는 애플리케이션을 사용하여 성장을 실현할 수 있는 민첩성과 확장성</block>
-  <block id="266186fab1495f829a1954e04558db4b" category="paragraph">FlexPod는 EHR 인증을 획득했으며 인텔 제온 프로세서, RHEL(Red Hat Enterprise Linux) 및 VMware ESXi를 사용한 가상화를 지원하는 Cisco UCS를 포함한 플랫폼을 지원합니다. 이 플랫폼은 ONTAP을 실행하는 EHR의 NetApp 스토리지에 대한 높은 편안함 수준과 결합되어 고객은 FlexPod를 통해 완벽하게 관리되는 프라이빗 클라우드에서 의료 애플리케이션을 실행할 수 있으며, 이 경우 퍼블릭 클라우드 공급자와 연결될 수 있습니다.</block>
   <block id="1273c8a63109161e6fd1f18d6998523f" category="section-title">NetApp BlueXP</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="inline-link">BlueXP</block>
   <block id="86706cdade6ef7fa7ccfbed73633a085" category="paragraph">BlueXP(이전의 NetApp Cloud Manager)는 IT 전문가 및 클라우드 설계자가 NetApp 클라우드 솔루션을 사용하여 하이브리드 멀티 클라우드 인프라를 중앙에서 관리할 수 있도록 지원하는 엔터프라이즈급 SaaS 기반 관리 플랫폼입니다. 이 솔루션은 사내 및 클라우드 스토리지를 중앙 집중식으로 확인 및 관리할 수 있는 시스템을 제공하여 하이브리드, 다중 클라우드 공급자 및 계정을 지원합니다. 자세한 내용은 을 참조하십시오<block ref="c49cacac9cbe82dcff36ada88ba62aa3" category="inline-link-rx"></block>.</block>
@@ -9534,4 +9531,7 @@
   <block id="fb4d860c1938626a4cb9b8f66c6eb6f2" category="cell">2023년 3월</block>
   <block id="862ad23f517c987dec375a134fc0d5c0" category="cell">초기 버전</block>
   <block id="c1138e31cf3bd66be11eeb4877babdd1" category="sidebar">FlexPod 하이브리드 클라우드 및 Cloud Volumes ONTAP for Epic</block>
+  <block id="1522a775ace254939b906658e7521ca9" category="section-title">EHR</block>
+  <block id="ba8a69a3d262e3d66f6f5cdc83781213" category="paragraph">EHR(Electronic Health Records)은 중간 규모 및 대규모 의료 그룹, 병원 및 통합 의료 조직을 위한 소프트웨어를 만듭니다. 또한 커뮤니티 병원, 학술 시설, 아동 기관, 안전망 제공자 및 다중 병원 시스템도 고객이 포함됩니다. EHR 통합 소프트웨어는 임상, 액세스 및 수익 기능을 확장하여 집으로 확장합니다.</block>
+  <block id="df788b689025995ee4f69e5d3ecf444d" category="paragraph">FlexPod는 EHR의 검증을 받았으며 인텔 제온 프로세서, RHEL(Red Hat Enterprise Linux) 및 VMware ESXi를 통한 가상화를 지원하는 Cisco UCS를 포함하는 플랫폼을 지원합니다. 이 플랫폼은 ONTAP을 실행하는 EHR의 NetApp 스토리지에 대한 높은 편안함 수준과 결합되어 고객은 FlexPod를 통해 완벽하게 관리되는 프라이빗 클라우드에서 의료 애플리케이션을 실행할 수 있으며, 이 경우 퍼블릭 클라우드 공급자와 연결될 수 있습니다.</block>
 </blocks>
