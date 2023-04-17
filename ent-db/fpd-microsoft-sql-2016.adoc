@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: ent-db/fpd-microsoft-sql-2016.html 
+keywords: flexpod, microsoft, sql, netapp, cisco, vmware, vsphere 
+summary: 이 문서에서는 최신 하드웨어 및 소프트웨어 제품을 사용하는 FlexPod 참조 아키텍처에 대해 설명하고 가상화된 환경에서 Microsoft SQL Server 데이터베이스를 구축하기 위한 구성 권장 사항을 제공합니다. 
+---
+= Microsoft SQL Server 2016 및 VMware vSphere 6.5가 설치된 FlexPod Datacenter
+:allow-uri-read: 
+
+
+Gopu Narasimha Reddy, Cisco Sanjeev Naldurgkar, Cisco David Arnette, NetApp
+
+이 문서에서는 최신 하드웨어 및 소프트웨어 제품을 사용하는 FlexPod 참조 아키텍처에 대해 설명하고 가상화된 환경에서 Microsoft SQL Server 데이터베이스를 구축하기 위한 구성 권장 사항을 제공합니다.
+
+권장되는 솔루션 아키텍처는 Cisco UCS(Cisco Unified Computing System) 기반 Cisco UCS와 함께 유니파이드 소프트웨어 릴리즈를 사용하여 Cisco UCS B-Series 블레이드 서버, Cisco UCS 6300 Fabric Interconnect, Cisco Nexus 9000 시리즈 스위치, NetApp All Flash Series 스토리지 어레이를 포함한 Cisco UCS 하드웨어 플랫폼을 지원합니다. 또한 이 솔루션에는 VMware vSphere 6.5, vSphere 6.5가 포함되어 있어 스토리지 활용을 최적화하고 프라이빗 클라우드를 지원하는 다양한 새로운 기능을 제공합니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/mssql2016_flexpod_vmware_cvd.html["Microsoft SQL Server 2016 및 VMware vSphere 6.5가 설치된 FlexPod Datacenter"^]

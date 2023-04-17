@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: vdi/fpd-vmw-horiz-vsphere.html 
+keywords: flexpod, cisco, data, center, design, deployment, aff, fas, a300, 
+summary: '이 문서에서는 Cisco UCS 및 NetApp AFF(All Flash FAS) A300 스토리지가 있는 FlexPod 데이터 센터에서 최대 5000명의 혼합 워크로드를 지원하는 최종 사용자 컴퓨팅 환경에 대한 참조 아키텍처, 설계 가이드 및 구축을 제공합니다.' 
+---
+= VMware Horizon View 7.3 및 VMware vSphere 6.5 업데이트 1이 설치된 FlexPod 데이터 센터(5,000개 시트의 경우 Cisco UCS Manager 3.2 포함
+:allow-uri-read: 
+
+
+Ramesh Guduru, Cisco David Arnette, NetApp
+
+이 문서에서는 Cisco UCS 및 NetApp AFF(All Flash FAS) A300 스토리지가 있는 FlexPod 데이터 센터에서 최대 5000명의 혼합 워크로드를 지원하는 최종 사용자 컴퓨팅 환경에 대한 참조 아키텍처, 설계 가이드 및 구축을 제공합니다. 이 솔루션에는 VMware Horizon 서버 기반 원격 데스크톱 서버 호스팅 세션, VMware Horizon 영구 Microsoft Windows 10 가상 데스크톱, VMware vSphere 6.5의 VMware Horizon 비영구 Microsoft Windows 10 즉각적인 클론 가상 데스크톱이 포함되어 있습니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_vmware_horizon_n9k_aff_ucsm32.html["VMware Horizon View 7.3 및 VMware vSphere 6.5 업데이트 1이 설치된 FlexPod 데이터 센터(5,000개 시트의 경우 Cisco UCS Manager 3.2 포함"^]

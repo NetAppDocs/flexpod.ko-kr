@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/fpd-hc-storage-design.html 
+keywords: flexpod, cisco, hybrid, cloud, storage, private 
+summary: 'CVD(Cisco Validated Design)는 고객 구현을 촉진하고 개선하기 위해 설계, 테스트 및 문서화된 시스템 및 솔루션을 제공합니다.' 
+---
+= Cisco CloudCenter 및 NetApp 프라이빗 스토리지를 사용하는 하이브리드 클라우드용 FlexPod 데이터 센터 - 설계
+:allow-uri-read: 
+
+
+Haseeb Niazi, Cisco David Arnette, NetApp
+
+CVD(Cisco Validated Design)는 고객 구현을 촉진하고 개선하기 위해 설계, 테스트 및 문서화된 시스템 및 솔루션을 제공합니다. 이러한 설계는 고객의 비즈니스 요구를 해결하고 설계부터 배포까지 안내하기 위해 개발된 솔루션 포트폴리오에 광범위한 기술과 제품을 통합합니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_hybridcloud_design.html["Cisco CloudCenter 및 NetApp 프라이빗 스토리지를 사용하는 하이브리드 클라우드용 FlexPod 데이터 센터 - 설계"^]

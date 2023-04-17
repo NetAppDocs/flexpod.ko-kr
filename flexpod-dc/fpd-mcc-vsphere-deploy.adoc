@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: flexpod-dc/fpd-mcc-vsphere-deploy.html 
+keywords: flexpod, cisco, data, center, aci, multi-pod, mcc, ip, vmware, vsphere, deployment 
+summary: Cisco와 NetApp은 전략적 데이터 센터 플랫폼을 지원하는 일련의 FlexPod 솔루션을 제공하기 위해 협력하고 있습니다. 
+---
+= NetApp MetroCluster IP 및 VMware vSphere 6.7-Deployment가 포함된 Cisco ACI 멀티 포드를 지원하는 FlexPod 데이터 센터
+:allow-uri-read: 
+
+
+Haseeb Niazi, Cisco Ramesh Issac, Cisco Arvind Ramakrishnan, NetApp
+
+Cisco와 NetApp은 전략적 데이터 센터 플랫폼을 지원하는 일련의 FlexPod 솔루션을 제공하기 위해 협력하고 있습니다. FlexPod 솔루션은 컴퓨팅, 스토리지 및 네트워킹에 대한 모범 설계 사례를 통합하는 통합 아키텍처를 제공하므로 다양한 구성 요소 간의 호환성을 보장하기 위해 통합 아키텍처를 검증하여 IT 위험을 최소화할 수 있습니다. 또한 이 솔루션은 배포의 다양한 단계(계획, 설계 및 구현)에서 사용할 수 있는 문서화된 설계 지침, 배포 지침 및 지원을 제공하여 IT 당면 과제를 해결합니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi67_n9k_aci_metrocluster.html["NetApp MetroCluster IP 및 VMware vSphere 6.7-Deployment가 포함된 Cisco ACI 멀티 포드를 지원하는 FlexPod 데이터 센터"^]

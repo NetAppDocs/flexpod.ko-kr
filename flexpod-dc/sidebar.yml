@@ -27,33 +27,31 @@ entries:
     url: "/flexpod-dc/sm-bcs-conclusion.html"
   - title: 추가 정보 및 버전 기록을 찾을 수 있는 위치
     url: "/flexpod-dc/sm-bcs-where-to-find-additional-information-and-version-history.html"
-- title: VMware vSphere 7.0, Cisco VXLAN 단일 사이트 패브릭 및 NetApp ONTAP 9.7 설계 가이드를 지원하는
+- title: VMware vSphere 7.0, Cisco VXLAN 단일 사이트 패브릭 및 NetApp ONTAP 9.7-Design을 지원하는
     FlexPod 데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi70_vxlan_evpn_design.html
-- title: VMware vSphere 7.0 및 NetApp ONTAP 9.7을 사용하는 FlexPod 데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html
+  url: "/flexpod-dc/fpd-vxlan-design.html"
+- title: VMware vSphere 7.0 및 NetApp ONTAP 9.7을 지원하는 FlexPod 데이터 센터 - 구축
+  url: "/flexpod-dc/fpd-vsphere-deploy.html"
 - title: NetApp ONTAP 9.7, Cisco Intersight 및 VMware vSphere 6.7 U3-Design을 지원하는 FlexPod
     데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_dc_ontap_97_ucs_4_vmw_vs_67_U3_design.html
+  url: "/flexpod-dc/fpd-cisco-vm-vs-design.html"
 - title: NetApp ONTAP 9.7, Cisco Intersight 및 VMware vSphere 6.7 U3-deploy를 지원하는 FlexPod
     데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_dc_ontap_97_ucs_4_vmw_vs_67_U3.html
-- title: FlexPod 데이터 센터 및 Cisco Intersight, NetApp ONTAP 9.7 설계 가이드 를 참조하십시오
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_dc_ontap_97_ucs_4_vmw_vs_67_U3_design.html
+  url: "/flexpod-dc/fpd-cisco-vm-vs-deploy.html"
+- title: FlexPod 데이터 센터 및 Cisco Intersight, NetApp ONTAP 9.7 - 설계
+  url: "/flexpod-dc/fpd-inter-design.html"
 - title: NetApp ONTAP 9.6, Cisco UCS 4세대, VMware vSphere 6.7U2(CVD)가 포함된 FlexPod 데이터
     센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa_u2.html
-- title: VMware vSphere 6.7 U1, Cisco UCS 4세대 및 NetApp AFF A-Series를 지원하는 FlexPod
-    데이터 센터 - 설계
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa_design.html
+  url: "/flexpod-dc/fpd-cisco-vsphere.html"
+- title: VMware vSphere 6.7 U1, Cisco UCS 4세대 및 NetApp AFF A-Series-Design을 지원하는 FlexPod
+    데이터 센터
+  url: "/flexpod-dc/fpd-cisco-vsphere-design.html"
 - title: VMware vSphere 6.7 U1, Cisco UCS 4세대 및 NetApp AFF A-Series를 지원하는 FlexPod
     데이터 센터 - 구축
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html
-- title: FlexPod용 엔드 투 엔드 NVMe 소개
-  url: https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-741907.html
+  url: "/flexpod-dc/fpd-cisco-vsphere-deploy.html"
 - title: FlexPod 데이터 센터 및 Cisco ACI 멀티 포드, NetApp MetroCluster IP, VMware vSphere
-    6.7 설계 가이드 를 참조하십시오
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi67_n9k_aci_metrocluster_design.html
+    6.7-Design
+  url: "/flexpod-dc/fpd-mcc-vsphere-design.html"
 - title: FlexPod 데이터 센터 및 Cisco ACI 멀티 포드, NetApp MetroCluster IP, VMware vSphere
-    6.7 구축 가이드 를 참조하십시오
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi67_n9k_aci_metrocluster.html
+    6.7-deploy
+  url: "/flexpod-dc/fpd-mcc-vsphere-deploy.html"

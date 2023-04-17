@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: vdi/fpd-vmw-horiz.html 
+keywords: flexpod, cisco, ucs, aff, a300, ontap, data, vmware, vsphere, horizon 
+summary: '이 문서에서는 FlexPod 데이터 센터(Cisco UCS 및 NetApp AFF A300 및 NetApp ONTAP 데이터 관리 소프트웨어)의 5,000명~6000명 데스크톱 워크로드, 최종 사용자 컴퓨팅 환경에 대한 참조 아키텍처 및 설계 가이드를 제공합니다.' 
+---
+= 최대 6700개 시트를 지원하는 VMware Horizon View 7.10, VMware vSphere 6.7 U2, Cisco UCS Manager 4.0 및 NetApp ONTAP 9.6을 갖춘 FlexPod 데이터 센터
+:allow-uri-read: 
+
+
+Vadim Lebedev, Cisco Suresh Thoppay, NetApp
+
+이 문서에서는 FlexPod 데이터 센터(Cisco UCS 및 NetApp AFF A300 및 NetApp ONTAP 데이터 관리 소프트웨어)의 5,000명~6000명 데스크톱 워크로드, 최종 사용자 컴퓨팅 환경에 대한 참조 아키텍처 및 설계 가이드를 제공합니다. 이 솔루션에는 VMware Horizon 서버 기반 RDS Windows Server 2019 세션, VMware Horizon 영구 전체 클론 Microsoft Windows 10 가상 데스크톱, VMware vSphere 6.7U2에서 VMware Horizon 비영구, 즉각적인 클론 Microsoft Windows 10 가상 데스크톱이 포함되어 있습니다
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_ontap96_vmware710_67_u2_ucs_40_6700_seats.html["최대 6700개 시트를 지원하는 VMware Horizon View 7.10, VMware vSphere 6.7 U2, Cisco UCS Manager 4.0 및 NetApp ONTAP 9.6을 갖춘 FlexPod 데이터 센터"^]

@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/fpd-ibn-cloud-design.html 
+keywords: cisco, flexpod, ibm, data, center, cloud, private, storage 
+summary: 'IBM ICP(Cloud Private)는 클라우드 네이티브 및 애플리케이션 현대화 사용 사례를 위한 컨테이너식 애플리케이션을 개발 및 관리하기 위한 온프레미스 플랫폼입니다' 
+---
+= IBM Cloud Private을 지원하는 FlexPod 데이터 센터
+:allow-uri-read: 
+
+
+Sreenivasa Edula, Cisco Thanachit Wichianchai, IBM Jacky Ben-Bassat, IBM Global Alliance, NetApp
+
+IBM ICP(Cloud Private)는 클라우드 네이티브 및 애플리케이션 현대화 사용 사례를 위한 컨테이너식 애플리케이션을 개발 및 관리하기 위한 온프레미스 플랫폼입니다. Kubernetes를 컨테이너 오케스트레이션으로 기반으로 구축된 통합 환경이며, Docker 컨테이너용 프라이빗 이미지 저장소, 관리 콘솔, 모니터링 프레임워크, 다양한 오픈 소스 기반 및 IBM 컨테이너식 애플리케이션 등이 포함됩니다. ICP를 Cisco 및 NetApp의 통합 인프라인 FlexPod를 결합하면 인프라 구축 및 관리를 간소화할 수 있습니다. 또한 향상된 스토리지 효율성, 향상된 데이터 보호, 낮은 위험 및 고가용성의 엔터프라이즈급 인프라 스택을 확장하여 새로운 비즈니스 요구사항 및 기타 변화에 대처할 수 있는 유연성을 확보할 수 있습니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_icp_ucsm32.html["IBM Cloud Private을 지원하는 FlexPod 데이터 센터"^]

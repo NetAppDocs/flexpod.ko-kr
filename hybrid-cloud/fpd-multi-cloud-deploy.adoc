@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: hybrid-cloud/multi-cloud-deploy.html 
+keywords: flexpod, cisco, data, fabric, cloudcenter, hybrid, cloud, 
+summary: 이 문서에서는 하이브리드 클라우드용 FlexPod 데이터 센터를 설정하기 위한 세부 구성 및 구축 지침을 제공합니다 
+---
+= Cisco CloudCenter 및 NetApp Data Fabric의 멀티 클라우드를 위한 FlexPod 데이터 센터
+:allow-uri-read: 
+
+
+Haseeb Niazi, Cisco David Arnette, NetApp
+
+이 문서에서는 하이브리드 클라우드용 FlexPod 데이터 센터를 설정하기 위한 세부 구성 및 구축 지침을 제공합니다. 다음 설계 요소는 이 버전의 FlexPod를 이전 모델과 구별합니다.
+
+* Cisco CloudCenter와 FlexPod Datacenter를 프라이빗 클라우드로 통합
+* Cisco CloudCenter와 AWS(Amazon Web Services) 및 Microsoft Azure Resource Manager(MS Azure RM) 퍼블릭 클라우드의 통합
+* FlexPod 데이터 센터와 퍼블릭 클라우드 간에 보안 연결을 제공하여 가상 머신(VM) 간의 트래픽을 보호합니다.
+* 데이터 복제 트래픽을 위해 FlexPod 데이터 센터와 NPS(NetApp 프라이빗 스토리지) 간에 보안 연결을 제공합니다
+* 퍼블릭 또는 프라이빗 클라우드에 애플리케이션 인스턴스를 구축하고 Cisco CloudCenter에서 제공하는 오케스트레이션을 통해 이러한 인스턴스에 사용 가능한 최신 애플리케이션 데이터를 구성하는 기능
+* 새로운 하이브리드 클라우드 모드에서 개발 및 테스트 환경의 운영 측면을 설정, 검증, 강조합니다.
+
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_hybridcloud.html["Cisco CloudCenter 및 NetApp Data Fabric의 멀티 클라우드를 위한 FlexPod 데이터 센터"^]

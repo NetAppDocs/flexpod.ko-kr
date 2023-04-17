@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: modern-apps/fpd-docker-contm-design.html 
+keywords: flexpod, docket, cisco, container, management, data 
+summary: Docker는 전 세계 최고의 소프트웨어 컨테이너 플랫폼이며 개발자와 IT 운영 부서가 어디서나 분산 애플리케이션을 구축, 배송 및 실행할 수 있습니다. 
+---
+= 컨테이너 관리용 Docker Enterprise Edition을 사용하는 FlexPod 데이터 센터
+:allow-uri-read: 
+
+
+Muhammad Afzal, Cisco John George, Cisco Amit Borulkar, NetApp Uday Shetty, Docker
+
+Docker는 개발자 및 IT 운영 부서에서 분산된 애플리케이션을 어디서나 구축, 배송 및 실행할 수 있는 세계 최고의 소프트웨어 컨테이너 플랫폼입니다. 마이크로서비스 아키텍처로 차세대 IT를 설계하여 모놀리식 애플리케이션에 많은 투자를 한 기업은 애플리케이션 아키텍처를 현대화하고 조직의 경쟁력 및 비용 효율성을 유지하는 전략으로 Docker를 채택할 방법을 모색하고 있습니다. 컨테이너화는 개발자와 IT 운영 부서가 모든 인프라에서 애플리케이션을 구축 및 구축하는 데 필요한 민첩성, 제어 및 이동성을 제공합니다. Docker 플랫폼을 사용하면 분산된 애플리케이션을 운영 중단 없이 동적으로 변경할 수 있는 경량 애플리케이션 컨테이너로 쉽게 구성할 수 있습니다. 이 기능을 통해 애플리케이션을 개발, 테스트 및 프로덕션 환경에서 로컬 또는 가상 시스템에서 실행 중인 환경, 데이터 센터 및 서로 다른 클라우드 서비스 공급업체의 네트워크 전체에서 이식할 수 있습니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html["컨테이너 관리용 Docker Enterprise Edition을 사용하는 FlexPod 데이터 센터"^]

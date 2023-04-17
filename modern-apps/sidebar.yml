@@ -2,28 +2,21 @@
 section: modern-apps
 title: 최신 앱
 entries:
-- title: 딥 러닝 CVD 설계 가이드를 위한 Cisco UCS 480 ML Nvidia T4 vGPU를 사용한 AI/ML용 FlexPod 데이터
-    센터 [설계]
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html
-- title: FlexPod을 지원하는 Cisco 컨테이너 플랫폼에 NetApp Trident CSI 플러그인 구축 [배포]
-  url: https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/unified-computing/trident-on-container-platform-with-flexpod.pdf
-- title: OpenShift Container Platform 4용 FlexPod 데이터 센터(배포)
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_openshift_platform_4.html
-- title: 딥 러닝 설계 가이드를 위한 Cisco UCS C480 ML을 지원하는 AI/ML용 FlexPod 데이터 센터 [설계]
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html
-- title: 컨테이너 관리를 위한 Docker 데이터 센터를 지원하는 FlexPod 데이터 센터 [설계]
-  url: http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html
-- title: OpenShift Container Platform 4용 FlexPod 데이터 센터 설계 가이드 를 참조하십시오
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_openshift4_design.html
-- title: 딥 러닝 CVD 설계 가이드를 위한 Cisco UCS 480 ML Nvidia T4 vGPU를 사용하는 AI/ML용 FlexPod
+- title: 딥 러닝 CVD-Design을 위해 AI 및 ML과 Cisco UCS 480 ML 및 Nvidia T4 및 vGPU를 결합한 FlexPod
     데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html
-- title: 딥 러닝 CVD 구축 가이드를 위한 Cisco UCS 480 ML Nvidia T4 vGPU를 사용하는 AI/ML용 FlexPod
+  url: "/modern-apps/fpd-ai-dl-design.html"
+- title: FlexPod-Deploy를 사용하여 NetApp Trident CSI 플러그인을 Cisco 컨테이너 플랫폼에 구축하십시오
+  url: "/modern-apps/fpd-trident-ccp-deploy.html"
+- title: OpenShift Container Platform 4용 FlexPod 데이터 센터 - 배포
+  url: "/modern-apps/fpd-openshift-deploy.html"
+- title: 컨테이너 관리를 위한 Docker 데이터 센터 - 설계 를 지원하는 FlexPod 데이터 센터
+  url: "/modern-apps/fpd-docker-contm-design.html"
+- title: OpenShift 컨테이너 플랫폼 4-Design용 FlexPod 데이터 센터
+  url: "/modern-apps/fpd-opens-cont-design.html"
+- title: 딥 러닝 CVD-deploy를 위한 Cisco UCS 480 ML 및 Nvidia T4 및 vGPU와 결합된 AI 및 ML용 FlexPod
     데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_480ml_aiml_deployment.html
-- title: 딥 러닝 설계 가이드용 Cisco UCS C480 ML을 지원하는 AI/ML용 FlexPod 데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html
+  url: "/modern-apps/fpd-ai-dl-deploy.html"
 - title: VMware 및 NVIDIA를 통한 3D 그래픽 시각화를 제공하는 FlexPod
-  url: https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/desktop-virtualization-solutions-vmware-horizon-view/whitepaper-c11-741606.pdf
+  url: "/modern-apps/fpd-wp-741606.html"
 - title: Citrix 및 NVIDIA를 통한 3D 그래픽 시각화를 위한 FlexPod(백서)
-  url: https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/whitepaper-c11-741586.pdf
+  url: "/modern-apps/fpd-wp-741586.html"

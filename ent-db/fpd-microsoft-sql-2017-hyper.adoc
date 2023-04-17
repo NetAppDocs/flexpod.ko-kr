@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: ent-db/fpd-microsoft-sql-2017-hyper.html 
+keywords: flexpod, datacenter, microsoft, linux, hyper-v, aff-series, cisco 
+summary: 이 문서에서는 최신 하드웨어 및 소프트웨어 제품을 사용하는 FlexPod 참조 아키텍처에 대해 설명하고, SQL Server 배포를 위한 Microsoft의 Linux 지원을 통해 VMware ESXi 및 Microsoft Windows Hyper-V 가상화 환경에서 Microsoft SQL Server 데이터베이스를 호스팅하기 위한 배포 권장 사항을 제공합니다. 
+---
+= VMware 및 Hyper-V에서 실행되는 Linux VM에서 Microsoft SQL Server 2017을 지원하는 FlexPod 데이터 센터
+:allow-uri-read: 
+
+
+Gopu Narasimha Reddy, Cisco Sanjeev Naldurgkar, Cisco Atul Bhalodia, NetApp
+
+이 문서에서는 최신 하드웨어 및 소프트웨어 제품을 사용하는 FlexPod 참조 아키텍처에 대해 설명하고, SQL Server 배포를 위한 Microsoft의 Linux 지원을 통해 VMware ESXi 및 Microsoft Windows Hyper-V 가상화 환경에서 Microsoft SQL Server 데이터베이스를 호스팅하기 위한 배포 권장 사항을 제공합니다.
+
+권장 솔루션 아키텍처는 Cisco UCS(Cisco Unified Computing System) 기반 위에 구축된 유니파이드 소프트웨어 릴리즈 4.0.1c를 사용하여 Cisco UCS B-Series 블레이드 서버, Cisco UCS 6300 패브릭 인터커넥트, Cisco Nexus 9000 시리즈 스위치, NetApp AFF 시리즈 스토리지 어레이 등 Cisco UCS 하드웨어 플랫폼을 지원합니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/mssql2017_flexpod_linux.html["VMware 및 Hyper-V에서 실행되는 Linux VM에서 Microsoft SQL Server 2017을 지원하는 FlexPod 데이터 센터"^]

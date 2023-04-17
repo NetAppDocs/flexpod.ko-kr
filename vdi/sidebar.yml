@@ -4,18 +4,18 @@ title: 가상 데스크톱 인프라
 entries:
 - title: 최대 6,000개의 시트를 지원하는 Citrix Virtual Apps Desktops 1912 LTSR 및 VMware vSphere
     7이 포함된 FlexPod 데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/cisco_ucs_ctx1912esxi7u1_flexpodV2.html
+  url: "/vdi/fpd-citrix-vir.html"
 - title: 최대 6,700개 시트를 지원하는 NetApp ONTAP 9.6, VMware Horizon View 7.10 및 VMware vSphere
     6.7 U2 및 Cisco UCS Manager 4.0을 갖춘 FlexPod 데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_ontap96_vmware710_67_u2_ucs_40_6700_seats.html
+  url: "/vdi/fpd-vmw-horiz.html"
 - title: VMware 및 NVIDIA를 통한 3D 그래픽 시각화를 제공하는 FlexPod(백서)
-  url: https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-741654.pdf
+  url: "/vdi/fpd-wp-741586.html"
 - title: 6000명 사용자용 Citrix XenDesktop/XenApp 7.15 및 VMware vSphere 6.5 업데이트 1이 설치된
     FlexPod 데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/cisco_ucs_xd715esxi65u1_flexpod.html
+  url: "/vdi/fpd-citrix-xend-vmw.html"
 - title: FlexPod Datacenter, VMware Horizon View 7.3, VMware vSphere 6.5 업데이트 1 및5000명
     사용자용 Cisco UCS Manager 3.2
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_vmware_horizon_n9k_aff_ucsm32.html
+  url: "/vdi/fpd-vmw-horiz-vsphere.html"
 - title: 최대 6,700개 시트를 지원하는 NetApp ONTAP 9.6, VMware Horizon View 7.10 및 VMware vSphere
     6.7 U2 및 Cisco UCS Manager 4.0을 갖춘 FlexPod 데이터 센터
-  url: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_ontap96_vmware710_67_u2_ucs_40_6700_seats.html
+  url: "/vdi/fpd-vmw-horiz-ontap.html"

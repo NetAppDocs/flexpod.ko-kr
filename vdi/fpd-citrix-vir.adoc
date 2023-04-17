@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: vdi/fpd-citrix-vir.html 
+keywords: flexpod, cisco, data, center, citrix, virtual, apps, vmware, vsphere 
+summary: 이 문서에서는 최대 6000명의 최종 사용자 컴퓨팅 사용자를 위한 가상 데스크톱 인프라의 아키텍처 및 설계를 제공합니다. 
+---
+= Citrix Virtual Apps & Desktops 1912 LTSR 및 VMware vSphere 7을 지원하는 FlexPod 데이터 센터(최대 6000개 시트
+:allow-uri-read: 
+
+
+Jeff Nichols, Cisco Suresh Thoppay, NetApp Dre Jackson, NetApp
+
+이 문서에서는 최대 6000명의 최종 사용자 컴퓨팅 사용자를 위한 가상 데스크톱 인프라의 아키텍처 및 설계를 제공합니다. 이 솔루션은 5세대 Cisco UCS B200 M5 블레이드 서버에서 가상화되어 AFF A400 스토리지 어레이에서 VMware vSphere 7.01 업데이트 1에서 FC SAN으로 부팅됩니다. 가상 데스크톱은 RDS 호스팅 공유 데스크톱(6000), 풀링 및/또는 비영구 호스팅 가상 Windows 10 데스크톱(5000)이 혼합된 Citrix Provisioning Server 1912 LTSR 및 Citrix RDS/Citrix Virtual Apps & Desktops 1912 LTSR을 사용하여 구동됩니다. 사용자 모집단을 지원하기 위해 Citrix Machine Creation Services(5000)를 통해 프로비저닝한 영구 호스팅된 가상 Windows 10 데스크톱입니다. 해당하는 경우 이 문서에서는 이 솔루션의 고객 구축에 대한 모범 사례 권장사항과 사이징 지침을 제공합니다.
+
+link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/cisco_ucs_ctx1912esxi7u1_flexpodV2.html["Citrix Virtual Apps  amp; Desktops 1912 LTSR 및 VMware vSphere 7을 지원하는 FlexPod 데이터 센터(최대 6000개 시트)"^]

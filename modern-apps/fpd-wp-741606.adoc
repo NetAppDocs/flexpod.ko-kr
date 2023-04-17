@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: modern-apps/fpd-wp-741606.html 
+keywords:  
+summary:  
+---
+= Cisco UCS를 통해 VMware 및 NVIDIA를 이용한 3D 그래픽 시각화 - 백서
+:allow-uri-read: 
+
+
+이 문서에서는 Cisco UCS C240 M5 랙 서버 및 B200 M5 블레이드 서버에서 NVIDIA Tesla P4, P6 및 P40 솔루션을 사용한 VMware ESXi 하이퍼바이저 및 VMware Horizon의 성능에 대해 설명합니다.
+
+link:https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/desktop-virtualization-solutions-vmware-horizon-view/whitepaper-c11-741606.pdf["Cisco UCS를 통해 VMware 및 NVIDIA를 이용한 3D 그래픽 시각화 - 백서"^]

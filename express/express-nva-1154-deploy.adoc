@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: express/express-nva-1154-deploy.html 
+keywords: flexpod, cisco, express, vmware, vsphere, ucs, aff, fas, deployment, nva 
+summary: Cisco UCS Mini 및 NetApp AFF/FAS 솔루션이 포함된 VMware vSphere 7.0용 FlexPod Express는 Cisco UCS Mini 및 B200 M5 블레이드 서버, Cisco UCS 6324 섀시 내 패브릭 인터커넥트, Cisco Nexus 31108PC-V 스위치 또는 기타 규정 준수 스위치를 활용합니다. 
+---
+= FlexPod Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp AFF/FAS-NVA-Deployment
+:allow-uri-read: 
+
+
+Jyh-shing Chen, NetApp
+
+Cisco UCS Mini 및 NetApp AFF/FAS 솔루션이 포함된 VMware vSphere 7.0용 FlexPod Express는 B200 M5 블레이드 서버, Cisco UCS 6324 섀시 내 패브릭 인터커넥트, Cisco Nexus 31108PC-V 스위치 또는 기타 호환 스위치, NetApp AFF A220, C190 또는 FAS2700 시리즈 컨트롤러 HA 쌍을 지원하는 Cisco UCS Mini를 활용합니다. NetApp ONTAP 9.7 데이터 관리 소프트웨어를 실행합니다. 이 NVA(NetApp Verified Architecture) 구축 문서는 인프라 구성 요소를 구성하고 VMware vSphere 7.0 및 관련 툴을 구축하여 매우 안정적이고 가용성이 높은 FlexPod Express 기반 가상 인프라를 구축하는 데 필요한 세부 단계를 제공합니다.
+
+link:https://www.netapp.com/pdf.html?item=/media/21938-nva-1154-DEPLOY.pdf["FlexPod Express for VMware vSphere 7.0 with Cisco UCS Mini 및 NetApp AFF/FAS-NVA-Deployment"^]
