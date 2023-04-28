@@ -13,6 +13,7 @@ summary:
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 FlexPod 익스프레스 환경에서 사용되는 Cisco Nexus 331108PC-V 스위치 구성에 대해 자세히 설명합니다.
 
 

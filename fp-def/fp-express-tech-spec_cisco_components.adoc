@@ -13,6 +13,7 @@ summary: Cisco는 FlexPod Express 설계 및 아키텍처에 크게 기여했으
 :imagesdir: ./../media/
 
 
+[role="lead"]
 Cisco는 FlexPod Express 설계 및 아키텍처에 크게 기여했으며 솔루션의 컴퓨팅 및 네트워킹 계층에 기여하고 있습니다. 이 섹션에서는 FlexPod Express에 사용할 수 있는 Cisco UCS 및 Cisco Nexus 구성 요소에 대해 설명합니다.
 
 

@@ -13,6 +13,7 @@ summary: FlexPod 아키텍처는 이 문서에 설명된 규칙 집합에 의해
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FlexPod 아키텍처는 이 문서에 설명된 규칙 집합에 의해 정의됩니다. 하드웨어 구성 요소 및 소프트웨어 구성은 에서 지원해야 합니다 https://ucshcltool.cloudapps.cisco.com/public/["Cisco UCS 하드웨어 및 소프트웨어 호환성 목록"^] 및 http://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴(IMT)"^].
 
 CVD(Cisco Validated Design) 또는 NVA(NetApp Verified Architecture)는 각각 가능한 FlexPod 구성입니다. Cisco와 NetApp은 이러한 구성 조합을 문서화하고 광범위한 엔드 투 엔드 테스트를 통해 이러한 조합을 검증합니다. 이 문서의 지침을 따르고 모든 구성 요소가 Cisco UCS 하드웨어 및 소프트웨어 호환성 목록 및 NetApp에서 호환되는 것으로 나열된 경우, 이러한 구성에서 벗어난 FlexPod 구축이 완전히 지원됩니다 http://mysupport.netapp.com/matrix["IMT"^].

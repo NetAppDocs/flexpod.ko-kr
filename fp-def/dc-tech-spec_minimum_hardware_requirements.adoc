@@ -13,6 +13,7 @@ summary: FlexPod 데이터 센터 구성에는 스위치, 패브릭 인터커넥
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FlexPod 데이터 센터 구성에는 스위치, 패브릭 인터커넥트, 서버, NetApp 스토리지 컨트롤러를 비롯한 최소 하드웨어 요구사항이 있습니다.
 
 Cisco UCS 서버를 사용해야 합니다. 검증된 설계에는 C-Series 서버와 B-Series 서버가 모두 사용되었습니다. Cisco Nexus Fabric Extender(FEX)는 C-Series 서버에서 선택 사항입니다.

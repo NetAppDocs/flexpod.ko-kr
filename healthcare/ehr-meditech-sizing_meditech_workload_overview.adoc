@@ -13,6 +13,7 @@ summary: 이 섹션에서는 MEDITECH 환경에서 얻을 수 있는 컴퓨팅 �
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 MEDITECH 환경에서 얻을 수 있는 컴퓨팅 및 스토리지 워크로드의 유형에 대해 설명합니다.
 
 

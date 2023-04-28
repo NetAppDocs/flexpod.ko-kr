@@ -15,6 +15,7 @@ summary: 이 섹션에서는 이 솔루션에 사용되는 솔루션 인프라 �
 
 link:flexpod-genomics-benefits-of-deploying-genomic-workloads-on-flexpod.html["이전:FlexPod에서 게놈 워크로드를 구축할 때의 이점"]
 
+[role="lead"]
 다음 그림은 GATK 설정 및 검증에 사용되는 FlexPod 시스템을 보여 줍니다. 우리는 중고 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html["VMware vSphere 7.0 및 NetApp ONTAP 9.7을 사용하는 FlexPod 데이터 센터 CVD(Cisco Validated Design)"^] 설치 프로세스 중
 
 image:flexpod-genomics-image6.png["오류: 그래픽 이미지가 없습니다"]

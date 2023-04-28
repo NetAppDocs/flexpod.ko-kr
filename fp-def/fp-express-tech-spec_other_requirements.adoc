@@ -13,6 +13,7 @@ summary: FlexPod Express에 대한 추가 요구 사항은 다음과 같습니�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FlexPod 익스프레스에 대한 추가 요구 사항은 다음과 같습니다.
 
 * 다음을 포함하여 모든 장비에 대해 유효한 지원 계약이 필요합니다.

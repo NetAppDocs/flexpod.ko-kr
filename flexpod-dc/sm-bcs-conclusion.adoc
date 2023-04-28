@@ -15,6 +15,7 @@ summary: SM-BC가 포함된 FlexPod 데이터 센터는 액티브-액티브 데�
 
 link:sm-bcs-validated-scenarios.html["이전: 솔루션 검증 시나리오."]
 
+[role="lead"]
 SM-BC가 포함된 FlexPod 데이터 센터는 액티브-액티브 데이터 센터 설계를 사용하여 비즈니스 크리티컬 워크로드에 비즈니스 연속성 및 재해 복구를 제공합니다. 일반적으로 이 솔루션은 Metro 지역에 지리적으로 분산된 별도의 위치에 구축된 두 데이터 센터를 서로 연결합니다. NetApp SM-BC 솔루션은 동기식 복제를 사용하여 사이트 장애로부터 비즈니스 크리티컬 데이터 서비스를 보호합니다. 이 솔루션을 사용하려면 두 개의 FlexPod 배포 사이트에 10밀리초 미만의 라운드 트립 네트워크 지연 시간이 있어야 합니다.
 
 세 번째 사이트에 구축된 NetApp ONTAP 중재자가 SM-BC 솔루션을 모니터링하고 사이트 재해가 탐지될 때 자동 페일오버를 지원합니다. VMware HA 및 VMware vSphere Metro Storage Cluster 구성을 지원하는 VMware vCenter는 NetApp SM-BC와 원활하게 연동되므로 원하는 제로 RPO 및 제로에 가까운 RTO 목표를 충족할 수 있습니다.

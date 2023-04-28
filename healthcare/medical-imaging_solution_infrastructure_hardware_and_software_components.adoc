@@ -13,6 +13,7 @@ summary: 다음 표에는 의료 영상 시스템용 FlexPod 인프라의 하드
 :imagesdir: ./../media/
 
 
+[role="lead"]
 다음 표에는 의료 영상 시스템용 FlexPod 인프라의 하드웨어 및 소프트웨어 구성 요소가 각각 나열되어 있습니다.
 
 |===

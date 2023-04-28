@@ -13,6 +13,7 @@ summary: 이 섹션에 나열된 스토리지 운영 체제는 FlexPod Express �
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FlexPod Express는 NetApp ONTAP 또는 SANtricity 운영 체제를 실행하는 스토리지 시스템을 지원합니다.
 
 

@@ -13,4 +13,5 @@ summary: MEDITECH 호스트의 LUN 매핑은 LUN을 생성할 때 설정됩니�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 MEDITECH 호스트의 LUN 매핑은 LUN을 생성할 때 설정됩니다.

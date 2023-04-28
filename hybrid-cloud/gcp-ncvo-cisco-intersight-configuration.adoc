@@ -15,6 +15,7 @@ summary: 이 페이지에는 FlexPod와 Cisco Intersight를 구성하는 데 필
 
 link:gcp-ncvo-deploy-flexpod.html["이전: FlexPod 배포."]
 
+[role="lead"]
 Cisco Intersight 및 Intersight Assist를 구성하려면 찾은 FlexPod용 Cisco 검증 설계를 참조하십시오 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_cvo_ico_ntap.html["여기"^].
 
 link:gcp-ncvo-terraform-cloud-integration-with-ico-prerequisite.html["다음: ICO 사전 요구 사항에 대한 Terraform 클라우드 통합."]

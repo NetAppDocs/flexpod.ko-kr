@@ -15,6 +15,7 @@ summary: FlexPod SM-BC 솔루션 설계 및 구현 세부사항은 특정 FlexPo
 
 link:sm-bcs-flexpod-sm-bc-solution.html["이전: FlexPod SM-BC 솔루션"]
 
+[role="lead"]
 FlexPod SM-BC 솔루션 설계 및 구현 세부사항은 특정 FlexPod 상황 구성 및 솔루션 목표에 따라 달라집니다. 일반적인 비즈니스 연속성 요구 사항이 정의된 후 FlexPod SM-BC 솔루션은 두 개의 새로운 FlexPod 시스템을 갖춘 완전히 새로운 솔루션을 구현하거나, 다른 사이트에 새 FlexPod를 추가하여 기존 FlexPod와 페어링하거나, 두 기존 FlexPod 시스템을 함께 페어링하여 생성할 수 있습니다.
 
 FlexPod 솔루션은 그 특성상 유연성이 뛰어나므로 지원되는 모든 FlexPod 구성과 구성 요소를 사용할 수 있습니다. 이 섹션의 나머지 부분에서는 VMware 기반 가상 인프라 솔루션에 대해 수행된 구현 검증에 대한 정보를 제공합니다. SM-BC 관련 측면을 제외하고 표준 FlexPod 구축 프로세스를 따릅니다. 일반적인 FlexPod 구현 정보에 대해서는 특정 구성에 적합한 FlexPod CVD 및 NVA를 참조하십시오.

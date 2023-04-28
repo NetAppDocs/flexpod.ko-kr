@@ -13,6 +13,7 @@ summary: 이 섹션에는 NetApp의 기존 디스크 쉘프, FAS 컨트롤러 �
 :imagesdir: ./../media/
 
 
+[role="lead"]
 다음 표에는 NetApp 레거시 스토리지 컨트롤러 옵션이 나와 있습니다.
 
 |===

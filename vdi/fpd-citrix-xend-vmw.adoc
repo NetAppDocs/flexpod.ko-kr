@@ -10,6 +10,7 @@ summary: '이 문서에서는 NetApp AFF(All Flash FAS) A300 스토리지, VMwar
 
 Vadim Lebedev, Cisco Chris Rodriguez, NetApp
 
+[role="lead"]
 이 문서에서는 NetApp AFF(All Flash FAS) A300 스토리지, VMware vSphere ESXi 6.5 하이퍼바이저 플랫폼과 함께 Cisco UCS에 구축된 Citrix XenApp/XenDesktop 7.15를 사용하여 가상 데스크톱 및 애플리케이션 설계를 위한 참조 아키텍처를 제공합니다.
 
 데스크톱 및 애플리케이션 가상화 환경은 끊임없이 변화하고 있습니다. 새로운 M5 고성능 Cisco UCS 블레이드 서버와 Cisco UCS Unified Fabric이 FlexPod 검증 인프라의 일부로 결합되어 최신 세대의 NetApp AFF 스토리지가 더욱 콤팩트하고 강력하며 더 안정적이고 효율적인 플랫폼이 되었습니다.

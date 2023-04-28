@@ -15,6 +15,7 @@ summary: 다중 사이트 FlexPod SM-BC 솔루션에서 단일 VMware vCenter가
 
 link:sm-bcs-storage.html["이전: 솔루션 검증 - 스토리지."]
 
+[role="lead"]
 다중 사이트 FlexPod SM-BC 솔루션에서 단일 VMware vCenter가 전체 솔루션의 가상 인프라스트럭처 리소스를 관리합니다. 두 데이터 센터의 호스트는 두 데이터 센터를 포괄하는 단일 VMware HA 클러스터에 참여합니다. 호스트는 정의된 SM-BC 관계가 있는 스토리지를 두 사이트 모두에서 액세스할 수 있는 NetApp SM-BC 솔루션에 액세스할 수 있습니다.
 
 TH SM-BC 솔루션 스토리지는 VMware vMSC(vSphere Metro Storage Cluster) 기능의 일관된 액세스 모델을 준수하므로 재해 및 다운타임을 방지할 수 있습니다. 가상 시스템의 성능을 최적화하려면 로컬 NetApp AFF A250 시스템에서 가상 머신 디스크를 호스팅하여 WAN 링크 전반의 지연 시간 및 트래픽을 정상 운영 상태에서 최소화해야 합니다.

@@ -10,6 +10,7 @@ summary: 'CVD(Cisco Validated Design)는 시스템 및 솔루션으로 구성되
 
 Ramesh Isaac, Cisco Abhinav Singh, NetApp
 
+[role="lead"]
 CVD(Cisco Validated Design)는 시스템 및 솔루션으로 구성되며, 고객 구현을 촉진하고 개선하기 위해 설계, 테스트 및 문서화됩니다. 이러한 설계는 고객의 비즈니스 요구를 해결하기 위해 개발된 솔루션 포트폴리오에 광범위한 기술과 제품을 통합합니다. Cisco와 NetApp은 파트너십을 통해 다양한 워크로드를 위한 기반 역할을 하는 FlexPod를 제공하고, 고객 요구사항을 충족하는 강력하고 효율적이며 확장 가능한 아키텍처 설계를 제공합니다. FlexPod 솔루션은 공유 프라이빗 및 퍼블릭 클라우드 인프라를 구축하기 위해 Cisco와 NetApp의 기술 및 제품을 구축하는 검증된 접근 방식입니다.
 
 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi70_vxlan_evpn_design.html["VMware vSphere 7.0, Cisco VXLAN 단일 사이트 패브릭 및 NetApp ONTAP 9.7-Design을 지원하는 FlexPod 데이터 센터"^]

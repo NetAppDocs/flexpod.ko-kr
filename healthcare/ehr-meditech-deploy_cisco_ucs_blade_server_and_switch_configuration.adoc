@@ -13,6 +13,7 @@ summary: 이 문서에서는 MEDITECH 소프트웨어용 FlexPod 환경의 기�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 MEDITECH용 FlexPod 소프트웨어는 모든 레벨에서 내결함성을 제공하도록 설계되었습니다. 시스템에 단일 장애 지점이 없습니다. 최적의 성능을 위해 핫 스페어 블레이드 서버를 사용하는 것이 좋습니다.
 
 이 문서에서는 MEDITECH 소프트웨어용 FlexPod 환경의 기본 구성에 대한 자세한 지침을 제공합니다. 이 섹션에서는 FlexPod 구성의 Cisco UCS 컴퓨팅 플랫폼 요소를 준비하기 위한 몇 가지 예에 대해 개략적인 단계를 설명합니다. 이 지침을 수행하기 전에 의 지침에 따라 FlexPod 구성을 랙에 설치하고, 전원을 공급하며, 케이블로 연결해야 합니다 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_esxi65u1_n9fc.html["FlexPod vSphere 6.5 업데이트 1, NetApp AFF A 시리즈 및 Cisco UCS Manager 3.2를 사용하는 파이버 채널 스토리지가 있는 데이터 센터"^]CVD

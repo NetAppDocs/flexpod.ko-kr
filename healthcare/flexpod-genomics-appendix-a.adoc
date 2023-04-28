@@ -15,6 +15,7 @@ summary: 이 섹션에서는 GATK의 JAR 파일 출력을 제공합니다.
 
 link:flexpod-genomics-genomics---gatk-setup-and-execution.html["이전: 유전체학 - GATK 설정 및 실행"]
 
+[role="lead"]
 JAR 파일을 사용하여 GATK를 실행하면 다음과 같은 샘플 출력이 생성됩니다.
 
 ....

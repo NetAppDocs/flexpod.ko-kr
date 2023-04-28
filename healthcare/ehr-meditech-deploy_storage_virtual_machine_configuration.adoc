@@ -13,6 +13,7 @@ summary: 이 섹션은 ONTAP 8.3 이상 버전에 구축하는 방법을 다룹�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션은 ONTAP 8.3 이상 버전에 구축하는 방법을 다룹니다.
 
 

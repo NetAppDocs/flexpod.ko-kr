@@ -15,6 +15,7 @@ summary: 이 페이지에는 재해 복구 워크플로를 구현하는 데 필�
 
 link:gcp-ncvo-automated-deployment-of-hybrid-cloud-netapp-storage.html["이전: 하이브리드 클라우드 NetApp 스토리지의 자동화된 구축"]
 
+[role="lead"]
 단계의 순서는 다음과 같습니다.
 
 . 워크플로를 정의합니다.

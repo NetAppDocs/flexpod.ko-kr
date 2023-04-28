@@ -13,6 +13,7 @@ summary: 다음 정보는 FlexPod 구성에 대한 최소 소프트웨어 요구
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FlexPod 구성에는 다음과 같은 최소 소프트웨어 요구 사항이 있습니다.
 
 * NetApp ONTAP:

@@ -15,6 +15,7 @@ summary: 이 섹션에서는 Cromwell 엔진을 사용하여 GATK를 실행한 �
 
 link:flexpod-genomics-appendix-b.html["11fffe01d469840980d9b9a5f45bf9ed"]
 
+[role="lead"]
 크롬웰 엔진을 사용하여 GATK를 실행하면 다음과 같은 샘플 출력이 생성됩니다.
 
 ....

@@ -13,6 +13,7 @@ summary: FabricPool를 사용하려면 ONTAP 9.2 이상 및 이 섹션에 나열
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FabricPool를 사용하려면 ONTAP 9.2 이상 및 이 섹션에 나열된 플랫폼 중 한 플랫폼에서 SSD 애그리게이트를 사용해야 합니다. 추가 FabricPool 요구사항은 연결된 클라우드 계층에 따라 다릅니다. AFF은 NetApp FabricPool C190과 같이 비교적 작은 용량의 고정된 엔트리 레벨 AFF 플랫폼의 경우 비활성 데이터를 클라우드 계층으로 이동하는 데 매우 효율적입니다.
 
 

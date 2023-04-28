@@ -13,6 +13,7 @@ summary: 이 FlexPod 익스프레스 솔루션은 FlexPod 통합 인프라 프�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 FlexPod 익스프레스 솔루션은 FlexPod 통합 인프라 프로그램의 일부입니다.
 
 

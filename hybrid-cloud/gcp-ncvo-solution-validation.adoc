@@ -15,6 +15,7 @@ summary: 이 페이지에서는 샘플 데이터 복제 워크플로우를 사�
 
 link:gcp-ncvo-terraform-execution-from-controller.html["이전: 컨트롤러에서 Terraform 실행."]
 
+[role="lead"]
 이 섹션에서는 샘플 데이터 복제 워크플로우를 사용하여 솔루션을 다시 검토하고, 몇 가지 측정을 통해 FlexPod에서 실행되는 NetApp ONTAP 인스턴스에서 Google Cloud에서 실행되는 NetApp Cloud Volumes ONTAP로 데이터 복제가 수행되었는지 확인합니다.
 
 이 솔루션에서 Cisco Intersight 워크플로우 오케스트레이터를 사용했으며 이 오케스트레이터는 앞으로도 당사의 활용 사례에 사용될 것입니다.

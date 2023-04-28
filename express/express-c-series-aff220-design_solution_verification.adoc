@@ -8,6 +8,7 @@ summary: 중복성 및 가용성부터 개별 기능에 이르기까지 전체 F
 :allow-uri-read: 
 
 
+[role="lead"]
 Cisco와 NetApp은 고객을 위한 최고의 인프라 플랫폼 역할을 할 수 있도록 FlexPod Express를 설계 및 구축했습니다. 업계 최고의 구성 요소로 설계되었기 때문에 고객은 FlexPod Express를 인프라 기반으로 신뢰할 수 있습니다. FlexPod 포트폴리오의 기본 원칙에 따라 FlexPod Express 아키텍처는 Cisco 및 NetApp 데이터 센터 설계자와 엔지니어가 철저히 테스트했습니다. 중복성 및 가용성부터 개별 기능에 이르기까지 전체 FlexPod Express 아키텍처는 고객에 대한 신뢰를 유지하고 설계 프로세스에 대한 신뢰를 구축하는 것으로 검증되었습니다.
 
 VMware vSphere 6.7은 FlexPod Express 인프라스트럭처 구성 요소에서 검증되었습니다. 이 검증에는 하이퍼바이저를 위한 10GbE 업링크 연결 옵션이 포함되었습니다.

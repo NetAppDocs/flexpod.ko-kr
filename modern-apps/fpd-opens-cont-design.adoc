@@ -10,6 +10,7 @@ summary: Cisco와 NetApp은 전략적 데이터 센터 플랫폼을 지원하는
 
 NetApp, Cisco Alan Cowles, Haseeb Niazi
 
+[role="lead"]
 Cisco와 NetApp은 전략적 데이터 센터 플랫폼을 지원하는 일련의 FlexPod 솔루션을 제공하기 위해 협력하고 있습니다. FlexPod 솔루션은 컴퓨팅, 스토리지 및 네트워크 설계에 대한 모범 사례를 통합하는 통합 아키텍처를 제공하므로 다양한 구성 요소 간의 호환성을 보장하기 위해 통합 아키텍처의 유효성을 검증하여 IT 위험을 최소화할 수 있습니다. 또한 이 솔루션은 배포의 다양한 단계(계획, 설계 및 구현)에서 사용할 수 있는 문서화된 설계 지침, 배포 지침 및 지원을 제공하여 IT 당면 과제를 해결합니다.
 
 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_openshift4_design.html["OpenShift 컨테이너 플랫폼 4-Design용 FlexPod 데이터 센터"^]

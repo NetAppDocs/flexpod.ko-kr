@@ -13,6 +13,7 @@ summary: Cloud Insights for FlexPod를 구축하려면 다음 작업을 완료�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 솔루션을 배포하려면 다음 작업을 완료해야 합니다.
 
 . Cloud Insights 서비스에 가입합니다

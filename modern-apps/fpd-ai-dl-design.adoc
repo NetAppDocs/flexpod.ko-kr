@@ -10,6 +10,7 @@ summary: 이 문서에서는 통합 인프라 내에서 AI 및 ML 기능을 제�
 
 Haseeb Niazi, Cisco Arvind Ramakrishnan, NetApp
 
+[role="lead"]
 이 문서에서는 통합 인프라 내에서 AI 및 ML 기능을 제공하기 위한 통합 접근 방식을 제공하기 위해 Cisco UCS C480 ML M5 플랫폼을 FlexPod 데이터 센터 솔루션에 통합하는 작업에 대한 설계 세부 정보를 제공합니다. 고객에게 AI 및 ML 기능을 기존의 FlexPod 시스템을 관리하는 데 사용하는 익숙한 툴과 결합하는 서버를 관리할 수 있는 기능을 제공함으로써 딥 러닝 플랫폼 구축 비용뿐만 아니라 관리 오버헤드를 크게 줄입니다. 이 CVD에 포함된 설계에는 동시 AI 및 ML 워크로드를 위한 추가 옵션으로 2개의 NVIDIA T4 GPU가 장착된 C220 M5 서버 및 2개의 NVIDIA V100 32GB PCIe 카드가 장착된 C240 M5 서버와 같은 다른 Cisco UCS 플랫폼도 포함됩니다.
 
 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_c480m5l_aiml_design.html["딥 러닝-디자인을 위한 Cisco UCS 480mL와 AI 및 ML을 결합한 FlexPod 데이터 센터"^]

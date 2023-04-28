@@ -13,6 +13,7 @@ summary: 이 섹션에서는 ONTAP 또는 Cisco UCS 블레이드 및 랙 마운�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 문서에 제공된 FlexPod 구축에 대한 NetApp 스토리지 지침은 다음과 같습니다.
 
 * ONTAP를 사용하는 환경

@@ -13,6 +13,7 @@ summary: NetApp 라이센스 파일을 받은 후 OnCommand System Manager로 �
 :imagesdir: ./../media/
 
 
+[role="lead"]
 NetApp 라이센스 파일을 받은 후 OnCommand System Manager로 설치할 수 있습니다. 라이센스 파일을 설치하려면 다음 단계를 수행하십시오.
 
 . 구성 을 클릭합니다.

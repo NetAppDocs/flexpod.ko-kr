@@ -8,6 +8,7 @@ summary: FlexPod 참조 아키텍처는 Cisco Validated Design 또는 NetApp 검
 :allow-uri-read: 
 
 
+[role="lead"]
 이 FlexPod Express 솔루션은 FlexPod 통합 인프라 프로그램의 일부입니다.
 
 

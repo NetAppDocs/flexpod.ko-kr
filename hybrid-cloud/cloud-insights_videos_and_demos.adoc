@@ -13,6 +13,7 @@ summary: NetApp Cloud Insights 사용에 대한 비디오 데모를 볼 수 있�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 NetApp Cloud Insights를 사용하여 사내 환경의 리소스를 평가하는 비디오 데모를 볼 수 있습니다 https://netapp.hubs.vidyard.com/watch/1ycNWx4hzFsaV1dQHFyxY2?["여기"^].
 
 NetApp Cloud Insights를 사용하여 인프라를 모니터링하고 인프라에 대한 경고 임계값을 설정하는 방법에 대한 비디오 데모를 볼 수 있습니다 https://netapp.hubs.vidyard.com/watch/DgUxcxES3Ujdqe1JhhkfAW["여기"^].

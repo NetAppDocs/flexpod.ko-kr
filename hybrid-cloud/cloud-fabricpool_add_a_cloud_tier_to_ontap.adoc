@@ -13,6 +13,7 @@ summary: 오브젝트 저장소를 Aggregate에 첨부하려면 먼저 ONTAP에 
 :imagesdir: ./../media/
 
 
+[role="lead"]
 오브젝트 저장소를 Aggregate에 첨부하려면 먼저 ONTAP에 추가하여 식별해야 합니다. 이 작업은 OnCommand 시스템 관리자 또는 ONTAP CLI를 사용하여 완료할 수 있습니다.
 
 FabricPool은 Amazon S3, IBM 오브젝트 클라우드 스토리지, Microsoft Azure Blob Storage 오브젝트 저장소를 클라우드 계층으로 지원합니다.

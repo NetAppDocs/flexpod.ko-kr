@@ -13,6 +13,7 @@ summary: '이 섹션에서는 NetApp VSC(가상 스토리지 콘솔)의 구축 �
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 NetApp VSC(가상 스토리지 콘솔)의 구축 절차를 설명합니다.
 
 

@@ -13,6 +13,7 @@ summary: Tiering-Minimum-Cooling-Days 설정은 자동 또는 스냅샷 전용 �
 :imagesdir: ./../media/
 
 
+[role="lead"]
 'Tiering-Minimum-Cooling-Days' 설정은 자동 또는 스냅샷 전용 정책을 사용하여 볼륨에 있는 비활성 데이터를 계층화하기에 앞서 경과해야 하는 일 수를 결정합니다.
 
 

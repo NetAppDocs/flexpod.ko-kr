@@ -15,6 +15,7 @@ summary: FlexPod를 사용하면 단일 플랫폼에서 FC, FCoE, iSCSI, NFS/pNF
 
 NetApp의 Jaya Kishore Esanakula 및 Atil Bhalodia
 
+[role="lead"]
 의료 영상 촬영은 의료 조직에서 생성한 모든 데이터의 70%를 차지합니다. 디지털 기법의 발전 및 새로운 기법의 등장과 함께 데이터의 양은 계속해서 증가합니다. 예를 들어, 아날로그에서 디지털 병리학으로 전환하면 현재 적용되는 데이터 관리 전략에 문제가 되는 속도로 이미지 크기가 크게 증가합니다.
 
 최근 COVID-19로 디지털 혁신을 명확하게 재구성할 수 있었습니다 https://www.cfo.com/the-cloud/2020/06/three-ways-covid-19-is-accelerating-digital-transformation-in-professional-services/["보고서"^]COVID-19는 디지털 상거래를 5년 더 빠르게 진행해 왔습니다. 문제 해결자에 의한 기술적 혁신은 우리가 일상 생활을 영위하는 방식을 근본적으로 변화시키고 있습니다. 이러한 기술 중심 변화는 의료계를 비롯한 우리 삶의 중요한 여러 측면을 정밀 검사할 것입니다.

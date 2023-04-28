@@ -10,6 +10,7 @@ summary: '이 문서에서는 NetApp AFF A400 All-Flash 스토리지 시스템�
 
 John George, Cisco Sree Lakshmi Lanka, NetApp
 
+[role="lead"]
 이 문서에서는 NetApp AFF A400 All-Flash 스토리지 시스템에서 NetApp ONTAP 9.7을 지원하는 Cisco 및 NetApp FlexPod 데이터 센터, 2세대 인텔 제온 스케일러블 프로세서와 VMware vSphere 7.0을 지원하는 Cisco UCS Manager 통합 소프트웨어 릴리스 4.1(2)에 대해 설명합니다. Cisco UCS Manager(UCSM) 4.1(2)은 다음과 같은 사항을 통합 지원합니다.
 
 * 현재 모든 Cisco UCS Fabric Interconnect 모델: 6200, 6300, 6324(Cisco UCS Mini)

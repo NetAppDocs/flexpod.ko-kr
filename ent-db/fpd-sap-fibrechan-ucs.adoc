@@ -10,6 +10,7 @@ summary: '이 문서에서는 NetApp AFF A400 스토리지 기반 NetApp ONTAP 9
 
 Pramod Ramamurhy, Cisco Marco Schoen, NetApp
 
+[role="lead"]
 이 문서에서는 NetApp AFF A400 스토리지 기반 NetApp ONTAP 9.7을 지원하는 Cisco 및 NetApp FlexPod 데이터 센터와 SAP HANA용 2세대 인텔 제온 스케일러블 프로세서가 포함된 Cisco UCS Manager 유니파이드 소프트웨어 릴리스 4.1(1)에 대해 설명합니다.
 
 NetApp ONTAP 9.7 및 Cisco UCS 통합 소프트웨어 릴리스 4.1(1)이 포함된 FlexPod 데이터 센터는 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 9000 스위치 제품군, MDS 9000 멀티레이어 패브릭 스위치, ONTAP 9.7 스토리지 OS를 실행하는 NetApp AFF A 시리즈 스토리지 어레이를 살펴봅니다.

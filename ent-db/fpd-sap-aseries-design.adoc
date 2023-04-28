@@ -10,6 +10,7 @@ summary: 이 문서에서는 지원되는 2세대 인텔 제온 스케일러블 
 
 Pramod Ramamurhy, Cisco Marco Schoen, NetApp
 
+[role="lead"]
 이 문서에서는 지원되는 2세대 인텔 제온 스케일러블 프로세서 기반 SAP HANA용 Cisco 및 NetApp FlexPod 데이터 센터의 구현 방법에 대해 설명합니다.
 
 Cisco UCS Manager(UCSM) 4.0(4)은 현재 모든 Cisco UCS Fabric Interconnect 모델(6200, 6300, 6324 및 6454), 2200/2300 시리즈 IOM, Cisco UCS B-Series 블레이드, Cisco UCS C-Series 랙 폼 팩터 서버를 통합 지원합니다. Cisco UCS 통합 소프트웨어 릴리스 4.0(4D) 및 NetApp ONTAP 9.6을 사용하는 FlexPod 데이터 센터는 Cisco UCS, Cisco Nexus 9000 스위치 제품군 및 NetApp AFF A 시리즈 스토리지 어레이를 기반으로 사전 설계된 모범 사례 데이터 센터 아키텍처입니다.

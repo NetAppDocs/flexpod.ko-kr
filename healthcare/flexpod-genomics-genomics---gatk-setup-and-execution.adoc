@@ -15,6 +15,7 @@ summary: 이 섹션에서는 FlexPod 및 GATK의 설정 및 Cromwell 엔진, JAR
 
 link:flexpod-genomics-solution-infrastructure-hardware-and-software-components.html["이전: 솔루션 인프라 하드웨어 및 소프트웨어 구성 요소"]
 
+[role="lead"]
 국립인간게놈연구소( https://www.genome.gov/about-genomics/fact-sheets/A-Brief-Guide-to-Genomics["NHGRI"^]), “유전체학(Genomics)은 이러한 유전자의 상호 작용 및 인간 환경의 상호 작용을 포함하여 사람의 모든 유전자(게놈)를 연구하는 학문을 말합니다. ”
 
 에 따르면 https://www.genome.gov/about-genomics/fact-sheets/A-Brief-Guide-to-Genomics["NHGRI"^]“디옥시리보핵산(DNA)은 거의 모든 생물의 활동을 개발하고 지시하는 데 필요한 지침이 들어 있는 화학 화합물입니다. DNA 분자는 2개의 꼬임, 쌍을 이룬 가닥으로 만들어졌으며, 종종 이중 나선이라고 합니다.” “유기체의 전체 DNA 세트를 게놈(genome)이라고 합니다.”

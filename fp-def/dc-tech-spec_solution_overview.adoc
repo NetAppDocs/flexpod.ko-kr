@@ -15,6 +15,7 @@ summary: 'FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco 
 
 Arvind Ramakrishnan, Jyh-shing Chen, NetApp
 
+[role="lead"]
 FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 컨트롤러(AFF, ASA 또는 FAS 시스템)를 기반으로 사전 설계되며 모범 사례 데이터 센터 아키텍처를 제공합니다.
 
 FlexPod는 다양한 가상화 하이퍼바이저 및 베어 메탈 운영 체제 및 엔터프라이즈 워크로드를 실행하는 데 적합한 플랫폼입니다. FlexPod는 기본 구성뿐만 아니라 다양한 사용 사례와 요구사항에 맞게 사이징 및 최적화할 수 있는 유연성도 제공합니다.

@@ -13,6 +13,7 @@ summary: Cloud Insights 데이터 센터 솔루션을 모니터링할 수 있도
 :imagesdir: ./../media/
 
 
+[role="lead"]
 Cloud Insights 데이터 센터 솔루션을 모니터링할 수 있도록 FlexPod가 설정 및 구성되어 있으므로 대시보드에서 수행할 수 있는 몇 가지 작업을 탐색하여 환경을 평가하고 모니터링할 수 있습니다. 이 섹션에서는 Cloud Insights의 5가지 주요 사용 사례를 중점적으로 살펴보겠습니다.
 
 * Active IQ 통합

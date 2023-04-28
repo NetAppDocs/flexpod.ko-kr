@@ -13,6 +13,7 @@ summary: FlexPod 설계에는 전원 및 케이블 연결에 대한 최소 요�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FlexPod 설계에는 전원 및 케이블 연결에 대한 최소 요구 사항이 있습니다.
 
 

@@ -15,6 +15,7 @@ summary: 이 섹션에서는 FC-NVMe on FlexPod 검증 테스트에 대한 간�
 
 link:nvme-vsphere-introduction.html["이전: 소개."]
 
+[role="lead"]
 이 섹션에서는 FC-NVMe on FlexPod 검증 테스트에 대한 간략한 개요를 제공합니다. 여기에는 VMware vSphere 7을 사용하는 FlexPod용 FC-NVMe와 관련하여 워크로드 테스트를 수행하기 위해 채택된 테스트 환경/구성 및 테스트 계획이 모두 포함됩니다.
 
 

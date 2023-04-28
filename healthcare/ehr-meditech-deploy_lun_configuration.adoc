@@ -13,6 +13,7 @@ summary: 사용자 환경의 MEDITECH 호스트 수에 따라 NetApp FAS 또는 
 :imagesdir: ./../media/
 
 
+[role="lead"]
 사용자 환경의 MEDITECH 호스트 수에 따라 NetApp FAS 또는 AFF 시스템 내에서 생성되는 LUN의 수가 결정됩니다. 하드웨어 구성 제안에서는 각 LUN의 크기를 지정합니다.
 
 

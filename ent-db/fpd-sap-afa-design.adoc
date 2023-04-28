@@ -10,6 +10,7 @@ summary: '이 문서에서는 SAP HANA TDI(Tailored Data Center Integration) 환
 
 Pramod Ramamurhy, Cisco Marco Schoen, NetApp
 
+[role="lead"]
 이 문서에서는 SAP HANA TDI(Tailored Data Center Integration) 환경을 구축하기 위해 검증된 접근 방식인 Cisco 및 NetApp FlexPod 솔루션에 대해 설명합니다. 검증된 이 설계는 Cisco 및 NetApp의 모범 사례를 바탕으로 SAP HANA를 구축하기 위한 지침과 프레임워크를 제공합니다.
 
 FlexPod은 광범위한 엔터프라이즈 워크로드 및 사용 사례를 지원하는 업계 최고의 통합 인프라입니다. 이 솔루션을 사용하면 맞춤형 데이터 센터 통합 모드 모델을 통해 SAP HANA를 빠르고 안정적으로 구축할 수 있습니다.

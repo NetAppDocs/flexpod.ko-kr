@@ -13,6 +13,7 @@ summary: 이 섹션에서는 FlexPod 익스프레스 설계의 전원 및 최소
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 FlexPod 익스프레스 설계의 전원 및 최소 케이블 연결 요구 사항에 대해 설명합니다.
 
 

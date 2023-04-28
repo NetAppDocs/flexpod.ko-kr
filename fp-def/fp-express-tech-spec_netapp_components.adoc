@@ -13,6 +13,7 @@ summary: NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데이터 스토리지를 위한 FlexPod Express 아키텍처의 스토리지 기반을 제공합니다. 이 섹션에는 FlexPod 익스프레스 아키텍처의 다양한 NetApp 옵션이 나와 있습니다.
 
 

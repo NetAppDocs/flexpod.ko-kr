@@ -10,6 +10,7 @@ summary: 'CVD(Cisco Validated Design)는 시스템 및 솔루션으로 구성되
 
 Tushar Patel, Cisco Hardikkumar Vyas
 
+[role="lead"]
 CVD(Cisco Validated Design)는 시스템 및 솔루션으로 구성되며, 고객 구현을 촉진하고 개선하기 위해 설계, 테스트 및 문서화됩니다. 이 CVD 문서에서는 고가용성 Oracle RAC 데이터베이스 환경을 구축하기 위한 검증된 접근 방식인 Cisco 및 NetApp FlexPod 솔루션에 대해 설명합니다. Cisco와 NetApp은 Cisco UCS 데이터 센터 연구소의 OLTP(Online Transactional Processing) 및 데이터 웨어하우스 같은 다양한 데이터베이스 작업 부하를 사용하여 참조 아키텍처를 검증했습니다. 이 문서에서는 관련된 구성 요소의 하드웨어 및 소프트웨어 구성과 다양한 테스트 결과를 보여 줍니다. 또한 Cisco UCS 및 NetApp 스토리지 시스템을 사용하여 NVMe/FC에 Oracle RAC 데이터베이스를 구현하기 위한 프레임워크를 제공합니다.
 
 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_oracle_ucs_m5.html["Cisco UCS 및 NetApp AFF 기반 Oracle 19c RAC 데이터베이스를 지원하는 FlexPod 데이터 센터 및 NVMe over FibreChannel"^]

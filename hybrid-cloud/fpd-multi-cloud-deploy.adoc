@@ -10,6 +10,7 @@ summary: 이 문서에서는 하이브리드 클라우드용 FlexPod 데이터 �
 
 Haseeb Niazi, Cisco David Arnette, NetApp
 
+[role="lead"]
 이 문서에서는 하이브리드 클라우드용 FlexPod 데이터 센터를 설정하기 위한 세부 구성 및 구축 지침을 제공합니다. 다음 설계 요소는 이 버전의 FlexPod를 이전 모델과 구별합니다.
 
 * Cisco CloudCenter와 FlexPod Datacenter를 프라이빗 클라우드로 통합

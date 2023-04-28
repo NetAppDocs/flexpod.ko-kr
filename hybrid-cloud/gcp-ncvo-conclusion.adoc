@@ -15,6 +15,7 @@ summary: 이 솔루션에서는 Cisco Intersight Cloud Orchestrator를 기반으
 
 link:gcp-ncvo-solution-validation.html["이전: 솔루션 검증."]
 
+[role="lead"]
 이 솔루션에서는 Cisco Intersight Cloud Orchestrator를 기반으로 하는 퍼블릭 클라우드를 통해 DR 솔루션을 구축하는 데 NetApp Cloud Data Service, Cloud Volumes ONTAP 및 FlexPod Datacenter 인프라가 사용되었습니다. FlexPod 솔루션은 고객이 애플리케이션 및 비즈니스 제공 프로세스를 현대화할 수 있도록 지속적으로 진화해 왔습니다. 이 솔루션을 사용하면 DR 솔루션 비용을 낮게 유지하면서 임시 또는 전체 시간 DR 계획을 위한 전환 위치로 퍼블릭 클라우드에 BCDR 계획을 수립할 수 있습니다.
 
 사내 FlexPod와 NetApp Cloud Volumes ONTAP 간 데이터 복제는 검증된 SnapMirror 기술을 통해 처리되었지만, 데이터 이동성 요구사항에 맞춰 Cloud Sync와 같은 다른 NetApp 데이터 전송 및 동기화 툴을 선택할 수도 있습니다. TLS/AES 기반의 내장 암호화 기술로 전송 중인 데이터의 보안

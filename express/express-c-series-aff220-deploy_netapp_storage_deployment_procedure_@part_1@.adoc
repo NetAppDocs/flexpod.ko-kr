@@ -13,6 +13,7 @@ summary: 다음 단계에 따라 NetApp AFF 스토리지 구축 절차를 완료
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 NetApp AFF 스토리지 구축 절차를 설명합니다.
 
 

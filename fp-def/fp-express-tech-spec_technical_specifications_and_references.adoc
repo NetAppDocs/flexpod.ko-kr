@@ -13,6 +13,7 @@ summary: 이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요한 추가 기술 사양에 대해 설명합니다.
 
 

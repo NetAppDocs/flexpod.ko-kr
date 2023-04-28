@@ -13,6 +13,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 사용할 Cisco UCS C-Ser
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 FlexPod Express 구성에 사용할 Cisco UCS C-Series 독립 실행형 랙 서버를 구성하기 위한 절차를 세부적으로 설명합니다.
 
 

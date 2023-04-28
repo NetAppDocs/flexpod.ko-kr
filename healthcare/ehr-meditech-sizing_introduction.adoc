@@ -17,6 +17,7 @@ Brandon AGEE, John Duignan, NetApp Mike Brennan, Cisco 존 에브메르
 
 파트너 후원:image:cisco logo.png["오류: 그래픽 이미지가 없습니다"]
 
+[role="lead"]
 이 보고서는 MEDITECH EHR 애플리케이션 소프트웨어 환경에 대한 FlexPod 사이징 지침을 제공합니다.
 
 

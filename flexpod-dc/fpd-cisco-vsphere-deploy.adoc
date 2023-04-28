@@ -10,6 +10,7 @@ summary: '이 문서에서는 Cisco UCS Manager 통합 소프트웨어 릴리즈
 
 John George, Cisco Scott Kovacs, NetApp
 
+[role="lead"]
 이 문서에서는 Cisco UCS Manager 통합 소프트웨어 릴리즈 4.0(2) 및 VMware vSphere 6.7 U1이 설치된 Cisco 및 NetApp FlexPod 데이터 센터에 대해 설명합니다. Cisco UCS Manager(UCSM) 4.0(2)은 현재 모든 Cisco UCS Fabric Interconnect 모델(6200, 6300, 6324(Cisco UCS Mini), 6454,2200/2300 시리즈 IOM, Cisco UCS B-Series 및 Cisco UCS C-Series를 통합 지원합니다. Cisco UCS Unified Software Release 4.0(2) 및 VMware vSphere 6.7 U1을 지원하는 FlexPod 데이터 센터는 Cisco UCS(Unified Computing System), Cisco Nexus 9000 스위치 제품군, MDS 9000 멀티레이어 패브릭 스위치를 기반으로 사전 설계된 모범 사례 데이터 센터 아키텍처입니다. ONTAP 9 스토리지 OS를 실행하는 NetApp AFF A-Series 스토리지 어레이를 제공할 좋은 기회입니다.
 
 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html["VMware vSphere 6.7 U1, Cisco UCS 4세대 패브릭 및 NetApp AFF A-Series를 지원하는 FlexPod 데이터 센터"^]

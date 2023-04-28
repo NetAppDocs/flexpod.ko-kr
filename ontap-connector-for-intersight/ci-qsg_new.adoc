@@ -13,6 +13,7 @@ summary: Cisco Intersight는 새로운 기능, 향상된 기능 및 버그 수�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 NetApp ONTAP 스토리지와 Cisco Intersight에 사용할 수 있는 새로운 기능에 대해 설명합니다.
 
 

@@ -13,6 +13,7 @@ summary: 기술 사양은 섀시, FEX, 서버, 스위치, 스위치 등 FlexPod 
 :imagesdir: ./../media/
 
 
+[role="lead"]
 기술 사양은 섀시, FEX, 서버, 스위치, 스위치 등 FlexPod 솔루션의 하드웨어 구성 요소에 대한 세부 정보를 제공합니다. 및 스토리지 컨트롤러.
 
 

@@ -13,6 +13,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7을 설치
 :imagesdir: ./../media/
 
 
+[role="lead"]
 이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7을 설치하는 절차를 자세히 설명합니다. 다음 구현 절차는 이전 섹션에서 설명한 환경 변수를 포함하도록 커스터마이징되었습니다.
 
 이러한 환경에 VMware ESXi를 설치하는 방법은 여러 가지가 있습니다. 이 절차에서는 Cisco UCS C-Series 서버용 CIMC 인터페이스의 가상 KVM 콘솔과 가상 미디어 기능을 사용하여 원격 설치 미디어를 각 개별 서버에 매핑합니다.

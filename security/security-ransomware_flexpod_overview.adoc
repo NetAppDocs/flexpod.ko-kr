@@ -13,6 +13,7 @@ summary: 'FlexPod는 Cisco UCS(Unified Computing System) 서버, Cisco Nexus 스
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FlexPod는 Cisco UCS(Unified Computing System) 서버, Cisco Nexus 스위치 제품군, Cisco MDS 패브릭 스위치 및 NetApp 스토리지 어레이를 유연한 단일 아키텍처로 결합하는 사전 설계, 통합 및 검증된 아키텍처입니다. FlexPod 솔루션은 단일 장애 지점 없이 고가용성을 지원하도록 설계되었으며, 비용 효율성과 설계 유연성을 유지하여 다양한 워크로드를 지원합니다. FlexPod 설계는 다양한 하이퍼바이저와 베어 메탈 서버를 지원할 수 있으며 고객의 워크로드 요구사항에 따라 규모 조정 및 최적화할 수 있습니다.
 
 아래 그림은 FlexPod 아키텍처를 보여 주며 스택의 모든 계층에서 고가용성을 보여 줍니다. 스토리지, 네트워크 및 컴퓨팅의 인프라 구성요소는 구성요소 중 하나에 장애가 발생할 경우 정상 작동하는 파트너에게 즉시 페일오버할 수 있도록 구성됩니다.

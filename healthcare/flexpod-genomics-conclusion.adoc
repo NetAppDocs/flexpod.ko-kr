@@ -15,6 +15,7 @@ summary: 전 세계의 많은 의료 기관이 FlexPod를 공통 플랫폼으로
 
 link:flexpod-genomics-appendix-d-gpu-setup.html["이전: GPU 설정"]
 
+[role="lead"]
 전 세계의 많은 의료 기관이 FlexPod를 공통 플랫폼으로 표준화했습니다. FlexPod를 사용하면 의료 기능을 안심하고 구현할 수 있습니다. ONTAP with NetApp FlexPod는 업계 최고 수준의 프로토콜 집합을 즉시 구현할 수 있는 표준 기능을 제공합니다. 유전체학을 특정 환자의 유전체학을 실행하라는 요청의 근원과 관계없이 FlexPod 플랫폼에서 상호 운용성, 접근성, 가용성 및 확장성이 기본으로 제공됩니다. FlexPod 플랫폼에서 표준화하면 혁신 문화가 전염됩니다.
 
 

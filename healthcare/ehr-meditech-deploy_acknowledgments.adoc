@@ -13,6 +13,7 @@ summary: 다음 사람들은 이 가이드의 작성에 기여했습니다.
 :imagesdir: ./../media/
 
 
+[role="lead"]
 다음 사람들은 이 가이드의 작성에 기여했습니다.
 
 * Brandon AGEE, NetApp 기술 마케팅 엔지니어

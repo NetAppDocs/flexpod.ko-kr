@@ -15,6 +15,7 @@ summary: DR 사이트로 AWS에 별도의 자가 관리 OpenShift Container Plat
 
 link:flexpod-rho-cvo-flexpod-for-openshift-container-platform-4-bare-metal-installation.html["이전: OpenShift Container Platform 4 베어메탈 설치용 FlexPod"]
 
+[role="lead"]
 DR 사이트로 AWS에 별도의 자가 관리 OpenShift Container Platform 4 클러스터가 구축됩니다. 마스터 노드와 작업자 노드는 고가용성을 위해 세 개의 가용성 영역에 걸쳐 있습니다.
 
 image:flexpod-rho-cvo-image10.png["오류: 그래픽 이미지가 없습니다"]

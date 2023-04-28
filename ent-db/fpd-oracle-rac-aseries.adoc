@@ -10,6 +10,7 @@ summary: NetApp All Flash AFF 시스템을 지원하는 FlexPod 데이터 센터
 
 Tushar Patel, Cisco Hardikkumar Vyas
 
+[role="lead"]
 NetApp All Flash AFF 시스템을 지원하는 FlexPod 데이터 센터는 Cisco와 NetApp의 동급 최고 기술을 엔터프라이즈 애플리케이션을 위한 강력한 통합 플랫폼으로 결합하는 통합 인프라 플랫폼입니다. Cisco와 NetApp은 Oracle과 긴밀하게 협력하여 오늘날의 비즈니스에 필요한 가장 까다로운 트랜잭션 및 응답 시간에 민감한 데이터베이스를 지원합니다.
 
 CVD(Cisco Validated Design)에서는 고가용성 Oracle RAC 데이터베이스 환경을 구축하기 위해 Cisco UCS 및 NetApp All Flash AFF 스토리지를 사용하는 참조 FlexPod 데이터 센터 아키텍처에 대해 설명합니다. 이 문서에서는 관련된 구성 요소의 하드웨어 및 소프트웨어 구성과 다양한 테스트 결과를 보여 줍니다. 또한 Cisco UCS 컴퓨팅 서버, Cisco Fabric Interconnect 스위치, Cisco MDS 스위치, Cisco Nexus 스위치, NetApp AFF 스토리지 및 Oracle RAC 데이터베이스를 사용하는 구현 및 모범 사례 지침을 제공합니다.

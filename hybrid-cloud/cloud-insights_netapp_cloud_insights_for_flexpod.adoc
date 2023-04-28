@@ -17,6 +17,7 @@ NetApp, Alan Cowles
 
 파트너 후원:image:cisco logo.png["오류: 그래픽 이미지가 없습니다"]
 
+[role="lead"]
 이 기술 보고서에 설명된 솔루션은 NetApp FlexPod 데이터 센터 솔루션의 일부로 구축되는 NetApp ONTAP를 실행하는 NetApp AFF A800 스토리지 시스템을 모니터링하는 NetApp Cloud Insights 서비스의 구성입니다.
 
 

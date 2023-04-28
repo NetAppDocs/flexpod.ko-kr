@@ -13,6 +13,7 @@ summary: NetApp은 FlexPod 데이터 센터 아키텍처를 한층 더 향상하
 :imagesdir: ./../media/
 
 
+[role="lead"]
 NetApp은 FlexPod 데이터 센터 아키텍처를 한층 더 향상하기 위해 몇 가지 선택적 구성요소를 지원합니다. 선택적 구성 요소는 다음 하위 섹션에 설명되어 있습니다.
 
 

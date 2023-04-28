@@ -10,6 +10,7 @@ summary: 이 문서에서는 고가용성 멀티 데이터 센터 솔루션을 �
 
 Haseeb Niazi, Cisco Arvind Ramakrishnan, NetApp
 
+[role="lead"]
 이 문서에서는 고가용성 멀티 데이터 센터 솔루션을 제공하기 위해 Cisco ACI Multi-Pod 및 NetApp MetroCluster IP 솔루션을 FlexPod 데이터 센터에 통합하는 방법을 설명합니다. 멀티 데이터 센터 아키텍처는 무중단 워크로드 이동성을 활용하여 두 데이터 센터 간에 워크로드의 균형을 조정할 수 있는 기능을 제공하므로 중단을 유지할 필요 없이 사이트 간에 서비스를 마이그레이션할 수 있습니다.
 
 ACI 멀티 포드와 NetApp MetroCluster IP 솔루션이 지원하는 FlexPod는 다음과 같은 이점을 제공합니다.

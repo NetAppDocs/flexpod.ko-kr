@@ -13,6 +13,7 @@ summary: 'FC를 데이터 네트워크 프로토콜로 사용할 경우 각 스�
 :imagesdir: ./../media/
 
 
+[role="lead"]
 FC를 데이터 네트워크 프로토콜로 사용할 경우 각 스토리지 컨트롤러에 두 개의 이니시에이터 그룹(igroup)을 생성합니다. 첫 번째 igroup에는 MEDITECH 호스트 VM(MEDITECH용 igroup)을 호스팅하는 VMware ESXi 서버의 FC 호스트 인터페이스 카드 WWPN이 포함되어 있습니다.
 
 환경 설정에 따라 MEDITECH igroup 운영 체제 유형을 설정해야 합니다. 예를 들면 다음과 같습니다.

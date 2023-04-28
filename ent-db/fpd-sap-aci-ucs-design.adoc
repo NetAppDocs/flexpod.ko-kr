@@ -10,6 +10,7 @@ summary: 이 문서에서는 FlexPod 인프라 기반 SAP HANA 맞춤형 데이�
 
 Pramod Ramamurhy, Cisco Marco Schoen, NetApp
 
+[role="lead"]
 이 문서에서는 업계 최고의 SDN(소프트웨어 정의 네트워킹 솔루션)인 Cisco ACI(Application Centric Infrastructure)를 활용하는 Cisco 컴퓨팅 및 스위칭 제품으로 구성된 FlexPod 인프라의 SAP HANA 맞춤형 데이터 센터 통합 옵션과 NetApp A 시리즈 AFF 어레이에 대한 아키텍처 및 구축 절차를 설명합니다. 이 문서의 목적은 SAP HANA 구축에 대한 자세한 구성 단계와 함께 설계 원칙을 보여주는 것입니다.
 
 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_saphana_aci_UCSM32.html["SLES 12 SP3 및 RHEL 7.4가 설치된 Cisco UCS M5 서버에서 Cisco ACI를 지원하는 SAP용 FlexPod Datacenter 솔루션"^]

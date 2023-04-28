@@ -10,6 +10,7 @@ summary: 이 문서에서는 FlexPod 인프라스트럭처의 SAP HANA 맞춤형
 
 Pramod Ramamurhy, Cisco Marco Schoen, NetApp
 
+[role="lead"]
 이 문서에서는 FlexPod 인프라의 SAP HANA 맞춤형 데이터 센터 통합 옵션에 대한 아키텍처 및 구축 절차를 설명합니다. 이 옵션은 다음과 같이 구성되어 있습니다.
 
 * 2세대 인텔 제온 스케일러블 프로세서가 지원하는 Cisco UCS(Cisco UCS)
