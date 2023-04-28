@@ -9770,6 +9770,13 @@
   <block id="b3e0099b048c24efc807f9dd8dad5387" category="sidebar">Cisco UCS Manager, NetApp ONTAP 9.3 AFF 및 VMware vSphere 6.5U1-Design을 지원하는 FlexPod 데이터 센터 및 IBM 클라우드 프라이빗 클라우드</block>
   <block id="2834c2489e66234d739bc68190c533f8" category="sidebar">Cisco CloudCenter 및 NetApp Private Storage-Design을 사용한 하이브리드 클라우드용 FlexPod 데이터 센터</block>
   <block id="0a60298d1cecc2b46fc00c3b49fad269" category="sidebar">Cisco CloudCenter 및 NetApp 프라이빗 스토리지를 사용하는 하이브리드 클라우드용 FlexPod 데이터 센터 - 배포</block>
-  <block id="b1b25033ea7463aca79f95ef822af033" category="list-text">FQDN을 사용하여 AIQ-UM에 ONTAP 클러스터를 추가하면 스토리지 인벤토리 검사 페이지가 채워지지 않습니다. 사용자는 IP 주소를 사용하여 AIQ-UM에 ONTAP 클러스터를 추가해야 합니다.</block>
   <block id="3684bd581345640f9a259d9a0657db7e" category="list-text">NVA-1131-deploy: VMware vSphere 6.7UI 및 NetApp AFF A220을 포함하는 FlexPod Express(직접 연결 IP 기반 스토리지 NVA 구축</block>
+  <block id="904837c9cf9bc52a96ce17d051fddec9" category="section-title">2023년 4월</block>
+  <block id="4616e97717152ad6ebe9ea5b5148926e" category="list-text">사용자 인터페이스의 인벤토리 섹션에 있는 정책 페이지 아래에 보호 정책(SnapMirror) 및 스냅샷 정책 탭이 추가되었습니다.</block>
+  <block id="70d106565a3a540dfd0f8bab83e76a38" category="list-text">사용자 인터페이스의 Inventory 섹션 아래에 NFS Clients 페이지가 추가되었습니다.</block>
+  <block id="8e0535294f5f33af426f147791172241" category="list-text">사용자 인터페이스의 Inventory 섹션 아래에 있는 Storage VMs 페이지에 Protected 열이 추가되었습니다.</block>
+  <block id="bde3fb96ef210104acac308d66ce1c9a" category="list-text">데이터 축소 정보가 보고 표시되는 방식을 수정했습니다.</block>
+  <block id="33f06c93ff0e249c6d028973d21932bc" category="list-text">사용자 인터페이스의 Inventory 섹션에 있는 Tiers 페이지 아래에 Local Tier 및 Cloud Tier 탭이 추가되었습니다.</block>
+  <block id="cebb5bee9f2c3fd7a29eb3a7ad7f1530" category="list-text">이제 사용자 인터페이스의 인벤토리 섹션에 있는 포트 페이지의 이름 열 뒤에 노드 열이 표시됩니다.</block>
+  <block id="59829409d4681e66c64ba39915db7b13" category="list-text">FQDN을 사용하여 AIQUM에 ONTAP 클러스터를 추가하면 스토리지 인벤토리 검사 페이지가 채워지지 않습니다. 사용자는 IP 주소를 사용하여 AIQUM에 ONTAP 클러스터를 추가해야 합니다.</block>
 </blocks>
