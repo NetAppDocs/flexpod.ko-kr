@@ -421,4 +421,4 @@ image:express-c-series-c190-deploy_image33.png["오류: 그래픽 이미지가 �
 . 저장 을 클릭합니다.
 
 
-link:express-c-series-c190-design_vmware_vcenter_server_6.7u2_installation_procedure.html["다음: VMware vCenter Server 6.7U2 설치 절차"]
+link:express-c-series-c190-deploy_vmware_vcenter_server_6.7u2_installation_procedure.html["다음: VMware vCenter Server 6.7U2 설치 절차"]

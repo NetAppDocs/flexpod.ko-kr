@@ -399,4 +399,4 @@ NOTE: 이 절차는 각 초기 Cisco UCS 서버 노드 및 환경에 추가된 �
 
 
 
-link:express-c-series-c190-design_netapp_aff_storage_deployment_procedure_@part_2@.html["다음: NetApp AFF 스토리지 구축 절차(2부)"]
+link:express-c-series-c190-deploy_netapp_aff_storage_deployment_procedure_@part_2@.html["다음은 NetApp AFF 스토리지 구축 절차(2부)입니다."]

@@ -53,7 +53,7 @@ FlexPod 아키텍처에는 중복 NetApp FAS, AFF 또는 AFF ASA 컨트롤러가
 | Cisco Nexus 3132Q-V | https://mysupport.netapp.com/documentation/docweb/index.html?productID=62377&language=en-US["NetApp 설명서: Cisco Nexus 3132Q-V 스위치"] 
 
 
-| Cisco Nexus 9336C-FX2 | https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336/9336-overview.html["NetApp 설명서: Cisco Nexus 9336C-FX2 스위치"] 
+| Cisco Nexus 9336C-FX2 | https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/["NetApp 설명서: Cisco Nexus 9336C-FX2 스위치"] 
 |===
 
 

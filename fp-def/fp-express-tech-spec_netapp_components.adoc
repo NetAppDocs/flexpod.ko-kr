@@ -226,7 +226,7 @@ SupportEdge Premium 라이센스는 필수이며, 이러한 라이센스의 부�
 | NetApp Support 라이센스 | 부품 번호 | 기술 사양 
 
 
-| SupportEdge Premium4 운영 시간, 월:36 | CS-O2-4시간 | link:www.netapp.com/us/support/supportedge.html["http://www.netapp.com/us/support/supportedge.html"] 
+| SupportEdge Premium4 운영 시간, 월:36 | CS-O2-4시간 | link:https://www.netapp.com/pdf.html?item=/media/19784-ds-3873.pdf["https://www.netapp.com/pdf.html?item=/media/19784-ds-3873.pdf"] 
 |===
 
 
@@ -238,7 +238,7 @@ SupportEdge Premium 라이센스는 필수이며, 이러한 라이센스의 부�
 | NetApp Support 라이센스 | 부품 번호 | 기술 사양 
 
 
-| 하드웨어 지원 프리미엄 4시간 현장 지원, 월:36 | SVC-O2-4HR-E .3+| link:www.netapp.com/us/support/supportedge.html["http://www.netapp.com/us/support/supportedge.html"] 
+| 하드웨어 지원 프리미엄 4시간 현장 지원, 월:36 | SVC-O2-4HR-E .3+| link:https://www.netapp.com/pdf.html?item=/media/19784-ds-3873.pdf["https://www.netapp.com/pdf.html?item=/media/19784-ds-3873.pdf"] 
 
 
 | 소프트웨어 지원 | SW-SSP-O2-4HR-E 

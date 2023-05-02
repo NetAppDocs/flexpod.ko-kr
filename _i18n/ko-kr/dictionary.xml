@@ -210,8 +210,6 @@
   <block id="9f2d14e6a1e3a8e76a5e5c913a338616" category="list-text">eth1에 대해 3단계와 4단계를 반복하여 업링크 포트가 eth1에 대해 1로 설정되어 있는지 확인합니다.</block>
   <block id="59cf5e87e60bc8dac3259a7e875cc396" category="paragraph"><block ref="59cf5e87e60bc8dac3259a7e875cc396" category="inline-image-macro-rx" type="image"></block></block>
   <block id="89fc9ed38d4fd4f87870644db30e1dce" category="admonition">이 절차는 각 초기 Cisco UCS 서버 노드 및 환경에 추가된 각 추가 Cisco UCS 서버 노드에 대해 반복해야 합니다.</block>
-  <block id="4274bde26272a75e2e5256091306e24c" category="inline-link-macro">다음: NetApp AFF 스토리지 구축 절차(2부)</block>
-  <block id="ef72a944184a2b0d5e5c18a1925f9f82" category="paragraph"><block ref="ef72a944184a2b0d5e5c18a1925f9f82" category="inline-link-macro-rx"></block></block>
   <block id="e8a42cf15da10555bc59082eff55f202" category="summary">이 문서에서는 완전히 이중화된 고가용성 FlexPod Express 시스템을 구성하는 방법에 대해 자세히 설명합니다. 이러한 이중화를 반영하기 위해 각 단계에서 구성 요소를 구성 요소 A 또는 구성 요소 B라고 합니다</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="doc">개요</block>
   <block id="01b10a7e8c89c2ed45d770af2cad84ef" category="paragraph">이 문서에서는 완전히 이중화된 고가용성 FlexPod Express 시스템을 구성하는 방법에 대해 자세히 설명합니다. 이러한 이중화를 반영하기 위해 각 단계에서 구성 요소를 구성 요소 A 또는 구성 요소 B라고 합니다 예를 들어 컨트롤러 A와 컨트롤러 B는 이 문서에 프로비저닝된 NetApp 스토리지 컨트롤러 2개를 식별합니다. 스위치 A와 스위치 B는 Cisco Nexus 스위치 쌍을 나타냅니다.</block>
@@ -1890,8 +1888,6 @@
   <block id="a0e23446a66b1f3b62c87542b03c4a0c" category="admonition">Cisco UCS C-Series 서버를 더 추가할 때는 부팅 LUN을 더 생성해야 합니다.</block>
   <block id="b61ec8a6584e8053e237f93973f50289" category="section-title">인프라 SVM 관리자를 추가합니다</block>
   <block id="61035b7df4ae78c3b522047b643dc8f1" category="paragraph">다음 표에는 SVM 관리자를 추가하는 데 필요한 정보가 나와 있습니다.</block>
-  <block id="544704a08fc56ac416305629315b2dfb" category="inline-link-macro">다음으로 Cisco UCS C-Series 랙 서버를 구축합니다</block>
-  <block id="b2ccf3d51a0d36659f4cb4a6524fe4d2" category="paragraph"><block ref="b2ccf3d51a0d36659f4cb4a6524fe4d2" category="inline-link-macro-rx"></block></block>
   <block id="019dc6de8e76037cb2c701eebcc7885a" category="summary">이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 및/또는 웹 사이트를 참조하십시오.</block>
   <block id="345245c83d2b2c4c2a5eb9f2887da627" category="paragraph">이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 및/또는 웹 사이트를 참조하십시오.</block>
   <block id="bc4fe2352063642d68529f2aa0ca7ca3" category="paragraph">NetApp 제품 설명서</block>
@@ -2161,8 +2157,6 @@
   <block id="bbb817b43cc97db2f84d05c59aab30f7" category="paragraph"><block ref="bbb817b43cc97db2f84d05c59aab30f7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c9eaceb67ff025ec33df198962a47e5c" category="paragraph"><block ref="c9eaceb67ff025ec33df198962a47e5c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c1ec08e67ce2ac0aaa8acbb806bdcb87" category="paragraph"><block ref="c1ec08e67ce2ac0aaa8acbb806bdcb87" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="84ccd33f0cf8671c91d0b35966cd4bfc" category="inline-link-macro">다음: VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성</block>
-  <block id="b8267a82f6eba51e14c28c7809060c29" category="paragraph"><block ref="b8267a82f6eba51e14c28c7809060c29" category="inline-link-macro-rx"></block></block>
   <block id="5d7f9156f70734a70d089a6126b120fe" category="summary">VMware vCenter Server 6.7 및 vSphere 클러스터링을 구성하려면 이 페이지에 설명된 단계를 완료하십시오.</block>
   <block id="cb087a13cbb839a16f79d2e04d726f0e" category="doc">VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성</block>
   <block id="6c4d37fc356ba2d14eabd3231002618f" category="list-text">"\https://\&lt;&lt;FQDN 또는 vCenter의 IP&gt;&gt;/vSphere-client/"로 이동합니다.</block>
@@ -2181,8 +2175,6 @@
   <block id="e1fe825d50948b1de80f51051945d8d6" category="paragraph"><block ref="e1fe825d50948b1de80f51051945d8d6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6b643406b1f5d5f8c203b27fe6e2440e" category="paragraph"><block ref="6b643406b1f5d5f8c203b27fe6e2440e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9456898bc9e0e275a5115029a91fe08b" category="admonition">이 검증에서 "ip_address_of_core_dump_collector"는 vCenter IP입니다.</block>
-  <block id="b8aceddd74a5705bde51f5d406654c25" category="inline-link-macro">다음: NetApp Virtual Storage Console 9.6 구축 절차</block>
-  <block id="d996b7ec2bff23ae65c92ee64cb5289d" category="paragraph"><block ref="d996b7ec2bff23ae65c92ee64cb5289d" category="inline-link-macro-rx"></block></block>
   <block id="be706d73c7b48bd5a4b8b4b44afb3754" category="summary">이 섹션에서는 Cisco Nexus 스위치 3172P A 및 B와 NetApp AFF A220 스토리지 컨트롤러 A 및 B에 대한 검증 케이블링 및 케이블링 정보에 대한 참조를 자세히 다룹니다</block>
   <block id="e8a86b27e0417f30f5d2a743ee93d42e" category="paragraph">다음 그림은 참조 검증 케이블 연결을 보여 줍니다.</block>
   <block id="86daea10e85d3eea6d75bbd15f10f590" category="paragraph"><block ref="86daea10e85d3eea6d75bbd15f10f590" category="inline-image-macro-rx" type="image"></block></block>
@@ -2705,8 +2697,6 @@
   <block id="1652c10523b89eeb824221f2ff92550c" category="paragraph">다음 단계에서는 VM 스왑 파일 위치를 이동하는 방법을 자세히 설명합니다.</block>
   <block id="b6abbf0226ef43662dc3ba8758477628" category="paragraph"><block ref="b6abbf0226ef43662dc3ba8758477628" category="inline-image-macro-rx" type="image"></block></block>
   <block id="56eb1d06de3dc848cd5deb341ffb09cb" category="paragraph"><block ref="56eb1d06de3dc848cd5deb341ffb09cb" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2a6def9cea619ed05c8a19762cb1f386" category="inline-link-macro">다음: VMware vCenter Server 6.7U2 설치 절차</block>
-  <block id="3bfa8686431d666d40aa9d9633a22f8e" category="paragraph"><block ref="3bfa8686431d666d40aa9d9633a22f8e" category="inline-link-macro-rx"></block></block>
   <block id="e45645eef6ccec7b7c30243e58df6f21" category="summary">FlexPod Express는 혼합 가상화 워크로드를 실행하도록 설계되었습니다. 원격 사무소, 지점 및 중소 및 중견 기업을 타겟으로 합니다. 또한 전용 솔루션을 특정 목적에 구축하고자 하는 대규모 기업에도 적합합니다. 새로운 FlexPod Express 솔루션의 주요 동인은 ONTAP 9.5, FAS27xx 및 AFF220, VMware vSphere 6.7U1 같은 새로운 기술을 FlexPod Express에 추가하는 것입니다.</block>
   <block id="52698dab5b8a1edc0e7edc6555a7c349" category="paragraph">FlexPod Express는 혼합 가상화 워크로드를 실행하도록 설계되었습니다. 원격 사무소, 지점 및 중소 및 중견 기업을 타겟으로 합니다. 또한 전용 솔루션을 특정 목적에 구축하고자 하는 대규모 기업에도 적합합니다. 새로운 FlexPod Express 솔루션의 주요 동인은 ONTAP 9.5, FAS27xx/AFF220, VMware vSphere 6.7U1 등의 새로운 기술을 FlexPod Express에 추가하는 것입니다.</block>
   <block id="8ca297509b2df5f9cdffacc6f1b874d9" category="paragraph"><block ref="8ca297509b2df5f9cdffacc6f1b874d9" category="inline-image-macro-rx" type="image"></block></block>
@@ -2751,8 +2741,6 @@
   <block id="f0948daafded56e6a14593770312a596" category="admonition">이 솔루션 검증에 9000의 MTU가 사용되었습니다. 그러나 애플리케이션 요구 사항에 적합한 MTU에 대해 다른 값을 구성할 수 있습니다. FlexPod 솔루션에서 동일한 MTU 값을 설정하는 것이 중요합니다. 구성 요소 간의 MTU 구성이 잘못되면 패킷이 손실되고 이러한 패킷은 다시 전송되어야 하며 솔루션의 전반적인 성능에 영향을 미칩니다.</block>
   <block id="ccafafe48cdce6143d7b8a0010cb0fca" category="section-title">기존 네트워크 인프라로 업링크</block>
   <block id="2745234fb1e856e55967112d4b955056" category="paragraph">사용 가능한 네트워크 인프라에 따라 여러 가지 방법과 기능을 사용하여 FlexPod 환경을 업링크할 수 있습니다. 기존 Cisco Nexus 환경이 존재하는 경우, NetApp은 vPC를 사용하여 FlexPod 환경에 포함된 Cisco Nexus 31108 스위치를 인프라로 업링크하는 것을 권장합니다. 업링크는 10GbE 인프라스트럭처 솔루션의 경우 10GbE 업링크, 필요한 경우 1GbE 인프라스트럭처 솔루션의 경우 1GbE가 될 수 있습니다. 앞서 설명한 절차를 사용하여 기존 환경에 대한 업링크 vPC를 생성할 수 있습니다. 구성이 완료된 후 각 스위치에 대한 구성을 저장하려면 copy start를 실행해야 합니다.</block>
-  <block id="247059a0bddaa322f546623f7644064e" category="inline-link-macro">다음: NetApp 스토리지 구축 절차(1부)</block>
-  <block id="386f19251e645f33bc526e1a77e86b2a" category="paragraph"><block ref="386f19251e645f33bc526e1a77e86b2a" category="inline-link-macro-rx"></block></block>
   <block id="3eee396b017b0462cc602c5c72ff9656" category="summary">중복성 및 가용성부터 개별 기능에 이르기까지 전체 FlexPod Express 아키텍처는 고객에 대한 신뢰를 유지하고 설계 프로세스에 대한 신뢰를 구축하는 것으로 검증되었습니다.</block>
   <block id="c554b3ac4268ea1cd88a4362d2db6c8f" category="paragraph">Cisco와 NetApp은 고객을 위한 최고의 인프라 플랫폼 역할을 할 수 있도록 FlexPod Express를 설계 및 구축했습니다. 업계 최고의 구성 요소로 설계되었기 때문에 고객은 FlexPod Express를 인프라 기반으로 신뢰할 수 있습니다. FlexPod 포트폴리오의 기본 원칙에 따라 FlexPod Express 아키텍처는 Cisco 및 NetApp 데이터 센터 설계자와 엔지니어가 철저히 테스트했습니다. 중복성 및 가용성부터 개별 기능에 이르기까지 전체 FlexPod Express 아키텍처는 고객에 대한 신뢰를 유지하고 설계 프로세스에 대한 신뢰를 구축하는 것으로 검증되었습니다.</block>
   <block id="4ce180a6fe85705febf4c39a1cb6f6cf" category="paragraph">VMware vSphere 6.7은 FlexPod Express 인프라스트럭처 구성 요소에서 검증되었습니다. 이 검증에는 하이퍼바이저를 위한 10GbE 업링크 연결 옵션이 포함되었습니다.</block>
@@ -2780,8 +2768,6 @@
   <block id="c21e81c3aab0aab4acd336440fc7e817" category="doc">NetApp AFF 스토리지 구축 절차(2부)</block>
   <block id="3f7e69d024465486273ba92b509f7277" category="section-title">ONTAP SAN 부팅 스토리지를 설정합니다</block>
   <block id="3ae16a42048bad6c5b188bae7827a446" category="paragraph">igroup을 생성하려면 클러스터 관리 노드의 SSH 연결에서 다음 명령을 실행합니다. 이 단계에서 만든 3개의 igroup을 보려면 'igroup show' 명령을 실행합니다.</block>
-  <block id="bec21043b4f499ec8a85c4cfd7ed39e9" category="inline-link-macro">다음: VMware vSphere 6.7U2 구축 절차</block>
-  <block id="2906e22aba2f3403519d99d40550af4f" category="paragraph"><block ref="2906e22aba2f3403519d99d40550af4f" category="inline-link-macro-rx"></block></block>
   <block id="ba79ba04c19c5e3d88752aa968ba2853" category="summary">FlexPod Express는 업계 최고의 구성요소를 사용하는 검증된 설계를 통해 간단하고 효율적인 솔루션을 제공합니다.</block>
   <block id="68d7ab573a1f47d91a86f2516b3921ed" category="paragraph">FlexPod Express는 업계 최고의 구성요소를 사용하는 검증된 설계를 통해 간단하고 효율적인 솔루션을 제공합니다. FlexPod Express는 하이퍼바이저 플랫폼을 위한 옵션을 제공하고 확장하여 특정 비즈니스 요구에 맞게 조정할 수 있습니다. FlexPod Express는 중소 및 중견 기업, 원격 사무소, 지사 및 전용 솔루션이 필요한 기타 기업을 염두에 두고 설계되었습니다.</block>
   <block id="c829a01f5c43bc8305e6558e7e1bb291" category="paragraph"><block ref="c829a01f5c43bc8305e6558e7e1bb291" category="inline-link-macro-rx"></block></block>
@@ -2862,7 +2848,6 @@
   <block id="dd0abb5bf55fbf07bd4b6cbe25c9528e" category="paragraph">추가 지원 비용이 적용될 수 있지만, 무료 10TB 용량, 기간 기반 FabricPool 라이센스는 새 ONTAP 9.5 이상 클러스터를 구입할 때 제공됩니다. FabricPool 라이센스(기존 라이센스에 대한 추가 용량 포함)는 1TB 단위로 구입할 수 있습니다.</block>
   <block id="8105972a850e9e688b4486ea7d2ed719" category="paragraph">FabricPool 라이센스는 FabricPool 애그리게이트가 포함되지 않은 클러스터에서만 삭제할 수 있습니다.</block>
   <block id="55d00560611b7ac6ad1fbc07da675be3" category="inline-link">NetApp 기술 자료</block>
-  <block id="99ad76c1f19beedce25d63008b6beed4" category="admonition">FabricPool 라이센스는 클러스터 전반에 적용됩니다. 라이센스를 구매할 때 UUID를 사용할 수 있어야 합니다('cluster identify show'). 추가 라이센스 정보는 를 참조하십시오<block ref="4a7942f67fe49d92d9fe4bec3f7e3903" category="inline-link-rx"></block>.</block>
   <block id="e2cbcbad978355b36ab798b7f3399991" category="summary">사이징을 고려할 때 다음 사항을 평가해야 합니다.</block>
   <block id="1261ba8eeb83d9d138ff9e9a37214a7e" category="doc">성능 고려 사항</block>
   <block id="8bd9f8708709eb8eb7fe1337d3f2e907" category="section-title">성능 계층 사이징</block>
@@ -5496,7 +5481,6 @@
   <block id="3939f796e36703e9db327c9570a95260" category="paragraph">조직에서 Intersight 관리 및 FlexPod의 간편한 확장 가능 아키텍처를 활용하여 단일 FlexPod 플랫폼에서 여러 게놈 워크로드를 실행할 수 있으므로, 활용률을 높이고 총 소유 비용(TCO)을 절감할 수 있습니다. FlexPod를 사용하면 작은 FlexPod Express부터 시작하여 대규모 FlexPod 데이터 센터 구현까지 유연하게 사이징할 수 있습니다. Cisco Intersight에 내장된 역할 기반 액세스 제어 기능을 통해 의료 기관은 강력한 액세스 제어 메커니즘을 구현할 수 있으므로 별도의 인프라 스택이 필요하지 않습니다. 의료 조직 내의 여러 사업부에서 유전체학을 핵심 역량으로 활용할 수 있습니다.</block>
   <block id="625631f3e07150b8b24d4b8387119edd" category="paragraph">궁극적으로 FlexPod는 IT 운영을 단순화하고 운영 비용을 절감할 수 있도록 지원하며, IT 인프라 관리자는 IT 인프라를 통해 운영에 부담을 주는 대신 임상의가 혁신을 실현할 수 있도록 지원하는 작업에 집중할 수 있습니다.</block>
   <block id="6706db4316a6632cb20d560fc933ceb1" category="list-text">검증된 설계 및 결과 보장 * FlexPod 설계 및 구축 가이드는 반복 가능한 것으로 입증되었으며, FlexPod를 안심하고 구축하는 데 필요한 포괄적인 구성 세부 정보와 업계 모범 사례를 제공합니다. Cisco 및 NetApp의 검증된 설계 가이드, 구축 가이드 및 아키텍처를 통해 의료 또는 생명 과학 조직은 처음부터 검증되고 신뢰할 수 있는 플랫폼을 구축할 때 불확실한 추측을 배제할 수 있습니다. FlexPod를 사용하면 구축 시간을 단축하고 비용, 복잡성, 위험을 줄일 수 있습니다. FlexPod의 검증된 설계 및 구축 가이드를 통해 FlexPod를 다양한 게놈 분야의 워크로드에 이상적인 플랫폼으로 구축할 수 있습니다.</block>
-  <block id="f59c589a8a56328d42c01fe4907799db" category="list-text">* 혁신 및 민첩성 * FlexPod는 Epic, Cerner, MEDITECH 및 필립스 아그파, GE와 같은 이미징 시스템과 같은 EHR에 의해 이상적인 플랫폼으로 권장됩니다. 에 대한 자세한 내용은 을 참조하십시오<block ref="29fbfe5255d192aa57455db81ba41a3d" category="inline-link-rx"></block> 대상 플랫폼 아키텍처는 Epic userweb을 참조하십시오. 유전체학을 기반으로 합니다<block ref="24f2c347deb06bba4de59a5266702e7d" category="inline-link-rx"></block> 의료 기관이 민첩하게 혁신 여정을 계속할 수 있도록 지원합니다. FlexPod를 사용하면 조직 변화를 자연스럽게 구현할 수 있습니다. 조직이 FlexPod 플랫폼을 기반으로 표준화할 경우, 의료 IT 전문가는 시간, 노력, 리소스를 프로비저닝하여 혁신을 위한 프로비저닝을 수행할 수 있으며 따라서 에코시스템 요구사항에 따라 민첩해 질 수 있습니다.</block>
   <block id="c7e8b95fdeca6082100682f1b89e8b20" category="list-text">* 데이터 자유화. * FlexPod 통합 인프라 플랫폼과 NetApp ONTAP 스토리지 시스템을 통해 게놈 데이터를 단일 플랫폼에서 다양한 프로토콜을 사용하여 액세스하고 사용할 수 있습니다. NetApp ONTAP 기반의 FlexPod는 단순하고 직관적이며 강력한 하이브리드 클라우드 플랫폼을 제공합니다. NetApp ONTAP 기반의 Data Fabric은 물리적 경계를 넘어 여러 사이트 간에, 그리고 애플리케이션을 포괄하는 데이터를 제공합니다. Data Fabric은 데이터 중심 세계에서 데이터 중심 기업을 위해 구축되었습니다. 데이터는 여러 위치에서 생성되고 사용되며 다른 위치, 애플리케이션 및 인프라와 활용되어 공유되어야 합니다. 따라서 이를 관리하기 위해서는 일관되고 통합된 방법이 필요합니다. FlexPod을 사용하면 IT 팀이 지속적으로 증가하는 IT 복잡성을 관리하고 간소화할 수 있습니다.</block>
   <block id="7fcbd234b81a57e30b18381191dd1e46" category="list-text">보안 멀티 테넌시 * FlexPod는 FIPS 140-2 준수 암호화 모듈을 사용하므로 조직은 보안을 사후 방책이 아닌 기본 요소로 구현할 수 있습니다. FlexPod를 사용하는 조직은 플랫폼의 규모에 관계없이 단일 통합 인프라 플랫폼에서 안전한 멀티 테넌시를 구현할 수 있습니다. 안전한 멀티 테넌시와 QoS를 지원하는 FlexPod는 워크로드 분리 및 사용률 극대화를 지원합니다. 따라서 활용률이 저조할 가능성이 있는 전문 플랫폼에 자본을 종속시키지 않고 관리하기 위한 전문 기술이 필요합니다.</block>
   <block id="0e5a582d6f9c304c0a0fc9615b2a0860" category="list-text">* 스토리지 효율성 * 유전체학 에는 기본 스토리지에 업계 최고의 스토리지 효율성 기능이 있어야 합니다. 중복제거(인라인 및 주문형), 데이터 압축 및 데이터 컴팩션( )과 같은 NetApp 스토리지 효율성 기능을 사용하여 스토리지 비용을 절감할 수 있습니다<block ref="2511e8b77417e5fdbc8e7e20b5b8e078" category="inline-link-rx"></block>)를 클릭합니다. NetApp 중복 제거는 FlexVol 볼륨에서 블록 레벨 중복 제거를 제공합니다. 기본적으로, 중복제거는 중복 블록을 제거하여 FlexVol 볼륨에 고유한 블록만 저장합니다. 중복 제거는 높은 수준의 정밀도로 작동하며 FlexVol 볼륨의 액티브 파일 시스템에서 작동합니다. 다음 그림은 NetApp 중복제거의 작동 방식을 보여줍니다. 중복제거는 애플리케이션에 투명합니다. 따라서 NetApp 시스템을 사용하는 모든 애플리케이션에서 생성된 데이터를 중복제거하는 데 사용할 수 있습니다. 볼륨 중복 제거를 인라인 프로세스로 백그라운드 프로세스로 실행할 수 있습니다. CLI, NetApp ONTAP System Manager 또는 NetApp Active IQ Unified Manager를 통해 자동으로 실행하거나, 스케줄을 지정하거나, 수동으로 실행하도록 구성할 수 있습니다.</block>
@@ -5665,8 +5649,6 @@
   <block id="c453f553d73c506df5a01e3bd8ff03e0" category="cell">NetApp Support 라이센스</block>
   <block id="13163c7b776f46d35bcf8a753d9e4c1b" category="cell">SupportEdge Premium4 운영 시간, 월:36</block>
   <block id="34ff3e9936bccd6963e8de9dc3992201" category="cell">CS-O2-4시간</block>
-  <block id="571bbc28568c2b00c6975b19fb5dd53b" category="inline-link-macro"><block ref="571bbc28568c2b00c6975b19fb5dd53b" category="inline-link-rx"></block></block>
-  <block id="09a6eadb4b8f87bcdef9f46ac5b0a651" category="cell"><block ref="09a6eadb4b8f87bcdef9f46ac5b0a651" category="inline-link-macro-rx"></block></block>
   <block id="813e53e7bb54b15e72348ce9fe93dbdc" category="paragraph">다음 표에는 E-Series 스토리지에 대한 NetApp 지원 라이센스 옵션이 나와 있습니다.</block>
   <block id="ef63debe35aa2ea907cf5d6ba93bbca3" category="cell">하드웨어 지원 프리미엄 4시간 현장 지원, 월:36</block>
   <block id="3700267a6a1c84c57290ba35d60b6065" category="cell">SVC-O2-4HR-E</block>
@@ -6734,7 +6716,6 @@
   <block id="1d9f38092927f6d65753edab7ca3d039" category="inline-link">NetApp 설명서: Cisco Nexus 3132Q-V 스위치</block>
   <block id="392fceb5a4d064176abe344715627cfb" category="cell"><block ref="bc5b55d95c18c102e8300585910ae029" category="inline-link-rx"></block></block>
   <block id="0bc97a80630d922e5e5de8dd8689bcaa" category="inline-link">NetApp 설명서: Cisco Nexus 9336C-FX2 스위치</block>
-  <block id="1842d50bda8c8607d91b97316b2186a2" category="cell"><block ref="1842d50bda8c8607d91b97316b2186a2" category="inline-link-rx"></block></block>
   <block id="bfdd18e32fc0e9981825376863beb7a1" category="section-title">NetApp 디스크 쉘프 및 드라이브 옵션</block>
   <block id="ce9c0b8b6c23f9fbba191e4d302b977e" category="paragraph">모든 스토리지 컨트롤러에 NetApp 디스크 쉘프가 하나 이상 필요합니다.</block>
   <block id="c590db225b3b8f81ea877e347416fc4b" category="paragraph">선택한 NetApp 쉘프 유형에 따라 해당 쉘프 내에서 사용 가능한 드라이브 유형이 결정됩니다.</block>
@@ -6978,8 +6959,6 @@
   <block id="2d817d24735f352fea82322ab2c9e621" category="paragraph"><block ref="2d817d24735f352fea82322ab2c9e621" category="inline-link-rx"></block></block>
   <block id="6770ff13f95abd8619a19519877aedf9" category="list-text">NetApp 암호화 보안 모듈</block>
   <block id="02817beae9581784d8cd2f39ddda543b" category="paragraph"><block ref="02817beae9581784d8cd2f39ddda543b" category="inline-link-rx"></block></block>
-  <block id="846bf2df66c90e0dd774c49f7106f381" category="list-text">의료 산업 사이버 보안 사례: 위협 관리 및 환자 보호</block>
-  <block id="2902b923b2807abc94a366d08ff1bda6" category="paragraph"><block ref="2902b923b2807abc94a366d08ff1bda6" category="inline-link-rx"></block></block>
   <block id="bf7fa6fb49dfa01515f774f7a86c6270" category="list-text">중대형 의료 조직을 위한 사이버 보안 사례</block>
   <block id="d1bf3cb27e5807caa3600fcdce477355" category="paragraph"><block ref="d1bf3cb27e5807caa3600fcdce477355" category="inline-link-rx"></block></block>
   <block id="3f6b1e7f286b82aada2164eae419754f" category="list-text">Cisco 및 CMVP(Cryptographic Module Validation Program)</block>
@@ -8972,8 +8951,6 @@
   <block id="3c28f1f86cce7b9f6cccd84c353320aa" category="paragraph"><block ref="3c28f1f86cce7b9f6cccd84c353320aa" category="inline-image-macro-rx" type="image"></block></block>
   <block id="baf8ff06d7e7509dbb1525fc95dee350" category="list-text">다음 GitHub 리포지토리 세부 정보를 제공합니다.</block>
   <block id="f00cb64c44901d8b140ee5334ba42392" category="inline-link-macro">"환경 필수 구성 요소 설정"</block>
-  <block id="4a470f461c007e22030142a71b593456" category="list-text">리포지토리 이름 * 에서 섹션에 자세히 설명된 리포지토리 이름을 입력합니다 <block ref="3bd0a1108a23c22c460b332b6044d46b" category="inline-link-macro-rx"></block>.</block>
-  <block id="7ad0c2df34976d7bd8b12ea9e4d942f5" category="list-text">섹션에 자세히 설명된 대로 OAuth 토큰 ID를 제공합니다 <block ref="3bd0a1108a23c22c460b332b6044d46b" category="inline-link-macro-rx"></block>.</block>
   <block id="cc52ae3c0b42500f9340757e4535abe9" category="list-text">자동 트리거 실행 * 옵션을 선택합니다.</block>
   <block id="7dc4834a62425cc62d13478addab1f09" category="paragraph"><block ref="7dc4834a62425cc62d13478addab1f09" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51b0e138743de6b27eb2983b1e789a5d" category="paragraph">그러면 Terraform Cloud for Business 계정에서 작업 영역을 만드는 작업이 완료됩니다.</block>
@@ -9060,7 +9037,6 @@
   <block id="e97bbbb4aa99cae4a317dc1978ea02ce" category="list-text">* 가치. * NetApp Cloud Manager API 작업에 대한 업데이트 토큰을 입력합니다.</block>
   <block id="c0635c122427dfcc192d6c29ee84e3fb" category="list-text">* 설명 * 토큰 새로 고침.</block>
   <block id="253f26b8ee128a839e34d1b24a799e82" category="inline-link-macro">“환경 필수 구성 요소 설정.”</block>
-  <block id="0873f157a13b94ec2c2cb69ff4d2f25d" category="admonition">NetApp Cloud Manager API 작업을 위한 업데이트 토큰을 얻는 방법에 대한 자세한 내용은 섹션을 참조하십시오 <block ref="e494838bdd9d1128badc766b5008a232" category="inline-link-macro-rx"></block></block>
   <block id="d05613edc0c7136089b620dec8c8d9de" category="paragraph"><block ref="d05613edc0c7136089b620dec8c8d9de" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca0fb47f75ab6fca4e951b8cbe658bdd" category="list-text">아래 표와 같이 Terraform에 민감한 변수를 모두 추가합니다. 기본값을 제공할 수도 있습니다.</block>
   <block id="eb8e560b05e9ad296a7e85c8465ee698" category="cell">Terraform 민감한 변수 이름입니다</block>
@@ -9779,4 +9755,26 @@
   <block id="33f06c93ff0e249c6d028973d21932bc" category="list-text">사용자 인터페이스의 Inventory 섹션에 있는 Tiers 페이지 아래에 Local Tier 및 Cloud Tier 탭이 추가되었습니다.</block>
   <block id="cebb5bee9f2c3fd7a29eb3a7ad7f1530" category="list-text">이제 사용자 인터페이스의 인벤토리 섹션에 있는 포트 페이지의 이름 열 뒤에 노드 열이 표시됩니다.</block>
   <block id="59829409d4681e66c64ba39915db7b13" category="list-text">FQDN을 사용하여 AIQUM에 ONTAP 클러스터를 추가하면 스토리지 인벤토리 검사 페이지가 채워지지 않습니다. 사용자는 IP 주소를 사용하여 AIQUM에 ONTAP 클러스터를 추가해야 합니다.</block>
+  <block id="d94305499731d4ac990a20b7cb6a6b4a" category="inline-link-macro">다음은 NetApp 스토리지 구축 절차(1부)입니다.</block>
+  <block id="dd36bf94d255fd9e55d53f5078ad6906" category="paragraph"><block ref="dd36bf94d255fd9e55d53f5078ad6906" category="inline-link-macro-rx"></block></block>
+  <block id="3a968620de3cd9fc31efff82d9d2dd0d" category="inline-link-macro">다음: VMware vCenter Server 6.7U2 설치 절차</block>
+  <block id="91b9e7776b52469178a5fcad4f7049d4" category="paragraph"><block ref="91b9e7776b52469178a5fcad4f7049d4" category="inline-link-macro-rx"></block></block>
+  <block id="c31eb7dd2056b91419c41baff0842aaf" category="inline-link-macro">다음으로 Cisco UCS C-Series 랙 서버를 구축합니다.</block>
+  <block id="2a98494dbd4dedcebbd5a3476a698b17" category="paragraph"><block ref="2a98494dbd4dedcebbd5a3476a698b17" category="inline-link-macro-rx"></block></block>
+  <block id="45e53425d2653d2fd2ae777132d44bc3" category="inline-link-macro">다음: VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성</block>
+  <block id="88dee804fe15990dd6758ede5645d123" category="paragraph"><block ref="88dee804fe15990dd6758ede5645d123" category="inline-link-macro-rx"></block></block>
+  <block id="2cbbb0371173c8b4294155288d3624cb" category="inline-link-macro">다음: VMware vSphere 6.7U2 구축 절차</block>
+  <block id="b464058fe2eea54a63e15e6ffa6535a9" category="paragraph"><block ref="b464058fe2eea54a63e15e6ffa6535a9" category="inline-link-macro-rx"></block></block>
+  <block id="3c5de8afb134500847c2d82befc7f7fc" category="inline-link-macro">다음은 NetApp AFF 스토리지 구축 절차(2부)입니다.</block>
+  <block id="df5c4529e338fe5628fc632a67bcf0b3" category="paragraph"><block ref="df5c4529e338fe5628fc632a67bcf0b3" category="inline-link-macro-rx"></block></block>
+  <block id="a604e2599b5650f99b6243a6cb88caad" category="inline-link-macro">다음: NetApp Virtual Storage Console 9.6 구축 절차</block>
+  <block id="77ea3e0cb183c71de77cbce4440e970f" category="paragraph"><block ref="77ea3e0cb183c71de77cbce4440e970f" category="inline-link-macro-rx"></block></block>
+  <block id="79be172bb4d7292680bc827a6a2ed941" category="admonition">FabricPool 라이센스는 클러스터 전반에 적용됩니다. 라이센스를 구매할 때 UUID를 사용할 수 있어야 합니다 <block ref="97c6b1d9f961d2fb9b8a976962d5c444" prefix="(" category="inline-code"></block>)를 클릭합니다. 추가 라이센스 정보는 를 참조하십시오<block ref="e79e2253f35b48ecc5164c2e28ca127e" category="inline-link-rx"></block>.</block>
+  <block id="6a2bfb8b978ae1e7f363e2c5bc9a3ac5" category="list-text">리포지토리 이름 * 에서 섹션에 자세히 설명된 리포지토리 이름을 입력합니다 <block ref="e4d59a400fe59f0e4cb4fc1d6c22c1f7" category="inline-link-macro-rx"></block>.</block>
+  <block id="f55293d2d6bdc95bcc1d0f10029daa94" category="list-text">섹션에 자세히 설명된 대로 OAuth 토큰 ID를 제공합니다 <block ref="e4d59a400fe59f0e4cb4fc1d6c22c1f7" category="inline-link-macro-rx"></block>.</block>
+  <block id="a998205fac8a4b4c95fce6d91339404d" category="admonition">NetApp Cloud Manager API 작업을 위한 업데이트 토큰을 얻는 방법에 대한 자세한 내용은 섹션을 참조하십시오 <block ref="35d1f0e345aa61afd6d94e7e18e21e57" category="inline-link-macro-rx"></block></block>
+  <block id="7349a4a610dc5667a30d21a51a3ab405" category="inline-link-macro"><block ref="7349a4a610dc5667a30d21a51a3ab405" category="inline-link-rx"></block></block>
+  <block id="c5278a5ee46f3950c6449cea7119ca37" category="cell"><block ref="c5278a5ee46f3950c6449cea7119ca37" category="inline-link-macro-rx"></block></block>
+  <block id="040d804b2c70516766d21ab594bc39bb" category="cell"><block ref="040d804b2c70516766d21ab594bc39bb" category="inline-link-rx"></block></block>
+  <block id="0d9b0b32a4432dbeaa0425b3a43bf813" category="list-text">* 혁신 및 민첩성 * FlexPod는 Epic, Cerner, MEDITECH 및 필립스 아그파, GE와 같은 이미징 시스템과 같은 EHR에 의해 이상적인 플랫폼으로 권장됩니다. 에 대한 자세한 내용은 을 참조하십시오<block ref="e3215a4a4d4097ca1d3d2b989f46a542" category="inline-link-rx"></block> 대상 플랫폼 아키텍처는 Epic userweb을 참조하십시오. 유전체학을 기반으로 합니다<block ref="24f2c347deb06bba4de59a5266702e7d" category="inline-link-rx"></block> 의료 기관이 민첩하게 혁신 여정을 계속할 수 있도록 지원합니다. FlexPod를 사용하면 조직 변화를 자연스럽게 구현할 수 있습니다. 조직이 FlexPod 플랫폼을 기반으로 표준화할 경우, 의료 IT 전문가는 시간, 노력, 리소스를 프로비저닝하여 혁신을 위한 프로비저닝을 수행할 수 있으며 따라서 에코시스템 요구사항에 따라 민첩해 질 수 있습니다.</block>
 </blocks>

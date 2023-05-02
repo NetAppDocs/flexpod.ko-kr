@@ -45,4 +45,4 @@ lun map –vserver Infra-SVM –volume esxi_boot –lun VM-Host-Infra-B –igrou
 
 NOTE: Cisco UCS C-Series 서버를 추가할 때는 이 단계를 완료해야 합니다.
 
-link:express-c-series-c190-design_vmware_vsphere_6.7u2_deployment_procedure.html["다음: VMware vSphere 6.7U2 구축 절차"]
+link:express-c-series-c190-deploy_vmware_vsphere_6.7u2_deployment_procedure.html["다음: VMware vSphere 6.7U2 구축 절차"]

@@ -110,4 +110,4 @@ image:express-c-series-c190-deploy_image44.png["오류: 그래픽 이미지가 �
 . vCenter Server에 액세스하기 위해 설치 관리자가 제공하는 링크를 클릭할 수 있습니다.
 
 
-link:express-c-series-c190-design_vmware_vcenter_server_6.7u2_and_vsphere_clustering_configuration.html["다음: VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성"]
+link:express-c-series-c190-deploy_vmware_vcenter_server_6.7u2_and_vsphere_clustering_configuration.html["다음: VMware vCenter Server 6.7U2 및 vSphere 클러스터링 구성"]

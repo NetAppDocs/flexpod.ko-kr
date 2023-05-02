@@ -134,4 +134,4 @@ FabricPool 라이센스는 영구 또는 기간 기반(1년 또는 3년) 형식�
 FabricPool 라이센스는 FabricPool 애그리게이트가 포함되지 않은 클러스터에서만 삭제할 수 있습니다.
 
 
-NOTE: FabricPool 라이센스는 클러스터 전반에 적용됩니다. 라이센스를 구매할 때 UUID를 사용할 수 있어야 합니다('cluster identify show'). 추가 라이센스 정보는 를 참조하십시오 https://kb.netapp.com/support/s/article/ka21A0000008qb3QAA/ONTAP-FabricPool-FP-Licensing-Overview["NetApp 기술 자료"^].
+NOTE: FabricPool 라이센스는 클러스터 전반에 적용됩니다. 라이센스를 구매할 때 UUID를 사용할 수 있어야 합니다 (`cluster identify show`)를 클릭합니다. 추가 라이센스 정보는 를 참조하십시오 https://kb.netapp.com/onprem/ontap/dm/FabricPool/ONTAP_FabricPool_(FP)_Licensing_Overview["NetApp 기술 자료"^].
