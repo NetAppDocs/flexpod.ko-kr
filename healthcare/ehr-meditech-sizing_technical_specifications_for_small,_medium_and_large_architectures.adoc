@@ -104,7 +104,7 @@ NOTE: 일부 고객 환경에서는 여러 MEDITECH 운영 워크로드가 동�
 | Cisco UCS 블레이드 서버 | B200 M5 4개 | 각각 2개의 14코어, 2.6GHz 이상의 클럭 속도 및 384GB BIOS 3.2(3#) 
 
 
-| Cisco UCS 가상 인터페이스 카드 | UCS 1440 4개 | VMware ESXi FNIC FC 드라이버:1.6.0.47 VMware ESXi eNIC 이더넷 드라이버:1.0.27.0(상호 운용성 매트릭스 참조: https://ucshcltool.cloudapps.cisco.com/public/)[] 
+| Cisco UCS 가상 인터페이스 카드 | UCS 1440 4개 | VMware ESXi FNIC FC 드라이버:1.6.0.47 VMware ESXi eNIC 이더넷 드라이버:1.0.27.0(상호 운용성 매트릭스 참조: 
 
 
 | Cisco UCS Fabric Interconnect(Fi) 2개 | UCS 6454 FI 2개 | 10/25/100Gb 이더넷 및 32Gb FC를 지원하는 4세대 패브릭 인터커넥트 
@@ -180,7 +180,7 @@ NOTE: 일부 고객 환경에서는 여러 MEDITECH 운영 워크로드가 동�
 | Cisco UCS 블레이드 서버 | 8x B200 M5 | 각각 24코어 2개, 2.7GHz 및 768GB BIOS 3.2(3#) 
 
 
-| Cisco UCS 가상 인터페이스 카드(VIC) | UCS 1440 VICS 8개 | VMware ESXi FNIC FC 드라이버: 1.6.0.47 VMware ESXi eNIC 이더넷 드라이버: 1.0.27.0 (상호 운용성 매트릭스 검토: https://ucshcltool.cloudapps.cisco.com/public/)[] 
+| Cisco UCS 가상 인터페이스 카드(VIC) | UCS 1440 VICS 8개 | VMware ESXi FNIC FC 드라이버: 1.6.0.47 VMware ESXi eNIC 이더넷 드라이버: 1.0.27.0 (상호 운용성 매트릭스 검토: 
 
 
 | 2 x Cisco UCS 패브릭 인터커넥트(FI) | UCS 6454 FI 2개 | 10GB/25GB/100Gb 이더넷 및 32Gb FC를 지원하는 4세대 패브릭 인터커넥트 
