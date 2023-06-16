@@ -3726,7 +3726,6 @@
   <block id="d3c7d299e5b74bd5cd1d1b7633e85f3b" category="list-text">이제 라이센스가 올바르게 표시됩니다</block>
   <block id="a5f3f63c2f6e1d6d4605650633b9ce8a" category="section-title">2021년 10월</block>
   <block id="c47b18a4d429299b996de436c91a4416" category="inline-link-macro">사용 사례 3 디자이너가 없는 양식을 사용하는 사용자 지정 워크플로</block>
-  <block id="7fd44dc2c5fafe252191e6ef332a6773" category="list-text">Cisco Intersight에서 사용 가능한 NetApp 스토리지 작업 목록이 업데이트되었습니다. 을 참조하십시오 <block ref="026b254cc8ff2f5d36709bcf93418a5f" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
   <block id="754b6987e50dda52c9ced2b9e6a1c5a2" category="list-text">클러스터 목록 페이지 아래에 상태 열이 추가되었습니다.</block>
   <block id="b9af62df3144700ecbf415dca380fa7b" category="list-text">이제 선택한 클러스터의 일반 페이지에서 확장된 세부 정보를 사용할 수 있습니다.</block>
   <block id="9413b697ad103ecb2a9939006df613ac" category="list-text">이제 탐색 창을 통해 NTP 서버 테이블에 액세스할 수 있습니다.</block>
@@ -7173,32 +7172,6 @@
   <block id="b314d9c735aadb448d69a15f8a64d5dc" category="list-text">클러스터 인벤토리에 AutoSupport가 추가되었습니다</block>
   <block id="b184dfcc61c7724494e910c3ecf1995d" category="list-text">노드에 CDPD.ENABLE 옵션이 추가되었습니다</block>
   <block id="6b2cd9fd5e6df687c3d2d950a0504cb2" category="list-text">CDP 인접 항목 객체 추가</block>
-  <block id="1b178e202b7d2a2988fd16b3b67c6a9b" category="list-text">Cisco Intersight에서 NetApp 워크플로우 스토리지 작업을 추가했습니다. 을 참조하십시오 <block ref="026b254cc8ff2f5d36709bcf93418a5f" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
-  <block id="054ea9c656473e275b7ae5b69269cc81" category="list-text">볼륨에 스토리지 내보내기 정책을 추가합니다</block>
-  <block id="aa4edcb7e57123151162ef878a3a3bb4" category="list-text">스토리지 LUN 을 확장합니다</block>
-  <block id="cb036c70939fadc3637cbeb990d0a969" category="list-text">스토리지 볼륨 을 확장합니다</block>
-  <block id="01b698a596504162b7fcdf910e9175db" category="list-text">NetApp igroup LUN 맵을 찾습니다</block>
-  <block id="9e5d320b5556f2516f70b24e91d5f757" category="list-text">ID별로 스토리지 LUN을 찾습니다</block>
-  <block id="783d5727a583df3d75bb078907ef7716" category="list-text">ID별로 스토리지 볼륨을 찾습니다</block>
-  <block id="f44bd35636cd69c25b2f240a770ab0a5" category="list-text">저장소 볼륨을 제거합니다</block>
-  <block id="5cb81d48ffabbd08e273eb1371ff2113" category="list-text">새 스토리지 스냅샷 정책</block>
-  <block id="46c325550313b45bd974662a8ba5d5c5" category="list-text">새 스토리지 스냅샷 정책 스케줄입니다</block>
-  <block id="9b9d199f57b9023464de44d3dca11130" category="list-text">스토리지 스냅샷 정책을 제거합니다</block>
-  <block id="7a1c4f4a4587adf0b4172f03a5a10160" category="list-text">스토리지 스냅샷 정책 일정을 제거합니다</block>
-  <block id="a61be198effbf7f1dc853d340112e634" category="list-text">스토리지 스냅샷 정책을 편집합니다</block>
-  <block id="8078f3fdaf127a36179526d045fad2cc" category="list-text">스토리지 스냅샷 정책 스케줄을 편집합니다</block>
-  <block id="469a3f87c703625ad34e802940619510" category="list-text">새 스토리지 볼륨 스냅샷</block>
-  <block id="979a9d34e9735d1cf374866a119573d2" category="list-text">스토리지 볼륨 스냅샷을 제거합니다</block>
-  <block id="474a3e1f12f91f621ea325e1f70cc8e3" category="list-text">스토리지 볼륨 스냅샷의 이름을 바꿉니다</block>
-  <block id="3fa3b03210322aa88ea23ab989f0bd00" category="list-text">새 스토리지 내보내기 정책 규칙입니다</block>
-  <block id="2133699c47edcf42d3f21fca79b3cbc4" category="list-text">스토리지 내보내기 정책 규칙을 편집합니다</block>
-  <block id="aebccc1ede7dceb6a8cb87a8f8ff76e7" category="list-text">스토리지 내보내기 정책 규칙을 제거합니다</block>
-  <block id="4ff4c642392f4f69f68614bbc7a2a203" category="list-text">볼륨에서 스토리지 내보내기 정책 연결을 끊습니다</block>
-  <block id="c6bda77442a097d5afa5bfaa2aa4e765" category="list-text">스토리지 FC 인터페이스를 제거합니다</block>
-  <block id="0027d78119d537368b4fd4055fdfdd69" category="list-text">스토리지 IP 인터페이스를 제거합니다</block>
-  <block id="2205b729cc3612050bfabb80d4d267a0" category="list-text">스토리지 가상 머신을 제거합니다</block>
-  <block id="091e9fb66636892d6015097e15c3353a" category="list-text">스토리지 가상 머신에 대한 애그리게이트를 편집합니다</block>
-  <block id="fc763aee087e01aba254202f6cfd6ba9" category="admonition">새 스토리지 NAS 스마트 볼륨 및 새 스토리지 스마트 LUN 작업은 ONTAP 9.8 이상에서만 작동합니다. ONTAP 9.7P1이(가) 현재 지원되는 최소 버전입니다.</block>
   <block id="d3723866fd8ed566ec4269ff8a1cde80" category="inline-link-macro">NetApp Active IQ Unified Manager 문서</block>
   <block id="f2fe8cac791595f71f03311fed4e6b2f" category="admonition">NetApp AIQ UM 타겟을 요청할 경우 Active IQ Unified Manager에서 관리하는 모든 클러스터가 Intersight에 자동으로 추가됩니다.</block>
   <block id="07360078de4b958f771427531bf4153f" category="summary">SM-BC가 포함된 FlexPod 데이터 센터는 액티브-액티브 데이터 센터 설계를 사용하여 비즈니스 크리티컬 워크로드에 비즈니스 연속성 및 재해 복구를 제공합니다. 일반적으로 이 솔루션은 Metro 지역에 지리적으로 분산된 별도의 위치에 구축된 두 데이터 센터를 서로 연결합니다. NetApp SM-BC 솔루션은 동기식 복제를 사용하여 사이트 장애로부터 비즈니스 크리티컬 데이터 서비스를 보호합니다. 이 솔루션을 사용하려면 두 개의 FlexPod 배포 사이트에 10밀리초 미만의 라운드 트립 네트워크 지연 시간이 있어야 합니다.</block>
@@ -7809,19 +7782,6 @@
   <block id="fa4af406aa8e6bea78d3f4f656f199fe" category="list-text">새 스토리지 NAS 데이터 인터페이스 및 새 스토리지 iSCSI 데이터 인터페이스 아래에 NAS에 대한 "페일오버 정책" 및 "자동 변환" 매개 변수가 추가되었습니다</block>
   <block id="5f5cca73b8e0b0dcf13ae37abd1b30a6" category="list-text">새 저장소 NAS에 대한 롤백 Smart Volume 작업은 연결된 다른 볼륨이 없는 경우 엑스포트 정책을 제거합니다</block>
   <block id="85c1767724516ce4c530e386f6a8e04e" category="list-text">Smart Volume 및 Smart LUN 작업을 위한 향상된 기능을 제공합니다</block>
-  <block id="0de3d10d428301dc752a4aea634acb40" category="list-text">스토리지 호스트에 이니시에이터를 연결합니다</block>
-  <block id="9fc1d1408b035b5f699e246b36f2e395" category="list-text">새로운 NetApp 스토리지 파이버 채널 인터페이스</block>
-  <block id="a5df94fc588067cf92394a3554329601" category="list-text">새로운 스토리지 IP 인터페이스</block>
-  <block id="d7e057b4be4f5aec2f39a363e6970a26" category="list-text">새 스토리지 LUN</block>
-  <block id="4c807515ded4b2b7b3cea9068a98c67c" category="list-text">새 스토리지 LUN ID입니다</block>
-  <block id="c6751b7723c681fbbc53d1ece3f78e57" category="list-text">새로운 NetApp Storage NAS Smart Volume</block>
-  <block id="8221f154a0cd2642f264529279893b96" category="list-text">새로운 NetApp Storage Smart LUN을 도입했습니다</block>
-  <block id="e86a1c0d2603c82b6b81f234dae454af" category="list-text">새 스토리지 볼륨</block>
-  <block id="40f53794e58186747b2ca794fc115708" category="list-text">스토리지 엑스포트 정책을 제거합니다</block>
-  <block id="92deb106459eb050b785db2fe57cce48" category="list-text">스토리지 호스트를 제거합니다</block>
-  <block id="bd400b36b257aae8e728e6440fee9fe6" category="list-text">스토리지 LUN을 제거합니다</block>
-  <block id="020226a8130f1d7d0a9df708c3d7b600" category="list-text">스토리지 LUN ID를 제거합니다</block>
-  <block id="93eafe4433d296a1dd07b95ce951c9a7" category="list-text">NetApp Storage Smart LUN을 제거합니다</block>
   <block id="b8a3a6101b5ada36c1e5927fd398157d" category="list-text">배포 후 프로세스 중에 다음 옵션을 선택합니다.</block>
   <block id="05b3bc98db36aa487224a23de09ab3be" category="admonition">Intersight Assist를 선택할 때 계속하기 전에 장치 ID 및 클레임 코드를 기록해 두십시오.</block>
   <block id="fd7b91f0228fe4adf25f7fca76314e8d" category="list-text">Intersight Assist * 를 선택하고 다음 단계를 완료합니다.</block>
@@ -9118,8 +9078,6 @@
   <block id="ce93121f4d7265c3a12c10d3efa2733d" category="inline-link-macro">이전: &lt;block ref="c04f464a529d08398ebf630bf9c932ed" prefix=""" category='inline-code'/&gt; 스크립트를 사용하여 GATK 실행을 위한 출력.</block>
   <block id="1b04071fa32de2cc62ba81ce722a80de" category="inline-link-macro">block ref="c04f464a529d08398ebf630bf9c932ed" prefix=""" category='inline-code'/&gt; 스크립트를 사용하여 GATK 실행을 위한 출력.</block>
   <block id="919bcacd06d9ba9c758783027661478b" category="inline-link-macro">다음: &lt;block ref="c04f464a529d08398ebf630bf9c932ed" prefix=""" category='inline-code'/&gt; 스크립트를 사용하여 GATK 실행을 위한 출력.</block>
-  <block id="4174da9caea2fe6cfb47e03b760a26b4" category="cell">NetApp Active IQ Unified Manager 최신 버전 필요(현재 9.12 GA)</block>
-  <block id="1ad9d53c3fc2062cfb8cd9f962f46df0" category="paragraph">설치하지 않은 경우 Active IQ Unified Manager(최신 버전이 필요하며 현재 9.12 GA)로 업그레이드 또는 설치합니다. 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
   <block id="30afe0cd8c37f4391553d8fb227f8dd4" category="paragraph">NetApp ONTAP 스토리지와 Cisco Intersight를 위해 AIQ UM이 포함된 프록시 서버를 사용하는 경우 IMT(상호 운용성 매트릭스 툴 서비스)를 활용하려면 CLI(Command Line Interface)를 통해 설정을 구성해야 합니다. IMT 서비스는 * 통합 시스템 * 페이지의 * 상호 운용성 * 탭에서 사용할 수 있습니다. AIQ UM 프록시 서버 설정을 구성하려면 OVA(Active IQ Unified Manager 가상 머신) 진단 셸을 사용해야 합니다.</block>
   <block id="abb14d21829ba186172f6e1d0b64b55b" category="section-title">2023년 1월</block>
   <block id="f58686065d77527c1d5e19130ba1ee62" category="admonition">최신 릴리즈와의 호환성 및 모든 기능을 사용하려면 NetApp Active IQ Unified Manager 9.12 GA로 업그레이드해야 합니다. 이 릴리스와 관련된 알려진 문제 목록은 를 참조하십시오 <block ref="1e93e2dfe5ecbece98249e8c1a59713c" category="inline-xref-macro-rx"></block>.</block>
@@ -9777,4 +9735,53 @@
   <block id="c5278a5ee46f3950c6449cea7119ca37" category="cell"><block ref="c5278a5ee46f3950c6449cea7119ca37" category="inline-link-macro-rx"></block></block>
   <block id="040d804b2c70516766d21ab594bc39bb" category="cell"><block ref="040d804b2c70516766d21ab594bc39bb" category="inline-link-rx"></block></block>
   <block id="0d9b0b32a4432dbeaa0425b3a43bf813" category="list-text">* 혁신 및 민첩성 * FlexPod는 Epic, Cerner, MEDITECH 및 필립스 아그파, GE와 같은 이미징 시스템과 같은 EHR에 의해 이상적인 플랫폼으로 권장됩니다. 에 대한 자세한 내용은 을 참조하십시오<block ref="e3215a4a4d4097ca1d3d2b989f46a542" category="inline-link-rx"></block> 대상 플랫폼 아키텍처는 Epic userweb을 참조하십시오. 유전체학을 기반으로 합니다<block ref="24f2c347deb06bba4de59a5266702e7d" category="inline-link-rx"></block> 의료 기관이 민첩하게 혁신 여정을 계속할 수 있도록 지원합니다. FlexPod를 사용하면 조직 변화를 자연스럽게 구현할 수 있습니다. 조직이 FlexPod 플랫폼을 기반으로 표준화할 경우, 의료 IT 전문가는 시간, 노력, 리소스를 프로비저닝하여 혁신을 위한 프로비저닝을 수행할 수 있으며 따라서 에코시스템 요구사항에 따라 민첩해 질 수 있습니다.</block>
+  <block id="32c88669445a60f20d5c4768cafb4635" category="paragraph">Active IQ Unified Manager를 설치하거나 업그레이드하지 않은 경우(최신 버전이 필요하며 현재 9.13RC1) 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
+  <block id="9944591da8cbd48d8dd6e6366955da50" category="list-text">NetApp 볼륨에 내보내기 정책을 추가합니다</block>
+  <block id="39fcfcb06d577fe28a1681ec59bd8813" category="list-text">NetApp 이니시에이터 그룹에 이니시에이터를 추가합니다</block>
+  <block id="316ae23c10623d9e2fd5c26d0162e4e1" category="list-text">NetApp 내보내기 정책에 규칙을 추가합니다</block>
+  <block id="c1e75562a1ee05d4eb3bdd4ce416c7fe" category="list-text">NetApp 스냅샷 정책에 스케줄을 추가합니다</block>
+  <block id="dcbe38495fab1770c2244fae824e4567" category="list-text">스토리지 가상 시스템에 대한 NetApp 애그리게이트를 편집합니다</block>
+  <block id="a3e01372be0fd350672ec9026d00bfd1" category="list-text">NetApp 엑스포트 정책 규칙을 편집합니다</block>
+  <block id="b2909ba12d7d2bd66cbc580aafe6b228" category="list-text">NetApp 스냅샷 정책을 편집합니다</block>
+  <block id="5fa98424f4171475b37db60b2dc77260" category="list-text">NetApp 스냅샷 정책 일정을 편집합니다</block>
+  <block id="390a620db962909d07928ed78ef53204" category="list-text">NetApp LUN 을 확장합니다</block>
+  <block id="3183eade83f0193ab35b8970f2c68664" category="list-text">NetApp 이니시에이터 그룹 LUN 매핑을 찾습니다</block>
+  <block id="1b746e0205a5cc7f2d0108c9ea93762d" category="list-text">ID별로 NetApp LUN을 찾습니다</block>
+  <block id="8a80e56d5db5a1442049e0f62400b9ca" category="list-text">ID별로 NetApp 볼륨을 찾습니다</block>
+  <block id="e949897c1607f632d83cf0938dee40a7" category="list-text">새 NetApp 내보내기 정책</block>
+  <block id="f990c67abc9fb266464d487c346d3612" category="list-text">새로운 NetApp FC 데이터 인터페이스</block>
+  <block id="61f173414a4053b33c1cfee676b76b4b" category="list-text">새 NetApp 이니시에이터 그룹</block>
+  <block id="63e40433e460c62f2accc6e3a45c06fb" category="list-text">새로운 NetApp iSCSI 데이터 인터페이스</block>
+  <block id="fa78246b0e8c6de1cd52645f02831c86" category="list-text">새로운 NetApp LUN</block>
+  <block id="087a2a891ca2a561f44d5917021c6689" category="list-text">새로운 NetApp LUN 매핑</block>
+  <block id="d73757020a56b91ae816c18a56f9c49d" category="list-text">새로운 NetApp NAS 데이터 인터페이스</block>
+  <block id="31cd130de62753275b838e4c22c01d0e" category="list-text">새로운 NetApp NAS 스마트 볼륨</block>
+  <block id="6cf2feff2e371abb80aba7e5aaea379a" category="list-text">새로운 NetApp 스마트 LUN</block>
+  <block id="8b9572adccfac5fa05a86f00dbb8eab2" category="list-text">새로운 NetApp 스냅샷 정책</block>
+  <block id="d0de55422275f1183147b3b00bf46341" category="list-text">새로운 NetApp 스토리지 가상 시스템</block>
+  <block id="7205da2b815c287ae127a2a0759e3dc8" category="list-text">새 NetApp 볼륨</block>
+  <block id="c88e88f622d355fa885cd07b661181fa" category="list-text">새로운 NetApp 볼륨 스냅샷</block>
+  <block id="c77322d3208fc6cc1fcbf66f2cff2064" category="list-text">NetApp 볼륨에서 엑스포트 정책을 제거합니다</block>
+  <block id="08b4ef99dd90f65a917162dae5001a9b" category="list-text">NetApp 내보내기 정책을 제거합니다</block>
+  <block id="f1c19806910ec96f1866a311f4e2c040" category="list-text">NetApp FC 데이터 인터페이스를 제거합니다</block>
+  <block id="de9b0e25e74ef14a03e62f3d048bee50" category="list-text">NetApp 이니시에이터 그룹을 제거합니다</block>
+  <block id="a6ba73691dd59717e2dd9c330b72c2ec" category="list-text">NetApp IP 인터페이스를 제거합니다</block>
+  <block id="291f295b31590fc97f1bc8ba5251c2f8" category="list-text">NetApp LUN을 제거합니다</block>
+  <block id="0fb99f556df156305cff85e0176d63ce" category="list-text">NetApp LUN 매핑을 제거합니다</block>
+  <block id="0694de58ab2e822e387b823e51e54841" category="list-text">NetApp NAS 스마트 볼륨을 제거합니다</block>
+  <block id="a131b61917fb652a85f68945d920f91f" category="list-text">NetApp 스마트 LUN을 제거합니다</block>
+  <block id="f227d28aa4a5d8fad82d2fed00d7aee1" category="list-text">NetApp 스냅샷 정책을 제거합니다</block>
+  <block id="9f85cc47bf61f32b9cd68d5ff30afd1f" category="list-text">NetApp 스토리지 가상 머신을 제거합니다</block>
+  <block id="bbc2e677fd4417e3186aad3353a3f4a8" category="list-text">NetApp 볼륨을 제거합니다</block>
+  <block id="90e86a915d7d7728d267251ca74d65aa" category="list-text">NetApp 볼륨 스냅샷을 제거합니다</block>
+  <block id="f31b13d8f87aef5c7ef5df3f708aa577" category="list-text">NetApp 내보내기 정책에서 규칙을 제거합니다</block>
+  <block id="7d9b1145d4ddecd2b63b6017eb559a79" category="list-text">NetApp 스냅샷 정책에서 일정을 제거합니다</block>
+  <block id="fcfa83f92e088a38cb0b8b964782a825" category="list-text">NetApp 볼륨 스냅샷의 이름을 바꿉니다</block>
+  <block id="cf1b3d281850307ef3dfced3bacedd94" category="list-text">NetApp 볼륨 용량을 업데이트합니다</block>
+  <block id="76d2b8dc750167185cbc6e1c83deac4f" category="cell">최신 버전의 NetApp Active IQ Unified Manager가 필요합니다(현재 9.13RC1).</block>
+  <block id="411d690288852abddc39378b2989bfda" category="section-title">2023년 6월</block>
+  <block id="b4099ff97cb0b64945972224373faec4" category="admonition">NetApp Active IQ Unified Manager 9.13RC1로 업그레이드하여 최신 릴리스와 완벽하게 호환되도록 해야 합니다.</block>
+  <block id="4afd182647adde3ae53ba9636f8ecd85" category="list-text">NetApp 스토리지 작업의 이름이 업데이트되었습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> 이름이 바뀐 작업의 전체 목록을 표시합니다.</block>
+  <block id="2d24bfd4ad96e334ad70f500b56563c3" category="list-text">Cisco Intersight에서 NetApp 워크플로우 스토리지 작업을 추가했습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
+  <block id="c0d6fe9e8f745815653bfbc202c74e93" category="list-text">Cisco Intersight에서 사용 가능한 NetApp 스토리지 작업 목록이 업데이트되었습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
 </blocks>
