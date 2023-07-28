@@ -79,15 +79,27 @@ Cisco Intersight에서 NetApp 스토리지 및 vCenter 환경을 사용할 수 �
 다음은 Cisco Intersight에서 사용할 수 있는 NetApp 스토리지 작업입니다.
 
 +
+** NetApp CIFS 공유에 ACL을 추가합니다
+** NetApp 내보내기 정책 규칙에 클라이언트 일치 항목을 추가합니다
 ** NetApp 볼륨에 내보내기 정책을 추가합니다
 ** NetApp 이니시에이터 그룹에 이니시에이터를 추가합니다
 ** NetApp 내보내기 정책에 규칙을 추가합니다
 ** NetApp 스냅샷 정책에 스케줄을 추가합니다
+** NetApp 라이센스 상태를 확인합니다
+** NetApp 스토리지 가상 머신 FCP 프로토콜 상태 확인
 ** 스토리지 가상 시스템에 대한 NetApp 애그리게이트를 편집합니다
+** NetApp 비동기식 SnapMirror 정책을 편집합니다
+** NetApp CIFS 공유 ACL 권한을 편집합니다
 ** NetApp 엑스포트 정책 규칙을 편집합니다
 ** NetApp 스냅샷 정책을 편집합니다
 ** NetApp 스냅샷 정책 일정을 편집합니다
+** NetApp 볼륨 보안 스타일을 편집합니다
+** NetApp 볼륨 스냅샷 정책을 편집합니다
+** NetApp CIFS 서비스를 설정합니다
 ** NetApp LUN 을 확장합니다
+** 새로운 NetApp 비동기식 SnapMirror 정책
+** 새 NetApp CIFS 서버
+** 새로운 NetApp CIFS 공유
 ** NetApp 이니시에이터 그룹 LUN 매핑을 찾습니다
 ** ID별로 NetApp LUN을 찾습니다
 ** ID별로 NetApp 볼륨을 찾습니다
@@ -95,24 +107,35 @@ Cisco Intersight에서 NetApp 스토리지 및 vCenter 환경을 사용할 수 �
 ** 새로운 NetApp FC 데이터 인터페이스
 ** 새 NetApp 이니시에이터 그룹
 ** 새로운 NetApp iSCSI 데이터 인터페이스
+** SVM 루트 볼륨용 새 NetApp 로드 공유 미러
 ** 새로운 NetApp LUN
 ** 새로운 NetApp LUN 매핑
 ** 새로운 NetApp NAS 데이터 인터페이스
 ** 새로운 NetApp NAS 스마트 볼륨
 ** 새로운 NetApp 스마트 LUN
+** 볼륨에 대한 새로운 NetApp SnapMirror 관계
 ** 새로운 NetApp 스냅샷 정책
 ** 새로운 NetApp 스토리지 가상 시스템
 ** 새 NetApp 볼륨
 ** 새로운 NetApp 볼륨 스냅샷
+** NetApp 스토리지 가상 머신용 DNS를 등록합니다
+** NetApp CIFS 공유에서 ACL을 제거합니다
+** NetApp 엑스포트 정책 규칙에서 클라이언트 일치 제거
 ** NetApp 볼륨에서 엑스포트 정책을 제거합니다
+** NetApp 이니시에이터 그룹에서 이니시에이터를 제거합니다
+** NetApp CIFS 서버를 제거합니다
+** NetApp CIFS 공유를 제거합니다
 ** NetApp 내보내기 정책을 제거합니다
 ** NetApp FC 데이터 인터페이스를 제거합니다
 ** NetApp 이니시에이터 그룹을 제거합니다
 ** NetApp IP 인터페이스를 제거합니다
+** SVM 루트 볼륨에 대한 NetApp 로드 공유 미러를 제거합니다
 ** NetApp LUN을 제거합니다
 ** NetApp LUN 매핑을 제거합니다
 ** NetApp NAS 스마트 볼륨을 제거합니다
 ** NetApp 스마트 LUN을 제거합니다
+** 볼륨에 대한 NetApp SnapMirror 관계를 제거합니다
+** NetApp SnapMirror 정책을 제거합니다
 ** NetApp 스냅샷 정책을 제거합니다
 ** NetApp 스토리지 가상 머신을 제거합니다
 ** NetApp 볼륨을 제거합니다
@@ -120,6 +143,7 @@ Cisco Intersight에서 NetApp 스토리지 및 vCenter 환경을 사용할 수 �
 ** NetApp 내보내기 정책에서 규칙을 제거합니다
 ** NetApp 스냅샷 정책에서 일정을 제거합니다
 ** NetApp 볼륨 스냅샷의 이름을 바꿉니다
+** SVM 루트 볼륨에 대한 NetApp 로드 공유 미러를 업데이트합니다
 ** NetApp 볼륨 용량을 업데이트합니다
 +
 NetApp 스토리지 및 가상화 작업을 통한 워크플로우 사용자 지정에 대한 자세한 내용은 비디오를 참조하십시오 https://tv.netapp.com/detail/video/6228095945001["Cisco Intersight에서 NetApp ONTAP 스토리지 오케스트레이션"^].

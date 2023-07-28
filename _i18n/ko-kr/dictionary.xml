@@ -9735,7 +9735,6 @@
   <block id="c5278a5ee46f3950c6449cea7119ca37" category="cell"><block ref="c5278a5ee46f3950c6449cea7119ca37" category="inline-link-macro-rx"></block></block>
   <block id="040d804b2c70516766d21ab594bc39bb" category="cell"><block ref="040d804b2c70516766d21ab594bc39bb" category="inline-link-rx"></block></block>
   <block id="0d9b0b32a4432dbeaa0425b3a43bf813" category="list-text">* 혁신 및 민첩성 * FlexPod는 Epic, Cerner, MEDITECH 및 필립스 아그파, GE와 같은 이미징 시스템과 같은 EHR에 의해 이상적인 플랫폼으로 권장됩니다. 에 대한 자세한 내용은 을 참조하십시오<block ref="e3215a4a4d4097ca1d3d2b989f46a542" category="inline-link-rx"></block> 대상 플랫폼 아키텍처는 Epic userweb을 참조하십시오. 유전체학을 기반으로 합니다<block ref="24f2c347deb06bba4de59a5266702e7d" category="inline-link-rx"></block> 의료 기관이 민첩하게 혁신 여정을 계속할 수 있도록 지원합니다. FlexPod를 사용하면 조직 변화를 자연스럽게 구현할 수 있습니다. 조직이 FlexPod 플랫폼을 기반으로 표준화할 경우, 의료 IT 전문가는 시간, 노력, 리소스를 프로비저닝하여 혁신을 위한 프로비저닝을 수행할 수 있으며 따라서 에코시스템 요구사항에 따라 민첩해 질 수 있습니다.</block>
-  <block id="32c88669445a60f20d5c4768cafb4635" category="paragraph">Active IQ Unified Manager를 설치하거나 업그레이드하지 않은 경우(최신 버전이 필요하며 현재 9.13RC1) 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
   <block id="9944591da8cbd48d8dd6e6366955da50" category="list-text">NetApp 볼륨에 내보내기 정책을 추가합니다</block>
   <block id="39fcfcb06d577fe28a1681ec59bd8813" category="list-text">NetApp 이니시에이터 그룹에 이니시에이터를 추가합니다</block>
   <block id="316ae23c10623d9e2fd5c26d0162e4e1" category="list-text">NetApp 내보내기 정책에 규칙을 추가합니다</block>
@@ -9778,10 +9777,50 @@
   <block id="7d9b1145d4ddecd2b63b6017eb559a79" category="list-text">NetApp 스냅샷 정책에서 일정을 제거합니다</block>
   <block id="fcfa83f92e088a38cb0b8b964782a825" category="list-text">NetApp 볼륨 스냅샷의 이름을 바꿉니다</block>
   <block id="cf1b3d281850307ef3dfced3bacedd94" category="list-text">NetApp 볼륨 용량을 업데이트합니다</block>
-  <block id="76d2b8dc750167185cbc6e1c83deac4f" category="cell">최신 버전의 NetApp Active IQ Unified Manager가 필요합니다(현재 9.13RC1).</block>
   <block id="411d690288852abddc39378b2989bfda" category="section-title">2023년 6월</block>
   <block id="b4099ff97cb0b64945972224373faec4" category="admonition">NetApp Active IQ Unified Manager 9.13RC1로 업그레이드하여 최신 릴리스와 완벽하게 호환되도록 해야 합니다.</block>
   <block id="4afd182647adde3ae53ba9636f8ecd85" category="list-text">NetApp 스토리지 작업의 이름이 업데이트되었습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> 이름이 바뀐 작업의 전체 목록을 표시합니다.</block>
   <block id="2d24bfd4ad96e334ad70f500b56563c3" category="list-text">Cisco Intersight에서 NetApp 워크플로우 스토리지 작업을 추가했습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
   <block id="c0d6fe9e8f745815653bfbc202c74e93" category="list-text">Cisco Intersight에서 사용 가능한 NetApp 스토리지 작업 목록이 업데이트되었습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
+  <block id="cef4011c89ea914920838c57c1277b96" category="cell">최신 버전의 NetApp Active IQ Unified Manager가 필요합니다(현재 9.13GA).</block>
+  <block id="fb5978407d362c06c4a1c8ab72f464f1" category="section-title">2023년 7월</block>
+  <block id="f6134ed465dbb55c3531c607933bd957" category="admonition">NetApp Active IQ Unified Manager 9.13GA 업그레이드는 최신 릴리스와 호환되고 모든 기능을 보장하기 위해 필요합니다.</block>
+  <block id="4a743225a883b79a064e0fe794bed4bc" category="list-text">NetApp 스토리지 작업의 이름이 업데이트되었습니다. 이름이 바뀐 작업의 전체 목록은 디자이너가 없는 양식을 사용하는 사용자 지정 워크플로 사용 사례 3 을 참고하세요.</block>
+  <block id="ee3ed84cc0530093ff0cafb58fa20c87" category="list-text">NFS 인터페이스 IP 주소가 새 NetApp NAS 스마트 볼륨 작업의 출력으로 추가되었습니다.</block>
+  <block id="9dda9b1a19688571959dbba112145ceb" category="list-text">ASUP 전송이 검사 탭에 추가되었는지 확인합니다.</block>
+  <block id="71d5edf744a368462afa22987d57ce39" category="list-text">이제 모든 계층의 올바른 계층 유형이 계층 사용자 인터페이스 아래에 올바르게 표시됩니다.</block>
+  <block id="254d491c7abffdd56f4bbf1a450d16bd" category="list-text">이제 모든 호환 라이센스가 라이센스 페이지 아래에 올바르게 표시됩니다.</block>
+  <block id="1ac60a3870a02f53c35001a558aa411b" category="list-text">이제 홈 디렉토리가 없거나 없는 CIFS 공유에 대한 정확한 값이 공유 페이지에 표시됩니다.</block>
+  <block id="db6a99019304bf55663227604fa38d88" category="list-text">이제 LUN 페이지에서 매핑된 열에 대해 정렬 및 필터링이 설정되었습니다.</block>
+  <block id="bf8347272101ad3e5a1f5a7d4a1e1c3d" category="list-text">이제 정렬 및 필터링을 통해 NTP 서버 페이지에서 인증 설정 열을 사용할 수 있게 되었습니다.</block>
+  <block id="dd7a106f5abebdf1130d273be23edf53" category="list-text">검사 탭에 새 검사 및 다음 해당 범주를 추가했습니다.</block>
+  <block id="e6593966d8e9ac936d00c88ec980ca67" category="list-text">랜섬웨어 방지</block>
+  <block id="faeaec9eda6bc4c8cb6e1a9156a858be" category="list-text">가용성</block>
+  <block id="6311ae17c1ee52b36e68aaf4ad066387" category="list-text">기타</block>
+  <block id="ccc2c146b1c8e887b8cb561649b51add" category="list-text">재고 세부 정보 보기에서 물리적 사용된 용량 대신 사용 중인 보고서를 표시합니다.</block>
+  <block id="a45b01faef5c490c90c647f2428032f0" category="paragraph">설치하지 않은 경우 Active IQ Unified Manager(최신 버전이 필요하며 현재 9.13GA)로 업그레이드하거나 설치합니다. 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
+  <block id="d3b7d0dfd7a4c0712106720b7a263dcc" category="list-text">NetApp CIFS 공유에 ACL을 추가합니다</block>
+  <block id="e38df0ad25eaed709eb4fc30b431f674" category="list-text">NetApp 내보내기 정책 규칙에 클라이언트 일치 항목을 추가합니다</block>
+  <block id="c8750c2c8ef4365e348e3f2d6f7e0a60" category="list-text">NetApp 라이센스 상태를 확인합니다</block>
+  <block id="ce2e9853e33335f3e809f3c2fbd4e78e" category="list-text">NetApp 스토리지 가상 머신 FCP 프로토콜 상태 확인</block>
+  <block id="d3e8f4c6bd53e8eacce2b51f384bcbd5" category="list-text">NetApp 비동기식 SnapMirror 정책을 편집합니다</block>
+  <block id="c1aa3662728ce7708fedccdcb4affbf7" category="list-text">NetApp CIFS 공유 ACL 권한을 편집합니다</block>
+  <block id="24d1f1e8d23b508ab9bf5d7afcf636f7" category="list-text">NetApp 볼륨 보안 스타일을 편집합니다</block>
+  <block id="614b87abecdd3f70114678982ebbbb9f" category="list-text">NetApp 볼륨 스냅샷 정책을 편집합니다</block>
+  <block id="c6898dbc38b65e6a09c4b5997d317aeb" category="list-text">NetApp CIFS 서비스를 설정합니다</block>
+  <block id="50b2cba14f218a621d87273c301bbde0" category="list-text">새로운 NetApp 비동기식 SnapMirror 정책</block>
+  <block id="35e279bd6fe2769eca059a8faedc6f43" category="list-text">새 NetApp CIFS 서버</block>
+  <block id="d1d30c3a3d93e98e502928eaaca114bc" category="list-text">새로운 NetApp CIFS 공유</block>
+  <block id="bda45d06eebbcdeab16a923fd8fdd01d" category="list-text">SVM 루트 볼륨용 새 NetApp 로드 공유 미러</block>
+  <block id="6fc90f6f641bcbf5f0e70c9bba86b0a9" category="list-text">볼륨에 대한 새로운 NetApp SnapMirror 관계</block>
+  <block id="28c1a1abaac15f55ead6b402d02df1c8" category="list-text">NetApp 스토리지 가상 머신용 DNS를 등록합니다</block>
+  <block id="8ad01dcf4f5fb308079c8c54b8393fac" category="list-text">NetApp CIFS 공유에서 ACL을 제거합니다</block>
+  <block id="f58fa9ccd1ffe4112c82ac2f86a775bc" category="list-text">NetApp 엑스포트 정책 규칙에서 클라이언트 일치 제거</block>
+  <block id="baed5857e762ed3ffc693f7c65215f5c" category="list-text">NetApp 이니시에이터 그룹에서 이니시에이터를 제거합니다</block>
+  <block id="7fd0848e19c01ad760f8c9f13445e04a" category="list-text">NetApp CIFS 서버를 제거합니다</block>
+  <block id="ab79cf9b18a0947935193e49992783ea" category="list-text">NetApp CIFS 공유를 제거합니다</block>
+  <block id="4a61f0238ebd321bf19f499a028504d8" category="list-text">SVM 루트 볼륨에 대한 NetApp 로드 공유 미러를 제거합니다</block>
+  <block id="6436adc56d37fa0f43192638e893196c" category="list-text">볼륨에 대한 NetApp SnapMirror 관계를 제거합니다</block>
+  <block id="26d4a176845d0e66ac5ee3e91c2d833e" category="list-text">NetApp SnapMirror 정책을 제거합니다</block>
+  <block id="55b6a7c6b2794c0f9cf3d79716818187" category="list-text">SVM 루트 볼륨에 대한 NetApp 로드 공유 미러를 업데이트합니다</block>
 </blocks>
