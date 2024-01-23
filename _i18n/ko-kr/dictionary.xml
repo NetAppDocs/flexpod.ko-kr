@@ -6685,15 +6685,6 @@
   <block id="a6f23c0ade23c5ca643ce8bc1a079ffb" category="list-text">Cisco Nexus 9000 시리즈 스위치의 경우 Cisco NX-OS 소프트웨어 릴리즈 6.1(2) 이상</block>
   <block id="1e770a345ddd07125ec0d9d9a3af0940" category="admonition">FlexPod 구성에 사용되는 소프트웨어가 NetApp에서 지원 및 목록에 있어야 합니다<block ref="af8f174925a8fa1af2321b8d8c2fd047" category="inline-link-rx"></block>. 일부 기능은 나열된 것보다 최신 소프트웨어 릴리스를 필요로 할 수 있습니다.</block>
   <block id="17cfc2f2b50e58c93aaf0a477ff54037" category="sidebar">FlexPod 솔루션 설명서</block>
-  <block id="af0963a66759af7047416c9d85f32efe" category="sidebar">FlexPod - 여기에서 시작하십시오</block>
-  <block id="17c3771ed0b6c1ae15740eff715e9922" category="sidebar">비디오 및 데모</block>
-  <block id="d6b9ea32b921a9f56de32062ba4b94f3" category="sidebar">블로그</block>
-  <block id="cfa345d8fdba7b2e9598cce9c0e3c744" category="sidebar">FlexPod을 통한 AI 및 최신 데이터 분석</block>
-  <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">새로운 기능</block>
-  <block id="7d15915b1c0d83b2d07ba91bb371d99c" category="sidebar">FlexPod 비즈니스 애플리케이션 및 엔터프라이즈 데이터베이스</block>
-  <block id="9651c3a3b7cbc999c2c50c39dbf61c04" category="sidebar">FlexPod 기반의 하이브리드 클라우드</block>
-  <block id="7cb27dbb321a2dda7b1a59417ac87d24" category="sidebar">VDI용 FlexPod</block>
-  <block id="e24bc29daa40702c050f7f3b61476c6f" category="sidebar">FlexPod 의료</block>
   <block id="289167a7b3575c757d12a10d76e13dc8" category="sidebar">FlexPod 익스프레스</block>
   <block id="889caead7ae2f699990cf3e2ecc2bd0a" category="sidebar">FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 설계 가이드 를 참조하십시오</block>
   <block id="7e53631cecdaca27311853b3764c71cc" category="sidebar">FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 구축 가이드 를 참조하십시오</block>
@@ -9688,7 +9679,6 @@
   <block id="4afd182647adde3ae53ba9636f8ecd85" category="list-text">NetApp 스토리지 작업의 이름이 업데이트되었습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> 이름이 바뀐 작업의 전체 목록을 표시합니다.</block>
   <block id="2d24bfd4ad96e334ad70f500b56563c3" category="list-text">Cisco Intersight에서 NetApp 워크플로우 스토리지 작업을 추가했습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
   <block id="c0d6fe9e8f745815653bfbc202c74e93" category="list-text">Cisco Intersight에서 사용 가능한 NetApp 스토리지 작업 목록이 업데이트되었습니다. 을 참조하십시오 <block ref="7cee7c950e5c408827f960772194d4bb" category="inline-link-macro-rx"></block> NetApp 스토리지 작업의 전체 목록을 확인하십시오.</block>
-  <block id="cef4011c89ea914920838c57c1277b96" category="cell">최신 버전의 NetApp Active IQ Unified Manager가 필요합니다(현재 9.13GA).</block>
   <block id="fb5978407d362c06c4a1c8ab72f464f1" category="section-title">2023년 7월</block>
   <block id="f6134ed465dbb55c3531c607933bd957" category="admonition">NetApp Active IQ Unified Manager 9.13GA 업그레이드는 최신 릴리스와 호환되고 모든 기능을 보장하기 위해 필요합니다.</block>
   <block id="4a743225a883b79a064e0fe794bed4bc" category="list-text">NetApp 스토리지 작업의 이름이 업데이트되었습니다. 이름이 바뀐 작업의 전체 목록은 디자이너가 없는 양식을 사용하는 사용자 지정 워크플로 사용 사례 3 을 참고하세요.</block>
@@ -9704,7 +9694,6 @@
   <block id="faeaec9eda6bc4c8cb6e1a9156a858be" category="list-text">가용성</block>
   <block id="6311ae17c1ee52b36e68aaf4ad066387" category="list-text">기타</block>
   <block id="ccc2c146b1c8e887b8cb561649b51add" category="list-text">재고 세부 정보 보기에서 물리적 사용된 용량 대신 사용 중인 보고서를 표시합니다.</block>
-  <block id="a45b01faef5c490c90c647f2428032f0" category="paragraph">설치하지 않은 경우 Active IQ Unified Manager(최신 버전이 필요하며 현재 9.13GA)로 업그레이드하거나 설치합니다. 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
   <block id="d3b7d0dfd7a4c0712106720b7a263dcc" category="list-text">NetApp CIFS 공유에 ACL을 추가합니다</block>
   <block id="e38df0ad25eaed709eb4fc30b431f674" category="list-text">NetApp 내보내기 정책 규칙에 클라이언트 일치 항목을 추가합니다</block>
   <block id="c8750c2c8ef4365e348e3f2d6f7e0a60" category="list-text">NetApp 라이센스 상태를 확인합니다</block>
@@ -9733,4 +9722,10 @@
   <block id="ee1a60bf8afd48f5c57ef8a62da497e2" category="list-text">새 이니시에이터 그룹을 생성하거나 기존 이니시에이터 그룹을 선택하는 데 사용할 수 있는 선택 옵션을 명확하게 표시하도록 새 NetApp 스마트 LUN 작업을 개선했습니다. 이제 사용자가 새 이니시에이터 그룹을 생성하기 위한 상자를 선택하면 기존 이니시에이터 그룹을 선택하는 데 필요한 매개 변수를 더 이상 사용할 수 없습니다. 새 이니시에이터 그룹을 생성하기 위해 확인란을 선택 취소하면 기존 이니시에이터 그룹 매개 변수를 사용할 수 있습니다.</block>
   <block id="1223b61ead710c697d121bc4c8df6a60" category="list-text">새 NetApp LUN 매핑 및 NetApp LUN 매핑 제거 작업이 개선되었습니다. 이제 LUN과 이니시에이터 그룹 간의 새로운 관계가 업데이트됩니다. 작업 실행 시 LUN과 이니시에이터 그룹의 UI 인벤토리가 즉시 업데이트됩니다.</block>
   <block id="cda91d963199f150b4c27541606d0790" category="list-text">이제 사용자가 처음 로그인할 때 검사 페이지가 올바르게 로드되고 더 이상 새로 고칠 필요가 없습니다.</block>
+  <block id="b58b1adee5f08a2f37b40ee17c3097e8" category="cell">최신 버전의 NetApp Active IQ Unified Manager가 필요합니다(현재 9.14RC1).</block>
+  <block id="b225002f4ba131c321e0dc8d89d5a8ad" category="paragraph">설치하지 않은 경우 Active IQ Unified Manager(최신 버전 필요, 현재 9.14RC1) 설치 또는 업그레이드합니다. 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
+  <block id="e245b121672965eb5c120373beb6ebe2" category="image-alt">OVF 템플릿 배포 화면의 스크린샷</block>
+  <block id="fb784db76f57bc935639ba5340089d77" category="section-title">2023년 11월</block>
+  <block id="0860efb25683aa716ffcd95186cf7353" category="admonition">최신 릴리즈와의 호환성과 전체 기능을 보장하려면 NetApp Active IQ Unified Manager 9.14 RC1로 업그레이드해야 합니다.</block>
+  <block id="5c49c1696b71ecb277e29a00e385c986" category="list-text">사용자 인터페이스의 인벤토리 섹션에 NVMe 네임스페이스 페이지가 추가되었습니다.</block>
 </blocks>

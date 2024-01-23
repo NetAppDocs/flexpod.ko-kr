@@ -18,6 +18,16 @@ summary: Cisco Intersight는 새로운 기능, 향상된 기능 및 버그 수�
 
 
 
+== 2023년 11월
+
+
+NOTE: 최신 릴리즈와의 호환성과 전체 기능을 보장하려면 NetApp Active IQ Unified Manager 9.14 RC1로 업그레이드해야 합니다.
+
+* 사용자 인터페이스의 인벤토리 섹션에 NVMe 네임스페이스 페이지가 추가되었습니다.
+
+
+
+
 == 2023년 8월
 
 
