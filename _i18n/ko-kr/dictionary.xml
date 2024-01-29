@@ -3679,24 +3679,7 @@
   <block id="2a304a1348456ccd2234cd71a81bd338" category="inline-link">링크</block>
   <block id="c93483174eb31dc7fbbe326f1c100f35" category="paragraph">여기 가 있습니다<block ref="e0428282d0e7de772227d65a22541ae5" category="inline-link-rx"></block> Cisco Intersight의 NetApp ONTAP 스토리지 모니터링 기능을 보여주는 비디오입니다.</block>
   <block id="4eddc275f6028504b4d1bbed1e6ae1cb" category="section-title">사용 사례 2: 참조 워크플로우를 사용하는 NetApp 스토리지 오케스트레이션</block>
-  <block id="71db33e46e7cd195a5435b5bbd459f00" category="paragraph">Cisco Intersight에서 NetApp 스토리지 및 vCenter 환경을 이용할 수 있는 경우 스토리지 및 가상화 작업이 포함된 완벽한 레퍼런스 워크플로우를 즉시 실행할 수 있습니다.</block>
   <block id="ad394a42593fccfc9f89e6e10730a3c0" category="list-text">Intersight Assist를 통해 Intersight에 vCenter 타겟을 추가합니다.</block>
-  <block id="e5b3d0fd155bb870e4420af06394bbd3" category="list-text">즉시 사용 가능한 참조 워크플로우 실행</block>
-  <block id="084d65e339ce13f9808de5cb168533ee" category="paragraph">다음은 참조 워크플로우 목록입니다.</block>
-  <block id="6bdb241b38971486dbf0ae65713629b5" category="list-text">새로운 스토리지 인터페이스</block>
-  <block id="41015c59f24c8d0a295bb008dcab894b" category="list-text">새 VMFS 데이터 저장소</block>
-  <block id="90b8d6dbd471d96a6eb81c26e4950f66" category="list-text">VMFS 데이터 저장소를 업데이트합니다</block>
-  <block id="c8294275582a7d8cf8eb396e416bd5bc" category="list-text">VMFS 데이터 저장소를 제거합니다</block>
-  <block id="221275b515f2f2d061278fa891fba037" category="list-text">새 NAS 데이터 저장소</block>
-  <block id="b4ce0f100a8ef985df3d96c1de352e59" category="list-text">NAS 데이터 저장소를 업데이트합니다</block>
-  <block id="2be427f143fe2c7535d3255ff3acb81b" category="list-text">NAS 데이터 저장소를 제거합니다</block>
-  <block id="cf585ac30084d99acfaf33e5e4dd62d1" category="list-text">새 스토리지 호스트</block>
-  <block id="b3899145c67672c8bd99a3b4d43bf690" category="list-text">스토리지 호스트를 업데이트합니다</block>
-  <block id="c9c602ce9bba0253c26a1e2982260f1c" category="list-text">스토리지 호스트를 제거합니다</block>
-  <block id="e6e0c10af4047ddf4cc255b55df46dac" category="list-text">새 스토리지 내보내기 정책</block>
-  <block id="eda4446acba9d8508e0d513c13d3d9da" category="list-text">스토리지 내보내기 정책을 제거합니다</block>
-  <block id="7c482940e2cbbc8b34c0ea99ea5d46d4" category="list-text">새로운 스토리지 가상 머신</block>
-  <block id="09a4d46ab76931825b888683878c6c76" category="list-text">새로운 가상 머신</block>
   <block id="97e1e380ad6fec970bc1c31e70c64a7a" category="section-title">사용 사례 3: 디자이너가 필요 없는 양식을 사용하는 사용자 지정 워크플로</block>
   <block id="ebdd07b29e304318f596e225db587279" category="paragraph">Cisco Intersight에서 NetApp 스토리지 및 vCenter 환경을 사용할 수 있는 경우 NetApp 스토리지 및 가상화 작업을 사용하여 맞춤형 워크플로우를 구축할 수 있습니다.</block>
   <block id="28138f5b00c14f915db4af5bc22c6e89" category="list-text">Intersight Assist OVA 구축(vCenter 환경의 내부 작업)</block>
@@ -9726,6 +9709,26 @@
   <block id="b225002f4ba131c321e0dc8d89d5a8ad" category="paragraph">설치하지 않은 경우 Active IQ Unified Manager(최신 버전 필요, 현재 9.14RC1) 설치 또는 업그레이드합니다. 자세한 내용은 로 이동하십시오 <block ref="b713007c96ed5cceca9ab6b5776ab58a" category="inline-link-macro-rx"></block>.</block>
   <block id="e245b121672965eb5c120373beb6ebe2" category="image-alt">OVF 템플릿 배포 화면의 스크린샷</block>
   <block id="fb784db76f57bc935639ba5340089d77" category="section-title">2023년 11월</block>
-  <block id="0860efb25683aa716ffcd95186cf7353" category="admonition">최신 릴리즈와의 호환성과 전체 기능을 보장하려면 NetApp Active IQ Unified Manager 9.14 RC1로 업그레이드해야 합니다.</block>
   <block id="5c49c1696b71ecb277e29a00e385c986" category="list-text">사용자 인터페이스의 인벤토리 섹션에 NVMe 네임스페이스 페이지가 추가되었습니다.</block>
+  <block id="3edb98d021e3054db284901ca7c19c71" category="section-title">사용 사례 2: 참조 워크플로우를 사용하여 NetApp 스토리지 오케스트레이션</block>
+  <block id="4deb0bcf6ee79bb6231b1d9a8236ee7f" category="inline-link">FlexPod Intersight 워크플로 저장소</block>
+  <block id="801e3380644b27475e0559db15c18ffe" category="paragraph">NetApp 스토리지 및 vCenter 환경을 Cisco Intersight에서 사용할 수 있으면 를 통해 GitHub에서 제공되는 엔드 투 엔드 참조 워크플로를 사용할 수 있습니다<block ref="dbef3ce40b045312da2d2a3590390d56" category="inline-link-rx"></block>.</block>
+  <block id="a7b8d77df644cec5edd41602f8bde9fe" category="paragraph">참조 워크플로에는 스토리지 및 가상화 작업이 포함됩니다. 리포지토리의 README 파일은 워크플로 실행에 필요한 필수 조건, 유용한 리소스에 대한 링크(워크플로 가져오기 방법에 대한 문서 포함) 및 각 참조 워크플로에 대한 문서 링크를 제공합니다.</block>
+  <block id="42ee80278c64c0335ab90c3ca11e5fc2" category="paragraph">각 워크플로에는 두 개의 파일이 들어 있는 리포지토리의 폴더가 있습니다.</block>
+  <block id="f74336cac868327b942a18cba977b140" category="list-text">JSON 파일을 다운로드하여 Intersight로 가져옵니다.</block>
+  <block id="4efec42a58f3f78364a340527d6a91c5" category="list-text">워크플로의 작업, 워크플로 입력 및 워크플로 실행 예를 보여 주는 문서 파일입니다.</block>
+  <block id="75a064044a86e35e2e078856b448e6ce" category="paragraph">참조 워크플로를 가져오고 사용하려면 다음을 수행합니다.</block>
+  <block id="1ff531cef47fff4cf5489daaf767913b" category="list-text">FlexPod-Intersight-Workflow 저장소에서 참조 워크플로우용 JSON 파일을 다운로드하십시오.</block>
+  <block id="e6b633ef88a5f19ab750e7561b73ba79" category="list-text">워크플로우를 Intersight로 가져온 다음 워크플로우를 실행합니다.</block>
+  <block id="e23b10811291830d7473d61a83fea7b7" category="paragraph">다음은 GitHub FlexPod-Intersight - 워크플로 저장소에서 사용할 수 있는 워크플로 목록입니다.</block>
+  <block id="ad1cc7a77d25ebba82b62c73eb10b612" category="list-text">NetApp 볼륨에 대한 새로운 내보내기 정책</block>
+  <block id="71305ad3f6f06f57de106696ca53fcc9" category="list-text">NetApp 스마트 볼륨을 사용하는 새 NAS 데이터 저장소입니다</block>
+  <block id="6fcc1f9b74af784c1c904dd8f98d13bc" category="list-text">NetApp Smart LUN을 사용하는 새 VMFS 데이터 저장소입니다</block>
+  <block id="26d33b228398e0c75f8ce7e3c24ece85" category="list-text">NetApp 이니시에이터 그룹에서 이니시에이터를 제거합니다</block>
+  <block id="2c727aeb2c8679c2588db34d4518e88b" category="list-text">NetApp 스마트 볼륨을 사용하여 NAS 데이터 저장소를 제거합니다</block>
+  <block id="cb623d65e44d9911c481d53db6546cfd" category="list-text">NetApp 스마트 LUN을 사용하여 VMFS 데이터 저장소를 제거합니다</block>
+  <block id="84c6562e9555586ee56eb4096f52f8d2" category="list-text">NetApp 스마트 볼륨을 사용하여 NAS 데이터 저장소를 업데이트합니다</block>
+  <block id="eade77a2815c8954887e241cc8a7cdbd" category="list-text">NetApp Smart LUN을 사용하여 VMFS 데이터 저장소를 업데이트합니다</block>
+  <block id="efe846805e5476fec607bbf54e45dc44" category="section-title">2024년 1월</block>
+  <block id="1dbf0a61b61f004514eb71c762bdda23" category="list-text">참조 워크플로우를 사용한 NetApp 스토리지 오케스트레이션은 이제 를 통해 GitHub에서 다운로드할 수 있습니다<block ref="dbef3ce40b045312da2d2a3590390d56" category="inline-link-rx"></block>. GitHub의 새로운 참조 워크플로에 대한 자세한 내용은 을 참조하십시오 <block ref="603c2ccdc54cec25fe66c69c148f7dcb" category="inline-link-macro-rx"></block>.</block>
 </blocks>
