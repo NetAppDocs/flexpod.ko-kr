@@ -14,7 +14,7 @@ summary: Cisco Intersight와 NetApp ONTAP 스토리지 통합을 위한 하드�
 
 
 [role="lead"]
-Cisco Intersight와 NetApp ONTAP 스토리지 통합을 위한 하드웨어, 소프트웨어 및 라이센스 요구사항이 충족되는지 확인합니다.
+NetApp ONTAP 스토리지를 Cisco Intersight와 통합하기 위한 하드웨어, 소프트웨어 및 라이센스 요구사항을 충족하는지 확인합니다.
 
 
 
@@ -32,25 +32,25 @@ Cisco Intersight와 NetApp ONTAP 스토리지 통합을 위한 하드웨어, 소
 | NetApp Active IQ Unified Manager를 참조하십시오 | 최신 버전의 NetApp Active IQ Unified Manager가 필요합니다(현재 9.14RC1). 
 
 
-| NetApp 스토리지 어레이 | ONTAP 9.7P1 이상에서 모든 ONTAP ASA, AFF 및 FAS 스토리지 어레이가 지원됩니다 
+| NetApp 스토리지 어레이 | ONTAP 9.7P1 이상에서 모든 ONTAP ASA, AFF 및 FAS 스토리지 어레이를 지원합니다 
 
 
-| 가상화 하이퍼바이저 | vSphere 6.7 이상 
+| 가상화 하이퍼바이저 | vSphere 7.0 이상 
 |===
 
-NOTE: 을 참조하십시오 https://www.cisco.com/c/en/us/solutions/collateral/data-center-virtualization/flexpod/cisco-imm-for-flexpod.html["FlexPod용 Cisco Intersight 관리 모드"^] Cisco UCS Compute Components 및 UCSM 버전의 최소 요구 사항
+NOTE: 을 참조하십시오 https://intersight.com/help/saas/supported_systems["Cisco Intersight 지원 시스템"^] Cisco UCS Compute Components 및 UCSM 버전의 최소 요구 사항
 
 
 
 == Cisco Intersight 라이센스 요구 사항
 
-Cisco Intersight는 선택할 수 있는 여러 라이센스 에디션과 함께 구독 기반으로 라이센스가 부여됩니다. 다양한 라이센스 유형에 따라 기능이 향상됩니다. 1년, 3년 또는 5년의 구독 기간을 구입하고 선택한 구독 기간에 필요한 Cisco UCS Server 볼륨 계층을 선택할 수 있습니다. Cisco Intersight 포털에 액세스하여 장치를 요청할 때 각 Cisco 끝점에 추가 비용 없이 Cisco Intersight Base가 자동으로 포함됩니다.
+Cisco Intersight는 물리적 스토리지(NetApp 스토리지)를 관리, 자동화, 최적화하는 인프라 서비스 및 Cloud Orchestrator 서비스와 같은 서비스를 제공합니다. 이 서비스를 사용하여 Cisco UCS 서버 및 Cisco HyperFlex 시스템을 관리할 수 있습니다. Infrastructure Service 및 Cloud Orchestrator 서비스는 여러 계층의 구독 기반 라이센스 모델을 사용합니다. 선택한 구독 기간에 필요한 Cisco UCS Server 볼륨 계층을 선택할 수 있습니다.
 
-Cisco 주문 툴을 사용하여 다음과 같은 상위 계층 Intersight 라이센스를 구입할 수 있습니다.
+.라이센스 모델
+Cisco Intersight Infrastructure Services 라이센스 모델이 간소화되었으며, 이제 다음 두 개의 계층을 제공합니다.
 
-* * Cisco Intersight Essentials. * Essentials는 Cisco UCS Central 및 Cisco IMC Supervisor 자격, 서비스 프로필을 사용한 정책 기반 구성, 펌웨어 관리, HCL(하드웨어 호환성 목록)과의 호환성 평가 등 추가 기능과 함께 기본 계층의 모든 기능을 포함합니다.
-* * Cisco Intersight Advantage. * Advantage는 Base 및 Essentials 계층의 모든 기능과 특징을 제공합니다. 여기에는 스토리지 위젯, 스토리지 인벤토리, 스토리지 용량 및 스토리지 사용률, 물리적 컴퓨팅, 물리적 스토리지 및 가상 환경(VMware ESXi)에 걸친 도메인 간 인벤토리 상관 관계가 포함됩니다.
-* * Cisco Intersight Premier. * Cisco Intersight Premier는 Advantage 계층에서 제공되는 기능 외에도 Cisco UCS 및 VM(가상 머신)(VMware vCenter) 및 물리적 스토리지(NetApp 스토리지)를 포함한 타사 시스템에서 프라이빗 클라우드 IaaS(서비스로서의 인프라) 오케스트레이션을 제공합니다.
+* * Cisco Intersight Infrastructure Services Essentials * - Essentials 라이센스 계층은 글로벌 상태 모니터링 기능, 인벤토리, Cisco TAC 통합을 통한 사전 지원, 다중 요소 인증, SDK 및 API 액세스를 제공하는 등의 서버 관리를 제공합니다.
+* * Cisco Intersight Infrastructure Services Advantage * - Advantage 라이센스 계층은 확장된 가시성, 에코시스템 통합, Cisco 및 타사 하드웨어 및 소프트웨어 자동화와 다중 도메인 솔루션을 제공하는 고급 서버 관리를 제공합니다.
 
 
-다양한 라이센스 계층에서 지원하는 기능에 대한 자세한 내용은 를 참조하십시오 https://intersight.com/help/getting_started#intersight_licensing["Cisco 라이센스"].
+다양한 라이센스 계층에서 지원하는 기능에 대한 자세한 내용은 를 참조하십시오 https://intersight.com/help/saas/getting_started/licensing_requirements/lic_infra#licensing_model["인프라 서비스 라이센스"^].

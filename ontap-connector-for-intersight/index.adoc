@@ -21,4 +21,13 @@ summary: NetApp과 Cisco는 협력 관계를 맺고 FlexPod 에코시스템을 �
 
 NetApp과 Cisco는 협력 관계를 맺고 FlexPod 에코시스템을 위한 단일 창 방식으로 제공하는 Cisco Intersight를 제공하고 있습니다. 이처럼 간소한 통합으로 FlexPod 인프라 및 FlexPod 솔루션의 모든 구성요소를 위한 통합 관리 플랫폼이 생성됩니다. Cisco Intersight를 사용하면 NetApp 스토리지, Cisco 컴퓨팅 및 VMware 인벤토리를 모니터링할 수 있습니다. 또한 워크플로우를 조율하거나 자동화하여 스토리지 및 가상화 작업을 동시에 수행할 수 있습니다.
 
-자세한 내용은 을 참조하십시오 https://www.netapp.com/pdf.html?item=/media/25001-tr-4883.pdf["TR 4883: ONTAP 9.8을 지원하는 FlexPod 데이터 센터, Cisco Intersight용 ONTAP 스토리지 커넥터, Cisco Intersight 관리 모드"^].
+.관련 정보
+자세한 내용은 다음 문서 및 웹 사이트를 참조하십시오.
+
+https://www.netapp.com/pdf.html?item=/media/25001-tr-4883.pdf["TR 4883: ONTAP 9.8을 지원하는 FlexPod 데이터 센터, Cisco Intersight용 ONTAP 스토리지 커넥터, Cisco Intersight 관리 모드"^]
+
+https://intersight.com/help/saas["Cisco Intersight 도움말 센터"^]
+
+https://intersight.com/help/saas/getting_started/overview["Cisco Intersight 시작하기 개요"^]
+
+https://www.cisco.com/c/en/us/td/docs/unified_computing/Intersight/b_Cisco_Intersight_Appliance_Getting_Started_Guide/b_Cisco_Intersight_Appliance_Install_and_Upgrade_Guide_chapter_00.html["Intersight Appliance 설치 및 업그레이드 가이드"^]
