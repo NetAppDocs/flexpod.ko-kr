@@ -3679,7 +3679,6 @@
   <block id="16823263a74001ecb22c9fecdb2d8af2" category="paragraph">다음은 Cisco Intersight에서 사용할 수 있는 NetApp 스토리지 작업입니다.</block>
   <block id="aed9e8ce86d6b67ac26c7d1937461e90" category="inline-link">Cisco Intersight에서 NetApp ONTAP 스토리지 오케스트레이션</block>
   <block id="efd91dc6276bbe52b654d531a05b3658" category="paragraph">NetApp 스토리지 및 가상화 작업을 통한 워크플로우 사용자 지정에 대한 자세한 내용은 비디오를 참조하십시오<block ref="9c51a52bc77cfd7dca26d970b0100330" category="inline-link-rx"></block>.</block>
-  <block id="d95867deadfe690e40f42068d6b59df8" category="doc">참조</block>
   <block id="937072d3e0f7b646b7f3f24a312489f8" category="paragraph">자세한 내용은 다음 문서 및 웹 사이트를 참조하십시오.</block>
   <block id="4c797a8e70e93514000fabd2051b5ddb" category="paragraph"><block ref="4c797a8e70e93514000fabd2051b5ddb" category="inline-link-rx"></block></block>
   <block id="0580772620331f949057ed6afbb098ea" category="inline-link">Cisco Intersight 시작하기 개요</block>
@@ -9733,4 +9732,26 @@
   <block id="30f60d67f457bb040dffde52197a54da" category="paragraph-title">관련 정보</block>
   <block id="cb2f26cdcb58be1d59a4186132027351" category="inline-link">Cisco Intersight 도움말 센터</block>
   <block id="cbdd42cc134bfbfb08861472ec705bb4" category="paragraph"><block ref="cbdd42cc134bfbfb08861472ec705bb4" category="inline-link-rx"></block></block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
+  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</block>
+  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">특허</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.</block>
+  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
+  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
+  <block id="6c5a2d8729b8ce5ae6b035791d668adb" category="sidebar">NetApp 및 Cisco의 혁신적인 기술을 기반으로 하며 전 세계 수천 곳의 고객이 신뢰하는 FlexPod 플랫폼은 동급 최고의 데이터 센터 아키텍처를 위한 구축 단순화의 도전을 이룹니다. 사전 검증된 스토리지, 네트워킹 및 서버 기술로 구성된 FlexPod는 조직의 요구사항에 대한 IT의 대응성을 높이고 컴퓨팅 비용을 줄이며 가동 시간을 최대화하고 위험을 최소화하도록 설계되었습니다. 기업은 데이터와 애플리케이션 제공을 간소화하여 에지, 코어 또는 클라우드에서 새로운 서비스 및 워크로드를 실행하는 이점을 얻을 수 있습니다.</block>
+  <block id="af0963a66759af7047416c9d85f32efe" category="sidebar">FlexPod - 여기에서 시작하십시오</block>
+  <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">새로운 기능</block>
+  <block id="17c3771ed0b6c1ae15740eff715e9922" category="sidebar">비디오 및 데모</block>
+  <block id="d6b9ea32b921a9f56de32062ba4b94f3" category="sidebar">블로그</block>
+  <block id="cfa345d8fdba7b2e9598cce9c0e3c744" category="sidebar">FlexPod을 통한 AI 및 최신 데이터 분석</block>
+  <block id="7d15915b1c0d83b2d07ba91bb371d99c" category="sidebar">FlexPod 비즈니스 애플리케이션 및 엔터프라이즈 데이터베이스</block>
+  <block id="9651c3a3b7cbc999c2c50c39dbf61c04" category="sidebar">FlexPod 기반의 하이브리드 클라우드</block>
+  <block id="7cb27dbb321a2dda7b1a59417ac87d24" category="sidebar">VDI용 FlexPod</block>
+  <block id="e24bc29daa40702c050f7f3b61476c6f" category="sidebar">FlexPod 의료</block>
 </blocks>

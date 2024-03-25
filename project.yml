@@ -22,3 +22,5 @@ sidebar:
   - section: security
   - section: ontap-connector-for-intersight
   - section: infrastructure
+  - title: 법적 고지
+    url: "/legal-notices.html"
