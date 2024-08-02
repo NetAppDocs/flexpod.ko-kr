@@ -3589,8 +3589,6 @@
   <block id="ebd1193b80c5bb1e5a3c2f4ca7d1ad9f" category="paragraph">다운로드 및 설치 프로세스가 시작됩니다. 바이너리는 Intersight Cloud에서 사내 어플라이언스로 전송됩니다. 완료 시간은 Intersight Cloud에 대한 대역폭에 따라 다릅니다.</block>
   <block id="f9d402f73c06490b49744c7260f10c18" category="summary">Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 가상화 장치를 요청할 수 있습니다.</block>
   <block id="7351a1047aea1d8e523aae1df309c347" category="doc">청구 대상</block>
-  <block id="ff2e4aa830d38c99b2010a91bd562775" category="inline-link">Cisco Intersight Assist를 통해 목표를 확인합니다.</block>
-  <block id="6bc0022874ff4b98cf45584e525e1f00" category="paragraph">Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 가상화 장치를 요청할 수 있습니다. Intersight Targets * 페이지로 돌아가서 vCenter 및 NetApp Active IQ Unified Manager 타겟을 추가합니다. 청구 프로세스에 대한 자세한 내용은 비디오를 참조하십시오<block ref="30d5424c5fce71a06fbbaa3ffc76fb0e" category="inline-link-rx"></block></block>
   <block id="c27675fd33dbae852257d83ae0b40ee3" category="admonition">NetApp AIQ UM(Active IQ Unified Manager) API 게이트웨이가 활성화되어 있는지 확인하십시오.</block>
   <block id="94a25ce3cfde50ac05004124838a8585" category="inline-image-macro">활성화된 NetApp AIQ UM API 게이트웨이의 스크린샷</block>
   <block id="ad16b87ea1c3124b9265af68c137ab53" category="paragraph"><block ref="ad16b87ea1c3124b9265af68c137ab53" category="inline-image-macro-rx" type="image"></block></block>
@@ -3666,7 +3664,6 @@
   <block id="3565f69c284244db8d5ca84b622ee9f7" category="list-text">스토리지 * 로 이동하여 NetApp 스토리지 인벤토리를 탐색할 수 있습니다.</block>
   <block id="e409ef30600b1f6d6feda5ec5cf2b09a" category="list-text">NetApp 스토리지의 * 위젯 * 을 * 모니터 대시보드 * 에 추가합니다.</block>
   <block id="2a304a1348456ccd2234cd71a81bd338" category="inline-link">링크</block>
-  <block id="c93483174eb31dc7fbbe326f1c100f35" category="paragraph">여기 가 있습니다<block ref="e0428282d0e7de772227d65a22541ae5" category="inline-link-rx"></block> Cisco Intersight의 NetApp ONTAP 스토리지 모니터링 기능을 보여주는 비디오입니다.</block>
   <block id="4eddc275f6028504b4d1bbed1e6ae1cb" category="section-title">사용 사례 2: 참조 워크플로우를 사용하는 NetApp 스토리지 오케스트레이션</block>
   <block id="ad394a42593fccfc9f89e6e10730a3c0" category="list-text">Intersight Assist를 통해 Intersight에 vCenter 타겟을 추가합니다.</block>
   <block id="97e1e380ad6fec970bc1c31e70c64a7a" category="section-title">사용 사례 3: 디자이너가 필요 없는 양식을 사용하는 사용자 지정 워크플로</block>
@@ -3677,8 +3674,6 @@
   <block id="054075501dbbc3039c5d0b5dab12a766" category="list-text">워크플로 만들기 * 를 선택합니다.</block>
   <block id="17fd08459c8a5f34d6f93f908fc4fc70" category="list-text">워크플로우에 스토리지 및 가상화 작업을 추가할 수 있습니다.</block>
   <block id="16823263a74001ecb22c9fecdb2d8af2" category="paragraph">다음은 Cisco Intersight에서 사용할 수 있는 NetApp 스토리지 작업입니다.</block>
-  <block id="aed9e8ce86d6b67ac26c7d1937461e90" category="inline-link">Cisco Intersight에서 NetApp ONTAP 스토리지 오케스트레이션</block>
-  <block id="efd91dc6276bbe52b654d531a05b3658" category="paragraph">NetApp 스토리지 및 가상화 작업을 통한 워크플로우 사용자 지정에 대한 자세한 내용은 비디오를 참조하십시오<block ref="9c51a52bc77cfd7dca26d970b0100330" category="inline-link-rx"></block>.</block>
   <block id="937072d3e0f7b646b7f3f24a312489f8" category="paragraph">자세한 내용은 다음 문서 및 웹 사이트를 참조하십시오.</block>
   <block id="4c797a8e70e93514000fabd2051b5ddb" category="paragraph"><block ref="4c797a8e70e93514000fabd2051b5ddb" category="inline-link-rx"></block></block>
   <block id="0580772620331f949057ed6afbb098ea" category="inline-link">Cisco Intersight 시작하기 개요</block>
@@ -9754,4 +9749,5 @@
   <block id="9651c3a3b7cbc999c2c50c39dbf61c04" category="sidebar">FlexPod 기반의 하이브리드 클라우드</block>
   <block id="7cb27dbb321a2dda7b1a59417ac87d24" category="sidebar">VDI용 FlexPod</block>
   <block id="e24bc29daa40702c050f7f3b61476c6f" category="sidebar">FlexPod 의료</block>
+  <block id="da1ad8cf23727f17cd3ee56b1280c387" category="paragraph">Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 가상화 장치를 요청할 수 있습니다. Intersight Targets * 페이지로 돌아가서 vCenter 및 NetApp Active IQ Unified Manager 타겟을 추가합니다.</block>
 </blocks>

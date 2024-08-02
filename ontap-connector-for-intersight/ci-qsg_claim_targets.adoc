@@ -14,7 +14,7 @@ summary: Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 
 
 
 [role="lead"]
-Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 가상화 장치를 요청할 수 있습니다. Intersight Targets * 페이지로 돌아가서 vCenter 및 NetApp Active IQ Unified Manager 타겟을 추가합니다. 청구 프로세스에 대한 자세한 내용은 비디오를 참조하십시오 https://tv.netapp.com/detail/video/6228080442001["Cisco Intersight Assist를 통해 목표를 확인합니다."^]
+Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 가상화 장치를 요청할 수 있습니다. Intersight Targets * 페이지로 돌아가서 vCenter 및 NetApp Active IQ Unified Manager 타겟을 추가합니다.
 
 
 NOTE: NetApp AIQ UM(Active IQ Unified Manager) API 게이트웨이가 활성화되어 있는지 확인하십시오.

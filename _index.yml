@@ -14,7 +14,7 @@ indexpage:
     - title: 새로운 기능
       url: https://fieldportal.netapp.com/content/1668183
     - title: 비디오 및 데모
-      url: https://tv.netapp.com/search?q=FlexPod
+      url: https://media.netapp.com/search?q=FlexPod
     - title: 블로그
       url: https://blog.netapp.com/tag/Flexpod/
   - title: FlexPod을 통한 AI 및 최신 데이터 분석
@@ -22,13 +22,11 @@ indexpage:
     - title: 새로운 기능
       url: https://www.flexpod.com/solutions/use-cases/machine-learning/
     - title: 비디오 및 데모
-      url: https://tv.netapp.com/search?q=FlexPod%20AI
+      url: https://media.netapp.com/search?q=FlexPod%20AI
     - title: 블로그
       url: https://blog.netapp.com/tag/Flexpod/
   - title: FlexPod 비즈니스 애플리케이션 및 엔터프라이즈 데이터베이스
     links:
-    - title: 비디오 및 데모
-      url: https://tv.netapp.com/search?q=FlexPod%20SAP
     - title: 블로그
       url: https://blog.netapp.com/tag/Flexpod/
   - title: FlexPod 기반의 하이브리드 클라우드
@@ -36,22 +34,18 @@ indexpage:
     - title: 새로운 기능
       url: https://flexpod.com/solutions/use-cases/hybrid-cloud/
     - title: 비디오 및 데모
-      url: https://tv.netapp.com/search?q=FlexPod%20Hybrid%20Cloud
+      url: https://media.netapp.com/search?q=FlexPod%20Hybrid%20Cloud
     - title: 블로그
       url: https://blog.netapp.com/tag/Flexpod/
   - title: VDI용 FlexPod
     links:
     - title: 새로운 기능
       url: https://www.flexpod.com/solutions/use-cases/virtual-desktop-infrastructure/
-    - title: 비디오 및 데모
-      url: https://tv.netapp.com/search?q=FlexPod%20VDI
     - title: 블로그
       url: https://blog.netapp.com/tag/Flexpod/
   - title: FlexPod 의료
     links:
     - title: 새로운 기능
       url: https://flexpod.com/solutions/verticals/healthcare/
-    - title: 비디오 및 데모
-      url: https://tv.netapp.com/search?q=FlexPod%20Healthcare
     - title: 블로그
       url: https://blog.netapp.com/tag/Healthcare/
