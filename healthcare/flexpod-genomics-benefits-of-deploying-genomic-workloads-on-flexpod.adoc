@@ -40,7 +40,7 @@ link:flexpod-genomics-introduction.html["이전: 소개."]
 image:flexpod-genomics-image3.png["오류: 그래픽 이미지가 없습니다"]
 
 * * 유전체학 상호 운용성 지원 * ONTAP FlexCache은 파일 배포를 간소화하고 WAN 대기 시간을 줄이며 WAN 대역폭 비용을 절감하는 원격 캐싱 기능입니다( https://www.netapp.com/knowledge-center/what-is-flex-cache/["참조"^])를 클릭합니다. 유전체 변종 식별 및 주석 작업 중 주요 활동 중 하나는 임상의의 협업입니다. ONTAP FlexCache 기술은 협업하는 임상의가 서로 다른 지리적 위치에 있는 경우에도 데이터 처리량을 높여줍니다. 일반적으로 *.BAM 파일(1GB ~ 100GB)의 크기를 고려할 때, 기본 플랫폼이 서로 다른 지리적 위치에 있는 임상의가 파일을 사용할 수 있도록 하는 것이 중요합니다. ONTAP FlexCache with FlexPod를 사용하면 게놈 데이터와 애플리케이션을 실질적인 멀티사이트 준비가 완료되어 전 세계 연구자 간의 협업을 원활하게 하면서 짧은 지연 시간과 높은 처리량을 지원할 수 있습니다. 멀티사이트 설정에서 게놈 애플리케이션을 실행하는 의료 조직은 Data Fabric을 사용하여 스케일아웃하여 비용과 속도의 관리 효율성을 균형 있게 유지할 수 있습니다.
-* * 지능형 스토리지 플랫폼 사용. * ONTAP 자동 계층화 및 NetApp 패브릭 풀 기술을 지원하는 FlexPod는 데이터 관리를 간소화합니다. FabricPool은 성능, 효율성, 보안 또는 보호 기능을 그대로 유지하면서 스토리지 비용을 절감할 수 있도록 지원합니다. FabricPool는 엔터프라이즈 애플리케이션에 투명하며, 애플리케이션 인프라를 재설계할 필요 없이 스토리지 TCO를 절감하여 클라우드 효율성을 사용합니다. FlexPod은 FabricPool의 스토리지 계층화 기능을 활용하여 ONTAP 플래시 스토리지를 더욱 효율적으로 사용할 수 있습니다. 자세한 내용은 을 참조하십시오 https://www.netapp.com/us/media/tr-4801.pdf["FabricPool 및 FlexPod"^]. 다음 다이어그램에서는 FabricPool 및 그 이점에 대해 간략하게 설명합니다.
+* * 스토리지 플랫폼의 지능형 사용. * FlexPod는 ONTAP 자동 계층화 및 NetApp Fabric Pool 기술을 사용하여 데이터 관리를 간소화합니다. FabricPool은 성능, 효율성, 보안 또는 보호 기능을 그대로 유지하면서 스토리지 비용을 절감할 수 있도록 지원합니다. FabricPool는 엔터프라이즈 애플리케이션에 투명하며, 애플리케이션 인프라를 재설계할 필요 없이 스토리지 TCO를 절감하여 클라우드 효율성을 사용합니다. FlexPod은 FabricPool의 스토리지 계층화 기능을 활용하여 ONTAP 플래시 스토리지를 더욱 효율적으로 사용할 수 있습니다. 자세한 내용은 을 https://docs.netapp.com/us-en/flexpod/hybrid-cloud/cloud-fabricpool_introduction.html["FabricPool 및 FlexPod"^]참조하십시오. 다음 다이어그램에서는 FabricPool 및 그 이점에 대해 간략하게 설명합니다.
 
 
 image:flexpod-genomics-image4.png["오류: 그래픽 이미지가 없습니다"]

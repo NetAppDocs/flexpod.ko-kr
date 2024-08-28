@@ -108,5 +108,5 @@ SupportEdge Premium 아키텍처에는 NetApp FlexPod 라이센스가 필요하�
 | NetApp은 라이센스를 제공합니다 | 부품 번호 | 기술 사양 
 
 
-| SupportEdge Premium 4시간 현장 - 개월:36 | CS-O2-4시간 | https://www.netapp.com/us/media/supportedge-premium-product-description.pdf["NetApp SupportEdge Premium를 참조하십시오"] 
+| SupportEdge Premium 4시간 현장 - 개월:36 | CS-O2-4시간 | https://www.netapp.com/pdf.html?item=/media/8745-supportedge-premium-product-description.pdf["NetApp SupportEdge Premium를 참조하십시오"^] 
 |===

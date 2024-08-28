@@ -31,7 +31,7 @@ Brandon AGEE 및 John Duignan, NetApp Mike Brennan 및 Cisco Jon Ebmeier
 * * 보안 멀티 테넌시. * 가상화된 서버 및 스토리지 공유 인프라의 증가하는 요구 사항을 지원하여, 특히 시스템이 여러 데이터베이스 및 소프트웨어 인스턴스를 호스팅하는 경우 시설별 정보의 안전한 멀티 테넌시를 가능하게 합니다.
 * 풀링된 리소스 최적화 * 물리적 서버 및 스토리지 컨트롤러 수 감소, 로드 밸런싱 워크로드 수요 증가, 성능 향상을 통해 사용률 향상
 * * QoS(서비스 품질). * FlexPod는 전체 스택에서 QoS를 제공합니다. 업계 최고 수준의 QoS 네트워크, 컴퓨팅 및 스토리지 정책을 통해 공유 환경에서 차별화된 서비스 수준을 지원합니다. 이러한 정책을 통해 워크로드에 맞는 성능을 최적화하고 급등하는 애플리케이션을 격리 및 제어하는 데 도움을 줄 수 있습니다.
-* 스토리지 효율성 * 으로 스토리지 비용을 절감합니다 http://www.netapp.com/us/media/netapp-aff-efficiency-guarantee.pdf["NetApp 7:1 스토리지 효율성 보장"^].
+* * 스토리지 효율성. * 에 따라 스토리지 https://www.netapp.com/media/79014-ng-937-Efficiency-Guarantee-Customer-Flyer.pdf["NetApp 7:1 스토리지 효율성 보장"^] 비용을 절감합니다.
 * * 민첩성 * FlexPod 시스템이 제공하는 업계 최고의 워크플로우 자동화, 오케스트레이션 및 관리 툴을 통해 IT 팀은 비즈니스 요청에 훨씬 더 빠르게 대응할 수 있습니다. 이러한 비즈니스 요청은 MEDITECH 백업 및 더 많은 테스트 및 교육 환경의 프로비저닝에서 인구 상태 관리 이니셔티브를 위한 분석 데이터베이스 복제까지 다양합니다.
 * * 생산성 향상. * 최적의 최종 사용자 환경을 위해 이 솔루션을 빠르게 배포하고 확장할 수 있습니다.
 * * NetApp Data Fabric. * NetApp Data Fabric 아키텍처는 물리적 경계 및 애플리케이션 전반에 걸쳐 데이터를 제공합니다. NetApp Data Fabric은 데이터 중심 세계에서 데이터 중심 기업을 위해 구축되었습니다. 데이터가 여러 위치에서 생성되고 사용되며, 다른 위치, 애플리케이션 및 인프라와 이를 활용 및 공유해야 하는 경우가 많습니다. 일관되고 통합된 데이터를 관리할 방법이 필요합니다. Data Fabric은 데이터의 제어 능력을 높이고 점점 더 복잡해지는 IT 복잡성을 단순화하는 방법을 제공합니다.
@@ -220,7 +220,7 @@ MEDITECH 호스트는 Microsoft Windows Server 운영 체제에서 실행되는 
 
 MEDITECH의 넓은 플랫폼은 호스트당 쓰기 작업 비율이 가장 높고 전체 IOPS가 가장 높고 그 뒤에 6.x, C/S 5.x 및 Magic 플랫폼이 있기 때문에 가장 까다로운 워크로드를 생성합니다.
 
-MEDITECH 워크로드 설명에 대한 자세한 내용은 을 참조하십시오 https://www.netapp.com/us/media/tr-4190.pdf["TR-4190: MEDITECH 환경을 위한 NetApp 사이징 지침"^].
+MEDITECH 워크로드 설명에 대한 자세한 내용은 을 참조하십시오 https://www.netapp.com/pdf.html?item=/media/19872-tr-4190.pdf["TR-4190: MEDITECH 환경을 위한 NetApp 사이징 지침"^].
 
 
 

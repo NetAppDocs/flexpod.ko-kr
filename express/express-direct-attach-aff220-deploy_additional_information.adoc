@@ -18,7 +18,7 @@ summary: 이 문서에 설명된 정보에 대해 자세히 알아보려면 다�
 
 * NVA-1130-design:VMware vSphere 6.7U1 및 NetApp AFF A220을 포함하는 FlexPod Express with Direct-Attached IP = 기반 스토리지 NVA Design
 +
-https://www.netapp.com/us/media/nva-1130-design.pdf["https://www.netapp.com/us/media/nva-1130-design.pdf"^]
+https://docs.netapp.com/us-en/flexpod/express/express-direct-attach-aff220-deploy_program_summary.html["https://www.netapp.com/us/media/nva-1130-design.pdf"^]
 
 * AFF and FAS 시스템 설명서 센터 를 참조하십시오
 +

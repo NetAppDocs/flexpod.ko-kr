@@ -352,7 +352,7 @@ NetApp 디스크의 기술 사양에는 폼 팩터 크기, 디스크 용량, 디
 | 구성 요소 | 스토리지 컨트롤러 데이터시트입니다 
 
 
-| E2800 | http://www.netapp.com/us/media/ds-3805.pdf[] 
+| E2800 | https://www.netapp.com/pdf.html?item=/media/7573-ds-3805.pdf[] 
 |===
 
 

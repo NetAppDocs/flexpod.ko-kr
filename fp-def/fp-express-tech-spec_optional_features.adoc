@@ -51,4 +51,4 @@ image:fp-express-tech-spec_image2.png["오류: 그래픽 이미지가 없습니�
 
 image:fp-express-tech-spec_image3.png["오류: 그래픽 이미지가 없습니다"]
 
-이 구성에 대한 자세한 내용은 을 참조하십시오 https://www.netapp.com/us/media/nva-1131-deploy.pdf["직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express"^].
+이 구성에 대한 자세한 내용은 을 https://docs.netapp.com/us-en/flexpod/express/express-direct-attach-aff220-deploy_program_summary.html["직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express"^]참조하십시오.

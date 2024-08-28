@@ -78,8 +78,8 @@ Cisco와 NetApp의 FlexPod 솔루션은 고성능, 모듈식, 사전 검증, 통
 
 다음 기술 보고서 및 기타 문서는 이 기술 보고서와 관련이 있으며, FlexPod 인프라에서 MEDITECH를 사이징, 설계 및 배포하는 데 필요한 전체 문서 세트를 작성합니다.
 
-* https://www.netapp.com/us/media/tr-4753.pdf["TR-4753: MEDITECH용 FlexPod 데이터 센터 배포 가이드"^]
-* https://www.netapp.com/us/media/tr-4190.pdf["TR-4190: MEDITECH 환경을 위한 NetApp 사이징 지침"^]
+* https://docs.netapp.com/us-en/flexpod/healthcare/ehr-meditech-deploy_overview.html["TR-4753: MEDITECH용 FlexPod 데이터 센터 배포 가이드"^]
+* https://www.netapp.com/pdf.html?item=/media/19872-tr-4190.pdf["TR-4190: MEDITECH 환경을 위한 NetApp 사이징 지침"^]
 * https://fieldportal.netapp.com/content/248456["TR-4319: MEDITECH 환경을 위한 NetApp 구축 지침"^]
 
 

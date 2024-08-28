@@ -36,7 +36,7 @@ https://fieldportal.netapp.com/content/902303[]
 
 * NetApp ONTAP 9 강화 가이드
 +
-https://www.netapp.com/us/media/tr-4569.pdf[]
+https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf[]
 
 * NetApp 암호화 기능 가이드 를 참조하십시오
 +
@@ -44,11 +44,11 @@ https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.pow-nve%2Fhome
 
 * NVE 및 NAE 데이터시트
 +
-https://www.netapp.com/us/media/ds-3899.pdf[]
+https://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf[]
 
 * NSE 데이터시트
 +
-https://www.netapp.com/us/media/ds-3213-en.pdf[]
+https://www.netapp.com/pdf.html?item=/media/7563-ds-3213-en.pdf[]
 
 * ONTAP 9 문서 센터
 +
@@ -120,7 +120,7 @@ https://www.netapp.com/media/19793-tr-4865.pdf[]
 
 * 의료 부문의 AI
 +
-https://www.netapp.com/us/media/na-369.pdf[]
+https://www.netapp.com/pdf.html?item=/media/7393-na-369pdf.pdf[]
 
 * 의료 분야의 혁신을 지원하는 FlexPod
 +

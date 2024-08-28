@@ -49,7 +49,7 @@ image:flexpod-fips-image3.png["오류: 그래픽 이미지가 없습니다"]
 
 NOTE: NVE는 FIPS 140-2 레벨 1의 검증된 소프트웨어 암호화 모듈을 사용합니다.
 
-NVE에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/ds-3899.pdf["NVE 데이터시트"^].
+NVE에 대한 자세한 내용은 를 https://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf["NVE 데이터시트"^]참조하십시오.
 
 NVE는 클라우드의 데이터를 보호합니다. Cloud Volumes ONTAP 및 Azure NetApp Files는 FIPS 140-2 규격 데이터 암호화를 유휴 상태에서 제공할 수 있습니다.
 
@@ -110,7 +110,7 @@ image:flexpod-fips-image4.png["오류: 그래픽 이미지가 없습니다"]
 
 NOTE: NSE는 FIPS 140-2 레벨 2의 검증된 각 드라이브에서 하드웨어 암호화를 사용합니다.
 
-NSE에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/ds-3213-en.pdf["NSE 데이터시트"^].
+NSE에 대한 자세한 내용은 를 https://www.netapp.com/pdf.html?item=/media/7563-ds-3213-en.pdf["NSE 데이터시트"^]참조하십시오.
 
 
 

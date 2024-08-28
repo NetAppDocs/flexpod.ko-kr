@@ -60,7 +60,7 @@ image:dc-tech-spec_image12.png["오류: 그래픽 이미지가 없습니다"]
 
 FlexPod 구성 및 성능 이점에 대한 자세한 내용은 을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/whitepaper-c11-741907.html["FlexPod용 엔드 투 엔드 NVMe 백서 소개"^]
 
-ONTAP 구현에 대한 자세한 내용은 을 참조하십시오 https://www.netapp.com/us/media/tr-4684.pdf["TR-4684: NVMe로 최신 SAN 구현 및 구성"^].
+ONTAP 구현에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/pdf.html?item=/media/10681-tr4684pdf.pdf["TR-4684: NVMe로 최신 SAN 구현 및 구성"^].
 
 image:dc-tech-spec_image3.png["오류: 그래픽 이미지가 없습니다"]
 

@@ -67,11 +67,11 @@ image:fp-express-tech-spec_image6.png["오류: 그래픽 이미지가 없습니�
 
 이전 FlexPod Express 검증 아키텍처는 계속 지원됩니다. 아키텍처 및 구축 문서는 다음과 같습니다.
 
-* link:http://www.netapp.com/us/media/nva-0016-flexpod-express.pdf["FlexPod Express with Cisco UCS C-Series 및 NetApp FAS2500 시리즈"]
-* link:http://www.netapp.com/us/media/nva-0020-deploy.pdf["VMware vSphere 6.0을 사용하는 FlexPod Express: 소규모 및 중간 규모 구성"]
-* link:http://www.netapp.com/us/media/nva-0017-flexpod-express.pdf["VMware vSphere 6.0을 사용하는 FlexPod Express: 대규모 구성"]
-* link:http://www.netapp.com/us/media/nva-0021-deploy.pdf["Microsoft Windows Server 2012 R2 Hyper-V를 사용하는 FlexPod Express: 소규모 및 중간 규모 구성"]
-* link:http://www.netapp.com/us/media/tr-4350.pdf["Microsoft Windows Server 2012 R2 Hyper-V를 사용하는 FlexPod Express: 대규모 구성"]
+* link:https://www.netapp.com/pdf.html?item=/media/12441-nva-0016-flexpod-express.pdf["FlexPod Express with Cisco UCS C-Series 및 NetApp FAS2500 시리즈"^]
+* link:https://www.netapp.com/pdf.html?item=/media/12442-nva-0020-deploy.pdf["VMware vSphere 6.0을 사용하는 FlexPod Express: 소규모 및 중간 규모 구성"^]
+* link:https://www.netapp.com/pdf.html?item=/media/12443-nva-0017-flexpod-express.pdf["VMware vSphere 6.0을 사용하는 FlexPod Express: 대규모 구성"^]
+* link:https://www.netapp.com/pdf.html?item=/media/12444-nva-0021-deploypdf.pdf["Microsoft Windows Server 2012 R2 Hyper-V를 사용하는 FlexPod Express: 소규모 및 중간 규모 구성"^]
+* link:https://www.netapp.com/pdf.html?item=/media/12445-tr-4350.pdf["Microsoft Windows Server 2012 R2 Hyper-V를 사용하는 FlexPod Express: 대규모 구성"^]
 
 
 

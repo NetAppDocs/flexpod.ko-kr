@@ -18,7 +18,7 @@ summary: 이 문서에 설명된 정보에 대해 자세히 알아보려면 다�
 
 * FabricPool 모범 사례
 +
-http://www.netapp.com/us/media/tr-4598.pdf["www.netapp.com/us/media/tr-4598.pdf"^]
+https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["www.netapp.com/us/media/tr-4598.pdf"^]
 
 * NetApp 제품 설명서
 +
@@ -26,6 +26,6 @@ https://docs.netapp.com["https://docs.netapp.com"^]
 
 * TR-4036: FlexPod 데이터 센터 기술 사양
 +
-https://www.netapp.com/us/media/tr-4036.pdf["https://www.netapp.com/us/media/tr-4036.pdf"^]
+https://docs.netapp.com/us-en/flexpod/fp-def/dc-tech-spec_solution_overview.html["https://www.netapp.com/us/media/tr-4036.pdf"^]
 
 

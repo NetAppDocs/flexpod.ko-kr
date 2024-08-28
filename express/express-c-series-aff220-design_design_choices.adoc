@@ -37,7 +37,7 @@ image:express-c-series-aff220-design_image5.png["오류: 그래픽 이미지가 
 
 image:express-c-series-aff220-design_image6.png["오류: 그래픽 이미지가 없습니다"]
 
-이러한 기능은 FlexPod 익스프레스 솔루션을 보완하는 몇 가지 핵심 기능일 뿐입니다. ONTAP 9.4의 추가 기능에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/ds-3231.pdf["ONTAP 9 데이터 관리 소프트웨어 데이터시트입니다"^]. 또한 NetApp을 참조하십시오 http://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 문서 센터"^]ONTAP 9.4를 포함하도록 업데이트되었습니다.
+이러한 기능은 FlexPod 익스프레스 솔루션을 보완하는 몇 가지 핵심 기능일 뿐입니다. ONTAP 9.4의 추가 기능에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/pdf.html?item=/media/7413-ds-3231.pdf["ONTAP 9 데이터 관리 소프트웨어 데이터시트입니다"^]. 또한 http://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 문서 센터"^] ONTAP 9.4를 포함하도록 업데이트된 NetApp를 참조하십시오.
 
 
 
