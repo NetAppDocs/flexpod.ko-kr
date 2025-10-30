@@ -7633,8 +7633,6 @@
   <block id="b596eced9c4bc9f16313b3284fb13e58" category="list-text">애플리케이션 보호 상태를 시각화합니다</block>
   <block id="6df472bda93f54acbbf206fa2d41e28f" category="list-text">그래픽 사용자 인터페이스 및 REST API의 전체 목록을 제공하여 기존 사내 툴에서 모든 보호 워크플로우를 구현합니다.</block>
   <block id="b59f8a067fecf2cfbbc4d3b401d296e0" category="paragraph">Astra Control은 Kubernetes 클러스터에서 생성된 관련 리소스에 대한 통찰력을 포함하는 컨테이너식 애플리케이션에 대한 단일 창 방식의 시각화를 제공합니다. 단일 포털을 통해 모든 클러스터, 모든 앱, 모든 클라우드 또는 모든 데이터 센터를 볼 수 있습니다. 온프레미스 또는 퍼블릭 클라우드의 모든 환경에서 Astra Control API를 사용하여 데이터 관리 워크플로우를 구축할 수 있습니다.</block>
-  <block id="ee47d1958f4c072c5167bf6b0f0a3f51" category="paragraph">다음 이미지는 Astra Control 기능을 보여줍니다.</block>
-  <block id="1a6732bb27af95bdf03fb9cb071efccb" category="paragraph"><block ref="1a6732bb27af95bdf03fb9cb071efccb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="71bf9ca6a7b88a4ef85430ead5e3b166" category="section-title">Astra Control 소비 모델</block>
   <block id="f243566699578a9ff810689c2063fea0" category="paragraph">Astra Control은 두 가지 소비 모델로 제공됩니다.</block>
   <block id="c21e5f421922cf6741556e0df776fc32" category="list-text">* Astra Control Service. * NetApp에서 호스팅하는 완전 관리형 서비스로, GKE(Google Kubernetes Engine), AKS(Azure Kubernetes Service)에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공합니다.</block>
@@ -7646,7 +7644,6 @@
   <block id="e7862e4a1b1c0e48518ef7f2dbbb569b" category="inline-link">컨테이너 스토리지 인터페이스(CSI)</block>
   <block id="e9e07505524402c434cb37baf0452959" category="paragraph">Astra Trident는 컨테이너 및 Kubernetes 배포를 위한 완전히 지원되는 오픈 소스 스토리지 오케스트레이터입니다. 이 제품은 처음부터 와 같은 업계 표준 인터페이스를 사용하여 컨테이너화된 애플리케이션의 지속성 요구를 충족하도록 설계되었습니다<block ref="11b176de1fd0554cff9c8a0e426a44c0" category="inline-link-rx"></block>. Astra Trident를 사용하면 마이크로서비스 및 컨테이너식 애플리케이션에서 NetApp 스토리지 시스템 포트폴리오에서 제공하는 엔터프라이즈급 스토리지 서비스를 활용할 수 있습니다.</block>
   <block id="e9fe0fa2a72714d675e5bd084dea14bc" category="inline-link">Astra Trident 문서.</block>
-  <block id="d0cc985f877a5098e0a069b8c9928ada" category="paragraph">Astra Trident는 Kubernetes 클러스터에 Pod로 구축하고 Kubernetes 워크로드에 동적 스토리지 오케스트레이션 서비스를 제공합니다. 컨테이너화된 애플리케이션에서 NetApp ONTAP(NetApp AFF, NetApp FAS, NetApp ONTAP Select, 클라우드, Amazon FSx for NetApp ONTAP), NetApp Element 소프트웨어(NetApp SolidFire), Azure NetApp Files 서비스, Google Cloud 기반 Cloud Volume Service, AWS 기반 Cloud Volume Service FlexPod 환경에서 Astra Trident는 NetApp AFF, FAS 시스템, Cloud Volumes ONTAP와 같은 ONTAP 스토리지 플랫폼에서 호스팅되는 NetApp FlexVol 볼륨 및 LUN이 지원하는 컨테이너의 영구 볼륨을 동적으로 프로비저닝하고 관리하는 데 사용됩니다. 또한 Trident는 Astra Control에서 제공하는 애플리케이션 보호 체계를 구현하는 데 중요한 역할을 합니다. Astra Trident에 대한 자세한 내용은 를 참조하십시오<block ref="a4e84d4448e67c302cfd652fac18bef7" category="inline-link-rx"></block></block>
   <block id="6c5e678cf147ef415c2e584ba561bce7" category="section-title">스토리지 백엔드</block>
   <block id="0758e335e69d93b347e2ccbb437ef2e3" category="paragraph">Astra Trident를 사용하려면 지원되는 스토리지 백엔드가 필요합니다. Trident 백엔드는 Trident와 스토리지 시스템 간의 관계를 정의합니다. Trident는 해당 스토리지 시스템과 통신하는 방법과 Trident가 스토리지 시스템에서 볼륨을 프로비저닝하는 방법을 알려줍니다. Trident는 스토리지 클래스에 정의된 요구 사항과 일치하는 백엔드에서 스토리지 풀을 자동으로 제공합니다.</block>
   <block id="264d52a2ee63227a064803bbca685d76" category="list-text">ONTAP AFF 및 FAS 스토리지 백엔드 스토리지 소프트웨어 및 하드웨어 플랫폼인 ONTAP는 핵심 스토리지 서비스, 다중 스토리지 액세스 프로토콜 지원 및 NetApp Snapshot 복사본 및 미러링과 같은 스토리지 관리 기능을 제공합니다.</block>
@@ -9753,4 +9750,5 @@
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="43240d20188b8ece0dea0d19f25bca8e" category="paragraph">Astra Trident Kubernetes 클러스터에 Pod 형태로 배포되며 Kubernetes 워크로드에 대한 동적 스토리지 오케스트레이션 서비스를 제공합니다. NetApp ONTAP (NetApp AFF, NetApp FAS, NetApp ONTAP Select, Cloud, Amazon FSx for NetApp ONTAP), NetApp Element 소프트웨어(NetApp SolidFire) 및 Azure NetApp Files 서비스를 포함한 NetApp의 광범위한 포트폴리오에서 컨테이너화된 애플리케이션이 영구 스토리지를 빠르고 쉽게 사용할 수 있도록 해줍니다. FlexPod 환경에서 Astra Trident 는 NetApp AFF 및 FAS 시스템, Cloud Volumes ONTAP 과 같은 ONTAP 스토리지 플랫폼에 호스팅된 NetApp FlexVol 볼륨 및 LUN에 의해 ​​지원되는 컨테이너에 대한 영구 볼륨을 동적으로 프로비저닝하고 관리하는 데 사용됩니다. Trident 또한 Astra Control이 제공하는 애플리케이션 보호 체계 구현에 있어서 핵심적인 역할을 합니다. Astra Trident 에 대한 자세한 내용은 다음을 참조하세요.<block ref="a4e84d4448e67c302cfd652fac18bef7" category="inline-link-rx"></block></block>
 </blocks>
