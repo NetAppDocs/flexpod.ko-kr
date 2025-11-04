@@ -48,8 +48,6 @@ entries:
     url: "/fp-def/dc-tech-spec_flexpod_platforms.html"
   - title: FlexPod 규칙
     url: "/fp-def/dc-tech-spec_flexpod_rules.html"
-  - title: 지원되는 구성과 검증된 FlexPod 구성 비교
-    url: "/fp-def/dc-tech-spec_supported_versus_validated_flexpod_configurations.html"
   - title: NetApp ONTAP를 참조하십시오
     url: "/fp-def/dc-tech-spec_netapp_ontap.html"
   - title: Cisco Nexus 스위칭 운영 모드

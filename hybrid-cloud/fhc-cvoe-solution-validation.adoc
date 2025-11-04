@@ -72,7 +72,7 @@ singlecvoaws::> snapmirror update -destination-path svm_singlecvoaws:hc_iscsi_vo
 Operation is queued: snapmirror update of destination “svm_singlecvoaws:hc_iscsi_vol_copy”.
 ....
 +
-SnapMirror 업데이트는 * Replication * 탭의 BlueXP GUI를 통해서도 수행할 수 있습니다.
+SnapMirror 업데이트는 *복제* 탭 아래의 NetApp Console GUI를 통해서도 수행할 수 있습니다.
 
 . 이전에 생성한 애플리케이션 스냅샷을 기반으로 FlexClone 인스턴스를 생성합니다.
 +
@@ -87,7 +87,7 @@ singlecvoaws::> volume clone create -flexclone kamini_clone -type RW -parent-vse
 . FlexClone 볼륨을 활성화하여 클라우드에서 EHR 인스턴스를 가져오십시오.
 +
 ....
-singlecvoaws::> lun mapping create –vserver svm_singlecvoaws –path /vol/kamini_clone/iscsi_lun1 -igroup ehr-igroup –lun-id 0
+singlecvoaws::> lun mapping create -vserver svm_singlecvoaws -path /vol/kamini_clone/iscsi_lun1 -igroup ehr-igroup -lun-id 0
 
 singlecvoaws::> lun mapping show
 Vserver     Path                                  Igroup    LUN ID  Protocol
@@ -162,17 +162,11 @@ image:fhc-cvoe-image21.png["이 스크린샷은 스토리지 VM 드롭다운의 
 잦은 애플리케이션 스냅샷을 생성할 수 있도록 FlexPod 인스턴스의 온프레미스 ONTAP와 AWS의 Cloud Volumes ONTAP 간에 SnapMirror 복제가 이미 설정되어 있는지 확인하십시오.
 
 +
-SVM이 중지되면 가 표시됩니다 `hc_iscsi_vol` BlueXP에서 볼륨이 표시되지 않습니다.
-
-+
-image:fhc-cvoe-image22.png["이제 볼륨이 볼륨 요약 화면에 표시됩니다."]
+SVM이 중지된 후 `hc_iscsi_vol` 볼륨이 콘솔에 표시되지 않습니다.
 
 . CVO에서 DR을 활성화합니다.
 +
 .. 온프레미스 ONTAP와 Cloud Volumes ONTAP 간의 SnapMirror 복제 관계를 깨뜨려 CVO 타겟 볼륨을 홍보하십시오 (`hc_iscsi_vol_copy`)를 프로덕션 환경으로 이동합니다.
-+
-image:fhc-cvoe-image23.png["파단 관계 옵션 화면이 표시됩니다."]
-
 +
 SnapMirror 관계가 손상되면 타겟 볼륨 유형이 데이터 보호(DP)에서 읽기/쓰기(RW)로 변경됩니다.
 
@@ -186,7 +180,7 @@ svm_singlecvoaws hc_iscsi_vol_copy RW
 .. Cloud Volumes ONTAP에서 대상 볼륨을 활성화하여 클라우드의 EC2 인스턴스에서 EHR 인스턴스를 불러옵니다.
 +
 ....
-singlecvoaws::> lun mapping create –vserver svm_singlecvoaws –path /vol/hc_iscsi_vol_copy/iscsi_lun1 -igroup ehr-igroup –lun-id 0
+singlecvoaws::> lun mapping create -vserver svm_singlecvoaws -path /vol/hc_iscsi_vol_copy/iscsi_lun1 -igroup ehr-igroup -lun-id 0
 
 singlecvoaws::> lun mapping show
 Vserver     Path                                Igroup   LUN ID  Protocol
@@ -237,16 +231,10 @@ Filesystem                 1K-blocks  Used      Available  Use%  Mounted on
 
 .. SnapMirror 관계를 반대로 설정합니다. 이 작업을 수행하면 소스 볼륨과 대상 볼륨의 역할이 반전됩니다.
 +
-image:fhc-cvoe-image24.png["이 스크린샷은 반대 관계 옵션 상자를 보여 줍니다."]
-
-+
 이 작업을 수행하면 원본 소스 볼륨의 내용이 대상 볼륨의 컨텐츠로 덮어쓰여집니다. 이 기능은 오프라인 상태인 소스 볼륨을 다시 활성화하려는 경우에 유용합니다.
 
 +
 이제 CVO 볼륨이 됩니다 (`hc_iscsi_vol_copy`)가 소스 볼륨이 되고 온-프레미스 볼륨이 됩니다 (`hc_iscsi_vol`)가 대상 볼륨이 됩니다.
-
-+
-image:fhc-cvoe-image25.png["이 스크린샷은 BlueXP에서 생성된 볼륨 복제 관계를 보여 줍니다."]
 
 +
 마지막 데이터 복제와 소스 볼륨이 비활성화된 시간 사이에 원본 소스 볼륨에 기록된 데이터는 보존되지 않습니다.
@@ -283,9 +271,6 @@ image:fhc-cvoe-image26.png["이 스크린샷은 스토리지 VM 페이지의 드
 
 . Cloud Volumes ONTAP와 온프레미스 ONTAP 간의 SnapMirror 복제 관계를 깨뜨려 온프레미스 볼륨을 홍보하십시오 (`hc_iscsi_vol`) 프로덕션 환경으로 돌아갑니다.
 +
-image:fhc-cvoe-image27.png["이 스크린샷은 관계를 끊는 방법을 보여 줍니다."]
-
-+
 SnapMirror 관계가 손상되면 사내 볼륨 유형이 데이터 보호(DP)에서 읽기/쓰기(RW)로 변경됩니다.
 
 +
@@ -296,9 +281,6 @@ vserver        volume       type
 Healthcare_SVM hc_iscsi_vol RW
 ....
 . SnapMirror 관계를 반대로 설정합니다. 이제 사내 ONTAP 볼륨으로 이동합니다 (`hc_iscsi_vol`)는 이전 소스 볼륨과 Cloud Volumes ONTAP 볼륨이 됩니다 (`hc_iscsi_vol_copy`)가 대상 볼륨이 됩니다.
-+
-image:fhc-cvoe-image28.png["이 스크린샷은 관계를 반전시키는 방법을 보여 줍니다."]
-
 +
 다음 단계를 수행하여 원래 구성을 성공적으로 복원했습니다.
 
