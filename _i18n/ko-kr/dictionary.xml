@@ -5731,7 +5731,6 @@
   <block id="ab2679ebd7bb85b68b87dac6f34ef516" category="section-title">엔드 투 엔드 FC-NVMe</block>
   <block id="2ab8f358a48c3adedd1b97e6666780f8" category="paragraph">엔드 투 엔드 FC-NVMe는 고객의 기존 SAN 인프라를 실시간 애플리케이션으로 원활하게 확장하는 동시에 IOPS 및 처리량을 높이고 지연 시간을 단축합니다.</block>
   <block id="8dd9321868b043ece197778143e64bbf" category="paragraph">기존 32G FC SAN 전송을 사용하여 NVMe 및 SCSI 워크로드를 동시에 전송할 수 있습니다.</block>
-  <block id="fd0ff70a9cca8bfe56248a07829be7a8" category="paragraph">다음 그림에서는 Cisco MDS를 사용하는 FC용 FlexPod 데이터 센터를 보여 줍니다.</block>
   <block id="a152d851b543a6ecd1fe98d32802053d" category="inline-link">FlexPod용 엔드 투 엔드 NVMe 백서 소개</block>
   <block id="866ad53e2454a700c7d99a0f7dec80e8" category="paragraph">FlexPod 구성 및 성능 이점에 대한 자세한 내용은 을 참조하십시오<block ref="04abdacba4c78c835f0c4c4ee5dcd30c" category="inline-link-rx"></block></block>
   <block id="37baea605e04392e4eb7f7acb8348221" category="inline-link">TR-4684: NVMe로 최신 SAN 구현 및 구성</block>
@@ -6344,7 +6343,6 @@
   <block id="9fa25f8311910b1006f80d391d0a3536" category="paragraph">FlexPod 구성에는 다음과 같은 연결 요구 사항이 있습니다.</block>
   <block id="e795892d600814d6840b0ee7736d41f5" category="list-text">모든 구성 요소를 사용하려면 별도의 100Mbps 이더넷/1Gb 이더넷 대역외 관리 네트워크가 필요합니다.</block>
   <block id="5b779adbc97d83ba730345c0da406e99" category="list-text">환경 전체에 점보 프레임 지원을 설정하는 것이 좋지만 필수는 아닙니다.</block>
-  <block id="9751fb7a1c932f1a507e6bc465e97861" category="list-text">Cisco UCS Fabric Interconnect 어플라이언스 포트는 iSCSI 및 NAS 연결에만 권장됩니다.</block>
   <block id="402b72870e5c312873b1fff0d32a5515" category="list-text">핵심 FlexPod 구성 요소 사이에 추가 장비를 배치할 수 없습니다.</block>
   <block id="36f60790070b535bbd9bc08abb34d9ac" category="paragraph">업링크 연결:</block>
   <block id="489d802b7e6f447e30c1735cd6577bac" category="list-text">가상 포트 채널(vPC)을 지원하려면 NetApp 스토리지 컨트롤러의 포트를 Cisco Nexus 5000, 7000 또는 9000 시리즈 스위치에 연결해야 합니다.</block>
@@ -9710,4 +9708,6 @@
   <block id="1ae823e8252cefe82659e80378adf180" category="paragraph">SVM이 중지된 후<block ref="d0f08a44974997af7b6852c24d0e3397" prefix=" " category="inline-code"></block> 볼륨이 콘솔에 표시되지 않습니다.</block>
   <block id="0d6e5faf80b288a1d3277954d0b55ae8" category="inline-link"><block ref="0d6e5faf80b288a1d3277954d0b55ae8" category="inline-link-rx"></block></block>
   <block id="17a7b956a1673e2b7eed84e47e417df1" category="paragraph"><block ref="17a7b956a1673e2b7eed84e47e417df1" category="inline-link-rx"></block></block>
+  <block id="f1c50a66fa0c1697f61a708311b1b73c" category="list-text">독립형 Cisco UCS Fabric Interconnect 어플라이언스 포트는 iSCSI 연결에만 사용하는 것이 좋습니다. 어플라이언스 포트와 함께 NAS 연결을 사용하는 경우 특정 장애 시나리오에 대해 추가 Nexus/호환 스위치가 필요합니다.</block>
+  <block id="fefa97ce70467bf33d6e5e77d6b7e1ce" category="paragraph">다음 그림은 Cisco MDS를 사용하는 FC용 FlexPod 데이터센터를 보여줍니다.</block>
 </blocks>
