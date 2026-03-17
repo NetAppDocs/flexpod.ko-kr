@@ -13,9 +13,9 @@ summary: NetApp은 의료 등의 엔터프라이즈 애플리케이션을 위한
 :imagesdir: ./../media/
 
 
-파트너 후원:image:cisco logo.png["Cisco 로고"]
-
 Kamini Singh, NetApp
+
+파트너 후원:image:cisco logo.png["Cisco 로고"]
 
 [role="lead"]
 디지털 혁신의 핵심은 데이터를 통해 더 많은 작업을 수행하는 것입니다. 병원에서는 조직을 운영하고 환자를 효과적으로 지원하기 위해 대량의 데이터를 생성하고 필요로 합니다. 환자 치료 및 직원 일정 및 의료 리소스 관리 시 정보가 수집 및 처리됩니다.
