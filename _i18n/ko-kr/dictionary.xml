@@ -2704,7 +2704,6 @@
   <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">플랫폼</block>
   <block id="0c3155d83507478a5f54c2445e2e821e" category="paragraph">FabricPool는 다음 플랫폼에서 지원됩니다.</block>
   <block id="8bf5bd6530ea430a8edac8a795165179" category="list-text">NetApp AFF를 참조하십시오</block>
-  <block id="4ba8114dd624dc2130553b7742f70d88" category="list-text">NetApp FAS를 참조하십시오</block>
   <block id="a268132705ba69900074085e1052b144" category="list-text">계층에서 실현해 보십시오</block>
   <block id="46de4dcf18122d50a57b94abc5ec5857" category="list-text">Alibaba Cloud Object Storage Service(Standard, Infrequent Access)</block>
   <block id="edcaee6311d756c7df0c30373f1f7b4e" category="list-text">Amazon Commercial Cloud Services(C2S)</block>
@@ -3747,203 +3746,27 @@
   <block id="b6096b41c3c48808d967200f752f5f25" category="cell">2 x 5108</block>
   <block id="35e6d0a83f214bfb7e13505c0dea39d0" category="cell">Cisco UCS 6120 패브릭 인터커넥트</block>
   <block id="69145b1a02ee505baf6d6d8506924db1" category="cell">2 x 6332</block>
-  <block id="14344c7e1407102dba356f3a96926a7f" category="doc">ESXi 구성 Best Practice</block>
-  <block id="df299b055549bc8ca66052728afa46a7" category="paragraph">스토리지 레벨에서 씬 프로비저닝 및 하드웨어 가속 등의 작업을 수행하여 ESXi 호스트의 워크로드를 줄일 수 있습니다. 복사본 오프로드 기능 및 공간 예약 기능으로 VSC 작업의 성능을 향상합니다. 플러그인 설치 패키지를 다운로드하고 NetApp Support 사이트에서 플러그인 설치 지침을 확인할 수 있습니다.</block>
-  <block id="119532d922c9cb5a03ab543abab4b39b" category="list-text">호스트를 마우스 오른쪽 버튼으로 클릭한 다음 Actions &gt; NetApp VSC &gt; Set Recommended Values를 선택합니다.</block>
-  <block id="4c53150a7d5b0d30a5be88983c1b112f" category="list-text">NetApp 권장 설정 대화 상자에서 시스템에 가장 적합한 값을 선택합니다.</block>
-  <block id="5bdf7813f1843ab7cbdb024ffe39d76d" category="paragraph">표준 권장 값은 기본적으로 설정됩니다.</block>
-  <block id="41b7c35b4ecadf2ab857e78756379638" category="inline-link-macro">다음: NetApp 구성</block>
   <block id="b0f6dc9f2ccbbbfab3cb68e673207f49" category="section-title">전반적인 솔루션 이점</block>
   <block id="deaa57dc0fae761b744a10531e15d0e3" category="section-title">Cisco Unified Computing System</block>
-  <block id="0be5b3d60fa1a62fc1c4b46695cbefff" category="list-text">* 운영 연속성. * 이 설계에는 하드웨어, NX-OS 소프트웨어 기능 및 관리가 통합되어 다운타임이 없는 환경을 지원합니다.</block>
-  <block id="7c43b4cfb6124eac10c88babdf3b2e38" category="list-text">* 전송 유연성. * 비용 효율적인 솔루션으로 새로운 네트워킹 기술을 점진적으로 도입합니다.</block>
-  <block id="0010dc3eb1baff4c94a9f64578d9dbc1" category="summary">MEDITECH 소프트웨어 환경용 NetApp 스토리지는 고가용성 쌍 구성에서 스토리지 컨트롤러를 사용합니다. FC 프로토콜을 통해 두 컨트롤러에서 MEDITECH 데이터베이스 서버로 스토리지를 제공해야 합니다. 이 구성은 정상 작동 중에 두 컨트롤러의 스토리지를 모두 사용하여 애플리케이션 로드를 균등하게 분산합니다.</block>
-  <block id="62d71fc81eed59d807724da84e4a2375" category="doc">NetApp 구성입니다</block>
-  <block id="696b82a0acddb8263a9976becf665f1c" category="paragraph">MEDITECH 소프트웨어 환경용 NetApp 스토리지는 고가용성 쌍 구성에서 스토리지 컨트롤러를 사용합니다. FC 프로토콜을 통해 두 컨트롤러에서 MEDITECH 데이터베이스 서버로 스토리지를 제공해야 합니다. 이 구성은 정상 작동 중에 두 컨트롤러의 스토리지를 모두 사용하여 애플리케이션 로드를 균등하게 분산합니다.</block>
-  <block id="0353522b39b87d54d40d3f09ec668851" category="section-title">ONTAP 구성</block>
-  <block id="e236d2cfbdf52964eb5067ff65cce34c" category="paragraph">이 섹션에서는 관련 ONTAP 명령을 사용하는 구축 및 프로비저닝 절차의 예를 설명합니다. 에서는 고가용성 컨트롤러 쌍을 사용하는 NetApp이 권장하는 스토리지 레이아웃을 구현하기 위해 스토리지가 프로비저닝되는 방식을 중점적으로 보여 줍니다. ONTAP의 주요 장점 중 하나는 기존 고가용성 쌍을 방해하지 않으면서 스케일아웃하는 것입니다.</block>
-  <block id="646e71de883359482601b2b06a9a799b" category="section-title">ONTAP 라이센스</block>
-  <block id="5129a41de9fce18241945fd23463b0f4" category="paragraph">스토리지 컨트롤러를 설정한 후 라이센스를 적용하여 NetApp에서 권장하는 ONTAP 기능을 사용하도록 설정합니다. MEDITECH 워크로드에 대한 라이센스는 FC, CIFS 및 NetApp Snapshot, SnapRestore, FlexClone, SnapMirror 기술을 사용합니다.</block>
-  <block id="f47ef1dfc707aeb613b910fc91216736" category="paragraph">라이센스를 구성하려면 NetApp ONTAP 시스템 관리자를 열고 구성 - 라이센스로 이동한 다음 적절한 라이센스를 추가합니다.</block>
-  <block id="c0d92106535b0a6ca456c7d632165815" category="paragraph">또는 다음 명령을 실행하여 CLI를 사용하여 라이센스를 추가합니다.</block>
-  <block id="0dab9f614d7de2d86a6e3ab5423bb50e" category="section-title">AutoSupport 구성</block>
-  <block id="7fbcd8694391af3e6275f1afc5c3a386" category="paragraph">NetApp AutoSupport 툴은 HTTPS를 통해 요약 지원 정보를 NetApp에 보냅니다. AutoSupport를 구성하려면 다음 ONTAP 명령을 실행합니다.</block>
-  <block id="1b53f92f00990c6c471e6164fa602b70" category="section-title">하드웨어 지원 테이크오버 구성</block>
-  <block id="ee1189ad9cda8abda09a274301cc75d8" category="paragraph">각 노드에서 하드웨어 지원 테이크오버를 활성화하여 컨트롤러 장애가 발생할 가능성이 낮은 상황에서 테이크오버 시작에 걸리는 시간을 최소화합니다. 하드웨어 지원 테이크오버를 구성하려면 다음 단계를 완료합니다.</block>
-  <block id="ed847163a896690ce0b7a8d27da51982" category="list-text">다음 ONTAP 명령을 xxx로 실행합니다.</block>
-  <block id="e179cb797a677ddd812a50ce32b85a0b" category="paragraph">파트너 주소 옵션을 'prod1-01'에 대한 관리 포트의 IP 주소로 설정합니다.</block>
-  <block id="732dae3708577d4da8a73c0183761a79" category="list-text">다음 ONTAP 명령을 xxx에 실행합니다.</block>
-  <block id="f11eb574378b1d960cffeace71c7e97a" category="paragraph">파트너 주소 옵션을 'cluster1-02'에 대한 관리 포트의 IP 주소로 설정합니다.</block>
-  <block id="bdb9430e5ec2f41dad5a9d19446f727c" category="list-text">다음 ONTAP 명령을 실행하여 "prod1-01"과 "prod1-02" HA 컨트롤러 쌍 모두에서 하드웨어 지원 테이크오버를 활성화합니다.</block>
-  <block id="7d46bb2062c567f799aeddc49dc98021" category="inline-link-macro">다음: 집계 구성.</block>
-  <block id="134469bd0eac2dda457dfabc79e2f7b7" category="paragraph"><block ref="134469bd0eac2dda457dfabc79e2f7b7" category="inline-link-macro-rx"></block></block>
-  <block id="5d4aecd999fa9ec2cd22286498ff4840" category="summary">이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오.</block>
-  <block id="0649297978f7ade694d6ac7f446ece73" category="paragraph">이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오.</block>
-  <block id="f66aa80afbed7bbc8fb6c866b2e3534a" category="inline-link"><block ref="f66aa80afbed7bbc8fb6c866b2e3534a" category="inline-link-rx"></block></block>
-  <block id="65bace6a98f5cff021bb667893f47d63" category="paragraph"><block ref="65bace6a98f5cff021bb667893f47d63" category="inline-link-rx"></block></block>
   <block id="cbfb89e9bdfbc45048843c6b5d227182" category="inline-link">FlexPod</block>
   <block id="597a1481ea86433b952f8c05e7cb2146" category="inline-link"><block ref="597a1481ea86433b952f8c05e7cb2146" category="inline-link-rx"></block></block>
   <block id="7a8753dcfe49b0403e1d0730f75a7ba6" category="paragraph"><block ref="7a8753dcfe49b0403e1d0730f75a7ba6" category="inline-link-rx"></block></block>
-  <block id="5132e9a6a7e542f50292ca4f9ecb4876" category="summary">MEDITECH용 FlexPod의 아키텍처는 MEDITECH, Cisco 및 NetApp의 지침과 모든 규모의 MEDITECH 고객과 협업하는 파트너의 경험을 바탕으로 합니다. 이 아키텍처는 데이터 센터 전략, 조직의 규모, 시스템이 중앙 집중형, 분산 또는 멀티 테넌트 중 어디에 있는지에 따라 적응성이 뛰어나고 MEDITECH의 모범 사례를 적용합니다.</block>
-  <block id="1afa74da05ca145d3418aad9af510109" category="doc">설계</block>
-  <block id="3a529c2562b54a90dc41ee296a44ae53" category="paragraph">올바른 스토리지 아키텍처는 총 IOPS의 전체 크기에 따라 결정됩니다. 성능만 중요한 요소가 아니므로 추가 고객 요구사항을 기반으로 더 많은 노드 수를 사용할 수도 있습니다. NetApp 스토리지를 사용하면 요구사항의 변화에 따라 쉽고 중단 없이 클러스터를 확장할 수 있습니다. 또한 운영 중단 없이 클러스터에서 노드를 제거하여 장비를 용도 변경하거나 장비를 새로 고칠 수 있습니다.</block>
-  <block id="8f7444d0d0cc6e6d860393fe4967b023" category="paragraph">NetApp ONTAP 스토리지 아키텍처의 이점은 다음과 같습니다.</block>
-  <block id="de07d765f6ebe92f6b44fbe149049411" category="list-text">* 손쉬운 무중단 스케일업 및 스케일아웃 * ONTAP 무중단 운영을 사용하면 디스크와 노드를 업그레이드, 추가, 제거할 수 있습니다. 4개 노드로 시작한 후 6개 노드로 이동하거나 더 큰 컨트롤러로 중단 없이 업그레이드할 수 있습니다.</block>
-  <block id="1001b3f841a93eaca4404e1806f66cff" category="list-text">* 스토리지 효율성 * 중복제거, NetApp FlexClone, 인라인 압축, 인라인 컴팩션, 씬 복제를 통해 총 용량 요구사항 감소 씬 프로비저닝 및 애그리게이트 중복제거. FlexClone 기능을 사용하면 거의 즉시 클론을 생성하여 백업 및 테스트 환경 업데이트를 지원할 수 있습니다. 이러한 클론은 변경된 경우에만 더 많은 스토리지를 사용합니다.</block>
-  <block id="527d8360422f7da2c119bd49b7c9fac4" category="list-text">* 재해 복구 섀도우 데이터베이스 서버. * 재해 복구 섀도우 데이터베이스 서버는 비즈니스 연속성 전략의 일부입니다(스토리지 읽기 전용 기능을 지원하고 스토리지 읽기/쓰기 인스턴스로 구성될 수 있음). 따라서 세 번째 스토리지 시스템의 배치 및 사이징은 일반적으로 운영 데이터베이스 스토리지 시스템과 동일합니다.</block>
-  <block id="cf88100598cbddbdaefcdf61df162f6c" category="inline-link">TR-3446: SnapMirror 비동기 개요 및 모범 사례 가이드</block>
-  <block id="50f1265782a4fb67c3350282c7b35665" category="list-text">* 데이터베이스 일관성(일부 고려 사항 필요) * 비즈니스 연속성과 관련하여 NetApp SnapMirror 백업 복사본을 사용하는 경우 을 참조하십시오<block ref="6f3c1dad0e99b4c05e6145259cddeecb" category="inline-link-rx"></block>.</block>
   <block id="196cc0216fd769aaf46f47da965f30f0" category="section-title">스토리지 레이아웃</block>
-  <block id="929e597940660eabb86daf0cffc8eefa" category="section-title">MEDITECH 호스트용 전용 Aggregate</block>
-  <block id="87c5861fbc8a6d37ccc020852eb541d3" category="paragraph">MEDITECH의 고성능 및 고가용성 요구 사항을 충족하기 위한 첫 번째 단계는 MEDITECH 환경의 스토리지 레이아웃을 적절하게 설계하여 MEDITECH 호스트 운영 워크로드를 전용 고성능 스토리지로 격리하는 것입니다.</block>
-  <block id="ff2b5195b77b3df7287edba655cbb2fa" category="paragraph">MEDITECH 호스트의 프로그램, 사전 및 데이터 파일을 저장하기 위해 각 스토리지 컨트롤러에 하나의 전용 애그리게이트를 프로비저닝해야 합니다. 동일한 디스크를 사용하고 성능에 영향을 주는 다른 워크로드의 가능성을 없애기 위해 해당 애그리게이트에서 다른 스토리지는 프로비저닝되지 않습니다.</block>
-  <block id="143214b07198b6a83947e985a0405b59" category="admonition">다른 MEDITECH 서버에 대해 용량 할당하는 스토리지는 MEDITECH 호스트에서 사용되는 LUN의 전용 애그리게이트에 배치해서는 안 됩니다. 다른 MEDITECH 서버의 스토리지를 별도의 Aggregate에 배치해야 합니다. 다른 MEDITECH 서버의 스토리지 요구 사항은 "하드웨어 구성 제안"(신규 구축) 및 "하드웨어 평가 작업"(기존 구축) 문서에서 확인할 수 있습니다. MEDITECH 시스템 통합자나 MEDITECH TAM(기술 계정 관리자)을 통해 MEDITECH에서 이러한 문서를 얻을 수 있습니다. NetApp 솔루션 엔지니어는 NetApp MEDITECH ISV(Independent Software Vendor) 팀과 협의하여 적절하고 완벽한 NetApp 스토리지 사이징 구성을 지원할 수 있습니다.</block>
-  <block id="5ec077763beb07ec7b3caee24df2753f" category="section-title">MEDITECH 호스트 워크로드를 모든 스토리지 컨트롤러에 균등하게 분산시킵니다</block>
-  <block id="5e23cdd842e00e0a9bb3c425637f1285" category="paragraph">NetApp FAS 및 AFF 시스템은 하나 이상의 고가용성 쌍으로 구축됩니다. 각 스토리지 컨트롤러에 MEDITECH의 넓은 워크로드와 6.x 워크로드를 균등하게 배포하여 컴퓨팅, 네트워크 및 캐싱 리소스를 각 스토리지 컨트롤러에 적용하는 것이 좋습니다.</block>
-  <block id="0e50589c988bc0bcf4ada368dc5b12fa" category="paragraph">다음 지침에 따라 각 스토리지 컨트롤러에 MEDITECH 워크로드를 균등하게 분산시키십시오.</block>
-  <block id="2915d3de2090a5457b3440fa67fcac2b" category="list-text">각 MEDITECH 호스트의 IOPS를 알고 있는 경우 각 컨트롤러가 MEDITECH 호스트에서 유사한 수의 IOPS를 서비스하는지 확인하여 MEDITECH의 넓은 워크로드와 6.x 워크로드를 모든 스토리지 컨트롤러에 균등하게 분산시킬 수 있습니다.</block>
-  <block id="7557576beac97047c02cd9458cc13e2b" category="list-text">각 MEDITECH 호스트의 IOPS를 모르는 경우에도 MEDITECH의 드넓은 워크로드와 6.x 워크로드를 모든 스토리지 컨트롤러에 균등하게 분산시킬 수 있습니다. MEDITECH 호스트의 애그리게이트 용량이 모든 스토리지 컨트롤러에 균등하게 분산되는지 확인하여 이 작업을 완료합니다. 이렇게 하면 MEDITECH 호스트 전용으로 사용되는 모든 데이터 집마다 디스크 수가 동일합니다.</block>
-  <block id="359a004d41cf45216d8fb8292aadfde4" category="list-text">비슷한 디스크 유형과 동일한 RAID 그룹을 사용하여 워크로드를 균등하게 분산하기 위해 두 컨트롤러의 스토리지 애그리게이트를 만들 수 있습니다. 스토리지 애그리게이트를 생성하려면 NetApp 인증 통합업체에 문의하십시오.</block>
-  <block id="085e0f80441a5818e62d9ba490f54ece" category="admonition">MEDITECH에 따르면 MEDITECH 시스템의 두 호스트는 나머지 호스트보다 높은 IOPS를 생성합니다. 이 두 호스트의 LUN은 별도의 스토리지 컨트롤러에 배치해야 합니다. 시스템을 배포하기 전에 MEDITECH 팀의 도움을 받아 이 두 호스트를 식별해야 합니다.</block>
-  <block id="9a1a3c56fc3de361b3ded2c30d3b2947" category="section-title">저장 장치 배치</block>
-  <block id="3c4c443f5121b24b1f98b86b8bc96adb" category="section-title">MEDITECH 호스트용 데이터베이스 스토리지</block>
-  <block id="eb58e7d95bc81fab0dd83008f2820fc3" category="paragraph">MEDITECH 호스트의 데이터베이스 스토리지는 NetApp FAS 또는 AFF 시스템에서 블록 디바이스, 즉 LUN으로 제공됩니다. LUN은 일반적으로 Windows 운영 체제에 E 드라이브로 마운트됩니다.</block>
-  <block id="a585779a985d251f0cd2cba2ba0096b3" category="section-title">기타 스토리지</block>
-  <block id="459b1799fdef4a59e9dce8acc6306a1f" category="paragraph">MEDITECH 호스트 운영 체제와 데이터베이스 애플리케이션은 일반적으로 스토리지에 상당한 양의 IOPS를 생성합니다. MEDITECH 호스트 VM 및 해당 VMDK 파일에 대한 스토리지 프로비저닝은 MEDITECH 성능 임계값을 충족하는 데 필요한 스토리지와는 독립적인 것으로 간주됩니다.</block>
-  <block id="6df9208c930e75d10c7b27664ff07776" category="paragraph">다른 MEDITECH 서버에 대해 프로비저닝된 스토리지는 MEDITECH 호스트가 사용하는 LUN의 전용 애그리게이트에 배치해서는 안 됩니다. 다른 MEDITECH 서버용 스토리지를 별도의 Aggregate에 배치합니다.</block>
-  <block id="84686e489de7dd8ab2aadf2b5803b6b7" category="section-title">스토리지 컨트롤러 구성</block>
   <block id="05807e454c19f244770adae059b3c330" category="section-title">고가용성</block>
-  <block id="7c9039889ab65ef43190d575bb4c7997" category="paragraph">컨트롤러 장애의 영향을 줄이고 스토리지 시스템의 무중단 업그레이드를 활성화하려면 고가용성 모드에서 컨트롤러를 사용하여 스토리지 시스템을 구성해야 합니다.</block>
-  <block id="f3e7b0a2571c05c786ce469c46b4d36e" category="paragraph">고가용성 컨트롤러 쌍 구성에서는 디스크 쉘프를 여러 경로를 통해 컨트롤러에 연결해야 합니다. 이 연결은 단일 경로 장애로부터 보호하여 스토리지 복원력을 높이고 컨트롤러 페일오버가 발생할 경우 성능 일관성을 개선합니다.</block>
-  <block id="cd9f59a504c7fe36c7465e5ceb0ef87f" category="section-title">스토리지 컨트롤러 페일오버 중 스토리지 성능</block>
-  <block id="1ee99853d0e27ebf34378dff82d027b3" category="paragraph">고가용성 쌍의 컨트롤러로 구성된 스토리지 시스템의 경우, 컨트롤러 장애가 발생할 가능성이 낮은 경우 파트너 컨트롤러가 장애가 발생한 컨트롤러의 스토리지 리소스 및 워크로드를 대신 처리합니다. 컨트롤러 장애가 있는 경우 고객과 상의하여 성능 요구사항을 충족하고 시스템을 적절하게 사이징하는 것이 중요합니다.</block>
-  <block id="c20a17d73866b11f371b2894a06d0662" category="section-title">하드웨어 지원 테이크오버</block>
-  <block id="f6c9afd46c042ac0a6d9598dd97c0c8c" category="paragraph">두 스토리지 컨트롤러 모두에서 하드웨어 지원 테이크오버 기능을 설정하는 것이 좋습니다.</block>
-  <block id="1cade868c840b804f2dcdb92562601db" category="paragraph">하드웨어 지원 테이크오버는 스토리지 컨트롤러 페일오버 시간을 최소화하도록 설계되었습니다. 하나의 컨트롤러의 원격 LAN 모듈 또는 서비스 프로세서 모듈이 하트비트 시간 제한 트리거보다 빠르게 컨트롤러 장애에 대해 파트너에게 알릴 수 있으므로 장애 조치에 걸리는 시간이 줄어듭니다. 하드웨어 지원 테이크오버 기능은 고가용성 구성의 스토리지 컨트롤러에 대해 기본적으로 설정됩니다.</block>
-  <block id="78b35308b723a3b1af571471a6c500ab" category="paragraph">하드웨어 지원 테이크오버에 대한 자세한 내용은 를 참조하십시오<block ref="acaccc868f6222e64c0f11237becafd9" category="inline-link-rx"></block>.</block>
-  <block id="3d0bf05155f3dfd0eeccf9e953d46156" category="section-title">디스크 유형입니다</block>
-  <block id="8711af52b6f8ef102691adb159c5465a" category="paragraph">MEDITECH 워크로드의 낮은 읽기 지연 시간 요구사항을 지원하려면 MEDITECH 호스트 전용 AFF 시스템의 애그리게이트에 고성능 SSD를 사용하는 것이 좋습니다.</block>
-  <block id="7bed8d5c872a4b04be96a51434f58667" category="paragraph">NetApp은 높은 처리량이 요구되는 MEDITECH 워크로드와 랜덤 데이터 액세스 패턴 및 짧은 지연 시간 요구사항을 해결하기 위해 고성능 AFF 어레이를 제공합니다. MEDITECH 워크로드의 경우 AFF 어레이는 HDD를 기반으로 하는 시스템에 비해 뛰어난 성능을 제공합니다. 플래시 기술과 엔터프라이즈 데이터 관리를 결합하면 성능, 가용성 및 스토리지 효율성이라는 세 가지 주요 영역에서 이점을 얻을 수 있습니다.</block>
-  <block id="9b4b208365ad07b36658adef98d477e8" category="section-title">NetApp 지원 툴 및 서비스</block>
-  <block id="7a1fabc75e2bb969a80ba5f7123be4e5" category="paragraph">NetApp은 완벽한 지원 툴 및 서비스 세트를 제공합니다. NetApp AutoSupport 툴은 하드웨어 장애나 시스템 구성 오류가 있는 경우 NetApp AFF/FAS 시스템에서 사용하도록 설정 및 구성해야 합니다. NetApp 지원 팀은 콜홈 경고를 통해 적시에 문제를 해결합니다. NetApp Active IQ는 NetApp 시스템의 AutoSupport 정보를 기반으로 예측 가능한 사전 통찰력을 제공하여 가용성, 효율성 및 성능을 향상하는 웹 기반 애플리케이션입니다.</block>
-  <block id="1a7168000dbdf43131deaba178369097" category="summary">이 섹션에서는 다양한 크기의 스토리지 아키텍처에 대한 샘플 BOM에 대해 설명합니다.</block>
-  <block id="2bbbd38af7120fd115a6addb8620d27d" category="doc">소형, 중형 및 대형 아키텍처의 기술 사양</block>
-  <block id="5555e0390dda8fd205733a3e7e4fb06c" category="section-title">소형, 중형 및 대형 아키텍처용 BOM.</block>
-  <block id="5cf4a51feff902eb379de40ff8ed34f5" category="inline-link">TR-4036: FlexPod 기술 사양</block>
-  <block id="0727f1ef06b07d817f26a0590fe252ec" category="paragraph">FlexPod 설계는 다양한 구성 요소와 소프트웨어 버전을 포괄하는 유연한 인프라입니다. 사용<block ref="047a979ac548254afa5d2af995fe2a74" category="inline-link-rx"></block> 유효한 FlexPod 구성을 조립하는 방법에 대한 설명서로, 아래 표의 구성은 FlexPod의 최소 요구사항이며 단지 샘플일 뿐입니다. 다양한 환경 및 사용 사례에 따라 각 제품군별로 구성을 확장할 수 있습니다.</block>
-  <block id="659421e16a6bc3778ab220c742138ef4" category="paragraph">이 사이징 연습의 경우 Category 3 MEDITECH 환경에 해당하고, Medium에서 Category 5까지, Large에서 Category 6까지</block>
-  <block id="419f3742e6de8e0ec4b22cce005e7630" category="cell">플랫폼</block>
-  <block id="1f9c2b20838eb5764f87e215970be3d0" category="cell">하나의 NetApp AFF A220 All-Flash 스토리지 시스템 HA 쌍입니다</block>
-  <block id="f540798dd0f4f69d082f44fa9e3c5469" category="cell">하나의 NetApp AFF A220 HA 쌍입니다</block>
-  <block id="556c56054a5ee2c1f1685b10e067c5f8" category="cell">NetApp AFF A300 All-Flash 스토리지 시스템 HA 쌍 1개</block>
-  <block id="0629603d05db387d1253ef68ff3c1ead" category="cell">디스크 쉘프</block>
-  <block id="4e9cb2d77eb70a12d90b9e7cd85625a0" category="cell">9TB x 3.8TB</block>
-  <block id="9ce9132d630db477c9ea65768aa741e7" category="cell">13TB x 3.8TB</block>
-  <block id="51e1d277b2759170945967697f7af60f" category="cell">19TB x 3.8TB</block>
-  <block id="4e6e9ac8d0e531cedab5592653aee813" category="cell">MEDITECH 데이터베이스 크기입니다</block>
-  <block id="1509b3eca6beaf80eec6028fcec1b6b0" category="cell">3TB-12TB</block>
-  <block id="5bd061e6f944667c705b71ff6e0ae66a" category="cell">17TB</block>
-  <block id="04cade24ef48dabdd5cc45f8ea6ae0bb" category="cell">&gt; 30TB</block>
-  <block id="8c4fe6ee8179d9bdad3bb9cb5342a95b" category="cell">MEDITECH IOPS</block>
-  <block id="56b5f3582e3df98310cab3b86f5a9e1a" category="cell">22,000 IOPS 미만</block>
-  <block id="41a74c11582f08d8bf2b5203b475e20c" category="cell">25,000 IOPS 초과</block>
-  <block id="f742e76935b186a9144ae49968e40587" category="cell">32,000 IOPS 초과</block>
-  <block id="aebb627cd726b3cef553d204f38a30e1" category="cell">총 IOPS</block>
-  <block id="fb4ea06503aa04a60eb1988bd67ecbde" category="cell">22000</block>
-  <block id="050718f543c7b2b6159a2f150fa6e93e" category="cell">27000</block>
-  <block id="ce28c97dcd8381b7d5a093ffd1deae38" category="cell">35000</block>
-  <block id="65e65c8ab0d8609ce12fc68a03cb8e00" category="cell">원시</block>
-  <block id="a96bac4018e3f59e1b6ab5f1c3f03326" category="cell">34.2TB</block>
-  <block id="618bf1d0a7b3556944e5580ba00e2cf3" category="cell">49.4TB</block>
-  <block id="3159ad88a6b1512b45331b595f4823c3" category="cell">68.4TB</block>
-  <block id="b3e1f4c67ee07a73dcdaff1cf34f2640" category="cell">사용 가능한 용량</block>
-  <block id="d1d30d8e3ab837098c84c159f2386e4c" category="cell">18.53TiB</block>
-  <block id="d50c8f765634f573da0ad30699eb08e8" category="cell">27.96TiB</block>
-  <block id="2e27a1d801dd9c4e53bc58cd9765f81a" category="cell">33.82TiB</block>
-  <block id="bfdc868e2584931fb95333f1d25ac043" category="cell">실제 용량(2:1 스토리지 효율성)</block>
-  <block id="6df824d222882a42605b7750a3093946" category="cell">55.6TiB</block>
-  <block id="eb76ca74ba935f2f3321f3262f520f43" category="cell">83.89TiB</block>
-  <block id="479095ff00797ae9cef6065b755d5377" category="cell">101.47TiB</block>
-  <block id="953349d2b625915a896344e7ac10d1a4" category="admonition">일부 고객 환경에서는 여러 MEDITECH 운영 워크로드가 동시에 실행되거나 더 높은 IOPS 요구 사항이 있을 수 있습니다. 이 경우, NetApp 세일즈 팀과 협력하여 필요한 IOPS 및 용량에 따라 스토리지 시스템을 조정합니다. 따라서 워크로드를 처리하는 데 적합한 플랫폼을 결정할 수 있어야 합니다. 예를 들어, NetApp AFF A700 All-Flash 스토리지 시스템 HA 쌍에서 여러 MEDITECH 환경을 성공적으로 실행하는 고객이 있습니다.</block>
-  <block id="532fcbc0fac474e47108beb3554358e1" category="paragraph">다음 표에는 MEDITECH 구성에 필요한 표준 소프트웨어가 나와 있습니다.</block>
   <block id="aa76f43f5e0552119cc8d5313c67296e" category="cell">제품군</block>
   <block id="16cd0d1def5d317a8d3a4a8aa7238c93" category="cell">버전 또는 릴리스</block>
   <block id="253b40ae359ba25b56231803430c4873" category="cell">ONTAP</block>
-  <block id="9fa0d8a13358bbbba5ef3cb499eba1bb" category="cell">ONTAP 9.4 일반 가용성(GA)</block>
   <block id="e1e3a3281a9199465a66e17d5e143cfd" category="cell">Cisco UCS 패브릭 인터커넥트</block>
-  <block id="2c13e3a7606a031270bb8954f594c5ca" category="cell">Cisco UCSM 4.x</block>
-  <block id="162d63502f58bc90b9af35b2cc71be3a" category="cell">현재 권장 릴리스</block>
-  <block id="adb9ea3a104b7b3adf2e9f5b4cbd9547" category="cell">Cisco Nexus 이더넷 스위치</block>
   <block id="7dcb451ba840bd946bd9a090e766db9f" category="cell">Cisco FC: Cisco MDS 9132T</block>
-  <block id="20108c15b7a815d1b2682ed2998edefd" category="cell">8.3(2)</block>
-  <block id="7b340abd22dc2ee7095bfbc0119449d9" category="cell">VMware vSphere ESXi 6.7을 참조하십시오</block>
-  <block id="4977b4bad969ab7245013c3ed9dcd356" category="cell">가상 머신(VM)</block>
-  <block id="4083fee85864d55c66d5e0b21a7928b3" category="cell">Windows 2016</block>
   <block id="fe4dbcab9b910577e5035e97ac068dae" category="cell">관리</block>
   <block id="87b1c702f168ed4c08d3accfce8b8684" category="cell">하이퍼바이저 관리 시스템</block>
-  <block id="b771edfecd5a5885e4a656ead98f996d" category="cell">VMware vCenter Server 6.7 U1(VCSA)</block>
   <block id="edf4e14d0fe662d81b00f7a3dc330cec" category="cell">NetApp 가상 스토리지 콘솔(VSC)</block>
-  <block id="c7aad5d749b5d2230a814640a9b99a95" category="cell">VSC 7.0P1</block>
   <block id="805c9517e95d3e9efc4b46738ab825fc" category="cell">NetApp SnapCenter를 참조하십시오</block>
-  <block id="e034769a54038e2b37e7ea8bd3cbad99" category="cell">SnapCenter 4.0</block>
-  <block id="aa8dfb3494ca31d7447cc935de18d98d" category="cell">4.x</block>
-  <block id="711b19f623a6ca20ba939117c8c5ac10" category="paragraph">다음 표에서는 소규모(범주 3) 구성 예, 즉 인프라 구성 요소를 보여 줍니다.</block>
   <block id="dd9574fbe58afbfead03be1225953780" category="cell">수량 및 모델</block>
-  <block id="f6639f365d9feec5a774eac2eec88a51" category="cell">Cisco UCS 5108 섀시</block>
-  <block id="b5fa3f59e9895535624785f4f1a25d44" category="cell">최대 8개의 반폭 또는 4개의 전폭 블레이드를 지원합니다. 서버 요구 사항이 증가함에 따라 섀시를 추가합니다.</block>
-  <block id="5fb69e1e3030007765bb105b6e456d00" category="cell">Cisco 섀시 I/O 모듈</block>
-  <block id="d1c172c7f5dd026e032bc9342f998497" category="cell">2 x 2208</block>
-  <block id="5aac3552dfea1aeb5852aabe10869f3a" category="cell">8GB x 10GB 업링크 포트</block>
   <block id="fce629feab35fd0737cdc08e7cc517c7" category="cell">Cisco UCS 블레이드 서버</block>
-  <block id="ce731fd0b31d76d4d6b168af3d5fac4e" category="cell">B200 M5 4개</block>
-  <block id="721956a2e4f0f5c29113ab6c28857d6c" category="cell">각각 2개의 14코어, 2.6GHz 이상의 클럭 속도 및 384GB BIOS 3.2(3#)</block>
-  <block id="76fc667e1d7c028eca67b72665769e7e" category="cell">Cisco UCS 가상 인터페이스 카드</block>
-  <block id="b424654e78d87b0c7c2024ed458b629b" category="cell">UCS 1440 4개</block>
-  <block id="3c36cd757307a6742384ceacf069acc4" category="cell">VMware ESXi FNIC FC 드라이버:1.6.0.47 VMware ESXi eNIC 이더넷 드라이버:1.0.27.0(상호 운용성 매트릭스 참조:<block ref="8baf564a49c5ee0603f4ea07b5ce4355" category="inline-link-rx"></block></block>
-  <block id="1112a5d329db5c0fe3083695775e310f" category="cell">Cisco UCS Fabric Interconnect(Fi) 2개</block>
-  <block id="e084ae2b0154c1d7e04aed0b5ec0ce19" category="cell">UCS 6454 FI 2개</block>
-  <block id="dc899122d86f2dcb47167e90cb095d4a" category="cell">10/25/100Gb 이더넷 및 32Gb FC를 지원하는 4세대 패브릭 인터커넥트</block>
   <block id="cb3b33954945611e0ba8b2628e06d629" category="cell">Cisco 이더넷 스위치</block>
-  <block id="e8952e556672a7bac099e6dd8277adc6" category="cell">Nexus 9336c-FX2 2개</block>
-  <block id="0b4cd361b1679e25bfbd3ac50d9345ca" category="cell">1GB, 10GB, 25GB, 40GB, 100GB입니다</block>
-  <block id="87cfe9b16eabd03a88919deb9691f260" category="cell">BLOB 스토리지용 IP 네트워크 Nexus 9k</block>
-  <block id="901702a435c2bbc38753e9ce4151d4f1" category="cell">FI 및 UCS 섀시</block>
-  <block id="a7bc364215ebb35dfa84af3b185cc5a2" category="cell">FC: Cisco MDS 9132T</block>
-  <block id="8f99a00b0629271102c495db3b92165e" category="cell">Cisco 9132T 스위치 2개</block>
-  <block id="1dd71ec979684d8a56b1b5af3e3bc5f7" category="cell">NetApp AFF A300 All-Flash 스토리지 시스템</block>
-  <block id="0911ffdbb76c891f964e39a07eb6b697" category="cell">1개의 HA 쌍</block>
-  <block id="e63e3fbc3e359b73fcef2cb11c5247d9" category="cell">모든 MEDITECH 워크로드(파일 서버, 이미지 서버, SQL Server, VMware 등)를 위한 2노드 클러스터</block>
-  <block id="d045e94d9db292469611fa1f8d83349a" category="cell">DS224C 디스크 쉘프</block>
-  <block id="cd435d40574734b0130c5e304d7a7f73" category="cell">DS224C 디스크 쉘프 1개</block>
-  <block id="2eefcd71feee51527314ef0b887eb12e" category="cell">솔리드 스테이트 드라이브(SSD)</block>
-  <block id="212083871f19775196741ee4db200535" category="cell">9 x 3.8TB</block>
-  <block id="bdd95a1c93c8bff0bb95352967a65139" category="paragraph">다음 표에서는 중간 규모(범주 5)의 구성 예, 즉 인프라 구성 요소를 보여 줍니다</block>
   <block id="2e70b67967a4b1c0813d150fcd33df90" category="cell">Cisco UCS 5108 섀시</block>
-  <block id="7d293c81b006f47e7db10deb7e1dc12a" category="cell">Cisco 섀시 I/O 모듈</block>
-  <block id="adb3235eddf2aa5bd689bf34912ab42a" category="cell">B200 M5 6개</block>
-  <block id="6f8ae2d6cfec240a08e590384ed36a7f" category="cell">각각 16코어 2개, 2.5GHz/이상의 클럭 속도, 384GB 이상의 메모리 BIOS 3.2(3#)</block>
-  <block id="2afe782ca4cd1485b77b44a7cd1bd8ac" category="cell">Cisco UCS 가상 인터페이스 카드(VIC)</block>
-  <block id="b1de6370d4f1bb368f5a5616080e5ee2" category="cell">UCS 1440 VICS 6개</block>
-  <block id="a0bc80769ac75f28f478d49189ff30e3" category="cell">VMware ESXi FNIC FC 드라이버:1.6.0.47 VMware ESXi eNIC 이더넷 드라이버:1.0.27.0(상호 운용성 매트릭스 참조:)</block>
-  <block id="d9019d1ef30cacd53c6578a814d93e0e" category="cell">10GB/25GB/100Gb 이더넷 및 32Gb FC를 지원하는 4세대 패브릭 인터커넥트</block>
-  <block id="dddf4f558fbb41124652abfffbee66fd" category="cell">NetApp AFF A220 All-Flash 스토리지 시스템</block>
-  <block id="7145de475166467a1d36317d70f3d308" category="cell">2개의 HA 쌍</block>
-  <block id="00f7f85293e44cb291261e7f0507ffb1" category="cell">DS224C 디스크 쉘프 1개</block>
   <block id="34df20bab5e85dc75bfc94ef569cced9" category="cell">SSD를 지원합니다</block>
-  <block id="94d5e043a6fb208174ae5d1d4eced0a3" category="cell">3.8TB 13개</block>
-  <block id="7fa0374ee62cfbc6b8ea5c31cfe4cf4b" category="paragraph">다음 표에서는 대규모(범주 6) 구성 예, 즉 인프라 구성 요소를 보여 줍니다.</block>
-  <block id="f5fc774f557fe8baacaafbb326585f41" category="cell">10GB 업링크 포트 8개</block>
-  <block id="c312bbe29d0ef87e481ae176a40f91fe" category="cell">8x B200 M5</block>
-  <block id="7a1a4af4985b17cf838b43ff629f8cec" category="cell">각각 24코어 2개, 2.7GHz 및 768GB BIOS 3.2(3#)</block>
-  <block id="8d49fc53984ae43dfd9d888469f961f4" category="cell">UCS 1440 VICS 8개</block>
-  <block id="10ffdfb8caf828b6bf5726af3171c4ef" category="cell">VMware ESXi FNIC FC 드라이버: 1.6.0.47 VMware ESXi eNIC 이더넷 드라이버: 1.0.27.0 (상호 운용성 매트릭스 검토:<block ref="8baf564a49c5ee0603f4ea07b5ce4355" category="inline-link-rx"></block></block>
-  <block id="48c6e1b28747fc721bf2a3b213c60c87" category="cell">2 x Cisco UCS 패브릭 인터커넥트(FI)</block>
-  <block id="8552480c255e05dab7fb35447af19229" category="cell">Cisco Nexus 9332PQ1 2개, 10GB, 25GB, 40GB, 100GB</block>
-  <block id="096cdb0037f15c0698616bb14ea73938" category="cell">BLOB 스토리지용 IP 네트워크 N9k</block>
-  <block id="c78a423f3132ee2ac4f4f4c1fa5d4859" category="cell">AFF A300</block>
-  <block id="eecfabc7f0efee8d39bbf58ca9da0f13" category="cell">DS224C 디스크 쉘프 1개</block>
-  <block id="c06a3ad948ce876ff1edb0573bfc643c" category="cell">19 x 3.8TB</block>
-  <block id="3350c3bf1228026294ce0e7f9235937f" category="admonition">이러한 구성은 사이징 지침을 위한 출발점을 제공합니다. 일부 고객 환경에서는 여러 MEDITECH 운영 및 비 MEDITECH 워크로드가 동시에 실행되거나 더 높은 IOP 요구사항이 있을 수 있습니다. NetApp 세일즈 팀과 협력하여 필요한 IOPS, 워크로드 및 용량을 기준으로 스토리지 시스템의 규모를 조정하면서 워크로드를 지원하는 데 적합한 플랫폼을 결정해야 합니다.</block>
   <block id="2dd892d3836e4f76d33d56d0c04079e2" category="summary">이 섹션에서는 FlexPod 및 GATK의 설정 및 Cromwell 엔진, JAR 파일 또는 ./GATK 스크립트를 사용한 GATK 실행에 대해 설명합니다.</block>
   <block id="97b65a4d825b764508962d3d74abfe45" category="doc">유전체학 - GATK 설정 및 실행</block>
   <block id="38dae60f2d18d1ce05ef80cec3185805" category="inline-link-macro">이전: 솔루션 인프라 하드웨어 및 소프트웨어 구성 요소</block>
@@ -4079,129 +3902,11 @@
   <block id="f76562fdb453d4aa92825813eec78c15" category="paragraph">GATK 실행 방법에 대한 종합적인 단계는 를 참조하십시오<block ref="6e6331e31b8a83ca5cae2a40d13fdd4b" category="inline-link-rx"></block>.</block>
   <block id="d83cd6767071cfaa10e8edde2154f31c" category="inline-link-macro">다음: JAR 파일을 사용하여 GATK 실행을 위한 출력.</block>
   <block id="0955af3d96d96b37fc835acd9b356dc3" category="paragraph"><block ref="0955af3d96d96b37fc835acd9b356dc3" category="inline-link-macro-rx"></block></block>
-  <block id="1967302950c727fc26511a7a801bcb41" category="summary">이 섹션에서는 MEDITECH 환경에서 얻을 수 있는 컴퓨팅 및 스토리지 워크로드의 유형에 대해 설명합니다.</block>
-  <block id="841762089e5f9303f335b8a5550f3dfa" category="doc">MEDITECH 워크로드 개요</block>
-  <block id="789ae08bd96234d6c462e26b2c7a6251" category="section-title">MEDITECH 및 백업 워크로드</block>
-  <block id="9ed2da2a4965f01e4d58199c06931b1c" category="paragraph">MEDITECH 환경에 맞게 NetApp 스토리지 시스템을 사이징할 때는 MEDITECH 운영 워크로드와 백업 워크로드를 모두 고려해야 합니다.</block>
-  <block id="f76799d5e43a4703ce23ddc15b176efe" category="cell">MEDITECH 호스트</block>
-  <block id="e62948dc32b1dbe2a3a64aa66bc24571" category="cell">MEDITECH 호스트는 데이터베이스 서버입니다. 이 호스트는 MEDITECH 파일 서버(광활함, 6.x 또는 C/S 5.x 플랫폼) 또는 Magic 시스템(매직 플랫폼)이라고도 합니다. 이 문서에서는 MEDITECH 호스트라는 용어를 사용하여 MEDITECH 파일 서버 및 Magic 시스템을 참조합니다.</block>
-  <block id="925c9f80878b53ce18dd86edfe18d8a4" category="paragraph">다음 섹션에서는 이러한 두 워크로드의 I/O 특성 및 성능 요구사항에 대해 설명합니다.</block>
-  <block id="505f0aa51de4876aaeff6bb41832da8f" category="section-title">MEDITECH 워크로드</block>
-  <block id="654e7b57da72fe41ce18eb8f675b8138" category="paragraph">MEDITECH 환경에서 MEDITECH 소프트웨어를 실행하는 여러 서버는 MEDITECH 시스템이라는 통합 시스템으로 다양한 작업을 수행합니다. MEDITECH 시스템에 대한 자세한 내용은 MEDITECH 설명서를 참조하십시오.</block>
-  <block id="f05eb749bfd5e1d52c6b218ac99175a0" category="list-text">프로덕션 MEDITECH 환경의 경우 해당 MEDITECH 설명서를 참조하여 NetApp 스토리지 시스템 사이징에 포함되어야 하는 MEDITECH 호스트 수와 스토리지 용량을 확인하십시오.</block>
-  <block id="be7f8667e0a975588d79a61bf5e7cf35" category="list-text">새 MEDITECH 환경의 경우 하드웨어 구성 제안 문서를 참조하십시오. 기존 MEDITECH 환경의 경우 하드웨어 평가 작업 문서를 참조하십시오. 하드웨어 평가 작업은 MEDITECH 티켓과 연결됩니다. 고객은 MEDITECH에서 이러한 문서 중 하나를 요청할 수 있습니다.</block>
-  <block id="b52d981da601faaea468c9c4d6ef7cec" category="paragraph">호스트를 추가하여 용량과 성능을 향상시키도록 MEDITECH 시스템을 확장할 수 있습니다. 각 호스트에는 데이터베이스 및 애플리케이션 파일을 위한 스토리지 용량이 필요합니다. 각 MEDITECH 호스트에서 사용할 수 있는 스토리지는 호스트에서 생성된 입출력도 지원해야 합니다. MEDITECH 환경에서는 각 호스트에 대해 LUN을 사용하여 해당 호스트의 데이터베이스 및 애플리케이션 스토리지 요구 사항을 지원할 수 있습니다. MEDITECH 범주의 유형과 배포하는 플랫폼 유형에 따라 각 MEDITECH 호스트와 시스템 전체의 워크로드 특성이 결정됩니다.</block>
-  <block id="8c0040fef2729979b97357b980b026fb" category="section-title">MEDITECH 범주</block>
-  <block id="fc9092fc51541d3261410e1e5f70777f" category="paragraph">MEDITECH는 배포 크기를 1에서 6 사이의 범주 번호와 연결합니다. 범주 1은 가장 작은 MEDITECH 배포이며 범주 6은 가장 큰 배포입니다. 각 범주와 관련된 MEDITECH 애플리케이션 사양의 예로는 다음과 같은 메트릭이 있습니다.</block>
-  <block id="316f822406a3bafe5c065fb374c8e79b" category="list-text">병원 침대 수</block>
-  <block id="5ff2c0bc7600cc5a88afa910aa6c2466" category="list-text">연간 입원 환자 수</block>
-  <block id="ae48c1346ad6c8e94c0f8d4c4c46bc29" category="list-text">연간 외래 환자 수</block>
-  <block id="54428673f9556630a576ef01670de9f5" category="list-text">매년 응급실 방문</block>
-  <block id="d649e892a6899e2453138305c8aeb443" category="list-text">연간 검사 횟수</block>
-  <block id="b4ccbe74222616ed3237ca8c62b861eb" category="list-text">1일 입원 환자 처방</block>
-  <block id="cc7a1c9bfa9e46c0e8abe557de2328c0" category="list-text">외래 환자 처방전/일일</block>
-  <block id="4395f5309fc81d34b03ec67001ed3d8f" category="paragraph">MEDITECH 범주에 대한 자세한 내용은 MEDITECH 범주 참조 시트를 참조하십시오. MEDITECH에서 고객 또는 MEDITECH 시스템 설치 프로그램을 통해 이 시트를 얻을 수 있습니다.</block>
-  <block id="7fa7698b25c0f55fc7be3702bde10d99" category="section-title">MEDITECH 플랫폼</block>
-  <block id="1f1b94a73438871af776ddd24ded613a" category="paragraph">MEDITECH의 4가지 플랫폼:</block>
-  <block id="69a85706fce2e98f95e217890b6fbc09" category="list-text">드넓은 공간을 제공합니다</block>
-  <block id="e6ef1773733c22dc74d98135e7870f91" category="list-text">MEDITECH 6.x</block>
-  <block id="7952368f79e74f6f7861cfeadf5c805a" category="list-text">클라이언트/서버 5.x(C/S 5.x)</block>
-  <block id="cff42d769fc6a027224a1a20c4ab567a" category="list-text">마법</block>
-  <block id="0a18d8a837db7b610f97c62f5501c8e2" category="paragraph">MEDITECH의 경우, 6.x 및 C/S 5.x 플랫폼의 경우 각 호스트의 입출력 특성이 요청 크기가 4,000인 100% 랜덤으로 정의됩니다. MEDITECH Magic 플랫폼의 경우 각 호스트의 입출력 특성은 요청 크기가 8,000 또는 16,000인 100% 랜덤으로 정의됩니다. MEDITECH에 따르면 일반적인 매직 프로덕션 배포의 요청 크기는 8,000 또는 16,000입니다.</block>
-  <block id="8ad4cf9fe08f31ebad8d0777e923dcd2" category="paragraph">읽기 및 쓰기 비율은 구축하는 플랫폼에 따라 다릅니다. MEDITECH는 읽기 및 쓰기의 평균 조합을 추정하고 백분율로 표시합니다. 또한 MEDITECH는 특정 MEDITECH 플랫폼의 각 MEDITECH 호스트에 필요한 평균 지속 IOPS 값을 예측합니다. 아래 표에는 MEDITECH에서 제공하는 플랫폼별 I/O 특성이 요약되어 있습니다.</block>
-  <block id="0a8502e7c2521388d2e46b80b5ce4e14" category="cell">MEDITECH 범주</block>
-  <block id="3bdf494d142a3e40e38a8b2e9f538178" category="cell">MEDITECH 플랫폼</block>
-  <block id="68f19b4aefe07e68a5d0d4cf2794032a" category="cell">평균 랜덤 읽기 %</block>
-  <block id="549edfc93edb0ea2daca98e90a31b03c" category="cell">평균 랜덤 쓰기 %</block>
-  <block id="e59eb0c23465651ba5a88d31ff350349" category="cell">MEDITECH 호스트당 평균 지속 IOPS</block>
-  <block id="7a30de39b7e026330706c07a667cfa77" category="cell">드넓은 6.x</block>
   <block id="98f13708210194c475687be6106a3b84" category="cell">20</block>
-  <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
-  <block id="b137fdd1f79d56c7edf3365fea7520f2" category="cell">750입니다</block>
-  <block id="d9639340c2f0051c1a7a09da5ef07ed4" category="cell">2-6</block>
-  <block id="4b482edf238f3e07a3e0c730e500a608" category="cell">6.x</block>
-  <block id="c38953bc9b7e91c91d381013e3a289f9" category="cell">C/S 5.x</block>
-  <block id="d645920e395fedad7bbbed0eca3fe2e0" category="cell">40</block>
   <block id="072b030ba126b2f4b2374f342be9ed44" category="cell">60</block>
-  <block id="d490d7b4576290fa60eb31b5fc917ad1" category="cell">600</block>
-  <block id="8613985ec49eb8f757ae6439e879bb2a" category="cell">90</block>
-  <block id="18d8042386b79e2c279fd162df0205c8" category="cell">400</block>
-  <block id="7c15d3e27fc2a287bd8c9931826bc71d" category="inline-link-macro">소규모, 중간 규모 및 대규모 아키텍처에 대한 기술 사양</block>
-  <block id="c32ce4a3a4fcb44c1c79dd8f96ba2269" category="paragraph">MEDITECH 시스템에서 각 호스트의 평균 IOPS 레벨은 위 표에 정의된 IOPS 값과 같아야 합니다. 각 플랫폼을 기반으로 올바른 스토리지 사이징을 결정하려면 위의 표에 지정된 IOPS 값이 에 설명된 사이징 방법론의 일부로 사용됩니다 <block ref="95650dcede9afd90d304328ce281ba34" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="1ad4275209df827f22af66388107dbce" category="paragraph">MEDITECH는 각 호스트에 대해 평균 랜덤 쓰기 지연 시간을 1ms 미만으로 유지해야 합니다. 그러나 백업 및 재할당 작업 중에 쓰기 지연 시간을 최대 2ms까지 일시적으로 늘릴 수 있는 것으로 간주됩니다. 또한 MEDITECH는 범주 1 호스트의 경우 평균 랜덤 읽기 지연 시간이 7ms 미만이고 범주 2 호스트의 경우 5ms 미만이어야 합니다. 이러한 지연 시간 요구 사항은 어떤 MEDITECH 플랫폼을 사용하는지에 관계없이 모든 호스트에 적용됩니다.</block>
-  <block id="34b388b985c37de796a1745a6d57a9ac" category="paragraph">아래 표에는 MEDITECH 워크로드에 대한 NetApp 스토리지의 크기를 조정할 때 고려해야 하는 I/O 특성이 요약되어 있습니다.</block>
-  <block id="83f499a540b1323009c200d6f8cc9396" category="cell">매개 변수</block>
-  <block id="d9a8dc11f7b80b8b570c0d9b1b5fd2cd" category="cell">요청 크기입니다</block>
-  <block id="449daf85c71a9f8eb7c666134b1d9b95" category="cell">1-6</block>
-  <block id="633c01074b6726183e20f42bb3ee01c0" category="cell">4K</block>
-  <block id="75d25ee87a0f3f253845236fca98c2a8" category="cell">8K 또는 16K</block>
-  <block id="fbf1a4a6cf1e4f3ef4efcfd6ef9a2edc" category="cell">랜덤/순차</block>
-  <block id="9057a0cea8cb1898b5f113f08e153716" category="cell">100% 랜덤</block>
-  <block id="6bb04d1cfdf58681679e1476bb6e29b8" category="cell">평균 지속 IOPS</block>
   <block id="382b0f5185773fa0f67a8ed8056c7759" category="cell">해당 없음</block>
-  <block id="cf646b9ba6ca2ed9daae6aef6b376daa" category="cell">읽기/쓰기 속도</block>
-  <block id="212d9f873ba66e772866f562e356bb47" category="cell">20% 읽기, 80% 쓰기</block>
-  <block id="feb326647eaed773d914314b3d959f2f" category="cell">40% 읽기, 60% 쓰기</block>
-  <block id="cff141e10cab983fe422672d715b68e5" category="cell">90% 읽기, 10% 쓰기</block>
-  <block id="d80906a49158ecc08546e169f755d9b9" category="cell">쓰기 지연 시간</block>
-  <block id="ce8f4bd254d7fa591c64caccc3aa3eeb" category="cell">1ms 미만</block>
-  <block id="700aacaf691eb4c72e3e389f3f687dff" category="cell">일시적인 최대 쓰기 지연 시간입니다</block>
-  <block id="101d21e523f12f01303be5acdf4141d9" category="cell">2ms 미만</block>
-  <block id="cf9afbba5dc3d6546bf5f110bb1a8486" category="cell">읽기 지연 시간</block>
-  <block id="e7e89d19a58cf634d8b772ff7f744f97" category="cell">7ms 미만</block>
-  <block id="3752601bfb13aa77e4507f62899659ed" category="cell">5ms 미만</block>
-  <block id="a78ecbf906d3fcedf4be720c235c6afa" category="admonition">범주 3에서 6까지의 MEDITECH 호스트는 범주 2와 동일한 I/O 특성을 갖습니다. MEDITECH 범주 2 - 6의 경우 각 범주에 구축된 호스트 수가 다릅니다.</block>
-  <block id="065d86a76184f0960dcf8a3d53b4cab9" category="paragraph">NetApp 스토리지 시스템은 이전 섹션에서 설명한 성능 요구사항을 충족할 수 있도록 사이징해야 합니다. NetApp 스토리지 시스템은 MEDITECH 운영 워크로드 외에도 다음 섹션에 설명된 대로 백업 작업 중에 이러한 MEDITECH 성능 목표를 유지할 수 있어야 합니다.</block>
-  <block id="b91c15efa4c1c9df437818341f71fd09" category="section-title">백업 워크로드 설명</block>
-  <block id="c5db716afff4ed0ff27db966a0b0dec7" category="paragraph">MEDITECH 인증 백업 소프트웨어는 MEDITECH 시스템의 각 MEDITECH 호스트에서 사용하는 LUN을 백업합니다. 백업이 애플리케이션 정합성 보장 상태에 있도록 백업 소프트웨어는 MEDITECH 시스템을 중지시키고 디스크에 대한 입출력 요청을 일시 중단합니다. 시스템이 중지 상태에 있는 동안 백업 소프트웨어는 NetApp 스토리지 시스템에 명령을 발행하여 LUN이 포함된 볼륨의 NetApp 스냅샷 복사본을 생성합니다. 나중에 백업 소프트웨어가 MEDITECH 시스템을 중지하여 운영 I/O 요청을 데이터베이스로 계속 진행할 수 있도록 합니다. 스냅샷 복사본을 기반으로 NetApp FlexClone 볼륨이 생성됩니다. 이 볼륨은 LUN을 호스팅하는 상위 볼륨에서 운영 입출력 요청이 계속 진행되는 동안 백업 소스에서 사용됩니다.</block>
-  <block id="e11d4b4ea22f4a57c4820d252683b430" category="paragraph">백업 소프트웨어에서 생성되는 워크로드는 FlexClone 볼륨에 상주하는 LUN을 순차적으로 읽음으로써 발생합니다. 워크로드는 요청 크기가 64,000인 100% 순차적 읽기 워크로드로 정의됩니다. MEDITECH 운영 워크로드의 성능 기준은 필요한 IOPS 및 관련 읽기/쓰기 지연 시간 수준을 유지하는 것입니다. 그러나 백업 워크로드의 경우 백업 작업 중에 생성되는 전체 데이터 처리량(MBps)으로 주의를 이동합니다. MEDITECH LUN 백업은 8시간 백업 기간에 완료되어야 하지만, NetApp은 모든 MEDITECH LUN 백업을 6시간 이내에 완료할 것을 권장합니다. 백업을 6시간 이내에 완료하는 것을 목표로 MEDITECH 워크로드의 계획되지 않은 증가, NetApp ONTAP 백그라운드 작업 또는 시간의 경과에 따른 데이터 증가와 같은 이벤트를 완화합니다. 이러한 이벤트 중 하나라도 발생하면 추가 백업 시간이 발생할 수 있습니다. 백업 소프트웨어는 저장된 애플리케이션 데이터의 양에 관계없이 각 MEDITECH 호스트에 대해 전체 LUN의 블록 레벨 백업을 수행합니다.</block>
-  <block id="06caa9e8cda7ef25bf3352e5e17b6670" category="paragraph">이 창 내에서 백업을 완료하는 데 필요한 순차적 읽기 처리량을 계산하는 방법은 다음과 같은 다른 요인의 기능입니다.</block>
-  <block id="e588cda6a292089be13b2d0be3a8b882" category="list-text">원하는 백업 기간</block>
-  <block id="c7e2e841f50fd3a9f5f532318d84d3c4" category="list-text">LUN의 수입니다</block>
-  <block id="63a494e52f561c8dab9bbd3fc83206d6" category="list-text">백업할 각 LUN의 크기입니다</block>
-  <block id="77ed047f0ea4fefdb8a343f5ab1c4b6f" category="paragraph">예를 들어 각 호스트의 LUN 크기가 200GB인 50개 호스트 MEDITECH 환경에서는 백업할 총 LUN 용량이 10TB입니다.</block>
-  <block id="4f56492da15b9f2095dc6c85778eb19d" category="paragraph">10TB의 데이터를 8시간 내에 백업하려면 다음과 같은 처리량이 필요합니다.</block>
-  <block id="2e4493162453615c5f3719215c8bce26" category="list-text">= (10 x 10^6)MB(8 x 3,600)s</block>
-  <block id="236b083b3ae35d992982ec4c80bd75a3" category="list-text">= 347.2MBps</block>
-  <block id="32a125235cff51a39987e2fa1fcdb71d" category="paragraph">그러나 예상치 못한 이벤트를 고려하여 6시간 이상의 여유 공간을 제공하기 위해 5.5시간의 보수적인 백업 윈도우가 선택됩니다.</block>
-  <block id="50c99fb6b4af8be7f7340b03f352d4b3" category="list-text">= (10 x 10^6) MB(5.5 x 3,600)s</block>
-  <block id="fee0c43fbea14706de03cf1676ebfa0f" category="list-text">= 500Mbps</block>
-  <block id="c92e44b62e7db1883e7380d16ed0ac3d" category="paragraph">500Mbps의 처리량에서 5.5시간 이내에 백업을 완료할 수 있으며, 8시간의 백업 요구 사항에서도 편안하게 백업이 가능합니다.</block>
-  <block id="f6c0087849a70f6c5f8221eef9bf365d" category="paragraph">아래 표에는 스토리지 시스템의 크기를 조정할 때 사용할 백업 워크로드의 I/O 특성이 요약되어 있습니다.</block>
-  <block id="d2e97987910ea402499a6095cb3869de" category="cell">모든 플랫폼</block>
-  <block id="1803ada11bf259f48c3e5128f5ea1ea8" category="cell">64K</block>
-  <block id="70a2bedc26ba3f9e8ff763bbe4528aa9" category="cell">100% 순차적</block>
-  <block id="876de0005c2968fe744a5d908c8dc368" category="cell">100% 읽기</block>
-  <block id="3d4994519cf6e2970803e591a2eaaf72" category="cell">평균 처리량</block>
-  <block id="032f249c693456338d855d10f27f6ef9" category="cell">MEDITECH 호스트의 수와 각 LUN의 크기에 따라 백업이 8시간 이내에 완료되어야 합니다.</block>
-  <block id="73a41a9a17b2136783951970c8d47e9b" category="cell">백업 기간이 필요합니다</block>
-  <block id="73f4d98a8056701a96bdbdc8bb713606" category="cell">8시간</block>
-  <block id="0c8347302a4f65c81a6424bd0b206014" category="section-title">MEDITECH용 Cisco UCS 참조 아키텍처</block>
-  <block id="2838ecf1460e3faed7600694751acbf5" category="paragraph">MEDITECH on FlexPod의 아키텍처는 MEDITECH, Cisco 및 NetApp의 지침과 모든 규모의 MEDITECH 고객과 협력하는 파트너 경험을 바탕으로 합니다. 이 아키텍처는 고객의 데이터 센터 전략(소규모 또는 대규모, 중앙 집중식, 분산 또는 멀티 테넌트)에 따라 적응 가능하며 MEDITECH의 모범 사례를 적용합니다.</block>
-  <block id="593dda1691c45a02b66628770ab6f155" category="paragraph">MEDITECH를 배포할 때 Cisco는 MEDITECH의 모범 사례와 직접 일치하는 Cisco UCS 참조 아키텍처를 설계했습니다. Cisco UCS는 고성능, 고가용성, 안정성, 확장성을 위해 긴밀하게 통합된 솔루션을 제공하여 수천 개의 병상을 보유한 의사 및 병원 시스템을 지원합니다.</block>
-  <block id="ace6bc814af688c812d44b9270c7e069" category="summary">MEDITECH 호스트 전용 MEDITECH 볼륨은 일반 또는 씬 프로비저닝될 수 있으며 Snapshot 복제본을 사용하여 액세스할 수 있습니다. 또한 볼륨 레벨 재할당을 사용하여 디스크의 데이터 레이아웃을 최적화하여 쓰기 지연 시간과 순차적 읽기 액세스를 향상시킬 수 있습니다.</block>
-  <block id="305160d35c5eb375133b99844c5c9c60" category="doc">볼륨 구성</block>
-  <block id="be1b9ef68f31ecee991e2282c1f24f0f" category="section-title">볼륨 프로비저닝</block>
-  <block id="c8884acd62d57a748f8be9efe002d659" category="paragraph">MEDITECH 호스트용 MEDITECH 볼륨은 일반 또는 씬 프로비저닝될 수 있습니다.</block>
-  <block id="1ec60fa2d9d7d880d4767192b35c3cac" category="section-title">기본 볼륨 레벨 스냅샷 복사본</block>
-  <block id="b6dfebdb35cf7e1d19c39ba916af284d" category="paragraph">스냅샷 복사본은 백업 워크플로우의 일부로 생성됩니다. 각 스냅샷 복사본을 사용하여 MEDITECH LUN에 저장된 데이터에 다른 시간에 액세스할 수 있습니다. MEDITECH 승인 백업 솔루션은 이러한 Snapshot 복제본을 기반으로 씬 프로비저닝된 FlexClone 볼륨을 생성하여 MEDITECH LUN의 시점 복제본을 제공합니다. MEDITECH 환경은 승인된 백업 소프트웨어 솔루션과 통합됩니다. 따라서 MEDITECH 운영 데이터베이스 LUN을 구성하는 각 NetApp FlexVol 볼륨에서 기본 스냅샷 복사본 스케줄을 사용하지 않도록 설정하는 것이 좋습니다.</block>
-  <block id="222e258ef648fdc0434ae82d64ba21ca" category="paragraph">* 중요: * FlexClone 볼륨은 상위 데이터 볼륨 공간을 공유하기 때문에 백업 서버가 생성하는 MEDITECH 데이터 LUN 및 FlexClone 볼륨에 충분한 공간을 확보하는 것이 중요합니다. FlexClone 볼륨은 데이터 볼륨보다 더 많은 공간을 차지하지 않습니다. 그러나 MEDITECH LUN에서 짧은 시간 내에 대규모 삭제가 발생하면 클론 볼륨이 증가할 수 있습니다.</block>
-  <block id="ca12cddfab55f9d92888a0a4cc19f6db" category="section-title">애그리게이트당 볼륨 수입니다</block>
-  <block id="78671d74b506fcd55e96c81ff2b6ac96" category="paragraph">Flash Pool 또는 NetApp Flash Cache 캐싱을 사용하는 NetApp FAS 시스템의 경우 MEDITECH 프로그램, 사전 및 데이터 파일 저장용 Aggregate당 3개 이상의 볼륨을 프로비저닝하는 것이 좋습니다.</block>
-  <block id="f2008b085b9f1999ec25d24355fe6622" category="paragraph">AFF 시스템의 경우 MEDITECH 프로그램, 사전 및 데이터 파일을 저장하기 위해 애그리게이트당 4개 이상의 볼륨을 전용으로 할당하는 것이 좋습니다.</block>
-  <block id="8ec1ad196f4fdb719fe342e858e47ead" category="section-title">볼륨 레벨 재할당 스케줄</block>
-  <block id="3078b1ce42c963008f3a524d1bd459ac" category="paragraph">특히 MEDITECH, 6.x 및 C/S 5.x 플랫폼과 같은 쓰기 집약적인 워크로드에서 스토리지의 데이터 레이아웃이 시간이 지남에 따라 최적화되지 않습니다. 시간이 지나면서 순차적 읽기 지연 시간이 증가하여 백업을 완료하는 데 더 오랜 시간이 걸릴 수 있습니다. 잘못된 데이터 레이아웃 또는 조각화는 쓰기 지연 시간에 영향을 줄 수도 있습니다. 볼륨 레벨 재할당을 사용하여 디스크의 데이터 레이아웃을 최적화하여 쓰기 지연 시간과 순차적 읽기 액세스를 향상시킬 수 있습니다. 향상된 스토리지 레이아웃을 통해 할당된 8시간 내에 백업을 완료할 수 있습니다.</block>
-  <block id="50802d3e5a25b93d471686a10da03dd8" category="cell">모범 사례</block>
-  <block id="3d116bdaaf750260ee09840f5e9f47f7" category="paragraph">NetApp은 최소한 매주 볼륨 재할당 일정을 구현하여 할당된 유지보수 다운타임 동안 또는 운영 사이트에서 사용량이 적은 시간 동안 재할당 작업을 실행할 것을 권장합니다.</block>
-  <block id="6cc89f88b31df0d78c3ecb08d8e83e8e" category="admonition">NetApp은 재할당 작업을 컨트롤러당 한 번에 하나의 볼륨에 대해 실행할 것을 적극 권장합니다.</block>
-  <block id="7a07f4438061792a84a7edebee3df97c" category="inline-link">NetApp TR-3929: 재할당 모범 사례 가이드</block>
-  <block id="9d8be877e207c9d81536923f45975efb" category="paragraph">프로덕션 데이터베이스 스토리지에 적합한 볼륨 재할당 일정을 결정하는 방법에 대한 자세한 내용은 의 3.12절을 참조하십시오<block ref="70de5c2a4b00f75ad58d149f3ef37476" category="inline-link-rx"></block>. 또한 이 섹션에서는 사용 중인 사이트에 대한 주간 재할당 일정을 만드는 방법에 대해서도 설명합니다.</block>
-  <block id="046000dc6863f618d4223f4cff2fdff5" category="inline-link-macro">다음: LUN 구성.</block>
-  <block id="971da7c141a22f2fb0cc7c604e50f436" category="paragraph"><block ref="971da7c141a22f2fb0cc7c604e50f436" category="inline-link-macro-rx"></block></block>
-  <block id="261addf78c7b2c961032b3dd08ba0b1f" category="section-title">목적</block>
   <block id="3e6e5e67314fd12a909a8973cb5f14fc" category="inline-link-macro">기술 사양</block>
   <block id="5d113f2038d289f391614c39043629e8" category="section-title">범위</block>
-  <block id="a8f0bd5f9473b195579882fa581c7357" category="paragraph">다음 항목은 다루지 않습니다.</block>
   <block id="ef1e6887c579ba81dcedc3f4e3793cd2" category="section-title">대상</block>
   <block id="f5ef3ee444a74806df8feb4d18f0d5f2" category="summary">이 섹션에서는 NetApp FlexPod Express 스토리지 클러스터 설계의 모범 사례를 다룹니다.</block>
   <block id="c2ffe02d76c4f089648f1647b43e4ee5" category="doc">모범 사례</block>
@@ -4291,188 +3996,16 @@
   <block id="b122cbb51e08e5873db5c423182f46a5" category="list-text">관리, 스토리지 및 운영 네트워크에서는 데이터베이스에 대한 LAN 분리가 필요하며, VMware vMotion에 대해 격리된 VLAN이 있어야 합니다.</block>
   <block id="794cb725c5631ad99b5b7c000307f0df" category="inline-link">SnapMirror를 참조하십시오</block>
   <block id="e3679fa0631ab408c36d8aed9abdf535" category="list-text">VMware API를 활용하는 백업 기술을 사용합니다. 백업 윈도우는 일반 운영 시간을 벗어나야 합니다.</block>
-  <block id="83e7705bd84427a330d9d7e0fa059be5" category="summary">다음 사람들은 이 가이드의 작성 및 작성에 기여했습니다.</block>
-  <block id="4b7c82b30e98ad9f06ef3dc1e15418ea" category="list-text">Brandon AGEE, NetApp 기술 마케팅 엔지니어</block>
-  <block id="ff911ddf6eef032578e398f364581a85" category="list-text">John Duignan, NetApp 의료 솔루션 설계자 - 의료</block>
-  <block id="49d7c87eb6e1417e303008c5907f9d07" category="list-text">Ketan Mota, NetApp 제품 매니저</block>
-  <block id="76b9b3bb37a85d7545736e7b002893e4" category="list-text">Jon Ebmeier, Cisco Systems, Inc. 기술 솔루션 설계자</block>
-  <block id="37b608112185e7e41b5def8663df7fe4" category="list-text">Mike Brennan, Cisco Systems, Inc. 제품 매니저</block>
   <block id="d3d9fdef0e91fc4aba18e57475fd74ea" category="cell">VM</block>
-  <block id="53080620612023e3273e597cae9af087" category="summary">NetApp RAID DP 기술은 일반 NetApp Flash Pool 애그리게이트를 포함하여 NetApp FAS 또는 AFF 시스템의 모든 애그리게이트를 위한 RAID 유형으로 권장됩니다. MEDITECH 설명서에 RAID 10의 사용이 지정되어 있을 수 있지만 MEDITECH는 RAID DP 사용을 승인했습니다.</block>
-  <block id="10ae1f9130fbbe975a644b0f325c6b31" category="doc">애그리게이트 구성</block>
-  <block id="84d52ace1041a3c55bd5d2309712c94e" category="section-title">NetApp RAID DP를 참조하십시오</block>
-  <block id="644c6aa18bc6a7b961bf00d1d1c51e83" category="section-title">RAID 그룹 크기 및 RAID 그룹 수</block>
-  <block id="0da20dc8b2a69f0dc9dd63195eb7e9a0" category="inline-link">NetApp TR-3838: 스토리지 서브시스템 구성 가이드</block>
-  <block id="2ed76932d65be2ada668b51405b7481d" category="paragraph">기본 RAID 그룹 크기는 16입니다. 이 크기는 특정 사이트의 MEDITECH 호스트에 대한 집계를 위한 최적의 크기일 수도 있고 그렇지 않을 수도 있습니다. RAID 그룹에 사용할 것을 권장한 디스크 수에 대해서는 를 참조하십시오<block ref="f28c60e6abd2f3458682e2de33d6577d" category="inline-link-rx"></block>.</block>
-  <block id="dbbf03579aea3635de25c98d37cae839" category="paragraph">RAID 그룹 크기와 RAID 그룹 크기가 같은 하나 이상의 디스크 그룹이 있는 애그리게이트에 디스크를 추가하는 것이 권장되므로 스토리지 확장에는 RAID 그룹 크기가 중요합니다. RAID 그룹 수는 데이터 디스크 수와 RAID 그룹 크기에 따라 달라집니다. 필요한 데이터 디스크의 수를 확인하려면 SPM(NetApp System Performance Modeler) 사이징 툴을 사용하십시오. 데이터 디스크 수를 결정한 후 RAID 그룹 크기를 조정하여 디스크 유형당 RAID 그룹 크기에 대해 권장되는 범위 내에서 패리티 디스크 수를 최소화합니다.</block>
-  <block id="277e048588e54d46ae43d5e2b47709d4" category="inline-link">NetApp TR-4190: MEDITECH 환경을 위한 NetApp 사이징 지침</block>
-  <block id="8fca9f5c6c94a5a72963d66753ed4ab1" category="paragraph">MEDITECH 환경에 SPM 사이징 툴을 사용하는 방법에 대한 자세한 내용은 을 참조하십시오<block ref="efb0147a3f6d6b03fcb8de01b6530d57" category="inline-link-rx"></block>.</block>
-  <block id="bc05690c26c8213a37b6dbd310a13873" category="section-title">스토리지 확장 고려 사항</block>
-  <block id="9a2fe99c61eeffc6156f9216bb4ec3c5" category="paragraph">더 많은 디스크로 애그리게이트를 확장할 경우, 애그리게이트 RAID 그룹 크기와 같은 그룹으로 디스크를 추가하십시오. 이 방법을 따라하면 애그리게이트 전체에서 성능 일관성을 제공할 수 있습니다.</block>
-  <block id="7b85f9cd439141627cfc47a0f416f314" category="paragraph">예를 들어, RAID 그룹 크기가 20인 Aggregate에 스토리지를 추가하려면 NetApp에서 권장하는 디스크 수는 하나 이상의 20-디스크 그룹입니다. 디스크를 20, 40, 60 등으로 추가해야 합니다.</block>
-  <block id="6ec0de3f4a5b27ac844b1f18cf0cc880" category="paragraph">애그리게이트를 확장한 후에는 영향을 받는 볼륨에서 재할당 작업을 실행하거나, 애그리게이트를 실행하여 기존 데이터 스트라이프를 새 디스크에 분산하여 성능을 향상할 수 있습니다. 이 작업은 특히 기존 집계가 거의 가득 찬 경우 유용합니다.</block>
-  <block id="b6e21d5ab565211ed510c867c99e6752" category="admonition">비운영 시간 동안에는 CPU 및 디스크 사용량이 많은 작업이므로 일정 재할당을 계획해야 합니다.</block>
-  <block id="b5994e2016588fcb46139451dbb95b55" category="paragraph">애그리게이트 확장 후 재할당을 사용하는 방법에 대한 자세한 내용은 를 참조하십시오<block ref="70de5c2a4b00f75ad58d149f3ef37476" category="inline-link-rx"></block>.</block>
-  <block id="a7b95ca6c3a3f58282295b88d70fa5e0" category="section-title">Aggregate 레벨의 Snapshot 복사본</block>
-  <block id="6a3ee5969ef93c10fd7bc6f6f98a07bc" category="paragraph">Aggregate 레벨의 NetApp 스냅샷 복사본 예약 공간을 0으로 설정하고 기본 애그리게이트 스냅샷 스케줄을 비활성화합니다. 가능하면 기존의 모든 애그리게이트 레벨 스냅샷 복사본을 삭제합니다.</block>
-  <block id="ea5ede0b78563ca8b134bf0512ed7f7a" category="inline-link-macro">다음: 스토리지 가상 머신 구성</block>
-  <block id="be7532b8ea5830568882915f9e1799e7" category="paragraph"><block ref="be7532b8ea5830568882915f9e1799e7" category="inline-link-macro-rx"></block></block>
-  <block id="5e8501c202ce099e8c6b9559c865d723" category="doc">Cisco UCS 블레이드 서버 및 스위치 구성</block>
-  <block id="dc120fb434cb4345b647a886184cd44a" category="section-title">Cisco Nexus 스위치 구성</block>
-  <block id="490495544d3b2d2d1eda150303b4dc57" category="inline-link">FC Cisco Validated Design이 구축된 FlexPod 데이터 센터</block>
-  <block id="7d6806c3b84802991762a6bdef7b61c9" category="summary">의료 기관은 FlexPod 아키텍처 기반으로 MEDITECH 환경을 실행하여 직원 생산성을 향상시키고 자본 및 운영 비용을 절감할 수 있습니다.</block>
-  <block id="90ed9e8ccf1bf7f41caa327876a1d635" category="doc">TR-4753: MEDITECH용 FlexPod 데이터 센터 배포 가이드</block>
-  <block id="c29a2e5cbb7b78e42657a54d7b9e0ba5" category="paragraph">Brandon AGEE 및 John Duignan, NetApp Mike Brennan 및 Cisco Jon Ebmeier</block>
-  <block id="4b22ad205edc6523991141ddece6a979" category="paragraph">의료 기관은 FlexPod 아키텍처 기반으로 MEDITECH 환경을 실행하여 직원 생산성을 향상시키고 자본 및 운영 비용을 절감할 수 있습니다. MEDITECH용 FlexPod 데이터 센터는 다음과 같은 의료 산업에만 해당되는 다양한 이점을 제공합니다.</block>
-  <block id="e834e884e4492fb9d8786b466cf6f1ec" category="list-text">* 운영 간소화 및 비용 절감. * 기존 플랫폼을 어디에서나 임상의를 지원할 수 있는 보다 효율적이고 확장 가능한 공유 리소스로 교체하여 기존 플랫폼의 비용과 복잡성을 제거합니다. 이 솔루션은 리소스 활용률을 높여 ROI(투자 수익률)를 높입니다.</block>
-  <block id="1c8283ba1968950b7d02fd948ce39104" category="list-text">*인프라 배포 속도 향상.* 기존 데이터 센터든 원격 위치든 FlexPod 데이터 센터의 통합 및 테스트를 거친 설계를 통해 적은 노력으로 새 인프라를 보다 빠르게 가동 및 실행할 수 있습니다.</block>
-  <block id="c3e115e5f93bce718d8018f82e44be26" category="list-text">* 인증 스토리지. * MEDITECH가 포함된 NetApp ONTAP 데이터 관리 소프트웨어는 테스트를 거쳐 인증된 스토리지 공급업체의 우수한 안정성을 제공합니다. MEDITECH는 다른 인프라 구성 요소를 인증하지 않습니다.</block>
-  <block id="c6850ae1e57a791b1ec620a0fdef8815" category="list-text">* 스케일아웃 아키텍처. * 실행 중인 애플리케이션을 재구성하지 않고 SAN 및 NAS를 테라바이트(TB)에서 수십 페타바이트(PB)로 확장할 수 있습니다.</block>
-  <block id="b3c9d0b1a02f92641153ebfae48411fc" category="list-text">무중단 운영 * 비즈니스 중단 없이 스토리지 유지보수, 하드웨어 라이프사이클 운영, FlexPod 업그레이드를 수행할 수 있습니다.</block>
-  <block id="3fcebc25ae8100abe37ab5aeb450d605" category="list-text">* 보안 멀티 테넌시. * 가상화된 서버 및 스토리지 공유 인프라의 증가하는 요구 사항을 지원하여, 특히 시스템이 여러 데이터베이스 및 소프트웨어 인스턴스를 호스팅하는 경우 시설별 정보의 안전한 멀티 테넌시를 가능하게 합니다.</block>
-  <block id="818e6edcb51a4032c2568bd7669ae0b3" category="list-text">풀링된 리소스 최적화 * 물리적 서버 및 스토리지 컨트롤러 수 감소, 로드 밸런싱 워크로드 수요 증가, 성능 향상을 통해 사용률 향상</block>
-  <block id="0ab23991ec3940d2735a9d2099952987" category="list-text">* QoS(서비스 품질). * FlexPod는 전체 스택에서 QoS를 제공합니다. 업계 최고 수준의 QoS 네트워크, 컴퓨팅 및 스토리지 정책을 통해 공유 환경에서 차별화된 서비스 수준을 지원합니다. 이러한 정책을 통해 워크로드에 맞는 성능을 최적화하고 급등하는 애플리케이션을 격리 및 제어하는 데 도움을 줄 수 있습니다.</block>
-  <block id="924f03ea03dd642aa2434367dbcb2a9d" category="inline-link">NetApp 7:1 스토리지 효율성 보장</block>
-  <block id="b0ca4939c9475ec1b843b6766e4d22ec" category="list-text">* 민첩성 * FlexPod 시스템이 제공하는 업계 최고의 워크플로우 자동화, 오케스트레이션 및 관리 툴을 통해 IT 팀은 비즈니스 요청에 훨씬 더 빠르게 대응할 수 있습니다. 이러한 비즈니스 요청은 MEDITECH 백업 및 더 많은 테스트 및 교육 환경의 프로비저닝에서 인구 상태 관리 이니셔티브를 위한 분석 데이터베이스 복제까지 다양합니다.</block>
-  <block id="e0459c9b3e91b753c98c7cc22480c9c5" category="list-text">* 생산성 향상. * 최적의 최종 사용자 환경을 위해 이 솔루션을 빠르게 배포하고 확장할 수 있습니다.</block>
-  <block id="2731b8dc989b2c3472869f82df998f10" category="list-text">* NetApp Data Fabric. * NetApp Data Fabric 아키텍처는 물리적 경계 및 애플리케이션 전반에 걸쳐 데이터를 제공합니다. NetApp Data Fabric은 데이터 중심 세계에서 데이터 중심 기업을 위해 구축되었습니다. 데이터가 여러 위치에서 생성되고 사용되며, 다른 위치, 애플리케이션 및 인프라와 이를 활용 및 공유해야 하는 경우가 많습니다. 일관되고 통합된 데이터를 관리할 방법이 필요합니다. Data Fabric은 데이터의 제어 능력을 높이고 점점 더 복잡해지는 IT 복잡성을 단순화하는 방법을 제공합니다.</block>
-  <block id="46ec639ccda056c4d646176c990791d6" category="section-title">MEDITECH EHR에 대한 새로운 인프라 접근 방식</block>
-  <block id="a01bbbd39f26d8a9669d66fa373b5b6d" category="paragraph">귀사와 같은 의료 제공자 조직은 업계 최고의 MEDITECH EHR(Electronic Health Records)에 대한 실질적 투자의 혜택을 극대화해야 한다는 압박을 받고 있습니다. 미션 크리티컬 애플리케이션의 경우 고객이 MEDITECH 솔루션용으로 데이터 센터를 설계할 때 데이터 센터 아키텍처에 대해 다음과 같은 목표를 식별하는 경우가 많습니다.</block>
-  <block id="94e7bb3cbb3ecce3ea141e4be0020800" category="list-text">MEDITECH 애플리케이션의 고가용성</block>
   <block id="f07bcd2df9fddb686c563d2c1be9a9ab" category="list-text">고성능</block>
-  <block id="b3648a2dac0d7fa63cc75e113951424e" category="list-text">데이터 센터에 MEDITECH를 손쉽게 구현할 수 있습니다</block>
-  <block id="42f8e98ad74b7700fdfae5475e240238" category="list-text">새로운 MEDITECH 릴리즈 또는 애플리케이션을 통해 성장을 지원하는 민첩성과 확장성</block>
   <block id="74a37ca3fc803ac7184526cec2956f18" category="list-text">비용 효율성</block>
-  <block id="c557e1fb98f822ea9dacef18cf0a1f72" category="list-text">MEDITECH 지침 및 타겟 플랫폼과의 정렬</block>
   <block id="7cc87e587436554fb34e0b0439e40a1b" category="list-text">관리 용이성, 안정성 및 지원 용이성</block>
   <block id="4edb8c45f4cbd29586b5571a2de557eb" category="list-text">강력한 데이터 보호, 백업, 복구 및 비즈니스 연속성</block>
-  <block id="4d6d0d24418ab47c6855a2ab46b932a5" category="paragraph">MEDITECH 사용자는 조직이 책임 있는 관리 조직으로 발전하고 묶인 보상 모델에 맞게 조정됨에 따라 보다 효율적이고 민첩한 IT 제공 모델로 필요한 MEDITECH 인프라를 제공해야 하는 과제를 안고 있습니다.</block>
-  <block id="688e83d48398765ecdeafdc1b67aad0d" category="section-title">사전 검증된 통합 인프라의 가치</block>
-  <block id="7fcbbecb4f0dbe547eca2abe1b06bc98" category="paragraph">예측 가능한 지연 시간이 짧은 시스템 성능과 고가용성을 제공하기 위한 가장 중요한 요구 사항으로 인해 MEDITECH는 고객의 하드웨어 요구 사항에 따라 규범적으로 사용됩니다.</block>
-  <block id="92f99771e19f92c274436428e4ce0e48" category="paragraph">FlexPod는 Cisco와 NetApp의 전략적 파트너십을 통해 사전 검증을 거쳐 엄격하게 테스트된 통합 인프라입니다. 지연 시간이 짧고 예측 가능한 시스템 성능과 고가용성을 제공하도록 특별히 설계되고 제작되었습니다. 이 접근 방식은 MEDITECH 규정을 준수하고 궁극적으로 MEDITECH 시스템 사용자에게 최적의 응답 시간을 제공합니다.</block>
-  <block id="4a2b34b7550be8877a95e363b9966bb7" category="paragraph">Cisco와 NetApp의 FlexPod 솔루션은 고성능, 모듈식, 사전 검증, 통합, 가상화 및 효율성, 확장성 및 비용 효율적인 플랫폼 다음과 같은 기능을 제공합니다.</block>
-  <block id="9bb6edf6b04085b7809d2cc5b8732694" category="list-text">* 모듈식 아키텍처 * FlexPod는 각 특정 워크로드에 맞게 특수 구성된 FlexPod 플랫폼을 통해 MEDITECH 모듈식 아키텍처의 다양한 요구를 충족합니다. 모든 구성요소는 클러스터 서버 및 스토리지 관리 패브릭과 일관된 관리 툴셋을 통해 연결됩니다.</block>
-  <block id="ee21bd6f1adca246c12a9aece7f3a18e" category="list-text">* 통합 스택의 각 레벨별로 업계 최고 수준의 기술 * Cisco, NetApp, VMware 및 Microsoft Windows가 각각 서버, 네트워킹, 스토리지, 운영 체제 범주에서 업계 분석가에 의해 1위 또는 2위로 선정되었습니다.</block>
-  <block id="9218e5d248bc5f6bee747b524fa747c7" category="list-text">* 표준화되고 유연한 IT를 통한 투자 보호 * FlexPod 참조 아키텍처는 새로운 제품 버전 및 업데이트를 예상하고 있으며, 향후 기술이 출시될 때 이를 수용할 수 있도록 철저한 지속적인 상호 운용성 테스트를 실시할 예정입니다.</block>
-  <block id="70e237f6645388663e2bd4bd8e18e0f2" category="list-text">* 광범위한 환경에 걸쳐 검증된 구축 * 널리 사용되는 하이퍼바이저, 운영 체제, 애플리케이션 및 인프라 소프트웨어를 통해 사전 테스트 및 공동 검증을 거친 FlexPod는 여러 MEDITECH 고객 조직에 설치되었습니다.</block>
-  <block id="a3453c43e6bbaeaca31aea0d1865e1b8" category="section-title">검증된 FlexPod 아키텍처 및 공동 지원</block>
-  <block id="b705be73f656a06e5808ad34542d1c8a" category="paragraph">FlexPod은 검증된 데이터 센터 솔루션으로, 성능에 부정적인 영향을 주지 않고 증가하는 워크로드 수요를 지원하기 위해 쉽게 확장 가능한 유연한 공유 인프라를 제공합니다. 이 솔루션은 FlexPod 아키텍처를 활용하여 다음과 같은 FlexPod의 모든 이점을 제공합니다.</block>
-  <block id="8849a8de6e3d151f35aa3ebb7909df55" category="list-text">* MEDITECH 워크로드 요구 사항을 충족하는 성능 * MEDITECH 하드웨어 구성 제안 요구 사항에 따라 필요한 I/O 및 지연 시간 요구 사항을 충족하기 위해 다양한 ONTAP 플랫폼을 구축할 수 있습니다.</block>
-  <block id="7f67a0b8dcd150e2511111003e2cf729" category="list-text">* 임상 데이터 증가를 쉽게 수용할 수 있는 확장성 * 기존 제한 없이 필요에 따라 가상 머신(VM), 서버 및 스토리지 용량을 동적으로 확장</block>
-  <block id="1e6da5ea773c0eb0fd22de4213c53515" category="list-text">* 효율성 향상. * 통합 가상화 인프라를 사용하면 관리 시간과 TCO를 모두 줄일 수 있습니다. 통합 가상화 인프라를 사용하면 관리가 더 쉽고 데이터를 보다 효율적으로 저장하는 동시에 MEDITECH 소프트웨어의 성능을 향상시킬 수 있습니다.</block>
-  <block id="1e0a6ac67253897d10b38a7f5b307790" category="list-text">* 위험 감소. * 구축 추측 작업을 없애고 지속적인 워크로드 최적화를 지원하는 정의된 아키텍처에 구축된 사전 검증된 플랫폼을 통해 비즈니스 중단을 최소화합니다.</block>
-  <block id="ae493ecde68c55adb7af115f12d99876" category="list-text">* FlexPod 공동 지원. * NetApp과 Cisco는 FlexPod 통합 인프라의 고유한 지원 요구사항을 충족할 수 있는 강력하고 확장 가능하며 유연한 지원 모델인 공동 지원을 확립했습니다. 이 모델은 NetApp과 Cisco의 경험, 리소스, 기술 지원 전문성을 합쳐 문제 영역에 관계없이, FlexPod 지원 문제를 식별하고 해결할 수 있는 효율적인 프로세스를 제공합니다. FlexPod 공동 지원 모델을 통해 FlexPod 시스템은 효율적으로 운영되며 최신 기술의 이점을 활용할 수 있으며, 숙련된 팀과 협력하여 통합 문제를 해결합니다.</block>
-  <block id="6f407bc602ef7890efd5be7a02d754dc" category="paragraph">FlexPod 공동 지원은 FlexPod 통합 인프라에서 MEDITECH와 같은 비즈니스 크리티컬 애플리케이션을 실행하는 의료 조직에 특히 유용합니다. 다음 그림은 FlexPod 공동 지원 모델을 보여줍니다.</block>
-  <block id="303a5b315946aa73372768231d539d2d" category="paragraph"><block ref="303a5b315946aa73372768231d539d2d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d72f102958c390c7b6ee845d2ee51885" category="paragraph">이러한 이점 외에도 MEDITECH 솔루션이 포함된 FlexPod 데이터 센터 스택의 각 구성 요소는 MEDITECH EHR 워크플로우에 특별한 이점을 제공합니다.</block>
-  <block id="35bf7c6d04e0fe521b037a81133c79e8" category="paragraph">자체 통합 자체 인식 시스템인 Cisco UCS(Unified Computing System)는 통합 I/O 인프라와 상호 연결되는 단일 관리 도메인으로 구성됩니다. MEDITECH 환경용 Cisco UCS는 인프라에서 최대 가용성으로 중요한 환자 정보를 제공할 수 있도록 MEDITECH 인프라 권장 사항 및 모범 사례에 맞게 조정되었습니다.</block>
-  <block id="aa73050116d52e73014a3d14b14cc93d" category="paragraph">Cisco UCS 아키텍처에 대한 MEDITECH의 기반은 Cisco UCS 기술로, 통합 시스템 관리, 인텔 제온 프로세서 및 서버 가상화를 갖추고 있습니다. 이러한 통합 기술은 데이터 센터 문제를 해결하고 MEDITECH의 데이터 센터 설계 목표를 달성하는 데 도움을 줍니다. Cisco UCS는 LAN, SAN 및 시스템 관리를 랙 서버, 블레이드 서버 및 VM을 위한 하나의 간소화된 링크로 통합합니다. Cisco UCS는 Cisco Unified Fabric과 Cisco FEX Technology(Fabric Extender Technology)를 통합하여 Cisco UCS의 모든 구성요소를 단일 네트워크 패브릭 및 단일 네트워크 계층으로 연결하는 엔드 투 엔드 I/O 아키텍처입니다.</block>
-  <block id="4b0b48c588fb2cd595b94484d7b6f99b" category="paragraph">이 시스템은 여러 블레이드 섀시, 랙 서버, 랙 및 데이터 센터를 통합하고 확장하는 단일 또는 다중 논리 유닛으로 구축할 수 있습니다. 이 시스템은 기존 블레이드 서버 섀시 및 랙 서버를 채우는 여러 중복 장치를 제거하는 매우 단순화된 아키텍처를 구현합니다. 기존 시스템에서는 이더넷, FC 어댑터, 섀시 관리 모듈과 같은 이중 장치로 인해 복잡성이 가중됩니다. Cisco UCS는 모든 I/O 트래픽에 단일 관리 지점과 단일 제어 지점을 제공하는 이중 Cisco UCS Fabric Interconnect(FI) 쌍으로 구성됩니다.</block>
-  <block id="ae116e4ca91fcc4b6c66945c9ffa5703" category="paragraph">Cisco UCS는 서비스 프로필을 사용하여 Cisco UCS 인프라의 가상 서버가 올바르게 구성되었는지 확인합니다. 서비스 프로필은 각 분야의 전문가가 생성한 네트워크, 스토리지 및 컴퓨팅 정책으로 구성됩니다. 서비스 프로필에는 LAN 및 SAN 주소 지정, I/O 구성, 펌웨어 버전, 부팅 순서, 네트워크 가상 LAN(VLAN), 물리적 포트 및 QoS 정책과 같은 서버 ID에 대한 중요한 서버 정보가 포함되어 있습니다. 서비스 프로필은 몇 시간 또는 며칠이 아니라 몇 분 내에 동적으로 생성하고 시스템의 모든 물리적 서버와 연결할 수 있습니다. 물리적 서버와 서비스 프로파일 연결은 간단한 단일 작업으로 수행되므로 물리적 구성 변경 없이 환경의 서버 간에 ID를 마이그레이션할 수 있습니다. 폐기된 서버의 교체를 신속하게 베어 메탈 프로비저닝할 수 있습니다.</block>
-  <block id="eb2d6352cce655970466ab31cf015e3f" category="paragraph">서비스 프로필을 사용하면 기업 전체에서 서버를 일관성 있게 구성할 수 있습니다. 여러 Cisco UCS 관리 도메인이 사용되는 경우 Cisco UCS Central은 글로벌 서비스 프로필을 사용하여 도메인 전체에서 구성 및 정책 정보를 동기화할 수 있습니다. 유지 관리를 한 도메인에서 수행해야 하는 경우 가상 인프라를 다른 도메인으로 마이그레이션할 수 있습니다. 이 접근 방식은 단일 도메인이 오프라인일 때도 애플리케이션이 고가용성을 계속 실행할 수 있도록 하는 데 도움이 됩니다.</block>
-  <block id="3f8e3cfdcf44f76257c4f0bf90440793" category="paragraph">Cisco UCS는 서버 구성 요구 사항을 충족한다는 것을 입증하기 위해 수년간 MEDITECH와 함께 광범위한 테스트를 거쳤습니다. Cisco UCS는 MEDITECH 제품 리소스 시스템 지원 사이트에 나열된 지원되는 서버 플랫폼입니다.</block>
-  <block id="1f926c1675a485ec908ed70e0cb16ec9" category="section-title">Cisco 네트워킹</block>
-  <block id="8ad29be24436ec0169f19d7a6b639df5" category="paragraph">Cisco Nexus 스위치 및 Cisco MDS 다계층 디렉터는 엔터프라이즈급 연결 및 SAN 통합을 제공합니다. Cisco 멀티 프로토콜 스토리지 네트워킹은 FC, FICON(Fibre Connection), FCoE(FC over Ethernet), iSCSI(SCSI over IP), FCIP(FC over IP)와 같은 유연성과 옵션을 제공하여 비즈니스 위험을 줄입니다.</block>
-  <block id="4810b3b0a21a47b3e59cbc0ffef2ada9" category="paragraph">Cisco Nexus 스위치는 단일 플랫폼에서 가장 포괄적인 데이터 센터 네트워크 기능 세트 중 하나를 제공합니다. 데이터 센터와 캠퍼스 코어 모두를 위한 높은 성능과 밀도를 제공합니다. 또한 복원력이 뛰어난 모듈식 플랫폼에서 데이터 센터 통합, 행 종료 및 데이터 센터 인터커넥트 구축을 위한 전체 기능 세트를 제공합니다.</block>
-  <block id="f275e4ea7f5890b5a590a15bae000a25" category="paragraph">Cisco UCS는 컴퓨팅 리소스를 Cisco Nexus 스위치 및 통합 I/O 패브릭과 통합하여 다양한 유형의 네트워크 트래픽을 식별 및 처리합니다. 이러한 트래픽에는 스토리지 I/O, 스트림되는 데스크톱 트래픽, 관리 및 임상 및 비즈니스 애플리케이션에 대한 액세스가 포함됩니다. 다음과 같은 이점을 얻을 수 있습니다.</block>
-  <block id="487cdb02da785fef126a2f675dd04371" category="list-text">* 인프라 확장성 * 가상화, 효율적인 전력 및 냉각, 자동화 기능을 통한 클라우드 확장, 고밀도 및 고성능 모두 효율적인 데이터 센터 확장을 지원합니다.</block>
-  <block id="648572a91e15d4327c8fc47f6e26fe2a" category="list-text">* 네트워크 및 컴퓨터 QoS. * Cisco는 네트워크, 스토리지 및 컴퓨팅 패브릭 전반에서 정책 중심의 CoS(서비스 클래스)와 QoS를 제공하여 미션 크리티컬 애플리케이션의 성능을 최적화합니다.</block>
-  <block id="aeaf729ff32f1fc3b5cc13784f848f8c" category="paragraph">Cisco UCS와 Cisco Nexus 스위치 및 Cisco MDS 다중 계층 디렉터는 MEDITECH에 최적의 컴퓨팅, 네트워킹 및 SAN 연결 솔루션을 제공합니다.</block>
-  <block id="1fb571abf88a7797b91aa642eb891c02" category="paragraph">ONTAP 소프트웨어를 실행하는 NetApp 스토리지는 전체 스토리지 비용을 절감하는 동시에 MEDITECH 워크로드에 필요한 짧은 지연 시간의 읽기 및 쓰기 응답 시간 및 IOPS를 제공합니다. ONTAP는 All-Flash 및 하이브리드 스토리지 구성을 모두 지원하므로 MEDITECH 요구 사항을 충족하는 최적의 스토리지 플랫폼을 구축할 수 있습니다. NetApp 플래시 가속 시스템은 MEDITECH의 검증 및 인증을 받았으며 MEDITECH 고객으로서 지연 시간에 민감한 MEDITECH 작업에 핵심적인 성능 및 응답 속도를 제공합니다. 단일 클러스터에서 여러 오류 도메인을 생성하여 NetApp 시스템은 운영 환경을 비운영 시스템에서 격리할 수도 있습니다. 또한 NetApp 시스템은 ONTAP QoS를 지원하는 워크로드의 최소 성능 보장 수준으로 성능 문제를 줄입니다.</block>
-  <block id="4d75f06157d8f77da2f2203789faf226" category="paragraph">ONTAP 소프트웨어의 스케일아웃 아키텍처는 다양한 I/O 워크로드에 유연하게 대응할 수 있습니다. 임상 애플리케이션에 필요한 처리량과 짧은 지연 시간을 제공하는 동시에 모듈식 스케일아웃 아키텍처를 제공하기 위해 All-Flash 구성은 일반적으로 ONTAP 아키텍처에서 사용됩니다. NetApp AFF 노드는 높은 처리량의 대규모 데이터 세트를 저장하는 데 적합한 하이브리드(HDD 및 플래시) 스토리지 노드와 동일한 스케일아웃 클러스터에서 결합할 수 있습니다. MEDITECH 승인 백업 솔루션과 함께 값비싼 SSD(Solid State Drive) 스토리지에서 다른 노드의 보다 경제적인 HDD 스토리지로 MEDITECH 환경을 복제, 복제 및 백업할 수 있습니다. 이 접근 방식은 SAN 기반 클론 생성 및 운영 풀 백업에 대한 MEDITECH 지침을 충족하거나 초과합니다.</block>
-  <block id="4e8a5fd22ef11c860c4ba3422b28934e" category="paragraph">MEDITECH 환경에는 관리 간소화, 가용성 및 자동화 향상, 필요한 총 스토리지 용량 감소 등 많은 ONTAP 기능이 특히 유용합니다. 다음과 같은 기능을 제공합니다.</block>
-  <block id="66d6ee84bfc8749dbd49528150ea1fa3" category="list-text">* 탁월한 성능 * NetApp AFF 솔루션은 유니파이드 스토리지 아키텍처, ONTAP 소프트웨어, 관리 인터페이스, 다양한 데이터 서비스, 고급 기능 세트를 공유하고 FAS 있습니다. 혁신적인 All-Flash 미디어와 ONTAP을 결합하여 업계 최고 수준의 ONTAP 소프트웨어와 All-Flash 스토리지의 높은 IOPS와 일관되게 낮은 지연 시간을 제공합니다.</block>
-  <block id="85fe89ca6c49176fe633b9db33e02af5" category="list-text">* 스토리지 효율성. * 중복제거, NetApp FlexClone 데이터 복제 기술, 인라인 압축, 인라인 컴팩션, 씬 복제, 씬 프로비저닝으로 총 용량 요구사항을 줄입니다. 애그리게이트 중복제거.</block>
-  <block id="8bddb4adcef61a3ff02ac07689562dce" category="paragraph">NetApp 중복제거 기능은 NetApp FlexVol 볼륨 또는 데이터 구성요소의 블록 레벨 중복제거를 제공합니다. 기본적으로, 중복제거는 중복된 블록을 제거해 고유한 블록만 FlexVol 볼륨 또는 데이터 구성요소에 저장합니다.</block>
-  <block id="639f7feab51be98d2946fced7a9e94db" category="paragraph">중복제거는 고도의 세분성을 제공하며 FlexVol 볼륨 또는 데이터 구성요소의 액티브 파일 시스템에서 작동합니다. 이 데이터는 애플리케이션에 영향을 미치지 않으므로 중복 제거를 사용하여 NetApp 시스템을 사용하는 모든 애플리케이션에서 생성된 데이터를 중복 제거할 수 있습니다. 볼륨 중복 제거를 인라인 프로세스로 실행할 수 있습니다(ONTAP 8.3.2부터). CLI, NetApp ONTAP System Manager 또는 NetApp Active IQ Unified Manager를 통해 자동으로 실행하거나, 스케줄을 지정하거나, 수동으로 실행하도록 구성할 수 있는 백그라운드 프로세스로 실행할 수도 있습니다.</block>
-  <block id="8ddb2bf3b62633b9268ac2f3c0af0b29" category="paragraph">다음 그림에서는 NetApp 중복 제거가 최고 수준에서 작동하는 방식을 보여 줍니다.</block>
-  <block id="d618fba1b1823f5e313e27664885b316" category="paragraph"><block ref="d618fba1b1823f5e313e27664885b316" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="72ca8d1bf0fcba88b8c8bc00cd658b59" category="list-text">공간 효율적인 클로닝 * FlexClone 기능을 사용하면 거의 즉각적으로 클론을 생성하여 백업 및 테스트 환경의 업데이트 기능을 지원할 수 있습니다. 이러한 클론은 변경된 경우에만 더 많은 스토리지를 사용합니다.</block>
-  <block id="f533fc71924315a38da9c67cffb7e41b" category="list-text">* NetApp Snapshot 및 SnapMirror 기술. * ONTAP는 MEDITECH 호스트가 사용하는 LUN(논리 유닛 번호)의 공간 효율적인 스냅샷 복사본을 생성할 수 있습니다. 이중 사이트 구축의 경우 SnapMirror 소프트웨어를 구현하여 더 많은 데이터 복제 및 복원력을 높일 수 있습니다.</block>
-  <block id="57531570fa2635f837ec394fd0ea9808" category="list-text">* 통합 데이터 보호. * 완전한 데이터 보호 및 재해 복구 기능을 통해 중요 데이터 자산을 보호하고 재해 복구를 제공할 수 있습니다.</block>
   <block id="f9e5f83f68d57cbc17210ab2315c18ea" category="list-text">무중단 운영 * 데이터를 오프라인으로 전환하지 않고도 업그레이드와 유지보수를 수행할 수 있습니다.</block>
-  <block id="370ee28d472a11c6a826123561c0a818" category="list-text">* QoS 및 AQoS(적응형 QoS). * 스토리지 QoS를 통해 잠재적인 대규모 워크로드를 제한할 수 있습니다. 더 중요한 것은 QoS가 MEDITECH 프로덕션과 같은 중요 워크로드에 대한 최소 성능을 보장할 수 있다는 것입니다. 경합을 제한함으로써 NetApp QoS는 성능 관련 문제를 줄일 수 있습니다. AQoS는 사전 정의된 정책 그룹에서 작동하며, 볼륨에 직접 적용할 수 있습니다. 이러한 정책 그룹은 처리량 상한 또는 볼륨 대비 크기를 자동으로 확장하여 볼륨 크기에 따라 IOPS와 TB, 기가바이트의 비율을 유지할 수 있습니다.</block>
-  <block id="6f405bfb87e8fe0334877839280b1622" category="list-text">* NetApp Data Fabric. * NetApp Data Fabric은 클라우드와 온프레미스 환경에서 데이터 관리를 단순화하고 통합하여 디지털 혁신을 가속합니다. 데이터 가시성과 통찰력, 데이터 액세스 및 제어, 데이터 보호 및 보안을 위한 일관되고 통합된 데이터 관리 서비스 및 애플리케이션을 제공합니다. NetApp은 AWS(Amazon Web Services), Azure, Google Cloud Platform 및 IBM Cloud 클라우드와 통합되어 다양한 선택의 기회를 제공합니다.</block>
-  <block id="8e98bfa92db81ecc8656bcb27151e872" category="paragraph">다음 그림에서는 MEDITECH 워크로드를 위한 FlexPod 아키텍처를 보여 줍니다.</block>
-  <block id="a32a53f73ac2119c49e8068fb7374c57" category="paragraph"><block ref="a32a53f73ac2119c49e8068fb7374c57" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="067fdea3903a958877e6eda9264cc1ce" category="section-title">MEDITECH 개요</block>
-  <block id="f4680536d8336eded062c88cfe40ae4b" category="paragraph">MEDITECH로 알려진 Medical Information Technology, Inc.는 매사추세츠에 기반을 둔 소프트웨어 기업으로, 의료 조직을 위한 정보 시스템을 제공합니다. Meditech는 최신 환자 데이터를 저장 및 구성할 수 있도록 설계된 EHR 시스템을 제공하며 임상 직원에게 데이터를 제공합니다. 환자 데이터에는 인구통계 정보, 의료 기록, 약물, 검사실 검사 결과가 포함되며 이에 국한되지 않습니다. 방사선 영상 및 나이, 신장, 체중 등의 개인 정보.</block>
-  <block id="ef5830581bdd220a4bafaddefdd0326b" category="paragraph">이 문서에서는 MEDITECH 소프트웨어가 지원하는 다양한 기능에 대해 설명합니다. 부록 A에서는 이러한 광범위한 MEDITECH 함수 집합에 대한 자세한 정보를 제공합니다. MEDITECH 애플리케이션은 이러한 기능을 지원하기 위해 여러 VM이 필요합니다. 이러한 애플리케이션을 배포하려면 MEDITECH의 권장 사항을 참조하십시오.</block>
-  <block id="10c0890303460a4ece460528f8ccd338" category="paragraph">스토리지 시스템 관점에서 각 구축 시 모든 MEDITECH 소프트웨어 시스템에는 분산 환자 중심 데이터베이스가 필요합니다. MEDITECH에는 Windows 운영 체제를 사용하는 고유한 전용 데이터베이스가 있습니다.</block>
-  <block id="7b93b29e822628361246c032710d431e" category="paragraph">브리지헤드와 Commvault는 NetApp과 MEDITECH에서 인증한 2가지 백업 소프트웨어 애플리케이션입니다. 이 문서의 범위에는 이러한 백업 응용 프로그램의 배포에 대한 내용이 포함되어 있지 않습니다.</block>
-  <block id="f519faf331dbeb51a647a59616772b1b" category="paragraph">이 문서의 주요 초점은 FlexPod 스택(서버 및 스토리지)이 EHR 환경의 MEDITECH 데이터베이스 및 백업 요구 사항에 대한 성능 기반 요구 사항을 충족하도록 지원하는 것입니다.</block>
-  <block id="362f0365fac9625b305aaea322e76295" category="section-title">특정 MEDITECH 워크로드를 위해 특별 제작되었습니다</block>
-  <block id="ec2fce8c1c958f54e0768670fbce4660" category="paragraph">MEDITECH는 서버, 네트워크 또는 스토리지 하드웨어, 하이퍼바이저 또는 운영 체제를 재판매하지 않습니다. 하지만 인프라 스택의 각 구성요소에 대한 특정 요구사항이 있습니다. 따라서 Cisco와 NetApp은 공동으로 테스트를 실시하여 FlexPod 데이터 센터를 성공적으로 구성, 구축 및 지원하여 귀사와 같은 고객의 MEDITECH 운영 환경 요구사항을 충족할 수 있도록 했습니다.</block>
-  <block id="9f25c0bdfa5b2d1c47e313181d43e47c" category="section-title">MEDITECH 범주</block>
-  <block id="a8b53630ec044674525473d1544c5084" category="paragraph">MEDITECH는 배포 크기를 1에서 6 사이의 범주 번호와 연결합니다. 범주 1은 가장 작은 MEDITECH 배포이며 범주 6은 가장 큰 MEDITECH 배포입니다.</block>
-  <block id="d6b719fb6f0400e59233d690d76675ad" category="inline-link">TR-4190: MEDITECH 환경을 위한 NetApp 사이징 지침</block>
-  <block id="99e20b31d769d615944cdc679459fdcc" category="paragraph">각 범주에서 MEDITECH 호스트의 I/O 특성 및 성능 요구 사항에 대한 자세한 내용은 NetApp을 참조하십시오<block ref="c087fe1f30576623a05d8a1e175f4c3c" category="inline-link-rx"></block>.</block>
-  <block id="d29911d156c7e4c1a0a0ad405a580a98" category="section-title">MEDITECH 플랫폼</block>
-  <block id="b7fc329aaf6a924bf6a0a9cc54d150f8" category="paragraph">MEDITECH의 광활한 플랫폼은 회사의 EHR 소프트웨어의 최신 버전입니다. 이전 MEDITECH 플랫폼은 Client/Server 5.x 및 Magic입니다. 이 섹션에서는 MEDITECH 호스트 및 해당 스토리지 요구 사항과 관련된 MEDITECH 플랫폼(광범위, 6.x, C/S 5.x 및 Magic에 적용 가능)에 대해 설명합니다.</block>
-  <block id="9d4c5115e388e228e6e64ec12cd9f55c" category="paragraph">이전의 모든 MEDITECH 플랫폼에서 여러 서버가 MEDITECH 소프트웨어를 실행하여 다양한 작업을 수행합니다. 이전 그림에서는 애플리케이션 데이터베이스 서버 및 기타 MEDITECH 서버로 사용되는 MEDITECH 호스트를 비롯한 일반적인 MEDITECH 시스템을 보여 줍니다. 다른 MEDITECH 서버의 예로는 데이터 저장소 애플리케이션, 스캐닝 및 아카이빙 애플리케이션, 백그라운드 작업 클라이언트 등이 있습니다. 다른 MEDITECH 서버의 전체 목록은 "하드웨어 구성 제안"(신규 구축) 및 "하드웨어 평가 작업"(기존 구축) 문서를 참조하십시오. MEDITECH 시스템 통합자나 MEDITECH TAM(기술 계정 관리자)을 통해 MEDITECH에서 이러한 문서를 얻을 수 있습니다.</block>
-  <block id="87e811df1b9eaacff8cf841a4d8822ed" category="section-title">MEDITECH 호스트</block>
-  <block id="f007a84c477531a0038cc84ceb58a418" category="paragraph">MEDITECH 호스트는 데이터베이스 서버입니다. 이 호스트는 MEDITECH 파일 서버(광활함, 6.x 또는 C/S 5.x 플랫폼) 또는 Magic 시스템(매직 플랫폼)이라고도 합니다. 이 문서에서는 MEDITECH 호스트라는 용어를 사용하여 MEDITECH 파일 서버 또는 Magic 시스템을 참조합니다.</block>
-  <block id="0c27e6cab305f25d9cfef7028306f3b7" category="paragraph">MEDITECH 호스트는 Microsoft Windows Server 운영 체제에서 실행되는 물리적 서버 또는 VM이 될 수 있습니다. 일반적으로 MEDITECH 호스트는 VMware ESXi 서버에서 실행되는 Windows VM으로 구축됩니다. 이 쓰기 작업을 통해 VMware는 MEDITECH에서 지원하는 유일한 하이퍼바이저입니다. MEDITECH 호스트는 Windows 시스템의 Microsoft Windows 드라이브(예: 드라이브 E)에 프로그램, 사전 및 데이터 파일을 저장합니다.</block>
-  <block id="f13a143cc5307229223d492e1895995b" category="paragraph">가상 환경에서 Windows E 드라이브는 물리적 호환성 모드에서 RDM(Raw Device Mapping)을 통해 VM에 연결된 LUN에 상주합니다. 이 시나리오에서 VMDK(Virtual Machine Disk) 파일을 Windows E 드라이브로 사용하는 것은 MEDITECH에서 지원되지 않습니다.</block>
-  <block id="d719230a769a7d5350011c9bf40dca2f" category="section-title">MEDITECH 호스트 워크로드 I/O 특성</block>
-  <block id="f7f61769c421a73d00a651f139378432" category="paragraph">각 MEDITECH 호스트와 시스템 전체의 I/O 특성은 배포하는 MEDITECH 플랫폼에 따라 다릅니다. 모든 MEDITECH 플랫폼(광활하게 펼쳐진 6.x, C/S 5.x 및 Magic)은 100% 랜덤 워크로드를 생성합니다.</block>
-  <block id="52c1e99f3fb9a61b9082ce5513830a2b" category="paragraph">MEDITECH의 넓은 플랫폼은 호스트당 쓰기 작업 비율이 가장 높고 전체 IOPS가 가장 높고 그 뒤에 6.x, C/S 5.x 및 Magic 플랫폼이 있기 때문에 가장 까다로운 워크로드를 생성합니다.</block>
-  <block id="b6b7b57792b033309acb28595082d0f5" category="paragraph">MEDITECH는 NetApp FAS 또는 AFF 시스템과 모든 범주의 MEDITECH 호스트 간의 데이터 트래픽에 FC 프로토콜을 사용해야 합니다.</block>
-  <block id="46d4798da2f69b6997f929503cbc938c" category="section-title">MEDITECH 호스트에 대한 스토리지 프레젠테이션입니다</block>
-  <block id="31af2b58da2172f536a6c46d14e45e26" category="paragraph">각 MEDITECH 호스트는 다음과 같은 두 개의 Windows 드라이브를 사용합니다.</block>
-  <block id="c4ec7a290c4359cd3617f0e21d196c21" category="list-text">* 드라이브 C. * 이 드라이브는 Windows Server 운영 체제 및 MEDITECH 호스트 애플리케이션 파일을 저장합니다.</block>
-  <block id="ee4b922cddeee317b178395fdd53e2a0" category="list-text">* Drive E * MEDITECH 호스트는 Windows Server 운영 체제의 드라이브 E에 프로그램, 사전 및 데이터 파일을 저장합니다. 드라이브 E는 FC 프로토콜을 사용하여 NetApp FAS 또는 AFF 시스템에서 매핑된 LUN입니다. MEDITECH는 MEDITECH 호스트의 IOPS 및 읽기/쓰기 지연 시간 요구 사항이 충족되도록 FC 프로토콜을 사용해야 합니다.</block>
-  <block id="e1fae457d341935888ca35d90498e18f" category="section-title">볼륨 및 LUN 명명 규칙</block>
-  <block id="3d94d49838079b79ad8aeef9d9fa67ac" category="paragraph">MEDITECH는 모든 LUN에 대해 특정 명명 규칙을 사용해야 합니다.</block>
-  <block id="e1dfb56f1f0aff2ad32bc43e595b91c4" category="paragraph">스토리지를 구축하기 전에 MEDITECH 하드웨어 구성 제안을 확인하여 LUN의 명명 규칙을 확인합니다. MEDITECH 백업 프로세스는 백업할 특정 LUN을 적절하게 식별하기 위해 볼륨 및 LUN 명명 규칙에 의존합니다.</block>
-  <block id="33bfa28f826a0e5090569298da0ca5b0" category="section-title">포괄적인 관리 툴 및 자동화 기능</block>
-  <block id="c48b2f0a68733f3e08928bcc01d84e37" category="section-title">Cisco UCS Manager 및 Cisco UCS</block>
-  <block id="44df9c2a70deb7d1a63675aed6088792" category="paragraph">Cisco는 탁월한 데이터 센터 인프라, 즉 단순화, 보안 및 확장성을 제공하기 위해 세 가지 핵심 요소에 주력하고 있습니다. 플랫폼 모듈성이 결합된 Cisco UCS Manager 소프트웨어는 간편하고 안전하며 확장 가능한 데스크톱 가상화 플랫폼을 제공합니다.</block>
-  <block id="260dd3180bea4c66c1518331064a4766" category="list-text">* Simplified. * Cisco UCS는 업계 표준 컴퓨팅에 대한 새롭고 혁신적인 접근 방식을 제공하며 모든 워크로드에 데이터센터 인프라의 코어를 제공합니다. Cisco UCS는 필요한 서버 수 감소, 서버당 사용되는 케이블 수 감소 등 다양한 기능과 이점을 제공합니다. 또 다른 중요한 기능은 Cisco UCS 서비스 프로필을 통해 서버를 신속하게 구축하거나 재프로비저닝할 수 있는 기능입니다. 관리할 서버 및 케이블 수가 더 적고 서버 및 애플리케이션 워크로드 프로비저닝이 간소화되어 운영이 간소화됩니다. Cisco UCS Manager 서비스 프로필을 사용하면 몇 분 이내에 블레이드 및 랙 서버 점수를 프로비저닝할 수 있습니다. Cisco UCS 서비스 프로필은 서버 통합 Runbook을 제거하고 구성 드리프트를 제거합니다. 이 접근 방식은 최종 사용자의 생산성 향상, 비즈니스 민첩성 향상, IT 리소스 할당 등의 작업을 수행합니다.</block>
-  <block id="d38c6be36d6f2681ee18d827e03245ed" category="paragraph">Cisco UCS Manager는 서버, 네트워크, 스토리지 액세스 인프라의 구성 및 프로비저닝과 같이 자주 발생하는 일상적인 데이터 센터 운영을 자동화합니다. 또한, 메모리 공간이 큰 Cisco UCS B-Series 블레이드 서버 및 C-Series 랙 서버는 높은 애플리케이션 사용자 밀도를 지원하여 서버 인프라 요구사항을 줄여줍니다.</block>
-  <block id="8227555f9f9303ed183bfb38f47b05b9" category="paragraph">간소화로 인해 MEDITECH 인프라 구축이 더욱 신속하고 성공적으로 수행되도록 할 수 있습니다.</block>
-  <block id="4557cc898f3786ae33055f5ee5b0861e" category="list-text">* 보안. * VM은 물리적 이전 VM보다 기본적으로 더 안전하지만 새로운 보안 문제를 야기합니다. 가상 데스크톱과 같은 공통 인프라를 사용하는 업무상 중요한 웹 및 애플리케이션 서버는 이제 보안 위협에 대한 위험이 더 높습니다. VM 간 트래픽은 이제 IT 관리자가 특히 VMware vMotion을 사용하는 VM이 서버 인프라 간에 이동하는 동적 환경에서 해결해야 하는 중요한 보안 고려 사항이 됩니다.</block>
-  <block id="9d538babb0c1ce8c6c271991174bea2a" category="paragraph">따라서 가상화는 특히 확장된 컴퓨팅 인프라 전반에서 VM 이동성의 역동적이고 유동적인 특성을 고려할 때 정책 및 보안에 대한 VM 수준의 인식을 필요로 합니다. 새로운 가상 데스크톱을 손쉽게 확산하면 가상화 인식 네트워크 및 보안 인프라의 중요성이 더욱 커지고 있습니다. 데스크톱 가상화를 위한 Cisco UCS, Cisco MDS 및 Cisco Nexus 제품군 솔루션, Cisco 데이터 센터 인프라는 강력한 데이터 센터, 네트워크 및 데스크톱 보안을 제공하며 데스크톱에서 하이퍼바이저에 이르는 포괄적인 보안을 제공합니다. 가상 데스크톱, VM 인식 정책 및 관리, LAN 및 WAN 인프라 전반의 네트워크 보안을 세분화하여 보안이 강화됩니다.</block>
-  <block id="87933f9f4976794fbaf89bad3e47dc3c" category="list-text">* 확장성. * 가상화 솔루션의 성장은 필연적이므로 솔루션은 확장 가능하고 예측 가능한 확장성을 제공해야 합니다. Cisco 가상화 솔루션은 높은 VM 밀도(서버당 VM)를 지원하며, 더 많은 서버는 거의 선형적인 성능으로 확장할 수 있습니다. Cisco 데이터 센터 인프라는 성장을 위한 유연한 플랫폼을 제공하고 비즈니스 민첩성을 개선합니다. Cisco UCS Manager 서비스 프로필을 사용하면 온디맨드 호스트 프로비저닝을 수행할 수 있으며, 수십 개의 호스트를 구축할 때 수백 개의 호스트를 쉽게 구축할 수 있습니다.</block>
-  <block id="da207c35d31f24e9b9a132791897df6c" category="paragraph">Cisco UCS 서버는 거의 선형적인 성능과 확장성을 제공합니다. Cisco UCS는 특허 받은 Cisco 확장 메모리 기술을 구현하여 더 적은 수의 소켓으로 대용량 메모리 공간을 제공합니다(2소켓 및 4소켓 서버에서 최대 1TB의 메모리 확장성 지원). Cisco UCS Server의 총 대역폭은 서버당 최대 80Gbps까지 확장할 수 있으며, 노스바운드 Cisco UCS Fabric Interconnect는 라인 속도로 2Tbps까지 출력할 수 있습니다. 이 기능은 데스크톱 가상화 I/O 및 메모리 병목 현상을 방지하는 데 도움이 됩니다. 지연 시간이 짧은 고성능 Unified Fabric 기반 네트워킹 아키텍처를 갖춘 Cisco UCS는 고해상도 비디오 및 통신 트래픽을 비롯한 많은 양의 가상 데스크톱 트래픽을 지원합니다. 또한 ONTAP은 FlexPod 가상화 솔루션의 일부로 부팅 및 로그인 폭증 시 데이터 가용성과 최적의 성능을 유지할 수 있도록 지원합니다.</block>
-  <block id="6dd1253895883648981707ef549f9641" category="paragraph">Cisco UCS, Cisco MDS 및 Cisco Nexus 데이터 센터 인프라 설계는 성장을 위한 뛰어난 플랫폼을 제공합니다. 서버, 네트워크 및 스토리지 리소스를 투명하게 확장하여 데스크톱 가상화, 데이터 센터 애플리케이션, 클라우드 컴퓨팅을 지원할 수 있습니다.</block>
-  <block id="e616d75bc281423b2778965270364b74" category="paragraph">VMware vCenter Server는 MEDITECH 환경을 관리할 수 있는 중앙 집중식 플랫폼을 제공하므로 의료 조직이 다음과 같이 가상 인프라를 안심하고 자동화 및 제공할 수 있습니다.</block>
   <block id="c19dda01cd3a17273f4cce941b37334e" category="list-text">* 간단한 구축. * 가상 어플라이언스를 사용하여 vCenter Server를 빠르고 쉽게 구축할 수 있습니다.</block>
-  <block id="07bef128ce441d16f942821e9d92e05d" category="list-text">* 중앙 집중식 제어 및 가시성 * 단일 위치에서 전체 VMware vSphere 인프라스트럭처를 관리합니다.</block>
-  <block id="a12d886950a0804b79b6aafa30630b76" category="list-text">* 사전 최적화. * 최대 효율성을 위해 리소스를 할당 및 최적화합니다.</block>
   <block id="13dbced3a10c1ef2d5b0f86d275d41ca" category="list-text">* 관리. * 강력한 플러그인과 도구를 사용하여 관리를 단순화하고 제어를 확장합니다.</block>
-  <block id="8bee8a4fc5b5bcf0c54218c00ea1ffae" category="section-title">VMware vSphere용 Virtual Storage Console을 참조하십시오</block>
-  <block id="97c94b252170e5ee4d8863f65bbc0501" category="paragraph">NetApp의 VSC(가상 스토리지 콘솔), VASA(vSphere API for Storage Awareness) 공급자, VMware SRA(Storage Replication Adapter) for VMware vSphere는 단일 가상 어플라이언스를 만듭니다. 이 제품군은 SRA 및 VASA Provider를 vCenter Server에 대한 플러그인으로 포함하여 NetApp 스토리지 시스템을 사용하는 VMware 환경에서 VM에 대한 엔드-투-엔드 라이프사이클 관리를 제공합니다.</block>
-  <block id="d373124ab5037bc82b704c8018f4fdfe" category="paragraph">VSC, VASA Provider, SRA를 위한 가상 어플라이언스는 VMware vSphere Web Client와 원활하게 통합되며 SSO 서비스를 사용할 수 있습니다. VMware vCenter Server 인스턴스가 여러 개 있는 환경에서는 관리할 각 vCenter Server 인스턴스에 자체 등록된 VSC 인스턴스가 있어야 합니다. VSC 대시보드 페이지에서는 데이터 저장소 및 VM의 전체 상태를 빠르게 확인할 수 있습니다.</block>
-  <block id="5555b713522d1619f6f4f6538b1733d1" category="paragraph">VSC, VASA Provider, SRA를 위한 가상 어플라이언스를 구축하면 다음과 같은 작업을 수행할 수 있습니다.</block>
-  <block id="3876bbfe14e1d2a51fe68383eee32511" category="list-text">* VSC를 사용하여 스토리지를 구축 및 관리하고 ESXi 호스트를 구성할 수 있습니다. * VSC를 사용하면 자격 증명을 추가하고, 자격 증명을 제거하고, 자격 증명을 할당하고, VMware 환경의 스토리지 컨트롤러에 대한 사용 권한을 설정할 수 있습니다. 또한 NetApp 스토리지 시스템에 연결된 ESXi 서버를 관리할 수도 있습니다. 몇 번의 클릭만으로 모든 호스트에 대해 호스트 시간 초과, NAS 및 다중 경로에 대해 권장되는 Best Practice 값을 설정할 수 있습니다. 저장소 세부 정보를 보고 진단 정보를 수집할 수도 있습니다.</block>
-  <block id="32973d9687a90dbb7e7f60efa9a5ac21" category="list-text">* VASA Provider를 사용하여 스토리지 기능 프로필을 생성하고 알람을 설정할 수 있습니다. * VASA Provider 확장을 활성화하면 VASA Provider for ONTAP가 VSC에 등록됩니다. 스토리지 용량 프로파일과 가상 데이터 저장소를 생성하여 사용할 수 있습니다. 볼륨 및 애그리게이트의 임계값이 거의 가득 찼을 때 알림을 보내도록 알람을 설정할 수도 있습니다. 가상 데이터 저장소에서 생성된 VMDK 및 VM의 성능을 모니터링할 수 있습니다.</block>
-  <block id="a254f807a70b6ab5394233a7510408ff" category="list-text">* 재해 복구에 SRA를 사용합니다. * SRA를 사용하여 장애 시 재해 복구를 위해 사용자 환경에서 보호 및 복구 사이트를 구성할 수 있습니다.</block>
-  <block id="8d9ea1d14ceacbc9f14eae283c25248d" category="section-title">NetApp OnCommand Insight and ONTAP를 참조하십시오</block>
-  <block id="39147f9e6faf488016d7f57d416652c7" category="paragraph">NetApp OnCommand Insight는 인프라 관리를 MEDITECH 서비스 제공망으로 통합합니다. 이러한 접근 방식을 통해 의료 기관은 스토리지, 네트워크 및 컴퓨팅 인프라를 보다 효율적으로 제어, 자동화 및 분석할 수 있습니다. IT 조직은 현재 인프라를 최적화하여 최대 이점을 얻고 구매할 항목과 시기를 결정하는 프로세스를 간소화할 수 있습니다. 또한 복잡한 기술 마이그레이션과 관련된 위험을 완화할 수 있습니다. 에이전트가 필요하지 않으므로 설치가 간단하고 업무 중단이 발생하지 않습니다. 설치된 스토리지 및 SAN 장치를 지속적으로 발견하고 전체 스토리지 환경을 완전히 파악할 수 있도록 상세 정보를 수집합니다. 잘못 사용되거나, 잘못 정렬되거나, 활용률이 낮거나, 격리된 자산을 신속하게 파악하고 다시 회수하여 향후의 확장을 가속화할 수 있습니다. OnCommand Insight는 다음과 같은 이점을 제공합니다.</block>
-  <block id="fd63a5bc856e3af4599c0b25aef080d9" category="list-text">* 기존 리소스 최적화 * 문제를 방지하고 서비스 수준을 충족하기 위해 검증된 모범 사례를 사용하여 잘못 사용되거나 활용률이 낮거나 격리된 자산 식별</block>
-  <block id="c8e69d82d5cd2122117174c8565d2350" category="list-text">* 더 나은 결정을 내리십시오. * 실시간 데이터를 사용하면 용량 문제를 더욱 빠르게 해결하여 향후 구매를 정확하게 계획하고 과도한 지출을 피하고 자본 지출을 연기할 수 있습니다.</block>
-  <block id="1fa18e3cb4dc1215944e4785398261ea" category="list-text">* IT 이니셔티브를 가속화하십시오. * 가상 환경을 더 잘 이해하여 위험을 관리하고 다운타임을 최소화하고 클라우드 구축 시간을 단축하십시오.</block>
-  <block id="0c1bfc5dd7560cbc1d273a29213d53d8" category="section-title">FlexPod 설계 구역</block>
-  <block id="8a56ce396a53ed9aa78e576a478e4e44" category="list-text">NetApp AFF, vSphere 6.5U1 및 Cisco UCS Manager를 사용하는 FC 스토리지(MDS 스위치)가 포함된 FlexPod DC</block>
-  <block id="74cd4baf4935b804c7b41efa8252a5dc" category="section-title">NetApp 기술 보고서</block>
-  <block id="2702d8e9b5a6f4444fe8c4713a33e624" category="inline-link">TR-3929: Reallocate 모범 사례 가이드</block>
-  <block id="8178aaf8919310400273d5f863bd12f2" category="list-text"><block ref="8178aaf8919310400273d5f863bd12f2" category="inline-link-rx"></block></block>
-  <block id="c74501d85312f910195088df9c776a98" category="list-text">TR-3987: InterSystems Caché용 Snap Creator Framework 플러그인</block>
-  <block id="85d4f8c7b3f03a6761d13807079142fe" category="list-text">TR-4017: FC SAN 모범 사례</block>
-  <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="section-title">ONTAP 설명서</block>
-  <block id="faa9b209c7df426f5e60bb9bdc8dfb09" category="list-text">vSphere용 VSC(Virtual Storage Console) 문서</block>
-  <block id="b814e78bcf0a01ed4aae9eff1d4c136c" category="section-title">Cisco Nexus, MDS, Cisco UCS 및 Cisco UCS Manager 가이드</block>
-  <block id="ec933c934bea1d3e878210c936167726" category="list-text">Cisco UCS 서버 개요</block>
   <block id="dccb0f527753e20a1f5236458d03c64d" category="inline-link"><block ref="dccb0f527753e20a1f5236458d03c64d" category="inline-link-rx"></block></block>
   <block id="9b259f004a6bc0470e95eacbff8a3232" category="paragraph"><block ref="9b259f004a6bc0470e95eacbff8a3232" category="inline-link-rx"></block></block>
-  <block id="d2686ba543c609968f6c7c9116a68e00" category="list-text">Cisco UCS 블레이드 서버 개요</block>
-  <block id="3e8f78de9bcbcb50a70c1dd6b1aa67de" category="list-text">Cisco UCS B200 M5 데이터시트</block>
-  <block id="8818f2fb023bbe1b5e3f07d2cfd9cffb" category="list-text">Cisco UCS Manager 개요</block>
-  <block id="0baa6249e3b620f94845e5f9d3ba2ea4" category="list-text">Cisco Nexus 9300 플랫폼 스위치</block>
-  <block id="ed38874183f73e374cbbb3c0f4153523" category="doc">구축 및 구성</block>
-  <block id="0afbeb6bb86d48b82dcde168a1951bb5" category="summary">다음 사람들은 이 가이드의 작성에 기여했습니다.</block>
-  <block id="98beb79b2f2d86652394e80d1e65420d" category="list-text">NetApp 기술 마케팅 엔지니어 Atul Bhalodia</block>
   <block id="f140297d934c48ee8e3b67da76aea3f6" category="summary">발행 당시에는 GATK 툴이 사내 GPU 기반 실행을 기본적으로 지원하지 않았습니다. 독자가 GATK용 PCIe 메자닌 카드를 사용하여 후면 장착 NVIDIA Tesla P6 GPU에서 FlexPod를 사용하는 것이 얼마나 간단한지 이해할 수 있도록 다음 설정 및 지침이 제공됩니다.</block>
   <block id="829772e8973a386ae6b1a1678758eed8" category="doc">GPU 설정</block>
   <block id="6f93786c5882b7f0cc9340a841e772e0" category="inline-link-macro">이전: Cromwell 엔진을 사용하여 GATK 실행을 위한 출력.</block>
@@ -4518,37 +4051,6 @@
   <block id="0f6b0f8e38375a188cc2d884be36b529" category="list-text">GATK 및 Cromwell 소프트웨어 다운로드에 대한 자세한 내용은 솔루션 설정 섹션을 참조하십시오.</block>
   <block id="c512f1ab62bf3af8384e0439a4fa715b" category="list-text">GATK가 구내에서 GPU를 사용할 수 있으면 워크플로 설명 언어 ' *. wdl은 아래와 같이 런타임 특성을 가지고 있다.</block>
   <block id="a8ae67fc64e7f9c2fc1250d7fecac2fe" category="paragraph"><block ref="a8ae67fc64e7f9c2fc1250d7fecac2fe" category="inline-link-macro-rx"></block></block>
-  <block id="b5c33e8d4c72bd01df88b71ed795ad76" category="doc">기본 인프라 구성</block>
-  <block id="66a0461d2d8cd670baf00d1c2bb16adb" category="section-title">네트워크 연결</block>
-  <block id="4fe4db76a183388226e19c22a2aca819" category="section-title">스토리지 연결</block>
-  <block id="d1868642e130fc2ea993681c32847c4d" category="list-text">대역 내 관리(액티브-패시브 결합):</block>
-  <block id="c9f89040064c44edc185a85c06698623" category="section-title">호스트 소프트웨어</block>
-  <block id="d959499416a0259a874f5ed8650fc54a" category="paragraph">다음 소프트웨어를 설치해야 합니다.</block>
-  <block id="650a665cd26629cb9bf5396560f70149" category="summary">MEDITECH 호스트의 LUN 매핑은 LUN을 생성할 때 설정됩니다.</block>
-  <block id="389e3e53ccb44e580ad6f383cc487612" category="doc">LUN 매핑</block>
-  <block id="aac599baff2f6b04d03f4617a8cec24b" category="summary">이 섹션에서는 ONTAP 또는 Cisco UCS 블레이드 및 랙 마운트 서버를 사용하는 환경에서 FlexPod를 구축하기 위한 스토리지 지침에 대해 설명합니다.</block>
-  <block id="2f2a3052e21c4c14ae863c80b8fbb084" category="paragraph">이 문서에 제공된 FlexPod 구축에 대한 NetApp 스토리지 지침은 다음과 같습니다.</block>
-  <block id="cf45ad077e2b70230d10f8f5f4d0ffe4" category="list-text">ONTAP를 사용하는 환경</block>
-  <block id="eff8a9aa74448287a39883968e9ffe0b" category="list-text">Cisco UCS 블레이드 및 랙 마운트 서버를 사용하는 환경</block>
-  <block id="663d81cd9d7d7d0566d40bae01a91eb2" category="paragraph">이 문서는 다음 사항을 다루지 않습니다.</block>
-  <block id="bb73d483c1533b9326fef407e10ea52b" category="list-text">FlexPod 데이터 센터 환경의 세부 구축</block>
-  <block id="fd317e78d4beab452c354a13ba10da24" category="paragraph">자세한 내용은 을 참조하십시오<block ref="8c408f7508059ba7cdfe1e4eb9ba9051" category="inline-link-rx"></block> (CVD)</block>
-  <block id="956388b0a66143ba5fdb10096e5ff0d1" category="list-text">MEDITECH 소프트웨어 환경, 참조 아키텍처 및 통합 모범 사례 지침을 간략하게 설명합니다.</block>
-  <block id="661045ac77506e3c3a5ba583b4ae7a6b" category="inline-link">TR-4300i: MEDITECH 환경용 NetApp FAS 및 All-Flash 스토리지 시스템 모범 사례 가이드</block>
-  <block id="133ff4875c3d64a418ffb033010d1938" category="paragraph">자세한 내용은 을 참조하십시오<block ref="58c8f90ca020e80f969d83403be9cb63" category="inline-link-rx"></block> (NetApp 로그인 필요).</block>
-  <block id="bb1367b31422f78d19e40fb14bbdbf13" category="list-text">정량적 성능 요구 사항 및 사이징 지침</block>
-  <block id="443d37fa88abbc0080e036a27bf09d3e" category="paragraph">자세한 내용은 을 참조하십시오<block ref="c087fe1f30576623a05d8a1e175f4c3c" category="inline-link-rx"></block>.</block>
-  <block id="1420cb1055aa9462b12cfe49d376826e" category="list-text">NetApp SnapMirror 기술을 사용하여 백업 및 재해 복구 요구사항을 충족합니다.</block>
-  <block id="573031485e5bdb05135130457f5f112d" category="list-text">일반 NetApp 스토리지 구축 지침:</block>
-  <block id="86f9f1b3ce76dc74c0c4737a2606c198" category="paragraph">이 섹션에서는 인프라 구축 모범 사례를 사용한 구성 예를 제공하고 다양한 인프라 하드웨어 및 소프트웨어 구성 요소와 사용할 수 있는 버전을 나열합니다.</block>
-  <block id="11971ffcfbbcd0e3ba8d186a8aec37fd" category="section-title">케이블 연결 다이어그램</block>
-  <block id="fdcd6e7910cc59259bc6603be118fc92" category="paragraph">다음 그림에서는 MEDITECH 구축을 위한 32Gb FC/40GbE 토폴로지 다이어그램을 보여 줍니다.</block>
-  <block id="8442a9fabce93ee277cd24b12f17ebf9" category="paragraph"><block ref="8442a9fabce93ee277cd24b12f17ebf9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="463ab6fdbf0e97d2b9ffd8444397e952" category="inline-link-macro">MEDITECH 모듈 및 구성 요소</block>
-  <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link">상호 운용성 매트릭스 툴(IMT)</block>
-  <block id="587a2e7b7bde90ffa88b19d7f62bbca4" category="paragraph">항상 를 사용하십시오<block ref="e24f898abe90ef46a13b3eea3ae2cf9c" category="inline-link-rx"></block> 모든 소프트웨어 및 펌웨어 버전이 지원되는지 확인합니다. 섹션의 표 <block ref="2b2f01cc46ef9918ef530ffc5737755a" category="inline-link-macro-rx"></block> 에는 솔루션 테스트에 사용된 인프라 하드웨어 및 소프트웨어 구성요소가 나와 있습니다.</block>
-  <block id="e67b1a97e37071df880d20b6fc4a7615" category="inline-link-macro">다음: 기본 인프라 구성</block>
-  <block id="7978eaf583a156d01cc8ddf89b1da50c" category="paragraph"><block ref="7978eaf583a156d01cc8ddf89b1da50c" category="inline-link-macro-rx"></block></block>
   <block id="45924647fad6b3c09925e5d8119d2b91" category="summary">FlexPod 통합 인프라 플랫폼을 사용하는 의료 조직은 하나 이상의 게놈 워크로드를 다른 임상 및 비임상 의료 애플리케이션과 함께 호스팅할 수 있습니다. 이 기술 보고서에서는 FlexPod 플랫폼 검증 중에 GATK라는 업계 표준 오픈 소스 게놈 도구를 사용합니다.</block>
   <block id="a48be507ff04e20350765eeb401d40c5" category="doc">TR-4911: FlexPod 유전체학</block>
   <block id="9ae5e06a0036a46b932d38fdeaf0db88" category="paragraph">NetApp, JayaKishore Esanakula</block>
@@ -4615,16 +4117,6 @@
   <block id="3713367f3552a5943d616033f98ff2da" category="cell">VSC 9.7 이상</block>
   <block id="5c014f8939a89da0166a347a0237cf4f" category="cell">SnapCenter</block>
   <block id="1c3110bd1348fdff8af75e812c375153" category="cell">SnapCenter 4.3 이상</block>
-  <block id="883be5383eb8e601c6e739e7d239831d" category="summary">FC를 데이터 네트워크 프로토콜로 사용할 경우 각 스토리지 컨트롤러에 두 개의 이니시에이터 그룹(igroup)을 생성합니다. 첫 번째 igroup에는 MEDITECH 호스트 VM(MEDITECH용 igroup)을 호스팅하는 VMware ESXi 서버의 FC 호스트 인터페이스 카드 WWPN이 포함되어 있습니다.</block>
-  <block id="dce719a9aac895b223304c1967dcde5c" category="doc">이니시에이터 그룹 구성</block>
-  <block id="0d2dd5c6941ece8eb16ab9e78d25270a" category="paragraph">환경 설정에 따라 MEDITECH igroup 운영 체제 유형을 설정해야 합니다. 예를 들면 다음과 같습니다.</block>
-  <block id="12ab7e7aa93cb5c01bdf898515dbb0cd" category="list-text">Windows Server 환경에서 베어 메탈 서버 하드웨어에 설치된 애플리케이션의 경우 igroup 운영 체제 유형 'Windows'를 사용합니다.</block>
-  <block id="acfd67e8ffe418f3c1670dd60b72ce99" category="list-text">VMware vSphere 하이퍼바이저를 사용하여 가상화된 애플리케이션에 대해 igroup 운영 체제 유형 'VMware'를 사용합니다.</block>
-  <block id="ba1601797967d07e2d74bbc93105f0e4" category="admonition">igroup의 운영 체제 유형이 LUN의 운영 체제 유형과 다를 수 있습니다. 예를 들어 가상화된 MEDITECH 호스트의 경우 igroup 운영 체제 유형을 "VMware"로 설정해야 합니다. 가상화된 MEDITECH 호스트에서 사용되는 LUN의 경우 운영 체제 유형을 "Windows 2008 이상"으로 설정해야 합니다. MEDITECH 호스트 운영 체제가 Windows Server 2008 R2 64비트 Enterprise Edition 이기 때문에 이 설정을 사용합니다.</block>
-  <block id="3bc491861d30de8295f30e7c0530f914" category="inline-link">Clustered Data ONTAP 8.2 명령: 수동 페이지 참조</block>
-  <block id="935dc563230bcd8d2661ec8239ceb879" category="paragraph">운영 체제 유형에 대한 올바른 값을 확인하려면 에서 "LUN iGroup 생성" 및 "LUN 생성" 섹션을 참조하십시오<block ref="8709f832d002232926f6c97762809137" category="inline-link-rx"></block>.</block>
-  <block id="023fd8c6454f5d6b3f83263b44231cd3" category="inline-link-macro">다음: LUN 매핑</block>
-  <block id="2ac88f7ea588bfcc7d87db18c2e46da1" category="paragraph"><block ref="2ac88f7ea588bfcc7d87db18c2e46da1" category="inline-link-macro-rx"></block></block>
   <block id="5c0479daa34c15af73497280355d92d8" category="summary">FlexPod를 사용하면 단일 플랫폼에서 FC, FCoE, iSCSI, NFS/pNFS, SMB/CIFS를 모두 지원할 수 있습니다. 인력, 프로세스 및 기술은 FlexPod가 설계하고 구축한 DNA의 일부입니다. FlexPod 적응형 QoS는 동일한 기본 FlexPod 플랫폼에서 여러 미션 크리티컬 임상 시스템을 지원하여 부서 사일로를 무너뜨릴 수 있도록 도와줍니다.</block>
   <block id="f08fd0943ee6559de692a029806e0218" category="doc">TR-4865: 의료 영상용 FlexPod</block>
   <block id="a0d6631cb77e6264fd0c8966e84e7074" category="paragraph">NetApp의 Jaya Kishore Esanakula 및 Atil Bhalodia</block>
@@ -4811,130 +4303,12 @@
   <block id="a0a978e2195acd9679162948a9f1fb8d" category="paragraph">VMware ESXi 클러스터와 vCenter Server는 VM에 의료 이미지 환경을 구축하기 위한 중앙 집중식 플랫폼을 제공합니다. 의료 조직에서는 다음과 같이 업계 최고의 가상 인프라를 안심하고 활용할 수 있습니다.</block>
   <block id="59de9ec879d7417b33e0b24e78ec69e3" category="list-text">* 중앙 집중식 제어 및 가시성 * 단일 위치에서 전체 vSphere 인프라스트럭처를 관리합니다.</block>
   <block id="693c62c365d057ed5baa97cb97c27aeb" category="list-text">* 사전 최적화. * 최대 효율성을 위해 리소스를 할당, 최적화 및 마이그레이션합니다.</block>
-  <block id="11086c8909bf95223290f2179c7ddf41" category="list-text">FC Cisco Validated Design이 구축된 FlexPod 데이터 센터</block>
-  <block id="ca63672b086680d605104ec424f37cfa" category="list-text">MEDITECH 환경을 위한 NetApp 배포 지침:</block>
-  <block id="c8db37c6e610266cd33b58a2cbe77e95" category="inline-link"><block ref="c8db37c6e610266cd33b58a2cbe77e95" category="inline-link-rx"></block></block>
-  <block id="346891831c7ff1b2f151ee3281e55d98" category="paragraph"><block ref="ab28a2321c28e033f7f0eb595e098e7f" category="inline-link-rx"></block> (NetApp 로그인 필요)</block>
-  <block id="d0779087628a1ab7da9dc653a5757419" category="list-text">MEDITECH 환경을 위한 NetApp 사이징 지침</block>
-  <block id="3438bdbce7dd9729c4a20b406a2c612a" category="inline-link">www.netapp.com/us/media/tr-4190.pdf</block>
-  <block id="b0c4711c76f1217685ef782457a2ff75" category="list-text">Epic EHR용 FlexPod 데이터 센터 구축</block>
-  <block id="c5b901b54f4b42b734cf626040cdee3b" category="inline-link">www.netapp.com/us/media/tr-4693.pdf</block>
-  <block id="e1adeca60ccd1261ff5b0b70e3db3fb9" category="paragraph"><block ref="e1adeca60ccd1261ff5b0b70e3db3fb9" category="inline-link-rx"></block></block>
-  <block id="c08e9daeaca42643aa32d5a361952e76" category="list-text">Cisco 의료</block>
-  <block id="dc0075bc137b69ea27c2df86b5279861" category="inline-link"><block ref="dc0075bc137b69ea27c2df86b5279861" category="inline-link-rx"></block></block>
-  <block id="3dee516c8b9e426846b799cd0db597f3" category="paragraph"><block ref="3dee516c8b9e426846b799cd0db597f3" category="inline-link-rx"></block></block>
   <block id="4aedd7feb44df1595d3db438ed0cb551" category="section-title">하드웨어 및 소프트웨어</block>
   <block id="1ff1de774005f8da13f42943881c655f" category="cell">24</block>
-  <block id="f0f4f4ee07bd69ccda90258104d093f0" category="summary">이 섹션은 ONTAP 8.3 이상 버전에 구축하는 방법을 다룹니다.</block>
-  <block id="4e777d3b2a8b458c7f1f8e99e8ee985b" category="doc">스토리지 가상 머신 구성</block>
-  <block id="5e8e41e494c729b71c38199837d82c03" category="admonition">SVM(스토리지 가상 머신)은 ONTAP API 및 ONTAP CLI에서 SVM이라고도 합니다.</block>
-  <block id="66b2dba18cc93040125f652bbf569104" category="section-title">MEDITECH 호스트 LUN용 SVM</block>
-  <block id="8be6b6177636d613f02107e8466a06a7" category="paragraph">MEDITECH 호스트의 LUN이 포함된 애그리게이트를 소유 및 관리하려면 ONTAP 스토리지 클러스터당 하나의 전용 SVM을 생성해야 합니다.</block>
-  <block id="e16a3c5c02414b4861b307161c4ea448" category="section-title">SVM 언어 인코딩 설정</block>
-  <block id="6cf58cf8f2604c1e47a728e0403612ef" category="paragraph">모든 SVM에 대해 언어 인코딩을 설정하는 것이 좋습니다. SVM 생성 시 언어 인코딩 설정을 지정하지 않으면 기본 언어 인코딩 설정이 사용됩니다. 기본 언어 인코딩 설정은 ONTAP의 경우 c UTF-8입니다. 언어 인코딩을 설정한 후에는 나중에 무한 확장 볼륨을 가진 SVM의 언어를 수정할 수 없습니다.</block>
-  <block id="454540e68882d2b0fb5a13bcc5ee2bcd" category="paragraph">볼륨이 생성될 때 다른 설정을 명시적으로 지정하지 않으면 SVM과 연결된 볼륨이 SVM 언어 인코딩 설정을 상속합니다. 특정 작업을 사용하려면 사이트의 모든 볼륨에서 언어 인코딩 설정을 일관되게 사용해야 합니다. 예를 들어, SnapMirror에서는 소스 및 타겟 SVM에 동일한 언어 인코딩 설정이 필요합니다.</block>
-  <block id="9a4f1f8b572427616124fcfd4b74c659" category="inline-link-macro">다음: 볼륨 구성.</block>
-  <block id="9bec0a21d00629a01d827c786934f40e" category="paragraph"><block ref="9bec0a21d00629a01d827c786934f40e" category="inline-link-macro-rx"></block></block>
-  <block id="1af6e957540ff02139807dff6707b41e" category="summary">ESXi 호스트 측 구성의 경우 엔터프라이즈 데이터베이스 워크로드를 실행할 때 VMware 호스트를 구성합니다.</block>
-  <block id="3ed53054fbdd41cd0ef1e12af91aea41" category="paragraph">ESXi 호스트 측 구성의 경우 엔터프라이즈 데이터베이스 워크로드를 실행할 때 VMware 호스트를 구성합니다.</block>
-  <block id="1c5a131e41ababa2a6e44a16b29c4920" category="list-text">VMware vSphere용 VSC는 NetApp 스토리지 시스템에 가장 적합한 ESXi 호스트 경로 다중화 설정 및 HBA 시간 초과 설정을 확인하고 설정합니다. VSC 세트는 NetApp의 엄격한 내부 테스트를 기반으로 합니다.</block>
-  <block id="98ee352eabcb814d48269d548c7348ce" category="list-text">스토리지 성능을 최적화하려면 VMware VAAI(vStorage API - Array Integration)를 지원하는 스토리지 하드웨어를 사용하는 것이 좋습니다. VAAI용 NetApp 플러그인은 ESXi 호스트에 설치된 VMware 가상 디스크 라이브러리를 통합하는 소프트웨어 라이브러리입니다. VMware VAAI 패키지를 사용하면 특정 작업을 물리적 호스트에서 스토리지 시스템으로 오프로드할 수 있습니다.</block>
-  <block id="56d39eb333d1526ae7a5ee0cf801bf8b" category="paragraph">VSC는 NetApp 스토리지 컨트롤러의 최적의 성능과 성공적인 페일오버를 위해 ESXi 호스트 시간 초과, 다중 경로 설정, HBA 시간 초과 설정 및 기타 값을 설정합니다. 다음 단계를 수행하십시오.</block>
-  <block id="9b3c1eb96faca1b583058fdc3b7d9cab" category="list-text">VMware vSphere Web Client 홈 페이지에서 vCenter &gt; 호스트 를 선택합니다.</block>
-  <block id="780ded5951eebcb156ac8263708a207b" category="paragraph"><block ref="780ded5951eebcb156ac8263708a207b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9a401e2f5711db0f9c36f73c9a95ce74" category="paragraph"><block ref="9a401e2f5711db0f9c36f73c9a95ce74" category="inline-link-macro-rx"></block></block>
-  <block id="11ce79f812406bc51fe9b7234783e48b" category="list-text">NetApp 선임 제품 매니저 Ketan Mota</block>
-  <block id="1da328dab34341112c5ea191bbdc87ff" category="list-text">John Duignan, NetApp 의료 솔루션 설계자</block>
-  <block id="1e8af766906c2f4c94348986be634518" category="list-text">Cisco의 Jon Ebmeier</block>
-  <block id="d3cd6fb5e055b6cf26840a09d580c8b1" category="list-text">Cisco의 Mike Brennan 씨</block>
-  <block id="334187009dc6a27eb0034678179f34b2" category="summary">사용자 환경의 MEDITECH 호스트 수에 따라 NetApp FAS 또는 AFF 시스템 내에서 생성되는 LUN의 수가 결정됩니다. 하드웨어 구성 제안에서는 각 LUN의 크기를 지정합니다.</block>
-  <block id="db8880d80ab20f2f01a010e5c454f7fb" category="doc">LUN 구성</block>
-  <block id="783a06e1789912979ddde31660b15547" category="section-title">LUN 프로비저닝</block>
-  <block id="cb9bd7852440ed897a9107cc5090f231" category="paragraph">MEDITECH 호스트용 MEDITECH LUN은 일반 또는 씬 프로비저닝될 수 있습니다.</block>
-  <block id="2666379e941ce660d9139f8b1052dc8a" category="section-title">LUN 운영 체제 유형입니다</block>
-  <block id="4b5f255ff443adcde772c7c014982a21" category="paragraph">생성되는 LUN을 올바르게 정렬하려면 LUN의 운영 체제 유형을 올바르게 설정해야 합니다. 잘못 정렬된 LUN은 불필요한 쓰기 작업 오버헤드를 발생하므로 잘못 정렬된 LUN을 수정하는 데 비용이 많이 듭니다.</block>
-  <block id="90039b64275c0da13169903e607ee1c0" category="inline-link">Clustered Data ONTAP 8.3 명령: 수동 페이지 참조</block>
-  <block id="6b6e03eb6ad0ba80abd1d0c9d43aaa44" category="paragraph">MEDITECH 호스트 서버는 일반적으로 VMware vSphere 하이퍼바이저를 사용하여 가상화된 Windows Server 환경에서 실행됩니다. 호스트 서버는 베어 메탈 서버의 Windows Server 환경에서도 실행할 수 있습니다. 설정할 운영 체제 유형 값을 확인하려면 의 "LUN 생성" 섹션을 참조하십시오<block ref="0db2b8b602a875ab217af9147abf8f9b" category="inline-link-rx"></block>.</block>
-  <block id="396a637853d3500fa3904bdb5b2155a3" category="section-title">LUN 크기입니다</block>
-  <block id="3e154e08cc3c2480f9fc471b07b04b8a" category="paragraph">각 MEDITECH 호스트의 LUN 크기를 확인하려면 MEDITECH의 하드웨어 구성 제안(새 배포) 또는 하드웨어 평가 작업(기존 배포) 문서를 참조하십시오.</block>
-  <block id="423326537f2125f42ecd6d0150b04195" category="section-title">LUN 표시</block>
-  <block id="c19ba2ac4734b211d0800cfa4af27b52" category="paragraph">MEDITECH는 FC 프로토콜을 사용하여 프로그램, 사전 및 데이터 파일용 스토리지를 MEDITECH 호스트에 LUN으로 제공해야 합니다. VMware 가상 환경에서 LUN은 MEDITECH 호스트를 호스팅하는 VMware ESXi 서버에 제공됩니다. 그런 다음 VMware ESXi 서버에 제공되는 각 LUN은 물리적 호환성 모드에서 RDM을 사용하여 각 MEDITECH 호스트 VM에 매핑됩니다.</block>
-  <block id="3b6096997be3a806e8118a8c9ecbf276" category="paragraph">적절한 LUN 명명 규칙을 사용하여 LUN을 MEDITCH 호스트에 제공해야 합니다. 예를 들어, 간편한 관리를 위해 MEDITECH 호스트 Mt-host-01에 LUN MTFS01E를 제공해야 합니다.</block>
-  <block id="751311a9088729731bbcb8365340a457" category="paragraph">MEDITECH 및 백업 시스템 설치 프로그램과 상담할 때 MEDITECH 하드웨어 구성 제안을 참조하여 MEDITECH 호스트가 사용하는 LUN에 대해 일관된 명명 규칙을 고안합니다.</block>
-  <block id="95795644aff3816d232dc5e3eb141b80" category="paragraph">MEDITECH LUN 이름의 예로는 MTFS05E가 있으며, 다음과 같은 이름이 있습니다.</block>
-  <block id="379c9a8ab874fb7ea4eacfcba8be35a1" category="list-text">mTFS는 MEDITECH 파일 서버(MEDITECH 호스트용)를 나타냅니다.</block>
-  <block id="21aabe104d3e70fb71e441f8a8890de4" category="list-text">05는 호스트 번호 5를 나타냅니다.</block>
-  <block id="7390b1eaf163ff5a6cf6c76336d30155" category="list-text">E는 Windows E 드라이브를 나타냅니다.</block>
-  <block id="600c12167daf486f20dd2bfd3905a628" category="inline-link-macro">다음: 이니시에이터 그룹 구성</block>
-  <block id="11052af0ce66754ed48699cfaaa62908" category="paragraph"><block ref="11052af0ce66754ed48699cfaaa62908" category="inline-link-macro-rx"></block></block>
-  <block id="dca669a924575921f1c2e9e3cf8bb4da" category="section-title">Cisco UCS 구성 지침</block>
-  <block id="d218986bb2247c38b40f20dd68e24c12" category="list-text">Cisco UCS CLI</block>
-  <block id="05287109d3dc7b5d0023d8c242acf862" category="list-text">다중 도메인 환경을 위한 Cisco UCS Central</block>
-  <block id="e6837a90c0b393f65be16b4d0ecb6782" category="paragraph">다음 그림은 Cisco UCS Manager의 SAN 노드에 대한 샘플 스크린샷입니다.</block>
-  <block id="e17b2865671fa00385a07a7538a2971e" category="list-text">Cisco UCS Manager 펌웨어를 버전 3.2(2f) 이상으로 업그레이드합니다.</block>
-  <block id="8859045b1163a725636b1545ad945d05" category="list-text">섀시 검색 정책을 편집합니다.</block>
-  <block id="c7f10dd0c78eba5485a096c3f502cb13" category="list-text">이더넷 및 FC 업링크 포트 채널과 VSAN을 생성합니다.</block>
-  <block id="0168a016a3ae1b275741733df46fea0b" category="list-text">SAN 연결, 네트워크 제어, 서버 풀 검증, 전원 제어, 서버 BIOS, 및 기본 유지 관리.</block>
-  <block id="9fe508bee4aac2b77dbd817f3aa9afe5" category="list-text">vNIC 및 vHBA 템플릿을 생성합니다.</block>
-  <block id="85c0d82db4b58086bb360c5ec755dd40" category="list-text">vMedia 및 FC 부팅 정책을 생성합니다.</block>
-  <block id="06ce9b3053e89576060a04a60214d1ed" category="list-text">서비스 프로필을 적절한 블레이드 서버와 연결합니다.</block>
   <block id="908d1090a048f73a870cac28af4673b0" category="summary">의료 기관은 FlexPod에서 의료 영상 환경을 실행하여 직원 생산성을 높이고 자본 및 운영 비용을 절감할 수 있습니다.</block>
   <block id="ab9ec8ece67b4869a1277a5cec11aa53" category="paragraph">의료 기관은 FlexPod에서 의료 영상 환경을 실행하여 직원 생산성을 높이고 자본 및 운영 비용을 절감할 수 있습니다. FlexPod는 Cisco와 NetApp의 전략적 파트너십을 통해 사전 검증을 거쳐 엄격하게 테스트된 통합 인프라를 제공합니다. 지연 시간이 짧고 예측 가능한 시스템 성능과 고가용성을 제공하도록 특별히 설계되고 제작되었습니다. 이러한 접근 방식은 의료 영상 시스템 사용자에게 우수한 사용자 경험과 최적의 응답 시간을 제공합니다.</block>
   <block id="3252a3f380f51ae84a2e01625dc92f07" category="paragraph">의료 이미징 시스템의 여러 구성 요소에는 SMB/CIFS, NFS, ext4 및 NTFS 파일 시스템의 데이터 저장소가 필요합니다. 따라서 인프라는 NFS, SMB/CIFS 및 SAN 프로토콜을 통해 데이터 액세스를 제공해야 합니다. NetApp 스토리지 시스템은 단일 스토리지 어레이에서 이러한 프로토콜을 지원합니다.</block>
   <block id="92b53167d1c37a85e9aaf0ed41b4d145" category="paragraph">고가용성, 스토리지 효율성, 스냅샷 복사본 기반의 예약된 빠른 백업, 빠른 복원 작업, 재해 복구를 위한 데이터 복제 및 FlexPod 스토리지 인프라 기능은 모두 업계 선두의 데이터 스토리지 및 관리 시스템을 제공합니다.</block>
-  <block id="2c77ef7d294876908dee98d9e8992ea7" category="summary">이 보고서는 MEDITECH EHR 애플리케이션 소프트웨어 환경에 대한 FlexPod 사이징 지침을 제공합니다.</block>
-  <block id="355f227b5f3a021e716085da5dba3a50" category="doc">TR-4774: MEDITECH 방향 크기 조정을 위한 FlexPod</block>
-  <block id="f04af09d02846b2173ecac31b6a1b2e4" category="paragraph">Brandon AGEE, John Duignan, NetApp Mike Brennan, Cisco 존 에브메르</block>
-  <block id="6c6463830c2d83b0835053e09c7c644d" category="paragraph">FlexPod 시스템은 MEDITECH의 드넓은 서비스, 6.x, 5.x 및 Magic 서비스를 호스팅하기 위해 구축할 수 있습니다. MEDITECH 애플리케이션 계층을 호스팅하는 FlexPod 서버는 신뢰할 수 있는 고성능 인프라를 위한 통합 플랫폼을 제공합니다. FlexPod 통합 플랫폼은 숙련된 FlexPod 채널 파트너가 신속하게 구축하며 Cisco 및 NetApp 기술 지원 센터에서 지원합니다.</block>
-  <block id="80f6b3a19e686cdfc4feff6e85157bfc" category="paragraph">사이징은 MEDITECH의 하드웨어 구성 제안서와 MEDITECH 작업 문서의 정보를 기반으로 합니다. 목표는 컴퓨팅, 네트워크 및 스토리지 인프라 구성요소에 대한 최적의 크기를 결정하는 것입니다.</block>
-  <block id="36dc78206ebc0ff381904eebdc98f3a3" category="paragraph">를 클릭합니다 <block ref="8bdc5c53d8c75770e94941fd89a88395" category="inline-link-macro-rx"></block> 섹션에서는 MEDITECH 환경에서 찾을 수 있는 컴퓨팅 및 스토리지 워크로드의 유형에 대해 설명합니다.</block>
-  <block id="342a4f4077bf29cbb0d2e3cd29b29cef" category="inline-link-macro">소규모, 중간 규모 및 대규모 아키텍처에 대한 기술 사양</block>
-  <block id="a9f7253238254638e3c2f09c1a3d3adf" category="paragraph">를 클릭합니다 <block ref="05b562c851e2e6256c164895c028eff3" category="inline-link-macro-rx"></block> 섹션에서는 섹션에 설명된 다양한 스토리지 아키텍처에 대한 샘플 BOM을 자세히 설명합니다. 제공된 설정은 일반 지침일 뿐입니다. 항상 작업 부하에 따라 sizer를 사용하여 시스템의 크기를 조정하고 그에 따라 구성을 조정합니다.</block>
-  <block id="cc25780ffd737631aa87638595a13362" category="paragraph">FlexPod 아키텍처를 기반으로 MEDITECH 환경을 실행하면 의료 조직의 생산성을 향상시키고 자본 및 운영 비용을 줄일 수 있습니다. FlexPod은 Cisco와 NetApp의 전략적 파트너십을 통해 사전 검증된 엄격한 테스트를 거친 통합 인프라를 제공합니다. 지연 시간이 짧고 예측 가능한 시스템 성능과 고가용성을 제공하도록 특별히 설계되고 제작되었습니다. 이 접근 방식은 MEDITECH EHR 시스템 사용자의 응답 시간을 단축합니다.</block>
-  <block id="40dbf6d3ad8aa2fbd922d590ba31b53d" category="paragraph">Cisco와 NetApp의 FlexPod 솔루션은 고성능, 모듈식, 사전 검증, 통합, 가상화 및 효율성, 확장성 및 비용 효율적인 플랫폼 MEDITECH가 포함된 FlexPod 데이터 센터는 다음과 같은 의료 산업에 고유한 이점을 제공합니다.</block>
-  <block id="06ee67efb6354fb7c763ad50d1ab80f8" category="list-text">* 모듈식 아키텍처 *. FlexPod는 각 특정 워크로드에 맞게 사용자 지정된 FlexPod 시스템으로 MEDITECH 모듈식 아키텍처의 다양한 요구를 해결합니다. 모든 구성 요소는 클러스터 서버 및 스토리지 관리 패브릭을 통해 연결되며 일관된 관리 툴셋을 사용합니다.</block>
-  <block id="cc47fb4f777bb595d97accaef4e31c7d" category="list-text">* 운영 간소화 및 비용 절감 *. 기존 플랫폼을 보다 효율적이고 확장 가능한 공유 리소스로 대체함으로써 기존 플랫폼의 비용과 복잡성을 제거하고 임상의가 어디에 있든 지원할 수 있습니다. 이 솔루션을 사용하면 리소스를 더 효율적으로 사용하여 ROI(투자 수익)를 높일 수 있습니다.</block>
-  <block id="e981eea49acacde072b347eba61efdcc" category="list-text">* 인프라의 구축 시간 단축 *. MEDITECH가 포함된 FlexPod 데이터 센터의 통합 설계를 통해 고객은 현장 및 원격 데이터 센터 모두에서 새로운 인프라를 빠르고 쉽게 가동 및 실행할 수 있습니다.</block>
-  <block id="7dee0456a33eeb2de830177b23c0da15" category="list-text">* 스케일아웃 아키텍처 *. 실행 중인 애플리케이션을 재구성하지 않고도 SAN 및 NAS를 테라바이트에서 수십 페타바이트 단위로 확장할 수 있습니다.</block>
-  <block id="f1d673ab027cc665b45b6223b8f2a5f2" category="list-text">무중단 운영 *: 비즈니스를 중단하지 않고 스토리지 유지보수, 하드웨어 라이프사이클 운영 및 소프트웨어 업그레이드를 수행할 수 있습니다.</block>
-  <block id="46aae5d0217e4b74b8b9155011c8a6f9" category="list-text">* 보안 멀티 테넌시 *. 이 이점은 가상화된 서버 및 공유 스토리지 인프라의 더 많은 요구사항을 지원하여 시설별 정보의 안전한 멀티 테넌시를 지원합니다. 이 이점은 여러 데이터베이스 및 소프트웨어 인스턴스를 호스팅하는 경우 중요합니다.</block>
-  <block id="38dfe780c167870fb2bfe3b18d420e6c" category="list-text">* 풀링된 리소스 최적화 *. 이 이점은 물리적 서버 및 스토리지 컨트롤러 수를 줄이고, 워크로드 수요 로드 밸런싱을 수행하고, 활용률을 높이고, 성능을 동시에 개선하는 데 도움이 됩니다.</block>
-  <block id="3da9822f2c05eb9a04cb50867890afb3" category="list-text">* 서비스 품질(QoS). * FlexPod은 전체 스택에서 서비스 품질(QoS)을 제공합니다. 업계 최고 수준의 QoS 스토리지 정책을 통해 공유 환경에서 차별화된 서비스 수준을 지원합니다. 이러한 정책을 통해 워크로드에 맞는 성능을 최적화하고 급등하는 애플리케이션을 격리 및 제어하는 데 도움을 줄 수 있습니다.</block>
-  <block id="22316222fb1c37f670cdb578e64364a9" category="list-text">* 스토리지 효율성 *. NetApp 7:1 스토리지 효율성으로 스토리지 비용을 절감할 수 있습니다.</block>
-  <block id="d8946f205d9c0ff975084cde486d1899" category="list-text">* 민첩성 *. FlexPod 시스템에서 제공하는 업계 최고의 워크플로우 자동화, 오케스트레이션, 관리 툴을 사용하면 비즈니스 요청에 훨씬 더 빠르게 대응할 수 있습니다. 이러한 비즈니스 요청은 MEDITECH 백업 및 더 많은 테스트 및 교육 환경의 프로비저닝에서 인구 상태 관리 이니셔티브를 위한 분석 데이터베이스 복제까지 다양합니다.</block>
-  <block id="5ab4bdcce02d4738c2fc19530c59727e" category="list-text">* 생산성 *. 이 솔루션을 신속하게 배포하고 확장하여 최적의 청능사 최종 사용자 환경을 구현할 수 있습니다.</block>
-  <block id="132656d69ead7ae2badc2f109b7a0d2c" category="list-text">* 데이터 패브릭 *. NetApp Data Fabric 아키텍처는 물리적 경계 및 애플리케이션 전반에 걸쳐 데이터를 제공합니다. NetApp Data Fabric은 데이터 중심 세계에서 데이터 중심 기업을 위해 구축되었습니다. 데이터는 여러 위치에서 생성 및 사용되며 종종 애플리케이션 및 인프라와 공유됩니다. Data Fabric은 일관되고 통합된 데이터를 관리할 수 있는 방법을 제공합니다. 또한 IT에서 데이터를 더 많이 제어하고 끊임없이 증가하는 IT 복잡성을 단순화할 수 있습니다.</block>
-  <block id="b9063c599c2897408511b7bc4e31b5db" category="paragraph">이 문서에서는 Cisco UCS 및 NetApp ONTAP 기반 스토리지를 사용하는 환경에 대해 설명합니다. MEDITECH 호스팅을 위한 샘플 참조 아키텍처를 제공합니다.</block>
-  <block id="f277d18aec69d86b8e857251dc1067c7" category="list-text">SPM(NetApp System Performance Modeler) 또는 기타 NetApp 사이징 툴을 사용하여 세부 사이징 지침을 확인할 수 있습니다.</block>
-  <block id="3c51b55ed7beabb84cac968b4d394cb1" category="list-text">비운영 워크로드에 대한 사이징</block>
-  <block id="a53a7701772829b4b015348d7208cd69" category="paragraph">이 문서는 NetApp 및 파트너 시스템 엔지니어와 NetApp 프로페셔널 서비스 직원을 대상으로 합니다. NetApp은 사용자가 컴퓨팅 및 스토리지 사이징 개념을 잘 이해하고 있으며 Cisco UCS 및 NetApp 스토리지 시스템에 대한 기술적 지식이 충분히 있다고 가정합니다.</block>
-  <block id="5d3a5ef3f60e821b7aef8ffebddc82df" category="section-title">관련 문서</block>
-  <block id="420fd3463db356cbbdc59eab452a5e88" category="paragraph">다음 기술 보고서 및 기타 문서는 이 기술 보고서와 관련이 있으며, FlexPod 인프라에서 MEDITECH를 사이징, 설계 및 배포하는 데 필요한 전체 문서 세트를 작성합니다.</block>
-  <block id="fbd7ce1208641001952d7cb53d85d26f" category="inline-link">TR-4319: MEDITECH 환경을 위한 NetApp 구축 지침</block>
-  <block id="5a6a0a9aca49c0b558bc6577d3be8f12" category="list-text"><block ref="5a6a0a9aca49c0b558bc6577d3be8f12" category="inline-link-rx"></block></block>
-  <block id="9ec635d147bc4a5883a350cc4d3635f3" category="admonition">일부 보고서에 액세스하려면 NetApp Field Portal의 로그인 자격 증명이 필요합니다.</block>
-  <block id="8706a608269525ea85715bebe17b516c" category="summary">인프라스트럭처를 구성하려면 다음과 같은 네트워크 접속, 스토리지 접속 및 소프트웨어가 설치되어 있어야 합니다.</block>
-  <block id="a8ffc79000d3d7a3e7abcb70ac038eb5" category="paragraph">인프라를 구성하기 전에 다음 네트워크 연결이 설정되어야 합니다.</block>
-  <block id="83c8820e467cb2209322db57989749dd" category="list-text">포트 채널과 vPC(가상 포트 채널)를 사용하는 링크 집계를 통해 대역폭 및 가용성을 높일 수 있습니다.</block>
-  <block id="9c455359b0d1ae158781658d68869bcf" category="list-text">VPC는 Cisco FI와 Cisco Nexus 스위치 간에 사용됩니다.</block>
-  <block id="5d8aa8d7b1f76dd13a801de249f97139" category="list-text">각 서버에는 Unified Fabric에 대한 중복 연결 기능을 갖춘 vNIC(Virtual Network Interface Card)가 있습니다. NIC 페일오버는 이중화를 위해 FI 간에 사용됩니다.</block>
-  <block id="7c9486e10170333a0c6a2ecd0f344e1d" category="list-text">각 서버에는 Unified Fabric에 대한 이중화 접속 기능을 갖춘 vHBA(Virtual Host Bus Adapter)가 있습니다.</block>
-  <block id="52a678884d4a0e3d2cf38cc3533ab29a" category="list-text">Cisco UCS FI는 권장 사항에 따라 최종 호스트 모드로 구성되어 업링크 스위치에 vNIC를 동적으로 고정할 수 있습니다.</block>
-  <block id="6c38311d0ab32c44977112d0ad5370ee" category="paragraph">인프라스트럭처를 구성하기 전에 다음과 같은 스토리지 접속을 설정해야 합니다.</block>
-  <block id="925d95a3a7509918a714b29e6d586eb2" category="list-text">스토리지 포트 인터페이스 그룹(ifgroup, vPC)</block>
-  <block id="513ba55e63249d65fb9fd8a447f2eb94" category="list-text">스위치 N9K-A에 대한 10Gb 링크</block>
-  <block id="62fa310bcb5781d0aec09ba0786b4f12" category="list-text">스위치 N9K-B에 대한 10Gb 링크</block>
-  <block id="5767ec12b7e6f56ea7d503a01d6c93e8" category="list-text">관리 스위치 N9K-A에 대한 1GB 링크</block>
-  <block id="329de6797eba587d97396a7f3d1cff11" category="list-text">관리 스위치 N9K-B에 대한 1GB 링크</block>
-  <block id="c650a9817d0eecbb68b3df5fb8d1bb60" category="list-text">Cisco MDS 스위치를 통한 32Gb FC 엔드 투 엔드 연결, 단일 이니시에이터 조닝 구성</block>
-  <block id="872fb1864b11b850b34f8a532b22f550" category="list-text">상태 비저장 컴퓨팅을 최대한 실현하기 위한 FC SAN 부팅. 서버는 AFF 스토리지 클러스터에서 호스팅되는 부팅 볼륨의 LUN에서 부팅됩니다</block>
-  <block id="26954310ff7b20e5a0bd47bbe14c4967" category="list-text">모든 MEDITECH 워크로드는 스토리지 컨트롤러 노드에 분산되는 FC LUN에서 호스팅됩니다</block>
-  <block id="28c87877b8d2484c4626b8f09bb2b777" category="list-text">Cisco UCS 블레이드에 설치된 ESXi</block>
-  <block id="d5779cae60f50330bed6968b43b0fb15" category="list-text">VMware vCenter 설치 및 구성(vCenter에 등록된 모든 호스트 포함)</block>
-  <block id="81e1f7487a869ab974590942bdb9b0f5" category="list-text">VMware vCenter에 VSC를 설치 및 등록했습니다</block>
-  <block id="0357f41804a8af5e9e305d4d99f4ae5d" category="list-text">NetApp 클러스터가 구성되었습니다</block>
-  <block id="64229abd3ca3ca9d3c415bd5d74986e8" category="inline-link-macro">다음: Cisco UCS 블레이드 서버 및 스위치 구성</block>
-  <block id="b9292a43f7e0ce7642d7cc6b0663f721" category="paragraph"><block ref="b9292a43f7e0ce7642d7cc6b0663f721" category="inline-link-macro-rx"></block></block>
   <block id="e239a4af23c07be4edc5da5f02c9ec6a" category="summary">이 섹션에서는 ./GATK 출력의 실행에 대해 설명합니다.</block>
   <block id="b913c1c1cde143cea45cb35af2f91d75" category="doc">/GATK 스크립트를 사용하여 GATK 실행을 위한 출력</block>
   <block id="4aff7c37c0df4078c9912732b49d5f0f" category="inline-link-macro">이전: JAR 파일을 사용하여 GATK 실행을 위한 출력.</block>
@@ -4943,64 +4317,7 @@
   <block id="f971af00761e2131cd67cdd6d21b3952" category="paragraph">출력 파일은 실행 후 지정된 위치에 있습니다.</block>
   <block id="2ab2d995e6a1e8cb94cbd27ea2de69e4" category="inline-link-macro">다음: Cromwell 엔진을 사용하여 GATK 실행을 위한 출력.</block>
   <block id="4cdf299dfb01669ad4e43bc5e320cc01" category="paragraph"><block ref="4cdf299dfb01669ad4e43bc5e320cc01" category="inline-link-macro-rx"></block></block>
-  <block id="466eb26b523a1dbd7b0bed7a767c4148" category="summary">이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오.</block>
-  <block id="36306c740ae253397cc640787018c532" category="paragraph">이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 또는 웹 사이트를 참조하십시오.</block>
-  <block id="51f4112cb2d63d46680fde0358a5c441" category="section-title">FlexPod 디자인 영역</block>
-  <block id="a07e13a55cde7b6a8fbae36c29e6fef0" category="list-text"><block ref="a07e13a55cde7b6a8fbae36c29e6fef0" category="inline-link-rx"></block></block>
-  <block id="e1e25af7156be203f8a5b16a598b8462" category="inline-link">NetApp AFF, vSphere 6.5U1 및 Cisco UCS Manager를 사용하는 FC 스토리지(MDS 스위치)가 포함된 FlexPod 데이터 센터</block>
-  <block id="62f39cf04b706cedf29b93eba6dae7e3" category="list-text"><block ref="62f39cf04b706cedf29b93eba6dae7e3" category="inline-link-rx"></block></block>
-  <block id="66c8207a59ea1bba64ca9a2b8f0a71b4" category="list-text"><block ref="66c8207a59ea1bba64ca9a2b8f0a71b4" category="inline-link-rx"></block></block>
-  <block id="235d123ccb7c75ee0884ba6311e9ebab" category="list-text"><block ref="235d123ccb7c75ee0884ba6311e9ebab" category="inline-link-rx"></block></block>
-  <block id="5f8a419137862622b3d562a36731a9f7" category="list-text"><block ref="5f8a419137862622b3d562a36731a9f7" category="inline-link-rx"></block></block>
-  <block id="db8e8942f1d4330b19953e752ce7a013" category="list-text"><block ref="db8e8942f1d4330b19953e752ce7a013" category="inline-link-rx"></block></block>
-  <block id="6873197c14dfd5879b6551ee93d04ef6" category="list-text"><block ref="6873197c14dfd5879b6551ee93d04ef6" category="inline-link-rx"></block></block>
-  <block id="c88b4dea025dfe9457e38c44e07c3292" category="list-text"><block ref="c88b4dea025dfe9457e38c44e07c3292" category="inline-link-rx"></block></block>
-  <block id="9e68e26f554f7de9f3ad71d41877724b" category="list-text"><block ref="6a77151d3cd6d424c3e85c29790b9140" category="inline-link-rx"></block>:</block>
-  <block id="c11ae620bbb94d6dc060c801fab49d56" category="inline-link">ESXi용 FC Express 가이드</block>
-  <block id="f8b9fe14dbc0290eb0dab775166d61c2" category="list-text"><block ref="f8b9fe14dbc0290eb0dab775166d61c2" category="inline-link-rx"></block></block>
-  <block id="92a316e39c62e388cd3025d820669829" category="inline-link">모든 ONTAP 9.3 문서</block>
-  <block id="5516d21da8534293d37b48af39c3d25c" category="list-text"><block ref="4b1dda8bf25c1cf9aaf2d9edb9d71d53" category="inline-link-rx"></block>:</block>
-  <block id="5b54d138cff1c5c86e5799b875279b81" category="inline-link">소프트웨어 설치 안내서</block>
-  <block id="c40931e8f36b0f64185eb7faf6e0d040" category="list-text"><block ref="c40931e8f36b0f64185eb7faf6e0d040" category="inline-link-rx"></block></block>
-  <block id="7e6d4063c199f76c46fecd71f3fd63f9" category="inline-link">디스크 및 애그리게이트 전원 가이드</block>
-  <block id="3ec87fb00fc246b120d349f324b29c93" category="list-text"><block ref="3ec87fb00fc246b120d349f324b29c93" category="inline-link-rx"></block></block>
-  <block id="a76193f5d9397d9c49ca283a20ccf649" category="inline-link">SAN 관리 가이드를 참조하십시오</block>
-  <block id="5f0f45a09f1547c56f84fa483eff3f89" category="list-text"><block ref="5f0f45a09f1547c56f84fa483eff3f89" category="inline-link-rx"></block></block>
-  <block id="8cb9ee34636093f5ba25008ebc7b7287" category="inline-link">SAN 구성 가이드 를 참조하십시오</block>
-  <block id="08769523ffe39a38a57d4e3cc340b79b" category="list-text"><block ref="08769523ffe39a38a57d4e3cc340b79b" category="inline-link-rx"></block></block>
-  <block id="c3d70d54f560e8e0f0c366ec0087e194" category="inline-link">Windows Express용 FC 구성 가이드 를 참조하십시오</block>
-  <block id="367dc3b6bca342ef1c1abc6def9b327d" category="list-text"><block ref="367dc3b6bca342ef1c1abc6def9b327d" category="inline-link-rx"></block></block>
-  <block id="2fc892a07617a9dc5ce581f242865c48" category="inline-link">FC SAN에 최적화된 AFF 설정 가이드</block>
-  <block id="28deb583d8d8942d07d10b99ba2d74c8" category="list-text"><block ref="28deb583d8d8942d07d10b99ba2d74c8" category="inline-link-rx"></block></block>
-  <block id="d3045df3df90cab89f90d0d37c532251" category="inline-link">High-Availability 구성 가이드 를 참조하십시오</block>
-  <block id="ee99c2763d5e7c868883396a2a35b2c4" category="list-text"><block ref="ee99c2763d5e7c868883396a2a35b2c4" category="inline-link-rx"></block></block>
-  <block id="a08d0ca7bd8524176f9e086cd68875ee" category="inline-link">논리적 스토리지 관리 가이드</block>
-  <block id="953950975c1cda55f3b5fee7ecd83752" category="list-text"><block ref="953950975c1cda55f3b5fee7ecd83752" category="inline-link-rx"></block></block>
-  <block id="ec49151b952b3d31a6798d4806d04b16" category="inline-link">성능 관리 전원 가이드</block>
-  <block id="13adf8c5a17cb850e5b85a634b0d32c9" category="list-text"><block ref="13adf8c5a17cb850e5b85a634b0d32c9" category="inline-link-rx"></block></block>
-  <block id="c2549eb1aedeb146d603f141e0cc0ffa" category="inline-link">SMB/CIFS 구성 전원 가이드</block>
-  <block id="0ff980b7b7d3aea16920fee9a101e73b" category="list-text"><block ref="0ff980b7b7d3aea16920fee9a101e73b" category="inline-link-rx"></block></block>
-  <block id="a0a59362e21ec3c80e71e3d02aa6a8b8" category="inline-link">SMB/CIFS 참조</block>
-  <block id="ba375be3d801f747cf06f6a583a18270" category="list-text"><block ref="ba375be3d801f747cf06f6a583a18270" category="inline-link-rx"></block></block>
-  <block id="9739187f50db857f27b204b12e6d365e" category="inline-link">데이터 보호 전원 가이드</block>
-  <block id="6999b53a08f58321431a40cbf1cdfc90" category="list-text"><block ref="6999b53a08f58321431a40cbf1cdfc90" category="inline-link-rx"></block></block>
-  <block id="81082b4a9d156a771a100d0e4e8fc15d" category="inline-link">데이터 보호 테이프 백업 및 복구 가이드</block>
-  <block id="25236e4fbd4f157d732444243aa1ca38" category="list-text"><block ref="25236e4fbd4f157d732444243aa1ca38" category="inline-link-rx"></block></block>
   <block id="58c291db828d7a4127186176941d0d5b" category="inline-link">NetApp 암호화 기능 가이드 를 참조하십시오</block>
-  <block id="92f81c9b746514ba2594851906b66dc1" category="list-text"><block ref="92f81c9b746514ba2594851906b66dc1" category="inline-link-rx"></block></block>
-  <block id="08a140811c847d2c6e0ea3628a3f4287" category="inline-link">네트워크 관리 가이드 를 참조하십시오</block>
-  <block id="e06c683af0cff40280bdd82be2d6d782" category="list-text"><block ref="e06c683af0cff40280bdd82be2d6d782" category="inline-link-rx"></block></block>
-  <block id="03a44c9aa18c11dcca89fdef4aafbe0f" category="inline-link">명령: ONTAP 9.3에 대한 수동 페이지 참조</block>
-  <block id="d5cd533da912413c44636008195960ad" category="list-text"><block ref="d5cd533da912413c44636008195960ad" category="inline-link-rx"></block></block>
-  <block id="a84f525bf21d9842103c71093b390118" category="list-text"><block ref="a84f525bf21d9842103c71093b390118" category="inline-link-rx"></block></block>
-  <block id="c5049d68b158c7f612a460f0e3256eb9" category="list-text"><block ref="c5049d68b158c7f612a460f0e3256eb9" category="inline-link-rx"></block></block>
-  <block id="5e57a36256aaf1af8d0c8ef8e2ebb646" category="list-text"><block ref="5e57a36256aaf1af8d0c8ef8e2ebb646" category="inline-link-rx"></block></block>
-  <block id="7c5b5ea5a3ea01a52eeff6b0168f5133" category="list-text"><block ref="7c5b5ea5a3ea01a52eeff6b0168f5133" category="inline-link-rx"></block></block>
-  <block id="c7402c440efc83f825645bfb68be0ff4" category="inline-link">Cisco UCS Manager 3.2(3a) 인프라 번들</block>
-  <block id="46ac9d540a64646243324e8ab16bd0dc" category="list-text"><block ref="1b3e298db0e127d48e0b8c60c873bc99" category="inline-link-rx"></block> (Cisco.com 인증 필요)</block>
-  <block id="6b7b598323e29ffec89272c7a4dab997" category="list-text"><block ref="6b7b598323e29ffec89272c7a4dab997" category="inline-link-rx"></block></block>
-  <block id="8f87ca3825cf554e2054b8d53073840e" category="inline-link">Cisco MDS 9132T FC 스위치</block>
-  <block id="2cb00c21fb6289fb3fd2ceea04738a2a" category="list-text"><block ref="2cb00c21fb6289fb3fd2ceea04738a2a" category="inline-link-rx"></block></block>
   <block id="8812cde5e908177e098dc3cdf6a43018" category="cell">Cisco UCS 5108</block>
   <block id="28b69efdba58f83101dca273e330e519" category="summary">FlexPod 설계는 다양한 구성 요소와 소프트웨어 버전을 포함하는 유연한 인프라를 지원합니다.</block>
   <block id="c9f0f895fb98ab9159f51fd0297e236d" category="cell">8</block>
@@ -5041,39 +4358,6 @@
   <block id="470e33cee2a0a930ccdebb855f6d92d6" category="list-text">가상 데스크톱 인프라(VDI) 솔루션을 위한 FlexPod</block>
   <block id="f6aaafd9f98422c31959e223903e9a71" category="inline-link"><block ref="f6aaafd9f98422c31959e223903e9a71" category="inline-link-rx"></block></block>
   <block id="de18980572f5c8c06c547cf7593dfef1" category="paragraph"><block ref="de18980572f5c8c06c547cf7593dfef1" category="inline-link-rx"></block></block>
-  <block id="b7e68d0352de1c804e28d4c0e7d260b7" category="summary">이 문서에서는 MEDITECH 소프트웨어용 FlexPod 환경의 기본 구성에 대한 자세한 지침을 제공합니다. 이 섹션에서는 FlexPod 구성의 Cisco UCS 컴퓨팅 플랫폼 요소를 준비하기 위한 몇 가지 예에 대해 개략적인 단계를 설명합니다.</block>
-  <block id="52c26526758e2879666f3330f706c9f9" category="paragraph">MEDITECH용 FlexPod 소프트웨어는 모든 레벨에서 내결함성을 제공하도록 설계되었습니다. 시스템에 단일 장애 지점이 없습니다. 최적의 성능을 위해 핫 스페어 블레이드 서버를 사용하는 것이 좋습니다.</block>
-  <block id="d7355505a58714f141f2e9cb09258464" category="inline-link">FlexPod vSphere 6.5 업데이트 1, NetApp AFF A 시리즈 및 Cisco UCS Manager 3.2를 사용하는 파이버 채널 스토리지가 있는 데이터 센터</block>
-  <block id="68b2b5ef5753a4117c01bd29869e229d" category="paragraph">이 문서에서는 MEDITECH 소프트웨어용 FlexPod 환경의 기본 구성에 대한 자세한 지침을 제공합니다. 이 섹션에서는 FlexPod 구성의 Cisco UCS 컴퓨팅 플랫폼 요소를 준비하기 위한 몇 가지 예에 대해 개략적인 단계를 설명합니다. 이 지침을 수행하기 전에 의 지침에 따라 FlexPod 구성을 랙에 설치하고, 전원을 공급하며, 케이블로 연결해야 합니다<block ref="8f1525ab792e1982d64749d7e834252e" category="inline-link-rx"></block>CVD</block>
-  <block id="20162616262ec1fce0cd307a8f51943a" category="inline-link-macro">케이블 연결 다이어그램</block>
-  <block id="c5756129dea844fb708edc5a355e4f3e" category="paragraph">이 솔루션을 위해 내결함성을 갖춘 Cisco Nexus 9300 시리즈 이더넷 스위치 쌍이 구축되었습니다. 에 설명된 대로 이러한 스위치에 케이블을 연결해야 합니다 <block ref="1de45352219a192c037c72b3355c8940" category="inline-link-macro-rx"></block> 섹션을 참조하십시오. Cisco Nexus 구성을 사용하면 이더넷 트래픽 흐름이 MEDITECH 애플리케이션에 최적화되도록 할 수 있습니다.</block>
-  <block id="ff3e578bc61b34cb52ea3dd25c33fe2e" category="list-text">초기 설정 및 라이센스를 완료한 후 다음 명령을 실행하여 두 스위치에서 글로벌 구성 매개 변수를 설정합니다.</block>
-  <block id="60f704b6f8d11cdd0e7a8269d3b679f1" category="list-text">글로벌 구성 모드를 사용하여 각 스위치에서 솔루션에 대한 VLAN을 생성합니다.</block>
-  <block id="e358f04df40edf07a6046389327a13ed" category="list-text">에 따라 문제 해결을 위해 NTP(Network Time Protocol) 분산 인터페이스, 포트 채널, 포트 채널 매개 변수 및 포트 설명을 생성합니다<block ref="8f1525ab792e1982d64749d7e834252e" category="inline-link-rx"></block>CVD</block>
-  <block id="984c7efca069a9b435064bc26543a39b" category="section-title">Cisco MDS 9132T 구성</block>
-  <block id="ecbe2640d2535ebe770cbfea69ffe2d2" category="paragraph">Cisco MDS 9100 시리즈 FC 스위치는 NetApp AFF A200 또는 AFF A300 컨트롤러와 Cisco UCS 컴퓨팅 패브릭 간에 이중화된 32Gb FC 연결을 제공합니다. 에 설명된 대로 케이블을 연결해야 합니다 <block ref="1de45352219a192c037c72b3355c8940" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="0d3d2cd12ece4e2138bd0c0979652640" category="list-text">각 MDS 스위치의 콘솔에서 다음 명령을 실행하여 솔루션에 필요한 기능을 설정합니다.</block>
-  <block id="de8b6288d4dd08c8b3133109c9c17af3" category="list-text">의 FlexPod Cisco MDS 스위치 구성 섹션에 따라 개별 포트, 포트 채널 및 설명을 구성합니다<block ref="8c408f7508059ba7cdfe1e4eb9ba9051" category="inline-link-rx"></block>.</block>
-  <block id="27eb4e7cbf3de77aaf18c6019edb469c" category="list-text">솔루션에 필요한 VSAN(Virtual SAN)을 생성하려면 글로벌 구성 모드에서 다음 단계를 수행하십시오.</block>
-  <block id="1a0b50bc9ebc1811596a54a50a2d40a0" category="list-text">Fabric-A MDS 스위치의 경우 다음 명령을 실행합니다.</block>
-  <block id="513995fd7f34cdf91cfa8d67887dcf41" category="paragraph">명령의 마지막 두 줄에 있는 포트 채널 번호는 참조 문서를 사용하여 개별 포트, 포트 채널 및 설명을 프로비저닝할 때 생성되었습니다.</block>
-  <block id="dcb838a4411d93900e0bf4e809c76478" category="list-text">Fabric-B MDS 스위치의 경우 다음 명령을 실행합니다.</block>
-  <block id="5583eed0dc1be9df3c7f3655b4620c80" category="list-text">각 FC 스위치에 대해 참조 문서의 세부 정보를 사용하여 각 장치를 직관적으로 식별할 수 있도록 디바이스 별칭 이름을 생성합니다.</block>
-  <block id="2c7aa24bf889350e02f006870032e65e" category="list-text">마지막으로, 다음과 같이 각 MDS 스위치에 대해 4단계에서 생성한 디바이스 별칭 이름을 사용하여 FC 존을 생성합니다.</block>
-  <block id="091270f515b28ad5de71298cd9a3f58d" category="paragraph">Cisco UCS를 통해 MEDITECH 고객은 네트워크, 스토리지 및 컴퓨팅 분야의 실무 전문가를 활용하여 고객의 특정 요구에 맞게 환경을 조정하는 정책 및 템플릿을 작성할 수 있습니다. 생성된 정책 및 템플릿은 Cisco 블레이드 및 랙 서버를 일관성 있고 반복 가능하며 안정적이며 신속하게 구축할 수 있도록 서비스 프로필에 결합할 수 있습니다.</block>
-  <block id="07976ae67af42d527963b8ec8cb5ee02" category="paragraph">Cisco UCS는 도메인이라는 Cisco UCS 시스템을 관리하는 세 가지 방법을 제공합니다.</block>
-  <block id="6ac85f794bb2cbd8f0befa5509c8966f" category="list-text">Cisco UCS Manager HTML5 GUI</block>
-  <block id="348aa97b91ea1b2fcede130cf92bb64c" category="paragraph"><block ref="348aa97b91ea1b2fcede130cf92bb64c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4973fd8170d3191dcac7faa84afb4049" category="paragraph">대규모 구축에서는 주요 MEDITECH 기능 구성 요소 레벨에서 내결함성을 더욱 높일 수 있는 독립적인 Cisco UCS 도메인을 구축할 수 있습니다.</block>
-  <block id="f974b947539d2745c44e7f448b7e74a4" category="paragraph">두 개 이상의 데이터 센터를 통한 내결함성 설계에서 Cisco UCS Central은 기업 전반의 호스트 간 일관성을 위한 글로벌 정책 및 글로벌 서비스 프로필을 설정하는 데 중요한 역할을 합니다.</block>
-  <block id="ae0d162df291efedeb6833bfb23b5e17" category="paragraph">Cisco UCS 컴퓨팅 플랫폼을 설정하려면 다음 절차를 완료하십시오. Cisco UCS 5108 AC 블레이드 섀시에 Cisco UCS B200 M5 블레이드 서버를 설치한 후 다음 절차를 수행하십시오. 또한 에 설명된 대로 케이블 연결 요구 사항을 경쟁해야 합니다 <block ref="1de45352219a192c037c72b3355c8940" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="5349296f0fb04cb41ec67336ab73080b" category="list-text">도메인에 대한 보고, Cisco Call Home 기능 및 NTP 설정을 구성합니다.</block>
-  <block id="6c7a31fa69e04eaa1b95825e4cc379c0" category="list-text">각 Fabric Interconnect에서 서버 및 업링크 포트를 구성합니다.</block>
-  <block id="29eff591eb412e96448079de19f028d4" category="list-text">대역 외 관리, UUID(Universal Unique Identifier), MAC 주소, 서버, WWNN(Worldwide Node Name) 및 WWPN(Worldwide Port Name)을 위한 주소 풀을 생성합니다.</block>
-  <block id="fabc2686b492ea8d67cee3fb8b82286e" category="list-text">각 MEDITECH 플랫폼 요소에 대한 서비스 프로필 템플릿 및 서비스 프로필을 생성합니다.</block>
-  <block id="94e6e1d1c0c67d591be44cd2237b2819" category="paragraph">FlexPod용 Cisco UCS 서비스 프로필의 각 주요 요소를 구성하는 단계에 대한 자세한 내용은 를 참조하십시오<block ref="8f1525ab792e1982d64749d7e834252e" category="inline-link-rx"></block>CVD 문서</block>
-  <block id="1c0111c256303c789d10465f32e35c9f" category="inline-link-macro">다음은 ESXi 구성 Best Practice입니다.</block>
-  <block id="a12882e5c41826585dd001aacca59d17" category="paragraph"><block ref="a12882e5c41826585dd001aacca59d17" category="inline-link-macro-rx"></block></block>
   <block id="3efd43d603f98d46d6707c05552b037a" category="summary">FlexPod 아키텍처는 전체 컴퓨팅, 네트워크 및 스토리지 스택에서 구성 요소 또는 링크에 장애가 발생할 경우 고가용성을 제공하도록 설계되었습니다. 클라이언트 액세스 및 스토리지 액세스를 위한 다중 네트워크 경로는 로드 밸런싱과 최적의 리소스 사용률을 제공합니다.</block>
   <block id="220e76f33c6565f8361231d3fbea063c" category="paragraph">다음 그림은 의료 영상 시스템 솔루션 구축을 위한 16Gb FC/40Gb 이더넷(40GbE) 토폴로지를 보여줍니다.</block>
   <block id="0313b0221759818538e9506f841bd57a" category="paragraph"><block ref="0313b0221759818538e9506f841bd57a" category="inline-image-macro-rx" type="image"></block></block>
@@ -5332,44 +4616,7 @@
   <block id="ef135c74c1afbabf9b1a05c3729e6306" category="inline-link-macro">다음: 솔루션 인프라 하드웨어 및 소프트웨어 구성 요소</block>
   <block id="fe7f09f3418264ba93ec6b03c1df1ec5" category="paragraph"><block ref="fe7f09f3418264ba93ec6b03c1df1ec5" category="inline-link-macro-rx"></block></block>
   <block id="48def1be7a1b40b720ff1892a761e8c8" category="section-title">Cisco Nexus를 참조하십시오</block>
-  <block id="df915ca44dfbf766140548415b4ed697" category="summary">MEDITECH 애플리케이션은 여러 모듈과 구성 요소를 포함합니다.</block>
-  <block id="29bb9635229fa03ce92a9f922a4cbdfa" category="paragraph">MEDITECH 애플리케이션은 여러 모듈과 구성 요소를 포함합니다. 다음 표에는 이러한 모듈에서 다루는 기능이 나열되어 있습니다. 이러한 모듈의 설정 및 배포에 대한 자세한 내용은 MEDITECH 설명서를 참조하십시오.</block>
-  <block id="86408593c34af77fdd90df932f8b5261" category="cell">기능</block>
-  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">유형</block>
-  <block id="5f17178c8327716305b050da5b277062" category="list-text">라이브 애플리케이션 서버(Wi-Web 통합)</block>
-  <block id="3d0feb5c5e52be43198fc639e5502fdb" category="list-text">애플리케이션 서버(Wi) 테스트</block>
-  <block id="ee591f0e5e3f88ec3fe6e93a12787d3d" category="list-text">SAML 인증 서버(Wi)</block>
-  <block id="e99b14547b17ed448a4956e1fb0713fa" category="list-text">SAML 프록시 서버(Wi)</block>
-  <block id="bc790b8c207967f4f8b4bf4784316aa9" category="list-text">데이터베이스 서버</block>
   <block id="cba4f4cee5c6a3e6d8be8da68fa1234e" category="cell">검토할 수 있습니다</block>
-  <block id="43dabf9f5e49ef397d642de52e2b0b35" category="list-text">파일 서버</block>
-  <block id="216ec47eea0edf984d15aa2bb5f1205d" category="list-text">백그라운드 작업 클라이언트</block>
-  <block id="c6f59a524c95d4d479e502f2c154b7bf" category="list-text">연결 서버</block>
-  <block id="8a28d23356bcd8794874eee8119fc181" category="list-text">트랜잭션 서버</block>
-  <block id="21465d85254ebe7bd9b87847135fe241" category="cell">스캔 및 보관</block>
-  <block id="c296f1caee0c086715f4ef7fabc1ec4c" category="list-text">이미지 서버</block>
-  <block id="be655723ebfc0d3100e80b3a6e0586ca" category="cell">데이터 저장소</block>
-  <block id="a71f76c3256e4c206a4841d8eb0fed35" category="list-text">SQL 서버</block>
-  <block id="9f0ce84dbacb6cdeed565d02f59d8a6f" category="cell">비즈니스 및 임상 분석</block>
-  <block id="5dee2d427da8ce17a652d0c24462c535" category="list-text">BCA(Live Intelligence Server)</block>
-  <block id="363fd0788782fc1a58e993e92020702b" category="list-text">인텔리전스 서버(BCA) 테스트</block>
-  <block id="d6b5b58484ea48442b2a6f23e00aab4e" category="list-text">데이터베이스 서버(BCA)</block>
-  <block id="e44a2f65dc5da0f283effe87d7a363ec" category="cell">홈 케어</block>
-  <block id="ecec24f4f43c65b4fd26453c85371aa2" category="list-text">원격 사이트 솔루션</block>
-  <block id="b002a564ceda05dbdf012a48a145d0d3" category="list-text">인쇄 중</block>
-  <block id="52585edf5fd6d7f79c59b2aea5fe55fe" category="list-text">현장 장치</block>
-  <block id="495c55c275d09a00aaeb7482365ab300" category="list-text">스캔 중</block>
-  <block id="dfe2e0a9b2f6d20030e1400eb60b6613" category="list-text">호스팅된 사이트 요구 사항</block>
-  <block id="7b5ab8d4f5391ce5b1dfdc1f7332745e" category="list-text">방화벽 구성</block>
-  <block id="db5eb84117d06047c97c9a0191b5fffe" category="cell">지원</block>
-  <block id="f1e8a2eed3b141eb0926997b828ab7e5" category="list-text">백그라운드 작업 클라이언트(CAL – 클라이언트 액세스 라이선스)</block>
-  <block id="78881ff524da6199ae5d9d41f16fff10" category="cell">사용자 장치</block>
-  <block id="6732e04dc98598f20626af33431614c0" category="list-text">태블릿</block>
-  <block id="2f3021b185b4a90d0ecd40cf21608593" category="list-text">고정 장치</block>
-  <block id="78c68b98b36d67cd7dda0eb2e9650978" category="list-text">라이브 네트워크 인쇄 서버(필수, 이미 있을 수 있음)</block>
-  <block id="4c68288191d28352c3888aa6907897fc" category="list-text">네트워크 인쇄 서버 테스트(필수, 이미 있을 수 있음)</block>
-  <block id="0e0a6d957ba6bdd9f2713887c2be700e" category="cell">타사 요구 사항</block>
-  <block id="e1e68f9115a50d4bd1ed618ac355dc80" category="list-text">첫 번째 데이터뱅크(FDB) MedKnowledge Framework v4.3</block>
   <block id="6bb41960470a19d97556b9240ac0b3ff" category="cell">볼륨 크기</block>
   <block id="c20ad4d76fe97759aa27a0c99bff6710" category="cell">12</block>
   <block id="c74d97b01eae257e44aa9d5bade97baf" category="cell">16</block>
@@ -5397,115 +4644,44 @@
   <block id="42419c0e478fd6f7bbffe6b8974833ca" category="summary">NetApp 스토리지 컨트롤러는 부팅 및 애플리케이션 데이터 스토리지를 위한 FlexPod Express 아키텍처의 스토리지 기반을 제공합니다. 이 섹션에는 FlexPod 익스프레스 아키텍처의 다양한 NetApp 옵션이 나와 있습니다.</block>
   <block id="2ca7c673d212fe0aac08f9e41ac63265" category="doc">NetApp 구성 요소</block>
   <block id="c1a132b08c3d15f664a4e983ca90172e" category="section-title">NetApp 스토리지 컨트롤러 옵션</block>
-  <block id="6f4427b59f55f6827f3d3145a95ee28d" category="paragraph">AFF Express 아키텍처에는 중복 AFF C190, FlexPod A220 또는 FAS2750 시리즈 컨트롤러가 필요합니다. 컨트롤러는 ONTAP 소프트웨어를 실행합니다. 스토리지 컨트롤러를 주문할 때는 컨트롤러에 기본 소프트웨어 버전이 사전 로드될 수 있습니다. ONTAP의 경우, 클러스터 인터커넥트 스위치 한 쌍이나 스위치가 없는 클러스터 구성으로 클러스터를 구축할 수 있습니다.</block>
-  <block id="791ddb7a7ddefe9ef8c91c03bbd4fd71" category="paragraph">다음 표에 나열된 부품 번호는 빈 컨트롤러에 대한 것입니다. 선택한 스토리지 플랫폼을 기반으로 다양한 옵션과 구성을 사용할 수 있습니다. 이러한 추가 구성 요소에 대한 자세한 내용은 영업 담당자에게 문의하십시오.</block>
   <block id="bb43878952414106e66a5d3e8902dd46" category="cell">스토리지 컨트롤러</block>
   <block id="eb0d80c3cead0194c9a676df97b1f973" category="cell">FAS 부품 번호</block>
   <block id="5d25ef0fe80918309a18b85c097eb22c" category="cell">기술 사양</block>
-  <block id="3eab1bbd4a3f05ea0803f3bcf5fac9e5" category="cell">FAS2750</block>
   <block id="d78a85000ea20031a834c7c0dc812fa6" category="cell">선택한 개별 옵션을 기준으로 합니다</block>
-  <block id="a95aa28d4b3530db8d3db453e8c20ab5" category="cell"><block ref="a95aa28d4b3530db8d3db453e8c20ab5" category="inline-link-rx"></block></block>
-  <block id="16327cd02ebd080bd4ab1439ff960ddc" category="cell">FAS2720</block>
-  <block id="b6000f9eed7f8ea9ee4632bd2f77961a" category="cell">AFF C190</block>
-  <block id="cbea754cca3463101f74bfb7d1bc03d6" category="cell"><block ref="cbea754cca3463101f74bfb7d1bc03d6" category="inline-link-rx"></block></block>
-  <block id="8fd3ca5f66dff5be16e79560dd28171e" category="cell">AFF A220</block>
   <block id="489c8707e7f92883a9ec4c6edf2f6a9a" category="cell">FAS2620</block>
   <block id="47cb00554d2eb8ec09a2188765488fb1" category="cell"><block ref="47cb00554d2eb8ec09a2188765488fb1" category="inline-link-rx"></block></block>
   <block id="8541975335a64aeefea980107946fbbf" category="cell">FAS2650</block>
-  <block id="3781cddbae6140211cb434f6417882ce" category="section-title">E-Series 스토리지</block>
-  <block id="4902aa44336408dddd38c0479fe504ef" category="paragraph">FlexPod Express 아키텍처에는 NetApp E2800 시리즈 컨트롤러의 HA 쌍이 필요합니다. 컨트롤러는 SANtricity OS를 실행합니다.</block>
   <block id="b8d29742df41ef40fca1e44a7b490835" category="cell">부품 번호</block>
   <block id="36ea2743576b4967eefec734fdf225a7" category="cell">E2800</block>
-  <block id="53c263cd06df58fafb10fa135e0f2e44" category="cell"><block ref="53c263cd06df58fafb10fa135e0f2e44" category="inline-link-rx"></block></block>
-  <block id="de2be91fbb0de06f0b2732c5a99e11c3" category="section-title">NetApp 이더넷 확장 모듈</block>
-  <block id="8dfa7ec1924d6836cd846ce203c23dc5" category="paragraph">다음 표에는 NetApp FAS10GbE 어댑터 옵션이 나와 있습니다.</block>
-  <block id="7f3028ae831db8dc789fcaf5083b67a1" category="cell">NetApp X1117A</block>
   <block id="3424b3142efd4fd91bcc7a0aae183edc" category="cell">X1117A-R6</block>
-  <block id="7ebf4cf225b0039554b11ba9739e96f6" category="cell"><block ref="7ebf4cf225b0039554b11ba9739e96f6" category="inline-link-rx"></block></block>
-  <block id="032ae7705e1b64f4c8f06ff0e9b7e2c3" category="paragraph">FAS2500 및 2600 시리즈 스토리지 시스템에는 온보드 10GbE 포트가 있습니다.</block>
-  <block id="e23d7f86a0278da7e86ce88ca3098b9f" category="paragraph">NetApp X1117A 어댑터는 FAS8020 스토리지 시스템용으로,</block>
-  <block id="f54e4b7933ef38204949d3a83481962e" category="paragraph">다음 표에는 E-Series 10GbE 어댑터 옵션이 나와 있습니다.</block>
-  <block id="989d8b1efd9728a1f4403d859cfafa07" category="cell">10GbE iSCSI/16Gb FC 4포트</block>
   <block id="933670a4d85c94c9cb9905a6cf8ba6fb" category="cell">X-56025-00-0E-C</block>
-  <block id="8deedaecaf3bd8a376053c8fe5b36120" category="cell">10GbE iSCSI/16Gb FC 2포트</block>
   <block id="a2ad525931e1561da0bf06fd2a0fc848" category="cell">X-56024-00-0E-C</block>
-  <block id="1bc638deca35e86ccf9d6865333e96a6" category="paragraph">E2824 시리즈 스토리지 시스템에는 온보드 10GbE 포트가 있습니다.</block>
-  <block id="97b5213b54614d160f129b298de19346" category="paragraph">10GbE iSCSI/16Gb FC 4-포트 HIC(호스트 인터페이스 카드)를 사용하여 추가 포트 밀도를 사용할 수 있습니다.</block>
-  <block id="aff526161ed70a6f9d6b85b6800e12d8" category="paragraph">온보드 포트와 HIC는 SANtricity OS에서 활성화된 기능에 따라 iSCSI 어댑터 또는 FC 어댑터로 작동할 수 있습니다.</block>
-  <block id="8dc2a05b711e433f817d77bc37b8e318" category="paragraph">지원되는 어댑터 옵션에 대한 자세한 내용은 의 어댑터 섹션을 참조하십시오<block ref="ad8f1191d953a17400c53bce24cbde3e" category="inline-link-rx"></block>.</block>
   <block id="1f1fc06df75fe331417471e6222090a6" category="section-title">기능과 이점을 제공합니다</block>
-  <block id="e587981e2cc19bde7c343adbd392b487" category="paragraph">스토리지 컨트롤러를 사용하려면 NetApp 디스크 쉘프가 하나 이상 필요합니다. 선택한 NetApp 쉘프 유형에 따라 해당 쉘프 내에서 사용 가능한 드라이브 유형이 결정됩니다.</block>
-  <block id="aa2619dafbcb6dd49712ffa15d6e70ca" category="paragraph">FAS2700 및 FAS2600 컨트롤러 시리즈는 동일한 섀시 내에 있는 디스크와 이중 스토리지 컨트롤러를 포함하는 구성으로 제공됩니다. 이 구성은 SATA 또는 SAS 드라이브에서 제공됩니다. 따라서 성능 또는 용량 요구사항에 따라 더 많은 스핀들이 필요한 경우가 아니라면 추가 외부 디스크 쉘프가 필요하지 않습니다.</block>
-  <block id="01c732ddbe5cf9a405604940095bb567" category="paragraph">모든 디스크 쉘프 부품 번호는 AC PSU 2개가 장착된 빈 쉘프에 사용됩니다. 추가 부품 번호는 영업 담당자에게 문의하십시오.</block>
-  <block id="2ccff5b6fc2b318863489fe23166a10f" category="paragraph">디스크 드라이브 부품 번호는 구입하려는 디스크의 크기 및 폼 팩터에 따라 다릅니다. 추가 부품 번호는 영업 담당자에게 문의하십시오.</block>
   <block id="686e928fa0712da263b183fc5953b192" category="paragraph">다음 표에는 NetApp Hardware Universe에서 제공되는 각 쉘프 유형의 지원되는 드라이브와 NetApp 디스크 쉘프 옵션이 나와 있습니다. Hardware Universe 링크를 따라 사용 중인 ONTAP 버전을 선택한 다음 쉘프 유형을 선택합니다. 쉘프 이미지에서 지원 드라이브를 클릭하여 특정 버전의 ONTAP 및 디스크 쉘프에서 지원되는 드라이브를 확인합니다.</block>
   <block id="f181ba3ace6af6a974fb36f70eb1de09" category="cell">DS212C</block>
-  <block id="44f1e702e4381b727b9b467e6deb1457" category="cell">DS212C-0-12</block>
-  <block id="e19c8e25dcabb60416fbaf4aa1df046b" category="inline-link-macro">디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브</block>
-  <block id="2bec892ce742e8c73332c7bc09f14b12" category="cell"><block ref="2bec892ce742e8c73332c7bc09f14b12" category="inline-link-macro-rx"></block></block>
   <block id="931416d8408ea42c440826255358e97e" category="cell">DS224C</block>
-  <block id="633f96f7409deb7e8f37e73fd09d0b49" category="cell">DS224C-0-24</block>
   <block id="9111f621282fe2ae515f50178407689b" category="cell">DS460C</block>
-  <block id="8420e25ff187188cdf1350dea3e0da50" category="cell">DS460C-0-60</block>
-  <block id="947b2a122e29ff37898607afe1982ac4" category="inline-link-macro">디스크 쉘프 및 스토리지 미디어 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브</block>
-  <block id="5ff0f5fdd5ee93de0b72179921b632c7" category="cell"><block ref="5ff0f5fdd5ee93de0b72179921b632c7" category="inline-link-macro-rx"></block></block>
   <block id="e688c272d2fffea0002fa7b68d0816ed" category="cell">DS2246</block>
-  <block id="5c8ec48c5b82542591c0713df834204e" category="cell">X559A-R6</block>
   <block id="4ff171b65bafa644d75f512e8e9e42e8" category="cell">DS4246</block>
-  <block id="be38be39f95912dc5d7540b6eab3675b" category="cell">X24M-R6</block>
-  <block id="a35582cda1497b785cabaa95e67fda6e" category="cell">DS4486</block>
-  <block id="dd80b8e252131fa8d01cd79345fa248a" category="cell">DS4486-144TB-R5-C</block>
-  <block id="78377b1fee9a1d92a41f9a862331f66a" category="paragraph">섀시에 드라이브를 설치하지 않은 스토리지 컨트롤러에는 NetApp 디스크 쉘프가 하나 이상 필요합니다. 선택한 NetApp 쉘프 유형에 따라 해당 쉘프 내에서 사용 가능한 드라이브 유형이 결정됩니다.</block>
-  <block id="6a70b0dc6f4898b15d42b97a834778d0" category="paragraph">E2800 시리즈 컨트롤러는 이중 스토리지 컨트롤러와 지원 디스크 쉘프 내에 있는 디스크를 포함하는 구성으로 제공됩니다. 이 구성은 SSD 또는 SAS 드라이브와 함께 제공됩니다.</block>
-  <block id="f69937b358d3964065cdd4699ed6cc71" category="paragraph">다음 표에는 NetApp Hardware Universe에서 제공되는 각 쉘프 유형과 지원되는 드라이브가 나와 있습니다. Hardware Universe 링크를 따라 사용 중인 ONTAP 버전을 선택한 다음 쉘프 유형을 선택합니다. 쉘프 이미지에서 지원 드라이브를 클릭하여 특정 버전의 ONTAP 및 디스크 쉘프에서 지원되는 드라이브를 확인합니다.</block>
   <block id="56d5920f093315d1b4acca4634ea813e" category="cell">DE460C</block>
-  <block id="57bbc77af8a105b9a809e104576e41f3" category="cell">E-X5730A-DM-0E-C</block>
   <block id="584fd083c6ecc41e5c3ffc499f8ab0a9" category="inline-link-macro">디스크 쉘프 기술 사양 NetApp Hardware Universe에서 지원되는 드라이브</block>
   <block id="c3c70a025a43288d90bdce976b95b5fe" category="cell"><block ref="c3c70a025a43288d90bdce976b95b5fe" category="inline-link-macro-rx"></block></block>
   <block id="a5f9824c590e18e6091df73fb2e89fb0" category="cell">DE224C</block>
-  <block id="b6392f00acb980e1e1e3a8d82c32aa0a" category="cell">E-X5721A-DM-0E-C</block>
   <block id="23db6e1ce7ed6f190630ed4641f8294c" category="cell">DE212C</block>
-  <block id="1968845ff3f8eb770c5023b2b97452ca" category="cell">E-X5723A-DM-0E-C</block>
-  <block id="0af8a804b712d0825208533faf65cb71" category="cell"><block ref="0af8a804b712d0825208533faf65cb71" category="inline-link-macro-rx"></block></block>
   <block id="391fe0d4864f4c09c2d64335983c2f05" category="section-title">NetApp 소프트웨어 라이센스 옵션</block>
-  <block id="e9cdd46337310a645aec0a674a365f9c" category="paragraph">다음 표에는 NetApp FAS 소프트웨어 라이센스 옵션이 나와 있습니다.</block>
   <block id="96246effc3080bfc941225e2e5109fbf" category="cell">NetApp 소프트웨어 라이센스</block>
   <block id="1fe3c9d0657c143dd35fa09974da425b" category="cell">부품 번호</block>
-  <block id="fa222d7270c823d42a7aa65b759f6af1" category="cell">기본 클러스터 라이센스</block>
   <block id="c7e8b7d7c123ac400c6d68b7843b0b6b" category="cell">라이센스 정보에 대한 자세한 내용은 NetApp 세일즈 팀에 문의하십시오.</block>
-  <block id="b3a478327ab835bf2518a6dcd305aca6" category="paragraph">다음 표에는 E-Series 소프트웨어 라이센스 옵션이 나와 있습니다.</block>
   <block id="201a759313c041bb34fef6573e5f716f" category="cell">NetApp 소프트웨어 라이센스</block>
-  <block id="5a020197814e93aa70dec9cef71cbea2" category="cell">표준 피처</block>
-  <block id="ad28f33b7e604cc3e6f9e3bdbb376b87" category="cell">프리미엄 기능</block>
   <block id="1663bc309b0a1ddf5774db5075160041" category="section-title">NetApp 지원 라이센스 옵션</block>
   <block id="f263fbecd68ad30f21b5919fbdf5376c" category="paragraph">SupportEdge Premium 라이센스는 필수이며, 이러한 라이센스의 부품 번호는 FlexPod Express 설계에서 선택한 옵션에 따라 달라집니다.</block>
-  <block id="1d6cb8d880e983c90f1b5fe9f10dec29" category="paragraph">다음 표에는 NetApp FAS에 대한 NetApp 지원 라이센스 옵션이 나와 있습니다.</block>
   <block id="c453f553d73c506df5a01e3bd8ff03e0" category="cell">NetApp Support 라이센스</block>
   <block id="13163c7b776f46d35bcf8a753d9e4c1b" category="cell">SupportEdge Premium4 운영 시간, 월:36</block>
   <block id="34ff3e9936bccd6963e8de9dc3992201" category="cell">CS-O2-4시간</block>
-  <block id="813e53e7bb54b15e72348ce9fe93dbdc" category="paragraph">다음 표에는 E-Series 스토리지에 대한 NetApp 지원 라이센스 옵션이 나와 있습니다.</block>
-  <block id="ef63debe35aa2ea907cf5d6ba93bbca3" category="cell">하드웨어 지원 프리미엄 4시간 현장 지원, 월:36</block>
-  <block id="3700267a6a1c84c57290ba35d60b6065" category="cell">SVC-O2-4HR-E</block>
-  <block id="9f65492afee4fdfba75618fed6d0f9dd" category="cell">소프트웨어 지원</block>
-  <block id="35650dfddfa3359e3aa85c6716443b52" category="cell">SW-SSP-O2-4HR-E</block>
-  <block id="6fa548f2ea82ea7bbec17cd526290147" category="cell">초기 설치</block>
-  <block id="bb0003710f860d01ecd5e29fd0d58e46" category="cell">SVC - INST-O2-4HR-E</block>
   <block id="64253ff18621f1451be7a39f52dd1ca0" category="summary">이 섹션에서는 다양한 버전의 FlexPod Express에 대한 연결 요구 사항에 대해 설명합니다.</block>
   <block id="77495e745fe2123250999bee6aa73027" category="doc">연결 요구 사항</block>
-  <block id="28a658c09df622f2d6f953483678d3a2" category="section-title">FAS Express with NetApp FlexPod의 연결 요구 사항</block>
-  <block id="2467c21b33489260420ee026bba07a71" category="paragraph">NetApp FAS를 사용한 FlexPod Express의 연결 요구사항은 다음과 같습니다.</block>
-  <block id="e8a8ee9f387175a38ab3cd7ab8c9c450" category="list-text">스토리지 컨트롤러가 패브릭 인터커넥트에 연결된 Cisco UCS 관리 구성은 제외하고 NetApp FAS 스토리지 컨트롤러는 Cisco Nexus 스위치에 직접 연결되어야 합니다.</block>
   <block id="c74efeb9e8a209000cc3750e2028fe8e" category="list-text">핵심 FlexPod 구성 요소 사이에 추가 장비를 인라인으로 배치할 수 없습니다.</block>
-  <block id="20f5c05d802f86a9dc5a71123dcf7f90" category="list-text">Cisco Nexus 3000/9000 시리즈 스위치를 NetApp 스토리지 컨트롤러에 연결하려면 가상 포트 채널(vPC)이 필요합니다.</block>
   <block id="dbf427db07f695dc99a56e396fa4671e" category="list-text">반드시 필요한 것은 아니지만 환경 전체에서 점보 프레임 지원을 사용하도록 설정하는 것이 좋습니다.</block>
-  <block id="e504d8cf4401a55e1b0165ee1b3e65c1" category="section-title">FlexPod Express와 NetApp E-Series의 연결 요구사항</block>
-  <block id="828aa04bde11fb714ecad3836974965c" category="paragraph">E-Series와 FlexPod Express의 연결 요구사항은 다음과 같습니다.</block>
-  <block id="78f7b3e86fb75185493f675cd8008b43" category="list-text">E-Series 스토리지 컨트롤러는 패브릭 인터커넥트에 직접 연결되어야 합니다.</block>
-  <block id="5b364171b0c8793377902d6d0651c2ca" category="list-text">핵심 FlexPod 구성 요소 사이에 추가 장비를 인라인으로 배치해서는 안 됩니다.</block>
-  <block id="e8f973aa66dd486a45698bd79073f3a3" category="list-text">VPC는 패브릭 상호 연결과 이더넷 스위치 사이에 필요합니다.</block>
-  <block id="a11b95a855c1b54b057581b64e849672" category="section-title">AFF Express with NetApp FlexPod의 연결 요구 사항</block>
-  <block id="16badd8a3ee31de86136a03964051924" category="paragraph">NetApp AFF를 사용한 FlexPod Express의 연결 요구사항은 다음과 같습니다.</block>
-  <block id="20a982ddbb8534dcddbeb2403b3aa48b" category="list-text">스토리지 컨트롤러가 패브릭에 연결되어 있는 Cisco UCS 관리 구성의 경우를 제외하고 NetApp AFF 스토리지 컨트롤러는 Cisco Nexus 스위치에 직접 연결되어 있어야 합니다. 상호 연결.</block>
   <block id="9498c273a77b43c31823b8399ab32e23" category="summary">FlexPod 데이터 센터 구성에는 스위치, 패브릭 인터커넥트, 서버, NetApp 스토리지 컨트롤러를 비롯한 최소 하드웨어 요구사항이 있습니다.</block>
   <block id="3081736b57e4a1c5208bea8ee10f6000" category="doc">최소 하드웨어 요구 사항</block>
   <block id="69c265fd63403bd4b4f765be99701902" category="paragraph">Cisco UCS 서버를 사용해야 합니다. 검증된 설계에는 C-Series 서버와 B-Series 서버가 모두 사용되었습니다. Cisco Nexus Fabric Extender(FEX)는 C-Series 서버에서 선택 사항입니다.</block>
@@ -5632,53 +4808,22 @@
   <block id="db9522af2119f167ded30369ddb56248" category="doc">Cisco 구성 요소</block>
   <block id="ae19f05a830d151c2615c3f564dbf6e4" category="paragraph">Cisco는 FlexPod Express 설계 및 아키텍처에 크게 기여했으며 솔루션의 컴퓨팅 및 네트워킹 계층에 기여하고 있습니다. 이 섹션에서는 FlexPod Express에 사용할 수 있는 Cisco UCS 및 Cisco Nexus 구성 요소에 대해 설명합니다.</block>
   <block id="6040e3d7bd65cad2d7a7ff96eb5d75a0" category="section-title">Cisco UCS B-Series 블레이드 서버 옵션</block>
-  <block id="161416633732939174f0084bee4e12dd" category="paragraph">Cisco UCS Mini 플랫폼에서 현재 지원되는 Cisco UCS B-Series 블레이드는 B200 M5 및 B420 M4입니다. Cisco UCS Mini 플랫폼에서 지원되는 다른 블레이드는 다음 표에 나열되어 있습니다.</block>
-  <block id="f38b8b587e9f14b9e73f43bca53aaca6" category="cell">Cisco UCS B-Series 서버</block>
-  <block id="3f39eebc8fd17c2feb641e92c34d12c0" category="cell">UCSB-B200-M5</block>
-  <block id="0c62844a851844dee772ec980d29820f" category="cell"><block ref="0c62844a851844dee772ec980d29820f" category="inline-link-rx"></block></block>
   <block id="0ca21c30de766215c08efdf39aaf5ec6" category="cell">Cisco UCS B200 M4</block>
-  <block id="9c08b0397caf8f25e294bcbc2a0e51e0" category="cell">UCSB-B200-M4</block>
-  <block id="ac1175516123e986fbebc9c380c91cb2" category="cell"><block ref="ac1175516123e986fbebc9c380c91cb2" category="inline-link-rx"></block></block>
   <block id="16ce5f08f1838c5b09cafd0f66d61618" category="cell">Cisco UCS B420 M4</block>
-  <block id="1bb38dda39bfc4b450ad1fa6b1f2f10f" category="cell">UCSB-B420-M4</block>
-  <block id="5d83ae1d88bf36bed0b1d2449b04f153" category="cell"><block ref="5d83ae1d88bf36bed0b1d2449b04f153" category="inline-link-rx"></block></block>
   <block id="0adca13cab777a69d4b054794aadc650" category="section-title">Cisco UCS C-Series 랙 서버 옵션</block>
-  <block id="5cc6fea3917960a74b91b7c9e2facb0e" category="paragraph">Cisco UCS C-Series 블레이드는 다양한 CPU, 메모리 및 I/O 옵션과 함께 1랙 및 2랙 유닛(RU)에서 사용할 수 있습니다. 다음 표에 나열된 부품 번호는 기본 서버용으로, CPU, 메모리, 디스크 드라이브, PCIe 카드 또는 Cisco FEX를 포함하지 않습니다. FlexPod에서는 다양한 구성 옵션을 사용할 수 있으며 지원됩니다.</block>
   <block id="a06b1914f736d12f90cd77c9af669070" category="cell">Cisco UCS C-Series 랙 서버</block>
   <block id="3d3e7498eb83106d42213f0cb268ec28" category="cell">Cisco UCS C220 M4</block>
-  <block id="efb31487552780cc76e9a29d20184693" category="cell">UCSC-C220-M4S</block>
   <block id="015f3e0e1285a3b647bb9c22602c6d3d" category="cell"><block ref="015f3e0e1285a3b647bb9c22602c6d3d" category="inline-link-rx"></block></block>
   <block id="b4f1f9dcafe65f054980c2429b7e4fe0" category="cell">Cisco UCS C240 M4</block>
-  <block id="5f3ecc5f801e8e8bb5df99c057b684fa" category="cell">UCSC-C240-M4S</block>
-  <block id="1ba4695c60f2d279f93eed3eb2152ba9" category="cell"><block ref="1ba4695c60f2d279f93eed3eb2152ba9" category="inline-link-rx"></block></block>
   <block id="d6ba403ce50c836b970a66ecbf0ecdc3" category="cell">Cisco UCS C460 M4</block>
-  <block id="1ca9137ed7dc87266aed4d3e04a87f0d" category="cell">UCSC-C460-M4</block>
-  <block id="4135b1f88de8126a1b6c689f2a5518c9" category="cell"><block ref="4135b1f88de8126a1b6c689f2a5518c9" category="inline-link-rx"></block></block>
-  <block id="f43aaff2468c45d0f90ab6e5ed1b9cf5" category="paragraph">모든 FlexPod Express 아키텍처에는 이중 스위치가 필요합니다.</block>
-  <block id="52915eb93f26eeee40e30d06f695984e" category="paragraph">NetApp AFF 또는 FAS 기반 FlexPod Express 아키텍처는 Cisco Nexus 31108 스위치로 구축됩니다. Cisco UCS Mini(Cisco UCS 관리) 아키텍처를 지원하는 FlexPod Express는 Cisco Nexus 3524 스위치를 사용하여 검증되었습니다. 이 구성은 표준 스위치를 사용하여 구축할 수도 있습니다.</block>
-  <block id="fc9e9a0b578a9b8d829c2cb6bd084c68" category="paragraph">FlexPod Express with E-Series는 표준 스위치로 구축할 수 있습니다.</block>
-  <block id="4f96a991d5f91ae3be3cc9021d2c6e2b" category="paragraph">다음 표에는 Cisco Nexus 시리즈 섀시의 부품 번호가 나열되어 있습니다. 추가 SFP 또는 애드온 모듈은 포함되지 않습니다.</block>
-  <block id="2bbe88f083e6858cdfe374ccaf6be275" category="cell">Cisco Nexus 시리즈 스위치</block>
   <block id="fe922743f57bd9fe09073e06dfaa8562" category="cell">Cisco Nexus 3048</block>
-  <block id="5ad9a3010c89c80bb3aa7a0affd03857" category="cell">N3K-C3048TP-1GE</block>
-  <block id="bca15c4c99e7cd3f6ddc54c4b4612d5d" category="cell"><block ref="bca15c4c99e7cd3f6ddc54c4b4612d5d" category="inline-link-rx"></block></block>
   <block id="bcb774780e8d431f7c74b993455401f2" category="cell">Cisco Nexus 31108</block>
-  <block id="f9be542096d7b1ab5d2d93607faeda17" category="cell">N3K-C31108PC-V</block>
   <block id="9046c11a635a56d5f33defad32cbf04b" category="cell"><block ref="9046c11a635a56d5f33defad32cbf04b" category="inline-link-rx"></block></block>
   <block id="4d564ca33dddefc90bcdd42e961950c9" category="cell">Cisco Nexus 9396</block>
-  <block id="3707cb9d69f6ca356e13d71259590dd3" category="cell">N9K-C9396PX</block>
-  <block id="3b73c0ec0414b0e1e64751a894762753" category="cell"><block ref="3b73c0ec0414b0e1e64751a894762753" category="inline-link-rx"></block></block>
-  <block id="c7e9fa4b09131bf2dca41fb8fb160730" category="cell">Cisco Nexus 3172</block>
-  <block id="8c04dff9e93fca86fc136c09b31a6a42" category="cell">N3K-C3172</block>
-  <block id="603af49aa411100c77de6e505d0b6801" category="cell"><block ref="603af49aa411100c77de6e505d0b6801" category="inline-link-rx"></block></block>
   <block id="83842e9d3448fa9b32e931956ae716a9" category="section-title">Cisco 지원 라이센스 옵션</block>
-  <block id="11651dc58d0730f5034b8d0eb347e9a6" category="paragraph">FlexPod Express 아키텍처의 모든 Cisco 장비에는 유효한 SMARTnet 지원 계약이 필요합니다.</block>
-  <block id="41ff4d4c2bfb1ad6625676e61801ba88" category="admonition">각 제품에 따라 다를 수 있으므로 필요한 라이선스와 해당 라이선스의 부품 번호는 영업 담당자가 확인해야 합니다.</block>
   <block id="5ab41268bb536bea361ff025dad26212" category="paragraph">다음 표에는 Cisco 지원 라이센스 옵션이 나와 있습니다.</block>
   <block id="950f825ced706454b39f75815a9410fa" category="cell">Cisco 지원 라이센스</block>
   <block id="b33eb2786fac85b1eee28de1d30760e6" category="cell">사용권 안내서</block>
-  <block id="8f16724e5369868d6e34483257829468" category="cell">SMARTNET 24XNET 4</block>
-  <block id="f312eeb62002bbf3617b218baf8ae4da" category="cell"><block ref="f312eeb62002bbf3617b218baf8ae4da" category="inline-link-rx"></block></block>
   <block id="e6426bd86d0d3af225952b63c263f83d" category="summary">FlexPod Express에 대한 추가 요구 사항은 다음과 같습니다.</block>
   <block id="8293f6bcd4201a597ff59371ddd65240" category="doc">기타 요구 사항</block>
   <block id="99850d99c802817315214eb8be6522a3" category="paragraph">FlexPod 익스프레스에 대한 추가 요구 사항은 다음과 같습니다.</block>
@@ -5691,7 +4836,6 @@
   <block id="37dca77319b34332b146930ec37563f5" category="inline-link">Cisco HCL</block>
   <block id="66b98d07c85cd975d27be516745403c1" category="list-text">모든 Cisco 하드웨어 구성 요소는 에 나열되고 지원되어야 합니다<block ref="243ee419838ead03039b3c014c885e78" category="inline-link-rx"></block>.</block>
   <block id="bab7ecc6925e954c51d985d3cfebfa4b" category="summary">NetApp ONTAP 소프트웨어는 모든 NetApp FAS 또는 AFF 시스템에 설치됩니다. FlexPod는 ONTAP 소프트웨어를 통해 검증되었으며 무중단 운영, 무중단 업그레이드 및 민첩한 데이터 인프라를 지원하는 확장성이 뛰어난 스토리지 아키텍처를 제공합니다.</block>
-  <block id="cc910127c1a0f3009d24973fab296857" category="paragraph">NetApp ONTAP 소프트웨어는 모든 NetApp FAS, AFF 및 AFF ASA(All SAN Array) 시스템에 설치됩니다. FlexPod는 ONTAP 소프트웨어를 통해 검증되었으며 무중단 운영, 무중단 업그레이드 및 민첩한 데이터 인프라를 지원하는 확장성이 뛰어난 스토리지 아키텍처를 제공합니다.</block>
   <block id="9c58e11f96200548fd2f5932b391509a" category="inline-link">ONTAP 데이터 관리 소프트웨어</block>
   <block id="bc4050fb27f781ecbcefa1ccdeac344d" category="paragraph">ONTAP에 대한 자세한 내용은 를 참조하십시오<block ref="1eb8c52ba0319aa3751cd7ed82b4945b" category="inline-link-rx"></block> 제품 페이지.</block>
   <block id="de288244a836060886fb7b1be0145031" category="summary">이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 및 웹 사이트를 참조하십시오</block>
@@ -5783,9 +4927,7 @@
   <block id="038cbaf96928fa185557eb89b7e24b51" category="list-text">타겟에서 패브릭 인터커넥트까지의 이더넷 포트는 CIFS/NFS 데이터용 이더넷 스토리지 포트로 구성됩니다.</block>
   <block id="2fe9f1b02d69ad8ef2e636eb4f330189" category="summary">이 문서에서는 FlexPod 익스프레스 플랫폼의 기술 사양을 제공합니다.</block>
   <block id="7501c5e58e67ce758d854a0f76243785" category="doc">FlexPod 플랫폼</block>
-  <block id="929267c420e3d3c55cf94c77cb6278ff" category="paragraph">FlexPod 플랫폼에는 3가지 플랫폼이 있습니다.</block>
   <block id="d0ed65e54397020ba99377dad07d0960" category="inline-link">TR-4036: FlexPod 데이터 센터 기술 사양</block>
-  <block id="b751a075630ee799e9ae603044754240" category="list-text">* FlexPod 데이터 센터. * 이 플랫폼은 워크로드 엔터프라이즈 애플리케이션, 가상화, VDI, 퍼블릭 및 프라이빗 클라우드에 적합한 대규모 확장형 가상 데이터 센터 인프라입니다. FlexPod 데이터 센터에서는 에 나와 있는 고유 사양이 제공됩니다<block ref="c74831bb1a85ac0f8575eb8eeac86329" category="inline-link-rx"></block>.</block>
   <block id="ec80c81f43eaed2db319aaaddeb1b47c" category="list-text">* FlexPod 익스프레스. * 이 플랫폼은 원격 사무소 및 에지 사용 사례를 대상으로 하는 소형 통합 인프라입니다.</block>
   <block id="e40160a33afbac1229efb757e5e03591" category="summary">이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요한 추가 기술 사양에 대해 설명합니다.</block>
   <block id="209fbfad3dfefea8146a1134b927e2ab" category="doc">기술 사양 및 참조 자료</block>
@@ -6018,14 +5160,8 @@
   <block id="363516c7d28783cb5332db685b125e9f" category="paragraph">이 문서에서는 FlexPod 데이터 센터 플랫폼의 기술 사양을 제공합니다.</block>
   <block id="245c499a8eb2230fa27979a452c776e5" category="summary">이 섹션에 나열된 스토리지 운영 체제는 FlexPod Express 플랫폼에서 지원됩니다.</block>
   <block id="a64c8d59be31b09362634dedf23d4e86" category="doc">스토리지 소프트웨어</block>
-  <block id="5906d6dbdea0ad13566afd9cead9fc2c" category="paragraph">FlexPod Express는 NetApp ONTAP 또는 SANtricity 운영 체제를 실행하는 스토리지 시스템을 지원합니다.</block>
-  <block id="07bb9fea02eb345871ff44646d8ceb97" category="paragraph">NetApp ONTAP 소프트웨어는 AFF 및 FAS 스토리지 시스템에서 실행되는 운영 체제입니다. ONTAP은 무중단 운영, 무중단 업그레이드 및 민첩한 데이터 인프라를 지원하는 확장성이 뛰어난 스토리지 아키텍처를 제공합니다.</block>
   <block id="1e3274a40d2751f8442f3b15fddb1f21" category="inline-link">ONTAP 제품 페이지</block>
   <block id="0f9b0a6f89a44a0888a692ccc45abc12" category="paragraph">ONTAP에 대한 자세한 내용은 를 참조하십시오<block ref="88cc62f55a4daad34ef58813e7e4f1c6" category="inline-link-rx"></block>.</block>
-  <block id="02a5537e181da938c0f5cb453ba3d4a7" category="section-title">E-Series SANtricity 소프트웨어</block>
-  <block id="0ba0549652aeb08deee908e7e20e4817" category="paragraph">E-Series SANtricity 소프트웨어는 E-Series 스토리지 시스템에서 실행되는 운영 체제입니다. SANtricity는 다양한 애플리케이션 요구를 충족하는 매우 유연한 시스템을 제공하며 기본 제공되는 고가용성 및 다양한 데이터 보호 기능을 제공합니다.</block>
-  <block id="54ea526e0f7043f1dc938cd7369a4327" category="inline-link">SANtricity 제품 페이지</block>
-  <block id="6b5301ce1cf7e0e48684f0dfb047d000" category="paragraph">자세한 내용은 를 참조하십시오<block ref="886f8cec6f6fad388084013f5ad16d82" category="inline-link-rx"></block>.</block>
   <block id="5c6023ee4b202fd210e040f3256ae3bb" category="summary">기술 사양은 섀시, FEX, 서버, 스위치, 스위치 등 FlexPod 솔루션의 하드웨어 구성 요소에 대한 세부 정보를 제공합니다. 및 스토리지 컨트롤러.</block>
   <block id="545eb122d6490808d1415c5c5bdd774c" category="doc">기술 사양 및 참조 자료</block>
   <block id="bad8a4f88c94235d7705cc936c07c298" category="section-title">Cisco UCS B-Series 블레이드 서버 섀시</block>
@@ -6305,26 +5441,6 @@
   <block id="25079732f60afd75f99afc487816d44d" category="paragraph">CVD(Cisco Validated Design) 또는 NVA(NetApp Verified Architecture)는 각각 가능한 FlexPod 구성입니다. Cisco와 NetApp은 이러한 구성 조합을 문서화하고 광범위한 엔드 투 엔드 테스트를 통해 이러한 조합을 검증합니다. 이 문서에서 설명하는 지침을 따르고 모든 구성 요소가 Cisco HCL 및 NetApp에서 호환되는 것으로 나열된 경우, 이러한 구성에서 벗어난 FlexPod 구축이 완전히 지원됩니다<block ref="af8f174925a8fa1af2321b8d8c2fd047" category="inline-link-rx"></block>.</block>
   <block id="4751485bb758a4c3a478dcfdc8a7c2d3" category="paragraph">예를 들어, 소프트웨어, 하드웨어 및 구성이 이 문서에 정의된 지침을 충족하는 경우 스토리지 컨트롤러 또는 Cisco UCS 서버를 추가하고 소프트웨어를 최신 버전으로 업그레이드할 수 있습니다.</block>
   <block id="22d1bbaef8aaaea675c6f0e9e7ab65bb" category="summary">이 섹션에서는 다양한 버전의 FlexPod Express에 대한 최소 하드웨어 요구 사항을 설명합니다.</block>
-  <block id="003f30db243c2dbde6df76f3c72b3ee0" category="section-title">FAS 익스프레스 및 NetApp FlexPod</block>
-  <block id="84daec59b75a10e0cd013d1db7a434f5" category="paragraph">기본 스토리지에 NetApp FAS 컨트롤러를 사용하는 FlexPod 익스프레스 솔루션의 하드웨어 요구사항에는 이 섹션에 설명되어 있는 구성이 포함됩니다.</block>
-  <block id="d889bada95a4507597263f4085f7eb35" category="section-title">CIMC 기반 구성(독립 실행형 랙 서버)</block>
-  <block id="dbf88aea6907acd1a2ddf8af6778500b" category="paragraph">CIMC(Cisco Integrated Management Controller) 구성에는 다음과 같은 하드웨어 구성요소가 포함됩니다.</block>
-  <block id="98b00d8d43ad07f702f22f5c8b541ca2" category="list-text">Cisco UCS C-Series 독립 실행형 랙 서버</block>
-  <block id="e5974ac049da72bf0d9c2228215d373b" category="list-text">2노드 클러스터로 구축된 고가용성(HA) 쌍 구성에서 AFF C190, AFF A250, FAS2600 또는 FAS 2700 시리즈 컨트롤러 2개</block>
-  <block id="1bd4b426108264f2676dc78d9d2018da" category="section-title">Cisco UCS로 관리하는 이기종 구성</block>
-  <block id="b2d15a256201c5ef01bc4171f55f63a5" category="paragraph">Cisco UCS 관리 확인에는 다음 하드웨어 구성요소가 포함됩니다.</block>
-  <block id="ff7cdf168363b590d56a466baa3afde4" category="list-text">중복 구성의 10Gbps 표준 이더넷 스위치 2개(Cisco Nexus 3524 권장)</block>
-  <block id="406d169fa8f2549e3ad818dfcdb19b11" category="list-text">Cisco UCS 5108 AC(Alternating Current) 블레이드 서버 섀시 1개</block>
-  <block id="086baf60c6e72c66b3d26f73749806e4" category="list-text">2개의 Cisco UCS 6324 패브릭 인터커넥트</block>
-  <block id="441c43a56d0619fd5ae52f04a07feaf6" category="list-text">Cisco UCS B-Series 서버(최소 4개의 Cisco UCS B200 M5 블레이드 서버)</block>
-  <block id="6e1c422f8099cdf6eb51d54a7f387fc7" category="list-text">HA 쌍 구성에서 AFF C190, AFF A250, FAS2750 또는 FAS2720 컨트롤러 2개(컨트롤러당 2개의 UTA2 포트 필요)</block>
-  <block id="0a83f68af275e8c4353563c551c8994b" category="section-title">E-Series를 지원하는 FlexPod Express</block>
-  <block id="b0a4ddda393f203e4b071531f5a7f619" category="paragraph">E-Series 스타터 구성이 포함된 FlexPod Express의 하드웨어 요구사항은 다음과 같습니다.</block>
-  <block id="5b0208ade6c01d9081b5843bdfb89e40" category="list-text">Cisco UCS Mini 섀시 5108 AC2 또는 DC2 1개(Cisco UCS 6324 패브릭 상호 연결은 AC2 및 DC2 섀시에서만 지원됨)</block>
-  <block id="6b83128e0bebf22e449e2c64d1d04814" category="list-text">Cisco UCS B-Series 서버(최소 2개의 Cisco UCS B200 M4 블레이드 서버)</block>
-  <block id="78b8483558b26cd46fee2865b0cd79f8" category="list-text">최소 12개 디스크 드라이브가 장착된 E-Series E2824 스토리지 시스템의 HA 쌍 구성 1개</block>
-  <block id="a280fbd318da098dcb3ca49ce43a800a" category="list-text">이중화 구성의 10Gbps 표준 이더넷 스위치 2개(데이터 센터의 기존 스위치 사용 가능)</block>
-  <block id="de4db249ee3e2be867ce1546536f4ab0" category="paragraph">이러한 하드웨어 구성 요소는 솔루션의 초기 구성을 구축하는 데 필요합니다. 필요에 따라 블레이드 서버와 디스크 드라이브를 추가할 수 있습니다. E-Series E2824 스토리지 시스템을 더 높은 플랫폼으로 교체할 수 있으며 All-Flash 시스템으로 실행할 수도 있습니다.</block>
   <block id="d1ee504272be66b0e2c5503627e6ba8a" category="summary">다음은 FlexPod 구성에 대한 연결 요구 사항입니다.</block>
   <block id="9fa25f8311910b1006f80d391d0a3536" category="paragraph">FlexPod 구성에는 다음과 같은 연결 요구 사항이 있습니다.</block>
   <block id="e795892d600814d6840b0ee7736d41f5" category="list-text">모든 구성 요소를 사용하려면 별도의 100Mbps 이더넷/1Gb 이더넷 대역외 관리 네트워크가 필요합니다.</block>
@@ -6346,17 +5462,7 @@
   <block id="b207b0ffff9b7370d85408a2970a05d5" category="paragraph">규칙 집합을 사용하여 유효한 FlexPod 구성을 빌드하거나 어셈블합니다. 이 문서에 나와 있는 숫자 및 규칙은 FlexPod의 최소 요구사항이므로 다른 환경과 사용 사례에 따라 포함된 제품군에서도 확장할 수 있습니다.</block>
   <block id="d160bac159341d29786704d75c654a94" category="summary">이 섹션에서는 다양한 버전의 FlexPod Express에 대한 최소 소프트웨어 요구 사항에 대해 설명합니다.</block>
   <block id="5d3fc3ec55d4860715dad56a4cecaf8c" category="doc">최소 소프트웨어 요구 사항</block>
-  <block id="986180b457f622bd099ee2687cd8378d" category="section-title">AFF Express with NetApp FAS 또는 FlexPod의 소프트웨어 요구 사항</block>
-  <block id="be062f8ed4a46c02546491540d98e022" category="paragraph">FAS Express with NetApp FlexPod의 소프트웨어 요구사항은 다음과 같습니다.</block>
-  <block id="d3426be49616eaf1b7e70f69c8de7848" category="list-text">ONTAP 9.1 이상</block>
-  <block id="224933be9d4d10a0fbff60cbd71f2cb1" category="list-text">Cisco NX-OS 버전 7.0(3) I6(1) 이상</block>
-  <block id="e076f9c04b344d5f8b351379153e417e" category="list-text">Cisco UCS 관리 구성에서 Cisco UCS Manager UCS 4.0(1b)</block>
   <block id="b01f33018dd67adc34ac91d2b1bb8acf" category="paragraph">모든 소프트웨어가 에 나열되고 지원되어야 합니다<block ref="542750ff2ff69f0b5f9f0ab1166bb952" category="inline-link-rx"></block>. 특정 소프트웨어 기능의 경우 이전 아키텍처에 나열된 최소 버전보다 더 최신 버전의 코드가 필요할 수 있습니다.</block>
-  <block id="86617f86b30dd24f1bd4725a98b449f5" category="section-title">FlexPod Express with E-Series의 소프트웨어 요구사항입니다</block>
-  <block id="aa9021c3475dd0f007a2c8fdeee731ce" category="paragraph">E-Series와 FlexPod Express의 소프트웨어 요구사항은 다음과 같습니다.</block>
-  <block id="5de9fd80c68cb9370e0ae8e8dd120d07" category="list-text">E-Series SANtricity 소프트웨어 11.30 이상</block>
-  <block id="2bb7ee63b402ba30890b4940ed00ca62" category="list-text">Cisco UCS Manager 4.0(1b):</block>
-  <block id="0674dd6b190b5769ec2b28d3d5cf0da3" category="paragraph">모든 소프트웨어가 에 나열되고 지원되어야 합니다<block ref="542750ff2ff69f0b5f9f0ab1166bb952" category="inline-link-rx"></block>.</block>
   <block id="160f9594439a5c252e567ca5fa56f9aa" category="summary">FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 컨트롤러(NetApp AFF 또는 FAS 시스템)를 기반으로 사전 설계되고 모범 사례 데이터 센터 아키텍처를 제공합니다.</block>
   <block id="ed4bde4fa0721113bfb61cca4c8d0b99" category="paragraph">Arvind Ramakrishnan, Jyh-shing Chen, NetApp</block>
   <block id="aa2f8bc486f5931602b4fd5aa1b0bde8" category="paragraph">FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 컨트롤러(AFF, ASA 또는 FAS 시스템)를 기반으로 사전 설계되며 모범 사례 데이터 센터 아키텍처를 제공합니다.</block>
@@ -6566,11 +5672,6 @@
   <block id="04c3e0734f13170a0eec62558afbb537" category="paragraph">다음 그림에서는 Cisco UCS 관리 구성의 FlexPod Express를 보여 줍니다.</block>
   <block id="8006c1f22f86e8ed6e0044a8f4d01f87" category="paragraph"><block ref="8006c1f22f86e8ed6e0044a8f4d01f87" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9a2595013afa6a7dc480a8aafec7df4c" category="inline-link">직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod Express</block>
-  <block id="cbd798af29c6d6c7309a2099d7629d42" category="summary">FlexPod Express는 Cisco UCS(Cisco Unified Computing System) 및 Cisco Nexus 스위치 제품군을 기반으로 사전 설계된 모범 사례 아키텍처이며, NetApp FAS 또는 NetApp E-Series 스토리지를 사용하여 스토리지 계층을 구축합니다.</block>
-  <block id="835c125660e1b86697ee2951435a5d2d" category="doc">TR-4293: FlexPod 익스프레스 기술 사양</block>
-  <block id="59dad7986b7e1d4c7d25feadecf54af7" category="paragraph">Karthick Radhakrishnan, Arvind Ramakrishnan, Lindsey Street, Savita Kumari, NetApp에서 근무했습니다</block>
-  <block id="01b5eb7de901fc377f6709faad98f27e" category="paragraph">FlexPod Express는 Cisco UCS(Cisco Unified Computing System) 및 Cisco Nexus 스위치 제품군을 기반으로 사전 설계된 모범 사례 아키텍처이며, NetApp FAS 또는 NetApp E-Series 스토리지를 사용하여 스토리지 계층을 구축합니다. FlexPod Express는 다양한 가상화 하이퍼바이저와 운영 체제(OS) 및 엔터프라이즈 워크로드를 실행하는 데 적합한 플랫폼입니다.</block>
-  <block id="b57f077428dce4df34f2d8532f2648c5" category="paragraph">FlexPod Express는 기본 구성뿐만 아니라 다양한 사용 사례와 요구 사항을 수용할 수 있도록 규모를 조정할 수 있는 유연성도 제공합니다. 이 문서에서는 사용된 스토리지 시스템, FlexPod Express with NetApp FAS 및 FlexPod Express with E-Series를 기반으로 FlexPod Express 구성을 분류합니다.</block>
   <block id="5e984544a43af85ba364cc4a2904b9f4" category="summary">다음 정보는 FlexPod 구성에 대한 최소 소프트웨어 요구 사항을 설명합니다.</block>
   <block id="9622697348706033bae0d471463ce58d" category="doc">최소 소프트웨어 요구 사항</block>
   <block id="514525e87a20f97644f98d1b8fce7cc6" category="paragraph">FlexPod 구성에는 다음과 같은 최소 소프트웨어 요구 사항이 있습니다.</block>
@@ -6630,7 +5731,6 @@
   <block id="33e4e289cefe243134e8d14e37181dd1" category="sidebar">유전체학을 위한 FlexPod</block>
   <block id="f4bb968e88fa8aec8a3ffd847dc271cd" category="sidebar">Epic EHR용 FlexPod 데이터 센터 구축 가이드 를 참조하십시오</block>
   <block id="a82a8aeb527fe34165f76582a421e44d" category="sidebar">MEDITECH 방향 사이징 가이드용 FlexPod</block>
-  <block id="e526ac3f58d71b824400abfda793a171" category="sidebar">MEDITECH용 FlexPod 데이터 센터 배포 가이드</block>
   <block id="d44c9646e3d10988230c569ec4cb40d8" category="sidebar">의료 영상용 FlexPod</block>
   <block id="eaf16f7a69c3f115b88a6d34c8665431" category="sidebar">가상 데스크톱 인프라</block>
   <block id="fc6345fff8f57c6444c27562b6290fd8" category="sidebar">최대 6,000개의 시트를 지원하는 Citrix Virtual Apps Desktops 1912 LTSR 및 VMware vSphere 7이 포함된 FlexPod 데이터 센터</block>
@@ -7564,7 +6664,6 @@
   <block id="182b99dd6e6e03bd87c6e4742f0efe61" category="inline-link-macro">이전: 솔루션 검증 - 네트워크.</block>
   <block id="b039f508b07fa442d12ced167cdee4ab" category="paragraph"><block ref="b039f508b07fa442d12ced167cdee4ab" category="inline-link-macro-rx"></block></block>
   <block id="a400e1c221e8c3e8b80a81f5085a481d" category="paragraph"><block ref="a400e1c221e8c3e8b80a81f5085a481d" category="inline-link-macro-rx"></block></block>
-  <block id="77adde3767ae2cc82097445aa8b15e86" category="list-text">이중화 구성의 10Gbps 표준 이더넷 스위치 2개(Cisco Nexus 31108 권장, Cisco Nexus 3000 및 9000 모델 지원)</block>
   <block id="40ad3b682c80f313282c440b74ef7360" category="paragraph"><block ref="40ad3b682c80f313282c440b74ef7360" category="inline-link-rx"></block></block>
   <block id="d1cdbd3c8324f3afbc5b420ce471feff" category="section-title">2022년 7월</block>
   <block id="f4b185ec676b1beb34726576b20e3951" category="list-text">이제 Capacity 위젯에서 클러스터 데이터 축소율에 대한 향상된 시각 자료를 사용할 수 있습니다</block>
@@ -9164,11 +8263,6 @@
   <block id="d335eeb839a0ef85080a9e93786ed9c5" category="list-text"><block ref="d335eeb839a0ef85080a9e93786ed9c5" category="inline-link-macro-rx"></block></block>
   <block id="d18608754f74434b85d4bf03483652bc" category="list-text"><block ref="d18608754f74434b85d4bf03483652bc" category="inline-link-macro-rx"></block></block>
   <block id="7e911c9fa59d1977be061678831b5cf7" category="cell"><block ref="7e911c9fa59d1977be061678831b5cf7" category="inline-link-rx"></block></block>
-  <block id="53baf558f01ca85a26eb1f164869ecfc" category="list-text">* 스토리지 효율성. * 에 따라 스토리지<block ref="7c9c4fcbdd570f33351876037a96c5f3" category="inline-link-rx"></block> 비용을 절감합니다.</block>
-  <block id="921810271b05ea8d6d76b8608a84dd55" category="paragraph">MEDITECH 워크로드 설명에 대한 자세한 내용은 을 참조하십시오<block ref="360129404e57c8df579b7f1615d3390c" category="inline-link-rx"></block>.</block>
-  <block id="2665341002bdc1d24544ba94bba4a830" category="paragraph"><block ref="2665341002bdc1d24544ba94bba4a830" category="inline-link-rx"></block></block>
-  <block id="b2fb60c2a4a1b44c8c14a60e2883c6e0" category="list-text"><block ref="b2fb60c2a4a1b44c8c14a60e2883c6e0" category="inline-link-rx"></block></block>
-  <block id="d4ef78651f9cef1dbf14bc1ffe07737f" category="list-text"><block ref="d4ef78651f9cef1dbf14bc1ffe07737f" category="inline-link-rx"></block></block>
   <block id="70cdaed33c7671907d6873604121f641" category="list-text">* 스토리지 플랫폼의 지능형 사용. * FlexPod는 ONTAP 자동 계층화 및 NetApp Fabric Pool 기술을 사용하여 데이터 관리를 간소화합니다. FabricPool은 성능, 효율성, 보안 또는 보호 기능을 그대로 유지하면서 스토리지 비용을 절감할 수 있도록 지원합니다. FabricPool는 엔터프라이즈 애플리케이션에 투명하며, 애플리케이션 인프라를 재설계할 필요 없이 스토리지 TCO를 절감하여 클라우드 효율성을 사용합니다. FlexPod은 FabricPool의 스토리지 계층화 기능을 활용하여 ONTAP 플래시 스토리지를 더욱 효율적으로 사용할 수 있습니다. 자세한 내용은 을<block ref="5990a183ff0805566d6969a955233353" category="inline-link-rx"></block>참조하십시오. 다음 다이어그램에서는 FabricPool 및 그 이점에 대해 간략하게 설명합니다.</block>
   <block id="0b921bb1595764dd70d91a0ac86cb9fe" category="paragraph"><block ref="0b921bb1595764dd70d91a0ac86cb9fe" category="inline-link-rx"></block></block>
   <block id="2bd59f07acc84ae5bcea7882570e52e3" category="paragraph"><block ref="2bd59f07acc84ae5bcea7882570e52e3" category="inline-link-rx"></block></block>
@@ -9259,4 +8353,142 @@
   <block id="9c731b980c2b703bfdb439c7056b1bfd" category="admonition">FabricPool를 사용하는 지원되는 플랫폼에 대한 최신 정보는<block ref="c4dd6ba7b5ae102345b7377110dc849b" category="inline-link-rx"></block>를 참조하십시오.</block>
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select</block>
   <block id="9044f591b913b8cf0cc25f90afe3223c" category="admonition">NetApp에서는 모든 SSD FabricPool 로컬 계층을 사용할 것을 권장합니다.</block>
+  <block id="0e658e993dc6099a0da46bca02ad983c" category="paragraph">NetApp ONTAP 소프트웨어는 모든 NetApp FAS, AFF 및 ASA 시스템에 설치됩니다. FlexPod는 ONTAP 소프트웨어로 검증되어 무중단 운영, 무중단 업그레이드 및 민첩한 데이터 인프라를 지원하는 확장성이 뛰어난 스토리지 아키텍처를 제공합니다.</block>
+  <block id="b08cac487db6961f4830fe1f50d9a631" category="section-title">Cisco UCS X-Series Direct</block>
+  <block id="ab2c83112d1106959a02c067da964635" category="paragraph">Cisco UCS X-Series Direct는 Cisco UCS Fabric Interconnect 9108 100G 한 쌍과 Cisco UCS X9508 섀시 및 Cisco UCS X-Series 컴퓨팅 노드를 통합하여 UCS X-Series Direct 솔루션을 제공하는 새로운 아키텍처입니다.</block>
+  <block id="4e5bfcd6b58f1477e32ceb617ea2e6a2" category="paragraph">Cisco UCS X-Series Direct는 다음 구성 요소로 구성됩니다.</block>
+  <block id="33d22df2af89abdeaab64f6e62aa4d2a" category="list-text">Cisco UCS 9108 100G 패브릭 인터커넥트</block>
+  <block id="9a983605bcc1b03c274722ab5b4fceb7" category="list-text">Cisco UCS X9508 섀시</block>
+  <block id="7297a8a246f4107073155eb7adf8aad6" category="list-text">Cisco UCS X-Series 컴퓨팅 노드</block>
+  <block id="171463d07e5f804b6e4a5d00f05a9948" category="list-text">선택적 구성 요소: PCIe 노드 및 X-Fabric 모듈</block>
+  <block id="fa54d292263dba156a82cbe5d7634e25" category="inline-link">Cisco UCS X-Series Direct 데이터시트</block>
+  <block id="7bd2db3d7d274705cd97bce1a15ba083" category="admonition">UCS X-Direct의 전체 기술 사양은 다음 링크를 참조하십시오.<block ref="c6d158517f0137b0ee0fc81034309271" category="inline-link-rx"></block></block>
+  <block id="52812d5e9f7f85a41759657770889b4b" category="paragraph">X-Series Direct 구성 요소의 기술 사양은 아래 표를 참조하십시오.</block>
+  <block id="5108f9823153bf86d424465411769c7e" category="cell">UCS 9108 100G 패브릭 인터커넥트</block>
+  <block id="6667cc003527f70428fbb3f46d896e10" category="cell">UCSX-S9108-100G</block>
+  <block id="c78a25b3d391b3eabe5a4f6e3a159d89" category="inline-link">Cisco UCS 9108 패브릭 인터커넥트</block>
+  <block id="55941e76508015eb43dd9b6db66a8de4" category="cell"><block ref="55941e76508015eb43dd9b6db66a8de4" category="inline-link-rx"></block></block>
+  <block id="3fbecaa187bec4c0133ee458cb18648e" category="cell">Cisco UCS X-Series 섀시</block>
+  <block id="c42738d7d96a10ba2e13752c497fe352" category="cell"><block ref="d2f7a165d8728317906bc29daa2c85b4" category="inline-link-rx"></block></block>
+  <block id="85a845d3a2419a09e5bc3078a0e2c402" category="cell">Cisco UCS X210c M7</block>
+  <block id="542ae9366fc15c0eac09d9ca0b343ff2" category="cell">UCSX-210C-M7</block>
+  <block id="c80b1ea5b264dcbe01ea1ca703f6ff74" category="inline-link">Cisco UCS X210c M7 컴퓨팅 노드</block>
+  <block id="54705fac3253e295c3859b5ee543daf0" category="cell"><block ref="54705fac3253e295c3859b5ee543daf0" category="inline-link-rx"></block></block>
+  <block id="aa868f34642b235e56aa100dd29911a6" category="cell">Cisco UCS X210c M8</block>
+  <block id="a6d64f93d7c6293dd77985bd9b59413b" category="cell">UCSX-210C-M8</block>
+  <block id="e735a8b9647bb22edf3884aab9bab721" category="inline-link">Cisco UCS X210c M8 컴퓨트 노드</block>
+  <block id="87a2bf74f615f8df54eaed3038c2180f" category="cell"><block ref="87a2bf74f615f8df54eaed3038c2180f" category="inline-link-rx"></block></block>
+  <block id="1fa094101a30dc8d5c01d55ec4e0b2c3" category="cell">Cisco UCS X215c M8</block>
+  <block id="79ee6ae5e350f7d2d17d88640b427dea" category="cell">UCSX-215C-M8</block>
+  <block id="ebcf4fed81a8ec58e9fa2bb56b56655e" category="inline-link">Cisco UCS X215c M8 컴퓨팅 노드</block>
+  <block id="213d905938651850e0700aec995d4f25" category="cell"><block ref="213d905938651850e0700aec995d4f25" category="inline-link-rx"></block></block>
+  <block id="7d6476a168f796512cd343dbf6647c45" category="cell">Cisco UCS X410c M7</block>
+  <block id="f15000df0fa439ce16f3435962ac49e5" category="cell">UCSX-410C-M7</block>
+  <block id="12951cf21eec347ba4258854c54626b0" category="inline-link">Cisco UCS X410c M7 컴퓨팅 노드</block>
+  <block id="eb3c277cb9640d4d78fda6eb48405ca2" category="cell"><block ref="eb3c277cb9640d4d78fda6eb48405ca2" category="inline-link-rx"></block></block>
+  <block id="db8fcd946f3ea3ecbb5f6df26d108975" category="cell">Cisco UCS X410c M8</block>
+  <block id="be22b28321184ab2c1fab5ff51ab7621" category="cell">UCSX-410C-M8</block>
+  <block id="fec8623d55f39e0df72c4d65c9a8a88c" category="inline-link">Cisco UCS X410c M8 컴퓨트 노드</block>
+  <block id="d534d9e405380c188e8251558dc9a224" category="cell"><block ref="d534d9e405380c188e8251558dc9a224" category="inline-link-rx"></block></block>
+  <block id="03bd80ec3d64c289030b272008786311" category="cell">Cisco UCS X-Series 모듈</block>
+  <block id="e1aac65c2b6e24c8e8adc95e43ed62ee" category="cell">Cisco UCS 9108 Intelligent Fabric Module</block>
+  <block id="fcfe8e82e41744adc21a0e98c9d0fb10" category="cell">UCSX-I-9108-100G</block>
+  <block id="ccd4443b7fa96e36677438df98acd96a" category="cell"><block ref="ccd4443b7fa96e36677438df98acd96a" category="inline-link-rx"></block></block>
+  <block id="033b7fd69c0efbd849f830986d5a238a" category="cell">Cisco UCS X9516 X-Fabric 모듈</block>
+  <block id="93f609c9836071de030ad98eb9986168" category="cell">UCSX-FS-9516</block>
+  <block id="093c482cedd34b9160b239bf45baa595" category="cell"><block ref="093c482cedd34b9160b239bf45baa595" category="inline-link-rx"></block></block>
+  <block id="134a2787cf332fffd37a3606fe4f65f6" category="cell">Cisco UCS X9416 X-Fabric 모듈</block>
+  <block id="6d746fe8059da3c9368ddffe8db53eff" category="cell">UCSX-FS-9416</block>
+  <block id="ef67dfcf39e97948851ebbffb6b5749d" category="cell"><block ref="dd8de1fc1eca8661d0b04dfdd09619f7" category="inline-link-rx"></block></block>
+  <block id="d4a1f2b08ae3c30faec4f877f6be7b6b" category="paragraph">Cisco UCS C-시리즈 랙 서버는 1U 및 2U 랙 유닛(RU) 구성으로 제공되며, 다양한 CPU, 메모리 및 I/O 옵션을 선택할 수 있습니다. 다음 표에 나열된 부품 번호는 기본 서버용입니다. CPU, 메모리, 드라이브, PCIe(Peripheral Component Interconnect Express) 카드는 포함되지 않습니다. 여러 구성 옵션을 사용할 수 있으며 FlexPod 아키텍처에서 지원됩니다.</block>
+  <block id="08f285120864063a3664f0b981e85974" category="cell">Cisco UCS C220 M7</block>
+  <block id="185f87b891565a026a599afc6ccf6509" category="cell">UCSC-C220-M7</block>
+  <block id="59bb7a4168ca0727f0e8657c561faece" category="inline-link">Cisco UCS C220 M7 랙 서버</block>
+  <block id="bcff2c86efe0c36653739dbee8dcf43d" category="cell"><block ref="bcff2c86efe0c36653739dbee8dcf43d" category="inline-link-rx"></block></block>
+  <block id="0d88de12c1b3aba2b9ffac63dc85d4af" category="cell">Cisco UCS C220 M8</block>
+  <block id="f5ccd1d71c2ed21d0f2d220921fb6e39" category="cell">UCSC-C220-M8</block>
+  <block id="79c949339648467243f2664b108888d1" category="inline-link">Cisco UCS C220 M8 랙 서버</block>
+  <block id="0e0837a63f73d1416f17f871c1d92529" category="cell"><block ref="0e0837a63f73d1416f17f871c1d92529" category="inline-link-rx"></block></block>
+  <block id="08f90c3f9daaa88b26f047dc5d0cf3b2" category="cell"><block ref="08f90c3f9daaa88b26f047dc5d0cf3b2" category="inline-link-rx"></block></block>
+  <block id="c49cf51806c8304f47ef0af1cc3583b1" category="cell">Cisco UCS C225 M8</block>
+  <block id="5eb4b81081e3e747c520c2d5f4dc8ccf" category="cell">UCSC-C225-M8</block>
+  <block id="32de8c4c7d70c5cef467c42019e17abb" category="inline-link">Cisco UCS C225 M8 랙 서버</block>
+  <block id="a15976f50db7ffc9d0598d204824066c" category="cell"><block ref="a15976f50db7ffc9d0598d204824066c" category="inline-link-rx"></block></block>
+  <block id="d08f7047cb41d3f3eb07a1d246224cc8" category="cell">Cisco UCS C240 M7</block>
+  <block id="0ba1dc11236b9c5fb6ffb144afc496e4" category="cell">UCSC-C240-M7</block>
+  <block id="d9a53386c52a3a8c8f311cc1dd2f9a89" category="inline-link">Cisco UCS C240 M7 랙 서버</block>
+  <block id="c61bd2b7a38a51c0719fb6de44c82b54" category="cell"><block ref="c61bd2b7a38a51c0719fb6de44c82b54" category="inline-link-rx"></block></block>
+  <block id="98b8f38cb9a13ca8642e515e19c5bcae" category="cell">Cisco UCS C240 M8</block>
+  <block id="5d9fc3ec46a458610c3b12248cb0d9a9" category="cell">UCSC-C240-M8</block>
+  <block id="4480a773cf291aad9f12830614e6a55c" category="inline-link">Cisco UCS C240 M8 랙 서버</block>
+  <block id="540548b7de484075cad2e648e62b24d4" category="cell"><block ref="540548b7de484075cad2e648e62b24d4" category="inline-link-rx"></block></block>
+  <block id="fbf3f8d4623d9c4266b5e270ab5a0ee9" category="cell"><block ref="fbf3f8d4623d9c4266b5e270ab5a0ee9" category="inline-link-rx"></block></block>
+  <block id="1088a815c23b6f882393e6097af48661" category="cell">Cisco UCS C245 M8</block>
+  <block id="2c29504598d658ae397498e3692de0bb" category="cell">UCSC-C245-M8</block>
+  <block id="2e53148601f2552843e772c481eceb95" category="inline-link">Cisco UCS C245 M8 랙 서버</block>
+  <block id="efa98f10731ee80849f96960caa9f2dc" category="cell"><block ref="efa98f10731ee80849f96960caa9f2dc" category="inline-link-rx"></block></block>
+  <block id="39a715608f33f16328cd082d89f0295b" category="section-title">Cisco Nexus 스위치</block>
+  <block id="e07fa2542b3d02c0ddf222a6690071dc" category="paragraph">FlexPod 아키텍처에서는 이중화된 Cisco Nexus 스위치가 필요합니다.</block>
+  <block id="e887ad7f00d6c8bf280bc10e3fee2f52" category="cell">Cisco Nexus 스위치</block>
+  <block id="a0159b12a4e3470c15426cabb652f158" category="cell">Cisco Nexus 9200 시리즈 스위치</block>
+  <block id="c805c717b2ff719e7f051f990444a02e" category="cell"><block ref="c805c717b2ff719e7f051f990444a02e" category="inline-link-rx"></block></block>
+  <block id="a388b76dc45ac18e52a3b75efb35834a" category="cell">Cisco Nexus 9300 시리즈 스위치</block>
+  <block id="db7c6a8cf8fb1bedef955b74c1d48458" category="cell"><block ref="db7c6a8cf8fb1bedef955b74c1d48458" category="inline-link-rx"></block></block>
+  <block id="05529d9f87f535089b136d6e6c79152a" category="paragraph">FlexPod Express 아키텍처의 모든 Cisco 장비에는 유효한 TSANet 지원 계약이 필요합니다.</block>
+  <block id="c03e321ec861308530b2664bf76c15c5" category="admonition">필요한 라이선스와 해당 부품 번호는 제품 및 구성에 따라 다를 수 있습니다. 주문하기 전에 Cisco 또는 NetApp 영업 담당자에게 라이선스 요구 사항을 확인하는 것이 좋습니다.</block>
+  <block id="b7f43873760e77ea41c49202022ab227" category="cell">TSANet</block>
+  <block id="3ea0d3685f27390f9fe371eab129dce9" category="cell"><block ref="3ea0d3685f27390f9fe371eab129dce9" category="inline-link-rx"></block></block>
+  <block id="0d23eba7274fadde661e961150cfe90c" category="section-title">NetApp AFF/ ASA/ FAS와 함께 사용하는 FlexPod Express의 연결 요구 사항</block>
+  <block id="9d2250f706e841221ec2094f92705927" category="paragraph">NetApp AFF/ ASA/ FAS가 포함된 FlexPod Express의 연결 요구 사항은 다음과 같습니다:</block>
+  <block id="ed36393f337de9358b449ee681cedeee" category="list-text">NetApp 스토리지 컨트롤러는 Cisco Nexus 스위치에 직접 연결해야 합니다.</block>
+  <block id="13aa4a26afcbbdb8ccf34184d272233a" category="list-text">UCS X-시리즈 Direct 구축의 경우 NetApp 스토리지 컨트롤러를 내장된 패브릭 인터커넥트에 직접 연결할 수 있습니다.</block>
+  <block id="708c875b65201b1171582654c9785698" category="list-text">Cisco Nexus 9000 시리즈 스위치를 NetApp 스토리지 컨트롤러에 연결하려면 가상 포트 채널(vPC)이 필요합니다.</block>
+  <block id="3aff03b52067b9fd44f45fb876653a9c" category="list-text">*FlexPod Datacenter.* 이 플랫폼은 워크로드 엔터프라이즈 애플리케이션, 가상화, VDI, 퍼블릭 및 프라이빗 클라우드에 적합한 대규모 확장 가능한 가상 데이터 센터 인프라입니다. FlexPod Datacenter는 자체 사양을 가지고 있으며, 이는 <block ref="0bb629a24a99e06d4ec011831def694a" category="inline-link-rx"></block>에 문서화되어 있습니다.</block>
+  <block id="1fd1ccb51d4008bf4d6e7734454719d8" category="section-title">FlexPod Express with NetApp AFF/ ASA/ FAS</block>
+  <block id="07fabd6fde589c0dfb293502119057ad" category="paragraph">NetApp AFF, ASA 또는 FAS 컨트롤러를 기반 스토리지로 사용하는 FlexPod Express 솔루션의 하드웨어 요구 사항에는 이 섹션에 설명된 구성들이 포함됩니다.</block>
+  <block id="75b256e594cf5a8ba03273e8a68f2c27" category="paragraph">FlexPod Express의 최소 하드웨어 요구 사항은 다음과 같습니다.</block>
+  <block id="7013f56669c02dbe795614370d0c956e" category="list-text">이중화 구성의 2개의 10Gbps 표준 이더넷 스위치(Cisco Nexus 9200 및 9300 모델)</block>
+  <block id="737ae7047a573165eadb480d2b9b3a7e" category="list-text">CIMC 기반 독립형 랙 서버 구성 또는 Intersight 관리 구성(IMM)을 갖춘 Cisco UCS C-Series 독립형 랙 서버 또는 Cisco IMM 구성을 갖춘 Cisco UCS X-Series Direct</block>
+  <block id="0c31792ebf62debf53351a3c946658a4" category="list-text">2노드 클러스터로 구축된 고가용성(HA) 쌍 구성의 엔트리 레벨 NetApp AFF(A20, A30 또는 C30), NetApp ASA(A20, A30 또는 C30) 또는 NetApp FAS(2750 또는 2820) 시리즈 컨트롤러 2개</block>
+  <block id="518388d8bf47fef25a51b033351e90c6" category="section-title">NetApp AFF/ ASA/ FAS와 함께 사용하는 FlexPod Express의 소프트웨어 요구 사항</block>
+  <block id="c73c43926cb72083a2e88ddeea8dfb6e" category="paragraph">NetApp AFF/ ASA/ FAS가 포함된 FlexPod Express의 소프트웨어 요구 사항은 다음과 같습니다:</block>
+  <block id="fa39e3184058dc78c3eadf7b10e6ffa9" category="list-text">ONTAP 9.16 이상</block>
+  <block id="cfa57e5262733289daf4a15d534d7a2e" category="list-text">Cisco NX-OS 버전 10.4(6)M 이상</block>
+  <block id="4e6a4646d756c190e8091d8c86e93232" category="admonition">이 섹션에 나열된 모든 소프트웨어 버전은 문서의 다음 섹션에 나열된 하드웨어 구성 요소(NetApp 및 Cisco 구성 요소)에 대한 최소 요구 사항입니다.</block>
+  <block id="a05525388d2fadefda4af92395d016ea" category="summary">NetApp 스토리지 컨트롤러는 FlexPod Express 아키텍처에서 부팅 및 애플리케이션 데이터 저장을 위한 스토리지 기반을 제공합니다. 이 섹션에서는 FlexPod Express 아키텍처에서 사용할 수 있는 다양한 NetApp 스토리지 옵션을 나열합니다.</block>
+  <block id="8cf756e67e6fe3a58a1405610ba75ad9" category="paragraph">FlexPod Express 아키텍처에서는 이중화된 AFF, ASA 또는 FAS 시리즈 컨트롤러가 필요합니다. 이러한 컨트롤러는 ONTAP 소프트웨어를 실행합니다. 스토리지 컨트롤러를 주문할 때 원하는 소프트웨어 버전을 컨트롤러에 미리 설치할 수 있습니다. ONTAP의 경우 클러스터는 한 쌍의 클러스터 인터커넥트 스위치를 사용하거나 스위치가 없는 클러스터 구성으로 배포할 수 있습니다.</block>
+  <block id="d5c565b8a9c9c59fa0b692c9cbf65edd" category="admonition">스위치가 없는 클러스터 구성은 2노드 구성에서만 지원됩니다. 클러스터 인터커넥트 스위치는 4개 이상의 노드가 있는 구성에 필요하며 2노드 구성의 경우 선택 사항입니다.</block>
+  <block id="230b6be042c6a9e09ceea70fd8e2f108" category="paragraph">선택한 스토리지 플랫폼에 따라 다양한 옵션과 구성을 사용할 수 있습니다. 이러한 추가 구성 요소에 대한 자세한 내용은 영업 담당자에게 문의하십시오.</block>
+  <block id="ee65a1f1b80c1d59eba7dc665cc831bc" category="paragraph">아래 표에 나열된 컨트롤러 제품군은 Cisco Nexus 스위치와의 연결이 원활하므로 FlexPod 솔루션에 사용하기에 적합합니다. 각 컨트롤러 모델의 구체적인 호환성 정보는<block ref="0012c2b4de81607ee8d0f71acdd6c9ab" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="b77cf317a6bb3b0806632ae61052e3ed" category="cell">NetApp 엔트리 레벨 스토리지 제품군(FlexPod Express용)</block>
+  <block id="ae80ae2c7480651e65f11ec1f29d6ede" category="cell">A20</block>
+  <block id="a0ab09bcd71cc8c8e831f022615b28a4" category="cell"><block ref="a0ab09bcd71cc8c8e831f022615b28a4" category="inline-link-rx"></block></block>
+  <block id="1d54842ba417c6ef95e35c602a80d5ac" category="cell">A30</block>
+  <block id="71642a8ed4161123d0530fb7e39a80f1" category="cell">AFF C-Series</block>
+  <block id="9c5fd388a2ee6ceb65d30336d2fec257" category="cell">C30</block>
+  <block id="6488de7d247a06b442a5018b0d91bfc6" category="inline-link">AFF C-Series 문서</block>
+  <block id="369fac7daa2f8b7e7c135f15db1bd0ed" category="cell"><block ref="369fac7daa2f8b7e7c135f15db1bd0ed" category="inline-link-rx"></block></block>
+  <block id="e74e816dd7cc6f70a065fed35442bdba" category="cell">ASA A-Series</block>
+  <block id="f19fecfa4cd02d0595de1ba8660070b8" category="inline-link">ASA A-Series 문서</block>
+  <block id="411495c9b6bc6c820abb1fe113fdc63d" category="cell"><block ref="411495c9b6bc6c820abb1fe113fdc63d" category="inline-link-rx"></block></block>
+  <block id="eab12603d471c1206ae118fe245f03eb" category="cell">ASA C-Series</block>
+  <block id="06ebd0c9afc2e42f48a4879187f7162c" category="inline-link">ASA C-Series 문서</block>
+  <block id="6ccb8264c017c1314bf9d314e2d2275c" category="cell"><block ref="6ccb8264c017c1314bf9d314e2d2275c" category="inline-link-rx"></block></block>
+  <block id="149f0ea389848f479bd80af6375b383b" category="cell">FAS</block>
+  <block id="82d9aaf29409f2b1321f31e9bf87f742" category="cell">FAS 2750</block>
+  <block id="b547a5d94845d9471423356c66873bd5" category="inline-link">FAS 문서</block>
+  <block id="3948a9d911a4ab4fca76092210e66452" category="cell"><block ref="3948a9d911a4ab4fca76092210e66452" category="inline-link-rx"></block></block>
+  <block id="7ec34d91a495121e75b876eb6b33c2ae" category="cell">FAS 2820</block>
+  <block id="c7dd26489686f8b76f6a64795f0045f8" category="paragraph">스토리지 컨트롤러에는 최소 하나 이상의 NetApp 디스크 쉘프가 필요합니다.</block>
+  <block id="228f628b17255facbba7695d9af12a80" category="cell"><block ref="228f628b17255facbba7695d9af12a80" category="inline-link-rx"></block></block>
+  <block id="c740766e109ecd59d174dc2f65176922" category="cell">NS224 w/NSM100B</block>
+  <block id="2a5e4b862dd1bf5a3b1fa887c48e6ea0" category="paragraph">다음 표는 NetApp 소프트웨어 라이선스 옵션을 보여줍니다.</block>
+  <block id="a2a63972aa167453b51ce7c5db322251" category="cell">AFF 및 FAS용 ONTAP One 또는 ONTAP base</block>
+  <block id="bb6c553e84ebdbce5d573cf1afb7fecb" category="cell">ASA용 ONTAP One for SAN</block>
+  <block id="9bbe0d8f02cd9da80ec2e9b5e267d5d9" category="paragraph">다음 표는 NetApp AFF, ASA 및 FAS 스토리지 시스템에 대한 NetApp 지원 라이선스 옵션을 나열합니다.</block>
+  <block id="794dd8ccd88e23abed65ea05ccfbfe66" category="summary">FlexPod Express는 Cisco Unified Computing System(Cisco UCS) 및 Cisco Nexus 스위치 제품군을 기반으로 구축된 사전 설계된 모범 사례 아키텍처이며, 스토리지 계층은 NetApp AFF, ASA 또는 FAS 스토리지 시스템을 사용하여 구축됩니다.</block>
+  <block id="52303a3cfdeba922a67c70e8c2711113" category="paragraph">FlexPod Express는 Cisco Unified Computing System(Cisco UCS) 및 Cisco Nexus 스위치 제품군을 기반으로 구축된 사전 설계된 모범 사례 아키텍처이며, 스토리지 계층은 NetApp AFF, ASA 또는 FAS 엔트리 레벨 스토리지 시스템을 사용하여 구축됩니다. FlexPod Express는 다양한 가상화 하이퍼바이저와 베어 메탈 운영 체제(OS) 및 엔터프라이즈 워크로드를 실행하기에 적합한 플랫폼입니다.</block>
+  <block id="068b348153ec2cbed13b621268bdd199" category="paragraph">FlexPod Express는 기본 구성뿐만 아니라 다양한 사용 사례 및 요구 사항을 수용할 수 있도록 크기를 조정하고 최적화할 수 있는 유연성을 제공합니다.</block>
+  <block id="2a409f1fa2a150f2253ac127248488e4" category="paragraph">FlexPod Express는 NetApp ONTAP 운영 체제를 실행하는 스토리지 시스템을 지원합니다.</block>
+  <block id="7cd01b7a129748a09b50303734dbf37d" category="paragraph">NetApp ONTAP 소프트웨어는 AFF, ASA 및 FAS 스토리지 시스템에서 실행되는 운영 체제입니다. ONTAP는 중단 없는 운영, 중단 없는 업그레이드 및 민첩한 데이터 인프라를 지원하는 확장성이 뛰어난 스토리지 아키텍처를 제공합니다.</block>
 </blocks>
