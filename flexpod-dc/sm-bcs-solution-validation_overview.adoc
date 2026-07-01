@@ -34,7 +34,7 @@ image:sm-bcs-image16.png["오류: 그래픽 이미지가 없습니다"]
 
 다음 표에는 솔루션 검증에 사용된 하드웨어 및 소프트웨어가 나와 있습니다. Cisco, NetApp 및 VMware는 FlexPod의 특정 구현에 대한 지원을 결정하는 데 사용되는 상호 운용성 매트릭스를 보유하고 있습니다.
 
-* http://support.netapp.com/matrix/["http://support.netapp.com/matrix/"^]
+* http://mysupport.netapp.com/matrix["http://mysupport.netapp.com/matrix"^]
 * http://www.cisco.com/web/techdoc/ucs/interoperability/matrix/matrix.html["Cisco UCS 하드웨어 및 소프트웨어 상호 운용성 툴"^]
 * http://www.vmware.com/resources/compatibility/search.php["http://www.vmware.com/resources/compatibility/search.php"^]
 

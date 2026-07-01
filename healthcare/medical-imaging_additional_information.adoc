@@ -44,9 +44,9 @@ https://flexpod.com/solutions/use-cases/microsoft-sql-server/["https://flexpod.c
 +
 https://flexpod.com/["https://flexpod.com/"^]
 
-* https://fieldportal.netapp.com/content/734702["MongoDB용 NetApp 솔루션"^] 솔루션 개요(NetApp 로그인 필요)
+* MongoDB용 NetApp 솔루션 요약(NetApp 로그인 필요)
 +
-https://fieldportal.netapp.com/content/734702["https://fieldportal.netapp.com/content/734702"^]
+https://fieldportal.netapp.com/s/article/solution-brief-netapp-solutions-for-mongodb-1690217002398["https://fieldportal.netapp.com/s/article/solution-brief-netapp-solutions-for-mongodb-1690217002398"^]
 
 * TR-4700: Oracle 데이터베이스용 SnapCenter 플러그인
 +

@@ -30,7 +30,7 @@ Cisco와 NetApp은 FlexPod를 통해 다양한 사용 사례 및 애플리케이
 
 * Cisco UCS(Unified Computing System)
 +
-http://www.cisco.com/en/US/products/ps10265/index.html["http://www.cisco.com/en/US/products/ps10265/index.html"^]
+https://www.cisco.com/site/us/en/products/computing/servers-unified-computing-systems/index.html["https://www.cisco.com/site/us/en/products/computing/servers-unified-computing-systems/index.html"^]
 
 * Cisco UCS 6400 Series Fabric Interconnect 데이터 시트
 +
@@ -42,7 +42,7 @@ http://www.cisco.com/en/US/products/ps10279/index.html["http://www.cisco.com/en/
 
 * Cisco UCS B-Series 블레이드 서버
 +
-http://www.cisco.com/en/US/partner/products/ps10280/index.html["http://www.cisco.com/en/US/partner/products/ps10280/index.html"^]
+https://www.cisco.com/site/us/en/products/computing/servers-unified-computing-systems/ucs-b-series-blade-servers/index.html["https://www.cisco.com/site/us/en/products/computing/servers-unified-computing-systems/ucs-b-series-blade-servers/index.html"^]
 
 * Cisco UCS C-Series 랙 서버
 +
@@ -78,11 +78,11 @@ http://www.netapp.com/us/products/storage-systems/all-flash-array/aff-a-series.a
 
 * VMware vSphere를 참조하십시오
 +
-https://www.vmware.com/products/vsphere["https://www.vmware.com/products/vsphere"^]
+https://www.vmware.com/products/cloud-infrastructure/vsphere["https://www.vmware.com/products/cloud-infrastructure/vsphere"^]
 
 * VMware vCenter Server를 참조하십시오
 +
-http://www.vmware.com/products/vcenter-server/overview.html["http://www.vmware.com/products/vcenter-server/overview.html"^]
+https://www.vmware.com/products/cloud-infrastructure/vcenter/future-overview["https://www.vmware.com/products/cloud-infrastructure/vcenter/future-overview"^]
 
 * 최신 SAN에 대한 모범 사례
 +
@@ -100,15 +100,15 @@ https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-
 
 * NetApp 상호 운용성 매트릭스 툴
 +
-http://support.netapp.com/matrix/["http://support.netapp.com/matrix/"^]
+http://mysupport.netapp.com/matrix["http://mysupport.netapp.com/matrix"^]
 
 * Cisco UCS 하드웨어 호환성 매트릭스
 +
 https://ucshcltool.cloudapps.cisco.com/public/["https://ucshcltool.cloudapps.cisco.com/public/"^]
 
-* VMware 호환성 가이드 를 참조하십시오
+* VMware by Broadcom 호환성 가이드
 +
-http://www.vmware.com/resources/compatibility["http://www.vmware.com/resources/compatibility"^]
+https://compatibilityguide.broadcom.com/["https://compatibilityguide.broadcom.com/"^]
 
 
 

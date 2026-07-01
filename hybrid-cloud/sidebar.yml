@@ -95,15 +95,13 @@ entries:
       url: "/hybrid-cloud/cloud-fabricpool_set_volume_tiering_minimum_cooling_days.html"
   - title: 성능 고려 사항
     url: "/hybrid-cloud/cloud-fabricpool_performance_considerations.html"
-  - title: 소유 비용
-    url: "/hybrid-cloud/cloud-fabricpool_cost_of_ownership.html"
   - title: 결론
     url: "/hybrid-cloud/cloud-fabricpool_conclusion.html"
   - title: 추가 정보를 찾을 수 있는 위치
     url: "/hybrid-cloud/cloud-fabricpool_where_to_find_additional_information.html"
 - title: Cisco UCS Manager, NetApp ONTAP 9.3 AFF 및 VMware vSphere 6.5U1-Design을 지원하는
     FlexPod 데이터 센터 및 IBM 클라우드 프라이빗 클라우드
-  url: "/hybrid-cloud/fpd-ibn-cloud-design.html"
+  url: "/hybrid-cloud/fpd-ibm-cloud-design.html"
 - title: Cisco CloudCenter 및 NetApp Private Storage-Design을 사용한 하이브리드 클라우드용 FlexPod
     데이터 센터
   url: "/hybrid-cloud/fpd-hc-storage-design.html"

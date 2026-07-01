@@ -58,9 +58,9 @@ NOTE: 먼저 가상 디바이스 활성화 를 클릭해야 할 수도 있습니
 
 
 
-=== ESXi 6.7 Cisco 사용자 지정 이미지를 다운로드합니다
+=== ESXi 6.7 Cisco 사용자 지정 이미지 다운로드
 
-. 로 이동합니다 https://my.vmware.com/web/vmware/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_7["VMware vSphere 다운로드 페이지"^] 사용자 정의 ISO의 경우.
+. 사용자 지정 ISO의 https://support.broadcom.com/group/ecx/downloads["Broadcom 지원 포털 다운로드 사이트"^]로 이동합니다.
 . Cisco Custom Image for ESXi 6.7 GA Install CD(ESXi 6.7 GA 설치 CD용 Cisco 사용자 지정 이미지) 옆의 Go to Downloads(다운로드로 이동) 를 클릭합니다.
 . ESXi 6.7 GA 설치 CD(ISO)용 Cisco Custom Image를 다운로드합니다.
 

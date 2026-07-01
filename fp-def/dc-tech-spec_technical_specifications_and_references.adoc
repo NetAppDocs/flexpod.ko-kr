@@ -390,19 +390,19 @@ NetApp AFF A-Series 스토리지 컨트롤러의 모든 현재 모델은 FlexPod
 | 구성 요소 | AFF A-Series 컨트롤러 플랫폼 설명서 
 
 
-| NetApp AFF A800 | https://docs.netapp.com/us-en/ontap-systems/a800/index.html["AFF A800 플랫폼 문서"] 
+| NetApp AFF A800 | https://docs.netapp.com/us-en/ontap-systems/a800/install-setup.html["AFF A800 플랫폼 문서"] 
 
 
-| NetApp AFF A700 | https://docs.netapp.com/us-en/ontap-systems/fas9000/index.html["AFF A700 플랫폼 문서"] 
+| NetApp AFF A700 | https://docs.netapp.com/us-en/ontap-systems/a700/install-setup.html["AFF A700 플랫폼 문서"] 
 
 
-| NetApp AFF A700s를 참조하십시오 | https://docs.netapp.com/us-en/ontap-systems/a700s/index.html["AFF A700s 플랫폼 문서"] 
+| NetApp AFF A700s를 참조하십시오 | https://docs.netapp.com/us-en/ontap-systems/a700s/install-setup.html["AFF A700s 플랫폼 문서"] 
 
 
-| NetApp AFF A400 | https://docs.netapp.com/us-en/ontap-systems/a400/index.html["AFF A400 플랫폼 문서"] 
+| NetApp AFF A400 | https://docs.netapp.com/us-en/ontap-systems/a400/install-setup.html["AFF A400 플랫폼 문서"] 
 
 
-| NetApp AFF A250 | https://docs.netapp.com/us-en/ontap-systems/a250/index.html["AFF A250 플랫폼 문서"] 
+| NetApp AFF A250 | https://docs.netapp.com/us-en/ontap-systems/a250/install-setup.html["AFF A250 플랫폼 문서"] 
 |===
 
 

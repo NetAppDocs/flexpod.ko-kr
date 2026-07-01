@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: fp-def/fp-express-tech-spec__technical_specifications_and_references.html 
+permalink: fp-def/fp-express-tech-spec_technical_specifications_and_references.html 
 keywords: technical, specifications, references, blade, servers, ucs, b, series, rack, disk, shelves, fas, adapters, controllers 
 summary: 이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요한 추가 기술 사양에 대해 설명합니다. 
 ---
@@ -273,7 +273,7 @@ NOTE: FAS 스토리지 컨트롤러 옵션에 대한 자세한 내용은 를 참
 |===
 X1117A-R6 SFP+ 어댑터는 FAS8000 시리즈 컨트롤러에서 지원됩니다.
 
-FAS2600 및 FAS2500 시리즈 스토리지 시스템에는 온보드 10GbE 포트가 있습니다. 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/Resources/generatedPDFs/AdapterCards-9.1_ONTAP-FAS.pdf?tag=8020["NetApp 10GbE 어댑터 데이터시트"^].
+FAS2600 및 FAS2500 시리즈 스토리지 시스템에는 10GbE 포트가 내장되어 있습니다.
 
 
 NOTE: AFF 또는 FAS 모델에 따른 어댑터 세부 정보는 를 참조하십시오 https://hwu.netapp.com/Adapter/Index["어댑터 섹션을 참조하십시오"^] Hardware Universe에서
