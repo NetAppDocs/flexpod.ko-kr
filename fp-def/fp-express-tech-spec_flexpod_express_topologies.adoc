@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec_flexpod_express_topologies.html 
+keywords: topologies, iSCSI boot, Cisco UCS X-Series Direct, direct-attached ASA, FC boot, IP-based SAN, FC-based SAN 
+summary: 이 섹션에서는 FlexPod Express의 예시 토폴로지를 설명합니다. 
+---
+= FlexPod Express 토폴로지
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+[role="lead"]
+이 섹션에서는 FlexPod Express의 예시 토폴로지를 설명합니다.
+
+
+
+== FC 직접 연결 및 IP 기반 SAN을 갖춘 UCS X-Series Direct
+
+다음 그림은 IP 기반 및 FC 기반 SAN을 위한 UCS X-Series Direct 및 직접 연결 ASA 샘플 토폴로지를 보여줍니다.
+
+image:fp-express-tech-spec_image11.png["IP 기반 및 FC 기반 SAN을 위한 UCS X-Series Direct 및 직접 연결 ASA 토폴로지"]
+
+이 토폴로지에 필요한 연결 요구 사항은 다음과 같습니다.
+
+* ASA 클러스터 연결: 2노드 ASA 클러스터의 경우, 클러스터 스위치를 사용하지 않고 컨트롤러를 케이블로 직접 연결할 수 있습니다.
+* 스토리지 이더넷 연결: NetApp 스토리지 컨트롤러는 내장된 패브릭 인터커넥트에 직접 연결할 수 있습니다. ASA의 두 스토리지 컨트롤러는 FI A와 FI B에서 제공하는 두 개의 독립적인 IP SAN 패브릭에 연결됩니다.
+* FI 네트워크 업링크 연결: IP 기반 SAN 연결의 경우, 업링크 Nexus 스위치는 SAN 데이터 경로에 관여하지 않습니다. SAN I/O는 UCS 컴퓨트 노드에서 FI A 또는 FI B 연결을 통해 ASA 스토리지로 직접 전송됩니다. 따라서 VLAN 및 vPC를 지원하는 기존 랙 상단 스위치를 활용하여 FlexPod SAN 솔루션 환경에 외부 네트워크 액세스를 제공할 수 있습니다.
+* FC 기반 SAN 연결을 위해서는 UCS FI(FC) 포트를 브레이크아웃 포트로 구성해야 합니다.
+* FC 기반 SAN 솔루션에 Cisco UCS를 사용할 경우 FC 스위칭 모드로 구성해야 합니다.
+
+
+Cisco UCS X-Series Direct는 일반 X-Series와 유사하게 스위치 연결 스토리지를 활용할 수 있지만, 외부 패브릭 인터커넥트 대신 내장 패브릭 인터커넥트를 사용합니다.
+
+이 구성에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/135828-flexpod-san-ucs-xdirect-asa-nva-deploy-guide.pdf["FlexPod Cisco UCS X-Series Direct 및 NetApp ASA를 사용한 SAN 솔루션"^]을 참조하십시오.
+
+[NOTE]
+====
+위의 샘플 토폴로지는 NetApp ASA를 사용하는 직접 연결 스토리지 솔루션을 나타냅니다. 하지만 동일한 토폴로지를 NetApp AFF 및 FAS에도 사용할 수 있습니다.
+
+IP 기반 직접 연결 NAS 스토리지 구성에 NetApp AFF 또는 FAS 스토리지를 사용하는 경우, 업링크 Nexus 스위치를 특정 장애 시나리오를 지원하도록 올바르게 구성해야 합니다. 자세한 구성 정보는 아래 링크를 참조하십시오.
+
+https://www.netapp.com/pdf.html?item=/media/22621-nva-1154-DESIGN.pdf[]
+
+https://www.netapp.com/pdf.html?item=/media/21938-nva-1154-DEPLOY.pdf[]
+
+====
+
+
+== UCS C-Series 서버 스위치 연결 IP 기반 스토리지
+
+다음 그림은 Cisco UCS C-Series 독립형 시스템과 NetApp AFF를 보여줍니다.
+
+image:fp-express-tech-spec_image12.png["Cisco UCS C-Series 독립형 서버 및 NetApp AFF"]
+
+이 토폴로지에 필요한 연결 요구 사항은 다음과 같습니다.
+
+* AFF 클러스터 연결: 2노드 AFF 클러스터의 경우, 클러스터 스위치를 사용하지 않고 컨트롤러를 케이블로 직접 연결할 수 있습니다.
+* 스토리지 이더넷 연결: NetApp 스토리지 컨트롤러는 Cisco Nexus 스위치에 직접 연결해야 합니다.
+* Cisco Nexus 스위치를 NetApp 스토리지 컨트롤러에 연결하려면 가상 포트 채널(vPC)이 필요합니다.
+* 이 솔루션은 최대 5대의 UCS C 시리즈 독립형 서버로 확장 가능하며, 각 서버당 스위치에서 2개의 스위치 포트가 필요합니다.
+
+
+Cisco UCS C-Series는 CIMC 또는 Cisco Intersight 독립형 관리를 통해 관리할 수 있습니다.
+
+
+NOTE: 위의 예시 토폴로지는 NetApp AFF를 사용하는 직접 연결 스토리지 솔루션을 나타냅니다. 하지만 동일한 토폴로지를 NetApp ASA 및 FAS에도 사용할 수 있습니다.
+
+이 구성에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/88340-NVA-FlexpodExpress_C220_A250_NexusFinal.pdf["FlexPod express for VMware vSphere 8.0 with Cisco UCS C-Series 독립형 및 NetApp AFF"^]을 참조하십시오.

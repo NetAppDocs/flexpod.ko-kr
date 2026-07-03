@@ -17,10 +17,12 @@ entries:
     url: "/fp-def/fp-express-tech-spec_storage_software.html"
   - title: 최소 하드웨어 요구 사항
     url: "/fp-def/fp-express-tech-spec_minimum_hardware_requirements.html"
-  - title: 최소 소프트웨어 요구 사항
-    url: "/fp-def/fp-express-tech-spec_minimum_software_requirements.html"
+  - title: 소프트웨어 버전 권장 사항
+    url: "/fp-def/fp-express-tech-spec_software_recommendation.html"
   - title: 연결 요구 사항
     url: "/fp-def/fp-express-tech-spec_connectivity_requirements.html"
+  - title: FlexPod Express 토폴로지
+    url: "/fp-def/fp-express-tech-spec_flexpod_express_topologies.html"
   - title: 기타 요구 사항
     url: "/fp-def/fp-express-tech-spec_other_requirements.html"
   - title: 옵션 기능
@@ -33,10 +35,10 @@ entries:
     url: "/fp-def/fp-express-tech-spec_power_and_cabling_requirements.html"
   - title: 기술 사양 및 참조 자료
     url: "/fp-def/fp-express-tech-spec_technical_specifications_and_references.html"
-  - title: 이전 아키텍처 및 장비
-    url: "/fp-def/fp-express-tech-spec_previous_architectures_and_equipment.html"
-  - title: 미검증 장비
-    url: "/fp-def/fp-express-tech-spec_legacy_equipment.html"
+  - title: 장비 지원 현황
+    url: "/fp-def/fp-express-tech-spec_equipment_support_status.html"
+  - title: 자동 배포
+    url: "/fp-def/fp-express-tech-spec_automation.html"
   - title: 추가 정보
     url: "/fp-def/fp-express-tech-spec_additional_information.html"
 - title: FlexPod 데이터 센터 기술 사양

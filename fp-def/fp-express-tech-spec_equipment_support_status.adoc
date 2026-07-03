@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec_equipment_support_status.html 
+keywords: equipment, support status, end of life, end of support, verification 
+summary: 이 섹션에서는 Cisco 및 NetApp 구성 요소에 대한 장비 지원 상태를 확인하는 방법을 설명합니다. 
+---
+= 장비 지원 현황
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+[role="lead"]
+FlexPod은 고객이 현재 Cisco 및 NetApp에서 판매하기 위한 기존 장비와 새로운 장비를 모두 사용할 수 있는 유연한 솔루션입니다. Cisco와 NetApp의 특정 장비 모델이 수명 종료를 지정하는 경우도 있습니다.
+
+이러한 장비 모델은 더 이상 사용할 수 없지만, 판매 종료 날짜 이전에 이러한 모델 중 하나를 구매한 고객은 FlexPod 구성에서 해당 장비를 사용할 수 있습니다.
+
+또한 FlexPod Express 아키텍처는 Cisco 및 NetApp의 최신 하드웨어와 소프트웨어를 FlexPod Express 솔루션에 도입하기 위해 주기적으로 업데이트됩니다.
+
+FlexPod Express 장비를 배포하거나 유지 관리하기 전에 모든 구성 요소가 공급업체에서 계속 지원되는지 확인하십시오. 이 섹션에서는 Cisco 및 NetApp 구성 요소의 판매 종료 및 지원 종료 정보를 확인하는 방법을 설명합니다.
+
+
+
+== NetApp 장비 지원 여부 확인
+
+NetApp은 Hardware Universe(HWU)를 통해 지원 정보를 제공합니다.
+
+link:https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]로 이동합니다.
+
+* *제품 > 플랫폼*을 선택한 다음 플랫폼(예: *AFF A-Series*)과 모델(예: *AFF A220*)을 선택하십시오.
+
+
+
+NOTE: 모든 플랫폼을 보려면 *플랫폼 수명 주기* 필터를 *모두 표시*로 변경하세요. 기본적으로 *EOA 숨기기*가 선택되어 있습니다.
+
+* *ONTAP* 버전을 선택하고 *결과 보기*를 클릭하십시오.
+* *시스템 가용성 및 지원* 섹션에서 장비의 지원 종료 날짜에 대한 결과를 확인하십시오.
+
+
+
+
+== Cisco 장비 지원 여부 확인
+
+Cisco는 Cisco 제품 지원 페이지에서 판매 종료일과 지원 종료일을 제공합니다.
+
+
+
+==== Cisco UCS 서버 판매 종료 및 지원 종료 정보
+
+* link:https://www.cisco.com/c/en/us/support/eol/index.html["Cisco 제품 지원 페이지"]으로 이동합니다.
+* *제품 카테고리*에서 *서버 - UCS 및 HCI*를 선택하고 서버 유형(예: *UCS C-Series Rack Servers*)을 클릭합니다. 특정 모델(예: *UCS C220 M5*)을 찾고 판매 종료일과 지원 종료일을 확인하십시오.
+
+
+
+
+==== Cisco Nexus 스위치 판매 종료 및 지원 종료 정보
+
+* link:https://www.cisco.com/c/en/us/support/eol/index.html["Cisco 제품 지원 페이지"]으로 이동합니다.
+* *제품 카테고리*에서 *스위치*를 선택하고 사용 중인 스위치 유형(예: *Nexus 9000*)을 클릭하세요. 특정 모델(예: *9236C*)을 찾아 판매 종료일과 지원 종료일을 확인하세요.
+

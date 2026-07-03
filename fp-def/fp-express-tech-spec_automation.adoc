@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: fp-def/fp-express-tech-spec_automation.html 
+keywords: flexpod express, automation, IaC, GitHub repository, Ansible 
+summary: FlexPod Express의 자동 배포는 Ansible 플레이북 및 관련 인프라 코드 자산을 포함하는 GitHub 저장소를 통해 이용할 수 있습니다. 
+---
+= FlexPod Express 자동 배포
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+[role="lead"]
+FlexPod Express의 자동 배포는 FlexPod Express GitHub 저장소를 통해 이용할 수 있습니다. 이 저장소에는 FlexPod Express 인프라를 코드로 구현(IaC)하는 데 필요한 Ansible 플레이북 및 관련 파일이 포함되어 있습니다.
+
+GitHub 저장소는 FlexPod Express 구성 배포를 위한 체계적인 접근 방식을 제공하여 사용자가 인프라 설정 및 관리를 자동화할 수 있도록 지원합니다. 여기에는 FlexPod Express 설계의 다양한 구성 요소에 대한 플레이북이 포함되어 있어 사용자가 일관성과 안정성을 바탕으로 효율적으로 환경을 배포하고 유지 관리할 수 있도록 보장합니다.
+
+FlexPod Express를 Cisco UCS C 시리즈 서버, Cisco Nexus 스위치 및 ONTAP와 함께 자동으로 배포하려면 link:https://github.com/ucs-compute-solutions/FlexPod-Express-Intersight["이 GitHub 저장소"^] 및 해당 link:https://www.netapp.com/media/91691-flex-pod-express-nva-ia-c.pdf["NVA"^]를 참조하십시오. 또한 저장소의 VMware 역할을 사용하여 VMware 기반 환경을 배포할 수도 있습니다.
+
+Cisco UCS X-Series Direct 서버, Cisco Nexus 스위치 및 NetApp ONTAP을 이용한 FlexPod Express의 자동 배포는 link:https://github.com/ucs-compute-solutions/FlexPod-IMM-OpenShift["이 GitHub 저장소"^]을(를) 참조하십시오. 이 리포지토리의 플레이북을 사용하여 FlexPod Express 인프라를 가동한 다음, 이 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_rh_openshift_bm_iac_deploy.html.["CVD"^]을(를) 사용하여 그 위에 OpenShift를 배포할 수 있습니다.
