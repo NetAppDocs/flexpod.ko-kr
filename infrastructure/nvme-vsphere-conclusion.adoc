@@ -24,6 +24,7 @@ Cisco와 NetApp은 FlexPod를 통해 다양한 사용 사례 및 애플리케이
 
 
 
+[[additional-information]]
 == 추가 정보
 
 이 문서에 설명된 정보에 대해 자세히 알아보려면 다음 문서 및/또는 웹 사이트를 검토하십시오.
@@ -96,6 +97,7 @@ https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-
 
 
 
+[[interoperability-matrixes]]
 == 상호 운용성 매트릭스
 
 * NetApp 상호 운용성 매트릭스 툴
@@ -114,6 +116,7 @@ https://compatibilityguide.broadcom.com/["https://compatibilityguide.broadcom.co
 
 
 
+[[acknowledgements]]
 == 감사의 말
 
 저자는 이 프로젝트 실행 중에 제공된 지원 및 지침에 대해 Cisco의 John George와 NetApp의 Scott Lane과 Bobby Oommen에게 감사를 전합니다.

@@ -20,6 +20,7 @@ FlexPod 아키텍처는 FIPS 140-2를 준수하는 Cisco UCS 서버로 설계할
 
 
 
+[[cisco-ucs-and-fabric-interconnect]]
 == Cisco UCS 및 패브릭 인터커넥트
 
 Cisco UCS Manager는 Cisco Fabric Interconnect(FI)에서 구축 및 실행됩니다.

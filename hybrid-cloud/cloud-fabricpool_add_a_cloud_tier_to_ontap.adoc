@@ -28,6 +28,7 @@ FabricPool은 Amazon S3, IBM 오브젝트 클라우드 스토리지, Microsoft A
 
 
 
+[[oncommand-system-manager]]
 == OnCommand 시스템 관리자
 
 OnCommand System Manager를 사용하여 클라우드 계층을 추가하려면 다음 단계를 수행하십시오.
@@ -48,6 +49,7 @@ image:cloud-fabricpool_image13.png["오류: 그래픽 이미지가 없습니다"
 
 
 
+[[ontap-cli]]
 == ONTAP CLI를 참조하십시오
 
 ONTAP CLI를 사용하여 클라우드 계층을 추가하려면 다음 명령을 입력합니다.

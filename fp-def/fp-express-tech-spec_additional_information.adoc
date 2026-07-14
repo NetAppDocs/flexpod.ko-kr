@@ -16,6 +16,14 @@ summary: 이 문서에 설명된 정보에 대한 자세한 내용은 다음 문
 [role="lead"]
 이 문서에 설명된 정보에 대한 자세한 내용은 다음 문서 및 웹 사이트를 참조하십시오.
 
+* NetApp FlexPod 홈페이지
++
+https://www.netapp.com/flexpod/["https://www.netapp.com/flexpod/"^]
+
+* Cisco FlexPod 홈페이지
++
+https://www.cisco.com/site/us/en/solutions/computing/converged-infrastructure/flexpod/index.html["https://www.cisco.com/site/us/en/solutions/computing/converged-infrastructure/flexpod/index.html"^]
+
 * NetApp 제품 설명서
 +
 https://docs.netapp.com/["https://docs.netapp.com/"^]
@@ -27,10 +35,6 @@ https://docs.netapp.com/us-en/ontap-family/index.html["https://docs.netapp.com/u
 * ONTAP 하드웨어 시스템 문서
 +
 https://docs.netapp.com/us-en/ontap-systems-family/index.html["https://docs.netapp.com/us-en/ontap-systems-family/index.html"^]
-
-* FlexPod 홈 페이지
-+
-https://www.netapp.com/flexpod/["https://www.netapp.com/flexpod/"^]
 
 * NetApp 상호 운용성 매트릭스 툴(IMT)
 +

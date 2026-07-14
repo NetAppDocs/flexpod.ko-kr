@@ -20,6 +20,7 @@ link:nvme-vsphere-introduction.html["이전: 소개."]
 
 
 
+[[test-environment]]
 == 테스트 환경
 
 Cisco Nexus 9000 시리즈 스위치는 2가지 운영 모드를 지원합니다.
@@ -44,6 +45,7 @@ Cisco Nexus 스위치와 최신 세대 NetApp AFF A800 스토리지 클러스터
 
 
 
+[[validated-hardware-and-software]]
 == 검증된 하드웨어 및 소프트웨어
 
 다음 표에는 솔루션 검증 프로세스 중에 사용되는 하드웨어 및 소프트웨어 버전이 나와 있습니다. Cisco와 NetApp은 상호 운용성 매트릭스를 보유하고 있으며, 이러한 매트릭스는 FlexPod의 특정 구현 지원을 결정하는 데 참조되어야 합니다. 자세한 내용은 다음 리소스를 참조하십시오.
@@ -98,6 +100,7 @@ Cisco Nexus 스위치와 최신 세대 NetApp AFF A800 스토리지 클러스터
 |===
 
 
+[[test-plan]]
 == 테스트 계획
 
 우리는 가상 워크로드를 사용하여 FlexPod에서 NVMe를 검증하기 위한 성능 테스트 계획을 개발했습니다. 이 워크로드를 통해 8KB 랜덤 읽기 및 쓰기와 64KB 읽기 및 쓰기를 실행할 수 있었습니다. VMware ESXi 호스트를 사용하여 AFF A800 스토리지에 대해 테스트 사례를 실행했습니다.

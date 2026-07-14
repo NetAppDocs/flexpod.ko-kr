@@ -24,6 +24,7 @@ NetApp의 Arvind Ramakrishnan
 
 
 
+[[how-does-ransomware-work]]
 == 랜섬웨어의 작동 방식
 
 다음 단계에서는 랜섬웨어가 암호화를 사용하여 피해자의 암호 해독 또는 복구 범위 없이 피해자의 데이터를 암호화하는 방법을 설명합니다.
@@ -39,6 +40,7 @@ NetApp의 Arvind Ramakrishnan
 
 
 
+[[challenges]]
 == 당면 과제
 
 개인 및 조직은 랜섬웨어의 공격을 받을 때 다음과 같은 문제에 직면해 있습니다.
@@ -53,6 +55,7 @@ NetApp의 Arvind Ramakrishnan
 
 
 
+[[who-is-at-risk]]
 == 누가 위험에 처합니까?
 
 개인 및 대규모 조직을 포함하여 모든 사람이 랜섬웨어의 공격을 받을 수 있습니다. 잘 정의된 보안 수단과 관행을 구현하지 않는 조직은 이러한 공격에 훨씬 더 취약합니다. 대규모 조직에 가해지는 공격의 결과는 개인이 견딜 수 있는 것보다 몇 배 더 클 수 있습니다.
@@ -71,6 +74,7 @@ NetApp의 Arvind Ramakrishnan
 
 
 
+[[how-does-ransomware-enter-a-system-or-spread]]
 == 랜섬웨어는 시스템에 어떻게 들어가거나 확산됩니까?
 
 랜섬웨어가 시스템에 들어오거나 다른 시스템으로 확산되는 방법에는 여러 가지가 있습니다. 오늘날의 세계에서 거의 모든 시스템은 인터넷, LAN, WAN 등을 통해 서로 연결되어 있습니다. 이러한 시스템 간에 생성 및 교환되는 데이터의 양은 증가만 되고 있습니다.
@@ -88,6 +92,7 @@ NetApp의 Arvind Ramakrishnan
 
 
 
+[[consequences-of-data-loss]]
 == 데이터 손실의 결과
 
 데이터 손실의 결과 또는 효과는 조직이 예상하는 것보다 훨씬 더 클 수 있습니다. 이러한 영향은 다운타임 기간 또는 조직이 데이터에 액세스할 수 없는 기간에 따라 달라질 수 있습니다. 공격이 지속되는 기간이 길수록 조직의 매출, 브랜드, 평판에 미치는 영향이 커집니다. 또한 조직은 법적 문제와 급격한 생산성 저하에 직면할 수 있습니다.
@@ -96,6 +101,7 @@ NetApp의 Arvind Ramakrishnan
 
 
 
+[[financial-effects]]
 == 재무적 영향
 
 최근 에 따르면 https://www.mcafee.com/enterprise/en-us/assets/executive-summaries/es-economic-impact-cybercrime.pdf["McAfee 보고서"^]사이버 범죄로 인해 발생하는 글로벌 비용은 약 6천억 달러로, 이는 전 세계 GDP의 약 0.8%입니다. 이 액수가 전 세계적으로 4조2000억 달러에 이르는 인터넷 경제 성장세에 비해 14%의 세금에 해당한다.
@@ -104,6 +110,7 @@ NetApp의 Arvind Ramakrishnan
 
 
 
+[[what-is-the-solution]]
 == 솔루션이 무엇입니까?
 
 최소한의 다운타임으로 랜섬웨어 공격에서 복구하려면 사전 예방적 재해 복구 계획을 구현해야만 합니다. 공격에서 복구할 수 있는 기능을 갖추는 것이 좋지만 공격을 한 번에 차단하는 것이 좋습니다.

@@ -26,6 +26,7 @@ image:flexpod-fips-image6.png["오류: 그래픽 이미지가 없습니다"]
 
 
 
+[[solution-infrastructure-hardware-and-software-components]]
 == 솔루션 인프라 하드웨어 및 소프트웨어 구성 요소
 
 다음 두 그림은 FlexPod에서 FIPS 테스트를 수행할 때 각각 사용되는 하드웨어 및 소프트웨어 구성 요소를 나열합니다. 이러한 표의 권장사항은 예이며, NetApp SME와 협력하여 해당 구성요소가 귀사에 적합한지 확인해야 합니다. 또한 에서 구성 요소 및 버전이 지원되는지 확인합니다 https://mysupport.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴"^] (IMT) 및 https://ucshcltool.cloudapps.cisco.com/public/["Cisco HCL(하드웨어 호환 목록)"^].

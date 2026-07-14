@@ -15,6 +15,7 @@ summary: FlexPod 참조 아키텍처는 Cisco Validated Design 또는 NetApp Ver
 
 
 
+[[flexpod-converged-infrastructure-portfolio]]
 == FlexPod 통합 인프라 포트폴리오
 
 FlexPod 참조 아키텍처는 CVD(Cisco Validated Design) 또는 NVA(NetApp Verified Architecture)로 제공됩니다. 특정 CVD 또는 NVA의 고객 요구 사항을 기반으로 편차가 지원되지 않는 구성을 구축해야 하는 경우 허용됩니다.
@@ -30,6 +31,7 @@ image:express-c-series-aff220-design_image2.png["오류: 그래픽 이미지가 
 
 
 
+[[netapp-verified-architecture-program]]
 == NetApp 검증 아키텍처 프로그램
 
 NVA 프로그램은 NetApp 솔루션을 위한 검증된 아키텍처를 고객에게 제공합니다. NVA는 NetApp 솔루션의 다음과 같은 특징을 의미합니다.

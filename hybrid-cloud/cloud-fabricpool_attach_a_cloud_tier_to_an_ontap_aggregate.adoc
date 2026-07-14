@@ -23,6 +23,7 @@ NOTE: 클라우드 계층을 애그리게이트에 연결하는 것은 영구적
 
 
 
+[[oncommand-system-manager]]
 == OnCommand 시스템 관리자
 
 OnCommand System Manager를 사용하여 클라우드 계층을 Aggregate에 연결하려면 다음 단계를 수행하십시오.
@@ -45,6 +46,7 @@ image:cloud-fabricpool_image15.png["오류: 그래픽 이미지가 없습니다"
 
 
 
+[[ontap-cli]]
 == ONTAP CLI를 참조하십시오
 
 ONTAP CLI를 사용하여 클라우드 계층을 애그리게이트에 연결하려면 다음 명령을 실행합니다.

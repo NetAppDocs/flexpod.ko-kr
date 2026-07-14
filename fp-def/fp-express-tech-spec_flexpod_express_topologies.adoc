@@ -18,6 +18,7 @@ summary: 이 섹션에서는 FlexPod Express의 예시 토폴로지를 설명합
 
 
 
+[[ucs-x-series-direct-with-direct-attached-fc-and-ip-based-san]]
 == FC 직접 연결 및 IP 기반 SAN을 갖춘 UCS X-Series Direct
 
 다음 그림은 IP 기반 및 FC 기반 SAN을 위한 UCS X-Series Direct 및 직접 연결 ASA 샘플 토폴로지를 보여줍니다.
@@ -50,6 +51,7 @@ https://www.netapp.com/pdf.html?item=/media/21938-nva-1154-DEPLOY.pdf[]
 ====
 
 
+[[ucs-c-series-servers-switch-attached-ip-based-storage]]
 == UCS C-Series 서버 스위치 연결 IP 기반 스토리지
 
 다음 그림은 Cisco UCS C-Series 독립형 시스템과 NetApp AFF를 보여줍니다.

@@ -26,12 +26,14 @@ link:gcp-ncvo-solution-validation.html["이전: 솔루션 검증."]
 
 
 
+[[where-to-find-additional-information]]
 == 추가 정보를 찾을 수 있는 위치
 
 이 문서에 설명된 정보에 대해 자세히 알아보려면 다음 문서 및/또는 웹 사이트를 검토하십시오.
 
 
 
+[[github]]
 === GitHub를 참조하십시오
 
 * 모든 Terraform 설정이 사용됩니다
@@ -46,6 +48,7 @@ https://github.com/ucs-compute-solutions/FlexPod_DR_Workflows["https://github.co
 
 
 
+[[cisco-intersight]]
 === Cisco Intersight를 참조하십시오
 
 * Cisco Intersight 도움말 센터
@@ -76,6 +79,7 @@ https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/inter
 
 
 
+[[flexpod]]
 === FlexPod
 
 * FlexPod 홈 페이지
@@ -94,6 +98,7 @@ https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_xse
 
 
 
+[[interoperability]]
 === 상호 운용성
 
 * NetApp 상호 운용성 매트릭스 툴
@@ -112,6 +117,7 @@ http://www.vmware.com/resources/compatibility/search.php["http://www.vmware.com/
 
 
 
+[[netapp-cloud-volumes-ontap-reference-documents]]
 === NetApp Cloud Volumes ONTAP 참조 문서
 
 * NetApp Console 설명서:
@@ -146,12 +152,14 @@ https://docs.netapp.com/us-en/occm/reference_infrastructure_as_code.html["https:
 
 
 
+[[troubleshooting-issues]]
 === 문제 해결
 
 https://kb.netapp.com/Cloud/ncds/nds/cvo/cvo_kbs["https://kb.netapp.com/Cloud/ncds/nds/cvo/cvo_kbs"^]
 
 
 
+[[terraform]]
 === Terraform(Terraform
 
 * Terraform 클라우드
@@ -170,6 +178,7 @@ https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/lates["https:
 
 
 
+[[gcp]]
 === GCP
 
 * GCP용 ONTAP 고가용성

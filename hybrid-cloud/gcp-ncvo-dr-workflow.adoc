@@ -61,6 +61,7 @@ Cloud Volumes ONTAP 클러스터 생성과 관련된 작업:
 
 
 
+[[procedure-1-create-the-workflow]]
 == 절차 1: 워크플로를 만듭니다
 
 . 왼쪽 탐색 창에서 * Orchestration * 을 클릭하고 * Create Workflow * 를 클릭합니다.
@@ -78,6 +79,7 @@ image:gcp-ncvo-image7.png["변수 입력 화면을 보여 주는 스크린샷"]
 
 
 
+[[procedure-2-create-a-new-volume-in-flexpod]]
 == 절차 2. FlexPod에서 새 볼륨을 생성합니다
 
 . 디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 작업 * 을 클릭합니다.
@@ -182,6 +184,7 @@ NOTE: 지금 오류를 무시합니다. 이 오류는 성공적인 전환을 지
 
 
 
+[[procedure-3-add-storage-export-policy]]
 == 절차 3: 스토리지 엑스포트 정책 추가
 
 . 디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 작업 * 을 클릭합니다.
@@ -231,6 +234,7 @@ NOTE: 그러면 볼륨에 엑스포트 정책이 추가됩니다. 그런 다음 
 
 
 
+[[procedure-4-map-flexpod-volume-to-datastore]]
 == 절차 4: FlexPod 볼륨을 데이터 저장소에 매핑
 
 . 디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 작업 * 을 클릭합니다.
@@ -358,6 +362,7 @@ image:gcp-ncvo-image45.png["스크린샷"]
 
 
 
+[[procedure-5-add-a-new-terraform-workspace]]
 == 절차 5: 새 Terraform 작업 영역을 추가합니다
 
 . 디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 작업 * 을 클릭합니다.
@@ -459,6 +464,7 @@ image:gcp-ncvo-image57.png["스크린샷"]
 
 
 
+[[procedure-6-add-non-sensitive-variables-to-workspace]]
 == 절차 6: 작업 영역에 중요하지 않은 변수를 추가합니다
 
 . Designer * 탭으로 이동하고 * Tools * 섹션에서 * Workflow를 클릭합니다.
@@ -577,6 +583,7 @@ image:gcp-ncvo-image64.png["스크린샷"]
 
 
 
+[[procedure-7-add-sensitive-variables-to-a-workspace]]
 == 절차 7: 작업 영역에 중요한 변수를 추가합니다
 
 . 디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 워크플로 * 를 클릭합니다.
@@ -653,6 +660,7 @@ image:gcp-ncvo-image67.png["스크린샷"]
 
 
 
+[[procedure-8-start-a-new-terraform-plan]]
 == 절차 8: 새 Terraform 계획을 시작합니다
 
 . 디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 작업 * 을 클릭합니다.
@@ -701,6 +709,7 @@ image:gcp-ncvo-image71.png["스크린샷"]
 
 
 
+[[procedure-9-sleep-task-for-synchronization]]
 == 절차 9: 동기화를 위한 절전 작업
 
 Terraform 적용에는 RunID가 필요하며, 이 ID는 Terraform 계획 작업의 일부로 생성됩니다. Terraform Plan과 Terraform Apply 작업 사이에 몇 초 동안 대기하면 타이밍 문제가 방지됩니다.
@@ -726,6 +735,7 @@ image:gcp-ncvo-image73.png["스크린샷"]
 
 
 
+[[procedure-10-confirm-and-apply-terraform-run]]
 == 절차 10: Terraform 실행을 확인하고 적용합니다
 
 . 디자이너 * 탭으로 이동하고 * 도구 * 섹션에서 * 작업 * 을 클릭합니다.
@@ -758,6 +768,7 @@ image:gcp-ncvo-image76.png["스크린샷"]
 
 
 
+[[procedure-11-import-a-cisco-built-workflow]]
 == 절차 11: Cisco에서 만든 워크플로 가져오기
 
 Cisco Intersight Cloud Orchestrator를 사용하면 Cisco Intersight 계정에서 시스템으로 워크플로우를 내보낸 다음 다른 계정으로 가져올 수 있습니다. JSON 파일은 사용자 계정으로 가져올 수 있는 기본 워크플로를 내보내서 생성되었습니다.
