@@ -3,7 +3,6 @@ section: security
 title: FlexPod 및 보안
 entries:
 - title: FlexPod, 랜섬웨어에 대한 솔루션
-  type: solutions
   entries:
   - title: 랜섬웨어란 무엇입니까?
     url: "/security/security-ransomware_what_is_ransomware.html"
@@ -22,7 +21,6 @@ entries:
   - title: 추가 정보
     url: "/security/security-ransomware_additional_information.html"
 - title: FIPS 140-2 Security-호환 FlexPod 솔루션을 통한 의료 서비스 지원
-  type: solutions
   entries:
   - title: 소개
     url: "/security/flexpod-fips-introduction.html"

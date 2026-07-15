@@ -271,7 +271,7 @@ CLI를 사용하여 클러스터를 설정할 수도 있습니다. 이 문서에
 . Guided Setup(안내식 설정) 을 클릭하여 클러스터를 구성합니다.
 . 클러스터 이름은 \<<var_clustername>>'을, 구성 중인 각 노드에 대해서는 \<<var_NodeA>>'와 \<<var_NodeB>>를 입력합니다. 스토리지 시스템에 사용할 암호를 입력합니다. 클러스터 유형으로 Switchless Cluster를 선택합니다. 클러스터 기본 라이센스를 입력합니다.
 +
-image:express-c-series-aff220-deploy_image6.png["오류: 그래픽 이미지가 없습니다"]
+image:express-c-series-aff220-deploy_image6.png[""]
 
 . 클러스터, NFS 및 iSCSI에 대한 기능 라이센스도 입력할 수 있습니다.
 . 클러스터를 생성 중임을 나타내는 상태 메시지가 표시됩니다. 이 상태 메시지는 여러 상태를 순환합니다. 이 과정은 몇 분 정도 소요됩니다.
@@ -298,7 +298,7 @@ image:express-c-series-aff220-deploy_image6.png["오류: 그래픽 이미지가 
 계속하려면 이벤트 알림 방법을 설정해야 합니다. 방법 중 하나를 선택할 수 있습니다.
 
 +
-image:express-c-series-aff220-deploy_image7.png["오류: 그래픽 이미지가 없습니다"]
+image:express-c-series-aff220-deploy_image7.png[""]
 
 
 

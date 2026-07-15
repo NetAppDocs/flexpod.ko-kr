@@ -31,13 +31,13 @@ OnCommand System Manager를 사용하여 클라우드 계층을 Aggregate에 연
 . OnCommand 시스템 관리자를 시작합니다.
 . 애플리케이션 및 계층 을 클릭합니다.
 +
-image:cloud-fabricpool_image14.png["오류: 그래픽 이미지가 없습니다"]
+image:cloud-fabricpool_image14.png[""]
 
 . Storage Tiers를 클릭합니다.
 . Aggregate를 클릭합니다.
 . 작업 을 클릭하고 클라우드 계층 연결 을 선택합니다.
 +
-image:cloud-fabricpool_image15.png["오류: 그래픽 이미지가 없습니다"]
+image:cloud-fabricpool_image15.png[""]
 
 . 클라우드 계층을 선택합니다.
 . Aggregate의 볼륨에 대한 계층화 정책을 확인하고 업데이트합니다(선택 사항). 기본적으로 볼륨 계층화 정책은 Snapshot 전용 으로 설정됩니다.

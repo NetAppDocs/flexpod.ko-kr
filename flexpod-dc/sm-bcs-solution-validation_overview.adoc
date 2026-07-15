@@ -27,7 +27,7 @@ FlexPod 솔루션은 그 특성상 유연성이 뛰어나므로 지원되는 모
 
 FlexPod SM-BC 솔루션의 검증을 위해 NetApp, Cisco 및 VMware에서 지원하는 기술 구성요소가 사용됩니다. 이 솔루션은 사이트 A의 ONTAP 9.10.1, 이중 Cisco Nexus 9336C-FX2 스위치를 실행하는 NetApp AFF A250 HA 쌍과 사이트 B의 이중 Cisco Nexus 3232C 스위치, Cisco UCS 6454 FI를 양쪽 사이트에서 모두 지원합니다. 그리고 VMware vSphere 7.0u2를 실행하고 UCS Manager 및 VMware vCenter Server에서 관리하는 각 사이트에 Cisco UCS B200 M5 서버 3개가 있습니다. 다음 그림은 사이트 A에서 실행되는 두 개의 FlexPod 시스템과 사이트 C에서 실행되는 확장된 계층 2 사이트 간 링크 및 ONTAP 중재자에 의해 연결된 사이트 B의 구성 요소 수준 솔루션 검증 토폴로지를 보여 줍니다
 
-image:sm-bcs-image16.png["오류: 그래픽 이미지가 없습니다"]
+image:sm-bcs-image16.png[""]
 
 
 

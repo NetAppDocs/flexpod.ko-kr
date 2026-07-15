@@ -3,7 +3,6 @@ section: fp-def
 title: FlexPod 정의
 entries:
 - title: FlexPod 익스프레스 기술 사양
-  type: solutions
   entries:
   - title: 개요
     url: "/fp-def/fp-express-tech-spec_overview.html"
@@ -42,7 +41,6 @@ entries:
   - title: 추가 정보
     url: "/fp-def/fp-express-tech-spec_additional_information.html"
 - title: FlexPod 데이터 센터 기술 사양
-  type: solutions
   entries:
   - title: 개요
     url: "/fp-def/dc-tech-spec_solution_overview.html"

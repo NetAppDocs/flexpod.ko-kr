@@ -4,7 +4,6 @@ title: FlexPod 익스프레스
 entries:
 - title: FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 설계 가이드 를
     참조하십시오
-  type: solutions
   entries:
   - title: 개요
     url: "/express/express-c-series-c190-design_executive_summary.html"
@@ -20,7 +19,6 @@ entries:
     url: "/express/express-c-series-c190-design_where_to_find_additional_information.html"
 - title: FlexPod Express with Cisco UCS C-Series 및 NetApp AFF C190 Series 구축 가이드 를
     참조하십시오
-  type: solutions
   entries:
   - title: 개요
     url: "/express/express-c-series-c190-deploy_program_summary_overview.html"
@@ -59,7 +57,6 @@ entries:
   - title: 버전 기록
     url: "/express/express-c-series-c190-deploy_version_history.html"
 - title: FlexPod Express with Cisco UCS C-Series and AFF A220 Series 설계 가이드 를 참조하십시오
-  type: solutions
   entries:
   - title: 개요
     url: "/express/express-c-series-aff220-design_executive_summary.html"
@@ -78,7 +75,6 @@ entries:
   - title: 추가 정보를 찾을 수 있는 위치
     url: "/express/express-c-series-aff220-design_where_to_find_additional_information.html"
 - title: FlexPod Express with Cisco UCS C-Series and AFF A220 Series 구축 가이드 를 참조하십시오
-  type: solutions
   entries:
   - title: 개요
     url: "/express/express-c-series-aff220-deploy_program_summary.html"
@@ -111,7 +107,6 @@ entries:
     url: "/express/express-c-series-aff220-deploy_where_to_find_additional_information.html"
 - title: 직접 연결 IP 기반 스토리지를 사용하는 VMware vSphere 6.7U1 및 NetApp AFF A220을 지원하는 FlexPod
     Express
-  type: solutions
   entries:
   - title: 개요
     url: "/express/express-direct-attach-aff220-deploy_program_summary.html"

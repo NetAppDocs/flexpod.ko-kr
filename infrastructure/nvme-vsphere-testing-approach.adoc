@@ -33,7 +33,7 @@ Cisco Nexus 9000 시리즈 스위치는 2가지 운영 모드를 지원합니다
 
 NX-OS가 포함된 FlexPod는 컴퓨팅, 네트워크 및 스토리지 계층에서 완전히 이중화되도록 설계되었습니다. 디바이스 또는 트래픽 경로 관점에서 단일 장애 지점이 없습니다. 아래 그림은 FC-NVMe의 이 검증에 사용된 최신 FlexPod 설계의 다양한 요소를 보여줍니다.
 
-image:nvme-vsphere-image2.png["오류: 그래픽 이미지가 없습니다"]
+image:nvme-vsphere-image2.png[""]
 
 FC SAN 관점에서 볼 때 이 설계는 최신 4세대 Cisco UCS 6454 패브릭 상호 연결 및 서버에 포트 확장기가 있는 Cisco UCS VICS 1400 플랫폼을 사용합니다. Cisco UCS 섀시의 Cisco UCS B200 M6 블레이드 서버는 Cisco UCS 2408 Fabric Extender IOM에 연결된 포트 확장기가 있는 Cisco UCS VIC 1440을 사용하며, 각 FCoE(Fibre Channel over Ethernet) vHBA(Virtual Host Bus Adapter)의 속도는 40Gbps입니다. Cisco UCS가 관리하는 Cisco UCS C220 M5 랙 서버는 Cisco UCS VIC 1457을 사용하며, 각 Fabric Interconnect에 2개의 25Gbps 인터페이스가 제공됩니다. 각 C220 M5 FCoE vHBA의 속도는 50Gbps입니다.
 

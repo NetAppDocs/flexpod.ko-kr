@@ -3,7 +3,6 @@ section: flexpod-dc
 title: FlexPod 데이터 센터
 entries:
 - title: NetApp SnapMirror 비즈니스 연속성 및 ONTAP 9.10이 설치된 FlexPod 데이터 센터
-  type: solutions
   entries:
   - title: 소개
     url: "/flexpod-dc/sm-bcs-introduction.html"

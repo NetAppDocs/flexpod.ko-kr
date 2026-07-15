@@ -4,7 +4,6 @@ title: NetApp ONTAP 스토리지와 Cisco Intersight
 entries:
 - title: 소개
   url: "/ontap-connector-for-intersight/index.html"
-  type: solutions
 - title: 새로운 소식
   url: "/ontap-connector-for-intersight/ci-qsg_new.html"
 - title: 요구 사항

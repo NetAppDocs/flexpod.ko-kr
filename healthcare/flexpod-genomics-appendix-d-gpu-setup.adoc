@@ -27,10 +27,10 @@ link:flexpod-genomics-appendix-c.html["이전: Cromwell 엔진을 사용하여 G
 
 . 우리는 UCS B200 M5 서버의 메자닌 슬롯에 PCIe NVIDIA Tesla P6 GPU를 사용했습니다.
 +
-image:flexpod-genomics-image18.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image18.png[""]
 
 +
-image:flexpod-genomics-image19.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image19.png[""]
 
 . 이 설정을 위해 NVIDIA 파트너 포털에 등록되어 컴퓨팅 모드에서 GPU를 사용할 수 있는 평가 라이센스(소유 권한이라고도 함)를 받았습니다.
 . NVIDIA 파트너 웹 사이트에서 필요한 NVIDIA vGPU 소프트웨어를 다운로드했습니다.
@@ -75,32 +75,32 @@ Wed Aug 18 21:37:19 2021
 ....
 . vCenter를 사용하면 https://blogs.vmware.com/apps/2018/09/using-gpus-with-virtual-machines-on-vsphere-part-2-vmdirectpath-i-o.html["구성"^] 그래픽 장치 설정을 “Shared Direct”로 지정합니다.
 +
-image:flexpod-genomics-image20.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image20.png[""]
 
 +
-image:flexpod-genomics-image21.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image21.png[""]
 
 . RedHat VM의 보안 부팅이 비활성화되어 있는지 확인합니다.
 . VM 부트 옵션 펌웨어가 EFI( https://docs.vmware.com/en/VMware-vSphere-Bitfusion/3.0/Install-Guide/GUID-2005A8C6-4FDC-46DF-BB6B-989F6E91F3E2.html["참조"^])를 클릭합니다.
 +
-image:flexpod-genomics-image22.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image22.png[""]
 
 . 다음 매개 변수가 VM 옵션 고급 편집 구성에 추가되었는지 확인합니다. "pciPassthru.64bitMMIOSizeGB" 매개 변수의 값은 GPU 메모리와 VM에 할당된 GPU 수에 따라 달라집니다. 예를 들면 다음과 같습니다.
 +
 .. VM에 4개의 32GB V100 GPU가 할당된 경우 이 값은 128이어야 합니다.
 .. VM에 16GB P6 GPU 4개가 할당된 경우 이 값은 64여야 합니다.
 +
-image:flexpod-genomics-image23.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image23.png[""]
 
 +
-image:flexpod-genomics-image24.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image24.png[""]
 
 
 
 . vGPU를 vCenter의 가상 머신에 새 PCI 장치로 추가할 때는 NVIDIA GRID vGPU를 PCI Device 유형으로 선택해야 합니다.
 . 사용 중인 GPU, GPU 메모리 및 사용 목적(예: 그래픽 대 컴퓨팅)에 맞는 GPU 프로필을 선택합니다.
 +
-image:flexpod-genomics-image25.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image25.png[""]
 
 . RedHat Linux VM에서 NVIDIA 드라이버는 다음 명령을 실행하여 설치할 수 있습니다.
 +
@@ -159,7 +159,7 @@ Wed Aug 18 20:30:56 2021
 
 . VM을 다시 시작한 후 라이센스 서버의 허가된 클라이언트 아래에 아래와 같은 항목이 표시됩니다.
 +
-image:flexpod-genomics-image26.png["오류: 그래픽 이미지가 없습니다"]
+image:flexpod-genomics-image26.png[""]
 
 . GATK 및 Cromwell 소프트웨어 다운로드에 대한 자세한 내용은 솔루션 설정 섹션을 참조하십시오.
 . GATK가 구내에서 GPU를 사용할 수 있으면 워크플로 설명 언어 ' *. wdl은 아래와 같이 런타임 특성을 가지고 있다.

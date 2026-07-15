@@ -15,7 +15,7 @@ summary: 이 솔루션은 FlexPod 기반의 VMware vSphere 7을 사용한 FC-NVM
 
 Chris Schmitt와 Kamini Singh, NetApp
 
-파트너 후원:image:cisco logo.png["오류: 그래픽 이미지가 없습니다"]
+다음 기관과 협력하여: image:cisco logo.png[""]
 
 [role="lead"]
 새로운 핵심 기술인 NVMe 데이터 스토리지 표준은 현재 및 미래 메모리 기술에 매우 높은 대역폭과 매우 짧은 지연 시간의 스토리지 액세스를 제공하여 엔터프라이즈 데이터 스토리지 액세스 및 전송을 변화시키고 있습니다. NVMe는 SCSI 명령 세트를 NVMe 명령 세트로 대체합니다.
@@ -26,7 +26,7 @@ FlexPod는 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치, Cis
 
 다음 그림에서는 FlexPod 구성 요소 제품군을 보여 줍니다.
 
-image:nvme-vsphere-image1.png["오류: 그래픽 이미지가 없습니다"]
+image:nvme-vsphere-image1.png[""]
 
 FlexPod는 FC-NVMe를 도입하는 데 이상적인 플랫폼입니다. 기존 Cisco UCS B200 M5 또는 M6 서버 또는 Cisco UCS C-Series M5 또는 M6 랙 서버에 Cisco UCS VIC 1400 Series 및 Port Expander를 추가하여 지원할 수 있으며, Cisco UCS 시스템, Cisco MDS 32Gbps 스위치로 간단하고 중단 없는 소프트웨어 업그레이드를 수행할 수 있습니다. 및 NetApp AFF 스토리지 어레이를 모두 지원합니다. 지원되는 하드웨어 및 소프트웨어를 배치한 후 FC-NVMe의 구성은 FCP 구성과 비슷합니다.
 

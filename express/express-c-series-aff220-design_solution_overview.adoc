@@ -13,7 +13,7 @@ FlexPod Express는 혼합 가상화 워크로드를 실행하도록 설계되었
 
 다음 그림에서는 FlexPod Express 솔루션에 포함된 하드웨어 구성 요소를 보여 줍니다.
 
-image:express-c-series-aff220-design_image3.png["오류: 그래픽 이미지가 없습니다"]
+image:express-c-series-aff220-design_image3.png[""]
 
 
 
@@ -29,7 +29,7 @@ image:express-c-series-aff220-design_image3.png["오류: 그래픽 이미지가 
 
 이 솔루션은 NetApp, Cisco 및 VMware의 최신 기술을 활용합니다. 이 솔루션에는 ONTAP 9.4 소프트웨어, 이중 Cisco Nexus 3172P 스위치 및 VMware vSphere 6.7을 실행하는 Cisco UCS C220 M5 랙 서버를 실행하는 새로운 NetApp AFF A220 시스템이 포함되어 있습니다. 이 검증된 솔루션은 10기가비트 이더넷(10GbE) 기술을 사용합니다. 다음 그림에서는 개요를 보여 줍니다. 또한 FlexPod 익스프레스 아키텍처가 조직의 변화하는 비즈니스 요구에 적응할 수 있도록 한 번에 두 개의 하이퍼바이저 노드를 추가하여 확장하는 방법에 대한 지침도 제공됩니다.
 
-image:express-c-series-aff220-design_image4.png["오류: 그래픽 이미지가 없습니다"]
+image:express-c-series-aff220-design_image4.png[""]
 
 
 NOTE: 40GbE는 검증되지 않았지만 지원되는 인프라입니다.

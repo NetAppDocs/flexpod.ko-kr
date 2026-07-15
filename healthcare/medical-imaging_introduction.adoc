@@ -103,7 +103,7 @@ FlexPod 공동 지원은 의료 조직에서 비즈니스 크리티컬 애플리
 
 
 
-image:medical-imaging_image2.png["오류: 그래픽 이미지가 없습니다"]
+image:medical-imaging_image2.png[""]
 
 
 

@@ -3,7 +3,6 @@ section: hybrid-cloud
 title: 하이브리드 클라우드
 entries:
 - title: FlexPod 하이브리드 클라우드 및 Cloud Volumes ONTAP for Epic
-  type: solutions
   entries:
   - title: 솔루션 개요
     url: "/hybrid-cloud/fhc-cvoe-solution-overview.html"
@@ -21,7 +20,6 @@ entries:
     url: "/hybrid-cloud/fhc-cvoe-where-to-find-additional-information.html"
 - title: NetApp Cloud Volumes ONTAP 및 Cisco Intersight가 지원되는 Google 클라우드 플랫폼용 FlexPod
     하이브리드 클라우드
-  type: solutions
   entries:
   - title: 솔루션 개요
     url: "/hybrid-cloud/gcp-ncvo-solution-overview.html"
@@ -48,7 +46,6 @@ entries:
   - title: 결론
     url: "/hybrid-cloud/gcp-ncvo-conclusion.html"
 - title: FlexPod용 NetApp Cloud Insights
-  type: solutions
   entries:
   - title: 개요
     url: "/hybrid-cloud/cloud-insights_netapp_cloud_insights_for_flexpod.html"
@@ -67,7 +64,6 @@ entries:
   - title: 추가 정보
     url: "/hybrid-cloud/cloud-insights_additional_information.html"
 - title: FlexPod with FabricPool - Amazon AWS S3로 비활성 데이터 계층화
-  type: solutions
   entries:
   - title: 개요
     url: "/hybrid-cloud/cloud-fabricpool_introduction.html"

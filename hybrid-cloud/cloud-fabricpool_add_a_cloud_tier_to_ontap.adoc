@@ -45,7 +45,7 @@ OnCommand System Manager를 사용하여 클라우드 계층을 추가하려면 
 . Save and Attach Aggregate 를 클릭합니다.
 
 
-image:cloud-fabricpool_image13.png["오류: 그래픽 이미지가 없습니다"]
+image:cloud-fabricpool_image13.png[""]
 
 
 
