@@ -7386,11 +7386,6 @@
   <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">새로운 기능</block>
   <block id="17c3771ed0b6c1ae15740eff715e9922" category="sidebar">비디오 및 데모</block>
   <block id="d6b9ea32b921a9f56de32062ba4b94f3" category="sidebar">블로그</block>
-  <block id="cfa345d8fdba7b2e9598cce9c0e3c744" category="sidebar">FlexPod을 통한 AI 및 최신 데이터 분석</block>
-  <block id="7d15915b1c0d83b2d07ba91bb371d99c" category="sidebar">FlexPod 비즈니스 애플리케이션 및 엔터프라이즈 데이터베이스</block>
-  <block id="9651c3a3b7cbc999c2c50c39dbf61c04" category="sidebar">FlexPod 기반의 하이브리드 클라우드</block>
-  <block id="7cb27dbb321a2dda7b1a59417ac87d24" category="sidebar">VDI용 FlexPod</block>
-  <block id="e24bc29daa40702c050f7f3b61476c6f" category="sidebar">FlexPod 의료</block>
   <block id="da1ad8cf23727f17cd3ee56b1280c387" category="paragraph">Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 가상화 장치를 요청할 수 있습니다. Intersight Targets * 페이지로 돌아가서 vCenter 및 NetApp Active IQ Unified Manager 타겟을 추가합니다.</block>
   <block id="2e5893c243d41c5a61c4efaa83f3a294" category="paragraph"><block ref="2e5893c243d41c5a61c4efaa83f3a294" category="inline-link-rx"></block></block>
   <block id="19829de524ac9c6ea351e3ffc56ea16e" category="paragraph">이러한 기능은 FlexPod 익스프레스 솔루션을 보완하는 몇 가지 핵심 기능일 뿐입니다. ONTAP 9.4의 추가 기능에 대한 자세한 내용은 를 참조하십시오<block ref="c633298bec990e426b7e2b06b94ab53d" category="inline-link-rx"></block>. 또한<block ref="acaccc868f6222e64c0f11237becafd9" category="inline-link-rx"></block> ONTAP 9.4를 포함하도록 업데이트된 NetApp를 참조하십시오.</block>
@@ -7755,7 +7750,6 @@
   <block id="7013f56669c02dbe795614370d0c956e" category="list-text">이중화 구성의 2개의 10Gbps 표준 이더넷 스위치(Cisco Nexus 9200 및 9300 모델)</block>
   <block id="5f7768fa622b0c0e0bf05d27d8097e12" category="list-text">CIMC 기반 독립형 랙 서버 구성 또는 Intersight 독립형 구성을 갖춘 Cisco UCS C-Series 독립형 랙 서버, 또는 Cisco Intersight 관리 구성(IMM)을 갖춘 Cisco UCS X-Series Direct.</block>
   <block id="8cf756e67e6fe3a58a1405610ba75ad9" category="paragraph">FlexPod Express 아키텍처에서는 이중화된 AFF, ASA 또는 FAS 시리즈 컨트롤러가 필요합니다. 이러한 컨트롤러는 ONTAP 소프트웨어를 실행합니다. 스토리지 컨트롤러를 주문할 때 원하는 소프트웨어 버전을 컨트롤러에 미리 설치할 수 있습니다. ONTAP의 경우, 클러스터는 한 쌍의 클러스터 인터커넥트 스위치를 사용하거나 스위치가 없는 클러스터 구성으로 배포할 수 있습니다.</block>
-  <block id="d5c565b8a9c9c59fa0b692c9cbf65edd" category="admonition">스위치가 없는 클러스터 구성은 2노드 구성에서만 지원됩니다. 클러스터 인터커넥트 스위치는 4개 이상의 노드가 있는 구성에 필요하며 2노드 구성의 경우 선택 사항입니다.</block>
   <block id="230b6be042c6a9e09ceea70fd8e2f108" category="paragraph">선택한 스토리지 플랫폼에 따라 다양한 옵션과 구성이 가능합니다. 이러한 추가 구성 요소에 대한 자세한 내용은 영업 담당자에게 문의하십시오.</block>
   <block id="ee65a1f1b80c1d59eba7dc665cc831bc" category="paragraph">아래 표에 나열된 컨트롤러 제품군은 Cisco Nexus 스위치와의 연결이 원활하므로 FlexPod 솔루션에 사용하기에 적합합니다. 각 컨트롤러 모델의 구체적인 호환성 정보는<block ref="0012c2b4de81607ee8d0f71acdd6c9ab" category="inline-link-rx"></block>을 참조하십시오.</block>
   <block id="b77cf317a6bb3b0806632ae61052e3ed" category="cell">NetApp 엔트리 레벨 스토리지 제품군(FlexPod Express용)</block>
@@ -8351,4 +8345,8 @@
   <block id="111f4df7e87e518570ab7b1b197da1ff" category="paragraph"><block ref="111f4df7e87e518570ab7b1b197da1ff" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3f8b76f392fdab66088707ea680cdf9c" category="paragraph"><block ref="3f8b76f392fdab66088707ea680cdf9c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="01d78a1cc76d70d71c21461704721f1f" category="paragraph"><block ref="01d78a1cc76d70d71c21461704721f1f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d31ed23a1faa3e74607a17176c090e5e" category="admonition">스위치가 없는 클러스터 구성은 2개 노드 구성에서만 지원됩니다. 클러스터 인터커넥트 스위치는 4개 이상의 노드로 구성된 경우에 필요하며, 2개 노드 구성에서는 선택 사항입니다.</block>
+  <block id="29d1fb15319805edca77b8cc05b35dfb" category="sidebar">FlexPod 설계 가이드</block>
+  <block id="26672345b32420d3708cd3bd0f7b1e88" category="sidebar">FlexPod 검증된 설계 가이드</block>
+  <block id="21b29303b1c3acf1c3bbd54b69cf697d" category="sidebar">FlexPod 기술 사양</block>
 </blocks>
