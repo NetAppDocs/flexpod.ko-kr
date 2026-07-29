@@ -26,6 +26,6 @@ NetApp AFF, ASA 또는 FAS 컨트롤러를 기반 스토리지로 사용하는 F
 FlexPod Express의 최소 하드웨어 요구 사항은 다음과 같습니다.
 
 * 이중화 구성의 2개의 10Gbps 표준 이더넷 스위치(Cisco Nexus 9200 및 9300 모델)
-* CIMC 기반 독립형 랙 서버 구성 또는 Intersight 독립형 구성을 갖춘 Cisco UCS C-Series 독립형 랙 서버, 또는 Cisco Intersight 관리 구성(IMM)을 갖춘 Cisco UCS X-Series Direct.
+* CIMC 기반 독립형 랙 서버 구성 또는 Intersight 독립형 구성을 갖춘 두 대의 Cisco UCS C-Series 독립형 랙 서버, 또는 Cisco Intersight 관리 구성(IMM)을 갖춘 Cisco UCS X-Series Direct.
 * 고가용성(HA) 쌍 구성으로 2노드 클러스터로 배포된 두 개의 엔트리 레벨 NetApp AFF(A20, A30 또는 C30), NetApp ASA(A20, A30 또는 C30) 또는 NetApp FAS(2750, 2820 또는 FAS 50) 시리즈 컨트롤러
 

@@ -7743,7 +7743,6 @@
   <block id="07fabd6fde589c0dfb293502119057ad" category="paragraph">NetApp AFF, ASA 또는 FAS 컨트롤러를 기반 스토리지로 사용하는 FlexPod Express 솔루션의 하드웨어 요구 사항에는 이 섹션에 설명된 구성들이 포함됩니다.</block>
   <block id="75b256e594cf5a8ba03273e8a68f2c27" category="paragraph">FlexPod Express의 최소 하드웨어 요구 사항은 다음과 같습니다.</block>
   <block id="7013f56669c02dbe795614370d0c956e" category="list-text">이중화 구성의 2개의 10Gbps 표준 이더넷 스위치(Cisco Nexus 9200 및 9300 모델)</block>
-  <block id="5f7768fa622b0c0e0bf05d27d8097e12" category="list-text">CIMC 기반 독립형 랙 서버 구성 또는 Intersight 독립형 구성을 갖춘 Cisco UCS C-Series 독립형 랙 서버, 또는 Cisco Intersight 관리 구성(IMM)을 갖춘 Cisco UCS X-Series Direct.</block>
   <block id="8cf756e67e6fe3a58a1405610ba75ad9" category="paragraph">FlexPod Express 아키텍처에서는 이중화된 AFF, ASA 또는 FAS 시리즈 컨트롤러가 필요합니다. 이러한 컨트롤러는 ONTAP 소프트웨어를 실행합니다. 스토리지 컨트롤러를 주문할 때 원하는 소프트웨어 버전을 컨트롤러에 미리 설치할 수 있습니다. ONTAP의 경우, 클러스터는 한 쌍의 클러스터 인터커넥트 스위치를 사용하거나 스위치가 없는 클러스터 구성으로 배포할 수 있습니다.</block>
   <block id="230b6be042c6a9e09ceea70fd8e2f108" category="paragraph">선택한 스토리지 플랫폼에 따라 다양한 옵션과 구성이 가능합니다. 이러한 추가 구성 요소에 대한 자세한 내용은 영업 담당자에게 문의하십시오.</block>
   <block id="ee65a1f1b80c1d59eba7dc665cc831bc" category="paragraph">아래 표에 나열된 컨트롤러 제품군은 Cisco Nexus 스위치와의 연결이 원활하므로 FlexPod 솔루션에 사용하기에 적합합니다. 각 컨트롤러 모델의 구체적인 호환성 정보는<block ref="0012c2b4de81607ee8d0f71acdd6c9ab" category="inline-link-rx"></block>을 참조하십시오.</block>
@@ -7752,10 +7751,8 @@
   <block id="1d54842ba417c6ef95e35c602a80d5ac" category="cell">A30</block>
   <block id="71642a8ed4161123d0530fb7e39a80f1" category="cell">AFF C-Series</block>
   <block id="9c5fd388a2ee6ceb65d30336d2fec257" category="cell">C30</block>
-  <block id="e74e816dd7cc6f70a065fed35442bdba" category="cell">ASA A-Series</block>
   <block id="152c92bb93afe1127ea38c0adcfc59e7" category="inline-link">ASA 문서</block>
   <block id="250607b5164c46a6898f0c37fbf5e7f2" category="cell"><block ref="250607b5164c46a6898f0c37fbf5e7f2" category="inline-link-rx"></block></block>
-  <block id="eab12603d471c1206ae118fe245f03eb" category="cell">ASA C-Series</block>
   <block id="149f0ea389848f479bd80af6375b383b" category="cell">FAS</block>
   <block id="82d9aaf29409f2b1321f31e9bf87f742" category="cell">FAS 2750</block>
   <block id="b547a5d94845d9471423356c66873bd5" category="inline-link">FAS 문서</block>
@@ -7846,20 +7843,12 @@
   <block id="5ae1780e03f6f2fe6330117093999bce" category="cell">NetApp AFF C30</block>
   <block id="5f1e8d8da262b8e1d6aef0279e46acce" category="inline-link">AFF C30 주요 사양</block>
   <block id="48bd9ed2e9b563ce06697ee9af4741d2" category="cell"><block ref="48bd9ed2e9b563ce06697ee9af4741d2" category="inline-link-rx"></block></block>
-  <block id="20befc895bdd3c5753147d0bd9801f9c" category="section-title">NetApp ASA A-Series</block>
-  <block id="76d8696e94b1dcc6fafd26e8cfafe6cd" category="inline-link">NetApp ASA A 시리즈 기술 사양</block>
-  <block id="ef7f30d4da71e49b19ad0dcd62a43e68" category="paragraph">NetApp ASA A 시리즈 스토리지 컨트롤러의 엔트리 레벨 모델은 FlexPod Express에서 사용할 수 있습니다. 자세한 내용은<block ref="e07f75b49dc7b1e59eb99a5026c2d79a" category="inline-link-rx"></block> 데이터시트 및<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block>를 참조하십시오. 특정 ASA 모델에 대한 자세한 정보는 다음 표에 나열된 플랫폼별 문서를 참조하십시오.</block>
-  <block id="8b02ef4642c29f10f418b8edafd3ba35" category="cell">NetApp ASA A-Series 컨트롤러 플랫폼 문서</block>
   <block id="64e2bfe618c1dfa2ae2b3ecbfe27bd7e" category="cell">NetApp ASA A20</block>
   <block id="fd4ef17843c8a6b3fa7f2bbacaedb1ca" category="inline-link">ASA A20 주요 사양</block>
   <block id="4e1a6ff04c556f6bdbdeb04b0cc657db" category="cell"><block ref="4e1a6ff04c556f6bdbdeb04b0cc657db" category="inline-link-rx"></block></block>
   <block id="dde2e7d2b59d10ca54a92bfb685863cd" category="cell">NetApp ASA A30</block>
   <block id="97bcbb900c8b2788fdf8dfead82aa886" category="inline-link">ASA A30 주요 사양</block>
   <block id="8aa3c24c81a0a19ff08ffc9b323550f1" category="cell"><block ref="8aa3c24c81a0a19ff08ffc9b323550f1" category="inline-link-rx"></block></block>
-  <block id="ecea189069d20f1668c67018a77dd10e" category="section-title">NetApp ASA C-Series</block>
-  <block id="4faa6a7b3548c8ebf5e8335c84835414" category="inline-link">NetApp ASA C-시리즈 기술 사양</block>
-  <block id="b695e800e4011f4380290539a9d8b161" category="paragraph">NetApp ASA C-시리즈 스토리지 컨트롤러의 엔트리 레벨 모델은 FlexPod Express에서 사용할 수 있습니다. 자세한 내용은<block ref="9039b49573135778d57fa448f51fc0ff" category="inline-link-rx"></block> 데이터시트 및<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block>을 참조하십시오. 특정 ASA 모델에 대한 자세한 정보는 다음 표에 나열된 플랫폼별 문서를 참조하십시오.</block>
-  <block id="fd737aa8c91d9db6a7d0e43df5ce9311" category="cell">NetApp ASA C-Series 컨트롤러 플랫폼 문서</block>
   <block id="0953b6c43b0d6df696f61090d726dca3" category="cell">NetApp ASA C30</block>
   <block id="b761052fedd3b5e9027bd9da05b7b26d" category="inline-link">ASA C30 주요 사양</block>
   <block id="78cb25d69d4fe295ef030ff0d4eb85a2" category="cell"><block ref="78cb25d69d4fe295ef030ff0d4eb85a2" category="inline-link-rx"></block></block>
@@ -8349,4 +8338,10 @@
   <block id="d4be789c0896e734a89e386a8d00f187" category="inline-link"><block ref="d4be789c0896e734a89e386a8d00f187" category="inline-link-rx"></block></block>
   <block id="c1ba01aa51a8fc173d6a9dd15d8b5d42" category="paragraph"><block ref="c1ba01aa51a8fc173d6a9dd15d8b5d42" category="inline-link-rx"></block></block>
   <block id="9b1dcc158dd4f463eff8e0ecc95e1c0f" category="paragraph">FlexPod 아키텍처는 이 문서에 설명된 규칙 집합에 의해 정의됩니다. 하드웨어 구성 요소와 소프트웨어 구성은 <block ref="55be3385fd2442b96520f981204722ea" category="inline-link-rx"></block> 및 <block ref="538106ddbedb569903f8e17bb643549d" category="inline-link-rx"></block>에서 지원되어야 합니다.</block>
+  <block id="d5801c87d769ed7144d6149320f2c851" category="list-text">CIMC 기반 독립형 랙 서버 구성 또는 Intersight 독립형 구성을 갖춘 두 대의 Cisco UCS C-Series 독립형 랙 서버, 또는 Cisco Intersight 관리 구성(IMM)을 갖춘 Cisco UCS X-Series Direct.</block>
+  <block id="b7b46ce5d1a547db89c0bc615ff272a5" category="cell">ASA</block>
+  <block id="2b304856171196502641312a496c6d54" category="section-title">NetApp ASA</block>
+  <block id="10869ea6345111f91c959d006b281746" category="inline-link">NetApp ASA 기술 사양</block>
+  <block id="80eae4b252a85f4d42cd6f7c8964dc81" category="paragraph">NetApp ASA 스토리지 컨트롤러의 엔트리 레벨 모델은 FlexPod Express에서 사용할 수 있습니다. 자세한 내용은<block ref="0121d7eee41574793aaf62f464ee106c" category="inline-link-rx"></block> 데이터시트 및<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block>을 참조하십시오. 특정 ASA 모델에 대한 자세한 정보는 다음 표에 나열된 플랫폼별 문서를 참조하십시오.</block>
+  <block id="93227a3c59a6f0dd8e3e3d2920c96a7c" category="cell">NetApp ASA 컨트롤러 플랫폼 문서</block>
 </blocks>
