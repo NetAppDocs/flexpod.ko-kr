@@ -50,7 +50,7 @@ Cisco는 Cisco 제품 지원 페이지에서 판매 종료일과 지원 종료�
 
 
 
-==== Cisco UCS 서버 판매 종료 및 지원 종료 정보
+==== Cisco UCS 서버의 판매 종료 및 지원 종료 정보
 
 * link:https://www.cisco.com/c/en/us/support/eol/index.html["Cisco 제품 지원 페이지"]으로 이동합니다.
 * *제품 카테고리*에서 *서버 - UCS 및 HCI*를 선택하고 서버 유형(예: *UCS C-Series Rack Servers*)을 클릭합니다. 특정 모델(예: *UCS C220 M5*)을 찾고 판매 종료일과 지원 종료일을 확인하십시오.
@@ -58,7 +58,7 @@ Cisco는 Cisco 제품 지원 페이지에서 판매 종료일과 지원 종료�
 
 
 
-==== Cisco Nexus 스위치 판매 종료 및 지원 종료 정보
+==== Cisco Nexus 스위치의 판매 종료 및 지원 종료 정보
 
 * link:https://www.cisco.com/c/en/us/support/eol/index.html["Cisco 제품 지원 페이지"]으로 이동합니다.
 * *제품 카테고리*에서 *스위치*를 선택하고 사용 중인 스위치 유형(예: *Nexus 9000*)을 클릭하세요. 특정 모델(예: *9236C*)을 찾아 판매 종료일과 지원 종료일을 확인하세요.

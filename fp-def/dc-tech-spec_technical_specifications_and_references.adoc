@@ -451,7 +451,7 @@ NetApp AFF ASA A-Series 스토리지 컨트롤러의 모든 현재 모델은 Fle
 [[netapp-disk-shelves]]
 === 제공합니다
 
-NetApp 디스크 쉘프의 기술 사양에는 폼 팩터 크기, 엔클로저당 드라이브 수, 쉘프 I/O 모듈 등이 포함되어 있으며, 이 설명서는 다음 표를 참조하십시오. 자세한 내용은 를 참조하십시오 http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["NetApp 디스크 쉘프 및 스토리지 미디어 기술 사양"^] 및 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^].
+NetApp 디스크 쉘프의 기술 사양에는 폼 팩터 크기, 엔클로저당 드라이브 수 및 쉘프 I/O 모듈이 포함됩니다. 이 문서는 다음 표에서 확인할 수 있습니다. 자세한 내용은 https://www.netapp.com/data-storage/disk-shelves-storage-media/["NetApp 디스크 쉘프 및 스토리지 미디어 기술 사양"^] 및 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]을 참조하십시오.
 
 |===
 | 구성 요소 | NetApp FAS/AFF 디스크 쉘프 문서 

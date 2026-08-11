@@ -527,10 +527,10 @@ NOTE: 이 시스템은 스위치가 없는 2노드 클러스터 구성에서 설
 | DNS 서버 IP(둘 이상 입력할 수 있음) | \<<var_dns_server_ip>> 를 참조하십시오 
 
 
-| NTP 서버 A IP입니다 | 스위치-A-NTP-IP>> 
+| NTP 서버 A IP입니다 | +<< switch-a-ntp-ip >>+ 
 
 
-| NTP 서버 B IP입니다 | switch-b-ntp-ip>> 
+| NTP 서버 B IP입니다 | +<< switch-b-ntp-ip >>+ 
 |===
 
 

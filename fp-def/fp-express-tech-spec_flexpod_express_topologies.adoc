@@ -69,6 +69,6 @@ image:fp-express-tech-spec_image12.png["Cisco UCS C-Series 독립형 서버 및 
 Cisco UCS C-Series는 CIMC 또는 Cisco Intersight 독립형 관리를 통해 관리할 수 있습니다.
 
 
-NOTE: 위의 예시 토폴로지는 NetApp AFF를 사용하는 직접 연결 스토리지 솔루션을 나타냅니다. 하지만 동일한 토폴로지를 NetApp ASA 및 FAS에도 사용할 수 있습니다.
+NOTE: 위의 샘플 토폴로지는 NetApp AFF를 사용하는 스토리지 솔루션을 나타냅니다. 하지만 동일한 토폴로지를 NetApp ASA 및 FAS에도 사용할 수 있습니다.
 
 이 구성에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/88340-NVA-FlexpodExpress_C220_A250_NexusFinal.pdf["FlexPod express for VMware vSphere 8.0 with Cisco UCS C-Series 독립형 및 NetApp AFF"^]을 참조하십시오.

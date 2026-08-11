@@ -16,7 +16,7 @@ summary: VMware vCenter Server 6.7 및 vSphere 클러스터링을 구성하려�
 [role="lead"]
 VMware vCenter Server 6.7 및 vSphere 클러스터링을 구성하려면 다음 단계를 수행하십시오.
 
-. 다음으로 이동하세요. `https://<<FQDN or IP of vCenter>>/vsphere-client/`
+. 다음으로 이동하세요. `+https://<<FQDN or IP of vCenter>>/vsphere-client/+`
 . vSphere Client 시작 을 클릭합니다.
 . 사용자 이름 mailto:administrator@vspehre.loca l [administrator^]@vSphere.local과 VCSA 설정 프로세스 중에 입력한 SSO 암호를 사용하여 로그인합니다.
 . vCenter 이름을 마우스 오른쪽 버튼으로 클릭하고 New Datacenter를 선택합니다.

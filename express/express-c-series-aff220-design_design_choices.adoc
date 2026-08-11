@@ -23,7 +23,7 @@ summary: 이 페이지에 나열된 기술은 이 설계를 설계하는 과정�
 [[aff-a220-system]]
 === AFF A220 시스템
 
-AFF A220 하드웨어 시스템에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/products/storage-systems/all-flash-array/aff-a-series.aspx["AFF A 시리즈 홈 페이지"^].
+AFF A220 하드웨어 시스템에 대한 자세한 내용은  https://www.netapp.com/aff-a-series/["AFF A 시리즈 홈 페이지"^]을 참조하십시오.
 
 
 
@@ -40,7 +40,7 @@ image:express-c-series-aff220-design_image5.png[""]
 
 image:express-c-series-aff220-design_image6.png[""]
 
-이러한 기능은 FlexPod 익스프레스 솔루션을 보완하는 몇 가지 핵심 기능일 뿐입니다. ONTAP 9.4의 추가 기능에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/pdf.html?item=/media/7413-ds-3231.pdf["ONTAP 9 데이터 관리 소프트웨어 데이터시트입니다"^]. 또한 http://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 문서 센터"^] ONTAP 9.4를 포함하도록 업데이트된 NetApp를 참조하십시오.
+다음은 FlexPod Express 솔루션을 보완하는 몇 가지 주요 기능입니다. ONTAP 9.4의 추가 기능 및 성능에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/7413-ds-3231-ontap-unified-data-storage-management.pdf["ONTAP 9 데이터 관리 소프트웨어 데이터시트입니다"^]을 참조하십시오. 또한 ONTAP 9.4를 포함하도록 업데이트된 NetApp http://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 문서 센터"^]도 참조하십시오.
 
 
 
