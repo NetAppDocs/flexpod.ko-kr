@@ -94,6 +94,6 @@ image:sm-bcs-image45.png[""]
 
 image:sm-bcs-image46.png[""]
 
-VMware HA 클러스터 및 VMware vSphere Metro 스토리지 클러스터에 대한 추가 Best Practice와 구성은 를 참조하십시오 https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["vSphere HA 클러스터 생성 및 사용"^], https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-vmsc["VMware vMSC(vSphere Metro Storage Cluster)"^] 및 에 대한 VMware KB를 참조하십시오 https://kb.vmware.com/s/article/83370["NetApp ONTAP with NetApp SnapMirror 비즈니스 연속성(SM-BC) 및 VMware vSphere Metro Storage Cluster(vMSC)"^].
+VMware HA 클러스터 및 VMware vSphere Metro 스토리지 클러스터에 대한 추가 모범 사례 및 구성은  https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["vSphere HA 클러스터 생성 및 사용"^],  https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-vmsc["VMware vMSC(vSphere Metro Storage Cluster)"^] 및  https://docs.netapp.com/us-en/netapp-solutions-virtualization/vmware/vmw-vmsc-with-smas.html["NetApp ONTAP with SnapMirror active sync(이전 SM-BC) 및 VMware vSphere Metro Storage Cluster(vMSC)"^]을 참조하십시오.
 
 link:sm-bcs-validated-scenarios.html["다음으로 솔루션 검증 시나리오를 살펴보겠습니다."]

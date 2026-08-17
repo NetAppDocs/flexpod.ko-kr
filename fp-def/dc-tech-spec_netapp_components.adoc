@@ -69,13 +69,13 @@ FlexPod 아키텍처에는 중복 NetApp FAS, AFF 또는 AFF ASA 컨트롤러가
 
 NOTE: 모든 디스크 쉘프와 디스크 부품 번호는 세일즈 담당자에게 문의하십시오.
 
-지원되는 드라이브에 대한 자세한 내용을 보려면 다음 표에서 NetApp Hardware Universe 링크를 클릭한 다음 지원되는 드라이브 를 선택합니다.
+디스크 셸프 및 저장 매체에 대한 자세한 내용은 다음 표의 디스크 셸프 및 저장 매체 기술 사양 링크를 참조하십시오.
 
 |===
 | 디스크 쉘프 | 기술 사양 
 
 
-| DS224C .4+| http://www.netapp.com/us/products/storage-systems/disk-shelves-and-storage-media/disk-shelves-tech-specs.aspx["NetApp Hardware Universe의 디스크 쉘프 및 스토리지 미디어 지원 드라이브"] 
+| DS224C .4+| https://www.netapp.com/data-storage/disk-shelves-storage-media/["디스크 셸프 및 저장 매체 기술 사양"] 
 
 
 | DS212C 

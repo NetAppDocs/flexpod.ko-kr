@@ -37,7 +37,7 @@ image:flexpod-genomics-image19.png[""]
 . NVIDIA 파트너 웹 사이트에서 자격 '*.bin' 파일을 다운로드했습니다.
 . NVIDIA vGPU 라이센스 서버를 설치하고 NVIDIA 파트너 사이트에서 다운로드한 ' *.bin' 파일을 사용하여 라이센스 서버에 사용 권한을 추가했습니다.
 . NVIDIA 파트너 포털에서 배포할 올바른 NVIDIA vGPU 소프트웨어 버전을 선택하십시오. 이 설정에서는 드라이버 버전 460.73.02를 사용했습니다.
-. 이 명령은 를 설치합니다 https://docs.omniverse.nvidia.com/prod_deployment/prod_deployment/installing-vgpu-manager.html["NVIDIA vGPU Manager"^] ESXi에서
+. 이 명령은 ESXi에  https://docs.nvidia.com/vgpu/latest/grid-software-quick-start-guide/installing-configuring-vgpu-manager-guest-driver.html#installing-the-nvidia-virtual-gpu-manager-on-vmware-vsphere["NVIDIA vGPU Manager"^]을 설치합니다.
 +
 ....
 [root@localhost:~] esxcli software vib install -v /vmfs/volumes/infra_datastore_nfs/nvidia/vib/NVIDIA_bootbank_NVIDIA-VMware_ESXi_7.0_Host_Driver_460.73.02-1OEM.700.0.0.15525992.vib

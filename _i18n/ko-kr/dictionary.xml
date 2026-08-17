@@ -725,9 +725,6 @@
   <block id="ba1e118c83648b254f27cdd860d0d4ae" category="list-text">AFF and FAS 시스템 설명서 센터 를 참조하십시오</block>
   <block id="554fd76f92a53acc4771ed399786a57d" category="inline-link"><block ref="554fd76f92a53acc4771ed399786a57d" category="inline-link-rx"></block></block>
   <block id="e33f95f1ca3f289e294b676f648401f9" category="paragraph"><block ref="e33f95f1ca3f289e294b676f648401f9" category="inline-link-rx"></block></block>
-  <block id="3f4c54c18646adc8c8ae46b11a0e57bb" category="list-text">AFF 문서 리소스 페이지</block>
-  <block id="fa83b13617b7a425e389315666f6973f" category="inline-link"><block ref="fa83b13617b7a425e389315666f6973f" category="inline-link-rx"></block></block>
-  <block id="951a11d67c8bd54ba3f92b6b7a568225" category="paragraph"><block ref="951a11d67c8bd54ba3f92b6b7a568225" category="inline-link-rx"></block></block>
   <block id="3da62b0155bb983730f82945c5398c77" category="list-text">FlexPod Express with VMware vSphere 6.7 및 NetApp AFF C190 구축 가이드(진행 중)</block>
   <block id="d593e9456b5b5cc924ea54481697ee69" category="summary">이 참조 검증은 다음 그림 및 표와 같이 케이블로 연결됩니다.</block>
   <block id="fce5f960774fb71c0e5e23b53da5e4c7" category="doc">FlexPod Express 케이블링 정보</block>
@@ -2190,8 +2187,6 @@
   <block id="71c81e313ca5e5611fec268845053370" category="list-text">12x 960GB</block>
   <block id="d992e1827eb3ff1548758374c052d046" category="list-text">18x 960GB</block>
   <block id="afa71c56dac2c20407fbf4a57d0c06a2" category="list-text">24x 960GB</block>
-  <block id="c49fff3d6f4a20cb0c09fb1e672e7447" category="inline-link">NetApp AFF C190 All-Flash 어레이 페이지</block>
-  <block id="1167e6fdc62369bac1d600d8c92a5037" category="paragraph">AFF C190 하드웨어 시스템에 대한 자세한 내용은 를 참조하십시오<block ref="e04d825c3a253f91f3ef939dcda0495a" category="inline-link-rx"></block>.</block>
   <block id="9056a7d347c12638c9ac7efd641fc96b" category="section-title">ONTAP 9.6 소프트웨어</block>
   <block id="3d50b0969e9f9350008352ef96483ea0" category="paragraph">NetApp AFF C190 시스템은 새로운 ONTAP 9.6 데이터 관리 소프트웨어를 사용합니다. ONTAP 9.6은 업계 최고의 엔터프라이즈 데이터 관리 소프트웨어입니다. 새로운 버전에는 새로운 수준의 단순성과 유연성, 강력한 데이터 관리 기능, 스토리지 효율성, 업계 최고 수준의 클라우드 통합이 결합되어 있습니다.</block>
   <block id="2b39fb0a0934cfecc30ac98eb34b0bbf" category="paragraph">ONTAP 9.6에는 FlexPod 익스프레스 솔루션에 적합한 여러 가지 기능이 있습니다. 가장 중요한 것은 NetApp이 스토리지 효율성을 위해 노력하고 있다는 점입니다. 이는 소규모 구축에 있어서 가장 중요한 기능 중 하나입니다. 중복제거, 압축, 컴팩션, 씬 프로비저닝 같은 NetApp 스토리지 효율성 기능의 특징은 ONTAP 9.6에서 확인할 수 있습니다. NetApp WAFL 시스템은 항상 4KB 블록을 씁니다. 블록이 4KB의 할당된 공간을 사용하지 않을 때 다중 블록을 4KB 블록으로 결합합니다. 다음 그림에서는 이 프로세스를 보여 줍니다.</block>
@@ -3652,7 +3647,6 @@
   <block id="0f32b160cfcd3499a930878d29b6ed25" category="list-text">NVIDIA vGPU 라이센스 서버를 설치하고 NVIDIA 파트너 사이트에서 다운로드한 ' *.bin' 파일을 사용하여 라이센스 서버에 사용 권한을 추가했습니다.</block>
   <block id="7f9f34352293614b9bebdab47afb36e8" category="list-text">NVIDIA 파트너 포털에서 배포할 올바른 NVIDIA vGPU 소프트웨어 버전을 선택하십시오. 이 설정에서는 드라이버 버전 460.73.02를 사용했습니다.</block>
   <block id="6afa1ca2b52709a30dc305f116845435" category="inline-link">NVIDIA vGPU Manager</block>
-  <block id="f6dde3fe91c3309780cc23ec78a264b2" category="list-text">이 명령은 를 설치합니다<block ref="8dfdcc1b3def6ddf3b82101a1b233305" category="inline-link-rx"></block> ESXi에서</block>
   <block id="7eb52140787764d9abbdb19475dcbb73" category="list-text">ESXi 서버를 재부팅한 후 다음 명령을 실행하여 설치를 검증하고 GPU 상태를 확인하십시오.</block>
   <block id="e2d5a00791bce9a01f99bc6fd613a39d" category="inline-link">구성</block>
   <block id="37a453d78969a68cec2776ec753e56c9" category="list-text">vCenter를 사용하면<block ref="88dff5fd971c4f20673419ef29670bcd" category="inline-link-rx"></block> 그래픽 장치 설정을 “Shared Direct”로 지정합니다.</block>
@@ -3778,7 +3772,6 @@
   <block id="67fcc419cbe799bb19b8911cb363a1dd" category="inline-link">IE</block>
   <block id="1535d7e1326740598e2e9c670065a0a1" category="list-text">건강 정보 교환(<block ref="a2c8343b121451106bab40f2f2a93afd" category="inline-link-rx"></block>)에는 메시지에 포함된 이미지가 포함됩니다.</block>
   <block id="907252d9f6c712cc5f8fcc12251441b1" category="inline-link">NetApp 구현 Data Fabric</block>
-  <block id="424085d73e2bf68920f52c0e421ec644" category="list-text">핸드헬드, 무선 스캔 장치(예: 휴대폰에 연결된 포켓 핸드헬드 초음파 스캐너)와 같은 모바일 기법에는 엣지, 코어 및 클라우드에서 DoD 수준의 보안, 안정성 및 지연 시간을 지원하는 강력한 네트워크 인프라가 필요합니다.<block ref="3eee67b0b37da60b6460fdf023f854d0" category="inline-link-rx"></block> 규모에 따라 확장 가능한 기능을 제공합니다.</block>
   <block id="2ea6325cbb00626fd010bdc2c9b84882" category="inline-link">성능, 신뢰성 및 확장성을 기본 특성에 따라 제공합니다</block>
   <block id="37a955b83843b3a60895704bbaa81329" category="paragraph">잘 설계된 의료 영상 시스템 플랫폼은 혁신의 핵심입니다. FlexPod 아키텍처는 업계 최고의 스토리지 효율성을 바탕으로 유연한 컴퓨팅 및 스토리지 기능을 제공합니다.</block>
   <block id="1ec59953da3ae57022920e20e60729a1" category="paragraph">의료 기관은 FlexPod 아키텍처 기반에서 이미징 애플리케이션 환경을 실행함으로써 직원 생산성이 향상되고 자본 및 운영 비용이 절감될 것으로 기대할 수 있습니다. FlexPod은 예측 가능한 짧은 지연 시간의 시스템 성능과 고가용성을 제공하도록 설계되고 설계된 엄격한 테스트를 거쳐 사전 검증된 통합형 솔루션을 제공합니다. 이러한 접근 방식은 의료 영상 시스템 사용자에게 높은 수준의 편안함을 제공하고 궁극적으로 최적의 응답 시간을 제공합니다.</block>
@@ -4130,9 +4123,6 @@
   <block id="61180aaf0b2d71322476b407dec66f81" category="list-text">의료 분야의 혁신을 지원하는 FlexPod</block>
   <block id="51715f6336f71f0c342d4f6d79941b19" category="inline-link"><block ref="51715f6336f71f0c342d4f6d79941b19" category="inline-link-rx"></block></block>
   <block id="2331140ce18354b448afad499fd44f5d" category="paragraph"><block ref="2331140ce18354b448afad499fd44f5d" category="inline-link-rx"></block></block>
-  <block id="1a1737c8198f24d4d034d37b96784b6d" category="list-text">의료 분야 AI 및 분석(NetApp)</block>
-  <block id="3f6fbe0eeb0b40131d6099047ee11cf6" category="inline-link"><block ref="3f6fbe0eeb0b40131d6099047ee11cf6" category="inline-link-rx"></block></block>
-  <block id="3d59760af9fb9d0cfe13fe40ba137808" category="paragraph"><block ref="3d59760af9fb9d0cfe13fe40ba137808" category="inline-link-rx"></block></block>
   <block id="f84e9db44c6ef05870d1f60e67ce9b9b" category="list-text">의료 스마트 인프라 선택이 가능한 AI는 성공을 높여줍니다</block>
   <block id="0372ba8eced17850294543c71eb6118f" category="inline-link"><block ref="0372ba8eced17850294543c71eb6118f" category="inline-link-rx"></block></block>
   <block id="faf2964740264b736e400781dfa2c882" category="paragraph"><block ref="faf2964740264b736e400781dfa2c882" category="inline-link-rx"></block></block>
@@ -4887,9 +4877,6 @@
   <block id="ce9c0b8b6c23f9fbba191e4d302b977e" category="paragraph">모든 스토리지 컨트롤러에 NetApp 디스크 쉘프가 하나 이상 필요합니다.</block>
   <block id="c590db225b3b8f81ea877e347416fc4b" category="paragraph">선택한 NetApp 쉘프 유형에 따라 해당 쉘프 내에서 사용 가능한 드라이브 유형이 결정됩니다.</block>
   <block id="4565123671fd7bba4b48587da9afe9f8" category="admonition">모든 디스크 쉘프와 디스크 부품 번호는 세일즈 담당자에게 문의하십시오.</block>
-  <block id="13cce1099823394337e706eafd90f01d" category="paragraph">지원되는 드라이브에 대한 자세한 내용을 보려면 다음 표에서 NetApp Hardware Universe 링크를 클릭한 다음 지원되는 드라이브 를 선택합니다.</block>
-  <block id="50c7e0a6a44a11f0dd0f88a46fd0a446" category="inline-link">NetApp Hardware Universe의 디스크 쉘프 및 스토리지 미디어 지원 드라이브</block>
-  <block id="f517d5bbd97d59fddbf6fb63ae1de23f" category="cell"><block ref="f517d5bbd97d59fddbf6fb63ae1de23f" category="inline-link-rx"></block></block>
   <block id="d5740ca99d65dda0f0c3f535ec3113ea" category="paragraph">다음 표에는 FlexPod 데이터 센터 아키텍처에 사용할 수 있는 NetApp 소프트웨어 라이센스 옵션이 나와 있습니다. NetApp 소프트웨어는 FAS 및 AFF 컨트롤러 레벨에서 라이센스가 부여됩니다.</block>
   <block id="aa2dd17a631a9e61bcaf69515584e135" category="cell">SW, 전체 BNDL(컨트롤러), -C</block>
   <block id="82624737d7fd71e77981f1121d913833" category="cell">SW-8XXX-COMP-BNDL-C</block>
@@ -5083,7 +5070,6 @@
   <block id="245ccd4cdd5cb484215315baf93697ce" category="list-text">Cisco 및 FIPS 140-2 규정 준수</block>
   <block id="6770ff13f95abd8619a19519877aedf9" category="list-text">NetApp 암호화 보안 모듈</block>
   <block id="bf7fa6fb49dfa01515f774f7a86c6270" category="list-text">중대형 의료 조직을 위한 사이버 보안 사례</block>
-  <block id="8f8e7f38245f5c357d275915df1fb3d6" category="list-text">NetApp 스토리지 암호화, NVMe 자체 암호화 드라이브, NetApp 볼륨 암호화 및 NetApp 애그리게이트 암호화</block>
   <block id="64f1ff1b6f99d34e2d1a43f8332c7947" category="list-text">NetApp 볼륨 암호화 및 NetApp 애그리게이트 암호화</block>
   <block id="826703b67408dd5973ff8ccc401a9b8b" category="list-text">NetApp 스토리지 암호화</block>
   <block id="187fa0150d76f09beb9a3b74c448990a" category="list-text">전자 건강 기록 시스템용 FlexPod</block>
@@ -5549,8 +5535,6 @@
   <block id="4833f38d3ef45f44218f78ed6d010a1e" category="paragraph">하트비트 데이터 저장소의 경우 다음 그림과 같이 클러스터에서 4개의 공유 데이터 저장소를 지정하고 자동으로 보완합니다.</block>
   <block id="9eb2bd2480a35c698be7fc3c56207ade" category="inline-link">vSphere HA 클러스터 생성 및 사용</block>
   <block id="58486898b4fe52f80d7a134d74186a4c" category="inline-link">VMware vMSC(vSphere Metro Storage Cluster)</block>
-  <block id="af5299e77d937d0f90b53f5c8d31f369" category="inline-link">NetApp ONTAP with NetApp SnapMirror 비즈니스 연속성(SM-BC) 및 VMware vSphere Metro Storage Cluster(vMSC)</block>
-  <block id="fbf1a5366eed75e49cdd525f7972eadc" category="paragraph">VMware HA 클러스터 및 VMware vSphere Metro 스토리지 클러스터에 대한 추가 Best Practice와 구성은 를 참조하십시오<block ref="e1c1274de4ccc0d5560df65f90d3e6aa" category="inline-link-rx"></block>,<block ref="4f7c5688f5dfddf1590f2246102bcda0" category="inline-link-rx"></block> 및 에 대한 VMware KB를 참조하십시오<block ref="82bb4696814a89c9685efdd36751466a" category="inline-link-rx"></block>.</block>
   <block id="04efca99cb9ed979fd07e0b0adfcd574" category="inline-link-macro">다음으로 솔루션 검증 시나리오를 살펴보겠습니다.</block>
   <block id="3af9ad1096d1f95cac10da1c470c8ede" category="paragraph"><block ref="3af9ad1096d1f95cac10da1c470c8ede" category="inline-link-macro-rx"></block></block>
   <block id="276f6adc3fdf9f6540c8de077b236afa" category="summary">높은 수준의 FlexPod SM-BC 솔루션은 두 개의 FlexPod 시스템으로 구성되어 있으며, 서로 연결되고 서로 연결되어 어느 정도 거리가 떨어져 있는 두 개의 사이트에 배치되어 사이트 장애 시에도 무중단 업무 운영을 제공할 수 있는 가용성이 높고 유연성이 뛰어나며 신뢰성이 높은 데이터 센터 솔루션을 제공합니다.</block>
@@ -5710,9 +5694,6 @@
   <block id="de8402faa342fc9625bdaa3961573a1b" category="inline-link"><block ref="de8402faa342fc9625bdaa3961573a1b" category="inline-link-rx"></block></block>
   <block id="eda0ad9ec468bbcaad6eca5eb6ef6925" category="paragraph"><block ref="eda0ad9ec468bbcaad6eca5eb6ef6925" category="inline-link-rx"></block></block>
   <block id="d50e63b9f70efedde8dc093be8ec12b2" category="list-text">VMware vSphere Metro Storage Cluster 권장 사례</block>
-  <block id="c912dc73def9e5758eb6e130fd3b21ee" category="list-text">NetApp ONTAP with NetApp SnapMirror SM-BC(Business Continuity) with VMware vSphere Metro Storage Cluster(vMSC). (83370)</block>
-  <block id="e42e1f7327a67ae6a4439a303fc9c81d" category="inline-link"><block ref="e42e1f7327a67ae6a4439a303fc9c81d" category="inline-link-rx"></block></block>
-  <block id="077317c6b779e004e75e33d28168bab8" category="paragraph"><block ref="077317c6b779e004e75e33d28168bab8" category="inline-link-rx"></block></block>
   <block id="0fb53f6fd950dbb18a8f27d8735f5ed7" category="list-text">VMware vSphere Metro Storage Cluster 및 ONTAP를 사용하여 계층 1 애플리케이션과 데이터베이스를 보호합니다</block>
   <block id="1fb0c828050c8732d84945ca6ded7c37" category="inline-link"><block ref="1fb0c828050c8732d84945ca6ded7c37" category="inline-link-rx"></block></block>
   <block id="7105f117d2822e18aa8b108416306262" category="paragraph"><block ref="7105f117d2822e18aa8b108416306262" category="inline-link-rx"></block></block>
@@ -7056,10 +7037,6 @@
   <block id="0864932acc0306b831b9b6d06bd03988" category="inline-link-macro">딥 러닝 설계를 위한 Cisco UCS 480 ML과 AI 및 ML을 결합하는 FlexPod 데이터 센터</block>
   <block id="5260743f63f66f308d49388afb846bd9" category="paragraph">이 문서에서는 통합 인프라 내에서 AI 및 ML 기능을 제공하기 위한 통합 접근 방식을 제공하기 위해 Cisco UCS C480 ML M5 플랫폼을 FlexPod 데이터 센터 솔루션에 통합하는 작업에 대한 구현 세부 정보와 지침을 제공합니다. 또한 Cisco UCS C220 및 C240 플랫폼의 NVIDIA GPU 구성에 대해서도 설명합니다. 이 솔루션에 사용된 플랫폼 및 기술에 대한 자세한 설계 논의는 를 참조하십시오 <block ref="3f9db80af0fcf30cd49f43d7e8392495" category="inline-link-macro-rx"></block>.</block>
   <block id="5c597e77337eb7a9f56a2e411462026e" category="paragraph"><block ref="5c597e77337eb7a9f56a2e411462026e" category="inline-link-macro-rx"></block></block>
-  <block id="ba57600ee0880eeb4a6733e4ffdb746c" category="summary">이 문서에서는 통합 인프라 내에서 AI 및 ML 기능을 제공하기 위한 통합 접근 방식을 제공하기 위해 Cisco UCS C480 ML M5 플랫폼을 FlexPod 데이터 센터 솔루션에 통합하는 작업에 대한 설계 세부 정보를 제공합니다.</block>
-  <block id="54c81e9ff4b87e7057996f3d7f7e1ef9" category="paragraph">이 문서에서는 통합 인프라 내에서 AI 및 ML 기능을 제공하기 위한 통합 접근 방식을 제공하기 위해 Cisco UCS C480 ML M5 플랫폼을 FlexPod 데이터 센터 솔루션에 통합하는 작업에 대한 설계 세부 정보를 제공합니다. AI 및 ML 기능을 결합한 서버를 기존 FlexPod 시스템을 관리하는 데 사용하는 익숙한 툴과 함께 관리할 수 있는 기능을 고객에게 제공함으로써 딥 러닝 플랫폼을 구축하는 데 드는 관리 오버헤드와 비용이 크게 절감됩니다. 이 CVD에 포함된 설계에는 동시 AI 및 ML 워크로드 처리를 위한 추가 옵션으로 2개의 NVIDIA T4 GPU가 장착된 C220 M5 서버 및 2개의 NVIDIA V100 32GB PCIe 카드가 장착된 C240 M5 서버와 같은 다른 Cisco UCS 플랫폼도 포함됩니다.</block>
-  <block id="8b18888e3656f164c4bf24a7a21e4b87" category="inline-link-macro">딥 러닝-설계를 위한 Cisco UCS 480mL와 AI 및 ML을 결합한 FlexPod 데이터 센터</block>
-  <block id="1e4b645d8f9a75e6c46cf9488d22933c" category="paragraph"><block ref="1e4b645d8f9a75e6c46cf9488d22933c" category="inline-link-macro-rx"></block></block>
   <block id="a62f414e5bdaf0b7beeb9fd03ff2d3a3" category="summary">이 문서에서는 고가용성 멀티 데이터 센터 솔루션을 제공하기 위해 Cisco ACI Multi-Pod 및 NetApp MetroCluster IP 솔루션을 FlexPod 데이터 센터에 통합하는 방법을 설명합니다.</block>
   <block id="4533c1ee4ca77108af5228fd5e146578" category="doc">FlexPod 데이터 센터 및 Cisco ACI 멀티 포드, NetApp MetroCluster IP, VMware vSphere 6.7-Design</block>
   <block id="bac896dca07603856efe39b592882a4d" category="paragraph">이 문서에서는 고가용성 멀티 데이터 센터 솔루션을 제공하기 위해 Cisco ACI Multi-Pod 및 NetApp MetroCluster IP 솔루션을 FlexPod 데이터 센터에 통합하는 방법을 설명합니다. 멀티 데이터 센터 아키텍처는 무중단 워크로드 이동성을 활용하여 두 데이터 센터 간에 워크로드의 균형을 조정할 수 있는 기능을 제공하므로 중단을 유지할 필요 없이 사이트 간에 서비스를 마이그레이션할 수 있습니다.</block>
@@ -8314,7 +8291,6 @@
   <block id="03eafaadf1f43f467e0c29703ab1932f" category="list-text"><block ref="03eafaadf1f43f467e0c29703ab1932f" category="inline-link-rx"></block></block>
   <block id="ec5ce571da818f4da52a1da1e2dbd33b" category="list-text"><block ref="ec5ce571da818f4da52a1da1e2dbd33b" category="inline-link-rx"></block></block>
   <block id="c66725685883abd77914fbc7480ce223" category="list-text"><block ref="c66725685883abd77914fbc7480ce223" category="inline-link-rx"></block></block>
-  <block id="6e0e67876b025b8aabc5fb9194f724b4" category="list-text"><block ref="6e0e67876b025b8aabc5fb9194f724b4" category="inline-link-rx"></block></block>
   <block id="56d596ac1534ec88a5d46b8da9ec5a19" category="list-text"><block ref="56d596ac1534ec88a5d46b8da9ec5a19" category="inline-link-rx"></block></block>
   <block id="2a5cf8dbaae42a04d9e87f9084f8f7dc" category="list-text"><block ref="2a5cf8dbaae42a04d9e87f9084f8f7dc" category="inline-link-rx"></block></block>
   <block id="3fb849296843f6d74893a1dbb36f741b" category="list-text"><block ref="3fb849296843f6d74893a1dbb36f741b" category="inline-link-rx"></block></block>
@@ -8330,4 +8306,24 @@
   <block id="bce9908f4541b67e5acaa7389d3ac785" category="list-text"><block ref="bce9908f4541b67e5acaa7389d3ac785" category="inline-link-rx"></block></block>
   <block id="a2d81194092c58e2bbe51654477726a7" category="list-text"><block ref="a2d81194092c58e2bbe51654477726a7" category="inline-link-rx"></block></block>
   <block id="db8805d5104d5291fd66b0e18a458f18" category="list-text"><block ref="db8805d5104d5291fd66b0e18a458f18" category="inline-link-rx"></block></block>
+  <block id="54e3a9e029683c8de92be0c55d9d6816" category="inline-link">NetApp AFF C190 설명서</block>
+  <block id="3f60209c2c21edecf1d0225780f34e18" category="paragraph">AFF C190 하드웨어 시스템에 대한 전체 정보는 <block ref="872c66a4a5bb86e831800415c5d779e2" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="82d00b486e3c8c053c6ba0a4535a2822" category="list-text">AFF C-Series 시스템 문서</block>
+  <block id="7dcdb17f2cb453fdf5972fb15e133e52" category="inline-link"><block ref="7dcdb17f2cb453fdf5972fb15e133e52" category="inline-link-rx"></block></block>
+  <block id="58e7e157a307b249786e8334fa1fa99a" category="paragraph"><block ref="58e7e157a307b249786e8334fa1fa99a" category="inline-link-rx"></block></block>
+  <block id="9fbd968c2244aeb511619f306fd3defe" category="inline-link">NetApp ONTAP with SnapMirror active sync(이전 SM-BC) 및 VMware vSphere Metro Storage Cluster(vMSC)</block>
+  <block id="fd496345cf0716305e18460bba3496ec" category="paragraph">VMware HA 클러스터 및 VMware vSphere Metro 스토리지 클러스터에 대한 추가 모범 사례 및 구성은 <block ref="e1c1274de4ccc0d5560df65f90d3e6aa" category="inline-link-rx"></block>, <block ref="4f7c5688f5dfddf1590f2246102bcda0" category="inline-link-rx"></block> 및 <block ref="399947f596dce5740d0ee9329ffe1e45" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="d11030d759cf8db4404491611b16f7b9" category="list-text">NetApp ONTAP with SnapMirror 액티브 싱크(이전 명칭 SM-BC)과 VMware vSphere Metro Storage Cluster(vMSC)</block>
+  <block id="50bb0628da6c26cb935a8bff810b58ef" category="inline-link"><block ref="50bb0628da6c26cb935a8bff810b58ef" category="inline-link-rx"></block></block>
+  <block id="6a75508e103dc5c21a8907f0d27151c1" category="paragraph"><block ref="6a75508e103dc5c21a8907f0d27151c1" category="inline-link-rx"></block></block>
+  <block id="e4613e8cb67b47c815182efcb2addff3" category="paragraph">디스크 셸프 및 저장 매체에 대한 자세한 내용은 다음 표의 디스크 셸프 및 저장 매체 기술 사양 링크를 참조하십시오.</block>
+  <block id="a502ba2e14f433f612cfb7a8c2ab4fda" category="inline-link">디스크 셸프 및 저장 매체 기술 사양</block>
+  <block id="fb89f6fa4beb71b5f4515f1d61cd3ac7" category="cell"><block ref="fb89f6fa4beb71b5f4515f1d61cd3ac7" category="inline-link-rx"></block></block>
+  <block id="73fb97d8b411c3ab96bb7d5e7cacdcbb" category="list-text">이 명령은 ESXi에 <block ref="bfe054ce9a0ac3d24a225d16ac8489a9" category="inline-link-rx"></block>을 설치합니다.</block>
+  <block id="8255476c22d06ed95ba1918cb6fb1dbd" category="list-text">의료 및 의학 분야의 AI (NetApp)</block>
+  <block id="e91541d759de63fcaf617f7fb7713601" category="inline-link"><block ref="e91541d759de63fcaf617f7fb7713601" category="inline-link-rx"></block></block>
+  <block id="247aca982accea93869681bc1946caae" category="paragraph"><block ref="247aca982accea93869681bc1946caae" category="inline-link-rx"></block></block>
+  <block id="4fb077baab5a37c36871c89ffbf2bca7" category="list-text">휴대용 무선 스캐닝 장치(예: 휴대폰에 부착하는 포켓형 초음파 스캐너) 등 모바일 장비는 엣지, 코어 및 클라우드 환경에서 미 국방부 수준의 보안, 신뢰성 및 지연 시간을 갖춘 강력한 네트워크 인프라를 필요로 합니다.<block ref="c19450dab7290b420c563bc2423a5a44" category="inline-link-rx"></block> 조직에 이러한 기능을 대규모로 제공합니다.</block>
+  <block id="3a769349ca00340f308dd6f2f643f870" category="inline-link">NetApp 스토리지 암호화, NetApp 볼륨 암호화 및 NetApp 애그리게이트 암호화</block>
+  <block id="b1fdfe3ff0278357981abd9dec067b7e" category="list-text"><block ref="b1fdfe3ff0278357981abd9dec067b7e" category="inline-link-rx"></block></block>
 </blocks>

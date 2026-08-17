@@ -53,9 +53,9 @@ https://flexpod.com/solutions/verticals/healthcare/["https://flexpod.com/solutio
 +
 https://flexpod.com/["https://flexpod.com/"^]
 
-* 의료 분야 AI 및 분석(NetApp)
+* 의료 및 의학 분야의 AI (NetApp)
 +
-https://www.netapp.com/us/artificial-intelligence/healthcare-ai-analytics/index.aspx["https://www.netapp.com/us/artificial-intelligence/healthcare-ai-analytics/index.aspx"^]
+https://www.netapp.com/artificial-intelligence/ai-in-medicine/["https://www.netapp.com/artificial-intelligence/ai-in-medicine/"^]
 
 * 의료 스마트 인프라 선택이 가능한 AI는 성공을 높여줍니다
 +

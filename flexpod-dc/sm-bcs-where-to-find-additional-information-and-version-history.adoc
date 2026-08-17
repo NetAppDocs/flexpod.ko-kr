@@ -129,9 +129,9 @@ https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-vmsc["http
 +
 https://www.vmware.com/docs/vmw-vmware-vsphere-metro-storage-cluster-recommended-practices["https://www.vmware.com/docs/vmw-vmware-vsphere-metro-storage-cluster-recommended-practices"^]
 
-* NetApp ONTAP with NetApp SnapMirror SM-BC(Business Continuity) with VMware vSphere Metro Storage Cluster(vMSC). (83370)
+* NetApp ONTAP with SnapMirror 액티브 싱크(이전 명칭 SM-BC)과 VMware vSphere Metro Storage Cluster(vMSC)
 +
-https://kb.vmware.com/s/article/83370["https://kb.vmware.com/s/article/83370"^]
+https://docs.netapp.com/us-en/netapp-solutions-virtualization/vmware/vmw-vmsc-with-smas.html["https://docs.netapp.com/us-en/netapp-solutions-virtualization/vmware/vmw-vmsc-with-smas.html"^]
 
 * VMware vSphere Metro Storage Cluster 및 ONTAP를 사용하여 계층 1 애플리케이션과 데이터베이스를 보호합니다
 +
