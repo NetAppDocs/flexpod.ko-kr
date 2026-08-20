@@ -27,4 +27,4 @@ summary: 이 섹션에서는 FlexPod Express의 각 버전에 권장되는 소�
 
 
 
-NOTE: 모든 소프트웨어 구성 요소는  https://imt.netapp.com/imt/#welcome["NetApp IMT를 참조하십시오"^]에 나열되고 지원되어야 하며, 모든 NetApp 하드웨어 구성 요소 및 ONTAP 버전은  https://hwu.netapp.com/Home/Index["NetApp Hardware Universe를 참조하십시오"^]에 나열되고 지원되어야 하고, 모든 Cisco 하드웨어 구성 요소는  https://ucshcltool.cloudapps.cisco.com/public/["Cisco HCL"^]에 나열되고 지원되어야 합니다.
+NOTE: 모든 소프트웨어 구성 요소는  https://imt.netapp.com["NetApp IMT를 참조하십시오"^]에 나열되고 지원되어야 하며, 모든 NetApp 하드웨어 구성 요소 및 ONTAP 버전은  https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]에 나열되고 지원되어야 하고, 모든 Cisco 하드웨어 구성 요소는  https://ucshcltool.cloudapps.cisco.com/public["Cisco HCL"^]에 나열되고 지원되어야 합니다.

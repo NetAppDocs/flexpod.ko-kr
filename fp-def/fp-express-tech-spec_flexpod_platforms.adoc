@@ -16,7 +16,7 @@ summary: 이 문서에서는 FlexPod 익스프레스 플랫폼의 기술 사양�
 [role="lead"]
 FlexPod 플랫폼에는 2가지 플랫폼이 있습니다.
 
-* *FlexPod Datacenter.* 이 플랫폼은 엔터프라이즈 워크로드 및 애플리케이션, 가상화, VDI, 퍼블릭 및 프라이빗 클라우드에 적합한 확장성이 뛰어난 데이터 센터 인프라입니다. FlexPod Datacenter에는 자체 사양이 있으며, 이는  https://docs.netapp.com/us-en/flexpod/fp-def/dc-tech-spec_solution_overview.html["FlexPod 데이터 센터 기술 사양"^]에 문서화되어 있습니다.
+* *FlexPod Datacenter.* 이 플랫폼은 엔터프라이즈 워크로드 및 애플리케이션, 가상화, AI/ML, 데이터베이스, SAP HANA, VDI, 퍼블릭 및 프라이빗 클라우드 등에 적합한 확장성이 뛰어난 데이터 센터 인프라입니다. FlexPod Datacenter는 자체 사양을 제공하며, 이는  https://docs.netapp.com/us-en/flexpod/fp-def/dc-tech-spec_solution_overview.html["FlexPod 데이터 센터 기술 사양"^]에 문서화되어 있습니다.
 * * FlexPod 익스프레스. * 이 플랫폼은 원격 사무소 및 에지 사용 사례를 대상으로 하는 소형 통합 인프라입니다.
 
 

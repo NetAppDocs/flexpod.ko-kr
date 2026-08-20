@@ -41,7 +41,7 @@ NetApp 스토리지 컨트롤러는 상위 SAN 스위치 없이 Cisco UCS 패브
 라이센스 및 하드웨어 요구 사항은 다음과 같습니다.
 
 * NetApp 스토리지 컨트롤러에 프로토콜 라이센스가 필요합니다.
-* 서버에 Cisco UCS 어댑터(이니시에이터)가 필요합니다. 지원되는 Cisco UCS 어댑터 목록은 NetApp을 참조하십시오 http://mysupport.netapp.com/matrix["IMT"^].
+* 서버에는 Cisco UCS 어댑터(이니시에이터)가 필요합니다. 지원되는 Cisco UCS 어댑터 목록은 NetApp https://imt.netapp.com["IMT"^]을 참조하십시오.
 * NetApp 스토리지 컨트롤러의 타겟 어댑터가 필요합니다.
 
 

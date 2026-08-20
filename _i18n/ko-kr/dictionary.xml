@@ -7637,7 +7637,6 @@
   <block id="b939dd27134a94e2d13f7af762e19808" category="paragraph">Cisco UCS C-Series는 CIMC 또는 Cisco Intersight 독립형 관리를 통해 관리할 수 있습니다.</block>
   <block id="fb66e225c208e8a2a8e269baeda360a9" category="inline-link">FlexPod express for VMware vSphere 8.0 with Cisco UCS C-Series 독립형 및 NetApp AFF</block>
   <block id="0137ec0525e7eeef1896cc53583326f2" category="paragraph">이 구성에 대한 자세한 내용은<block ref="e78beee96fa6f1308f0aa7c7952ea1c3" category="inline-link-rx"></block>을 참조하십시오.</block>
-  <block id="9f6736a86d887c68e1a5fedbcc1b2295" category="list-text">*FlexPod Datacenter.* 이 플랫폼은 엔터프라이즈 워크로드 및 애플리케이션, 가상화, VDI, 퍼블릭 및 프라이빗 클라우드에 적합한 확장성이 뛰어난 데이터 센터 인프라입니다. FlexPod Datacenter에는 자체 사양이 있으며, 이는 <block ref="0bb629a24a99e06d4ec011831def694a" category="inline-link-rx"></block>에 문서화되어 있습니다.</block>
   <block id="5819468773caa18c3772866d6fac2b68" category="paragraph">FlexPod 설계는 다양한 하드웨어 구성 요소와 소프트웨어 버전을 포괄하는 유연한 인프라 아키텍처를 지원합니다.</block>
   <block id="5ef33fc51fad74192692b3e420d2a93b" category="paragraph">이 규칙 세트를 유효한 FlexPod 구성을 구축하거나 조합하기 위한 지침으로 사용하십시오. 이 문서에 나열된 숫자와 규칙은 FlexPod의 최소 요구 사항을 나타내며, 다양한 환경 및 사용 사례에 따라 포함된 제품군 내의 지원 제품을 사용하여 확장할 수 있습니다.</block>
   <block id="1fd1ccb51d4008bf4d6e7734454719d8" category="section-title">FlexPod Express with NetApp AFF/ ASA/ FAS</block>
@@ -7660,7 +7659,6 @@
   <block id="3948a9d911a4ab4fca76092210e66452" category="cell"><block ref="3948a9d911a4ab4fca76092210e66452" category="inline-link-rx"></block></block>
   <block id="7ec34d91a495121e75b876eb6b33c2ae" category="cell">FAS 2820</block>
   <block id="41f841d43d71df7ac7a2d1ce1640196e" category="paragraph">다음 표에는 FlexPod Express용 NetApp 디스크 쉘프 옵션과 해당 기술 사양에 대한 링크가 나열되어 있습니다.</block>
-  <block id="16e64e489b2d626c25c6029238c8e02d" category="paragraph">디스크 쉘프에 지원되는 드라이브 목록을 확인하려면 <block ref="c65ee892665eec3b19fff276893fb369" category="inline-link-macro-rx"></block>로 이동하여 *Products &gt; Storage &gt; Shelves* 에서 *ONTAP (AFF, ASA, FAS)* 를 선택하고, 사용 중인 ONTAP 버전을 선택한 다음, 쉘프 유형(예: *DS212C*)을 선택하고 *Show Results* 를 클릭합니다. *Supported Drives* 를 클릭하면 특정 ONTAP 버전 및 디스크 쉘프에서 지원되는 드라이브를 확인할 수 있습니다.</block>
   <block id="c0b9422f8b99654ad5dfbd724b636b92" category="inline-link">디스크 쉘프 및 저장 매체</block>
   <block id="dab2f46382b1c1004cea0cb20a6d2b76" category="cell"><block ref="dab2f46382b1c1004cea0cb20a6d2b76" category="inline-link-rx"></block></block>
   <block id="c740766e109ecd59d174dc2f65176922" category="cell">NS224 w/NSM100B</block>
@@ -7693,7 +7691,6 @@
   <block id="acedc0be8218dae26be243df372d7077" category="paragraph">FlexPod Express의 전력 요구 사항은 FlexPod Express 구성이 설치된 위치에 따라 다릅니다.</block>
   <block id="53225e22de8784be60c5a4d46a08baba" category="inline-link-macro">기술 사양</block>
   <block id="7f4b5d087cef7844ea847ba685e58970" category="paragraph">최대 전력 요구량 및 기타 자세한 전력 정보는 각 하드웨어 구성 요소의 <block ref="68813acd6f51a6f47299b1ba3c23949f" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
-  <block id="f180991d5ba5b7f851fa899c4adbe26d" category="paragraph">NetApp 스토리지 컨트롤러 전원 데이터는 <block ref="f1e26811435ae68dfeade1ff7af15f19" category="inline-link-rx"></block>을 참조하십시오. *Platforms* 에서 사용하려는 스토리지 플랫폼(예: AFF A20)을 선택하고 ONTAP 버전을 선택한 다음 *Show Results* 를 클릭하십시오. 전원 코드 정보는 *Supported Power Cords* 섹션에 나와 있으며, 크기, 무게, 소비 전력 등에 대한 자세한 내용은 *Size, Weight, Acoustic, Power* 섹션을 참조하십시오.</block>
   <block id="75ee6fb1b8a3710bcc91754ce6ec11ec" category="section-title">케이블링 지침</block>
   <block id="960f45bb74119e7469b1522a9ac3404a" category="paragraph">이 섹션에서는 FlexPod Express 설계에 대한 일반적인 케이블 연결 지침을 제공합니다.</block>
   <block id="e81f9c67c6552c3170231b2626b11ea4" category="list-text">컴퓨팅 및 스토리지 연결에 대해 이중화된 연결을 확보하십시오.</block>
@@ -7793,7 +7790,6 @@
   <block id="209cd1b2adaf0192afee5eb93e3dd701" category="cell">UCSXE-130C-M8</block>
   <block id="22bd40a63ed2c9c49187fbd0583bf9fe" category="cell">UCSXE-150C-M8</block>
   <block id="7930817dcb9af22b46e0b2ab1c7127fb" category="cell"><block ref="7930817dcb9af22b46e0b2ab1c7127fb" category="inline-link-rx"></block></block>
-  <block id="161c9027d6afcc8652df79c032c01c41" category="list-text">고가용성(HA) 쌍 구성으로 2노드 클러스터로 배포된 두 개의 엔트리 레벨 NetApp AFF(A20, A30 또는 C30), NetApp ASA(A20, A30 또는 C30) 또는 NetApp FAS(2750, 2820 또는 FAS 50) 시리즈 컨트롤러</block>
   <block id="a0ab09bcd71cc8c8e831f022615b28a4" category="cell"><block ref="a0ab09bcd71cc8c8e831f022615b28a4" category="inline-link-rx"></block></block>
   <block id="6488de7d247a06b442a5018b0d91bfc6" category="inline-link">AFF C-Series 문서</block>
   <block id="369fac7daa2f8b7e7c135f15db1bd0ed" category="cell"><block ref="369fac7daa2f8b7e7c135f15db1bd0ed" category="inline-link-rx"></block></block>
@@ -7814,7 +7810,6 @@
   <block id="5b1873f6cccb0f18dc6c9c4b88ad68f2" category="cell"><block ref="5b1873f6cccb0f18dc6c9c4b88ad68f2" category="inline-link-rx"></block></block>
   <block id="0defdd0a0cad8694d75f5d415c59e852" category="inline-link-macro">Cisco Unified Edge 데이터시트 목록</block>
   <block id="cfccf5d08c64aba24da167d5ee87ec4e" category="paragraph">자세한 내용은 <block ref="361368a75a3a97c843641aad773ba359" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
-  <block id="682a7264c9b56e8c0fc15a778aaf4962" category="paragraph">Cisco UCS C 시리즈 랙 서버의 기술 사양에는 프로세서 지원, 최대 메모리 용량, PCIe 슬롯 수 및 폼 팩터가 포함됩니다. 호환되는 UCS 서버 모델에 대한 자세한 내용은<block ref="1420345f3000e0fcdfadf0c24d8bc000" category="inline-link-rx"></block> 목록을 참조하십시오.</block>
   <block id="0fc3d759fbf04ff8c70754496e367364" category="paragraph">아래 표에서 Cisco UCS C-Series 랙 서버의 기술 사양을 참조하십시오.</block>
   <block id="b64e0ef8e38bdf1b18a60607d7d0f675" category="cell">FAS50 시리즈</block>
   <block id="59454cc1e7857ff5697ed2ce10f85c1e" category="inline-link">FAS50 주요 사양</block>
@@ -8231,13 +8226,9 @@
   <block id="29d1fb15319805edca77b8cc05b35dfb" category="sidebar">FlexPod 설계 가이드</block>
   <block id="26672345b32420d3708cd3bd0f7b1e88" category="sidebar">FlexPod 검증된 설계 가이드</block>
   <block id="21b29303b1c3acf1c3bbd54b69cf697d" category="sidebar">FlexPod 기술 사양</block>
-  <block id="40f38a28ba17dc0cd24161109cb1b8f0" category="inline-link"><block ref="40f38a28ba17dc0cd24161109cb1b8f0" category="inline-link-rx"></block></block>
-  <block id="503753b7cfdba11f6ff233c6f8d878b2" category="paragraph"><block ref="503753b7cfdba11f6ff233c6f8d878b2" category="inline-link-rx"></block></block>
   <block id="f4bf1ab74cf7b6fb7a56eaa53745e1ae" category="paragraph">Cisco UCS C 시리즈 랙 서버는 1U, 2U, 4U 크기로 제공되며, 다양한 CPU, 메모리 및 I/O 옵션을 선택할 수 있습니다. 다음 표에 나열된 부품 번호는 기본 서버에 대한 것입니다. CPU, 메모리, 드라이브, PCIe(Peripheral Component Interconnect Express) 카드는 포함되어 있지 않습니다. 다양한 구성 옵션을 사용할 수 있으며 FlexPod 아키텍처에서 지원됩니다.</block>
-  <block id="a60ddb965dcf6f25c87e72a37c8252c4" category="admonition">모든 소프트웨어 구성 요소는 <block ref="8058bb2e300c0b28cc61110596fbc6e0" category="inline-link-rx"></block>에 나열되고 지원되어야 하며, 모든 NetApp 하드웨어 구성 요소 및 ONTAP 버전은 <block ref="6a8cef5b71adde6301ea0984592ea5c1" category="inline-link-rx"></block>에 나열되고 지원되어야 하고, 모든 Cisco 하드웨어 구성 요소는 <block ref="243ee419838ead03039b3c014c885e78" category="inline-link-rx"></block>에 나열되고 지원되어야 합니다.</block>
   <block id="d4be789c0896e734a89e386a8d00f187" category="inline-link"><block ref="d4be789c0896e734a89e386a8d00f187" category="inline-link-rx"></block></block>
   <block id="c1ba01aa51a8fc173d6a9dd15d8b5d42" category="paragraph"><block ref="c1ba01aa51a8fc173d6a9dd15d8b5d42" category="inline-link-rx"></block></block>
-  <block id="9b1dcc158dd4f463eff8e0ecc95e1c0f" category="paragraph">FlexPod 아키텍처는 이 문서에 설명된 규칙 집합에 의해 정의됩니다. 하드웨어 구성 요소와 소프트웨어 구성은 <block ref="55be3385fd2442b96520f981204722ea" category="inline-link-rx"></block> 및 <block ref="538106ddbedb569903f8e17bb643549d" category="inline-link-rx"></block>에서 지원되어야 합니다.</block>
   <block id="d5801c87d769ed7144d6149320f2c851" category="list-text">CIMC 기반 독립형 랙 서버 구성 또는 Intersight 독립형 구성을 갖춘 두 대의 Cisco UCS C-Series 독립형 랙 서버, 또는 Cisco Intersight 관리 구성(IMM)을 갖춘 Cisco UCS X-Series Direct.</block>
   <block id="b7b46ce5d1a547db89c0bc615ff272a5" category="cell">ASA</block>
   <block id="2b304856171196502641312a496c6d54" category="section-title">NetApp ASA</block>
@@ -8326,4 +8317,15 @@
   <block id="4fb077baab5a37c36871c89ffbf2bca7" category="list-text">휴대용 무선 스캐닝 장치(예: 휴대폰에 부착하는 포켓형 초음파 스캐너) 등 모바일 장비는 엣지, 코어 및 클라우드 환경에서 미 국방부 수준의 보안, 신뢰성 및 지연 시간을 갖춘 강력한 네트워크 인프라를 필요로 합니다.<block ref="c19450dab7290b420c563bc2423a5a44" category="inline-link-rx"></block> 조직에 이러한 기능을 대규모로 제공합니다.</block>
   <block id="3a769349ca00340f308dd6f2f643f870" category="inline-link">NetApp 스토리지 암호화, NetApp 볼륨 암호화 및 NetApp 애그리게이트 암호화</block>
   <block id="b1fdfe3ff0278357981abd9dec067b7e" category="list-text"><block ref="b1fdfe3ff0278357981abd9dec067b7e" category="inline-link-rx"></block></block>
+  <block id="978770af017c048b017c5af359bf5f3a" category="inline-link"><block ref="978770af017c048b017c5af359bf5f3a" category="inline-link-rx"></block></block>
+  <block id="b30c1439e3d638d2a1e016f035c4fb53" category="paragraph"><block ref="b30c1439e3d638d2a1e016f035c4fb53" category="inline-link-rx"></block></block>
+  <block id="8945cc7cea50b5955cfd8cd377b0700c" category="list-text">*FlexPod Datacenter.* 이 플랫폼은 엔터프라이즈 워크로드 및 애플리케이션, 가상화, AI/ML, 데이터베이스, SAP HANA, VDI, 퍼블릭 및 프라이빗 클라우드 등에 적합한 확장성이 뛰어난 데이터 센터 인프라입니다. FlexPod Datacenter는 자체 사양을 제공하며, 이는 <block ref="0bb629a24a99e06d4ec011831def694a" category="inline-link-rx"></block>에 문서화되어 있습니다.</block>
+  <block id="e324cf607a94ae60946ee320b5919119" category="list-text">2개의 엔트리 레벨 NetApp AFF(A20, A30 또는 C30), NetApp ASA(A20, A30 또는 C30) 또는 NetApp FAS(2750, 2820 또는 50) 컨트롤러가 2노드 클러스터로 배포된 고가용성(HA) 쌍 구성</block>
+  <block id="985fb3b938a8c12a7f7a884960367233" category="paragraph">디스크 쉘프에 지원되는 드라이브 목록을 확인하려면 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>로 이동하여 *Products &gt; Storage &gt; Shelves* 에서 *ONTAP (AFF, ASA, FAS)* 를 선택하고, 사용 중인 ONTAP 버전을 선택한 다음, 쉘프 유형(예: *DS212C*)을 선택하고 *Show Results* 를 클릭합니다. *Supported Drives* 를 클릭하면 특정 ONTAP 버전 및 디스크 쉘프에서 지원되는 드라이브를 확인할 수 있습니다.</block>
+  <block id="c2176dbcd3ca7bf6b416c2a75d5a1f7b" category="list-text">서버에는 Cisco UCS 어댑터(이니시에이터)가 필요합니다. 지원되는 Cisco UCS 어댑터 목록은 NetApp<block ref="b6cb02227183177f72d07f3b59ad095e" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="31e46954181b9ac85717bf7f60c67e08" category="paragraph">NetApp 스토리지 컨트롤러 전원 데이터는 <block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>을 참조하십시오. *Platforms* 에서 사용하려는 스토리지 플랫폼(예: AFF A20)을 선택하고 ONTAP 버전을 선택한 다음 *Show Results* 를 클릭하십시오. 전원 코드 정보는 *Supported Power Cords* 섹션에 나와 있으며, 크기, 무게, 소비 전력 등에 대한 자세한 내용은 *Size, Weight, Acoustic, Power* 섹션을 참조하십시오.</block>
+  <block id="10dd36147645244c0e72d1ffe3aa4a49" category="admonition">모든 소프트웨어 구성 요소는 <block ref="31e25e06072fc647a14615c7a66045a3" category="inline-link-rx"></block>에 나열되고 지원되어야 하며, 모든 NetApp 하드웨어 구성 요소 및 ONTAP 버전은 <block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>에 나열되고 지원되어야 하고, 모든 Cisco 하드웨어 구성 요소는 <block ref="b3caeb05ac8452369b47a54b3533876a" category="inline-link-rx"></block>에 나열되고 지원되어야 합니다.</block>
+  <block id="8e3f611ec9b924865f33f23c985d0acf" category="paragraph">FlexPod 아키텍처는 이 문서에 설명된 규칙 집합에 의해 정의됩니다. 하드웨어 구성 요소와 소프트웨어 구성은 <block ref="55be3385fd2442b96520f981204722ea" category="inline-link-rx"></block> 및 <block ref="2c0e67bb1b88b1727e7f20c152d8cab5" category="inline-link-rx"></block>에서 지원되어야 합니다.</block>
+  <block id="df2c7d0b4082997a23a9cf8653006120" category="paragraph">Cisco UCS C 시리즈 랙 서버의 기술 사양에는 프로세서 지원, 최대 메모리 용량, PCIe 슬롯 수 및 폼 팩터가 포함됩니다. 호환되는 UCS 서버 모델에 대한 자세한 내용은<block ref="f892b8b8b30da287dc033705b38fc8ba" category="inline-link-rx"></block> 목록을 참조하십시오.</block>
+  <block id="b3c3d20adfc10a1ff5bd9bd86265ca92" category="paragraph">NetApp 드라이브의 기술 사양에는 폼 팩터 크기, 디스크 용량, 디스크 RPM, 지원 컨트롤러 및 ONTAP 버전 요구 사항이 포함됩니다. 이러한 사양은<block ref="46a2fd508bb35aee53f0a28201754188" category="inline-link-rx"></block>의 드라이브 섹션에서 확인할 수 있습니다.</block>
 </blocks>
