@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: fp-def/dc-tech-spec_other_requirements.html 
-keywords: flexpod, datacenter, technical, specifications, requirements, interoperability 
+keywords: flexpod, datacenter, technical, specifications, requirements, broadcom, vmware, openshift 
 summary: FlexPod 아키텍처에는 다음과 같은 추가 상호 운용성 및 지원 관련 요구사항이 있습니다 
 ---
 = 기타 요구 사항
@@ -14,21 +14,8 @@ summary: FlexPod 아키텍처에는 다음과 같은 추가 상호 운용성 및
 
 
 [role="lead"]
-FlexPod 아키텍처에는 다음과 같은 추가 상호 운용성 및 지원 관련 요구사항이 있습니다.
+FlexPod 데이터센터의 추가 요구 사항은 다음과 같습니다.
 
-* 모든 하드웨어 및 소프트웨어 구성요소는 NetApp에서 지원 및 나열되어야 합니다 http://mysupport.netapp.com/matrix["IMT"^], https://ucshcltool.cloudapps.cisco.com/public/["Cisco UCS 하드웨어 및 소프트웨어 호환성 목록"^]및 Cisco UCS 하드웨어 및 소프트웨어 상호 운용성 매트릭스 툴에 액세스할 수 있습니다.
-* 다음을 포함하여 모든 장비에 대해 유효한 지원 계약이 필요합니다.
-+
-** Cisco 장비에 대한 Smart Net Total Care(SmartNet) 지원
-** NetApp 장비에 대한 SupportEdge Advisor 또는 SupportEdge Premium 지원
+* VMware ESXi를 하이퍼바이저로 사용할 계획이라면 link:https://compatibilityguide.broadcom.com/["Broadcom Compatibility Guide"]을 참조하여 하드웨어 및 소프트웨어 구성 요소가 지원되는지 확인하십시오.
+* OpenShift 기반 배포의 경우 OpenShift와 호환되는 필요한 하드웨어 및 소프트웨어 구성 요소가 있는지 확인하십시오. 자세한 내용은 link:https://catalog.redhat.com/en/search["OpenShift 카탈로그"]을 참조하십시오.
 
-
-* 판매 주문에 대한 관련 판매 속성은 다음을 지원합니다.
-+
-** FlexPod 권한
-** FlexPod 솔루션 지원 자격
-
-
-
-
-자세한 내용은 NetApp을 참조하십시오 http://mysupport.netapp.com/matrix["IMT"^].

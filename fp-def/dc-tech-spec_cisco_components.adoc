@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: fp-def/dc-tech-spec_cisco_components.html 
-keywords: cisco, components, ucs, fabric, interconnect, blade, server, rack, apic, nexus, software, support 
-summary: Cisco는 솔루션의 컴퓨팅 및 네트워킹 계층을 모두 포괄하는 FlexPod 설계 및 아키텍처에 상당한 기여를 했습니다. 이 섹션에서는 FlexPod에 사용할 수 있는 Cisco UCS 및 Cisco Nexus 옵션에 대해 설명합니다. FlexPod는 Cisco UCS B-Series 서버와 C-Series 서버를 모두 지원합니다. 
+keywords: cisco, components, ucs, fabric, interconnect, server, rack, apic, nexus, software, support, mds, x-series-modular, x-series-direct 
+summary: Cisco는 FlexPod 의 설계 및 아키텍처에 상당한 기여를 했으며, 솔루션의 컴퓨팅 및 네트워킹 계층 모두를 포괄합니다. 이 섹션에서는 FlexPod 에 사용 가능한 Cisco UCS 및 Cisco Nexus 옵션에 대해 설명합니다. 
 ---
 = Cisco 구성 요소
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cisco는 솔루션의 컴퓨팅 및 네트워킹 계층을 모두 포�
 
 
 [role="lead"]
-Cisco는 솔루션의 컴퓨팅 및 네트워킹 계층을 모두 포괄하는 FlexPod 설계 및 아키텍처에 상당한 기여를 했습니다. 이 섹션에서는 FlexPod에 사용할 수 있는 Cisco UCS 및 Cisco Nexus 옵션에 대해 설명합니다. FlexPod는 Cisco UCS B-Series 서버와 C-Series 서버를 모두 지원합니다.
+Cisco는 솔루션의 컴퓨팅 및 네트워킹 계층 모두를 포괄하여 FlexPod 설계 및 아키텍처에 상당한 기여를 했습니다. 이 섹션에서는 FlexPod에 사용 가능한 Cisco UCS, Nexus 및 MDS 옵션에 대해 설명합니다.
 
 
 
@@ -23,58 +23,29 @@ Cisco는 솔루션의 컴퓨팅 및 네트워킹 계층을 모두 포괄하는 F
 
 FlexPod 아키텍처에는 이중 패브릭 인터커넥트가 필요합니다. 한 쌍의 패브릭 인터커넥트에 여러 Cisco UCS 섀시를 추가할 경우, 환경의 최대 섀시 수는 아키텍처 및 포트 제한에 따라 결정됩니다.
 
-다음 표에 나와 있는 부품 번호는 기본 패브릭 인터커넥트용으로 제공됩니다. 전원 공급 장치(PSU) 또는 SFP+, QSFP+ 또는 확장 모듈은 포함되지 않습니다. 추가 패브릭 인터커넥트가 지원됩니다. 을 참조하십시오 https://mysupport.netapp.com/matrix/["NetApp IMT를 참조하십시오"^] 를 참조하십시오.
+다음 표에 표시된 부품 번호는 기본 패브릭 인터커넥트용입니다. 전원 공급 장치(PSU) 또는 SFP+, QSFP+, 확장 모듈은 포함되지 않습니다.
 
 |===
 | Cisco UCS 패브릭 인터커넥트 | 부품 번호 | 기술 사양 
 
 
-| Cisco UCS 6332UP | UCS-FI-6332-UP | http://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/6332-specsheet.pdf["Cisco UCS 6332 패브릭 인터커넥트"] 
+| Cisco UCS 6664 | UCS-FI-6664-U .2+| https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-6600-series-fabric-interconnect-specsheet.pdf["Cisco UCS 6600 시리즈 패브릭 인터커넥트"] 
 
 
-| Cisco UCS 6454 | UCS-FI-6454-U | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/ucs-6454-fab-int-specsheet.pdf["Cisco UCS 6454 Fabric 상호 연결"] 
+| Cisco UCS 6652 | UCS-FI-6652-U 
+
+
+| Cisco UCS 6536 | UCSX-FI-6536-U | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/cisco-ucs-6536-fabric-interconnect-spec-sheet.pdf["Cisco UCS 6536 패브릭 인터커넥트"] 
+
+
+| Cisco UCS 6454 | UCS-FI-6454-U .2+| https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/6400-specsheet.pdf["Cisco UCS 6400 Series Fabric Interconnect"] 
+
+
+| Cisco UCS 64108 | UCS-FI-64108-U 
+
+
+| UCS 9108 100G 패브릭 인터커넥트(Cisco UCS X-Series Direct) | UCSX-S9108-100G | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-fabric-interconnect-9108-100g.pdf["Cisco UCS 9108 패브릭 인터커넥트"] 
 |===
-
-
-[[cisco-ucs-6454]]
-=== Cisco UCS 6454
-
-Cisco UCS 6454 시리즈는 회선 속도, 지연 시간이 짧은 무손실 10/25/40/100GbE 이더넷 및 FCoE 연결과 이더넷 또는 FC 운영을 지원하는 통합 포트를 제공합니다. 44개의 10/25Gbps 포트는 10Gbps 또는 25Gbps 통합 이더넷으로 작동할 수 있으며, 그 중 8개는 FC용 8/16/32Gbps에서 작동할 수 있는 통합 포트입니다. 4개의 포트는 레거시 연결을 위해 1/10/25Gbps에서 작동하며, 6개의 QSFP 포트는 40/100Gbps 업링크 포트 또는 브레이크아웃 포트로 사용됩니다. 100Gbps 어댑터를 지원하는 NetApp 스토리지 컨트롤러를 사용하여 100Gbps 종단간 네트워크 연결을 설정할 수 있습니다. 어댑터 및 플랫폼 지원에 대한 자세한 내용은 을 참조하십시오 https://hwu.netapp.com/Adapter/Index["NetApp Hardware Universe를 참조하십시오"^].
-
-포트에 대한 자세한 내용은 를 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/datasheet-c78-741116.html["Cisco UCS 6454 Fabric 상호 연결"^] 데이터시트.
-
-100Gb QSFP 데이터 모듈의 기술 사양은 을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.html["Cisco 100GBASE QSFP 모듈 데이터시트"^].
-
-
-
-[[cisco-ucs-b-series-chassis-option]]
-== Cisco UCS B-Series 섀시 옵션
-
-Cisco UCS B-Series 블레이드를 사용하려면 Cisco UCS B-Series 섀시가 있어야 합니다. 아래 표에는 Cisco UCS BSeries 섀시 옵션이 설명되어 있습니다.
-
-|===
-| Cisco UCS B-Series 섀시 | 부품 번호 | 기술 사양 
-
-
-| Cisco UCS 5108 | N20-C6508 | http://www.cisco.com/c/en/us/products/servers-unified-computing/ucs-5100-series-blade-server-chassis/index.html["Cisco UCS 5100 시리즈 블레이드 서버 섀시"] 
-|===
-각 Cisco UCS 5108 블레이드 섀시에는 패브릭 인터커넥트에 대한 이중 연결을 제공하기 위해 2개의 Cisco UCS 2200/2300/2400 시리즈 IOM이 있어야 합니다.
-
-
-
-[[cisco-ucs-b-series-blade-server-options]]
-== Cisco UCS B-Series 블레이드 서버 옵션
-
-Cisco UCS B-Series 블레이드 서버는 다양한 CPU, 메모리 및 I/O 옵션과 함께 반폭과 전폭으로 제공됩니다. 다음 표에 나열된 부품 번호는 기본 서버에 대한 것입니다. CPU, 메모리, 드라이브 또는 메자닌 어댑터 카드는 포함되지 않습니다. FlexPod 아키텍처에서는 다양한 구성 옵션을 사용할 수 있으며 지원됩니다.
-
-|===
-| Cisco UCS B-Series 블레이드 | 부품 번호 | 기술 사양 
-
-
-| Cisco UCS B200 M6 | UCSB-B200-M6 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/datasheet-c78-2368888.html["Cisco UCS B200 M6 블레이드 서버"] 
-|===
-에서 지원되는 경우 이전 세대의 Cisco UCS B 시리즈 블레이드를 FlexPod 아키텍처에서 사용할 수 있습니다 https://ucshcltool.cloudapps.cisco.com/public/["Cisco UCS 하드웨어 및 소프트웨어 호환성 목록"^]. Cisco UCS B-Series 블레이드 서버에도 유효한 SmartNet 지원 계약이 있어야 합니다.
-
 
 
 [[cisco-ucs-x-series-chassis-option]]
@@ -86,7 +57,7 @@ Cisco UCS X-Series 컴퓨팅 노드를 사용하려면 Cisco UCS X-Series 섀시
 | Cisco UCS X-Series 블레이드 | 부품 번호 | 기술 사양 
 
 
-| Cisco UCS 9508 M6 | UCSX-9508 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/datasheet-c78-2472574.html["Cisco UCX9508 X 시리즈 섀시"] 
+| Cisco UCS X9508 섀시 | UCSX-9508 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/datasheet-c78-2472574.html?ccid=cc002456&oid=dstcsm026317["Cisco UCS X9508 섀시"] 
 |===
 각 Cisco UCS 9508 섀시에는 패브릭 인터커넥트에 대한 이중 연결을 제공하기 위해 2개의 Cisco UCS 9108 IFM(Intelligent Fabric Module)이 있어야 합니다.
 
@@ -101,201 +72,202 @@ Cisco UCS X-Series 컴퓨팅 노드는 다양한 CPU, 메모리 및 I/O 옵션�
 | Cisco UCS X-Series 컴퓨팅 노드 | 부품 번호 | 기술 사양 
 
 
-| Cisco UCS X210c M6 | UCSX-210C-M6 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/datasheet-c78-2465523.html?ccid=cc002456&oid=dstcsm026318["Cisco UCS X210c M6 컴퓨팅 노드"] 
+| Cisco UCS X210c M7 | UCSX-210C-M7 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x210c-m7-compute-node-ds.html["Cisco UCS X210c M7 컴퓨트 노드"] 
+
+
+| Cisco UCS X210c M8 | UCSX-210C-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x210c-m8-compute-node-ds.html["Cisco UCS X210c M8 컴퓨트 노드"] 
+
+
+| Cisco UCS X215c M8 | UCSX-215C-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x215c-m8-compute-node-ds.html["Cisco UCS X215c M8 컴퓨트 노드"] 
+
+
+| Cisco UCS X410c M7 | UCSX-410C-M7 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x410c-m7-compute-node-ds.html["Cisco UCS X410c M7 컴퓨트 노드"] 
+
+
+| Cisco UCS X410c M8 | UCSX-410C-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x410c-m8-compute-node-ds.html["Cisco UCS X410c M8 컴퓨트 노드"] 
 |===
+아래 표는 Cisco UCS X-Series 섀시에 사용 가능한 PCI Express 노드를 나열합니다.
+
+|===
+| Cisco UCS X-Series PCIe 노드 | 부품 번호 | 기술 사양 
+
+
+| Cisco UCS X580p PCIe 노드 | UCSX-580P-U | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x580p-pcie-node-ds.html["Cisco UCS X580p PCIe 노드"] 
+
+
+| Cisco UCS X440p PCIe 노드 | UCSX-440P | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x440p-pcle-node-ds.html["Cisco UCS X440p PCIe 노드"] 
+|===
+아래 표는 Cisco UCS X-Series 섀시에 사용 가능한 X-Fabric 모듈을 나열합니다.
+
+|===
+| Cisco UCS X-Series X-Fabric 모듈 | 부품 번호 | 기술 사양 
+
+
+| Cisco UCS 9108 Intelligent Fabric Module | UCSX-I-9108-100G | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/cisco-ucs-9108-100g-intelligent-fabric-module-spec-sheet.pdf["Cisco UCS 9108 Intelligent Fabric Module"] 
+
+
+| Cisco UCS X9516 X-Fabric 모듈 | UCSX-FS-9516 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-9516-x-fabric-module-ds.html["Cisco UCS X9516 X-Fabric 모듈"] 
+
+
+| Cisco UCS X9416 X-Fabric 모듈 | UCSX-F-9416 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/solution-overview-c22-2432175.html?ccid=cc002456&oid=sowcsm025665["Cisco UCS X9416 X-Fabric 모듈"] 
+|===
+
+
+[[cisco-ucs-x-series-modular-system]]
+== Cisco UCS X-Series Modular System
+
+Cisco UCS X-시리즈 모듈형 시스템은 적응성과 미래 지향적인 설계를 갖춘 Cisco UCS X9508 서버 섀시로 시작합니다. 이 섀시는 Cisco UCS 인텔리전트 패브릭 모듈과 기타 기술을 위한 Cisco UCS X-패브릭 기술을 갖춘 통합 이더넷 패브릭을 갖추고 있습니다. 섀시 상단 후면에는 섀시를 업스트림 Cisco UCS 6400, 6500 및 UCS 6600 시리즈 패브릭 인터커넥트에 연결하는 두 개의 인텔리전트 패브릭 모듈이 있습니다.
+
+Cisco UCS X-Series의 기능 및 특징에 대한 간략한 개요는 link:https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x-series-modular-system-aag.html["Cisco UCS X-Series 모듈형 시스템 개요"^]을 참조하십시오.
+
+Cisco UCS X215c M8, Cisco UCS X210c 및 Cisco UCS X410c 컴퓨팅 노드는 단일 폼 팩터에 컴퓨팅 밀도, 스토리지 용량 및 확장성을 제공하여 블레이드 서버와 랙 서버의 기능을 모두 제공합니다.
+
+Cisco UCS X440p PCIe 노드는 Cisco UCS X9416 X-Fabric 모듈을 사용하여 PCIe Gen 4.0 GPU를 추가할 수 있습니다. Cisco UCS X580p PCIe 노드는 Cisco UCS X9516 X-Fabric 모듈을 사용하여 PCIe Gen 5.0 GPU를 추가할 수 있습니다.
+
+Cisco UCS X-Series 모듈형 시스템 솔루션 구성 요소에 대한 자세한 내용은 위의 섹션에 있는 각 구성 요소의 기술 사양을 참조하십시오.
+
+
+NOTE: Cisco UCS X-Series 모듈형 시스템의 전체 기술 사양은 다음 링크를 참조하십시오: link:https://www.cisco.com/c/en/us/products/servers-unified-computing/ucs-x-series-modular-system/datasheet-listing.html["Cisco UCS X-Series Modular System"^]
+
+
+
+[[cisco-ucs-x-series-direct-options]]
+== Cisco UCS X-Series Direct 옵션
+
+Cisco UCS X-Series Direct는 Cisco UCS Fabric Interconnect 9108 100G 한 쌍과 Cisco UCS X9508 섀시 및 Cisco UCS X-Series 컴퓨팅 노드를 통합하여 UCS X-Series Direct 솔루션을 제공하는 새로운 아키텍처입니다.
+
+Cisco UCS X-Series의 기능 및 특징에 대한 간략한 개요는 link:https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x-series-direct-aag.html["Cisco UCS X-Series Direct 개요"^]을 참조하십시오.
+
+Cisco UCS X-Series Direct는 다음 구성 요소로 구성됩니다.
+
+* Cisco UCS 9108 100G 패브릭 인터커넥트
+* Cisco UCS X9508 섀시
+* Cisco UCS X-Series 컴퓨팅 노드
+* 선택적 구성 요소:
++
+** PCIe 노드 및 X-Fabric 모듈
+** 두 번째 Cisco UCS X9508 섀시(X 시리즈 컴퓨팅 노드 및 Cisco UCS 9108-100G 인텔리전트 패브릭 모듈과 최대 4개의 C 시리즈 랙 서버 포함)
+
+
+
+
+Cisco UCS X-Series Direct 솔루션 구성 요소에 대한 자세한 내용은 위의 섹션에 있는 각 구성 요소의 기술 사양을 참조하십시오.
+
+
+NOTE: Cisco UCS X-Series Direct의 전체 기술 사양은 다음 링크를 참조하십시오. https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/ucs-x-series-direct-ds.html["Cisco UCS X-Series Direct 데이터시트"].
+
 
 
 [[cisco-ucs-c-series-rack-server-options]]
 == Cisco UCS C-Series 랙 서버 옵션
 
-Cisco UCS C-Series 랙 서버는 다양한 CPU, 메모리, I/O 옵션과 함께 1개 및 2개의 랙 유닛(RU) 버전으로 제공됩니다. 아래 두 번째 표에 나열된 부품 번호는 기본 서버에 대한 것입니다. CPU, 메모리, 드라이브, PCIe(Peripheral Component Interconnect Express) 카드 또는 Cisco Fabric Extender는 포함되지 않습니다. FlexPod 아키텍처에서는 다양한 구성 옵션을 사용할 수 있으며 지원됩니다.
+Cisco UCS C 시리즈 랙 서버는 1U, 2U, 4U 크기로 제공되며, 다양한 CPU, 메모리 및 I/O 옵션을 선택할 수 있습니다. 아래 두 번째 표에 나열된 부품 번호는 기본 서버에 대한 것입니다. CPU, 메모리, 드라이브, PCIe(Peripheral Component Interconnect Express) 카드는 포함되어 있지 않습니다. 다양한 구성 옵션을 사용할 수 있으며 FlexPod 아키텍처에서 지원됩니다.
 
 다음 표에는 Cisco UCS C-Series 랙 서버 옵션이 나와 있습니다.
+
+|===
+| Cisco UCS C-시리즈 랙 서버 | 부품 번호 | 기술 사양 
+
+
+| Cisco UCS C220 M7 | UCSC-C220-M7 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c220-m7-rack-server-ds.html["Cisco UCS C220 M7 랙 서버"] 
+
+
+| Cisco UCS C220 M8 | UCSC-C220-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c220-m8-rack-server-ds.html["Cisco UCS C220 M8 랙 서버"] 
+
+
+| Cisco UCS C225 M8 | UCSC-C225-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c225-m8-rack-server-ds.html["Cisco UCS C225 M8 랙 서버"] 
+
+
+| Cisco UCS C240 M7 | UCSC-C240-M7 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c240-m7-rack-server-ds.html["Cisco UCS C240 M7 랙 서버"] 
+
+
+| Cisco UCS C240 M8 | UCSC-C240-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c240-m8-rack-server-ds.html["Cisco UCS C240 M8 랙 서버"] 
+
+
+| Cisco UCS C245 M8 | UCSC-C245-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c245-m8-rack-server-ds.html["Cisco UCS C245 M8 랙 서버"] 
+|===
+다음 표는 AI 사용 사례에 최적화된 Cisco UCS C-Series 랙 서버 목록입니다.
 
 |===
 | Cisco UCS C-Series 랙 서버 | 부품 번호 | 기술 사양 
 
 
-| Cisco UCS C220 M6 | UCSC-C220-M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c220m6-sff-specsheet.pdf["Cisco UCS C220 M6 랙 서버"] 
+| Cisco UCS C845A M8 | UCSC-C845A-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c845a-m8-rack-server-ds.html["Cisco UCS C845A M8 랙 서버"] 
 
 
-| Cisco UCS C225 M6 | UCSC - C225-M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c225-m6-sff-specsheet.pdf["Cisco UCS C225 M6 랙 서버"] 
-
-
-| Cisco UCS C240 M6 | UCSC-C240-M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c240m6-sff-specsheet.pdf["Cisco UCS C240 M6 랙 서버"] 
-
-
-| Cisco UCS C245 M6 | UCSC-C245-M6 | https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c245m6-sff-specsheet.pdf["Cisco UCS C245 M6 랙 서버"] 
+| Cisco UCS C880A M8 | UCSC-C880A-M8 | https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/ucs-c880a-m8-rack-server-ds.html["Cisco UCS C880A M8 랙 서버"] 
 |===
-에서 지원되는 경우 이전 세대의 Cisco UCS C-Series 서버를 FlexPod 아키텍처에서 사용할 수 있습니다 https://ucshcltool.cloudapps.cisco.com/public/["Cisco UCS 하드웨어 및 소프트웨어 호환성 목록"^]. Cisco UCS C-Series 서버도 유효한 SmartNet 지원 계약이 있어야 합니다.
+이전 세대의 Cisco UCS C-Series 서버는  https://ucshcltool.cloudapps.cisco.com/public/["Cisco UCS 하드웨어 및 소프트웨어 호환성 목록"^]에서 지원되는 경우 FlexPod 아키텍처에서 사용할 수 있습니다.
 
-
-
-[[cisco-nexus-5000-series-switch-options]]
-== Cisco Nexus 5000 시리즈 스위치 옵션
-
-FlexPod 아키텍처에는 중복 Cisco Nexus 5000, 7000 또는 9000 시리즈 스위치가 필요합니다. 아래 표에 나열된 부품 번호는 Cisco Nexus 5000 시리즈 섀시용으로 SFP 모듈, 애드온 FC 또는 이더넷 모듈을 포함하지 않습니다.
-
-|===
-| Cisco Nexus 5000 시리즈 스위치 | 부품 번호 | 기술 사양 
-
-
-| Cisco Nexus 56128P | N5K-C56128P .2+| http://www.cisco.com/c/en/us/products/collateral/switches/nexus-5000-series-switches/datasheet-c78-730760.html["Cisco Nexus 5600 플랫폼 스위치"] 
-
-
-| Cisco Nexus 5672UP-16G | N5K-C5672UP-16G 
-
-
-| Cisco Nexus 5596UP | N5K-C5596UP-FA .2+| http://www.cisco.com/c/en/us/products/collateral/switches/nexus-5000-series-switches/data_sheet_c78-618603.html["Cisco Nexus 5548 및 5596 스위치"] 
-
-
-| Cisco Nexus 5548UP | N5K-C5548UP-FA 
-|===
-
-
-[[cisco-nexus-7000-series-switch-options]]
-== Cisco Nexus 7000 시리즈 스위치 옵션
-
-FlexPod 아키텍처에는 중복 Cisco Nexus 5000, 7000 또는 9000 시리즈 스위치가 필요합니다. 아래 표에 나열된 부품 번호는 Cisco Nexus 7000 Series 섀시용으로, SFP 모듈, 라인 카드 또는 전원 공급 장치는 포함되지 않지만 팬 트레이는 포함되어 있습니다.
-
-|===
-| Cisco Nexus 7000 시리즈 스위치 | 부품 번호 | 기술 사양 
-
-
-| Cisco Nexus 7004 | N7K-C7004 | http://www.cisco.com/en/US/products/ps12735/index.html["Cisco Nexus 7000 4슬롯 스위치"] 
-
-
-| Cisco Nexus 7009 | N7K-C7009 | http://www.cisco.com/en/US/products/ps11565/index.html["Cisco Nexus 7000 9슬롯 스위치"] 
-
-
-| Cisco Nexus 7702 | N7K-C7702 | http://www.cisco.com/c/en/us/products/switches/nexus-7700-2-slot-switch/index.html["Cisco Nexus 7700 2슬롯 스위치"] 
-
-
-| Cisco Nexus 7706 | N77-C7706 | http://www.cisco.com/en/US/products/ps13482/index.html["Cisco Nexus 7700 6슬롯 스위치"] 
-|===
 
 
 [[cisco-nexus-9000-series-switch-options]]
 == Cisco Nexus 9000 시리즈 스위치 옵션
 
-FlexPod 아키텍처에는 중복 Cisco Nexus 5000, 7000 또는 9000 시리즈 스위치가 필요합니다. 아래 표에 나열된 부품 번호는 Cisco Nexus 9000 시리즈 섀시용으로 SFP 모듈 또는 이더넷 모듈을 포함하지 않습니다.
+Cisco Nexus 9000 시리즈 스위치 이중화는 FlexPod 아키텍처에서 필요합니다. 아래 표에 나열된 부품 번호는 Cisco Nexus 9000 시리즈 섀시에 대한 것이며, SFP 모듈이나 이더넷 모듈은 포함되어 있지 않습니다.
 
 |===
-| Cisco Nexus 9000 시리즈 스위치 | 부품 번호 | 기술 사양 
+| Cisco Nexus 스위치 - Fixed | 기술 사양 
 
 
-| Cisco Nexus 93180YC-FX | N9K-C93180YC-FX .5+| http://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-729405.html["Cisco Nexus 9300 시리즈 스위치"] 
+| Cisco Nexus 9200 시리즈 스위치 | https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-735989.html["Cisco Nexus 9200 시리즈 스위치"] 
 
 
-| Cisco Nexus 93180YC-EX | N9K-93180YC-EX 
-
-
-| Cisco Nexus 9336PQ ACI 척추 | N9K-C9336PQ 
-
-
-| Cisco Nexus 9332PQ | N9K-C9332PQ 
-
-
-| Cisco Nexus 9336C-FX2 | N9K-C9336C-FX2 
-
-
-| Cisco Nexus 92304QC | N9K-C92304QC .2+| http://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-735989.html["Cisco Nexus 9200 시리즈 스위치"] 
-
-
-| Cisco Nexus 9236C | N9K-9236C 
+| Cisco Nexus 9300 시리즈 스위치 | https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-736967.html["Cisco Nexus 9300 시리즈 스위치"] 
 |===
+|===
+| Cisco Nexus 스위치 - 모듈형 | 기술 사양 
 
-NOTE: 일부 Cisco Nexus 9000 시리즈 스위치에는 다른 모델이 있습니다. 이러한 변종은 FlexPod 솔루션의 일부로 지원됩니다. Cisco Nexus 9000 시리즈 스위치의 전체 목록은 를 참조하십시오 http://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/tsd-products-support-series-home.html["Cisco Nexus 9000 시리즈 스위치"^] 를 참조하십시오.
 
+| Cisco Nexus 9400 시리즈 스위치 | https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/nexus9400-series-switches-ds.html?ccid=cc002962&oid=dstdnc029385["Cisco Nexus 9400 시리즈 스위치"] 
+
+
+| Cisco Nexus 9500 시리즈 스위치 | https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-729404.html["Cisco Nexus 9500 시리즈 스위치"] 
+
+
+| Cisco Nexus 9800 시리즈 스위치 | https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/nexus9800-series-switches-ds.html?ccid=cc002962&oid=dstdnc029386["Cisco Nexus 9800 시리즈 스위치"] 
+|===
 
 
 [[cisco-apic-options]]
 == Cisco APIC 옵션
 
-Cisco ACI를 배포할 때는 섹션에 있는 항목 외에 Cisco APIs 3개를 구성해야 합니다 link:dc-tech-spec_technical_specifications_and_references.html#cisco-nexus-9000-series-switches["Cisco Nexus 9000 시리즈 스위치"]. Cisco APIC 크기에 대한 자세한 내용은 를 참조하십시오 http://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/application-policy-infrastructure-controller-apic/datasheet-c78-732414.html["Cisco Application Centric Infrastructure 데이터시트 를 참조하십시오."^]
+Cisco APIC는 Cisco ACI의 핵심 아키텍처 구성 요소입니다. 이는 Cisco ACI 패브릭에 대한 통합 자동화 및 관리 지점입니다.
 
-APIC 제품 사양에 대한 자세한 내용은 의 표 1에서 표 3을 참조하십시오 https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/application-policy-infrastructure-controller-apic/datasheet-c78-739715.html["Cisco Application Policy Infrastructure Controller 데이터시트 를 참조하십시오"^].
+APIC 제품 사양에 대한 자세한 내용은 https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/application-policy-infrastructure-controller-apic/datasheet-c78-739715.html["Cisco Application Policy Infrastructure Controller 데이터시트 를 참조하십시오"^]의 표 1부터 표 3을 참조하십시오.
 
-
-
-[[cisco-nexus-fabric-extender-options]]
-== Cisco Nexus 패브릭 익스텐더 옵션
-
-C-Series 서버를 사용하는 대규모 FlexPod 아키텍처에는 중복 Cisco Nexus 2000 시리즈 랙 마운트 FEX가 권장됩니다. 아래 표에는 몇 가지 Cisco Nexus FEX 옵션이 설명되어 있습니다. 대체 FEX 모델도 지원됩니다. 자세한 내용은 를 참조하십시오 https://ucshcltool.cloudapps.cisco.com/public/["Cisco UCS 하드웨어 및 소프트웨어 호환성 목록"^].
-
-|===
-| Cisco Nexus 랙 마운트 FEX | 부품 번호 | 기술 사양 
-
-
-| Cisco Nexus 2232PP | N2K-C2232PP .2+| http://www.cisco.com/en/US/prod/collateral/switches/ps9441/ps10110/data_sheet_c78-507093.html["Cisco Nexus 2000 시리즈 패브릭 익스텐더"] 
-
-
-| Cisco Nexus 2232TM-E | N2K-C2232TM-E 
-
-
-| Cisco Nexus 2348UPQ | N2K-C2348UPQ .2+| http://www.cisco.com/c/en/us/products/collateral/switches/nexus-2000-series-fabric-extenders/datasheet-c78-731663.html["Cisco Nexus 2300 플랫폼 패브릭 익스텐더"] 
-
-
-| Cisco Nexus 2348TQCisco Nexus 2348TQ-E | N2K-C2348TQN2K-C2348TQ-E 
-|===
 
 
 [[cisco-mds-options]]
 == Cisco MDS 옵션
 
-Cisco MDS 스위치는 FlexPod 아키텍처의 선택적 구성 요소입니다. FC SAN용 Cisco MDS 스위치를 구축할 때는 이중화된 SAN 스위치 패브릭이 필요합니다. 아래 표에는 지원되는 Cisco MDS 스위치의 일부 부품 번호와 세부 정보가 나와 있습니다. 를 참조하십시오 https://mysupport.netapp.com/matrix/["NetApp IMT를 참조하십시오"^] 및 https://ucshcltool.cloudapps.cisco.com/public/["Cisco 하드웨어 및 소프트웨어 호환성 목록"^] 지원되는 SAN 스위치의 전체 목록을 확인하십시오.
+Cisco MDS 스위치는 FlexPod 아키텍처의 선택적 요소이지만, Fibre Channel SAN 연결을 사용하여 고성능 스토리지 액세스를 구현하는 배포에서는 고가용성 SAN 인프라를 제공하기 위해 이중화된 Cisco MDS 스위치 패브릭을 구현해야 합니다. 아래 표는 지원되는 Cisco MDS 스위치 목록입니다. 지원되는 SAN 스위치의 전체 목록은 https://imt.netapp.com["NetApp IMT를 참조하십시오"^] 및 https://ucshcltool.cloudapps.cisco.com/public/["Cisco 하드웨어 및 소프트웨어 호환성 목록"^]을 참조하십시오.
 
 |===
-| Cisco MDS 9000 시리즈 스위치 | 부품 번호 | 설명 
+| Cisco MDS 스위치 | 설명 
 
 
-| Cisco MDS 9148T | DS-C9148T-24IK .2+| http://www.cisco.com/c/en/us/products/storage-networking/mds-9100-series-multilayer-fabric-switches/models-listing.html["Cisco MDS 9100 시리즈 스위치"] 
+| Cisco MDS 9100 멀티레이어 패브릭 스위치 | http://www.cisco.com/c/en/us/products/storage-networking/mds-9100-series-multilayer-fabric-switches/datasheet-listing.html["Cisco MDS 9100 시리즈 스위치"] 
 
 
-| Cisco MDS 9132T | DS-C9132T-MEK9 
+| Cisco MDS 9200 멀티서비스 스위치 | https://www.cisco.com/c/en/us/products/storage-networking/mds-9200-series-multiservice-switches/datasheet-listing.html["Cisco MDS 9200 시리즈 스위치"] 
 
 
-| Cisco MDS 9396S | DS-C9396S-K9 | http://www.cisco.com/c/en/us/products/storage-networking/mds-9396s-16g-multilayer-fabric-switch/index.html["Cisco MDS 9300 시리즈 스위치"] 
-|===
+| Cisco MDS 9300 멀티레이어 패브릭 스위치 | https://www.cisco.com/c/en/us/products/storage-networking/mds-9300-series-multilayer-fabric-switches/datasheet-listing.html["Cisco MDS 9300 시리즈 스위치"] 
 
 
-[[cisco-software-licensing-options]]
-== Cisco 소프트웨어 라이센스 옵션
-
-Cisco Nexus 스위치에서 스토리지 프로토콜을 활성화하려면 라이센스가 필요합니다. Cisco Nexus 5000 및 7000 시리즈 스위치 모두 SAN 부팅 구현에 FC 또는 FCoE 프로토콜을 활성화하려면 스토리지 서비스 라이센스가 필요합니다. Cisco Nexus 9000 시리즈 스위치는 현재 FC 또는 FCoE를 지원하지 않습니다.
-
-필요한 라이선스와 해당 라이선스의 부품 번호는 FlexPod 솔루션의 각 구성 요소에 대해 선택하는 옵션에 따라 달라집니다. 예를 들어, 소프트웨어 라이센스 부품 번호는 포트 수와 선택한 Cisco Nexus 5000 또는 7000 시리즈 스위치에 따라 다릅니다. 정확한 부품 번호는 영업 담당자에게 문의하십시오. 아래 표에는 Cisco 소프트웨어 라이센스 옵션이 나열되어 있습니다.
-
-|===
-| Cisco 소프트웨어 라이센스 | 부품 번호 | 라이센스 정보 
-
-
-| Cisco Nexus 5500 스토리지 라이센스, 8, 48 및 96포트 | N55-8P-SSK9/N55-48P-SSK9/N55-96P-SSK9 .5+| http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/licensing/guide/b_Cisco_NX-OS_Licensing_Guide/b_Cisco_NX-OS_Licensing_Guide_chapter_01.html["Cisco NX-OS 소프트웨어 기능 라이센스 등록"] 
-
-
-| Cisco Nexus 5010/5020 스토리지 프로토콜 라이센스 | N5010-SSK9/N5020-SSK9 
-
-
-| Cisco Nexus 5600 스토리지 프로토콜 라이센스 | N56-16p-SSK9/N5672-72p-SSK9/N56128-128P-SSK9 
-
-
-| Cisco Nexus 7000 스토리지 엔터프라이즈 라이센스 | N7K-SAN1K9 
-
-
-| Cisco Nexus 9000 엔터프라이즈 서비스 라이센스 | N95-LAN1K9/N93-LAN1K9 
+| Cisco MDS 9700 Multilayer Directors | http://www.cisco.com/c/en/us/products/storage-networking/mds-9700-series-multilayer-directors/datasheet-listing.html["Cisco MDS 9700 시리즈 스위치"] 
 |===
 
 
 [[cisco-support-licensing-options]]
 == Cisco 지원 라이센스 옵션
 
-FlexPod 아키텍처의 모든 Cisco 장비에는 유효한 SmartNet 지원 계약이 필요합니다.
 
-각 제품에 따라 다를 수 있으므로 해당 라이선스에 필요한 라이센스와 부품 번호는 영업 담당자가 확인해야 합니다. 아래 표에는 Cisco 지원 라이센스 옵션이 나열되어 있습니다.
+NOTE: 주문하기 전에 Cisco 또는 NetApp 영업 담당자에게 라이선스 요구 사항을 확인하는 것이 좋습니다.
 
-|===
-| Cisco 지원 라이센스 | 사용권 안내서 
+link:https://www.cisco.com/c/dam/en_us/about/doing_business/legal/service_descriptions/docs/solution-support-smart-total-care.pdf["Cisco 솔루션 지원"^]은(는) Cisco 솔루션에 적용되는 기술 지원 서비스 제공 서비스로, Cisco 단독 또는 Cisco 및 솔루션 지원 제휴 파트너사의 하드웨어 및 소프트웨어를 포함하며, Cisco 제품과 타사 공급업체(솔루션 지원 제휴 파트너사)에서 제공하는 제품으로만 구성됩니다.
 
+Cisco는 자사의 link:https://www.cisco.com/c/en/us/support/web/tac/technical-services-resource-guide.html["기술 지원 센터"]을 통해 복잡한 고객 환경을 지원합니다. Cisco 솔루션 지원을 통해 고객은 TAC 엔지니어 팀에 액세스할 수 있으며, 이 팀은 솔루션 내에서 발생하는 문제에 대한 주요 연락 창구 역할을 할 뿐만 아니라 솔루션을 구성하는 하드웨어 및 소프트웨어에 대한 제품 지원도 제공합니다.
 
-| Smart Net Total Care 현장지원 프리미엄 | http://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/smart-net-total-care/datasheet-c78-735459.pdf["Cisco Smart Net Total Care 서비스"] 
-|===
+Cisco는 link:https://www.tsanet.org/cisco-tsanet-case-study/["TSANet 파트너 프로그램"^] 프레임워크를 활용하여 솔루션 지원 파트너를 TSANet Connect 시스템의 비공개 그룹에 온보딩합니다. TSANet Connect는 지원 엔지니어가 파트너의 기술 팀과 협업할 수 있는 일관된 방법을 제공하여 효율적인 의사소통과 신속한 문제 해결을 보장하고, 파트너와의 비공식적인 협업으로 인한 마찰을 방지합니다.

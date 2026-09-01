@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: fp-def/dc-tech-spec_automation.html 
+keywords: flexpod datacenter, automation, IaC, GitHub repository, Ansible 
+summary: FlexPod Datacenter의 자동 배포는 Ansible 플레이북 및 관련 인프라 코드 자산을 포함하는 GitHub 저장소를 통해 이용할 수 있습니다. 
+---
+= 자동 배포
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./../media/
+
+
+[role="lead"]
+FlexPod Datacenter의 자동 배포는 FlexPod Datacenter link:https://github.com/ucs-compute-solutions["GitHub 저장소"^]를 통해 이용할 수 있습니다. 이 저장소에는 FlexPod Datacenter 인프라를 코드(IaC)로 배포하는 데 필요한 Ansible 플레이북 및 관련 파일이 포함되어 있습니다.
+
+GitHub 저장소는 FlexPod 데이터센터 구성을 배포하는 체계적인 방법을 제공하여 사용자가 인프라 설정 및 관리를 자동화할 수 있도록 지원합니다. 여기에는 FlexPod 데이터센터 설계의 다양한 구성 요소에 대한 플레이북이 포함되어 있어 사용자가 일관성과 안정성을 바탕으로 효율적으로 환경을 배포하고 유지 관리할 수 있도록 보장합니다.
+
+* 기본 구성을 사용한 FlexPod 데이터센터의 자동 배포
++
+** Cisco Nexus 스위치, Cisco UCS C-Series 서버 또는 IMM이 포함된 Cisco UCS X-Series Direct 및 NetApp ONTAP을 사용하는 기본 FlexPod Datacenter 구성의 자동화된 배포를 위해, link:https://github.com/ucs-compute-solutions/FlexPod-Base-IMM["FlexPod Datacenter Base Configuration with Cisco IMM 및 NetApp ONTAP GitHub 저장소"^] 및 해당 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_base_imm_m7_iac.html["CVD"^]를 참조하십시오.
+** 이 저장소에는 기본 FlexPod 데이터센터 구성 배포를 용이하게 하는 Ansible 플레이북 및 관련 파일이 포함되어 있습니다. 그런 다음 다양한 하이퍼바이저, 베어메탈 OS 및 애플리케이션용 테넌트를 FlexPod Base 위에 구성할 수 있습니다.
+
+
+* VMware vSphere 및 Cisco IMM을 이용한 FlexPod Datacenter의 자동화된 배포
++
+** Cisco Nexus 스위치, Cisco UCS C-Series 서버 또는 IMM 기반 Cisco UCS X-Series Direct 및 VMware vSphere가 포함된 NetApp ONTAP을 사용하는 FlexPod Datacenter 구성의 자동화된 배포에 대해서는 link:https://github.com/ucs-compute-solutions/FlexPod-IMM-VMware["FlexPod Datacenter with VMware vSphere 및 Cisco IMM GitHub 저장소"^] 및 해당 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_imm_m7_iac.html["CVD"^]을(를) 참조하십시오.
+** Ansible 플레이북에 정의된 VMware 역할은 VMware 관련 구성에 사용할 수 있습니다.
+
+
+
+
+
+NOTE: 이 저장소에서는 변수 파일에 FC-NVMe 및 NFS를 사용한 FC 부팅이 기본적으로 구성되어 있지만, iSCSI 부팅 및 NFS를 사용한 NVMe-TCP도 사용할 수 있습니다.
+
+* Red Hat OpenShift 및 Cisco IMM을 사용한 FlexPod Datacenter 자동 배포
++
+** Cisco Nexus 스위치, IMM 기반 Cisco UCS X-Series Direct 및 Red Hat OpenShift가 포함된 NetApp ONTAP을 사용하는 FlexPod Datacenter 구성의 자동화된 배포는 link:https://github.com/ucs-compute-solutions/FlexPod-IMM-OpenShift["Red Hat OpenShift 및 Cisco IMM이 포함된 FlexPod Datacenter GitHub 리포지토리"^]을(를) 참조하십시오.
+** 이 리포지토리는 link:https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_rh_openshift_bm_iac_deploy.html["CVD"^]에서 다루는 Red Hat OpenShift 설치를 준비하기 위해 Cisco 디바이스 및 NetApp ONTAP 스토리지를 설정하는 데 사용할 수 있습니다.
+
+
+
+
+
+NOTE: 이 저장소에는 NFS, iSCSI, NVMe-TCP 및 ONTAP S3 스토리지 프로토콜을 사용한 로컬 부팅 구성 옵션이 있습니다.

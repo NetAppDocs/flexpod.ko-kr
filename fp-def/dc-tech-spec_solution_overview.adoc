@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: fp-def/dc-tech-spec_solution_overview.html 
-keywords: flexpod, datacenter, technucal, specifications, platform, architecture 
-summary: 'FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 컨트롤러(NetApp AFF 또는 FAS 시스템)를 기반으로 사전 설계되고 모범 사례 데이터 센터 아키텍처를 제공합니다.' 
+keywords: flexpod, datacenter, technical specifications, platform, architecture 
+summary: 'FlexPod 플랫폼은 Cisco Unified Computing System(Cisco UCS), Cisco Nexus 스위치 제품군 및 NetApp 스토리지 컨트롤러(NetApp AFF, ASA, FAS 또는 AFX 시스템)를 기반으로 구축된, 사전 설계된 모범 사례 데이터 센터 아키텍처입니다.' 
 ---
-= TR-4036: FlexPod 데이터 센터 기술 사양
+= FlexPod 데이터 센터 기술 사양
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -13,14 +13,12 @@ summary: 'FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco 
 :imagesdir: ../media/
 
 
-Arvind Ramakrishnan, Jyh-shing Chen, NetApp
-
 [role="lead"]
-FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 컨트롤러(AFF, ASA 또는 FAS 시스템)를 기반으로 사전 설계되며 모범 사례 데이터 센터 아키텍처를 제공합니다.
+FlexPod 플랫폼은 Cisco Unified Computing System(Cisco UCS), Cisco Nexus 및 MDS(FC용) 스위치 제품군, 그리고 NetApp 스토리지 컨트롤러(AFF, ASA, FAS 또는 AFX 시스템)를 기반으로 구축된, 사전 설계된 모범 사례 데이터 센터 아키텍처입니다.
 
 FlexPod는 다양한 가상화 하이퍼바이저 및 베어 메탈 운영 체제 및 엔터프라이즈 워크로드를 실행하는 데 적합한 플랫폼입니다. FlexPod는 기본 구성뿐만 아니라 다양한 사용 사례와 요구사항에 맞게 사이징 및 최적화할 수 있는 유연성도 제공합니다.
 
 
-NOTE: 전체 FlexPod 구성을 주문하기 전에 를 참조하십시오 http://www.netapp.com/us/technology/flexpod["FlexPod 통합 인프라"^] 최신 버전의 기술 사양을 보려면 netapp.com 페이지를 참조하십시오.
+NOTE: 전체 FlexPod 구성을 주문하기 전에 이러한 기술 사양의 최신 버전을 확인하려면 http://www.netapp.com/us/technology/flexpod["NetApp FlexPod 홈페이지"^] 페이지를 참조하십시오.
 
 link:dc-tech-spec_flexpod_platforms.html["다음: FlexPod 플랫폼."]
