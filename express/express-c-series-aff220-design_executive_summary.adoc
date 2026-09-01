@@ -14,7 +14,7 @@ summary:
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 사비타 쿠마리, NetApp 협력사: image:cisco logo.png[""]

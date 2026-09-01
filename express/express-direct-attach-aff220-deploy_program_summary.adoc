@@ -10,7 +10,7 @@ summary: 'FlexPod Express는 Cisco UCS(Cisco Unified Computing System), Cisco Ne
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 NetApp, 스리랑카 Sree Lakshmi

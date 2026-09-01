@@ -10,7 +10,7 @@ summary: 이 문서에 대한 자세한 내용은 NetApp 웹 사이트 및 VMwar
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

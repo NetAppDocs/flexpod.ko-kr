@@ -10,7 +10,7 @@ summary: Tiering-Minimum-Cooling-Days 설정은 자동 또는 스냅샷 전용 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

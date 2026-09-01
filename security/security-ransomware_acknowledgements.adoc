@@ -10,7 +10,7 @@ summary: 저자는 이 가이드의 작성에 기여한 다음 사람들에게 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

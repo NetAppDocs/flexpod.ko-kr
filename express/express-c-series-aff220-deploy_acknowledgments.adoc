@@ -10,7 +10,7 @@ summary: 저자는 이 설계에 대한 지원과 기여에 대해 특정 개인
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

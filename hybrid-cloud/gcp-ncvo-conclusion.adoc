@@ -10,7 +10,7 @@ summary: 이 솔루션에서는 Cisco Intersight Cloud Orchestrator를 기반으
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:gcp-ncvo-solution-validation.html["이전: 솔루션 검증."]

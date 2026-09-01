@@ -10,7 +10,7 @@ summary: 랜섬웨어는 암호화 바이러스 를 기반으로 하는 맬웨�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 NetApp의 Arvind Ramakrishnan

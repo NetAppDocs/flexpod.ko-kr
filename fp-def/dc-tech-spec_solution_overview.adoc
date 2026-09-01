@@ -10,7 +10,7 @@ summary: 'FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Arvind Ramakrishnan, Jyh-shing Chen, NetApp

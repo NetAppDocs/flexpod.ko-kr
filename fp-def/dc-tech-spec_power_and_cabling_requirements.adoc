@@ -10,7 +10,7 @@ summary: FlexPod 설계에는 전원 및 케이블 연결에 대한 최소 요�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

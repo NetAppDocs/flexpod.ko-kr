@@ -10,7 +10,7 @@ summary: 이 섹션에서는 EHR이 소프트웨어를 NetApp 스토리지와 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:fhc-cvoe-installation-and-configuration.html["이전: 설치 및 구성."]

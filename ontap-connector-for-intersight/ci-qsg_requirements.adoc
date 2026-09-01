@@ -10,7 +10,7 @@ summary: Cisco Intersight와 NetApp ONTAP 스토리지 통합을 위한 하드�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

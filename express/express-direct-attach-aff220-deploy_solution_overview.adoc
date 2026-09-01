@@ -10,7 +10,7 @@ summary: 이 FlexPod Express 솔루션은 FlexPod 통합 인프라 프로그램�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

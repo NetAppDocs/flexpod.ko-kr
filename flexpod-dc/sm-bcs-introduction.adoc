@@ -10,7 +10,7 @@ summary: 이 페이지에서는 NetApp SnapMirror 비즈니스 연속성 및 ONT
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Jyh-shing Chen, NetApp

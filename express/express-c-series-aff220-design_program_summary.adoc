@@ -10,7 +10,7 @@ summary: FlexPod 참조 아키텍처는 Cisco Validated Design 또는 NetApp Ver
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 

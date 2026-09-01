@@ -10,7 +10,7 @@ summary: NetApp은 다양한 하드웨어, 소프트웨어 및 서비스를 제�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-fips-flexpod-cisco-networking-and-fips-140-2.html["이전: FlexPod Cisco 네트워킹 및 FIPS 140-2."]

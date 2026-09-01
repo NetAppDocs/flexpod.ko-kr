@@ -10,7 +10,7 @@ summary: 이 페이지에서는 Cisco Intersight 및 Terraform Cloud에 연결�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:gcp-ncvo-cisco-intersight-configuration.html["이전: Cisco Intersight 구성."]

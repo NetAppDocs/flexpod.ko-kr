@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 VMware ESXi 6.7을 설치
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

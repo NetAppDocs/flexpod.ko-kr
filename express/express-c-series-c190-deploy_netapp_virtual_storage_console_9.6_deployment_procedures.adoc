@@ -10,7 +10,7 @@ summary: '이 섹션에서는 NetApp VSC(가상 스토리지 콘솔)의 구축 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

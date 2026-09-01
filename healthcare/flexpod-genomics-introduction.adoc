@@ -10,7 +10,7 @@ summary: FlexPod 통합 인프라 플랫폼을 사용하는 의료 조직은 하
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 NetApp, JayaKishore Esanakula

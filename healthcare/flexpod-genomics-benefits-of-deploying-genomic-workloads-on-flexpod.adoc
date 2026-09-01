@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod 통합 인프라 플랫폼에서 게놈 워
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-genomics-introduction.html["이전: 소개."]

@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod Express의 선택적 기능에 대해 설�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

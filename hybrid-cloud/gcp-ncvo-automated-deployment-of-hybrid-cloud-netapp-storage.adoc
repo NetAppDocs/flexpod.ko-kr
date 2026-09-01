@@ -10,7 +10,7 @@ summary: 이 섹션에서는 하이브리드 클라우드 NetApp 스토리지의
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:gcp-ncvo-configure-public-cloud-service-provider.html["이전: 공용 클라우드 서비스 공급자 구성"]

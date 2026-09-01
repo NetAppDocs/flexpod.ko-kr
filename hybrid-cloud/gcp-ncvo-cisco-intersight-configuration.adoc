@@ -10,7 +10,7 @@ summary: 이 페이지에는 FlexPod와 Cisco Intersight를 구성하는 데 필
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:gcp-ncvo-deploy-flexpod.html["이전: FlexPod 배포."]

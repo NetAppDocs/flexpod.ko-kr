@@ -10,7 +10,7 @@ summary: Cisco는 솔루션의 컴퓨팅 및 네트워킹 계층을 모두 포�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 이 섹션에서는 Cromwell 엔진을 사용하여 GATK를 실행한 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-genomics-appendix-b.html["11fffe01d469840980d9b9a5f45bf9ed"]

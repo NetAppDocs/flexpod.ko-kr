@@ -10,7 +10,7 @@ summary: FlexPod Express의 자동 배포는 Ansible 플레이북 및 관련 인
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

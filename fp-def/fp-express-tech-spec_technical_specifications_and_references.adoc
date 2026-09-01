@@ -10,7 +10,7 @@ summary: 이 섹션에서는 각 FlexPod Express 구성 요소에 대한 중요�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

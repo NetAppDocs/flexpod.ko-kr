@@ -10,7 +10,7 @@ summary: 이 섹션에서는 NetApp FlexPod Express 스토리지 클러스터 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 

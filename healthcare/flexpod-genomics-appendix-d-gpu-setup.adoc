@@ -10,7 +10,7 @@ summary: 발행 당시에는 GATK 툴이 사내 GPU 기반 실행을 기본적�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-genomics-appendix-c.html["이전: Cromwell 엔진을 사용하여 GATK 실행을 위한 출력."]

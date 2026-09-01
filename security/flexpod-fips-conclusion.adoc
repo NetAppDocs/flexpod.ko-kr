@@ -10,7 +10,7 @@ summary: FlexPod 플랫폼에서 의료 애플리케이션을 실행하면 FIPS 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-fips-additional-flexpod-security-consideration.html["이전: 추가 FlexPod 보안 고려 사항."]

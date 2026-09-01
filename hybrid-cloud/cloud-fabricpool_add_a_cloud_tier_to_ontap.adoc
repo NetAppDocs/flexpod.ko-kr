@@ -10,7 +10,7 @@ summary: 오브젝트 저장소를 Aggregate에 첨부하려면 먼저 ONTAP에 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

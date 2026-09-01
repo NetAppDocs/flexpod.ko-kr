@@ -10,7 +10,7 @@ summary: Cisco Intersight는 새로운 기능, 향상된 기능 및 버그 수�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

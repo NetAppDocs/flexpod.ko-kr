@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod Express 구성에 사용할 Cisco UCS C-Ser
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: Cisco Intersight Assist를 설치한 후에는 NetApp 스토리지 및 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: NetApp과 Cisco는 협력 관계를 맺고 FlexPod 에코시스템을 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

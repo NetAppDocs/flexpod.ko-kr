@@ -10,7 +10,7 @@ summary: 이 섹션에서는 GATK의 JAR 파일 출력을 제공합니다.
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-genomics-genomics---gatk-setup-and-execution.html["이전: 유전체학 - GATK 설정 및 실행"]

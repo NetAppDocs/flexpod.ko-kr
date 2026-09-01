@@ -10,7 +10,7 @@ summary: FlexPod Express를 사용하려면 선택한 하이퍼바이저와 네�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

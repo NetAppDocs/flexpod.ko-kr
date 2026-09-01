@@ -10,7 +10,7 @@ summary: SM-BC가 포함된 FlexPod 데이터 센터는 액티브-액티브 데�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:sm-bcs-validated-scenarios.html["이전: 솔루션 검증 시나리오."]

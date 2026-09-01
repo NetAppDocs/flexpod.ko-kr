@@ -10,7 +10,7 @@ summary: 전 세계의 많은 의료 기관이 FlexPod를 공통 플랫폼으로
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-genomics-appendix-d-gpu-setup.html["이전: GPU 설정"]

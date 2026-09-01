@@ -10,7 +10,7 @@ summary: FIPS 140-2는 컴퓨터 및 통신 시스템의 중요한 정보를 보
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-fips-cybersecurity-threats-in-healthcare.html["이전: 의료 분야의 사이버 보안 위협"]

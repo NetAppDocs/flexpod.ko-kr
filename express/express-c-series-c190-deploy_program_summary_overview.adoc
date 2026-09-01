@@ -10,7 +10,7 @@ summary: FlexPod 데이터 센터 및 FlexPod 익스프레스는 기본 구성�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Savita Kumari, NetApp에서 기술 지원

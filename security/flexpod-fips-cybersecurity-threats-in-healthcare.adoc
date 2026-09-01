@@ -10,7 +10,7 @@ summary: 의료에 대한 위협은 본질적으로 다차원적이며 영향을
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-fips-introduction.html["이전: 소개."]

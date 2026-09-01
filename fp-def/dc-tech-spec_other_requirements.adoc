@@ -10,7 +10,7 @@ summary: FlexPod 아키텍처에는 다음과 같은 추가 상호 운용성 및
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

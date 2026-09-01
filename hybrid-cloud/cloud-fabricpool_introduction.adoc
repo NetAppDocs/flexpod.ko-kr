@@ -10,7 +10,7 @@ summary: 이 기술 보고서에서는 NetApp과 Cisco의 FlexPod 통합 인프�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Scott Kovacs, NetApp을 참조하십시오

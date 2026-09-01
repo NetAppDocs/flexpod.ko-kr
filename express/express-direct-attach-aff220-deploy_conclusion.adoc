@@ -10,7 +10,7 @@ summary: FlexPod Express는 업계 최고의 구성요소를 사용하는 검증
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

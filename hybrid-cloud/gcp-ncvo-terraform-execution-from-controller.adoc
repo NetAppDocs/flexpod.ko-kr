@@ -10,7 +10,7 @@ summary: 컨트롤러를 사용하여 Terraform 계획을 실행할 수 있습�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:gcp-ncvo-dr-workflow.html["이전: DR 워크플로우."]

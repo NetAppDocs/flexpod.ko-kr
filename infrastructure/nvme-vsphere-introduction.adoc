@@ -10,7 +10,7 @@ summary: 이 솔루션은 FlexPod 기반의 VMware vSphere 7을 사용한 FC-NVM
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Chris Schmitt와 Kamini Singh, NetApp

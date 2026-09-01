@@ -10,7 +10,7 @@ summary: FlexPod Datacenter SM-BC 솔루션은 다양한 단일 장애 지점 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:sm-bcs-virtualization.html["이전: 솔루션 검증 - 가상화."]

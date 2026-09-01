@@ -10,7 +10,7 @@ summary: '이 문서는 FIPS 140-2 보안 규정을 준수해야 하는 하나 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Cisco의 NetApp John McAbel, JayaKishore Esanakula

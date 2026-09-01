@@ -10,7 +10,7 @@ summary: 'FabricPool은 ONTAP의 하이브리드 스토리지 솔루션으로, A
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 

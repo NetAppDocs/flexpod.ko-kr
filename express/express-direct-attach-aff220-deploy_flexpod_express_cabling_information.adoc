@@ -10,7 +10,7 @@ summary: 참조 검증 케이블 연결은 다음 표에 설명되어 있습니�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

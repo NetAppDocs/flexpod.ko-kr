@@ -10,7 +10,7 @@ summary: 이 페이지에서는 SAP HANA 및 기타 SAP 애플리케이션과 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 FlexPod 플랫폼은 Cisco UCS(Cisco Unified Computing System), Cisco Nexus 스위치 제품군, NetApp 스토리지 컨트롤러를 기반으로 사전 설계되고 모범 사례 데이터 센터 아키텍처를 제공합니다.

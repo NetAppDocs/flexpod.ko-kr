@@ -10,7 +10,7 @@ summary: NetApp은 의료 등의 엔터프라이즈 애플리케이션을 위한
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Kamini Singh, NetApp

@@ -10,7 +10,7 @@ summary: FIPS 140-2 전략을 구현할 때는 어떤 것이 보호되고 있는
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-fips-overview-of-fips-140-2.html["이전: FIPS 140-2의 개요"]

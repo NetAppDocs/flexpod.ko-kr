@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod Express의 각 버전에 권장되는 소�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

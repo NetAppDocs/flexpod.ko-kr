@@ -10,7 +10,7 @@ summary: 이 페이지에는 재해 복구 워크플로를 구현하는 데 필�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:gcp-ncvo-automated-deployment-of-hybrid-cloud-netapp-storage.html["이전: 하이브리드 클라우드 NetApp 스토리지의 자동화된 구축"]

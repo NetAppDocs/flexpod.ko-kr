@@ -10,7 +10,7 @@ summary: 시작하기 전에 AIQ UM을 설치 또는 업그레이드하고 Cisco
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 이 참조 검증은 다음 그림 및 표와 같이 케이블로 연�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

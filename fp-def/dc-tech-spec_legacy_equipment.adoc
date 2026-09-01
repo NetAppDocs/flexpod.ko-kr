@@ -10,7 +10,7 @@ summary: 'FlexPod은 현재 Cisco 및 NetApp에서 판매하기 위한 기존 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

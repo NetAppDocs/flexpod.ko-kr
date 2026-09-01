@@ -10,7 +10,7 @@ summary: 이 문서에서는 완전히 이중화된 고가용성 FlexPod Express
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

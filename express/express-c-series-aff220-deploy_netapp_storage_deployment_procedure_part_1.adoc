@@ -10,7 +10,7 @@ summary: 다음 단계에 따라 NetApp AFF 스토리지 구축 절차를 완료
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

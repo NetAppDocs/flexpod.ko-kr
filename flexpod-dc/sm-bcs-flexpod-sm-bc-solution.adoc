@@ -10,7 +10,7 @@ summary: 높은 수준의 FlexPod SM-BC 솔루션은 두 개의 FlexPod 시스�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:sm-bcs-introduction.html["이전: 소개."]

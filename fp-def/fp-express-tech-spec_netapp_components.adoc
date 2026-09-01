@@ -10,7 +10,7 @@ summary: NetApp 스토리지 컨트롤러는 FlexPod Express 아키텍처에서 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

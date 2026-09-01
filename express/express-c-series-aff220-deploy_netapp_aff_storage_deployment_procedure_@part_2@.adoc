@@ -10,7 +10,7 @@ summary: igroup을 생성하려면 iSCSI 이니시에이터 IQN이 필요하며 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 

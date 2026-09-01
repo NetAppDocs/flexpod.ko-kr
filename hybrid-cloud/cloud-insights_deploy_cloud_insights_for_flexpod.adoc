@@ -10,7 +10,7 @@ summary: Cloud Insights for FlexPod를 구축하려면 다음 작업을 완료�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

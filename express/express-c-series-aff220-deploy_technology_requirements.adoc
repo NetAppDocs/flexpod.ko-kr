@@ -10,7 +10,7 @@ summary: FlexPod 익스프레스 시스템에는 하드웨어 및 소프트웨�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

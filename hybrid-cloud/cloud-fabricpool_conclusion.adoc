@@ -10,7 +10,7 @@ summary: 클라우드로의 전환 여정은 조직, 부서 간, 조직 내의 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

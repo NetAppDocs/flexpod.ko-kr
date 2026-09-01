@@ -10,7 +10,7 @@ summary: 이 섹션에서는 스터디 수와 해당 인프라 요구 사항에 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 

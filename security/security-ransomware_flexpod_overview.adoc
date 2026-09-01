@@ -10,7 +10,7 @@ summary: 'FlexPod는 Cisco UCS(Unified Computing System) 서버, Cisco Nexus 스
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

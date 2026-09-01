@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod Express 설계에 필요한 전력 요구 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

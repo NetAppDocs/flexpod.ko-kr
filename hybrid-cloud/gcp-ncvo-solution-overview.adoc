@@ -10,7 +10,7 @@ summary: 이 기술 보고서에서는 FlexPod 통합 인프라 솔루션, Googl
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 Ruchika Lahoti, NetApp

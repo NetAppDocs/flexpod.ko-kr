@@ -10,7 +10,7 @@ summary: 'FlexPod 인프라는 모듈식, 컨버지드, 선택적으로 가상�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-fips-solution-benefits-of-flexpod-converged-infrastructure.html["이전: FlexPod 통합 인프라의 솔루션 이점"]

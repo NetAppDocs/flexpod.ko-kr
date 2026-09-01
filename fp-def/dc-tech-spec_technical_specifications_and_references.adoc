@@ -10,7 +10,7 @@ summary: 기술 사양은 섀시, FEX, 서버, 스위치, 스위치 등 FlexPod 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

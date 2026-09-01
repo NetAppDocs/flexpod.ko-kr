@@ -10,7 +10,7 @@ summary: 이 문서에 설명된 NetApp 기능은 공격 후 몇 분 내에 데�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

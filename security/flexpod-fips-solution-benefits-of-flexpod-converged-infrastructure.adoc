@@ -10,7 +10,7 @@ summary: 'FlexPod 시스템에서 FIPS 설정을 시연하기 위해 FlexPod 시
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:flexpod-fips-flexpod-netapp-ontap-storage-and-fips-140-2.html["이전:FlexPod NetApp ONTAP 스토리지 및 FIPS 140-2가 있습니다."]

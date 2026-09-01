@@ -10,7 +10,7 @@ summary: FlexPod를 사용하면 단일 플랫폼에서 FC, FCoE, iSCSI, NFS/pNF
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 NetApp의 Jaya Kishore Esanakula 및 Atil Bhalodia

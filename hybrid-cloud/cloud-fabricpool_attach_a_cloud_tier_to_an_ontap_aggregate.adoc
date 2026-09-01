@@ -10,7 +10,7 @@ summary: ONTAP에서 오브젝트 저장소를 추가하고 식별한 후 Fabric
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

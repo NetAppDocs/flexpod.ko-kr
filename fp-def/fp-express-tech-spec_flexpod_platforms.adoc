@@ -10,7 +10,7 @@ summary: 이 문서에서는 FlexPod 익스프레스 플랫폼의 기술 사양�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

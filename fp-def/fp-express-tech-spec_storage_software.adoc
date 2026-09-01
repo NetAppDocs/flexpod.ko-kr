@@ -10,7 +10,7 @@ summary: 이 섹션에 나열된 스토리지 운영 체제는 FlexPod Express �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

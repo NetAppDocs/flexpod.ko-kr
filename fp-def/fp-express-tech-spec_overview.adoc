@@ -10,7 +10,7 @@ summary: 'FlexPod Express는 Cisco Unified Computing System(Cisco UCS) 및 Cisco
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

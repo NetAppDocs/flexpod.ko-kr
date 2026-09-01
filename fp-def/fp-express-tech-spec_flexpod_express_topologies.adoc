@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod Express의 예시 토폴로지를 설명합
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

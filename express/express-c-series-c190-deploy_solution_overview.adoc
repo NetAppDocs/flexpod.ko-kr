@@ -10,7 +10,7 @@ summary: 이 FlexPod 익스프레스 솔루션은 FlexPod 통합 인프라 프�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

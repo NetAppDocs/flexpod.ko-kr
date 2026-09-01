@@ -10,7 +10,7 @@ summary: 다음 단계를 완료하여 VMware vCenter Server 6.7 및 vSphere 클
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

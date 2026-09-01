@@ -10,7 +10,7 @@ summary: igroup을 생성하려면 클러스터 관리 노드의 SSH 연결에�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 

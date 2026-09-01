@@ -10,7 +10,7 @@ summary: FlexPod SM-BC 솔루션의 컴퓨팅 구성은 일반적인 FlexPod 솔
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 link:sm-bcs-solution-validation_overview.html["사전 구성: 솔루션 검증 - 개요"]
