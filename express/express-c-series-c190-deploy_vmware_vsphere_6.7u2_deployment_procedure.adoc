@@ -41,7 +41,7 @@ NOTE: 클러스터에 추가된 노드에 대해 이 절차를 완료해야 합�
 . 주 메뉴에서 서버 탭을 선택합니다.
 . Launch KVM Console을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image17.png[""]
+image:express-c-series-c190-deploy_image17.png["상단 메뉴에 KVM 시작 링크가 있는 Cisco CIMC 서버 BIOS 페이지의 스크린샷"]
 
 . 가상 KVM 콘솔에서 Virtual Media 탭을 선택합니다.
 . CD/DVD 매핑 을 선택합니다.
@@ -74,7 +74,7 @@ NOTE: 먼저 가상 디바이스 활성화 를 클릭해야 할 수도 있습니
 . 최종 사용자 사용권 계약을 읽은 후 동의하고 F11 키를 눌러 설치를 계속합니다.
 . 이전에 ESXi용 설치 디스크로 설정된 NetApp LUN을 선택하고 Enter 키를 눌러 설치를 계속합니다.
 +
-image:express-c-series-c190-deploy_image18.png[""]
+image:express-c-series-c190-deploy_image18.png["15.00 GiB 용량의 NETAPP LUN C-Mode 스토리지 장치를 선택하는 ESXi 설치 프로그램의 스크린샷"]
 
 . 적절한 자판 배열을 선택하고 Enter 키를 누릅니다.
 . 루트 암호를 입력 및 확인하고 Enter 키를 누릅니다.
@@ -100,7 +100,7 @@ image:express-c-series-c190-deploy_image18.png[""]
 . vSwitch0에 대해 원하는 포트를 선택합니다. Enter 키를 누릅니다.
 . CIMC의 eth0 및 eth1에 해당하는 포트를 선택합니다.
 +
-image:express-c-series-c190-deploy_image19.png[""]
+image:express-c-series-c190-deploy_image19.png["관리 네트워킹을 위해 vmnic2와 vmnic4가 선택된 ESXi 네트워크 어댑터 화면의 스크린샷"]
 
 . VLAN (optional)을 선택하고 Enter 키를 누릅니다.
 . VLAN ID '\<<mgmt_vlan_id>>'를 입력합니다. Enter 키를 누릅니다.
@@ -215,7 +215,7 @@ iSCSI 부트를 구성하려면 다음 단계를 수행하십시오.
 . 왼쪽에서 네트워킹 을 선택합니다.
 . 오른쪽에서 Virtual Switches 탭을 선택합니다.
 +
-image:express-c-series-c190-deploy_image20.png[""]
+image:express-c-series-c190-deploy_image20.png["vSwitch0 및 iScsiBootvSwitch를 보여주는 가상 스위치 탭이 있는 ESXi 네트워킹 페이지의 스크린샷"]
 
 . iSciBootvSwitch 를 클릭합니다.
 . 설정 편집 을 선택합니다.
@@ -248,7 +248,7 @@ NOTE: iSciBootPG-A에서 MTU를 9000으로 설정합니다
 .. iSCSIBootPG-A > 계층화 및 페일오버 > 페일오버 순서 > Vmnic3에서 설정 편집 을 클릭합니다. Vmnic3이 활성 상태이고 vmnic5가 사용되지 않아야 합니다.
 .. iSCSIBootPG-B > 팀 구성 및 장애 조치 > 장애 조치 순서 > Vmnic5에서 설정 편집 을 클릭합니다. Vmnic5는 활성 상태이고 vmnic3는 사용하지 않아야 합니다.
 +
-image:express-c-series-c190-deploy_image21.png[""]
+image:express-c-series-c190-deploy_image21.png["vmnic3이 활성화되고 vmnic5가 사용되지 않는 iSCSIBootPG-A 팀 구성 및 페일오버 설정의 스크린샷"]
 
 
 
@@ -264,18 +264,18 @@ ESXi 호스트에 iSCSI 다중 경로를 설정하려면 다음 단계를 수행
 . 왼쪽 탐색 창에서 스토리지 를 선택합니다. 어댑터를 클릭합니다.
 . iSCSI 소프트웨어 어댑터를 선택하고 iSCSI 구성 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image22.png[""]
+image:express-c-series-c190-deploy_image22.png["iSCSI 소프트웨어 어댑터 vmhba64가 선택된 ESXi 스토리지 어댑터 탭의 스크린샷"]
 
 . 동적 대상에서 동적 대상 추가를 클릭합니다.
 +
-image:express-c-series-c190-deploy_image23.png[""]
+image:express-c-series-c190-deploy_image23.png["4개의 IP 주소와 포트 3260이 구성된 iSCSI 동적 타겟을 보여주는 스크린샷"]
 
 . IP 주소 'iscsi_lif01a'를 입력합니다.
 +
 .. IP 주소 iscsi_liff 01b, iscsi_liff 02a, iscsi_liff 02b와 함께 이 과정을 반복합니다.
 .. 구성 저장 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image24.png[""]
+image:express-c-series-c190-deploy_image24.png["포트 3260을 사용하는 4개의 iSCSI 동적 타겟 주소와 구성 저장 버튼의 스크린샷"]
 
 +
 
@@ -295,7 +295,7 @@ ESXi 부트를 구성하려면 다음 단계를 수행하십시오.
 . 왼쪽 탐색 창에서 네트워킹 을 선택합니다.
 . vSwitch0을 선택합니다.
 +
-image:express-c-series-c190-deploy_image25.png[""]
+image:express-c-series-c190-deploy_image25.png["MTU 9000 및 활성 vmnic2, vmnic4 어댑터를 보여 주는 ESXi vSwitch0 페이지의 스크린샷"]
 
 . 설정 편집 을 선택합니다.
 . MTU를 9000으로 변경합니다.
@@ -316,7 +316,7 @@ NOTE: 로드 밸런싱의 IP 해시 방법을 사용하려면 기본 물리적 �
 . 왼쪽 탐색 창에서 네트워킹 을 선택합니다.
 . 포트 그룹 탭을 마우스 오른쪽 단추로 클릭합니다.
 +
-image:express-c-series-c190-deploy_image26.png[""]
+image:express-c-series-c190-deploy_image26.png["포트 그룹 탭이 선택되어 있고 포트 그룹 추가 옵션이 있는 ESXi 네트워킹 페이지의 스크린샷"]
 
 . VM Network를 마우스 오른쪽 버튼으로 클릭하고 Edit를 선택합니다. VLAN ID를 '\<<var_vm_traffic_vlan>>'로 변경합니다.
 . 포트 그룹 추가 를 클릭합니다.
@@ -329,7 +329,7 @@ image:express-c-series-c190-deploy_image26.png[""]
 
 . VMkernel NIC 탭을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image27.png[""]
+image:express-c-series-c190-deploy_image27.png["vmk0 및 vmk1 인터페이스 목록이 표시된 ESXi 네트워킹 VMkernel NIC 탭의 스크린샷"]
 
 . Add VMkernel NIC 를 선택합니다.
 +
@@ -357,7 +357,7 @@ image:express-c-series-c190-deploy_image27.png[""]
 .. 서브넷 마스크에 '\<<var_hosta_vmotion_mask>>'를 입력합니다.
 .. IPv4 설정 후 vMotion 확인란이 선택되어 있는지 확인합니다.
 +
-image:express-c-series-c190-deploy_image28.png[""]
+image:express-c-series-c190-deploy_image28.png["고정 IPv4 설정 및 vMotion이 선택된 상태에서 VMkernel NIC 추가 대화 상자의 스크린샷"]
 
 +
 
@@ -376,11 +376,11 @@ NOTE: 라이센싱에서 허용하는 경우 VMware vSphere 분산 스위치를 
 
 . 왼쪽 탐색 창에서 스토리지 를 클릭한 다음 새 데이터 저장소 를 클릭합니다.
 +
-image:express-c-series-c190-deploy_image29.png[""]
+image:express-c-series-c190-deploy_image29.png["새 데이터스토어 버튼이 표시된 VMware ESXi 스토리지 페이지의 스크린샷"]
 
 . Mount NFS Datastore를 선택합니다.
 +
-image:express-c-series-c190-deploy_image30.png[""]
+image:express-c-series-c190-deploy_image30.png["생성 유형으로 NFS 데이터 저장소 마운트가 선택된 새 데이터 저장소 마법사의 스크린샷"]
 
 . NFS 마운트 세부 정보 제공 페이지에 다음 정보를 입력합니다.
 +
@@ -414,7 +414,7 @@ ESXi 호스트에 대해 NTP를 구성하려면 다음 단계를 수행하십시
 . NTP 서버로 '\<<var_ntp>>'를 입력합니다. 여러 NTP 서버를 설정할 수 있습니다.
 . 저장 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image31.png[""]
+image:express-c-series-c190-deploy_image31.png["NTP 서비스가 실행 중이고 3개의 NTP 서버가 있는 ESXi 시간 및 날짜 설정을 보여주는 스크린샷"]
 
 
 
@@ -427,11 +427,11 @@ image:express-c-series-c190-deploy_image31.png[""]
 
 . 왼쪽 탐색 창에서 관리 를 클릭합니다. 오른쪽 창에서 시스템을 선택한 다음 바꾸기를 클릭합니다.
 +
-image:express-c-series-c190-deploy_image32.png[""]
+image:express-c-series-c190-deploy_image32.png["VMware ESXi 시스템 스왑 관리 페이지의 스크린샷으로, 스왑 설정이 표시되어 있습니다."]
 
 . 설정 편집 을 클릭합니다. Datastore 옵션에서 infra_swap을 선택합니다.
 +
-image:express-c-series-c190-deploy_image33.png[""]
+image:express-c-series-c190-deploy_image33.png["infra_swap이 데이터스토어로 선택되고 저장 및 취소 버튼이 있는 스왑 구성 편집 대화 상자의 스크린샷"]
 
 . 저장 을 클릭합니다.
 

@@ -18,7 +18,7 @@ summary: 이 참조 검증은 다음 그림 및 표와 같이 케이블로 연�
 
 이 그림은 참조 검증 케이블 연결을 보여 줍니다.
 
-image:express-c-series-c190-deploy_image3.png[""]
+image:express-c-series-c190-deploy_image3.png["두 개의 Nexus 스위치, 두 개의 Cisco UCS 서버 및 AFF C190 컨트롤러의 후면도를 보여주는 다이어그램"]
 
 다음 표에는 Cisco Nexus 스위치 31108PC-V-A의 케이블 연결 정보가 나와 있습니다
 

@@ -26,7 +26,7 @@ NOTE: FlexPod Express는 VCSA(VMware vCenter Server Appliance)를 사용합니�
 
 . VCSA를 다운로드합니다. ESXi 호스트를 관리할 때 vCenter Server 가져오기 아이콘을 클릭하여 다운로드 링크를 액세스합니다.
 +
-image:express-c-series-aff220-deploy_image41.png[""]
+image:express-c-series-aff220-deploy_image41.png["Get vCenter Server 버튼이 강조 표시된 VMware ESXi 호스트 페이지의 스크린샷"]
 
 . VMware 사이트에서 VCSA를 다운로드합니다.
 +
@@ -40,7 +40,7 @@ NOTE: Microsoft Windows vCenter Server 설치 가능한 가 지원되지만 VMwa
 . 최종 사용자 라이센스 계약에 동의합니다.
 . 배포 유형으로 임베디드 플랫폼 서비스 컨트롤러 를 선택합니다.
 +
-image:express-c-series-aff220-deploy_image42.png[""]
+image:express-c-series-aff220-deploy_image42.png["Embedded Platform Services Controller가 선택된 vCenter Server Appliance 배포 유형 선택 스크린샷"]
 
 +
 
@@ -48,19 +48,19 @@ NOTE: 필요한 경우 외부 플랫폼 서비스 컨트롤러 배포도 FlexPod
 
 . Appliance Deployment Target에서 구축한 ESXi 호스트의 IP 주소와 루트 사용자 이름 및 루트 암호를 입력합니다.
 +
-image:express-c-series-aff220-deploy_image43.png[""]
+image:express-c-series-aff220-deploy_image43.png["ESXi 호스트, 포트, 루트 사용자 및 암호 필드가 있는 vCenter Server 어플라이언스 배포 대상 페이지의 스크린샷"]
 
 . VCSA에 사용할 VM 이름과 루트 암호를 VCSA로 입력하여 어플라이언스 VM을 설정합니다.
 +
-image:express-c-series-aff220-deploy_image44.png[""]
+image:express-c-series-aff220-deploy_image44.png["VM 이름 및 루트 암호 입력란이 있는 어플라이언스 VM 설정 페이지의 스크린샷"]
 
 . 환경에 가장 적합한 구축 크기를 선택합니다. 다음 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image45.png[""]
+image:express-c-series-aff220-deploy_image45.png["Tiny 및 Default 스토리지가 선택된 vCenter Server 배포 크기 페이지의 스크린샷"]
 
 . infra_datastore_1 데이터 저장소를 선택합니다. 다음 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image46.png[""]
+image:express-c-series-aff220-deploy_image46.png["infra_datastore_1이 선택된 vCenter Server 설치 프로그램의 데이터 저장소 선택 페이지 스크린샷"]
 
 . 네트워크 설정 구성 페이지에 다음 정보를 입력하고 다음 을 클릭합니다.
 +
@@ -74,7 +74,7 @@ image:express-c-series-aff220-deploy_image46.png[""]
 
 . 1단계 완료 준비 페이지에서 입력한 설정이 올바른지 확인합니다. 마침 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image47.png[""]
+image:express-c-series-aff220-deploy_image47.png["고정 IPv4 필드가 채워진 vCenter Server Appliance 설치 프로그램의 네트워크 설정 구성 스크린샷"]
 
 +
 VCSA가 지금 설치됩니다. 이 과정은 몇 분 정도 소요됩니다.
@@ -82,7 +82,7 @@ VCSA가 지금 설치됩니다. 이 과정은 몇 분 정도 소요됩니다.
 . 1단계가 완료되면 완료되었다는 메시지가 나타납니다. 계속 을 클릭하여 2단계 구성을 시작합니다.
 . 2단계 소개 페이지에서 다음 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image48.png[""]
+image:express-c-series-aff220-deploy_image48.png["다음 버튼이 있는 vCenter Server Appliance 2단계 소개 페이지의 스크린샷"]
 
 . NTP 서버 주소에 대해 '\<<var_ntp_id>>'를 입력합니다. 여러 NTP IP 주소를 입력할 수 있습니다.
 +

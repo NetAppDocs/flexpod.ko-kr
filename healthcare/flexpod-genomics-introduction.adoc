@@ -62,6 +62,6 @@ FlexPod 통합 인프라 플랫폼을 사용하는 의료 조직은 하나 이�
 
 일반적인 한 병원은 IT 시스템을 다각화했습니다. 이러한 시스템의 대부분은 공급업체에서 구입한 반면 병원 시스템에 의해 구축된 시스템은 거의 없습니다. 따라서 병원 시스템은 데이터 센터의 다양한 인프라 환경을 관리해야 합니다. 병원이 시스템을 FlexPod와 같은 통합 인프라 플랫폼으로 통합할 경우, 조직은 데이터 센터 운영을 표준화할 수 있습니다. FlexPod를 통해 의료 조직은 임상 및 비임상 시스템을 동일한 플랫폼에 구현하여 데이터 센터의 운영을 통합할 수 있습니다.
 
-image:flexpod-genomics-image2.png[""]
+image:flexpod-genomics-image2.png["FlexPod에서 프로토콜, 스토리지 및 클라우드 연결을 통해 통합된 병원 애플리케이션을 보여주는 다이어그램"]
 
 link:flexpod-genomics-benefits-of-deploying-genomic-workloads-on-flexpod.html["다음: FlexPod에 게놈 워크로드를 구축할 때의 이점"]

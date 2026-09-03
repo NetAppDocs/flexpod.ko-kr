@@ -21,7 +21,7 @@ FlexPod 참조 아키텍처는 CVD(Cisco Validated Design) 또는 NVA(NetApp Ver
 * * FlexPod 데이터 센터 * 는 다양한 워크로드 및 애플리케이션을 위한 최적의 다목적 토대를 제공합니다.
 
 
-image:express-c-series-c190-design_image1.png[""]
+image:express-c-series-c190-design_image1.png["FlexPod Express 부서별 배포와 FlexPod Datacenter 미션 크리티컬 워크로드를 비교하는 다이어그램"]
 
 
 
@@ -47,7 +47,7 @@ FlexPod Express는 혼합 가상화 워크로드를 실행하도록 설계되었
 
 다음 그림에서는 FlexPod Express 솔루션에 포함된 하드웨어 구성 요소를 보여 줍니다.
 
-image:express-c-series-c190-design_image2.png[""]
+image:express-c-series-c190-design_image2.png["FlexPod Express 스토리지, 스위치 및 서버 하드웨어 옵션을 보여주는 다이어그램"]
 
 
 
@@ -63,6 +63,6 @@ image:express-c-series-c190-design_image2.png[""]
 
 이 솔루션은 NetApp, Cisco 및 VMware의 최신 기술을 활용합니다. 이 제품은 ONTAP 9.6 소프트웨어, 이중 Cisco Nexus 31108 스위치 및 VMware vSphere 6.7U2를 실행하는 Cisco UCS C220 M5 랙 서버를 실행하는 새로운 NetApp AFF C190 시스템을 갖추고 있습니다. 다음 그림에 나와 있는 검증된 이 솔루션은 10기가비트 이더넷(10GbE) 기술을 사용합니다. 또한 FlexPod 익스프레스 아키텍처가 조직의 변화하는 비즈니스 요구에 적응할 수 있도록 한 번에 두 개의 하이퍼바이저 노드를 추가하여 확장하는 방법에 대한 지침도 제공됩니다.
 
-image:express-c-series-c190-design_image3.png[""]
+image:express-c-series-c190-design_image3.png["FlexPod Express 스위치, C220 M5 서버 및 AFF C190 스토리지 연결을 보여주는 다이어그램"]
 
 link:express-c-series-c190-design_technology_requirements.html["다음: 기술 요구 사항."]

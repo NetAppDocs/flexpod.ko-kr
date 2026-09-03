@@ -26,7 +26,7 @@ TH SM-BC 솔루션 스토리지는 VMware vMSC(vSphere Metro Storage Cluster) �
 
 다음 그림에서는 컴퓨팅 및 스토리지 서비스에 고가용성을 제공하는 VMware HA 및 vMSC 기능을 모두 포함하는 상위 수준의 FlexPod SM-BC 솔루션 가상화 뷰를 보여 줍니다. 액티브-액티브 데이터 센터 솔루션 아키텍처는 사이트 간 워크로드 이동성을 지원하고 DR/BC 보호 기능을 제공합니다.
 
-image:sm-bcs-image39.png[""]
+image:sm-bcs-image39.png["멀티 사이트 패브릭을 통해 FlexPod 사이트 A 및 B에 걸쳐 있는 VMware HA 및 vSphere Metro Storage Cluster를 보여주는 다이어그램"]
 
 
 
@@ -35,7 +35,7 @@ image:sm-bcs-image39.png[""]
 
 FlexPod SM-BC 솔루션에는 각 사이트의 FlexPod 인프라, 사이트 간 네트워크 연결 및 필요한 RPO 및 RTO 목표를 충족하기 위해 세 번째 사이트에 구축된 ONTAP 중재자가 포함됩니다. 다음 그림은 각 사이트의 Cisco UCS B200M5 서버와 사이트 내부 및 사이트 전체에서 SM-BC 기능을 지원하는 NetApp 스토리지 간의 엔드-투-엔드 네트워크 연결을 보여 줍니다.
 
-image:sm-bcs-image40.png[""]
+image:sm-bcs-image40.png["사이트 A와 B에 있는 Cisco UCS B200 M5 서버와 AFF A250 스토리지가 Nexus 스위치를 통해 연결되어 있고, 사이트 C에는 ONTAP Mediator가 설치되어 있는 것을 보여주는 다이어그램입니다."]
 
 FlexPod 배포 아키텍처는 이 솔루션 유효성 검사를 위해 각 사이트에서 동일합니다. 그러나 이 솔루션은 비대칭 배포를 지원하며 요구 사항을 충족하는 기존 FlexPod 솔루션에 추가할 수도 있습니다.
 
@@ -50,7 +50,7 @@ FlexPod 배포 아키텍처는 이 솔루션 유효성 검사를 위해 각 사�
 
 가상 스위치(vSwitch, VDS)는 가상 스위치당 2개의 업링크와 함께 구축되며, ESXi 하이퍼바이저 레벨의 업링크를 Cisco UCS 소프트웨어에서 vmnics 및 vNIC(Virtual NIC)라고 합니다. vNIC는 Cisco UCS 서비스 프로필을 사용하여 각 서버의 Cisco UCS VIC 어댑터에 생성됩니다. vNIC 6개가 정의되었으며, vSwitch0의 경우 2개, vDS0의 경우 2개, vSwitch1의 경우 2개, iSCSI 업링크의 경우 2개가 정의됩니다.
 
-image:sm-bcs-image41.png[""]
+image:sm-bcs-image41.png["vSwitch0, vDS0, iSCSI-A 및 iSCSI-B 스위치와 6개의 vNIC 업링크를 보여주는 다이어그램"]
 
 vSwitch0은 VMware ESXi 호스트 구성 중에 정의되며 FlexPod 인프라스트럭처 관리 VLAN 및 관리를 위한 ESXi 호스트 VMK(VMkernel) 포트가 포함되어 있습니다. 필요한 모든 중요 인프라스트럭처 관리 가상 머신에 대해 인프라스트럭처 관리 가상 머신 포트 그룹도 vSwitch0에 배치됩니다.
 
@@ -71,13 +71,13 @@ VM/호스트 선호도 메커니즘을 사용하여 VM/호스트 그룹을 사�
 
 다음 스크린샷은 사이트 A와 사이트 B 호스트 및 VM에 대해 두 개의 호스트 그룹과 두 개의 VM 그룹이 생성되었음을 보여 줍니다
 
-image:sm-bcs-image42.png[""]
+image:sm-bcs-image42.png["사이트 A 및 사이트 B 호스트와 VM에 대한 VM/호스트 그룹을 보여 주는 vSphere의 스크린샷"]
 
 또한 다음 두 그림에서는 사이트 A 및 사이트 B VM이 "그룹의 호스트에서 실행해야 함" 정책을 사용하여 각 사이트의 호스트에서 실행될 수 있도록 만들어진 VM/호스트 규칙을 보여 줍니다.
 
-image:sm-bcs-image43.png[""]
+image:sm-bcs-image43.png["사이트 A VM이 사이트 A 호스트에서 실행되도록 구성하는 VM/호스트 규칙 편집 대화 상자의 스크린샷"]
 
-image:sm-bcs-image44.png[""]
+image:sm-bcs-image44.png["그룹 정책에서 실행되어야 하는 호스트가 포함된 Site B VM 및 호스트에 대한 VM/호스트 규칙 편집 대화 상자의 스크린샷"]
 
 
 
@@ -88,11 +88,11 @@ VMware vSphere HA에는 호스트 상태 검증을 위한 하트비트 메커니
 
 솔루션 검증을 위해 두 개의 ONTAP 클러스터 관리 IP 주소가 격리 주소로 사용됩니다. 또한 다음 그림과 같이 값이 4인 권장 vSphere HA 고급 옵션 d.heartbeatDsPerHost가 추가되었습니다.
 
-image:sm-bcs-image45.png[""]
+image:sm-bcs-image45.png["4개의 하트비트 데이터스토어와 2개의 격리 주소가 구성된 vSphere HA 고급 옵션의 스크린샷"]
 
 하트비트 데이터 저장소의 경우 다음 그림과 같이 클러스터에서 4개의 공유 데이터 저장소를 지정하고 자동으로 보완합니다.
 
-image:sm-bcs-image46.png[""]
+image:sm-bcs-image46.png["네 개의 지정된 데이터스토어가 선택된 vSphere HA Heartbeat 데이터스토어 설정 스크린샷"]
 
 VMware HA 클러스터 및 VMware vSphere Metro 스토리지 클러스터에 대한 추가 모범 사례 및 구성은  https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["vSphere HA 클러스터 생성 및 사용"^],  https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-vmsc["VMware vMSC(vSphere Metro Storage Cluster)"^] 및  https://docs.netapp.com/us-en/netapp-solutions-virtualization/vmware/vmw-vmsc-with-smas.html["NetApp ONTAP with SnapMirror active sync(이전 SM-BC) 및 VMware vSphere Metro Storage Cluster(vMSC)"^]을 참조하십시오.
 

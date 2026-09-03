@@ -22,7 +22,7 @@ FIPS 설정 및 워크로드 검증 과정에서 NetApp은 일반적인 의료 �
 
 다음 그림은 FIPS 설정 및 검증에 사용되는 FlexPod 시스템을 보여 줍니다. 우리는 을 활용했습니다 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html["VMware vSphere 7.0 및 NetApp ONTAP 9.7을 사용하는 FlexPod 데이터 센터 CVD(Cisco Validated Design)"^] 설치 프로세스 중
 
-image:flexpod-fips-image6.png[""]
+image:flexpod-fips-image6.png["FIPS 140-2를 준수하는 의료용 FlexPod의 컴퓨팅, 네트워킹 및 스토리지 연결을 보여주는 다이어그램"]
 
 
 

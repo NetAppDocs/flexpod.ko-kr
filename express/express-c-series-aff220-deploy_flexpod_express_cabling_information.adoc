@@ -16,7 +16,7 @@ summary: 이 섹션에서는 Cisco Nexus 스위치 3172P A 및 B와 NetApp AFF A
 [role="lead"]
 다음 그림은 참조 검증 케이블 연결을 보여 줍니다.
 
-image:express-c-series-aff220-deploy_image5.png[""]
+image:express-c-series-aff220-deploy_image5.png["Cisco Nexus 스위치, Cisco UCS 서버 및 NetApp AFF A220 컨트롤러의 10GbE 포트를 강조 표시한 다이어그램"]
 
 다음 표에서는 Cisco Nexus 스위치 3172P A 의 케이블 연결 정보를 보여 줍니다
 

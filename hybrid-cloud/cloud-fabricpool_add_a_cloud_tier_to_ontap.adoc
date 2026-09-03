@@ -45,7 +45,7 @@ OnCommand System Manager를 사용하여 클라우드 계층을 추가하려면 
 . Save and Attach Aggregate 를 클릭합니다.
 
 
-image:cloud-fabricpool_image13.png[""]
+image:cloud-fabricpool_image13.png["Amazon S3 클라우드 티어 공급자에 대해 구성된 클라우드 티어 추가 양식의 스크린샷"]
 
 
 

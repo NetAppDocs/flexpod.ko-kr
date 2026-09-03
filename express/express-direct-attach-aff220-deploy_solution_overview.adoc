@@ -32,7 +32,7 @@ FlexPod 참조 아키텍처는 CVD(Cisco Validated Design) 또는 NVA(NetApp Ver
 
 다음 그림은 솔루션의 기술 구성요소를 보여 줍니다.
 
-image:express-direct-attach-aff220-deploy_image2.png[""]
+image:express-direct-attach-aff220-deploy_image2.png["FlexPod Express, FlexPod Datacenter 및 FlexPod Select 솔루션을 비교하는 다이어그램"]
 
 
 
@@ -81,7 +81,7 @@ NVA 프로그램은 NetApp 솔루션을 위한 검증된 아키텍처를 고객�
 
 다음 그림에서는 VMware vSphere 6.7U1 IP 기반 직접 연결 아키텍처를 지원하는 FlexPod Express를 보여 줍니다.
 
-image:express-direct-attach-aff220-deploy_image3.png[""]
+image:express-direct-attach-aff220-deploy_image3.png["FlexPod Express 서버, Nexus 스위치 및 AFF 스토리지 케이블링을 관리, 데이터, IP, 클러스터 인터커넥트 및 vPC 피어 네트워크에 사용하는 구성을 보여주는 다이어그램입니다."]
 
 
 

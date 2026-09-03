@@ -25,11 +25,11 @@ FlexPod SM-BC 솔루션의 컴퓨팅 구성은 일반적인 FlexPod 솔루션 �
 
 UCS 5108 섀시 후면판 연결을 통해 UCS B200 블레이드 서버와 IOM 간의 연결이 UCS VIC 카드에 의해 제공됩니다. 검증에 사용된 UCS 2204XP 패브릭 익스텐더에는 각 서버에 2개씩 등 8개의 절반 너비 블레이드 서버에 연결할 수 있는 16개의 10G 포트가 있습니다. 서버 연결 대역폭을 높이기 위해 추가 메자닌 기반 VIC를 추가하여 각 서버에 4개의 10G 연결을 제공하는 대체 UCS 2408 IOM에 서버를 연결할 수 있습니다.
 
-image:sm-bcs-image17.png[""]
+image:sm-bcs-image17.png["UCS 2204XP A와 B가 10GBASE-KR을 통해 B200 M5 VIC에 연결된 모습을 보여주는 다이어그램"]
 
 UCS 5108 섀시와 검증에 사용된 UCS 6454 FI 간의 연결은 4개의 10G 연결을 사용하는 IOM 2204XP에서 제공합니다. 이러한 연결을 위해 FI 포트 1 - 4가 서버 포트로 구성됩니다. FI 포트 25~28은 로컬 사이트의 Nexus 스위치 A 및 B에 대한 네트워크 업링크 포트로 구성됩니다. 다음 그림과 표에는 UCS 5108 섀시 및 Nexus 스위치에 연결할 UCS 6454 FI의 연결 다이어그램 및 포트 연결 정보가 나와 있습니다.
 
-image:sm-bcs-image18.png[""]
+image:sm-bcs-image18.png["UCS 5108 IOM이 FI 6454 스위치 및 Nexus A/B 스위치에 연결된 것을 보여주는 다이어그램"]
 
 |===
 | 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
@@ -132,7 +132,7 @@ iSCSI SAN 부팅 구성의 경우 iSCSI 부트 매개 변수가 두 iSCSI 패브
 
 다음 그림과 같이 Set iSCSI Boot 매개 변수 대화 상자의 서비스 프로필 템플릿의 부팅 정책에서 iSCSI 정적 대상을 구성할 수 있습니다. 다음 표에는 고가용성을 달성하기 위해 위에서 설명한 부팅 전략을 구현하는 권장 iSCSI 부팅 매개 변수 설정 구성이 나와 있습니다.
 
-image:sm-bcs-image19.png[""]
+image:sm-bcs-image19.png["두 개의 정적 타겟이 구성된 Cisco UCS Manager iSCSI 부팅 매개변수 설정 대화 상자를 보여주는 스크린샷"]
 
 |===
 | iSCSI 패브릭 | 우선 순위 | iSCSI 타겟 | iSCSI LIF 

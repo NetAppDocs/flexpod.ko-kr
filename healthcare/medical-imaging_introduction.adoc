@@ -103,7 +103,7 @@ FlexPod 공동 지원은 의료 조직에서 비즈니스 크리티컬 애플리
 
 
 
-image:medical-imaging_image2.png[""]
+image:medical-imaging_image2.png["고객, Cisco 및 NetApp 간의 FlexPod 협력 지원 모델을 보여주는 다이어그램"]
 
 
 

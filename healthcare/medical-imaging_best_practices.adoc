@@ -62,7 +62,7 @@ FlexPod 데이터 센터 솔루션에서 Cisco UCS 서버용 SAN 부팅을 구�
 
 iSCSI SAN 부팅에서 각 Cisco UCS 서버에는 스토리지에 대한 이중 연결을 제공하는 2개의 iSCSI vNIC(각 SAN 패브릭당 1개)가 할당됩니다. 이 예의 스토리지 포트인 e2a와 E2E는 Cisco Nexus 스위치에 연결되어 함께 그룹화하여 인터페이스 그룹(ifgrp)이라는 하나의 논리 포트(이 예에서는 a0a)를 구성합니다. iSCSI VLAN은 igroup에 생성되고 iSCSI LIF는 iSCSI 포트 그룹(이 예에서는 a0a-<iSCSI-A-VLAN>)에 생성됩니다. iSCSI 부트 LUN은 igroup을 사용하여 iSCSI LIF를 통해 서버에 노출됩니다. 이렇게 하면 권한이 있는 서버만 부팅 LUN에 액세스할 수 있습니다. 포트 및 LIF 레이아웃에 대한 자세한 내용은 아래 그림을 참조하십시오.
 
-image:medical-imaging_image8.png[""]
+image:medical-imaging_image8.png["AFF A300 a0a ifgrps, VLAN, NFS 및 iSCSI LIF를 갖춘 AFF A300 노드를 보여주는 다이어그램"]
 
 NAS 네트워크 인터페이스와 달리 SAN 네트워크 인터페이스는 장애 발생 시 페일오버되도록 구성되지 않습니다. 대신, 네트워크 인터페이스를 사용할 수 없게 되면 호스트는 사용 가능한 네트워크 인터페이스에 대해 최적화된 새 경로를 선택합니다. NetApp에서 지원하는 표준인 ALUA는 호스트가 최상의 스토리지 경로를 식별할 수 있도록 SCSI 타겟에 대한 정보를 제공합니다.
 

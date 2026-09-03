@@ -35,7 +35,7 @@ vSphere 클러스터를 생성하려면 다음 단계를 수행하십시오.
 . 확인란을 선택하여 DR 및 vSphere HA를 설정합니다.
 . 확인 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image45.png[""]
+image:express-c-series-c190-deploy_image45.png["DRS 및 vSphere HA가 활성화되고 vSAN이 비활성화된 새 클러스터 대화 상자의 스크린샷"]
 
 
 
@@ -48,7 +48,7 @@ image:express-c-series-c190-deploy_image45.png[""]
 
 . 클러스터를 마우스 오른쪽 버튼으로 클릭하고 Add Host를 선택합니다.
 +
-image:express-c-series-c190-deploy_image46.png[""]
+image:express-c-series-c190-deploy_image46.png["호스트 FQDN 입력 필드와 다음 버튼이 있는 vSphere Client 호스트 추가 마법사의 스크린샷"]
 
 . 클러스터에 ESXi 호스트를 추가하려면 다음 단계를 수행하십시오.
 +
@@ -84,7 +84,7 @@ ESXi 호스트에서 코어 덤프를 구성하려면 다음 단계를 수행하
 . 서비스를 클릭하고 VMware vSphere ESXi Dump Collector를 선택합니다.
 . VMware vSphere ESXi Dump Collector 서비스를 시작합니다.
 +
-image:express-c-series-c190-deploy_image47.png[""]
+image:express-c-series-c190-deploy_image47.png["VMware vSphere ESXi 덤프 수집기가 선택되고 시작 옵션이 활성화된 어플라이언스 관리 서비스의 스크린샷"]
 
 . SSH를 사용하여 관리 IP ESXi 호스트에 연결하고 사용자 이름에 root를 입력한 다음 루트 암호를 입력합니다.
 . 다음 명령을 실행합니다.
@@ -96,7 +96,7 @@ esxcli system coredump network check
 ....
 . 최종 명령어를 입력하면 확인된 netdump server가 실행 중인 것으로 확인되었다는 메시지가 나타난다.
 +
-image:express-c-series-c190-deploy_image48.png[""]
+image:express-c-series-c190-deploy_image48.png["ESXi 코어덤프 구성 명령 및 netdump 서버 검증 결과를 보여주는 터미널 화면"]
 
 +
 

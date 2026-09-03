@@ -24,7 +24,7 @@ NetApp 라이센스 파일을 받은 후 OnCommand System Manager로 설치할 �
 . 추가 를 클릭합니다.
 
 
-image:cloud-fabricpool_image8.png[""]
+image:cloud-fabricpool_image8.png["Choose Files 및 Add 버튼이 있는 OnCommand System Manager 라이선스 패키지 추가 대화 상자의 스크린샷"]
 
 
 
@@ -43,7 +43,7 @@ OnCommand 시스템 관리자에서 다음 단계를 완료합니다.
 . 세부 정보 탭을 클릭합니다.
 
 
-image:cloud-fabricpool_image9.png[""]
+image:cloud-fabricpool_image9.png["FabricPool 라이선스 용량 10 TB 및 현재 용량 0 Byte를 보여주는 ONTAP System Manager 라이선스 상세 정보 스크린샷"]
 
 최대 용량과 현재 용량은 FabricPool 라이센스 행에 나열됩니다.
 

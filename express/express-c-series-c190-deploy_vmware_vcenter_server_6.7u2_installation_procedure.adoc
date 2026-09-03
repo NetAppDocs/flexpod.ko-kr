@@ -34,11 +34,11 @@ VMware vCenter Server Appliance(VCSA)를 다운로드하려면 다음 단계를 
 . 설치 를 클릭합니다.
 . 소개 페이지에서 다음 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image34.png[""]
+image:express-c-series-c190-deploy_image34.png["vCenter Server Appliance 설치 프로그램 최종 사용자 라이선스 계약 페이지의 스크린샷 (동의 선택 표시)"]
 
 . 배포 유형으로 임베디드 플랫폼 서비스 컨트롤러 를 선택합니다.
 +
-image:express-c-series-c190-deploy_image35.png[""]
+image:express-c-series-c190-deploy_image35.png["Embedded Platform Services Controller가 선택된 vCenter Server Appliance Installer 배포 유형 페이지의 스크린샷"]
 
 +
 
@@ -46,15 +46,15 @@ NOTE: 필요한 경우 외부 플랫폼 서비스 컨트롤러 배포도 FlexPod
 
 . 어플라이언스 배포 대상에서 배포한 ESXi 호스트의 IP 주소, 루트 사용자 이름 및 루트 암호를 입력합니다.
 +
-image:express-c-series-c190-deploy_image36.png[""]
+image:express-c-series-c190-deploy_image36.png["ESXi 호스트 자격 증명이 포함된 vCenter Server Appliance Installer 어플라이언스 배포 대상 양식의 스크린샷"]
 
 . VCSA를 VCSA에 사용할 VM 이름 및 루트 암호로 입력하여 어플라이언스 VM을 설정합니다.
 +
-image:express-c-series-c190-deploy_image37.png[""]
+image:express-c-series-c190-deploy_image37.png["VM 이름 및 루트 암호 필드가 있는 vCenter Server Appliance 설치 프로그램 어플라이언스 VM 설정 페이지의 스크린샷"]
 
 . 환경에 가장 적합한 구축 크기를 선택합니다. 다음 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image38.png[""]
+image:express-c-series-c190-deploy_image38.png["Tiny가 선택된 vCenter Server Appliance 설치 프로그램의 배포 크기 선택 페이지 스크린샷"]
 
 . 'infra_datastore' 데이터 저장소를 선택합니다. 다음 을 클릭합니다.
 . 네트워크 설정 구성 페이지에 다음 정보를 입력하고 다음 을 클릭합니다.
@@ -69,11 +69,11 @@ image:express-c-series-c190-deploy_image38.png[""]
 
 . 1단계 완료 준비 페이지에서 입력한 설정이 올바른지 확인합니다. 마침 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image39.png[""]
+image:express-c-series-c190-deploy_image39.png["MGMT-Network가 선택된 vCenter Server Appliance 설치 프로그램의 네트워크 설정 구성 페이지 스크린샷"]
 
 . 어플라이언스 배포를 시작하기 전에 1단계의 설정을 검토하십시오.
 +
-image:express-c-series-c190-deploy_image40.png[""]
+image:express-c-series-c190-deploy_image40.png["vCenter Server Appliance Installer의 1단계 설정 검토 완료 준비 완료 페이지 스크린샷"]
 
 +
 VCSA가 지금 설치됩니다. 이 과정은 몇 분 정도 소요됩니다.
@@ -81,13 +81,13 @@ VCSA가 지금 설치됩니다. 이 과정은 몇 분 정도 소요됩니다.
 . 1단계가 완료되면 완료되었다는 메시지가 나타납니다. 계속 을 클릭하여 2단계 구성을 시작합니다.
 . 2단계 소개 페이지에서 다음 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image41.png[""]
+image:express-c-series-c190-deploy_image41.png["다음 버튼이 있는 vCenter Server Appliance 설치 프로그램 2단계 소개 페이지의 스크린샷"]
 
 . NTP 서버 주소에 대해 '\<<var_ntp_id>>'를 입력합니다. 여러 NTP IP 주소를 입력할 수 있습니다.
 . vCenter Server HA(고가용성)를 사용하려는 경우 SSH 액세스가 설정되어 있는지 확인합니다.
 . SSO 도메인 이름, 암호 및 사이트 이름을 구성합니다. 다음 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image42.png[""]
+image:express-c-series-c190-deploy_image42.png["새 SSO 도메인이 선택된 vCenter Server Appliance Installer 2단계 SSO 구성의 스크린샷"]
 
 +
 
@@ -95,12 +95,12 @@ NOTE: 특히 "vsphere.local" 도메인 이름을 벗어나는 경우 이러한 �
 
 . 원하는 경우 VMware 고객 경험 프로그램에 참여하십시오. 다음 을 클릭합니다.
 +
-image:express-c-series-c190-deploy_image43.png[""]
+image:express-c-series-c190-deploy_image43.png["CEIP 옵션이 선택된 vCenter Server Appliance 설치 프로그램의 CEIP 구성 페이지 스크린샷"]
 
 . 설정 요약을 봅니다. 마침 을 클릭하거나 뒤로 단추를 사용하여 설정을 편집합니다.
 . 설치가 시작된 후 설치를 일시 중지하거나 중지할 수 없다는 메시지가 나타납니다. 계속하려면 확인을 클릭하십시오.
 +
-image:express-c-series-c190-deploy_image44.png[""]
+image:express-c-series-c190-deploy_image44.png["설치를 일시 중지하거나 중지할 수 없다는 경고와 함께 취소 및 확인 버튼이 표시되는 vCenter Server Appliance 설치 프로그램의 스크린샷"]
 
 +
 어플라이언스 설정이 계속됩니다. 이 작업은 몇 분 정도 걸립니다.

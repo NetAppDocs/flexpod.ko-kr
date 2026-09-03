@@ -46,7 +46,7 @@ link:flexpod-genomics-solution-infrastructure-hardware-and-software-components.h
 
 다음 그림은 샘플링에서 변형 식별, 주석 및 예측에 이르는 프로세스를 보여 줍니다.
 
-image:flexpod-genomics-image8.png[""]
+image:flexpod-genomics-image8.png["샘플 수집부터 시퀀싱, 변이 분석, 전자건강기록(EHR) 통합 및 예측 모델에 이르는 유전체학 워크플로우를 보여주는 다이어그램"]
 
 인간 게놈 프로젝트는 2003년 4월에 완료되었으며 이 프로젝트는 공용 도메인에서 사용할 수 있는 인간 게놈 염기서열의 고품질 시뮬레이션을 만들었습니다. 이 참조 게놈은 게놈 분야의 연구 및 개발 분야에서 폭발적으로 성장하였습니다. 거의 모든 인간 질병에는 인간의 유전자에 대한 서명이 있습니다. 최근까지 의사들은 겸상 적혈구 빈혈(Sickle cell anaemia)과 같은 선천성 기형을 예측하여 결정하기 위해 유전자를 활용하고 있었다. 이는 단일 유전자의 변화로 인한 특정 상속 패턴으로 인해 발생한다. 인간 게놈 프로젝트에서 사용 가능한 데이터의 보화가 유전체학 능력의 출현으로 이어졌습니다.
 
@@ -95,40 +95,40 @@ FlexPod 랩 설정을 수행하려면 다음 단계를 완료하십시오.
 
 . FlexPod 랩 설정 및 검증에서는 다음과 같은 IP4 예약 및 VLAN을 사용합니다.
 +
-image:flexpod-genomics-image10.png[""]
+image:flexpod-genomics-image10.png["범위, 서브넷 마스크, 관리, VM, NFS 및 iSCSI 용도를 보여 주는 VLAN IP 예약 표"]
 
 . ONTAP SVM에서 iSCSI 기반 부팅 LUN을 구성합니다.
 +
-image:flexpod-genomics-image9.png[""]
+image:flexpod-genomics-image9.png["Healthcare_SVM 스토리지 VM에 있는 6개의 ESXi 부팅 LUN을 보여주는 ONTAP System Manager의 스크린샷"]
 
 . LUN을 iSCSI 이니시에이터 그룹에 매핑합니다.
 +
-image:flexpod-genomics-image11.png[""]
+image:flexpod-genomics-image11.png["ESXi_Boot_Lun_1이 GenomicsESXi_1 iSCSI 이니시에이터 그룹에 매핑된 것을 보여주는 스크린샷"]
 
 +
-image:flexpod-genomics-image12.png[""]
+image:flexpod-genomics-image12.png["GenomicsESXi_2 이니시에이터 그룹에 매핑된 ESXi 부트 LUN 세부 정보를 보여주는 ONTAP System Manager 스크린샷"]
 
 . iSCSI 부트를 사용하여 vSphere 7.0을 설치합니다.
 . vCenter에 ESXi 호스트를 등록합니다.
 +
-image:flexpod-genomics-image13.png[""]
+image:flexpod-genomics-image13.png["ESXi 호스트 및 가상 머신이 포함된 Genomics 폴더를 보여주는 vSphere Client 인벤토리의 스크린샷"]
 
 . ONTAP 스토리지에서 NFS 데이터 저장소 'infra_datastore_nfs'를 프로비저닝합니다.
 +
-image:flexpod-genomics-image14.png[""]
+image:flexpod-genomics-image14.png["선택된 Healthcare_Workload_NFS_Vol NFS 볼륨이 온라인 상태임을 보여주는 ONTAP System Manager 스크린샷"]
 
 . vCenter에 데이터 저장소를 추가합니다.
 +
-image:flexpod-genomics-image16.png[""]
+image:flexpod-genomics-image16.png["vSphere Client에서 infra_datastore_nfs NFS 3 데이터스토어 요약을 보여주는 스크린샷"]
 
 . vCenter를 사용하여 ESXi 호스트에 NFS 데이터 저장소를 추가합니다.
 +
-image:flexpod-genomics-image15.png[""]
+image:flexpod-genomics-image15.png["정상 상태로 연결된 infra_datastore_nfs 호스트를 표시하는 vSphere Client의 스크린샷"]
 
 . vCenter를 사용하여 RHEL(Red Hat Enterprise Linux) 8.3 VM을 생성하여 GATK를 실행합니다.
 . NFS 데이터 저장소는 VM에 제공되며 GATK 실행 파일, 스크립트, BAM(Binary Alignment Map) 파일, 참조 파일, 인덱스 파일, 사전 파일 및 variant Calling용 아웃 파일을 저장하는 데 사용되는 "/mnt/geninary"에 마운트됩니다.
 +
-image:flexpod-genomics-image17.png[""]
+image:flexpod-genomics-image17.png["/mnt/genomics에 마운트된 /dev/sdb의 사용률이 2%인 것을 보여주는 Linux 터미널 스크린샷"]
 
 
 

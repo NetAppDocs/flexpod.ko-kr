@@ -50,7 +50,7 @@ NOTE: 이 검증에 사용된 CIMC 버전은 CIMC 4.0입니다(4).
 서버의 전원을 켜고 CIMC 구성을 시작할지 묻는 메시지가 표시되면 F8 키를 누릅니다.
 
 +
-image:express-c-series-c190-deploy_image5.png[""]
+image:express-c-series-c190-deploy_image5.png["CIMC 설정을 위해 F8 키를 누르도록 사용자에게 안내하는 Cisco 서버 부팅 화면을 보여주는 스크린샷"]
 
 . CIMC 구성 유틸리티에서 다음 옵션을 설정합니다.
 +
@@ -82,7 +82,7 @@ NIC 이중화
 없음: '[X]'
 
 +
-image:express-c-series-c190-deploy_image6.png[""]
+image:express-c-series-c190-deploy_image6.png["전용 NIC가 선택되고 이중화가 선택되지 않은 Cisco IMC Configuration Utility NIC 속성 스크린샷"]
 
 
 
@@ -181,7 +181,7 @@ NOTE: 기울임꼴로 표시된 글꼴은 각 ESXi 호스트에 대해 고유한
 . CIMC 인터페이스 브라우저 창에서 Compute 탭을 클릭하고 BIOS를 선택합니다.
 . Configure Boot Order(부팅 순서 구성) 를 클릭한 다음 OK(확인) 를 클릭합니다.
 +
-image:express-c-series-c190-deploy_image7.png[""]
+image:express-c-series-c190-deploy_image7.png["Cisco 통합 관리 컨트롤러 BIOS 부팅 순서 구성 페이지의 스크린샷"]
 
 . Add Boot Device(부팅 장치 추가) 에서 장치를 클릭하고 Advanced(고급) 탭으로 이동하여 다음 장치를 구성합니다.
 +
@@ -235,7 +235,7 @@ image:express-c-series-c190-deploy_image7.png[""]
 . 장치 추가를 클릭합니다.
 . 변경 내용 저장 을 클릭한 다음 닫기 를 클릭합니다.
 +
-image:express-c-series-c190-deploy_image8.png[""]
+image:express-c-series-c190-deploy_image8.png["KVM-MAPPED-DVD, iSCSI-A 및 iSCSI-B가 활성화된 고급 부팅 순서 구성의 스크린샷"]
 
 . 새 부팅 순서로 부팅하려면 서버를 재부팅합니다.
 
@@ -252,7 +252,7 @@ C 시리즈 서버에 RAID 컨트롤러가 포함되어 있는 경우 다음 단
 . PCIe 슬롯: HBA 옵션 ROM으로 아래로 스크롤합니다.
 . 이 값이 아직 비활성화되지 않은 경우 비활성화로 설정합니다.
 +
-image:express-c-series-c190-deploy_image9.png[""]
+image:express-c-series-c190-deploy_image9.png["PCIe 슬롯 1과 슬롯 2의 옵션 ROM이 비활성화된 CIMC BIOS 설정을 보여주는 스크린샷"]
 
 
 
@@ -270,7 +270,7 @@ NOTE: 포트 0, 1, 2 및 3 간의 기본 포트 채널링을 해제해야 4개�
 . 일반 탭에서 포트 채널을 선택 취소합니다.
 . 변경 내용을 저장하고 CIMC를 재부팅합니다.
 +
-image:express-c-series-c190-deploy_image10.png[""]
+image:express-c-series-c190-deploy_image10.png["포트 채널이 선택 해제된 Cisco Integrated Management Controller 어댑터 카드 MLOM 일반 탭의 스크린샷"]
 
 
 
@@ -301,13 +301,13 @@ iSCSI vNIC를 생성하려면 다음 단계를 수행하십시오.
 ** VLAN으로 '\<<var_iscsi_vlan_b>>'를 입력합니다.
 ** 업링크 포트를 3으로 설정합니다.
 +
-image:express-c-series-c190-deploy_image11.png[""]
+image:express-c-series-c190-deploy_image11.png["VLAN 3439 및 업링크 포트 1을 사용하는 iSCSI vNIC eth1의 일반 설정을 보여 주는 스크린샷"]
 
 
 
 . 왼쪽에서 vNIC eth1을 선택합니다.
 +
-image:express-c-series-c190-deploy_image12.png[""]
+image:express-c-series-c190-deploy_image12.png["vNIC eth1에 대한 iSCSI 부팅 속성 이니시에이터 설정을 보여주는 스크린샷"]
 
 . iSCSI 부트 속성에서 이니시에이터 세부 정보를 입력합니다.
 +
@@ -316,7 +316,7 @@ image:express-c-series-c190-deploy_image12.png[""]
 ** 서브넷 마스크: "\<<var_esxi_hostA_iscsiA_mask>>"
 ** 게이트웨이: "\<<var_esxi_hostA_iscsiA_gateway>"
 +
-image:express-c-series-c190-deploy_image13.png[""]
+image:express-c-series-c190-deploy_image13.png["이니시에이터, 기본 대상 및 보조 대상 세부 정보가 포함된 iSCSI 부팅 속성 스크린샷"]
 
 
 
@@ -352,7 +352,7 @@ NOTE: 각 vNIC의 IQN 이름을 기록해야 합니다. 나중에 필요한 단�
 ** 서브넷 마스크: "\<<var_esxi_hostB_iscsib_mask>>"
 ** 게이트웨이:\<<var_esxi_hostB_iscsib_gateway>'
 +
-image:express-c-series-c190-deploy_image14.png[""]
+image:express-c-series-c190-deploy_image14.png["이니시에이터 및 타겟 설정을 포함하여 vNIC eth3의 iSCSI 부팅 속성을 보여주는 스크린샷"]
 
 
 
@@ -395,11 +395,11 @@ ESXi용 vNIC를 구성하려면 다음 단계를 수행하십시오.
 . MTU를 9000으로 설정합니다. 변경 내용 저장 을 클릭합니다.
 . VLAN을 네이티브 VLAN 2로 설정합니다.
 +
-image:express-c-series-c190-deploy_image15.png[""]
+image:express-c-series-c190-deploy_image15.png["MTU 9000 및 기본 VLAN 2가 설정된 Cisco Integrated Management Controller vNIC eth0 속성의 스크린샷"]
 
 . eth1에 대해 3단계와 4단계를 반복하여 업링크 포트가 eth1에 대해 1로 설정되어 있는지 확인합니다.
 +
-image:express-c-series-c190-deploy_image16.png[""]
+image:express-c-series-c190-deploy_image16.png["MTU, 업링크 포트 및 VLAN 설정과 함께 eth0부터 eth3까지 나열된 Cisco Integrated Management Controller vNIC의 스크린샷"]
 
 +
 

@@ -18,7 +18,7 @@ FlexPod 아키텍처는 전체 컴퓨팅, 네트워크 및 스토리지 스택�
 
 다음 그림은 의료 영상 시스템 솔루션 구축을 위한 16Gb FC/40Gb 이더넷(40GbE) 토폴로지를 보여줍니다.
 
-image:medical-imaging_image3.png[""]
+image:medical-imaging_image3.png["UCS, Nexus, AFF 및 MDS 스위치를 포함한 FlexPod 의료 영상 인프라를 보여주는 다이어그램"]
 
 
 
@@ -137,7 +137,7 @@ Oracle 데이터베이스 백업의 경우 Snapshot 복사본을 사용하면 �
 |===
 다음 그림은 SnapCenter 아키텍처를 보여 줍니다.
 
-image:medical-imaging_image4.png[""]
+image:medical-imaging_image4.png["SnapCenter 서버, VMware 통합, 복제된 메타데이터 저장소 및 애플리케이션 플러그인을 보여주는 다이어그램"]
 
 NetApp MetroCluster 구성은 전 세계 수천 개의 기업에서 고가용성(HA), 데이터 손실 제로, 데이터 센터 내외부의 중단 없는 운영을 위해 사용되고 있습니다. MetroCluster는 ONTAP 소프트웨어의 무료 기능으로, 서로 다른 위치 또는 장애 도메인에 있는 두 개의 ONTAP 클러스터 간에 데이터와 구성을 동기적으로 미러링합니다. MetroCluster는 두 가지 목표를 자동으로 처리하여 애플리케이션에 지속적으로 사용 가능한 스토리지를 제공합니다. 첫째, 클러스터에 기록된 데이터를 동기적으로 미러링하여 RPO(복구 시점 목표)를 0으로 유지합니다. 구성을 미러링하고 두 번째 사이트에서 데이터에 대한 액세스를 자동화하여 RTO(복구 시간 목표)를 거의 0으로 유지합니다. MetroCluster는 두 사이트에 위치한 두 개의 독립적인 클러스터 간에 데이터와 구성을 자동으로 미러링하여 간편하게 사용할 수 있도록 합니다. 한 클러스터에 스토리지가 프로비저닝되면 두 번째 사이트의 두 번째 클러스터에 자동으로 미러링됩니다. NetApp SyncMirror 기술은 RPO가 0인 모든 데이터의 완벽한 복사본을 제공합니다. 따라서 한 사이트의 워크로드는 언제든지 반대쪽 사이트로 전환하여 데이터 손실 없이 데이터를 계속 제공할 수 있습니다. 자세한 내용은 다음에서 확인할 수 있습니다. https://fieldportal.netapp.com/s/article/tr4705-netapp-metrocluster-solution-architecture-and-design-1693982882873["여기"^]
 
@@ -210,7 +210,7 @@ VMware ESXi 호스트 클러스터는 워크로드 VM을 실행합니다. 클러
 
 아래 그림은 환자, 지역 병원 및 대형 병원의 맥락에서 의료 영상 시스템을 보여줍니다.
 
-image:medical-imaging_image5.png[""]
+image:medical-imaging_image5.png["엔터프라이즈 서비스 버스를 통해 병원 시스템에 연결된 지역 진료소를 보여주는 다이어그램"]
 
 . 환자는 증상이 있는 지역 클리닉을 방문합니다. 상담 중에 커뮤니티 의사는 HL7 주문 메시지 형식으로 더 큰 병원으로 전송되는 영상 순서를 지정합니다.
 . 커뮤니티 주치의 EHR 시스템은 대형 병원으로 HL7 ORDER/ORD 메시지를 전송합니다.
@@ -250,11 +250,11 @@ image:medical-imaging_image5.png[""]
 
 아래 그림은 계층화된 아키텍처 보기의 논리적 애플리케이션 구성 요소를 보여 줍니다.
 
-image:medical-imaging_image6.png[""]
+image:medical-imaging_image6.png["복제된 재해 복구 기능을 갖춘 FlexPod의 계층화된 의료 이미징 구성 요소를 보여주는 다이어그램"]
 
 아래 그림은 물리적 애플리케이션 구성 요소를 보여줍니다.
 
-image:medical-imaging_image7.png[""]
+image:medical-imaging_image7.png["NetApp ONTAP 스토리지 및 의료 영상 서버를 갖춘 액티브 및 스탠바이 FlexPod 데이터 센터를 보여주는 다이어그램"]
 
 논리적 애플리케이션 구성요소를 사용하려면 인프라에서 다양한 프로토콜 및 파일 시스템을 지원해야 합니다. NetApp ONTAP 소프트웨어는 업계 최고의 프로토콜 및 파일 시스템 세트를 지원합니다.
 

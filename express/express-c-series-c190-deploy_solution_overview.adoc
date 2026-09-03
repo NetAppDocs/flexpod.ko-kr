@@ -29,7 +29,7 @@ FlexPod 프로그램에는 FlexPod 익스프레스 및 FlexPod 데이터 센터�
 * * FlexPod 데이터 센터 * 는 다양한 워크로드 및 애플리케이션을 위한 최적의 다목적 토대를 제공합니다.
 
 
-image:express-c-series-c190-deploy_image1.png[""]
+image:express-c-series-c190-deploy_image1.png["FlexPod Express 및 FlexPod Datacenter 포트폴리오 옵션과 사용 사례를 보여주는 다이어그램"]
 
 
 
@@ -53,7 +53,7 @@ NetApp 검증 아키텍처 프로그램에서는 NetApp 솔루션을 위한 검�
 
 이 솔루션은 NetApp, Cisco 및 VMware의 최신 기술을 활용합니다. 이 솔루션에는 ONTAP 9.6, 이중 Cisco Nexus 31108 스위치 및 VMware vSphere 6.7U2를 실행하는 Cisco UCS C220 M5 랙 서버를 실행하는 새로운 NetApp AFF C190이 포함되어 있습니다. 이 검증된 솔루션은 10GbE 기술을 사용합니다. 또한 FlexPod 익스프레스 아키텍처가 조직의 변화하는 비즈니스 요구에 적응할 수 있도록 한 번에 두 개의 하이퍼바이저 노드를 추가하여 컴퓨팅 용량을 확장하는 방법에 대한 지침도 제공됩니다.
 
-image:express-c-series-c190-deploy_image2.png[""]
+image:express-c-series-c190-deploy_image2.png["FlexPod Express 스위치, C220 M5 서버 및 AFF C190 스토리지 연결을 보여주는 다이어그램"]
 
 
 NOTE: VIC 1457에서 4개의 물리적 10GbE 포트를 효율적으로 사용하려면 각 서버에서 상단 랙 스위치까지 2개의 추가 링크를 생성하십시오.

@@ -25,7 +25,7 @@ FlexPod SM-BC 솔루션의 스토리지 구성은 각 사이트의 일반적인 
 
 로컬 UCS FI 및 블레이드 서버에 대한 스토리지 연결은 로컬 사이트의 Nexus 스위치를 통해 제공됩니다. 사이트 간 Nexus 스위치 연결을 통해 원격 UCS 블레이드 서버에서도 스토리지에 액세스할 수 있습니다. 다음 그림과 표에서는 스토리지 연결 다이어그램과 각 사이트의 스토리지 컨트롤러에 대한 연결 목록을 보여 줍니다.
 
-image:sm-bcs-image22.png[""]
+image:sm-bcs-image22.png["두 사이트에서 Nexus A 및 Nexus B 스위치에 연결된 AFF A250을 보여주는 다이어그램"]
 
 |===
 | 로컬 장치 | 로컬 포트 | 원격 장치 | 원격 포트 
@@ -75,7 +75,7 @@ image:sm-bcs-image22.png[""]
 
 대역 내 관리, 클러스터 간 및 NFS/iSCSI 데이터 스토리지 프로토콜은 VLAN을 사용합니다. VLAN 포트는 인터페이스 그룹에 생성되어 다른 유형의 트래픽을 분리합니다. 각 기능에 대한 논리 인터페이스(LIF)는 해당 VLAN 포트 위에 생성됩니다. 다음 그림에서는 물리적 연결, 인터페이스 그룹, VLAN 포트 및 논리 인터페이스 간의 관계를 보여 줍니다.
 
-image:sm-bcs-image23.png[""]
+image:sm-bcs-image23.png["Nexus에 연결된 AFF A250 컨트롤러 포트, 인터페이스 그룹, VLAN 포트 및 LIF를 보여주는 다이어그램"]
 
 
 
@@ -88,7 +88,7 @@ FlexPod 솔루션에서 Cisco UCS 서버용 SAN 부트를 구현하는 것이 �
 
 각 iSCSI 부트 LUN은 부트 igroup에서 부트 LUN을 서버의 IQN(iSCSI 정규화된 이름)과 연결하여 iSCSI LIF를 통해 부팅되는 서버에 매핑됩니다. 서버의 부팅 igroup에는 각 vNIC/SAN 패브릭마다 하나씩 두 개의 IQN이 포함되어 있습니다. 이 기능을 사용하면 권한이 부여된 서버만 해당 서버에 대해 특별히 생성된 부팅 LUN에 액세스할 수 있습니다.
 
-image:sm-bcs-image24.png[""]
+image:sm-bcs-image24.png["B200 M5 서버에서 AFF A250 컨트롤러로의 이중화된 iSCSI SAN 부팅 연결을 보여주는 다이어그램"]
 
 
 
@@ -97,21 +97,21 @@ image:sm-bcs-image24.png[""]
 
 ONTAP 클러스터 피어는 인터클러스터 LIF를 통해 통신합니다. ONTAP System Manager를 사용하여 두 클러스터에 대해 보호 > 개요 창에서 필요한 인터클러스터 LIF를 만들 수 있습니다.
 
-image:sm-bcs-image25.png[""]
+image:sm-bcs-image25.png["두 개의 IP 주소 필드가 있는 ONTAP System Manager의 클러스터 간 인터페이스 추가 대화 상자 스크린샷"]
 
 두 클러스터를 함께 클러스터하려면 다음 단계를 완료하십시오.
 
 . 첫 번째 클러스터에서 클러스터 피어링 암호를 생성합니다.
 +
-image:sm-bcs-image26.png[""]
+image:sm-bcs-image26.png["클러스터 피어 권한, 유효성 및 복사된 암호가 포함된 암호 생성 대화 상자의 스크린샷"]
 
 . 두 번째 클러스터에서 피어 클러스터 옵션을 호출하고 암호 구문 및 인터클러스터 LIF 정보를 제공합니다.
 +
-image:sm-bcs-image27.png[""]
+image:sm-bcs-image27.png["암호 및 인터클러스터 LIF 주소가 표시된 ONTAP System Manager 피어 클러스터 대화 상자를 보여주는 스크린샷"]
 
 . System Manager 보호 > 개요 창에 클러스터 피어 정보가 표시됩니다.
 +
-image:sm-bcs-image28.png[""]
+image:sm-bcs-image28.png["클러스터 피어 및 중재자 상태를 보여주는 ONTAP System Manager 보호 개요 스크린샷"]
 
 
 
@@ -126,11 +126,11 @@ ONTAP 중재자를 설치하기 전에 을 확인하십시오 https://docs.netap
 
 ONTAP 중재자를 설치한 후 ONTAP 클러스터에 ONTAP 중재자의 보안 인증서를 추가한 다음 System Manager 보호 > 개요 창에서 ONTAP 중재자를 구성할 수 있습니다. 다음 스크린샷은 ONTAP 중재자 구성 GUI를 보여 줍니다.
 
-image:sm-bcs-image29.png[""]
+image:sm-bcs-image29.png["ONTAP System Manager의 미디에이터 구성 대화 상자의 스크린샷으로, 미디에이터 연결 필드가 표시됩니다."]
 
 필요한 정보를 제공하면 구성된 ONTAP 중재자가 시스템 관리자 보호 > 개요 창에 나타납니다.
 
-image:sm-bcs-image30.png[""]
+image:sm-bcs-image30.png["구성된 Mediator 상태를 보여주는 ONTAP System Manager 보호 개요 창의 스크린샷"]
 
 
 
@@ -148,7 +148,7 @@ image:sm-bcs-image30.png[""]
 
 검증 구성의 경우 ONTAP System Manager를 사용하여 정합성 보장 그룹을 생성하여 ESXi 부팅 LUN과 두 사이트의 공유 데이터 저장소 LUN을 모두 보호했습니다. 정합성 보장 그룹 생성 대화 상자는 보호 > 개요 > 무중단 업무 운영 보호 > 정합성 보장 그룹 보호 로 이동하여 액세스할 수 있습니다. 정합성 보장 그룹을 생성하려면 필요한 소스 볼륨, 대상 클러스터 및 대상 스토리지 가상 머신 정보를 생성하여 생성합니다.
 
-image:sm-bcs-image31.png[""]
+image:sm-bcs-image31.png["소스 볼륨 esxi_a와 타겟 클러스터 aff-a250-b를 사용한 일관성 그룹 보호 대화 상자의 스크린샷"]
 
 다음 표에는 검증 테스트를 위해 생성된 4개의 정합성 보장 그룹과 각 정합성 보장 그룹에 포함된 볼륨이 나와 있습니다.
 
@@ -171,15 +171,15 @@ image:sm-bcs-image31.png[""]
 
 이 스크린샷은 사이트 A의 일관성 그룹 관계를 보여 줍니다
 
-image:sm-bcs-image32.png[""]
+image:sm-bcs-image32.png["사이트 A에 있는 두 개의 정상적이고 동기화된 일관성 그룹을 보여주는 ONTAP System Manager 관계의 스크린샷"]
 
 이 스크린샷은 사이트 B의 일관성 그룹 관계를 보여 줍니다
 
-image:sm-bcs-image33.png[""]
+image:sm-bcs-image33.png["사이트 B의 ONTAP System Manager 관계를 보여주는 스크린샷으로, 두 개의 정상적이고 동기화된 일관성 그룹이 표시됩니다."]
 
 이 스크린샷은 CG_infra_datastore_b 그룹에 대한 정합성 보장 그룹 관계 세부 정보를 보여 줍니다.
 
-image:sm-bcs-image34.png[""]
+image:sm-bcs-image34.png["cg_infra_datastore_b 일관성 그룹 관계 세부 정보를 보여주는 ONTAP System Manager의 스크린샷"]
 
 
 
@@ -190,20 +190,20 @@ image:sm-bcs-image34.png[""]
 
 이 스크린샷은 사이트 A의 볼륨 정보를 보여 줍니다
 
-image:sm-bcs-image35.png[""]
+image:sm-bcs-image35.png["Infra-SVM-a의 ONTAP 볼륨 정보 스크린샷(RW, DP, LS 볼륨 포함)"]
 
 이 스크린샷은 사이트 B의 볼륨 정보를 보여 줍니다
 
-image:sm-bcs-image36.png[""]
+image:sm-bcs-image36.png["타겟 DP 볼륨을 포함하여 9개의 볼륨을 나열하는 Infra-SVM-b에 대한 ONTAP volume show 출력의 스크린샷"]
 
 투명한 애플리케이션 페일오버를 지원하기 위해 미러링된 SM-BC LUN도 대상 클러스터의 호스트에 매핑되어야 합니다. 이를 통해 호스트는 소스 클러스터와 대상 클러스터 모두에서 LUN에 대한 경로를 올바르게 볼 수 있습니다. 사이트 A와 사이트 B의 "igroup show" 및 "lun show" 출력은 다음 두 스크린샷에서 캡처됩니다. 생성된 매핑에서 클러스터의 각 ESXi 호스트는 고유한 SAN 부팅 LUN을 ID 0으로, 4개의 모든 공유 iSCSI 데이터 저장소 LUN으로 인식합니다.
 
 이 스크린샷은 사이트 A 클러스터의 호스트 igroup 및 LUN 매핑을 보여 줍니다.
 
-image:sm-bcs-image37.png[""]
+image:sm-bcs-image37.png["사이트 A의 iSCSI igroup 및 LUN 매핑을 ONTAP CLI 출력에서 보여주는 스크린샷"]
 
 이 스크린샷은 사이트 B 클러스터에 대한 호스트 igroup 및 LUN 매핑을 보여 줍니다.
 
-image:sm-bcs-image38.png[""]
+image:sm-bcs-image38.png["iSCSI VMware 호스트에 대한 사이트 B igroup 및 LUN 매핑 명령 출력의 스크린샷"]
 
 link:sm-bcs-virtualization.html["다음: 솔루션 검증 - 가상화."]

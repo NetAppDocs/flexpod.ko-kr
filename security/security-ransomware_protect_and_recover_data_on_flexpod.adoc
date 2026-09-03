@@ -34,15 +34,15 @@ NetApp ONTAP 소프트웨어의 CIFS 공유를 제공하는 Windows 2016 VM이 V
 
 VM의 Documents 폴더에는 WannaCry 맬웨어에 의해 아직 암호화되지 않은 PDF 파일 세트가 있습니다.
 
-image:security-ransomware_image3.png[""]
+image:security-ransomware_image3.png["암호화되지 않은 WorkDoc PDF 파일 목록이 표시된 Windows 문서 폴더의 스크린샷"]
 
 다음 스크린샷은 VM에 매핑된 CIFS 공유를 보여 줍니다.
 
-image:security-ransomware_image4.png[""]
+image:security-ransomware_image4.png["Windows 파일 탐색기에서 fpolicy_share CIFS 네트워크 드라이브가 Z: 드라이브로 매핑된 것을 보여주는 스크린샷"]
 
 다음 스크린샷은 WannaCry 맬웨어가 아직 암호화하지 않은 CIFS 공유 'FPolicy_share'의 파일을 보여 줍니다.
 
-image:security-ransomware_image5.png[""]
+image:security-ransomware_image5.png["Z 드라이브로 매핑된 fpolicy_share CIFS 공유의 암호화되지 않은 파일을 보여주는 파일 탐색기 스크린샷"]
 
 
 
@@ -53,19 +53,19 @@ image:security-ransomware_image5.png[""]
 
 VM을 호스팅하는 볼륨에서 중복 제거를 통해 스토리지를 19%나 절감할 수 있었습니다.
 
-image:security-ransomware_image6.png[""]
+image:security-ransomware_image6.png["5.84GB(19%)의 중복 제거 절감 효과를 보여주는 infra_datastore1 스토리지 효율성 스크린샷"]
 
 CIFS 공유 'FPolicy_share'의 중복제거 기능으로 스토리지를 45% 절약할 수 있었습니다.
 
-image:security-ransomware_image7.png[""]
+image:security-ransomware_image7.png["5.05GB(45%)의 중복 제거 절약을 보여주는 cifS_volume 스토리지 효율성 스크린샷"]
 
 VM을 호스팅하는 볼륨에서 456KB의 스냅샷 복사본 크기가 관찰되었습니다.
 
-image:security-ransomware_image8.png[""]
+image:security-ransomware_image8.png["총 크기가 456KB인 before_attack을 보여주는 infra_datastore1 스냅샷 복사본의 스크린샷"]
 
 CIFS 공유 'FPolicy_share'에 대해 160KB의 스냅샷 복사본 크기가 관찰되었습니다.
 
-image:security-ransomware_image9.png[""]
+image:security-ransomware_image9.png["총 크기가 160KB인 before_attack_cifs 스냅샷을 보여주는 cifS_volume 스냅샷 복사본 탭의 스크린샷"]
 
 
 
@@ -78,11 +78,11 @@ image:security-ransomware_image9.png[""]
 
 . 보안 맬웨어가 추출되었습니다.
 +
-image:security-ransomware_image10.png[""]
+image:security-ransomware_image10.png["랜섬웨어.WannaCry라는 이름의 압축 폴더 아이콘입니다."]
 
 . 바이너리가 실행되었습니다.
 +
-image:security-ransomware_image11.png[""]
+image:security-ransomware_image11.png["선택된 WannaCry 실행 파일과 관리자 권한으로 실행 메뉴 옵션을 보여주는 Windows 파일 탐색기의 스크린샷"]
 
 
 
@@ -95,11 +95,11 @@ image:security-ransomware_image11.png[""]
 
 맬웨어가 WNCRY 확장명으로 파일을 암호화하기 시작합니다.
 
-image:security-ransomware_image12.png[""]
+image:security-ransomware_image12.png["문서 폴더에 있는 PDF 파일과 암호화된 WNCRY 파일을 보여주는 Windows 파일 탐색기의 스크린샷"]
 
 맬웨어는 로컬 VM 및 매핑된 공유의 모든 파일을 암호화합니다.
 
-image:security-ransomware_image13.png[""]
+image:security-ransomware_image13.png["WNCRY 확장자로 암호화된 로컬 및 매핑된 CIFS 공유 파일을 보여주는 스크린샷"]
 
 
 
@@ -109,15 +109,15 @@ image:security-ransomware_image13.png[""]
 
 공격 중에 CIFS 공유를 호스팅하는 볼륨에서 스냅샷 크기가 820.98MB로 대폭 증가되는 것을 발견했습니다.
 
-image:security-ransomware_image14.png[""]
+image:security-ransomware_image14.png["cifs_volume의 스냅샷 복사본 탭에서 스냅샷 크기가 820.98MB로 표시된 스크린샷"]
 
 VM을 호스팅하는 볼륨에서 스냅샷 복사본 크기가 404.3MB로 증가되는 것을 발견했습니다.
 
-image:security-ransomware_image15.png[""]
+image:security-ransomware_image15.png["404.3MB before_attack 스냅샷 복사본을 보여 주는 infra_datastore1 스냅샷 복사본 탭의 스크린샷"]
 
 CIFS 공유를 호스팅하는 볼륨의 스토리지 효율성이 34%로 감소했습니다.
 
-image:security-ransomware_image16.png[""]
+image:security-ransomware_image16.png["총 5GB(34%)의 절약을 보여주는 cifsv_volume 스토리지 효율성 스크린샷"]
 
 
 
@@ -131,23 +131,23 @@ VM을 복원하려면 다음 단계를 완료하십시오.
 
 . SnapCenter에서 생성한 스냅샷 복사본을 사용하여 VM을 복원합니다.
 +
-image:security-ransomware_image17.png[""]
+image:security-ransomware_image17.png["NetApp SnapCenter Restore가 선택된 WannaCry-2016-1용 vSphere Actions 메뉴의 스크린샷"]
 
 . 복구할 VMware 정합성 보장 스냅샷 복사본을 선택합니다.
 +
-image:security-ransomware_image18.png[""]
+image:security-ransomware_image18.png["사용 가능한 VMware 스냅샷 백업 목록에서 하나가 선택된 복원 마법사의 스크린샷"]
 
 . 전체 VM이 복원되고 다시 시작됩니다.
 +
-image:security-ransomware_image19.png[""]
+image:security-ransomware_image19.png["WannaCry-2016-1 가상 머신 전체를 선택하고 ESXi 호스트에서 다시 시작하는 복원 마법사"]
 
 . 마침 을 클릭하여 복원 프로세스를 시작합니다.
 +
-image:security-ransomware_image20.png[""]
+image:security-ransomware_image20.png["가상 머신 WannaCry-2016-1의 복원 마법사 요약 정보입니다. 완료 버튼과 전원 차단 경고가 표시됩니다."]
 
 . VM 및 해당 파일이 복원됩니다.
 +
-image:security-ransomware_image21.png[""]
+image:security-ransomware_image21.png["문서 폴더에 복원된 PDF 파일이 표시된 Windows 파일 탐색기의 스크린샷"]
 
 
 
@@ -157,15 +157,15 @@ CIFS 공유를 복구하려면 다음 단계를 수행하십시오.
 
 . 공격 전에 생성된 볼륨의 스냅샷 복사본을 사용하여 공유를 복구합니다.
 +
-image:security-ransomware_image22.png[""]
+image:security-ransomware_image22.png["cifs_volume의 스냅샷 복사본 탭에서 복원 작업이 선택된 모습을 보여주는 스크린샷"]
 
 . 확인 을 클릭하여 복원 작업을 시작합니다.
 +
-image:security-ransomware_image23.png[""]
+image:security-ransomware_image23.png["스냅샷 복사본에서 cif_volume을 복원하기 위한 확인 및 취소 버튼이 있는 볼륨 복원 확인 대화 상자"]
 
 . 복구 후 CIFS 공유를 봅니다.
 +
-image:security-ransomware_image24.png[""]
+image:security-ransomware_image24.png["fpolicy_share로 매핑된 CIFS 드라이브와 폴더, 디스크 이미지 및 PDF 파일을 보여주는 Windows 파일 탐색기의 스크린샷"]
 
 
 
@@ -192,8 +192,8 @@ vserver fpolicy enable -vserver infra_svm -policy-name Ransomware_policy -sequen
 
 공격하기 전에 파일의 상태를 확인합니다. 암호화되지 않은 상태로 깨끗한 시스템에 있습니다.
 
-image:security-ransomware_image25.png[""]
+image:security-ransomware_image25.png["Documents 및 fpolicy_share 드라이브에서 암호화되지 않은 WorkDoc PDF 파일을 보여주는 스크린샷"]
 
 VM의 파일은 암호화됩니다. WannaCry 맬웨어는 CIFS 공유의 파일을 암호화하려고 하지만 FPolicy는 파일이 영향을 받지 않도록 합니다.
 
-image:security-ransomware_image26.png[""]
+image:security-ransomware_image26.png["FPolicy CIFS 공유에서 영향을 받지 않은 PDF 파일 옆에 암호화된 VM 파일의 스크린샷"]

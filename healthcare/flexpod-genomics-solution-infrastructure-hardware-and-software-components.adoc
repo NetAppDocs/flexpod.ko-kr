@@ -18,11 +18,11 @@ link:flexpod-genomics-benefits-of-deploying-genomic-workloads-on-flexpod.html["�
 [role="lead"]
 다음 그림은 GATK 설정 및 검증에 사용되는 FlexPod 시스템을 보여 줍니다. 우리는 중고 https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/fp_vmware_vsphere_7_0_ontap_9_7.html["VMware vSphere 7.0 및 NetApp ONTAP 9.7을 사용하는 FlexPod 데이터 센터 CVD(Cisco Validated Design)"^] 설치 프로세스 중
 
-image:flexpod-genomics-image6.png[""]
+image:flexpod-genomics-image6.png["Cisco UCS, Nexus, MDS 및 NetApp AFF A700 연결을 지원하는 Genomics용 FlexPod를 보여주는 다이어그램"]
 
 다음 다이어그램은 FlexPod 케이블 연결 세부 정보를 보여 줍니다.
 
-image:flexpod-genomics-image7.png[""]
+image:flexpod-genomics-image7.png["UCS, Nexus, NetApp AFF 및 MDS 스위치 간의 Genomics용 FlexPod 케이블 연결을 보여주는 다이어그램"]
 
 다음 표에는 FlexPod에서 GATK 테스트 활성화 중에 사용되는 하드웨어 구성 요소가 나열되어 있습니다. 여기 가 있습니다 https://mysupport.netapp.com/matrix/["NetApp 상호 운용성 매트릭스 툴"^] (IMT) 및 https://ucshcltool.cloudapps.cisco.com/public/["Cisco HCL(하드웨어 호환 목록)"^].
 

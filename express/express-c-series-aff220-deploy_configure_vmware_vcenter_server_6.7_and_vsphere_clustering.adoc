@@ -35,7 +35,7 @@ vSphere 클러스터를 생성하려면 다음 단계를 수행하십시오.
 . 확인란을 선택하여 DR 및 vSphere HA를 설정합니다.
 . 확인 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image49.png[""]
+image:express-c-series-aff220-deploy_image49.png["Tiger3 클러스터에 대해 DRS 및 vSphere HA가 활성화된 새 클러스터 대화 상자의 스크린샷"]
 
 
 
@@ -46,7 +46,7 @@ image:express-c-series-aff220-deploy_image49.png[""]
 
 . 클러스터를 마우스 오른쪽 버튼으로 클릭하고 Add Host를 선택합니다.
 +
-image:express-c-series-aff220-deploy_image50.png[""]
+image:express-c-series-aff220-deploy_image50.png["vSphere 웹 클라이언트의 스크린샷으로, FlexPod 클러스터 작업 메뉴에서 호스트 추가가 선택된 것을 보여줍니다."]
 
 . 클러스터에 ESXi 호스트를 추가하려면 다음 단계를 수행하십시오.
 +

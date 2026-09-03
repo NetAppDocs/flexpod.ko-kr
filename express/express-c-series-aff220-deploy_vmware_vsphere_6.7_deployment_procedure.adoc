@@ -40,7 +40,7 @@ NOTE: 이 절차는 Cisco UCS 서버 A 및 Cisco UCS 서버 B에 대해 완료�
 . 주 메뉴에서 서버 탭을 선택합니다.
 . Launch KVM Console을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image21.png[""]
+image:express-c-series-aff220-deploy_image21.png["상단 메뉴에 KVM 시작 링크가 있는 Cisco CIMC 서버 BIOS 페이지의 스크린샷"]
 
 . 가상 KVM 콘솔에서 Virtual Media 탭을 선택합니다.
 . CD/DVD 매핑 을 선택합니다.
@@ -83,7 +83,7 @@ NOTE: 먼저 가상 디바이스 활성화 를 클릭해야 할 수도 있습니
 . 최종 사용자 사용권 계약을 읽은 후 동의하고 F11 키를 눌러 설치를 계속합니다.
 . 이전에 ESXi용 설치 디스크로 설정된 NetApp LUN을 선택하고 Enter 키를 눌러 설치를 계속합니다.
 +
-image:express-c-series-aff220-deploy_image22.png[""]
+image:express-c-series-aff220-deploy_image22.png["15.00 GiB 용량의 NETAPP LUN C-Mode 스토리지 장치를 선택하는 ESXi 설치 프로그램의 스크린샷"]
 
 . 적절한 자판 배열을 선택하고 Enter 키를 누릅니다.
 . 루트 암호를 입력 및 확인하고 Enter 키를 누릅니다.
@@ -112,7 +112,7 @@ image:express-c-series-aff220-deploy_image22.png[""]
 NOTE: CIMC의 eth0 및 eth1에 해당하는 포트를 선택합니다.
 
 +
-image:express-c-series-aff220-deploy_image23.png[""]
+image:express-c-series-aff220-deploy_image23.png["vSwitch0에 대해 vmnic0 및 vmnic1이 선택된 ESXi 네트워크 어댑터 메뉴의 스크린샷"]
 
 . VLAN (optional)을 선택하고 Enter 키를 누릅니다.
 . VLAN ID '\<<mgmt_vlan_id>>'를 입력합니다. Enter 키를 누릅니다.
@@ -211,7 +211,7 @@ image:express-c-series-aff220-deploy_image23.png[""]
 . 왼쪽에서 네트워킹 을 선택합니다.
 . 오른쪽에서 Virtual Switches 탭을 선택합니다.
 +
-image:express-c-series-aff220-deploy_image24.png[""]
+image:express-c-series-aff220-deploy_image24.png["vSwitch0 및 iScsiBootvSwitch를 보여주는 ESXi 네트워킹 가상 스위치 탭의 스크린샷"]
 
 . iSciBootvSwitch 를 클릭합니다.
 . 설정 편집 을 선택합니다.
@@ -242,7 +242,7 @@ NOTE: 이 구성에서는 Vmnic2 및 vmnic3이 iSCSI 부팅에 사용됩니다. 
 ** 서브넷 마스크에 '\<<var_hosta_iscsib_mask>>'를 입력합니다.
 ** 생성 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image25.png[""]
+image:express-c-series-aff220-deploy_image25.png["고정 IPv4 설정 및 MTU 9000으로 iScsiBootPG-B를 구성하는 VMkernel NIC 추가 양식의 스크린샷"]
 
 +
 
@@ -262,18 +262,18 @@ ESXi 호스트에 iSCSI 다중 경로를 설정하려면 다음 단계를 수행
 . 왼쪽 탐색 창에서 스토리지 를 선택합니다. 어댑터를 클릭합니다.
 . iSCSI 소프트웨어 어댑터를 선택하고 iSCSI 구성 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image26.png[""]
+image:express-c-series-aff220-deploy_image26.png["iSCSI 소프트웨어 어댑터 vmhba64가 선택된 VMware ESXi 스토리지 어댑터 페이지의 스크린샷"]
 
 . 동적 대상에서 동적 대상 추가를 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image27.png[""]
+image:express-c-series-aff220-deploy_image27.png["동적 대상 아래에 동적 대상 추가가 표시된 iSCSI 구성 대화 상자의 스크린샷"]
 
 . IP 주소 'iscsi_lif01a'를 입력합니다.
 +
 ** IP 주소 iscsi_liff 01b, iscsi_liff 02a, iscsi_liff 02b와 함께 이 과정을 반복합니다.
 ** 구성 저장 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image28.png[""]
+image:express-c-series-aff220-deploy_image28.png["포트 3260을 각각 사용하는 4개의 iSCSI 동적 타겟 IP 주소를 보여주는 스크린샷"]
 
 
 
@@ -290,7 +290,7 @@ NOTE: NetApp 클러스터에서 'network interface show' 명령을 실행하거�
 . 왼쪽 탐색 창에서 네트워킹 을 선택합니다.
 . vSwitch0을 선택합니다.
 +
-image:express-c-series-aff220-deploy_image29.png[""]
+image:express-c-series-aff220-deploy_image29.png["MTU 1500 및 두 개의 활성 물리적 어댑터를 보여주는 VMware ESXi vSwitch0 페이지의 스크린샷"]
 
 . 설정 편집 을 선택합니다.
 . MTU를 9000으로 변경합니다.
@@ -305,7 +305,7 @@ image:express-c-series-aff220-deploy_image29.png[""]
 . 왼쪽 탐색 창에서 네트워킹 을 선택합니다.
 . 포트 그룹 탭을 마우스 오른쪽 단추로 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image30.png[""]
+image:express-c-series-aff220-deploy_image30.png["포트 그룹 탭이 선택되어 있고 포트 그룹 추가 옵션이 있는 ESXi 네트워킹 페이지의 스크린샷"]
 
 . VM Network를 마우스 오른쪽 버튼으로 클릭하고 Edit를 선택합니다. VLAN ID를 '\<<var_vm_traffic_vlan>>'로 변경합니다.
 . 포트 그룹 추가 를 클릭합니다.
@@ -318,7 +318,7 @@ image:express-c-series-aff220-deploy_image30.png[""]
 
 . VMkernel NIC 탭을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image31.png[""]
+image:express-c-series-aff220-deploy_image31.png["vmk0 및 vmk1 어댑터 목록이 표시된 ESXi 네트워킹 VMkernel NIC 탭의 스크린샷"]
 
 . Add VMkernel NIC 를 선택합니다.
 +
@@ -332,7 +332,7 @@ image:express-c-series-aff220-deploy_image31.png[""]
 ** 서브넷 마스크에 '\<<var_hosta_nfs_mask>>'를 입력합니다.
 ** 생성 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image32.png[""]
+image:express-c-series-aff220-deploy_image32.png["NFS 네트워크 포트 그룹을 고정 IPv4 설정으로 구성하는 VMkernel NIC 추가 양식의 스크린샷"]
 
 
 
@@ -349,7 +349,7 @@ image:express-c-series-aff220-deploy_image32.png[""]
 .. 서브넷 마스크에 '\<<var_hosta_vmotion_mask>>'를 입력합니다.
 .. IPv4 설정 후 vMotion 확인란이 선택되어 있는지 확인합니다.
 +
-image:express-c-series-aff220-deploy_image33.png[""]
+image:express-c-series-aff220-deploy_image33.png["고정 IPv4 설정 및 vMotion이 선택된 상태에서 VMkernel NIC 추가 대화 상자의 스크린샷"]
 
 +
 
@@ -367,11 +367,11 @@ NOTE: 라이센싱에서 허용하는 경우 VMware vSphere 분산 스위치를 
 
 . 왼쪽 탐색 창에서 스토리지 를 클릭한 다음 새 데이터 저장소 를 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image34.png[""]
+image:express-c-series-aff220-deploy_image34.png["새 데이터스토어 버튼이 표시된 VMware ESXi 스토리지 페이지의 스크린샷"]
 
 . Mount NFS Datastore를 선택합니다.
 +
-image:express-c-series-aff220-deploy_image35.png[""]
+image:express-c-series-aff220-deploy_image35.png["생성 유형으로 NFS 데이터 저장소 마운트가 선택된 새 데이터 저장소 마법사의 스크린샷"]
 
 . 그런 다음 NFS 마운트 세부 정보 제공 페이지에 다음 정보를 입력합니다.
 +
@@ -401,14 +401,14 @@ ESXi 호스트에 대해 NTP를 구성하려면 다음 단계를 수행하십시
 
 . 왼쪽 탐색 창에서 관리 를 클릭합니다. 오른쪽 창에서 시스템 을 선택한 다음 시간 및 날짜 를 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image36.png[""]
+image:express-c-series-aff220-deploy_image36.png["NTP 클라이언트 상태와 NTP 서버를 보여주는 ESXi 관리 시스템 시간 및 날짜 페이지의 스크린샷"]
 
 . Use Network Time Protocol (Enable NTP Client) 을 선택합니다.
 . Start and Stop with Host 를 NTP 서비스 시작 정책으로 선택합니다.
 . NTP 서버로 '\<<var_ntp>>'를 입력합니다. 여러 NTP 서버를 설정할 수 있습니다.
 . 저장 을 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image37.png[""]
+image:express-c-series-aff220-deploy_image37.png["NTP가 활성화되고 NTP 서버가 입력된 시간 구성 편집 대화 상자의 스크린샷"]
 
 
 
@@ -421,11 +421,11 @@ image:express-c-series-aff220-deploy_image37.png[""]
 
 . 왼쪽 탐색 창에서 관리 를 클릭합니다. 오른쪽 창에서 시스템을 선택한 다음 바꾸기를 클릭합니다.
 +
-image:express-c-series-aff220-deploy_image38.png[""]
+image:express-c-series-aff220-deploy_image38.png["VMware ESXi 시스템 스왑 관리 페이지의 스크린샷으로, 스왑 설정이 표시되어 있습니다."]
 
 . 설정 편집 을 클릭합니다. Datastore 옵션에서 infra_swap을 선택합니다.
 +
-image:express-c-series-aff220-deploy_image39.png[""]
+image:express-c-series-aff220-deploy_image39.png["infra_swap이 데이터스토어로 선택되고 저장 및 취소 버튼이 있는 스왑 구성 편집 대화 상자의 스크린샷"]
 
 . 저장 을 클릭합니다.
 
@@ -480,7 +480,7 @@ Value of HardwareAcceleratedMove is 1
 . ESX CLI를 사용하여 ESXi 호스트에 플러그인을 설치합니다.
 . ESXi 호스트를 재부팅합니다.
 +
-image:express-c-series-aff220-deploy_image40.png[""]
+image:express-c-series-aff220-deploy_image40.png["NetApp NFS Plug-in VIB 설치 성공 및 재부팅 필요 메시지를 표시하는 터미널"]
 
 
 

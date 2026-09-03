@@ -68,7 +68,7 @@ Cloud Insights에서 데이터를 수집하려면 조직은 획득 장치를 Fle
 
 다음 그림에서는 솔루션 아키텍처를 보여 줍니다.
 
-image:cloud-insights_image2.png[""]
+image:cloud-insights_image2.png["Cisco UCS, Nexus 스위치, NetApp AFF A800 컨트롤러 및 MDS 스위치가 네트워크 링크로 상호 연결된 것을 보여주는 다이어그램"]
 
 
 
