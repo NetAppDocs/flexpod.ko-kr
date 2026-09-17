@@ -18,9 +18,12 @@ summary: 다양한 Cisco Nexus 제품을 특정 FlexPod 구축의 스위칭 구�
 
 Cisco의 소프트웨어 정의 네트워킹 분야 솔루션은 ACI(Application Centric Infrastructure)라고 합니다. ACI 모드(패브릭 모드)를 지원하는 Cisco Nexus 제품군은 NX-OS 모드로도 배포할 수 있습니다.
 
+
+NOTE: 모든 Cisco Nexus 스위치가 ACI 모드를 지원하는 것은 아닙니다. 구축하려는 특정 모델이 운영 요구 사항을 충족하는지 확인하십시오.
+
 Cisco ACI는 특정 애플리케이션의 요구사항에 중점을 둔 데이터 센터 구축을 대상으로 합니다. 애플리케이션은 일련의 프로파일과 계약을 통해 인스턴스화되며, 이를 통해 호스트 또는 가상 머신(VM)과의 접속이 네트워크를 통해 스토리지까지 모두 가능합니다.
 
-FlexPod Datacenter는 Cisco Nexus 스위치의 두 가지 작동 모드 모두에서 검증되었습니다. ACI 및 NX-OS 모드에 대한 자세한 내용은 다음 Cisco 페이지를 참조하십시오.
+FlexPod Datacenter는 NX-OS 모드와 ACI 모드 모두에서 작동하는 Cisco Nexus 스위치와의 호환성이 검증되었습니다. 고객은 네트워크 아키텍처, 운영 모델 및 자동화 요구 사항에 가장 적합한 작동 모드를 선택할 수 있습니다. ACI 및 NX-OS 모드에 대한 자세한 내용은 다음 Cisco 웹페이지를 참조하십시오.
 
 * http://www.cisco.com/c/en/us/solutions/data-center-virtualization/application-centric-infrastructure/index.html["Cisco 애플리케이션 중심 인프라"^]
 * https://www.cisco.com/site/us/en/products/networking/cloud-networking/nx-os/index.html["Cisco NX-OS 소프트웨어"^]

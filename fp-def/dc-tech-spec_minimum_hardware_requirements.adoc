@@ -25,12 +25,12 @@ FlexPod 구성에는 다음과 같은 최소 하드웨어 요구 사항이 있�
 NOTE: ACI 아키텍처를 구축하는 경우 다음 추가 요구 사항을 준수해야 합니다. * Cisco Nexus 9000 시리즈 스위치를 리프-스파인 토폴로지로 구축해야 합니다. * Cisco APIC(Application Policy Infrastructure Controller)를 3개 사용해야 합니다.
 
 * UCS C-Series 랙 서버 또는 X-Series 모듈형 시스템을 사용하는 경우, 이중화 구성으로 Cisco UCS 6400, 6500 또는 6600 Series Fabric Interconnect 2개.
-* FI 연결 및 Intersight 관리 구성(IMM)을 지원하는 Cisco UCS C-Series 랙 서버 2대, 또는 Cisco IMM을 지원하는 Cisco UCS X-Series Direct, 또는 Cisco Intersight 관리 구성(IMM)을 지원하는 Cisco UCS X-Series Modular.
+* Cisco Intersight 관리 모드 구성(IMM)을 지원하는 FI 연결 기능이 있는 Cisco UCS C-Series 랙 서버 2대, 또는 Cisco IMM이 포함된 Cisco UCS X-Series Direct 또는 Cisco IMM이 포함된 Cisco UCS X-Series Modular.
 
 
 
-NOTE: FI 연결 기능이 없는 UCS 랙 서버를 사용하는 경우 CIMC 또는 Intersight 독립 실행형 모드를 사용하여 관리할 수 있습니다.
+NOTE: FI 연결 기능이 없는 UCS 랙 서버를 사용하는 경우 CIMC 또는 Intersight 독립 실행형 모드(ISM)를 사용하여 관리할 수 있습니다.
 
-* NetApp AFF, NetApp ASA 또는 NetApp FAS 컨트롤러 두 대를 고가용성(HA) 쌍 구성으로 2노드 클러스터로 배포합니다. NetApp AFX를 사용하는 경우 최소 4대의 NetApp AFX 컨트롤러가 필요하며, 클러스터 인터커넥트 스위치 한 쌍과 함께 4노드 HA 클러스터로 배포해야 합니다.
+* NetApp AFF, NetApp ASA 또는 NetApp FAS 컨트롤러 두 대를 고가용성(HA) 쌍 구성으로 2노드 클러스터로 배포합니다. NetApp AFX를 사용하는 경우 최소 4대의 NetApp AFX 컨트롤러가 필요하며, 2개의 HA 쌍과 1쌍의 클러스터 인터커넥트 스위치를 포함하는 4노드 클러스터로 배포해야 합니다.
 * 내장 디스크 쉘프가 없는 스토리지 컨트롤러에는 최소 하나의 NetApp 디스크 쉘프가 필요합니다.
 

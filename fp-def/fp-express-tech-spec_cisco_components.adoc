@@ -174,16 +174,11 @@ FlexPod 아키텍처에서는 이중화된 Cisco Nexus 스위치가 필요합니
 [[cisco-support-licensing-options]]
 == Cisco 지원 라이센스 옵션
 
-FlexPod Express 아키텍처의 모든 Cisco 장비에는 유효한 TSANet 지원 계약이 필요합니다.
 
+NOTE: 주문하기 전에 Cisco 또는 NetApp 영업 담당자에게 라이선스 요구 사항을 확인하는 것이 좋습니다.
 
-NOTE: 필요한 라이선스와 해당 부품 번호는 제품 및 구성에 따라 다를 수 있습니다. 주문하기 전에 Cisco 또는 NetApp 영업 담당자에게 라이선스 요구 사항을 확인하는 것이 좋습니다.
+link:https://www.cisco.com/c/dam/en_us/about/doing_business/legal/service_descriptions/docs/solution-support-smart-total-care.pdf["Cisco 솔루션 지원"^]은(는) Cisco 솔루션에 적용되는 기술 지원 서비스 제공 서비스로, Cisco 단독 또는 Cisco 및 솔루션 지원 제휴 파트너사의 하드웨어 및 소프트웨어를 포함하며, Cisco 제품과 타사 공급업체(솔루션 지원 제휴 파트너사)에서 제공하는 제품으로만 구성됩니다.
 
-다음 표에는 Cisco 지원 라이센스 옵션이 나와 있습니다.
+Cisco는 자사의 link:https://www.cisco.com/c/en/us/support/web/tac/technical-services-resource-guide.html["기술 지원 센터"]을 통해 복잡한 고객 환경을 지원합니다. Cisco 솔루션 지원을 통해 고객은 TAC 엔지니어 팀에 액세스할 수 있으며, 이 팀은 솔루션 내에서 발생하는 문제에 대한 주요 연락 창구 역할을 할 뿐만 아니라 솔루션을 구성하는 하드웨어 및 소프트웨어에 대한 제품 지원도 제공합니다.
 
-|===
-| Cisco 지원 라이센스 | 사용권 안내서 
-
-
-| TSANet | https://www.tsanet.org/cisco-tsanet-case-study/[] 
-|===
+Cisco는 link:https://www.tsanet.org/cisco-tsanet-case-study/["TSANet 파트너 프로그램"^] 프레임워크를 활용하여 솔루션 지원 파트너를 TSANet Connect 시스템의 비공개 그룹에 온보딩합니다. TSANet Connect는 지원 엔지니어가 파트너의 기술 팀과 협업할 수 있는 일관된 방법을 제공하여, 파트너와의 비공식적인 협업으로 인한 마찰 없이 효율적인 의사소통과 신속한 문제 해결을 보장합니다.

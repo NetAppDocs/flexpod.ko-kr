@@ -232,7 +232,7 @@ Cisco Nexus 9000 시리즈 스위치 이중화는 FlexPod 아키텍처에서 필
 [[cisco-apic-options]]
 == Cisco APIC 옵션
 
-Cisco APIC는 Cisco ACI의 핵심 아키텍처 구성 요소입니다. 이는 Cisco ACI 패브릭에 대한 통합 자동화 및 관리 지점입니다.
+Cisco APIC는 Cisco ACI의 핵심 아키텍처 구성 요소입니다. Cisco ACI 패브릭에 대한 중앙 집중식 관리, 정책 제어 및 자동화를 제공합니다.
 
 APIC 제품 사양에 대한 자세한 내용은 https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/application-policy-infrastructure-controller-apic/datasheet-c78-739715.html["Cisco Application Policy Infrastructure Controller 데이터시트 를 참조하십시오"^]의 표 1부터 표 3을 참조하십시오.
 

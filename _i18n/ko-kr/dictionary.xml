@@ -3261,7 +3261,6 @@
   <block id="0b79795d3efc95b9976c7c5b933afce2" category="section-title">소개</block>
   <block id="be7f4d9bccf9b5176e35417d1ae376ee" category="paragraph">NetApp과 Cisco는 협력 관계를 맺고 FlexPod 에코시스템을 위한 단일 창 방식으로 제공하는 Cisco Intersight를 제공하고 있습니다. 이처럼 간소한 통합으로 FlexPod 인프라 및 FlexPod 솔루션의 모든 구성요소를 위한 통합 관리 플랫폼이 생성됩니다. Cisco Intersight를 사용하면 NetApp 스토리지, Cisco 컴퓨팅 및 VMware 인벤토리를 모니터링할 수 있습니다. 또한 워크플로우를 조율하거나 자동화하여 스토리지 및 가상화 작업을 동시에 수행할 수 있습니다.</block>
   <block id="3a45f44b03660232082dc152068990fd" category="inline-link">TR 4883: ONTAP 9.8을 지원하는 FlexPod 데이터 센터, Cisco Intersight용 ONTAP 스토리지 커넥터, Cisco Intersight 관리 모드</block>
-  <block id="69d7ba5974ce4e202ff6a3283926751f" category="paragraph">자세한 내용은 을 참조하십시오<block ref="7233dd15fab01808b5955c7429b5aebc" category="inline-link-rx"></block>.</block>
   <block id="e7114cd6ec011855ffed323eb8d029e1" category="summary">Cisco Intersight와 NetApp ONTAP 스토리지 통합을 위한 하드웨어, 소프트웨어 및 라이센스 요구사항이 충족되는지 확인합니다.</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="doc">요구 사항</block>
   <block id="630e5660de352108f57840f67c4ce73b" category="section-title">하드웨어 및 소프트웨어 요구 사항</block>
@@ -4256,9 +4255,6 @@
   <block id="0adca13cab777a69d4b054794aadc650" category="section-title">Cisco UCS C-Series 랙 서버 옵션</block>
   <block id="a06b1914f736d12f90cd77c9af669070" category="cell">Cisco UCS C-Series 랙 서버</block>
   <block id="83842e9d3448fa9b32e931956ae716a9" category="section-title">Cisco 지원 라이센스 옵션</block>
-  <block id="5ab41268bb536bea361ff025dad26212" category="paragraph">다음 표에는 Cisco 지원 라이센스 옵션이 나와 있습니다.</block>
-  <block id="950f825ced706454b39f75815a9410fa" category="cell">Cisco 지원 라이센스</block>
-  <block id="b33eb2786fac85b1eee28de1d30760e6" category="cell">사용권 안내서</block>
   <block id="e6426bd86d0d3af225952b63c263f83d" category="summary">FlexPod Express에 대한 추가 요구 사항은 다음과 같습니다.</block>
   <block id="8293f6bcd4201a597ff59371ddd65240" category="doc">기타 요구 사항</block>
   <block id="99850d99c802817315214eb8be6522a3" category="paragraph">FlexPod 익스프레스에 대한 추가 요구 사항은 다음과 같습니다.</block>
@@ -4399,10 +4395,8 @@
   <block id="e16cf64a7d57cdeabb90fba537f98951" category="list-text">FCoE 포트 채널은 엔드 투 엔드 FCoE 설계에 권장됩니다.</block>
   <block id="98ec4d626ba45dc556ab2fc703f27f3c" category="paragraph">SAN 부팅:</block>
   <block id="9629f8da11dca6bad461709c5940ef48" category="list-text">FlexPod 솔루션은 iSCSI, FC 또는 FCoE 프로토콜을 사용하여 SAN 부팅 아키텍처를 기반으로 설계되었습니다. SAN에서의 부팅 기술을 사용하면 데이터 센터 인프라에 가장 유연한 구성이 가능하며 각 인프라 구성 요소 내에서 다양한 기능을 사용할 수 있습니다. SAN에서 부팅하는 것이 가장 효율적인 구성이지만 로컬 서버 스토리지에서 부팅하는 것은 유효하고 지원되는 구성입니다.</block>
-  <block id="1080560c7e2fa012a7d33af4df4baf9a" category="list-text">FC를 통한 SAN 부팅 - NVMe는 지원되지 않습니다.</block>
   <block id="383eb1f36612839fab2c254b93eb5b7a" category="summary">FlexPod 설계는 다양한 구성 요소와 소프트웨어 버전을 포함하는 유연한 인프라를 허용합니다.</block>
   <block id="3e5ccc044bb26ec9267568f9b911d1ba" category="doc">FlexPod 규칙</block>
-  <block id="44449d841c637b73894538d1cb10ad73" category="paragraph">FlexPod는 다양한 가상화 하이퍼바이저 및 베어 메탈 운영 체제 및 엔터프라이즈 워크로드를 실행하는 데 적합한 플랫폼입니다. FlexPod는 기본 구성뿐만 아니라 다양한 사용 사례와 요구사항에 맞게 사이징 및 최적화할 수 있는 유연성도 제공합니다.</block>
   <block id="73cbafda498a06bae0ca1f5a7714be30" category="inline-link-macro">다음: FlexPod 플랫폼.</block>
   <block id="ffe6ecde43ed5c7ff2182a101c0d2390" category="paragraph"><block ref="ffe6ecde43ed5c7ff2182a101c0d2390" category="inline-link-macro-rx"></block></block>
   <block id="de60a3b6d2d9d01bbfeab52fc594ec67" category="section-title">Cisco UCS 패브릭 인터커넥트 옵션</block>
@@ -5241,7 +5235,6 @@
   <block id="864917b1ac2563708daec0b6fb665d8b" category="paragraph"><block ref="864917b1ac2563708daec0b6fb665d8b" category="inline-link-rx"></block></block>
   <block id="0cf6fdc2108556d64f002f7b2bff8700" category="inline-link"><block ref="0cf6fdc2108556d64f002f7b2bff8700" category="inline-link-rx"></block></block>
   <block id="373f063717834529bc600f08b98fc66c" category="paragraph"><block ref="373f063717834529bc600f08b98fc66c" category="inline-link-rx"></block></block>
-  <block id="cbb9a6e025db26e6e93575dee2958256" category="paragraph">NetApp SnapMirror 비즈니스 연속성(SM-BC) 및 ONTAP 9.10 솔루션을 지원하는 FlexPod 데이터 센터는 단일 장애 지점 시나리오와 함께 사이트 장애 시나리오로부터 비즈니스 크리티컬 데이터를 보호합니다. 이 기술 보고서에서는 FlexPod SM-BC 솔루션 및 솔루션 구성 요소에 대해 간략하게 설명하고 솔루션의 일부 구성 및 검증 측면을 중점적으로 다룹니다.</block>
   <block id="11d56047eb2c0edaf57e943fb8e6a2af" category="summary">FlexPod SM-BC 솔루션의 스토리지 구성은 각 사이트의 일반적인 FlexPod 솔루션 모범 사례를 따릅니다. SM-BC 클러스터 피어링과 데이터 복제의 경우 두 사이트의 FlexPod 스위치 간에 설정된 사이트 간 링크를 사용합니다. 다음 섹션에서는 검증에 사용된 연결 및 구성 중 일부를 설명합니다.</block>
   <block id="d996e1a7c19a3c614597fe3d017735e3" category="doc">솔루션 검증 - 스토리지</block>
   <block id="06a162921ff2263e0d2871473d84695c" category="paragraph">로컬 UCS FI 및 블레이드 서버에 대한 스토리지 연결은 로컬 사이트의 Nexus 스위치를 통해 제공됩니다. 사이트 간 Nexus 스위치 연결을 통해 원격 UCS 블레이드 서버에서도 스토리지에 액세스할 수 있습니다. 다음 그림과 표에서는 스토리지 연결 다이어그램과 각 사이트의 스토리지 컨트롤러에 대한 연결 목록을 보여 줍니다.</block>
@@ -6901,7 +6894,6 @@
   <block id="1ae823e8252cefe82659e80378adf180" category="paragraph">SVM이 중지된 후<block ref="d0f08a44974997af7b6852c24d0e3397" prefix=" " category="inline-code"></block> 볼륨이 콘솔에 표시되지 않습니다.</block>
   <block id="0d6e5faf80b288a1d3277954d0b55ae8" category="inline-link"><block ref="0d6e5faf80b288a1d3277954d0b55ae8" category="inline-link-rx"></block></block>
   <block id="17a7b956a1673e2b7eed84e47e417df1" category="paragraph"><block ref="17a7b956a1673e2b7eed84e47e417df1" category="inline-link-rx"></block></block>
-  <block id="f1c50a66fa0c1697f61a708311b1b73c" category="list-text">독립형 Cisco UCS Fabric Interconnect 어플라이언스 포트는 iSCSI 연결에만 사용하는 것이 좋습니다. 어플라이언스 포트와 함께 NAS 연결을 사용하는 경우 특정 장애 시나리오에 대해 추가 Nexus/호환 스위치가 필요합니다.</block>
   <block id="f63c99bc92f7bc3f7b439ecf41cac3e8" category="paragraph">FabricPool은 ONTAP 9.2 이상이 필요합니다. 추가 FabricPool 요구 사항은 사용 중인 ONTAP 버전과 연결된 클라우드 계층에 따라 다릅니다. ONTAP 9.8 이전 릴리즈에서는 FabricPool이 SSD 로컬 계층에서만 지원됩니다. HDD 애그리게이트에 대한 지원은 ONTAP 9.8에서 추가되었습니다. 고정적이고 비교적 작은 용량을 가진 엔트리급 AFF 플랫폼(예: NetApp AFF C190)의 경우, FabricPool은 비활성 데이터를 클라우드 계층으로 이동하는 데 매우 효과적일 수 있습니다.</block>
   <block id="d468c66669ca3541addf2625862a45c3" category="list-text">NetApp FAS FabricPool은 ONTAP 9.2를 실행할 수 있는 모든 플랫폼에서 지원되지만, 다음 플랫폼은 제외됩니다.</block>
   <block id="0ef00e20c875ece8831080e8f1bbb3c2" category="list-text">FAS2554, FAS2552, FAS2520</block>
@@ -7092,10 +7084,6 @@
   <block id="c805c717b2ff719e7f051f990444a02e" category="cell"><block ref="c805c717b2ff719e7f051f990444a02e" category="inline-link-rx"></block></block>
   <block id="a388b76dc45ac18e52a3b75efb35834a" category="cell">Cisco Nexus 9300 시리즈 스위치</block>
   <block id="db7c6a8cf8fb1bedef955b74c1d48458" category="cell"><block ref="db7c6a8cf8fb1bedef955b74c1d48458" category="inline-link-rx"></block></block>
-  <block id="05529d9f87f535089b136d6e6c79152a" category="paragraph">FlexPod Express 아키텍처의 모든 Cisco 장비에는 유효한 TSANet 지원 계약이 필요합니다.</block>
-  <block id="c03e321ec861308530b2664bf76c15c5" category="admonition">필요한 라이선스와 해당 부품 번호는 제품 및 구성에 따라 다를 수 있습니다. 주문하기 전에 Cisco 또는 NetApp 영업 담당자에게 라이선스 요구 사항을 확인하는 것이 좋습니다.</block>
-  <block id="b7f43873760e77ea41c49202022ab227" category="cell">TSANet</block>
-  <block id="3ea0d3685f27390f9fe371eab129dce9" category="cell"><block ref="3ea0d3685f27390f9fe371eab129dce9" category="inline-link-rx"></block></block>
   <block id="3bdd153cf6e9d7361625a9dcce93e9b1" category="paragraph">이 섹션에서는 FlexPod Express의 여러 버전에 대한 일반적인 연결 요구 사항을 설명합니다.</block>
   <block id="0d23eba7274fadde661e961150cfe90c" category="section-title">NetApp AFF/ ASA/ FAS와 함께 사용하는 FlexPod Express의 연결 요구 사항</block>
   <block id="18eebabb49892cff2a8da0a1f49fd62f" category="paragraph">FlexPod Express와 NetApp AFF/ ASA/ FAS의 연결 요구 사항은 일반적으로 다음과 같습니다.</block>
@@ -7452,7 +7440,6 @@
   <block id="c2097c6a2665850e882697681826c7f2" category="list-text">VMware vSphere 및 Cisco IMM을 이용한 FlexPod Datacenter의 자동화된 배포</block>
   <block id="60a92d0a4d4d73db2e482d736bc511cd" category="inline-link-macro">FlexPod Datacenter with VMware vSphere 및 Cisco IMM GitHub 저장소</block>
   <block id="2c2367d8f5f30d9d6ef485de7925c8a4" category="list-text">Cisco Nexus 스위치, Cisco UCS C-Series 서버 또는 IMM 기반 Cisco UCS X-Series Direct 및 VMware vSphere가 포함된 NetApp ONTAP을 사용하는 FlexPod Datacenter 구성의 자동화된 배포에 대해서는 <block ref="952c9b08f985ed9f82166e8211b5f6fe" category="inline-link-macro-rx"></block> 및 해당 <block ref="48c881fa567448be6b5f7b543cbb9aa4" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
-  <block id="bf02b5d226fc05f30947a8d5ca9e91a0" category="list-text">Ansible 플레이북에 정의된 VMware 역할은 VMware 관련 구성에 사용할 수 있습니다.</block>
   <block id="de01b8d207b155cd5b990f07f30dc3df" category="admonition">이 저장소에서는 변수 파일에 FC-NVMe 및 NFS를 사용한 FC 부팅이 기본적으로 구성되어 있지만, iSCSI 부팅 및 NFS를 사용한 NVMe-TCP도 사용할 수 있습니다.</block>
   <block id="f1e8a19ef2a9d553caa2cc6dfa65da5d" category="list-text">Red Hat OpenShift 및 Cisco IMM을 사용한 FlexPod Datacenter 자동 배포</block>
   <block id="30e0d41551396c0294d6e545abf609de" category="inline-link-macro">Red Hat OpenShift 및 Cisco IMM이 포함된 FlexPod Datacenter GitHub 리포지토리</block>
@@ -7523,7 +7510,6 @@
   <block id="53f6c8e305cf2d8a22551189da9b74be" category="cell">Cisco Nexus 9800 시리즈 스위치</block>
   <block id="95e6b4c50676c9987fc6faae212201a7" category="inline-link">Cisco Nexus 9800 시리즈 스위치</block>
   <block id="13096a79dbffe0bd12f3b7bac5626599" category="cell"><block ref="53c6548e0b5fa96b9ec7742883711c22" category="inline-link-rx"></block></block>
-  <block id="62eb2272b1e766dd7058723579e90073" category="paragraph">Cisco APIC는 Cisco ACI의 핵심 아키텍처 구성 요소입니다. 이는 Cisco ACI 패브릭에 대한 통합 자동화 및 관리 지점입니다.</block>
   <block id="9abc347443c2133b61aebb85e15b8060" category="paragraph">APIC 제품 사양에 대한 자세한 내용은<block ref="810caa612213807f8cb9ff928f57e2d9" category="inline-link-rx"></block>의 표 1부터 표 3을 참조하십시오.</block>
   <block id="698f5594b6202c1321b25dad23cf685e" category="paragraph">Cisco MDS 스위치는 FlexPod 아키텍처의 선택적 요소이지만, Fibre Channel SAN 연결을 사용하여 고성능 스토리지 액세스를 구현하는 배포에서는 고가용성 SAN 인프라를 제공하기 위해 이중화된 Cisco MDS 스위치 패브릭을 구현해야 합니다. 아래 표는 지원되는 Cisco MDS 스위치 목록입니다. 지원되는 SAN 스위치의 전체 목록은<block ref="31e25e06072fc647a14615c7a66045a3" category="inline-link-rx"></block> 및<block ref="9663e16401acc5458c2d08f12e7ec029" category="inline-link-rx"></block>을 참조하십시오.</block>
   <block id="40e616d67e949ea2760c7d6ef35d8a30" category="cell">Cisco MDS 스위치</block>
@@ -7546,10 +7532,8 @@
   <block id="18ba914359571efe7910ffa268767902" category="paragraph">Cisco는 <block ref="a5c1c71f566a8ac6352d6e7587da6b34" category="inline-link-macro-rx"></block> 프레임워크를 활용하여 솔루션 지원 파트너를 TSANet Connect 시스템의 비공개 그룹에 온보딩합니다. TSANet Connect는 지원 엔지니어가 파트너의 기술 팀과 협업할 수 있는 일관된 방법을 제공하여 효율적인 의사소통과 신속한 문제 해결을 보장하고, 파트너와의 비공식적인 협업으로 인한 마찰을 방지합니다.</block>
   <block id="e57f09bd31b8a8291c094d8c3e042287" category="summary">다양한 Cisco Nexus 제품을 특정 FlexPod 구축의 스위칭 구성 요소로 사용할 수 있습니다. 이러한 옵션 대부분은 Cisco NX-OS 소프트웨어를 활용합니다. Cisco Nexus 스위치 제품군은 제품 라인별로 다양한 기능을 제공합니다. 이러한 기능에 대한 자세한 내용은 이 문서 뒷부분에서 설명합니다.</block>
   <block id="84186e2aab7cde483e7b58c4c818d22d" category="paragraph">Cisco의 소프트웨어 정의 네트워킹 분야 솔루션은 ACI(Application Centric Infrastructure)라고 합니다. ACI 모드(패브릭 모드)를 지원하는 Cisco Nexus 제품군은 NX-OS 모드로도 배포할 수 있습니다.</block>
-  <block id="8372d9b4f312c2f904c76d29ac73ea51" category="paragraph">FlexPod Datacenter는 Cisco Nexus 스위치의 두 가지 작동 모드 모두에서 검증되었습니다. ACI 및 NX-OS 모드에 대한 자세한 내용은 다음 Cisco 페이지를 참조하십시오.</block>
   <block id="860d464adba56b824b234c216e926463" category="list-text"><block ref="860d464adba56b824b234c216e926463" category="inline-link-rx"></block></block>
   <block id="b3f0a35e106920c0e98dde71960289b7" category="list-text">모든 구성 요소에 대해 별도의 1Gb 이더넷 아웃오브밴드(out-of-band) 관리 네트워크가 필요합니다.</block>
-  <block id="9e6590327e387d3a09c7d64044ac7bd1" category="list-text">NetApp 스토리지 컨트롤러의 포트는 가상 포트 채널(vPC) 지원을 활성화하기 위해 Cisco Nexus 9000 시리즈 스위치에 연결되어야 합니다.</block>
   <block id="208f021c817d1019d8bf46de5e5a7ad8" category="list-text">Cisco Nexus 9000 시리즈 스위치에서 NetApp 스토리지 컨트롤러로 연결하려면 vPC가 필요합니다.</block>
   <block id="6bae8cd18ce9f8e6e6996086e11bf7f2" category="list-text">Cisco Nexus 9000 시리즈 스위치에서 패브릭 인터커넥트로 연결하려면 vPC가 필요합니다.</block>
   <block id="ff2cff4932f6505b10b95429a3a0beb0" category="list-text">NetApp 스토리지 컨트롤러 포트 중 패브릭 인터커넥트에 직접 연결된 포트(X-Series Direct의 경우와 같이)는 그룹화하여 포트 채널을 활성화할 수 있습니다. 이 구성에서는 vPC가 지원되지 않습니다.</block>
@@ -7569,9 +7553,6 @@
   <block id="9bf6845d267e4fcdf748e77ec3c2a1cb" category="list-text">이중화 구성의 Cisco Nexus 스위치 2개. 이 구성은 앞서 언급한 Cisco Nexus 9000 시리즈의 이중화 스위치 두 대로 구성될 수 있습니다. 두 스위치는 동일한 모델이어야 하며 동일한 운영 모드로 구성되어야 합니다.</block>
   <block id="aefa50533b802fc91194ba800f53150d" category="admonition">ACI 아키텍처를 구축하는 경우 다음 추가 요구 사항을 준수해야 합니다. * Cisco Nexus 9000 시리즈 스위치를 리프-스파인 토폴로지로 구축해야 합니다. * Cisco APIC(Application Policy Infrastructure Controller)를 3개 사용해야 합니다.</block>
   <block id="dc91faa7f2c0c0da05bf76753ccd5590" category="list-text">UCS C-Series 랙 서버 또는 X-Series 모듈형 시스템을 사용하는 경우, 이중화 구성으로 Cisco UCS 6400, 6500 또는 6600 Series Fabric Interconnect 2개.</block>
-  <block id="bd982ea9de89c2dd0911a653299fd7f0" category="list-text">FI 연결 및 Intersight 관리 구성(IMM)을 지원하는 Cisco UCS C-Series 랙 서버 2대, 또는 Cisco IMM을 지원하는 Cisco UCS X-Series Direct, 또는 Cisco Intersight 관리 구성(IMM)을 지원하는 Cisco UCS X-Series Modular.</block>
-  <block id="3d0698b931ce88845ec144459be52e06" category="admonition">FI 연결 기능이 없는 UCS 랙 서버를 사용하는 경우 CIMC 또는 Intersight 독립 실행형 모드를 사용하여 관리할 수 있습니다.</block>
-  <block id="d01c849f8138ba01e3ea51bf8fc568c0" category="list-text">NetApp AFF, NetApp ASA 또는 NetApp FAS 컨트롤러 두 대를 고가용성(HA) 쌍 구성으로 2노드 클러스터로 배포합니다. NetApp AFX를 사용하는 경우 최소 4대의 NetApp AFX 컨트롤러가 필요하며, 클러스터 인터커넥트 스위치 한 쌍과 함께 4노드 HA 클러스터로 배포해야 합니다.</block>
   <block id="3afa03d41b253b7c552fbb522539999e" category="list-text">내장 디스크 쉘프가 없는 스토리지 컨트롤러에는 최소 하나의 NetApp 디스크 쉘프가 필요합니다.</block>
   <block id="3701e2b366e74c954f95853294163129" category="paragraph">이중화된 NetApp FAS, AFF, ASA 또는 AFX 컨트롤러는 FlexPod 아키텍처에 필요합니다. 이러한 컨트롤러는 ONTAP 소프트웨어를 실행합니다. 스토리지 컨트롤러를 주문할 때 원하는 소프트웨어 버전을 컨트롤러에 미리 설치할 수 있습니다. ONTAP의 경우 전체 클러스터를 주문합니다. 전체 클러스터에는 한 쌍의 스토리지 컨트롤러와 클러스터 인터커넥트(스위치 또는 스위치가 없는 클러스터)가 포함됩니다.</block>
   <block id="ac8e3f23d8f53a59374b4497937b0588" category="admonition">스위치가 없는 클러스터 구성은 2노드 구성에서만 지원됩니다. 클러스터 인터커넥트 스위치는 4개 이상의 노드로 구성된 경우에 필요하며, 2노드 구성의 경우 선택 사항입니다.</block>
@@ -7684,7 +7665,6 @@
   <block id="5fd7a04c3e732bc730e68fe43c543348" category="admonition">모든 소프트웨어 구성 요소는 <block ref="31e25e06072fc647a14615c7a66045a3" category="inline-link-rx"></block>에 나열되고 지원되어야 하며, 모든 NetApp 하드웨어 구성 요소 및 ONTAP 버전은 <block ref="6a8cef5b71adde6301ea0984592ea5c1" category="inline-link-rx"></block>에 나열되고 지원되어야 하고, 모든 Cisco 하드웨어 구성 요소는 <block ref="243ee419838ead03039b3c014c885e78" category="inline-link-rx"></block>에 나열되고 지원되어야 합니다.</block>
   <block id="27a865e7dc0fe1c9137db6931148551b" category="summary">FlexPod 플랫폼은 Cisco Unified Computing System(Cisco UCS), Cisco Nexus 스위치 제품군 및 NetApp 스토리지 컨트롤러(NetApp AFF, ASA, FAS 또는 AFX 시스템)를 기반으로 구축된, 사전 설계된 모범 사례 데이터 센터 아키텍처입니다.</block>
   <block id="4e66cd63de64d3a844d2fda6dc825500" category="paragraph">FlexPod 플랫폼은 Cisco Unified Computing System(Cisco UCS), Cisco Nexus 및 MDS(FC용) 스위치 제품군, 그리고 NetApp 스토리지 컨트롤러(AFF, ASA, FAS 또는 AFX 시스템)를 기반으로 구축된, 사전 설계된 모범 사례 데이터 센터 아키텍처입니다.</block>
-  <block id="4f1c3b94131a4d44f8816f875a51d9c1" category="admonition">전체 FlexPod 구성을 주문하기 전에 이러한 기술 사양의 최신 버전을 확인하려면<block ref="01a8b28afe6f20d4d467302d134f4834" category="inline-link-rx"></block> 페이지를 참조하십시오.</block>
   <block id="e2c14471e399a4e70a986d395a809ca1" category="doc">지원되는 FlexPod 구성과 검증된 FlexPod 구성 비교</block>
   <block id="14ea08d4a36a9e093a2a404337332ea0" category="paragraph">각 Cisco Validated Design(CVD) 또는 NetApp Verified Architecture(NVA)는 검증된 FlexPod 구성을 나타냅니다. Cisco 및 NetApp은 이러한 구성 조합을 문서화하고 광범위한 엔드투엔드 테스트를 통해 검증합니다. 이러한 구성에서 벗어나는 FlexPod 배포는 이 문서의 지침을 따르고 모든 구성 요소가 Cisco HCL 및 NetApp IMT에서 호환되는 것으로 나열되어 있는 경우 완전히 지원됩니다.</block>
   <block id="e2bf83d4cba851d15175186517d7bb5e" category="paragraph">예를 들어 스토리지 컨트롤러 또는 Cisco UCS 서버를 추가하거나 소프트웨어를 최신 버전으로 업그레이드하는 것은 소프트웨어, 하드웨어 및 구성이 이 문서에 정의된 지침을 충족하는 경우 완벽하게 지원됩니다.</block>
@@ -8540,4 +8520,17 @@
   <block id="7301fb45839b8140571fc8ebca970ac5" category="paragraph"><block ref="7301fb45839b8140571fc8ebca970ac5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6b7ff24c8be09b911fa7ec2bf614848d" category="inline-image-macro">FPolicy CIFS 공유에서 영향을 받지 않은 PDF 파일 옆에 암호화된 VM 파일의 스크린샷</block>
   <block id="97212b5617eab51466f9299c2b386a24" category="paragraph"><block ref="97212b5617eab51466f9299c2b386a24" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4cb941d507533fbfa895b2c3258d09c1" category="list-text">Ansible 플레이북에 정의된 VMware 역할은 VMware 관련 구성에 사용할 수 있습니다.</block>
+  <block id="5dce8b85dadbd4d3df271c0320f3c25f" category="paragraph">Cisco APIC는 Cisco ACI의 핵심 아키텍처 구성 요소입니다. Cisco ACI 패브릭에 대한 중앙 집중식 관리, 정책 제어 및 자동화를 제공합니다.</block>
+  <block id="a6520fe351018b63780e30c8a5556d7d" category="admonition">모든 Cisco Nexus 스위치가 ACI 모드를 지원하는 것은 아닙니다. 구축하려는 특정 모델이 운영 요구 사항을 충족하는지 확인하십시오.</block>
+  <block id="e4298549d05ddc847ac13c7344ad33db" category="paragraph">FlexPod Datacenter는 NX-OS 모드와 ACI 모드 모두에서 작동하는 Cisco Nexus 스위치와의 호환성이 검증되었습니다. 고객은 네트워크 아키텍처, 운영 모델 및 자동화 요구 사항에 가장 적합한 작동 모드를 선택할 수 있습니다. ACI 및 NX-OS 모드에 대한 자세한 내용은 다음 Cisco 웹페이지를 참조하십시오.</block>
+  <block id="6e4d0a4f060e1b9f3feaf67d38b71d33" category="list-text">독립형 Cisco UCS 패브릭 인터커넥트 어플라이언스 포트는 iSCSI 연결에만 사용하는 것이 좋습니다. 어플라이언스 포트를 사용하여 NAS를 연결하는 경우, 특정 장애 시나리오에 대비하여 추가적인 Cisco Nexus 또는 동등한 이더넷 스위치가 필요합니다.</block>
+  <block id="a09828bab083def663206fa457027e0e" category="list-text">NetApp 스토리지 컨트롤러의 포트는 Cisco Nexus 9000 시리즈 스위치에 연결되어야 합니다.</block>
+  <block id="b76b35359018326daed92ebeaa6f3182" category="list-text">FC-NVMe를 통한 SAN 부팅은 지원되지 않습니다.</block>
+  <block id="fef63cc2d04c79edbbe987ce691d23eb" category="list-text">Cisco Intersight 관리 모드 구성(IMM)을 지원하는 FI 연결 기능이 있는 Cisco UCS C-Series 랙 서버 2대, 또는 Cisco IMM이 포함된 Cisco UCS X-Series Direct 또는 Cisco IMM이 포함된 Cisco UCS X-Series Modular.</block>
+  <block id="2ae464e2f6a18f5ac703c1590d3f25e1" category="admonition">FI 연결 기능이 없는 UCS 랙 서버를 사용하는 경우 CIMC 또는 Intersight 독립 실행형 모드(ISM)를 사용하여 관리할 수 있습니다.</block>
+  <block id="04841b98d2bcd6a41ea46cae0dc76e1d" category="list-text">NetApp AFF, NetApp ASA 또는 NetApp FAS 컨트롤러 두 대를 고가용성(HA) 쌍 구성으로 2노드 클러스터로 배포합니다. NetApp AFX를 사용하는 경우 최소 4대의 NetApp AFX 컨트롤러가 필요하며, 2개의 HA 쌍과 1쌍의 클러스터 인터커넥트 스위치를 포함하는 4노드 클러스터로 배포해야 합니다.</block>
+  <block id="9c993b5399e0b299f8d4fda9189abc07" category="paragraph">FlexPod는 다양한 가상화 하이퍼바이저, 베어메탈 운영 체제, 컨테이너 환경 및 엔터프라이즈 워크로드를 실행하기에 적합한 플랫폼입니다. FlexPod는 기본 구성뿐만 아니라 다양한 사용 사례와 요구 사항에 맞춰 규모를 조정하고 최적화할 수 있는 유연성도 제공합니다.</block>
+  <block id="d5e1cab3b696c4ba2161ebea35fa9845" category="admonition">완전한 FlexPod 구성을 주문하기 전에 이러한 기술 사양의 최신 버전을 확인하려면<block ref="01a8b28afe6f20d4d467302d134f4834" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="1ad199a581d2eb361813f1776cba7be5" category="paragraph">Cisco는 <block ref="a5c1c71f566a8ac6352d6e7587da6b34" category="inline-link-macro-rx"></block> 프레임워크를 활용하여 솔루션 지원 파트너를 TSANet Connect 시스템의 비공개 그룹에 온보딩합니다. TSANet Connect는 지원 엔지니어가 파트너의 기술 팀과 협업할 수 있는 일관된 방법을 제공하여, 파트너와의 비공식적인 협업으로 인한 마찰 없이 효율적인 의사소통과 신속한 문제 해결을 보장합니다.</block>
 </blocks>
