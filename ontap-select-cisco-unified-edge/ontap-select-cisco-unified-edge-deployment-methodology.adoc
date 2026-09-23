@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: ontap-select-cisco-unified-edge/ontap-select-cisco-unified-edge-deployment-methodology.html 
+keywords: ontap select, cisco unified edge, deployment, methodology, flexpod 
+summary: Cisco Unified Edge에서 ONTAP Select의 라이선스, 크기 조정, 로컬 스토리지 구성 및 배포를 위한 주요 단계를 설명합니다. 
+---
+= 고수준 배포 방법론
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+이 섹션에서는 Cisco Unified Edge에서 ONTAP Select의 라이선스, 크기 조정, 로컬 스토리지 구성 및 배포를 위한 주요 단계를 설명합니다.
+
+
+
+[[1-ontap-select-licensing]]
+== 1. ONTAP Select 라이선스
+
+NVMe 드라이브를 사용할 경우 Premium XL 라이선스가 필요합니다. 고객은 여러 사이트에서 용량을 공유하는 유연한 용량 풀 라이선스와 특정 노드에 연결된 영구 라이선스 중에서 선택할 수 있습니다. 자세한 내용은 link:https://docs.netapp.com/us-en/ontap-select/concept_lic_workflow.html["ONTAP Select 라이센스 구매 워크플로우"]을 참조하십시오.
+
+
+
+[[2-obtain-ontap-select-deploy-software]]
+== 2. ONTAP Select Deploy 소프트웨어를 다운로드하십시오
+
+ONTAP Select Deploy는 ONTAP Select 클러스터를 배포하고 관리하는 데 사용되는 관리 유틸리티입니다. Deploy는 Linux 가상 머신 형태로 제공되며, ONTAP Select 클러스터를 생성하기 전에 설치해야 합니다. link:https://stackautomation.cisco.com/["Cisco Stack Automation"]에서 설치하거나 link:https://mysupport.netapp.com/site/["NetApp 지원 사이트"]에서 .ova 파일로 다운로드할 수 있습니다.
+
+
+
+[[3-choose-ontap-select-virtual-machine-size]]
+== 3. ONTAP Select 가상 머신 크기 선택
+
+ONTAP Select Premium XL 라이선스는 스토리지 성능 요구 사항에 맞춰 소형, 중형 또는 대형 가상 머신 인스턴스 크기로 배포할 수 있습니다. 소형 또는 중형 인스턴스 크기는 12코어 XE130c 또는 XE150c 컴퓨팅 노드에서 지원하며, 대형 인스턴스에는 20코어 또는 32코어 노드가 필요합니다. 인스턴스 크기 조정 요구 사항에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/ontap-select/reference_plan_ots_hardware.html#basic-hardware-requirements["ONTAP Select VMware 하이퍼바이저 및 하드웨어 고려 사항"]을 참조하십시오.
+
+
+
+[[4-prepare-local-storage]]
+== 4. 로컬 저장소를 준비합니다
+
+VMDirectPath I/O 패스스루는 NVMe 드라이브의 효율성을 극대화하기 위해 사용됩니다. 이 설정을 통해 드라이브가 가상 머신에 노출되어 ONTAP이 해당 장치에 직접 PCI 액세스 권한을 갖게 됩니다. NVMe 패스스루 활성화에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/ontap-select/task_chk_nvme_configure.html["NVMe 드라이브를 사용하도록 ONTAP Select 호스트 구성"]을 참조하십시오.
+
+4개의 NVMe 드라이브 중 하나는 가상 머신의 부팅 드라이브, 코어 및 NVRAM을 포함하는 시스템 디스크로 사용됩니다. 나머지 3개의 드라이브는 개별 드라이브 오류에 대한 패리티 기반 보호 기능을 제공하는 소프트웨어 RAID 4 데이터 디스크로 구성됩니다. 각 데이터 디스크는 작은 루트 파티션과 동일한 크기의 파티션 두 개로 나뉘어 ONTAP Select VM 내에서 인식되는 두 개의 데이터 디스크를 생성합니다. 자세한 내용은 link:https://docs.netapp.com/us-en/ontap-select/concept_stor_swraid_local.html#ontap-select-virtual-and-physical-disks["로컬 연결 스토리지용 ONTAP Select 소프트웨어 RAID 구성 서비스"]을 참조하십시오.
+
+시스템 디스크는 솔루션의 전체 스토리지 비용을 줄이기 위해 세 개의 데이터 디스크보다 스토리지 용량이 작을 수 있습니다. 1.6TB 고성능, 고내구성 드라이브(UCSXE-NVE11T6K1P)면 충분합니다.
+
+
+
+[[5-deploy-the-ontap-select-instance]]
+== 5. ONTAP Select 인스턴스를 배포합니다.
+
+ONTAP Select는 ONTAP Select Deploy 툴링과 지원되는 하이퍼바이저 환경을 사용하여 가상 머신으로 배포됩니다. 배포 과정에서 관리자는 노드, 관리 인터페이스, 데이터 인터페이스, 용량 및 로컬 디스크 할당을 정의합니다. ONTAP Select가 실행된 후 관리자는 로컬 애플리케이션용 볼륨 또는 LUN을 생성하고 적절한 정책, 공유, 이니시에이터 그룹 또는 액세스 제어를 적용해야 합니다.
