@@ -174,7 +174,7 @@ image:sm-bcs-image11.png["NetApp AFF 및 ASA 컨트롤러와 DS 224C/2246 및 NS
 | AFF 시리즈 | link:https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62247["AFF 시리즈 문서"^] 
 
 
-| ASA 시리즈 | link:https://docs.netapp.com/allsan/index.jsp["ASA 시리즈 문서"^] 
+| ASA r2 시스템 | link:https://docs.netapp.com/us-en/ontap-systems/asa-r2/index.html["ASA r2 시스템 문서"^] 
 |===
 을 참조하십시오 https://www.netapp.com/data-storage/disk-shelves-storage-media/["NetApp 디스크 쉘프 및 스토리지 미디어 문서"^] 및 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] 각 스토리지 컨트롤러 모델에 대해 디스크 쉘프 및 지원되는 디스크 쉘프에 대한 자세한 내용은 를 참조하십시오.
 
