@@ -4,7 +4,7 @@ permalink: express/express-c-series-aff220-deploy_deployment_procedures_overview
 keywords: vmware, vcenter, server, appliance, download 
 summary: 이 문서에서는 완전히 이중화된 고가용성 FlexPod Express 시스템을 구성하고 여러 Cisco UCS 호스트를 프로비저닝하는 방법에 대해 자세히 설명합니다. 
 ---
-= 구현 절차
+= 배포 절차 개요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

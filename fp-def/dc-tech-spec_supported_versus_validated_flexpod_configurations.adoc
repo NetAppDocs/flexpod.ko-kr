@@ -10,7 +10,7 @@ summary: 'FlexPod 아키텍처는 이 문서에 설명된 규칙 집합으로 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

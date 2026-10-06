@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fp-def/fp-express-tech-spec_cisco_components.html 
 keywords: cisco, components, server, options, rack, ucs, nexus, switches, x-series-direct, c-series 
-summary: Cisco는 FlexPod Express 설계 및 아키텍처에 크게 기여했으며 솔루션의 컴퓨팅 및 네트워킹 계층에 기여하고 있습니다. 
+summary: Cisco는 UCS 서버 및 Nexus 스위치를 포함하여 FlexPod Express 설계 및 아키텍처의 컴퓨팅 및 네트워킹 계층을 제공합니다. 
 ---
 = Cisco 구성 요소
 :hardbreaks:

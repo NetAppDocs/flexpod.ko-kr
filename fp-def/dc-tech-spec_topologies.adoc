@@ -10,7 +10,7 @@ summary: 이 섹션에서는 FlexPod 데이터센터의 예시 토폴로지를 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -4248,7 +4248,6 @@
   <block id="33be136ba88311dd15cb9308e6930766" category="inline-link">Cisco 애플리케이션 중심 인프라</block>
   <block id="a13cc5afeaa62ed39840c636da4e69a8" category="list-text"><block ref="a13cc5afeaa62ed39840c636da4e69a8" category="inline-link-rx"></block></block>
   <block id="c38f85f1f24f1064b7379d7e2dcc56e1" category="inline-link">Cisco NX-OS 소프트웨어</block>
-  <block id="767945ca8f676ff25ce389fce1df6c41" category="summary">Cisco는 FlexPod Express 설계 및 아키텍처에 크게 기여했으며 솔루션의 컴퓨팅 및 네트워킹 계층에 기여하고 있습니다.</block>
   <block id="db9522af2119f167ded30369ddb56248" category="doc">Cisco 구성 요소</block>
   <block id="ae19f05a830d151c2615c3f564dbf6e4" category="paragraph">Cisco는 FlexPod Express 설계 및 아키텍처에 크게 기여했으며 솔루션의 컴퓨팅 및 네트워킹 계층에 기여하고 있습니다. 이 섹션에서는 FlexPod Express에 사용할 수 있는 Cisco UCS 및 Cisco Nexus 구성 요소에 대해 설명합니다.</block>
   <block id="0adca13cab777a69d4b054794aadc650" category="section-title">Cisco UCS C-Series 랙 서버 옵션</block>
@@ -8564,4 +8563,6 @@
   <block id="22d05c38a6e8032e35e9ff8d6b826ee0" category="inline-link-macro">ASA r2 시스템 문서</block>
   <block id="5a043bdfd29a9c2a632078901fc0d525" category="cell"><block ref="5a043bdfd29a9c2a632078901fc0d525" category="inline-link-macro-rx"></block></block>
   <block id="a04fde0f303f9cefcbd34e8be1810d1e" category="paragraph">학술 의료 센터 및 기타 의료 및 생명 과학 기관들은 유전체 과학 분야의 우수 연구 센터(COE) 설립에 박차를 가하고 있습니다. Duke University의 Dr. Charlie Gersbach, Dr. Greg Crawford, Dr. Tim E Reddy는 "유전자는 단순한 이진 스위치처럼 켜지거나 꺼지는 것이 아니라, 여러 유전자 조절 스위치가 함께 작용한 결과라는 것을 알고 있습니다. "라고 말했습니다. 또한 "유전체의 어떤 부분도 독립적으로 작동하지 않습니다. 유전체는 진화가 엮어낸 매우 복잡한 그물망입니다."라고 밝혔습니다(<block ref="7e5e4c153f3bad20a8e4230a913e554e" category="inline-link-rx"></block>).</block>
+  <block id="a9100704d09dc0243e72fa3e969a3376" category="doc">배포 절차 개요</block>
+  <block id="c94f9bfe6b4fcd272eb296a929c3be2f" category="summary">Cisco는 UCS 서버 및 Nexus 스위치를 포함하여 FlexPod Express 설계 및 아키텍처의 컴퓨팅 및 네트워킹 계층을 제공합니다.</block>
 </blocks>

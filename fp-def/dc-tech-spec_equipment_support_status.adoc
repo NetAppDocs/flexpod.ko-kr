@@ -10,7 +10,7 @@ summary: 이 섹션에서는 Cisco 및 NetApp 구성 요소에 대한 장비 지
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./../media/
+:imagesdir: ../media/
 
 
 [role="lead"]
