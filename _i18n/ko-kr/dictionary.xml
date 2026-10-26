@@ -3491,7 +3491,6 @@
   <block id="3455b050e251b7f98e02276cf4e610a6" category="inline-link">Cromwell 엔진 구성 파일</block>
   <block id="8a4170eb5a6a7d35029828115b79e670" category="paragraph">Cromwell은 워크플로우 관리를 지원하는 과학적 워크플로우에 맞춰 설계된 오픈 소스 엔진입니다. 크렘웰 엔진은 2개로 작동할 수 있습니다<block ref="83a23f9446eddc4053d457126818d444" category="inline-link-rx"></block>, 서버 모드 또는 단일 워크플로 실행 모드. 크롬웰 엔진의 동작은 를 사용하여 제어할 수 있습니다<block ref="fd25519784a12a9c420aa9ee89025851" category="inline-link-rx"></block>.</block>
   <block id="10901892610e8878b38acfa47b965517" category="inline-link">휴식</block>
-  <block id="5c21c1c0292363dbb8e48a016e417842" category="list-text">서버 모드 * 를 활성화합니다<block ref="3d88e61f0ef99b49adc5b48c9547ff37" category="inline-link-rx"></block> 크렘웰 엔진의 워크플로 실행.</block>
   <block id="18389a4a9ad5795744699cff0ba66c15" category="inline-link">참조</block>
   <block id="78fd1f9f6e4339d078a801e271c443e8" category="list-text">* 실행 모드. * 실행 모드는 Cromwell에서 단일 워크플로를 실행하는 데 가장 적합합니다.<block ref="bec7f6b49d367b38ddeb9c15495dd799" category="inline-link-rx"></block> 실행 모드에서 사용할 수 있는 전체 옵션 세트를 확인합니다.</block>
   <block id="303789c78fc99914ca9d353a7cfd1892" category="inline-link">워크플로 설명 언어</block>
@@ -8565,4 +8564,5 @@
   <block id="a04fde0f303f9cefcbd34e8be1810d1e" category="paragraph">학술 의료 센터 및 기타 의료 및 생명 과학 기관들은 유전체 과학 분야의 우수 연구 센터(COE) 설립에 박차를 가하고 있습니다. Duke University의 Dr. Charlie Gersbach, Dr. Greg Crawford, Dr. Tim E Reddy는 "유전자는 단순한 이진 스위치처럼 켜지거나 꺼지는 것이 아니라, 여러 유전자 조절 스위치가 함께 작용한 결과라는 것을 알고 있습니다. "라고 말했습니다. 또한 "유전체의 어떤 부분도 독립적으로 작동하지 않습니다. 유전체는 진화가 엮어낸 매우 복잡한 그물망입니다."라고 밝혔습니다(<block ref="7e5e4c153f3bad20a8e4230a913e554e" category="inline-link-rx"></block>).</block>
   <block id="a9100704d09dc0243e72fa3e969a3376" category="doc">배포 절차 개요</block>
   <block id="c94f9bfe6b4fcd272eb296a929c3be2f" category="summary">Cisco는 UCS 서버 및 Nexus 스위치를 포함하여 FlexPod Express 설계 및 아키텍처의 컴퓨팅 및 네트워킹 계층을 제공합니다.</block>
+  <block id="ee30ff13e36cbab9bf29c33fd526cd18" category="list-text">*서버 모드.* Cromwell 엔진에서 워크플로우 실행을 활성화합니다<block ref="623098b3a5eec7dedbf57209eff0066d" category="inline-link-rx"></block>.</block>
 </blocks>

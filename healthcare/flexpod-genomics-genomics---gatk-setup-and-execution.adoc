@@ -158,7 +158,7 @@ BAM 파일과 해당 인덱스, 사전 및 참조 게놈 파일을 아버지, �
 
 Cromwell은 워크플로우 관리를 지원하는 과학적 워크플로우에 맞춰 설계된 오픈 소스 엔진입니다. 크렘웰 엔진은 2개로 작동할 수 있습니다 https://cromwell.readthedocs.io/en/stable/Modes/["모드"^], 서버 모드 또는 단일 워크플로 실행 모드. 크롬웰 엔진의 동작은 를 사용하여 제어할 수 있습니다 https://github.com/broadinstitute/cromwell/blob/develop/cromwell.example.backends/cromwell.examples.conf["Cromwell 엔진 구성 파일"^].
 
-* 서버 모드 * 를 활성화합니다 https://cromwell.readthedocs.io/en/stable/api/RESTAPI/["휴식"^] 크렘웰 엔진의 워크플로 실행.
+* *서버 모드.* Cromwell 엔진에서 워크플로우 실행을 활성화합니다 https://cromwell.readthedocs.io/en/stable/Modes/["휴식"^].
 * * 실행 모드. * 실행 모드는 Cromwell에서 단일 워크플로를 실행하는 데 가장 적합합니다. https://cromwell.readthedocs.io/en/stable/CommandLine/["참조"^] 실행 모드에서 사용할 수 있는 전체 옵션 세트를 확인합니다.
 
 
